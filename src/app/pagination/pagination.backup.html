@@ -1,0 +1,81 @@
+
+<div *ngIf="pages">
+
+<span *ngIf="pageOffset>0"> <a href="#" (click)="DecreaseOffset()" class="badge"> ⇚ Previous</a></span>
+
+<span *ngIf="pages.length >5 && pageOffset < 4">
+
+ <a ctStyleCell href="#" *ngFor="let page of pages; let i = index"  (click)="updateOffset(page)" >  
+    <span *ngIf="i < 6" [ngClass]="{'selected': page === pageOffset}" class="badge"> {{page}} </span>
+</a> 
+    <span class="badge"> ...</span>
+
+
+ <a ctStyleCell href="#" *ngFor="let page of pages; let i = index"  (click)="updateOffset(page)" >  
+    <span *ngIf="i === pages.length -1" [ngClass]="{'selected': page === pageOffset}" class="badge"> {{page}} </span>
+</a> 
+
+</span>
+
+<span *ngIf="pageOffset >  (pages.length - 5) && pages.length >5">
+   
+ <a ctStyleCell href="#" *ngFor="let page of pages; let i = index"  (click)="updateOffset(page)" >  
+    <span *ngIf="i === 0" [ngClass]="{'selected': page === pageOffset}" class="badge"> {{page}} </span>
+</a> 
+<span class="badge"> ...</span>
+ <a ctStyleCell href="#" *ngFor="let page of pages; let i = index"  (click)="updateOffset(page)" >  
+    <span *ngIf="(i === pages.length -1) || (i > pages.length -6)" [ngClass]="{'selected': page === pageOffset}" class="badge"> {{page}} </span>
+</a> 
+
+</span>
+
+<span *ngIf="pageOffset >= 4 && pageOffset <= pages.length - 5">
+
+ <a ctStyleCell href="#" *ngFor="let page of pages; let i = index"  (click)="updateOffset(page)" >  
+    <span *ngIf="i === 0" [ngClass]="{'selected': page === pageOffset}" class="badge"> {{page}} </span>
+</a> 
+<span class="badge"> ...</span>
+
+ <a ctStyleCell href="#" *ngFor="let page of pages; let i = index"  (click)="updateOffset(page)" >  
+    <span *ngIf="i === pageOffset || i  === (pageOffset -1) || i === (pageOffset +1)" [ngClass]="{'selected': page === pageOffset}" class="badge"> {{page}} </span>
+</a> 
+
+
+<span class="badge"> ...</span>
+ <a ctStyleCell href="#" *ngFor="let page of pages; let i = index"  (click)="updateOffset(page)" >  
+    <span *ngIf="i === pages.length-1" [ngClass]="{'selected': page === pageOffset}" class="badge"> {{page}} </span>
+</a> 
+
+</span>
+
+<span *ngIf="pages.length < 6">
+    
+ <a ctStyleCell href="#" *ngFor="let page of pages"  (click)="updateOffset(page)" >  
+    <span [ngClass]="{'selected': page === pageOffset}" class="badge"> {{page}} </span>
+</a> 
+</span>
+
+
+<span *ngIf="pageOffset < pages.length -1" class="badge">
+<a href="#" (click)="Increaseffset()" >Next ⇛</a>        
+</span>   
+
+<div class="customIcon">
+<div class="custom">
+
+</div>
+<div class="custom">
+
+</div>
+</div>
+    <!--
+        (click)="updateOffset(page)"
+        
+        <span [ngSwitch]="page">
+           <span *ngSwitchCase="1" class="badge"> << </span> 
+           <span *ngSwitchCase="pages.length -1" class="badge"> >> </span> 
+           <span *ngSwitchDefault class="badge">{{page}}</span>
+    </span>-->
+</div>
+
+

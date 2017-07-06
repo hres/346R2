@@ -1,0 +1,44 @@
+.badge{
+
+  
+}
+
+div.selected2 {
+    background-color: #33cccc;
+    
+}
+div.selected{
+    background-color: #009999;
+}
+a{
+    text-decoration: none;
+}
+
+
+.custom{
+    cursor: pointer;
+    display: inline-block;
+   height: 40px; 
+    width: 40px;
+    margin: 2px;
+  background-color: #33cccc;
+   
+}
+span{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    float:left;
+
+    transform: translate(-50%, -50%);
+}
+.custom2{
+
+   height: 40px; 
+    width: 100px;
+    margin: 2px;
+  background-color: #33cccc;
+}
+.alignPagination{
+    float: right;
+}

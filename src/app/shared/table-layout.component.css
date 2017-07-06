@@ -1,0 +1,68 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-left: 1.5px  #33cccc solid;
+    border-right: 1.5px  #33cccc solid;
+    border-bottom: 1.5px  #33cccc solid;
+    font-family: Roboto, "Helvetica-Neue", sans-serif;
+}
+
+.table tr:nth-child(even){
+    background-color: #f0f5f5;
+}
+
+.tableheader{
+    background-color: #33cccc;
+}
+thead{
+    text-align: left;
+}
+.iconGroup{
+   float: right;
+   color:darkblue;
+  cursor: pointer;
+
+}
+th{
+    padding: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+td {
+    padding: 5px;
+    border: none;
+}
+
+td:not(:first-child) {
+    border-left: 1px solid lightgray;
+}
+
+td:not(:last-child) {
+    border-right: 1px solid lightgray;
+}
+
+.toggle{
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotateX(0deg); /* Chrome, Safari, Opera */
+     transform: rotateX(0deg);
+     
+}
+.my-class{
+  background-color: #009999;
+  
+
+
+}
+.toggle2{
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotateX(180deg); /* Chrome, Safari, Opera */
+     transform: rotateX(180deg);
+     
+}
+.addHand{
+     cursor: pointer;
+}

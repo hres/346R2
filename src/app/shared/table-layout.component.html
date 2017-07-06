@@ -1,0 +1,28 @@
+
+
+<table class="table">
+     <!--<caption *ngIf="caption">{{ caption }}</caption> -->
+    <thead>
+      <tr>
+          <!--sort(map.primaryKey)  <ng-container *ngIf="index && flag"> </ng-container>-->
+        
+            <th class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" (click)="sortCol(i)" [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}">{{ map.header }}                       
+                       <span class="iconGroup" *ngIf="(i === selectedRow && i===index) || (i===index && index===0)" [ngClass]="{'toggle': flag && i === selectedRow , 'toggle2':!flag  && i === selectedRow} ">⇑</span>                  
+            </th>
+          
+                  <!--<th *ngFor="let map of columnMaps; let i=index" (click)="setClicked(i)" [ngClass]="{'my-class': i === selectedRow}">{{ map.header }}                       
+                       <span class="iconGroup" *ngIf="!isDesc" (click)="setDesc()" >▲</span>                  
+                     <span class="iconGroup" *ngIf="isDesc && i === selectedRow" (click)="setDesc()" >down</span>                  
+
+         </th>-->
+        </tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let record of records">
+     <td *ngFor="let map of columnMaps"
+     [ctStyleCell]="record[map.primaryKey]">
+           {{ record[map.primaryKey] | formatCell:map.format }}
+     </td>
+</tr>
+    </tbody>
+</table>
