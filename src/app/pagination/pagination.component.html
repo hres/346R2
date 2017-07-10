@@ -1,19 +1,20 @@
-<div class="alignPagination">
+<div class="alignPagination" *ngIf="numberOfRecords >0">
 <div *ngIf="pages">
 
 <div class="custom custom2" *ngIf="pageOffset>0" (click)="DecreaseOffset()" ><span> ⇚ Previous</span></div>
 
 <ng-container *ngIf="pages.length >5 && pageOffset < 4">
-
+ 
 <ng-container  *ngFor="let page of pages; let i = index"> 
-<div class="custom" (click)="updateOffset(page)" *ngIf="i < 6" [ngClass]="{'selected': page === pageOffset}"> 
+<div class="custom" (click)="updateOffset(page)" *ngIf="i < 4" [ngClass]="{'selected': page === pageOffset}"> 
 <span>{{page}} </span> </div>
 </ng-container>
 
     <div class="custom"><span>...</span></div>
 <ng-container  *ngFor="let page of pages; let i = index"> 
+  
     <div class="custom" (click)="updateOffset(page)" *ngIf="i === pages.length -1" [ngClass]="{'selected': page === pageOffset}">
-        <span>{{page}} </span> 
+       <span>{{page}} </span> 
 
     </div>
 </ng-container>
@@ -21,8 +22,9 @@
 
 </ng-container>
 
-<ng-container *ngIf="pageOffset >  (pages.length - 5) && pages.length >5">
+<ng-container *ngIf="pageOffset >  (pages.length - 4) && pages.length >5 && pageOffset>3">
    
+
 <ng-container  *ngFor="let page of pages; let i = index"> 
   
     <div class="custom" (click)="updateOffset(page)" *ngIf="i === 0" [ngClass]="{'selected': page === pageOffset}">
@@ -39,7 +41,9 @@
 
 </ng-container>
 </ng-container>
-<ng-container *ngIf="pageOffset >= 4 && pageOffset <= pages.length - 5">
+
+
+<ng-container *ngIf="pageOffset >= 4 && pageOffset <= pages.length - 5 && pages.length > 5">
 
 <ng-container *ngFor="let page of pages; let i = index">
 <div class="custom" (click)="updateOffset(page)" *ngIf="i === 0" [ngClass]="{'selected': page === pageOffset}"><span>{{page}} </span></div>
@@ -71,7 +75,7 @@
 
 
 <ng-container *ngIf="pages.length < 6">
-    
+
      <div class="custom" *ngFor="let page of pages"  (click)="updateOffset(page)" [ngClass]="{'selected': page === pageOffset}">  
     <span>{{page}} </span>
     </div>

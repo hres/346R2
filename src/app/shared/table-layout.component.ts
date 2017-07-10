@@ -16,6 +16,7 @@ export class TableLayoutComponent implements OnChanges {
     @Input() settings: ColumnSetting[];
 
     @Input() index: number;
+
     @Input() flag: boolean;
     @Output() trigger: EventEmitter<number> = new EventEmitter<number>();
     // @Output() trigger2: EventEmitter<number> = new EventEmitter<number>();

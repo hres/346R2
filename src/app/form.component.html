@@ -79,25 +79,31 @@
 </md-card>
 </div>
 </div>
+
 <!--<div *ngIf="tableData">-->
 <!--<table-template [tableValues]="tableData"></table-template>-->
+<h2 *ngIf="emptyField">
+  
+    {{emptyField}}
+</h2>
+<h2 *ngIf="noData">
+  
+    {{noData}}
+</h2>
+
   <div *ngIf="tableData">  
     <ct-table [records]="tableData"
               [caption]="'ROMYYY'"
               [index] = "index"
               [flag] = "direction[index]"
               (trigger)="sortBy2($event)"
-             
-
-
-             
-              
+                              
              >
               
     </ct-table>
   </div>
 <!--<pagination (offSet) = "onPageChange($event)"-->
-   <pagination          [pageSize] ="pageSizes"
+   <pagination         [pageSize] ="pageSizes"
             [numberOfRecords] = "count"
             [(pageOffset)]="offset"
             (offSetVal)="offSetVal($event)">

@@ -7,7 +7,7 @@ export class FormatCellPipe implements PipeTransform {
         private currencyPipe: CurrencyPipe
     ) { }
     transform(value: any, format: string) {
-        if ( value === undefined | value===null || value==='') {
+        if ( value === undefined || value===null || value==='') {
             return 'not available';
         }
         // if ( format === 'default' ) {
