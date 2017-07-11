@@ -1,0 +1,65 @@
+
+div.flex{
+    display: flex;
+}
+div.flex > md-input-container, div.flex > md-select{
+    flex: 1;
+    margin: 0 7px;
+    font-size: 15px;
+}
+div.flex > md-select{
+    margin-bottom: 7px;
+}
+/*.DivHeader{
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: lightblue;
+}*/
+.DivLogo{
+
+    background-color: lightblue;
+    padding: 15px 15px;
+    border: 2px solid lightblue;
+
+}
+.DivHeader{
+    position: relative;
+}
+div.bodycard{
+    position: relative;
+}
+
+.row > div, .row > div  md-input-container, .row > div  md-select {
+    width: 100%;
+     margin: 0 7px;
+     font-size: 15px;
+     flex: 1;
+}
+
+.errorMessages{
+    background-color: #f2dede; 
+    border-color: #eed3d7;
+    color: #b94a48;
+    margin-left:7.8px;
+    height: 50px;
+    width: 100%;
+    margin-top: -15px;
+    border-radius: 6px;
+    font-size: 16px;
+
+}
+.textPosition{
+        position: relative;
+    top: 25%;
+    left: 5%;
+}
+/*
+.full-width {
+    width: 100%;
+    margin: 0 7px;
+}*/
+
+/*.ng-invalid:not(form){
+    border-left: 5px solid #a94442;
+}*/

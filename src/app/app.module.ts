@@ -1,12 +1,14 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ProjectCenterModule } from './project-center/project-center.module';
+
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import {MdCardModule, MdInputModule, MdButtonModule, MdSelectModule} from '@angular/material'
+ import {MdCardModule, MdInputModule, MdButtonModule, MdSelectModule} from '@angular/material'
 import { AppComponent }  from './app.component';
-import { FormComponent }  from './form.component';
+import { FormComponent }  from './forms/productForm/form.component';
+import {FormModule} from './forms/productForm/form.module';
+
 import {Headers, HttpModule} from '@angular/http';
 
 import {PaginationModelModule} from './pagination/pagination.model'
@@ -27,7 +29,7 @@ import {RouterModule} from '@angular/router';
       MdInputModule,
       MdButtonModule,
       HttpModule,
-      ProjectCenterModule,
+
       SharedModule,
       MdSelectModule,
       MdIconModule,
