@@ -106,13 +106,16 @@
 
   {{emptyField}}
 </h2>
-<h2 *ngIf="noData">
 
-  {{noData}}
-</h2>
 
 <div *ngIf="tableData">
-  <ct-table [records]="tableData" [caption]="'ROMYYY'" [index]="index" [flag]="direction[index]" (trigger)="sortBy2($event)">
+  {{count}} records found
+  <ct-table [records]="tableData" 
+            [caption]="'ROMYYY'" 
+            [index]="index" 
+            [flag]="direction[index]"
+            [settings]="settings"
+             (trigger)="sortBy2($event)">
 
   </ct-table>
 </div>

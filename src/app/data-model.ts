@@ -17,7 +17,10 @@ export type  Params = {
     cluster_number: number;
     product_description: string;
     product_comment: string;
+    product_id: number
+
 };
+
 
 
 export const Classification_name = ['Classification 1', 'Second Classification'];

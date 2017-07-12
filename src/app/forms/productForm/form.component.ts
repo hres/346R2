@@ -24,6 +24,17 @@ export class FormComponent implements OnChanges {
     submitted = false;
     offset: number = 0;
     @Input() product: Params;
+     settings: ColumnSetting[] = [
+                {primaryKey: 'product_description', header: 'Description'},
+                {primaryKey: 'product_brand', header: 'Brand'},
+                {primaryKey: 'product_manufactuer', header: 'Manufacturer'},
+                {primaryKey: 'classification_number', header: 'Classification Number'},
+                {primaryKey: 'classification_name', header: 'Classification Name'},
+                {primaryKey: 'classification_type', header: 'Classification Type'},
+                {primaryKey: 'cnf_code', header: 'CNF CODE'},
+                {primaryKey: 'cluster_number', header: 'Cluster Number'},
+                
+                ];
 
     Classification_name = Classification_name;
     Classification_number = Classification_number;
@@ -125,7 +136,6 @@ export class FormComponent implements OnChanges {
 
 
         this.product = this.prepareSaveProduct();
-
         this.submitted = true;
         this.queryString = '?';
 
@@ -135,7 +145,7 @@ export class FormComponent implements OnChanges {
             }
         }
         this.queryString += `offset=${this.offset}`;
-        this.queryString += `&orderby=id`;
+        this.queryString += `&orderby=product_description`;
         this.queryString += `&flag=true`
         this.queryString = this.queryString.slice(0, this.queryString.length);
         console.log(this.queryString);
@@ -152,12 +162,22 @@ export class FormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
-            } else {
+            }else if (status === 204) {
+                this.noData = message;
+
+                this.tableData = null;
+
+            }
+             else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.values;
+                this.tableData= data.values; 
 
-                for (var num = 0; num < Object.keys(this.tableData[0]).length; num++) {
+                
+
+
+
+                for (var num = 0; num < this.settings.length; num++) {
                     if (num === 0) {
                         this.direction[num] = true;
                     } else {
@@ -200,10 +220,15 @@ export class FormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
+            }else if (status === 204) {
+                this.noData = message;
+
+                this.tableData = null;
+
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.values;
+                this.tableData= data.values; 
 
 
             }
@@ -218,8 +243,10 @@ export class FormComponent implements OnChanges {
         this.index = i;
         this.flag = this.direction[i];
         this.direction = this.direction.map((item, index) => i === index ? !this.direction[i] : false);
+        
+        console.log(this.settings[i].primaryKey);
 
-        this.queryString = this.queryString.replace(/(orderby=)(\w+)/, "$1" + Object.keys(this.tableData[0])[i]);
+        this.queryString = this.queryString.replace(/(orderby=)(\w+)/, "$1" + this.settings[i].primaryKey);
         this.queryString = this.queryString.replace(/(flag=)(\w+)/, "$1" + this.direction[i]);
         this.queryString = this.queryString.replace(/(offset=)(\w+)/, "$1" + '0');
 
@@ -229,7 +256,11 @@ export class FormComponent implements OnChanges {
         this.searchService.search(this.queryString).then(response => {
             const {data, message, status} = response;
 
+            //this.tableData = data.values.map((item, index) => item[index].primaryKey === "product_description" ?  "LOLO" : item['product_description']);
+
             this.tableData = data.values;
+
+
         if (status === 202) {
                 this.emptyField = message;
                 console.log(message);
@@ -239,10 +270,15 @@ export class FormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
+            }else if (status === 204) {
+                this.noData = message;
+
+                this.tableData = null;
+
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.values;
+                this.tableData= data.values; 
 
 
             }
