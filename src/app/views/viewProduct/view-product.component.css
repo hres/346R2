@@ -1,0 +1,38 @@
+
+div.flex{
+    display: flex;
+}
+div.flex > md-input-container, div.flex > md-select{
+    flex: 1;
+    margin: 0 7px;
+    font-size: 17.5px;
+ 
+}
+div.flex > md-select{
+    margin-bottom: 7px;
+}
+.productHeader{
+    height: 70px;
+    background-color: lightblue;
+    width:103.2%;
+    left:0;
+    right:0;
+    position: relative;
+    margin-left: -1.6%;
+    margin-top:-2%;
+
+  
+}
+.buttons{
+    position: relative;
+    top: 30%;
+    float: right;
+    margin-right: 1.2px;
+}
+.productDetails{
+    position: relative;
+    font-size: 1.7em;
+    top: 30%;
+    margin-left: 34px;
+    font-family: "Arial Black", Gadget, sans-serif;
+}

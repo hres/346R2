@@ -1,6 +1,8 @@
 import { Component, Input, OnChanges, EventEmitter, Output } from '@angular/core';
 import {ColumnSetting} from './layout.model'
 import {Params, Response} from '../data-model';
+import 'rxjs/add/operator/switchMap';
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 @Component({
     selector: 'ct-table',
     templateUrl: 'app/shared/table-layout.component.html',
@@ -21,6 +23,10 @@ export class TableLayoutComponent implements OnChanges {
     @Input() flag: boolean;
     @Output() trigger: EventEmitter<number> = new EventEmitter<number>();
 
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router
+    ){}
     
     columnMaps: ColumnSetting[]; 
     selectedRow: number;
@@ -54,7 +60,11 @@ export class TableLayoutComponent implements OnChanges {
           
           this.trigger.emit(this.index);
     }
-    
+    passIt(pid: number): void{
+
+this.router.navigate(['/viewproduct', pid]);
+        console.log(pid, "NOOOO");
+    }
 
 
 

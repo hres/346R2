@@ -23,5 +23,5 @@ export type  Params = {
 
 
 
-export const Classification_name = ['Classification 1', 'Second Classification'];
-export const Classification_number = ['1.0121', '1.0122', '1.0123'];
+export const Classification_name = ['First classification', 'Second Classification', ''];
+export const Classification_number = ['1.0121', '1.0122', '1.0123', ''];

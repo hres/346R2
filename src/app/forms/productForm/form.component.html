@@ -106,10 +106,13 @@
 
   {{emptyField}}
 </h2>
+<h2 *ngIf="noData">
 
+  {{noData}}
+</h2>
 
 <div *ngIf="tableData">
-  {{count}} records found
+  
   <ct-table [records]="tableData" 
             [caption]="'ROMYYY'" 
             [index]="index" 

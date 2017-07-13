@@ -1,12 +1,15 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { SearchService } from './services/search.service';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
  import {MdCardModule, MdInputModule, MdButtonModule, MdSelectModule} from '@angular/material'
 import { AppComponent }  from './app.component';
-import { FormComponent }  from './forms/productForm/form.component';
+import { FormComponent }  from './forms/productForm/form.component'; 
+import {ViewProductComponent} from './views/viewProduct/view-product.component';
+//import {ViewProductModule} from './views/viewProduct/view-product.module'
+
 import {FormModule} from './forms/productForm/form.module';
 
 import {Headers, HttpModule} from '@angular/http';
@@ -29,6 +32,7 @@ import {RouterModule} from '@angular/router';
       MdInputModule,
       MdButtonModule,
       HttpModule,
+     // ViewProductModule,
 
       SharedModule,
       MdSelectModule,
@@ -38,6 +42,10 @@ import {RouterModule} from '@angular/router';
   {
     path: 'search',
     component: FormComponent
+  },
+  {
+    path: 'viewproduct/:id',
+    component: ViewProductComponent
   },
   {
     path: '',
@@ -50,14 +58,17 @@ import {RouterModule} from '@angular/router';
   declarations: [ 
     AppComponent,
     FormComponent,
- 
+ ViewProductComponent,
     PaginationComponent
     ],
   exports: [
     FormComponent
   ],
    providers: [
-        MdIconRegistry
+        MdIconRegistry,
+        SearchService
+    
+
     ],
   bootstrap:    [ AppComponent ]
 })

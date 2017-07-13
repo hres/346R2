@@ -5,7 +5,9 @@
     <thead>
       <tr>
         
-            <th class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" (click)="sortCol(i)" [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}">{{ map.header }}                       
+            <th  class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" 
+            (click)="sortCol(i)" 
+            [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}">{{ map.header }}                       
                        <span class="iconGroup" *ngIf="(i === selectedRow && i===index) || (i===index && index===0)" [ngClass]="{'toggle': flag && i === selectedRow , 'toggle2':!flag  && i === selectedRow} ">⇑</span>                  
             </th>
           
@@ -14,7 +16,8 @@
     <tbody>
 <tr *ngFor="let record of records">
      <td *ngFor="let map of columnMaps"
-     [ctStyleCell]="record[map.primaryKey]">
+     [ctStyleCell]="record[map.primaryKey]" 
+                 (click)="passIt(record.product_id)">
            {{ record[map.primaryKey] | formatCell:map.format }}
      </td>
 </tr>

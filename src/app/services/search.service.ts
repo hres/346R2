@@ -24,6 +24,16 @@ constructor(private http: Http){}
                    .then(response => response.json() as Response);
     } 
 
+    getProduct(id: number | string):Promise<Response>{
+   console.log("Function is being called");
+           return this.http
+                  // .get(`http://localhost:8080/fcdr/webapi/myresource/product`)
+
+                    .get(`http://localhost:8080/fcdr/webapi/myresource/getproduct?id=${id}`)
+                   .toPromise()
+                   .then(response => response.json() as Response);
+    }
+
 
 
 }
