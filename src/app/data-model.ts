@@ -9,7 +9,7 @@ export type Response = {
 
 export type  Params = {
     classification_name: string;
-    classification_number: number;
+    classification_number: string;
     classification_type: string;
     product_manufacturer: string;
     product_brand: string;
@@ -17,7 +17,10 @@ export type  Params = {
     cluster_number: number;
     product_description: string;
     product_comment: string;
-    product_id: number
+    product_id: number,
+    offset: number, 
+    flag: boolean,
+    orderby: string
 
 };
 

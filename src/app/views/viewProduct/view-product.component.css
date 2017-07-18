@@ -27,7 +27,7 @@ div.flex > md-select{
     position: relative;
     top: 30%;
     float: right;
-    margin-right: 1.2px;
+    margin-right: 3px;
 }
 .productDetails{
     position: relative;
@@ -35,4 +35,24 @@ div.flex > md-select{
     top: 30%;
     margin-left: 34px;
     font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.row > div, .row > div  md-input-container, .row > div  md-select {
+    width: 100%;
+     margin: 0 7px;
+     font-size: 17.5px;
+     flex: 1;
+}
+
+.errorMessages{
+
+    color: red;
+
+ font-size: 0.8em;
+    width: 100%;
+    margin-top: -10px;
+       
+       margin-left: 6px;
+   
+
 }

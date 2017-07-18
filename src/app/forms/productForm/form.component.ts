@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
-import { Params, Classification_name, Classification_number } from '../../data-model';
+import { Params, Classification_name, Classification_number,Response } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder,Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -39,10 +39,12 @@ export class FormComponent implements OnChanges {
     Classification_name = Classification_name;
     Classification_number = Classification_number;
 
+    
+
     count = 0;
     pageSizes = 10;
-    value: any;
-    queryString = '';
+    //value: any;
+   // queryString = '';
     index: number = 0;
     flag: boolean = true;
     direction: boolean[];
@@ -55,19 +57,22 @@ export class FormComponent implements OnChanges {
 
     constructor(private fb: FormBuilder,
         private searchService: SearchService) {
-       
-
-    }
-
-    ngOnInit():void {
-            this.createForm();
-    }
-
-    ngOnChanges() {
+            
+       this.createForm();   
        this.direction = [];
        this.direction[this.index] = false;
        this.index = 0;
        this.flag = true;
+
+
+    }
+
+    ngOnInit():void {
+            // this.createForm();          
+    }
+
+    ngOnChanges() {
+        
 
         this.productForm.reset({
             classification_name: this.product.classification_name,
@@ -87,7 +92,7 @@ export class FormComponent implements OnChanges {
     createForm() {
         this.productForm = this.fb.group({
             classification_name: '',
-            classification_number: '',
+            classification_number:'',
             classification_type: '',
             product_manufacturer: '',
             product_brand: '',
@@ -127,30 +132,21 @@ export class FormComponent implements OnChanges {
     onSubmit() {
 
 
-        this.offset = 0;
-        this.count = 0;
-        this.queryString = null;
-        this.noData = null;
-        this.emptyField = null;
+        this.setValues();
+        // this.queryString = '?';
 
+        // for (const prop in this.product) {
+        //     if (this.product.hasOwnProperty(prop)) {
+        //         this.queryString += encodeURIComponent(prop) + '=' + (this.product[prop] == null ? '' : encodeURIComponent(this.product[prop])) + '&';
+        //     }
+        // }
+        // this.queryString += `offset=${this.offset}`;
+        // this.queryString += `&orderby=product_description`;
+        // this.queryString += `&flag=true`
+        // this.queryString = this.queryString.slice(0, this.queryString.length);
+        // console.log(this.queryString);
 
-
-        this.product = this.prepareSaveProduct();
-        this.submitted = true;
-        this.queryString = '?';
-
-        for (const prop in this.product) {
-            if (this.product.hasOwnProperty(prop)) {
-                this.queryString += encodeURIComponent(prop) + '=' + (this.product[prop] == null ? '' : encodeURIComponent(this.product[prop])) + '&';
-            }
-        }
-        this.queryString += `offset=${this.offset}`;
-        this.queryString += `&orderby=product_description`;
-        this.queryString += `&flag=true`
-        this.queryString = this.queryString.slice(0, this.queryString.length);
-        console.log(this.queryString);
-
-        this.searchService.search(this.queryString).then(response => {
+        this.searchService.search(JSON.stringify(this.product)).then(response => {
             const {data, message, status} = response;
 
             if (status === 202) {
@@ -190,7 +186,7 @@ export class FormComponent implements OnChanges {
 
 
 
-        this.ngOnChanges();
+       // this.ngOnChanges();
     }
 
     prepareSaveProduct(): Params {
@@ -200,14 +196,14 @@ export class FormComponent implements OnChanges {
 
     offSetVal(n: number) {
         this.offset = n;
+        this.product.offset = n;
+        // this.queryString = this.queryString.replace(/(offset=)(\w+)/, "$1" + this.offset);
+        // console.log("in Parent");
+        // console.log(this.offset, this.queryString);
 
-        this.queryString = this.queryString.replace(/(offset=)(\w+)/, "$1" + this.offset);
-        console.log("in Parent");
-        console.log(this.offset, this.queryString);
 
 
-
-        this.searchService.search(this.queryString).then(response => {
+        this.searchService.search(JSON.stringify(this.product)).then(response => {
             const {data, message, status} = response;
 
             this.tableData = data.values;
@@ -244,16 +240,19 @@ export class FormComponent implements OnChanges {
         this.flag = this.direction[i];
         this.direction = this.direction.map((item, index) => i === index ? !this.direction[i] : false);
         
-        console.log(this.settings[i].primaryKey);
+        // console.log(this.settings[i].primaryKey);
 
-        this.queryString = this.queryString.replace(/(orderby=)(\w+)/, "$1" + this.settings[i].primaryKey);
-        this.queryString = this.queryString.replace(/(flag=)(\w+)/, "$1" + this.direction[i]);
-        this.queryString = this.queryString.replace(/(offset=)(\w+)/, "$1" + '0');
+        // this.queryString = this.queryString.replace(/(orderby=)(\w+)/, "$1" + this.settings[i].primaryKey);
+        // this.queryString = this.queryString.replace(/(flag=)(\w+)/, "$1" + this.direction[i]);
+        // this.queryString = this.queryString.replace(/(offset=)(\w+)/, "$1" + '0');
 
-        console.log("Did Alex solved this? humm..", i, this.direction[i], this.queryString);
+        // console.log("Did Alex solved this? humm..", i, this.direction[i], this.queryString);
         this.offset = 0;
+        this.product.offset = 0;
+        this.product.orderby = this.settings[i].primaryKey;
+        this.product.flag = this.direction[i];
 
-        this.searchService.search(this.queryString).then(response => {
+        this.searchService.search(JSON.stringify(this.product)).then(response => {
             const {data, message, status} = response;
 
             //this.tableData = data.values.map((item, index) => item[index].primaryKey === "product_description" ?  "LOLO" : item['product_description']);
@@ -279,7 +278,7 @@ export class FormComponent implements OnChanges {
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData= data.values; 
-
+                console.log("Data received", data.values);
 
             }
 
@@ -304,6 +303,28 @@ export class FormComponent implements OnChanges {
             'pattern': 'Must be a number'
         }
 
+    }
+    setValues():void{
+        this.offset = 0;
+        this.count = 0;
+       // this.queryString = null;
+        this.noData = null;
+        this.emptyField = null;
+
+        
+       this.direction = [];
+       this.direction[this.index] = false;
+       this.index = 0;
+       this.flag = true;
+
+        this.product = this.prepareSaveProduct();
+        this.product.orderby = "product_description";
+        this.product.flag = this.flag;
+        this.product.offset = this.offset;
+
+
+        console.log(this.product);
+        this.submitted = true;
     }
 
 }

@@ -3,74 +3,88 @@
     <md-card-content>
         <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
             <div style="margin-bottom: 2.3em; " class="productHeader">
-                <span class="productDetails">Product Details</span>
-             <span class="buttons">
-<button md-raised-button type="submit" [disabled]="!productForm.valid">SUBMIT</button>
-<button type="reset"  (click)="revert()" md-raised-button [disabled]="productForm.pristine">RESET</button>
-</span>  
+<span class="productDetails">Product Details</span>
+<span class="buttons">
+<button md-raised-button type="submit" [disabled]="productForm.pristine || !productForm.valid">Save Changes</button>
+<button type="reset"  (click)="revert()" md-raised-button [disabled]="productForm.pristine" style="background-color:lightseagreen">REVERT</button>
+</span>
 </div>
 <div>
-    <div class="flex">
-    
-        <md-select placeholder="Classification Name" formControlName="classification_name">
-            <md-option *ngFor="let classif of Classification_name" [value]="classif">{{classif}}</md-option>
+    <div class="flex row">
+        <div>
+            <md-select placeholder="Classification Name" formControlName="classification_name">
+                <md-option *ngFor="let classif of Classification_name" [value]="classif">{{classif}}</md-option>
 
-        </md-select>
-        <md-select placeholder="Classification Number" formControlName="classification_number">
-            <md-option *ngFor="let classifi of Classification_number" [value]="classifi">{{classifi}}</md-option>
+            </md-select>
+        </div>
+        <div>
+            <md-select placeholder="Classification Number" formControlName="classification_number">
+                <md-option *ngFor="let classifi of Classification_number" [value]="classifi">{{classifi}}</md-option>
 
-        </md-select>
+            </md-select>
+        </div>
     </div>
-    <div class="flex ">
-
-        <md-input-container>
-            <input mdInput placeholder="Classification Type" formControlName="classification_type">
-        </md-input-container>
-
-
-        <md-input-container>
-            <input mdInput placeholder="Manufactuer" formControlName="product_manufacturer">
-        </md-input-container>
-
+    <div class="flex row">
+        <div>
+            <md-input-container>
+                <input mdInput placeholder="Classification Type" formControlName="classification_type">
+            </md-input-container>
+        </div>
+        <div>
+            <md-input-container>
+                <input mdInput placeholder="Manufactuer" formControlName="product_manufacturer">
+            </md-input-container>
+        </div>
     </div>
-    <div class="flex ">
+    <div class="flex row">
 
+        <div>
+            <md-input-container>
+                <input mdInput placeholder="Brand" formControlName="product_brand">
+            </md-input-container>
+        </div>
+        <div>
 
-        <md-input-container>
-            <input mdInput placeholder="Brand" formControlName="product_brand">
-        </md-input-container>
-
-
-
-        <md-input-container>
-            <input mdInput placeholder="CNF CODE" formControlName="cnf_code">
-        </md-input-container>
-
-        <md-input-container>
-            <input mdInput placeholder="Cluster Number" formControlName="cluster_number">
-        </md-input-container>
-
-
-
-    </div>
-
-
-
-    <div class="flex">
-
-
-
-        <md-input-container>
-            <input mdInput placeholder="Description" formControlName="product_description">
-        </md-input-container>
+            <md-input-container>
+                <input mdInput placeholder="CNF CODE" formControlName="cnf_code">
+            </md-input-container>
+            <div *ngIf="formErrors.cnf_code" class="errorMessages">
+                <span class="textPosition">  {{formErrors.cnf_code}}</span>
+            </div>
+        </div>
+        <div>
+            <md-input-container>
+                <input mdInput placeholder="Cluster Number" formControlName="cluster_number">
+            </md-input-container>
+            <div *ngIf="formErrors.cluster_number" class="errorMessages">
+                <span class="textPosition"> {{formErrors.cluster_number}}</span>
+            </div>
+        </div>
 
     </div>
 
-    <div class="flex">
-        <md-input-container>
-            <input mdInput placeholder="Comment" formControlName="product_comment">
-        </md-input-container>
 
+
+    <div class="flex row">
+
+
+        <div>
+            <md-input-container>
+                <input mdInput placeholder="Description" formControlName="product_description">
+            </md-input-container>
+
+            <div *ngIf="formErrors.product_description" class="errorMessages">
+                <span class="textPosition">   {{formErrors.product_description}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex row">
+        <div>
+            <md-input-container>
+                <input mdInput placeholder="Comment" formControlName="product_comment">
+            </md-input-container>
+        </div>
     </div>
 
     <md-card-actions>
