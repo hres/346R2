@@ -50,12 +50,6 @@ div.bodycard{
 
 }
 
-/*
-.full-width {
-    width: 100%;
-    margin: 0 7px;
-}*/
-
-/*.ng-invalid:not(form){
-    border-left: 5px solid #a94442;
-}*/
+.tab{
+    margin-top: 7px;
+}

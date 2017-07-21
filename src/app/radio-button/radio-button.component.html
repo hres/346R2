@@ -1,0 +1,18 @@
+   <section class="section-margin">
+    <span  style="font-size: 1.2em;">  <label><strong>Search by:</strong></label></span>
+      <md-radio-group [(ngModel)]="searchBy" >
+        <md-radio-button  class="example-margin" value="product">
+          Product
+        </md-radio-button>
+        <md-radio-button class="example-margin" value="sales">
+          Market Share
+        </md-radio-button>
+        <md-radio-button class="example-margin" value="label">
+          Label
+        </md-radio-button>
+      </md-radio-group>
+    </section>
+    <forms-center [searchBy]="searchBy">
+    </forms-center>
+
+      

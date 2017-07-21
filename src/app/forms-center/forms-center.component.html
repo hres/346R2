@@ -1,0 +1,16 @@
+<div *ngIf="searchBy">
+
+   
+        <div [hidden]="searchBy !=='product'">
+            <form-comp></form-comp>
+        </div>
+        <div [hidden]="searchBy !=='sales'">
+            Sales Component
+        </div>
+        <div [hidden]="searchBy !=='label'">
+            Label Component
+        </div>
+  
+
+ 
+</div>

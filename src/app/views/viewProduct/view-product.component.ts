@@ -23,6 +23,7 @@ export class ViewProductComponent implements OnInit {
     emptyField: string = null;
     queryString: string = null;
     count: number = 0;
+    isDisabled: boolean = true;
     noData: string = null;
     submitted: boolean = false;
     constructor(private fb: FormBuilder,
@@ -34,6 +35,8 @@ export class ViewProductComponent implements OnInit {
 
     }
 
+
+
     createForm() {
         this.productForm = this.fb.group({
             classification_name: '',
@@ -44,7 +47,7 @@ export class ViewProductComponent implements OnInit {
             cnf_code: ['', [Validators.pattern('\\d+')]],
             cluster_number: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             product_description: ['', [Validators.required]],
-            product_comment: ''
+            product_comment: {value:'', disabled: this.isDisabled}
 
 
         });
@@ -121,7 +124,7 @@ export class ViewProductComponent implements OnInit {
 
     }
     ngOnInit(): void {
-
+       
         console.log("This is called");
         this.route.paramMap
             .switchMap((param: ParamMap) =>
@@ -137,7 +140,6 @@ export class ViewProductComponent implements OnInit {
 
 
     }
-
     ngOnChanges() {
 
                 this.productForm.reset({
