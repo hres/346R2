@@ -11,6 +11,9 @@
 }
 .headerCard{
     background-color: #33cccc;
+    /*position: fixed;
+    z-index: 1;
+    width: 100%;*/
 }
 .groupHeader{
     padding: 4px;
@@ -49,6 +52,7 @@ ul li{
      float: left;
         
 }
+
 
 /** {
     font-family: Roboto, sans-serif;

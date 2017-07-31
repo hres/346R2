@@ -1,0 +1,67 @@
+.addButton{
+    float: right;
+     margin-right: 10px;
+ 
+     cursor: pointer;
+    
+}
+.container{
+    position: absolute;
+    width: 98.6%;
+    height: 50px;
+    background-color: #33cccc;
+  
+}
+.classificationList{
+    position: relative;
+    top: 30%;
+}
+.title{
+    margin-left: 6px;
+    font-weight: bold;
+}
+.tableData{
+    width: 100%;
+    position: relative;
+    margin-top: 2.6%;
+}
+/*td:not(:first-child) {
+    border-left: 1px solid lightgray;
+}
+
+td:not(:last-child) {
+    border-right: 1px solid lightgray;
+}*/
+td, th {
+    padding: 9px;
+    border: none;
+}
+th{
+    text-align: left;
+
+}
+tr:nth-child(even){
+    background-color: #f0f5f5;
+}
+
+
+th:last-child, td:last-child{
+border-right: 1px solid lightgray;
+border-left:1px solid lightgray;
+
+}
+th:first-child, td:first-child{
+border-left: 1px solid lightgray;
+}
+table{
+    border-collapse: collapse;
+}
+tr:last-child, th{
+  border-bottom:   1px solid lightgray;
+}
+td:last-child{
+    text-align: right;
+}
+md-icon{
+    cursor: pointer;
+}

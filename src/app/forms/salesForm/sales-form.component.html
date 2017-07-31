@@ -1,0 +1,114 @@
+ 
+<div class="DivHeader">
+  <div class="DivLogo">
+    Search Market Share
+  </div>
+
+  <div class="bodycard">
+    <md-card>
+
+      <md-card-content>
+        <form (ngSubmit)="onSubmit()" [formGroup]="salesForm">
+
+
+          <div class="flex row">
+    
+           <div>
+            <md-input-container>
+              <input mdInput placeholder="Sales UPC" formControlName="sales_upc">
+            </md-input-container>
+            </div>
+
+                       <div>
+            <md-input-container>
+              <input mdInput placeholder="Sales Description" formControlName="sales_description">
+            </md-input-container>
+            </div>
+           <div>
+            <md-input-container>
+              <input mdInput placeholder="Source" formControlName="sales_source">
+            </md-input-container>
+            </div>
+ 
+
+          </div>
+          <div class="flex row">
+            <div>
+            <md-input-container>
+              <input mdInput placeholder="Sales Year" formControlName="sales_year">
+            </md-input-container>
+            </div>
+            <div>
+            <md-input-container>
+              <input mdInput placeholder="Nielsen Category" formControlName="nielsen_category">
+            </md-input-container>
+            </div>
+                       <div>
+            <md-input-container>
+              <input mdInput placeholder="Sales Comment" formControlName="sales_comment">
+            </md-input-container>
+            </div>
+          </div>
+          <div class="flex row">
+
+            <div>
+              <md-input-container>
+                <input mdInput placeholder="Collection Date From" [mdDatepicker]="pickerFrom" formControlName="collection_date_from">
+                <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerFrom"></button>
+              </md-input-container>
+              <md-datepicker #pickerFrom></md-datepicker>
+            </div>
+
+        <div>
+              <md-input-container>
+                <input mdInput placeholder="Collection Date to" [mdDatepicker]="pickerTo" formControlName="collection_date_to">
+                <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerTo"></button>
+              </md-input-container>
+              <md-datepicker #pickerTo></md-datepicker>
+            </div>
+          </div>
+
+
+
+
+
+          <md-card-actions>
+            <div style="float: right">
+<button md-raised-button type="submit" [disabled]="!salesForm.valid">SUBMIT</button>
+<button type='reset' md-raised-button>RESET</button>
+</div>
+</md-card-actions>
+
+</form>
+</md-card-content>
+
+</md-card>
+</div>
+</div>
+
+<!--<div *ngIf="tableData">-->
+<!--<table-template [tableValues]="tableData"></table-template>-->
+<h2 *ngIf="emptyField">
+
+  {{emptyField}}
+</h2>
+<h2 *ngIf="noData">
+
+  {{noData}}
+</h2>
+
+<div *ngIf="tableData">
+  
+  <ct-table [records]="tableData" 
+            [caption]="'ROMYYY'" 
+            [index]="index" 
+            [flag]="direction[index]"
+            [settings]="settings"
+             (trigger)="sortBy2($event)">
+
+  </ct-table>
+</div>
+<!--<pagination (offSet) = "onPageChange($event)"-->
+<pagination [pageSize]="pageSizes" [numberOfRecords]="count" [(pageOffset)]="offset" (offSetVal)="offSetVal($event)">
+</pagination>
+

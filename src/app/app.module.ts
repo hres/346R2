@@ -5,9 +5,14 @@ import { SearchService } from './services/search.service';
 // import {NgSwitch} from '@angular/common';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
- import {MdCardModule, MdInputModule, MdButtonModule, MdSelectModule, MdSliderModule, MdRadioModule} from '@angular/material'
+ import {MdCardModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule, MdDatepickerModule} from '@angular/material'
 import { AppComponent }  from './app.component';
 import { FormComponent }  from './forms/productForm/form.component'; 
+import { SalesFormComponent }  from './forms/salesForm/sales-form.component'; 
+import { LabelFormComponent }  from './forms/labelForm/label-form.component'; 
+import {ModalBoxComponent} from './modal-box/modal-box.component'
+
+
 import {ViewProductComponent} from './views/viewProduct/view-product.component';
 //import {ViewProductModule} from './views/viewProduct/view-product.module'
 
@@ -17,6 +22,8 @@ import {Headers, HttpModule} from '@angular/http';
 
 import {PaginationModelModule} from './pagination/pagination.model'
 import {PaginationComponent} from './pagination/pagination.component'
+import {TableComponent} from './table/table.component'
+
 import {RadioButtonModule} from './radio-button/radio-button.module'
 import {RadioButtonComponent} from './radio-button/radio-button.component'
 import {FormsCenterModule} from './forms-center/forms-center.module'
@@ -41,16 +48,24 @@ import {RouterModule} from '@angular/router';
       MdTabsModule,
       MdSliderModule,
       MdRadioModule,
+      MdDatepickerModule,
       SharedModule,
       MdSelectModule,
       RadioButtonModule,
       FormsCenterModule,
+      MdNativeDateModule,
+      MdSidenavModule,
       MdIconModule,
       RouterModule.forRoot([
 
   {
     path: 'search',
     component: FormComponent
+  },
+  {
+    path: 'salesSearch',
+    component: SalesFormComponent
+
   },
   {
     path: 'viewproduct/:id',
@@ -74,12 +89,21 @@ import {RouterModule} from '@angular/router';
     ViewProductComponent,
     PaginationComponent,
     RadioButtonComponent,
-    FormsCenterComponent
+    FormsCenterComponent,
+    SalesFormComponent,
+    LabelFormComponent,
+    TableComponent,
+    ModalBoxComponent
+    
     ],
   exports: [
     FormComponent,
     RadioButtonComponent,
-    FormsCenterComponent
+    FormsCenterComponent,
+    SalesFormComponent,
+    LabelFormComponent,
+    TableComponent,
+    ModalBoxComponent
   ],
    providers: [
         MdIconRegistry,

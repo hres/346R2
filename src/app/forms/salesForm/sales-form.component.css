@@ -1,0 +1,55 @@
+
+div.flex{
+    display: flex;
+}
+div.flex > md-input-container, div.flex > md-select{
+    flex: 1;
+    margin: 0 7px;
+    font-size: 15px;
+}
+div.flex > md-select{
+    margin-bottom: 7px;
+}
+/*.DivHeader{
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: lightblue;
+}*/
+.DivLogo{
+
+    background-color: lightblue;
+    padding: 15px 15px;
+    border: 2px solid lightblue;
+
+}
+.DivHeader{
+    position: relative;
+}
+div.bodycard{
+    position: relative;
+}
+
+.row > div, .row > div  md-input-container, .row > div  md-select {
+    width: 100%;
+     margin: 0 7px;
+     font-size: 15px;
+     flex: 1;
+}
+
+.errorMessages{
+
+    color: red;
+
+ font-size: 0.8em;
+    width: 100%;
+    margin-top: -10px;
+       
+       margin-left: 6px;
+   
+
+}
+
+.tab{
+    margin-top: 7px;
+}

@@ -1,10 +1,10 @@
 import 'rxjs/add/operator/switchMap';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnChanges, Input, OnInit } from '@angular/core';
-import { Response, Params, Classification_name, Classification_number } from '../../data-model';
+import { Response, Params, Classification_name, Classification_number, ClassificationList } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
-import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
 
 
@@ -31,7 +31,7 @@ export class ViewProductComponent implements OnInit {
         private router: Router,
         private route: ActivatedRoute) {
 
-        this.createForm();
+
 
     }
 
@@ -47,36 +47,53 @@ export class ViewProductComponent implements OnInit {
             cnf_code: ['', [Validators.pattern('\\d+')]],
             cluster_number: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             product_description: ['', [Validators.required]],
-            product_comment: {value:'', disabled: this.isDisabled}
+            product_comment: { value: '', disabled: this.isDisabled },
+            classification_list: this.fb.array([])
 
 
         });
-                this.productForm.valueChanges
+        this.productForm.valueChanges
             .subscribe(data => this.onValueChanged(data));
 
         this.onValueChanged();
     }
 
 
+    setClassifcationList(classificationList: ClassificationList[]) {
+        const classificationFGs = classificationList.map(classification => this.fb.group(classification));
+        const classificationFormArray = this.fb.array(classificationFGs);
+        this.productForm.setControl('classification_list', classificationFormArray);
+
+    }
+    get classification_list(): FormArray {
+        return this.productForm.get('classification_list') as FormArray;
+
+    }
+    addClassification() {
+        this.classification_list.push(this.fb.group(new ClassificationList()));
+    }
+    deleteClassification(i: number) {
+        this.classification_list.removeAt(i)
+    }
 
     onValueChanged(data?: any) {
-        if(!this.productForm){return;}
+        if (!this.productForm) { return; }
         const form = this.productForm;
 
-        for(const field in this.formErrors){
+        for (const field in this.formErrors) {
             this.formErrors[field] = '';
             const control = form.get(field);
 
-            if (control && control.dirty && !control.valid){
+            if (control && control.dirty && !control.valid) {
                 const messages = this.validationMessages[field];
-                for(const key in control.errors){
-                    this.formErrors[field]+=messages[key] + ' ';
+                for (const key in control.errors) {
+                    this.formErrors[field] += messages[key] + ' ';
                 }
             }
         }
 
     }
-    onSubmit(){
+    onSubmit() {
 
         console.log(this.params['product_id'], "Is the product ID");
         this.submitted = true;
@@ -84,7 +101,7 @@ export class ViewProductComponent implements OnInit {
         //Call update service 
 
         console.log(this.params);
-                this.queryString = '?';
+        this.queryString = '?';
 
         for (const prop in this.params) {
             console.log(prop, " ");
@@ -92,21 +109,44 @@ export class ViewProductComponent implements OnInit {
                 this.queryString += encodeURIComponent(this.params[prop]) + '=' + (this.params[prop] == null ? '' : encodeURIComponent(this.params[prop])) + '&';
             }
         }
-         this.queryString += `product_id=${this.params['product_id']}`;
+        this.queryString += `product_id=${this.params['product_id']}`;
 
-         this.queryString = this.queryString.slice(0, this.queryString.length);
+        this.queryString = this.queryString.slice(0, this.queryString.length);
 
         console.log(this.queryString);
         this.ngOnChanges();
 
 
     }
-    prepareSaveParams(): Params{
+    prepareSaveParams(): Params {
 
-        return this.productForm.value;
+        const formModel = this.productForm.value;
+        
+        const classificationDeepCopy: ClassificationList[] = formModel.classification_list.map(
+            (classificationList: ClassificationList) => Object.assign({}, classificationList)
+        );
+       
+        const saveProduct: Params = {
+
+            classification_name: this.params.classification_name as string,
+            classification_number: this.params.classification_number as string,
+            classification_type: this.params.classification_type as string,
+            product_manufacturer: this.params.product_manufacturer as string,
+            product_brand: this.params.product_brand as string,
+            cnf_code: this.params.cnf_code as number,
+            cluster_number: this.params.cluster_number as number,
+            product_description: this.params.product_description as string,
+            product_comment: this.params.product_comment as string,
+            classification_list: classificationDeepCopy,
+            product_id: this.params.product_id,
+
+        };
+
+        return saveProduct;
+
     }
 
-        formErrors = {
+    formErrors = {
         'product_description': '',
         'cnf_code': '',
         'cluster_number': ''
@@ -124,13 +164,14 @@ export class ViewProductComponent implements OnInit {
 
     }
     ngOnInit(): void {
-       
+        this.createForm();
         console.log("This is called");
+
         this.route.paramMap
             .switchMap((param: ParamMap) =>
 
                 this.searchService.getProduct(param.get('id'))).subscribe(
-            (parameter: Response) => {
+            (parameter: Response<Params>) => {
 
                 this.params = parameter.data.values[0];
                 this.ngOnChanges();
@@ -138,27 +179,27 @@ export class ViewProductComponent implements OnInit {
             }
             );
 
-
     }
     ngOnChanges() {
 
-                this.productForm.reset({
+        this.productForm.reset({
 
-                    classification_name: this.params['classification_name'] && this.params['classification_name'] != null?this.params['classification_name'].toString():this.params['classification_name'],
-                    classification_number: this.params['classification_number']!=null?this.params['classification_number'].toString():this.params['classification_name'],     
-                    classification_type: this.params['classification_type'],
-                    product_manufacturer: this.params['product_manufacturer'],
-                    product_brand: this.params['product_brand'],
-                    cnf_code: this.params['cnf_code'],
-                    cluster_number: this.params['cluster_number'],
-                    product_description: this.params['product_description'],
-                    product_comment: this.params['product_comment']
+            classification_name: this.params['classification_name'] && this.params['classification_name'] != null ? this.params['classification_name'].toString() : this.params['classification_name'],
+            classification_number: this.params['classification_number'] != null ? this.params['classification_number'].toString() : this.params['classification_name'],
+            classification_type: this.params['classification_type'],
+            product_manufacturer: this.params['product_manufacturer'],
+            product_brand: this.params['product_brand'],
+            cnf_code: this.params['cnf_code'],
+            cluster_number: this.params['cluster_number'],
+            product_description: this.params['product_description'],
+            product_comment: this.params['product_comment']
 
 
-                });
+        });
+       // this.setClassifcationList(this.params.classification_list);
     }
 
-    revert(){
+    revert() {
         this.ngOnChanges();
     }
 

@@ -1,38 +1,38 @@
 <md-card class="headerCard">
-    <div class="groupHeader">
-   <span class="homeIcon">
+  <div class="groupHeader">
+    <span class="homeIcon">
     <md-icon>home</md-icon> 
   </span>
     <span class="title">
     Food Component Data Repository
     </span>
-    </div>
-   </md-card>
-   
-     <!--<ul>
+  </div>
+
+  <!--<a md-tab-link href="#" style="font-size: 1.2em;">Create Product</a>
+        <a md-tab-link href="#" style="font-size: 1.2em;">Import Data</a>-->
+
+
+</md-card>
+
+<!--<ul>
         <li> <a  routerLink="/search" style="border-bottom: 2.2px solid #33cccc ">search product</a> </li>
         <li>  <a href="#">Create Product</a> </li>
         <li>  <a href="#">Import Data</a> </li>
 
      </ul>-->
-     
-
+<div class="navBar" >
   <nav md-tab-nav-bar>
-    <a md-tab-link 
-    *ngFor="let l of list"
-    [routerLink] = "l"
-       routerLinkActive #rla="routerLinkActive"
-       [active]="rla.isActive" style="font-size: 1.2em;">
-       Search
-    </a>
-    <!--<a md-tab-link href="#" style="font-size: 1.2em;">Create Product</a>
-        <a md-tab-link href="#" style="font-size: 1.2em;">Import Data</a>-->
+    <a md-tab-link *ngFor="let l of list" [routerLink]="l" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" style="font-size: 1.2em;"> Search
+</a>
+</nav>
+</div>
 
 
-  </nav>
 
 
-   <router-outlet></router-outlet>
-   <!--<radio-button></radio-button>-->
-<!--<form-comp></form-comp>-->
-<!--<ct-project-center></ct-project-center>-->
+
+  <router-outlet></router-outlet>
+  <!--<radio-button></radio-button>-->
+  <!--<form-comp></form-comp>-->
+  <!--<ct-project-center></ct-project-center>-->
+  

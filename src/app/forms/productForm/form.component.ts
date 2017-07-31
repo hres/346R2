@@ -21,6 +21,7 @@ export class FormComponent implements OnChanges {
 
 
     tableData: Params[];
+
     submitted = false;
     offset: number = 0;
     @Input() product: Params;
@@ -146,7 +147,7 @@ export class FormComponent implements OnChanges {
         // this.queryString = this.queryString.slice(0, this.queryString.length);
         // console.log(this.queryString);
 
-        this.searchService.search(JSON.stringify(this.product)).then(response => {
+        this.searchService.search(JSON.stringify(this.product)).subscribe(response => {
             const {data, message, status} = response;
 
             if (status === 202) {
@@ -168,6 +169,7 @@ export class FormComponent implements OnChanges {
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData= data.values; 
+                console.log(data.values);
 
                 
 
@@ -203,7 +205,7 @@ export class FormComponent implements OnChanges {
 
 
 
-        this.searchService.search(JSON.stringify(this.product)).then(response => {
+        this.searchService.search(JSON.stringify(this.product)).subscribe(response => {
             const {data, message, status} = response;
 
             this.tableData = data.values;
@@ -252,7 +254,7 @@ export class FormComponent implements OnChanges {
         this.product.orderby = this.settings[i].primaryKey;
         this.product.flag = this.direction[i];
 
-        this.searchService.search(JSON.stringify(this.product)).then(response => {
+        this.searchService.search(JSON.stringify(this.product)).subscribe(response => {
             const {data, message, status} = response;
 
             //this.tableData = data.values.map((item, index) => item[index].primaryKey === "product_description" ?  "LOLO" : item['product_description']);

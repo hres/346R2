@@ -9,7 +9,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
-  list  = ["radiobutton", "search"]
+  list  = ["radiobutton"]
   constructor(mdIconRegistry: MdIconRegistry) {
 
   }

@@ -1,8 +1,10 @@
+
+<div>
 <md-card *ngIf="productForm">
 
     <md-card-content>
         <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
-            <div style="margin-bottom: 2.3em; " class="productHeader">
+            <div style="margin-bottom: 1em; " class="productHeader">
 <span class="productDetails">Product Details</span>
 <span class="buttons">
 <button md-raised-button type="submit" [disabled]="productForm.pristine || !productForm.valid">Save Changes</button>
@@ -10,7 +12,7 @@
 </span>
 </div>
 <div>
-    <div class="flex">
+    <!--<div class="flex">
      
             <md-select placeholder="Classification Name" formControlName="classification_name">
                 <md-option *ngFor="let classif of Classification_name" [value]="classif">{{classif}}</md-option>
@@ -22,17 +24,17 @@
 
             </md-select>
         
-    </div>
+    </div>-->
     <div class="flex row">
-        <div>
+        <!--<div>
             <md-input-container>
                 <input mdInput placeholder="Classification Type" formControlName="classification_type">
             </md-input-container>
-        </div>
+        </div>-->
         <div>
             <md-input-container>
                 <input mdInput placeholder="Manufactuer" formControlName="product_manufacturer">
-                <md-icon mdSuffix>mode_edit</md-icon>
+                
             </md-input-container>
         </div>
     </div>
@@ -55,7 +57,7 @@
         <div>
             <md-input-container>
                 <input mdInput placeholder="Cluster Number" formControlName="cluster_number">
-                <md-icon mdSuffix>mode_edit</md-icon>
+            
             </md-input-container>
             <div *ngIf="formErrors.cluster_number" class="errorMessages">
                 <span class="textPosition"> {{formErrors.cluster_number}}</span>
@@ -69,38 +71,72 @@
     <div class="flex row">
 
 
-        <div>
-            <md-input-container>
+        <div> 
+            <md-input-container >
                 <input mdInput placeholder="Description" formControlName="product_description">
-                <md-icon mdSuffix>mode_edit</md-icon>
+            
             </md-input-container>
 
             <div *ngIf="formErrors.product_description" class="errorMessages">
                 <span class="textPosition">   {{formErrors.product_description}}</span>
             </div>
         </div>
+   
     </div>
 
-    <div class="flex row">
+    <div class="flex row" style="margin-bottom: -32px;">
         <div>
             <md-input-container>
                 <input mdInput #comment maxlength="256" placeholder="Comment" formControlName="product_comment">
-                <md-icon mdSuffix>mode_edit</md-icon>
-                <md-hint align="start"><strong>OYESSSOOOO</strong></md-hint>
+                <md-icon mdSuffix>delete</md-icon>
+                <md-hint align="start"><strong>Let's add something here</strong></md-hint>
                 <md-hint align="end">{{comment.value.length}} / 256</md-hint>
             </md-input-container>
         </div>
+    </div>
+
+    <div formArrayName="classification_list">
+        <div *ngFor="let classification of classification_list.controls; let i=index" [formGroupName]="i" >
+     
+             <div class="flex row">
+          <div>
+            <md-input-container>
+                <input mdInput placeholder="Classification Name" formControlName="classification_name">
+            </md-input-container>
+        </div>
+         </div>
+        <div class="flex row">
+          <div>
+            <md-input-container>
+                <input mdInput placeholder="Classification Number" formControlName="classification_number">
+            </md-input-container>
+        </div>
+
+                  <div>
+            <md-input-container>
+                <input mdInput placeholder="Classification Type" formControlName="classification_type">
+            </md-input-container>
+        </div>
+        <md-icon (click)="deleteClassification(i)" >delete</md-icon>
+          <!--<button (click)="deleteClassification(i)" type="button">Delete</button>-->
+         </div>  
+        </div>
+
+
     </div>
 
     <md-card-actions>
 
     </md-card-actions>
 </div>
+
 </form>
 </md-card-content>
 
 </md-card>
 
+<custom-table></custom-table>
+</div>
 
 <!--<div *ngIf="tableData">-->
 <!--<table-template [tableValues]="tableData"></table-template>-->
