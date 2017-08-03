@@ -1,7 +1,7 @@
 export type Response<T> = {
     data: {
         count: number,
-        values: T[]
+        dataList: T[]
     },
     status: number,
     message: string
@@ -26,8 +26,16 @@ export type  Params = {
 };
 
 
+export class addClass  {
+    classificationName= '';    
+    classificationNumber= '';
+    classificationType= '';
+    classificationId?:number;
+    productId?: number; 
+}
 
-export const Classification_name = ['First classification', 'Second Classification', ''];
+
+export const Classification_name = ['First classification', 'Second Classification',''];
 export const Classification_number = ['1.0121', '1.0122', '1.0123', ''];
 
 export class ClassificationList{
@@ -38,30 +46,32 @@ export class ClassificationList{
 
 }
 
+
+
 export type SalesInputFields = {
-    sales_upc: string,
-    sales_description: string,
-    sales_source: string,
-    sales_year: number,
-    nielsen_category: string, 
-    sales_comment: string,
-    collection_date_from: string,
-    collection_date_to: string,
-    product_id: number,
+    salesUpc: string,
+    salesDescription: string,
+    salesSource: string,
+    salesYear: number,
+    nielsenCategory: string, 
+    salesComment: string,
+    collectionDateFrom: string,
+    collectionDateTo: string,
+    productId: number,
     offset: number,
     flag: boolean,
-    orderby: string
+    orderBy: string
 };
 
 export type SalesData = {
-    sales_upc: string,
-    sales_description: string,
-    sales_source: string,
-    sales_year: number,
-    nielsen_category: string, 
-    dollar_volume: number,
-    kilo_volume: number,
-    product_id: number
+    salesUpc: string,
+    salesDescription: string,
+    salesSource: string,
+    salesYear: number,
+    nielsenCategory: string, 
+    dollarVolume: number,
+    kiloVolume: number,
+    productId: number
 };
 
 export type LabelInputFields ={
@@ -85,5 +95,6 @@ export type LabelData = {
     label_creation_date: string,
     label_last_edited: string, 
     label_edited_by: string
+    productId: number
 
 }

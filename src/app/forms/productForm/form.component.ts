@@ -24,7 +24,7 @@ export class FormComponent implements OnChanges {
 
     submitted = false;
     offset: number = 0;
-    @Input() product: Params;
+ product: Params;
      settings: ColumnSetting[] = [
                 {primaryKey: 'product_description', header: 'Description'},
                 {primaryKey: 'product_brand', header: 'Brand'},
@@ -60,6 +60,7 @@ export class FormComponent implements OnChanges {
         private searchService: SearchService) {
             
        this.createForm();   
+       
        this.direction = [];
        this.direction[this.index] = false;
        this.index = 0;

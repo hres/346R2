@@ -135,8 +135,13 @@
 
 </md-card>
 
-<custom-table></custom-table>
+<custom-table 
+    (deleteEvent)="responseDelete($flag)"
+    (updateEvent)="responseUpdate($flag)"
+    (addEvent)="responseAdd($flag)"
+>
+</custom-table>
 </div>
-
+<modal-box [(from)]="from" [(method)]="method" (displayModal)="checkModal($flag)" [(ids)]="Ids"></modal-box>
 <!--<div *ngIf="tableData">-->
 <!--<table-template [tableValues]="tableData"></table-template>-->

@@ -1,0 +1,22 @@
+md-input-container,  div.flex {
+    width: 98%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+     flex: 1;
+     
+}
+ md-select{
+    width: 96%;
+    margin-left: 10px;
+    margin-right: 23px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+ }
+
+div.flex{
+    display: flex;
+
+}

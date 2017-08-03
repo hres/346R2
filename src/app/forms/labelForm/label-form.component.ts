@@ -290,7 +290,7 @@ export class LabelFormComponent implements OnChanges {
         this.label.offset = this.offset;
 
 
-        console.log(this.label);
+        console.log(JSON.stringify(this.label));
         this.submitted = true;
     }
 

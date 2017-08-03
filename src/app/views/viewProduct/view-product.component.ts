@@ -18,14 +18,19 @@ import { FormGroup, FormBuilder, FormArray, Validators, ValidatorFn, AbstractCon
 export class ViewProductComponent implements OnInit {
     Classification_name = Classification_name;
     Classification_number = Classification_number;
+    Ids:any;
     params: Params;
     productForm: FormGroup;
     emptyField: string = null;
     queryString: string = null;
+        addClass: string;
+
     count: number = 0;
     isDisabled: boolean = true;
     noData: string = null;
     submitted: boolean = false;
+    method: string;
+    from: string;
     constructor(private fb: FormBuilder,
         private searchService: SearchService,
         private router: Router,
@@ -202,5 +207,31 @@ export class ViewProductComponent implements OnInit {
     revert() {
         this.ngOnChanges();
     }
+    // response(from: string, method: string) {
+    //     this.from = from;
+    //     this.method = method;
+    // }
+    responseDelete(flag: boolean){
+         this.from = 'product';
+         this.method = 'delete';
+        console.log("Delete event triggered")
+    }
+    responseUpdate(i: boolean){
+        this.method = 'update';
+        this.from = 'product';
+        console.log("Update event triggered")
+    }
+    responseAdd(i: boolean){
+
+        this.addClass = 'add';
+        this.method = 'add';
+        this.from = 'product';
+        this.Ids = {productId:this.params.product_id}
+        console.log("Add event triggered")
+    }
+    checkModal(flag: boolean){
+    this.from = null;
+    
+}
 
 }

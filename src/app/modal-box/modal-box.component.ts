@@ -7,10 +7,14 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 })
 export class ModalBoxComponent{
+    @Input() from: string;
+     @Input() method: string;
+     @Input() ids:any;
+
 @Input() modalType: string;
 @Output() displayModal= new EventEmitter<boolean>();
 
 update(){
-    this.displayModal.emit(false)
+    this.displayModal.emit(true);
 }
 }

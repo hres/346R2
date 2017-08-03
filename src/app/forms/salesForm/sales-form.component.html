@@ -15,18 +15,18 @@
     
            <div>
             <md-input-container>
-              <input mdInput placeholder="Sales UPC" formControlName="sales_upc">
+              <input mdInput placeholder="Sales UPC" formControlName="salesUpc">
             </md-input-container>
             </div>
 
                        <div>
             <md-input-container>
-              <input mdInput placeholder="Sales Description" formControlName="sales_description">
+              <input mdInput placeholder="Sales Description" formControlName="salesDescription">
             </md-input-container>
             </div>
            <div>
             <md-input-container>
-              <input mdInput placeholder="Source" formControlName="sales_source">
+              <input mdInput placeholder="Source" formControlName="salesSource">
             </md-input-container>
             </div>
  
@@ -35,17 +35,17 @@
           <div class="flex row">
             <div>
             <md-input-container>
-              <input mdInput placeholder="Sales Year" formControlName="sales_year">
+              <input mdInput placeholder="Sales Year" formControlName="salesYear">
             </md-input-container>
             </div>
             <div>
             <md-input-container>
-              <input mdInput placeholder="Nielsen Category" formControlName="nielsen_category">
+              <input mdInput placeholder="Nielsen Category" formControlName="nielsenCategory">
             </md-input-container>
             </div>
                        <div>
             <md-input-container>
-              <input mdInput placeholder="Sales Comment" formControlName="sales_comment">
+              <input mdInput placeholder="Sales Comment" formControlName="salesComment">
             </md-input-container>
             </div>
           </div>
@@ -53,7 +53,7 @@
 
             <div>
               <md-input-container>
-                <input mdInput placeholder="Collection Date From" [mdDatepicker]="pickerFrom" formControlName="collection_date_from">
+                <input mdInput placeholder="Collection Date From" [mdDatepicker]="pickerFrom" formControlName="collectionDateFrom">
                 <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerFrom"></button>
               </md-input-container>
               <md-datepicker #pickerFrom></md-datepicker>
@@ -61,7 +61,7 @@
 
         <div>
               <md-input-container>
-                <input mdInput placeholder="Collection Date to" [mdDatepicker]="pickerTo" formControlName="collection_date_to">
+                <input mdInput placeholder="Collection Date to" [mdDatepicker]="pickerTo" formControlName="collectionDateTo">
                 <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerTo"></button>
               </md-input-container>
               <md-datepicker #pickerTo></md-datepicker>

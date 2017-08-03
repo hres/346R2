@@ -12,6 +12,8 @@ import { SalesFormComponent }  from './forms/salesForm/sales-form.component';
 import { LabelFormComponent }  from './forms/labelForm/label-form.component'; 
 import {ModalBoxComponent} from './modal-box/modal-box.component'
 
+import { AddClassificationComponent }  from './classification-center/add-classification/add-classification.component'; 
+
 
 import {ViewProductComponent} from './views/viewProduct/view-product.component';
 //import {ViewProductModule} from './views/viewProduct/view-product.module'
@@ -93,7 +95,8 @@ import {RouterModule} from '@angular/router';
     SalesFormComponent,
     LabelFormComponent,
     TableComponent,
-    ModalBoxComponent
+    ModalBoxComponent,
+    AddClassificationComponent
     
     ],
   exports: [
@@ -103,7 +106,8 @@ import {RouterModule} from '@angular/router';
     SalesFormComponent,
     LabelFormComponent,
     TableComponent,
-    ModalBoxComponent
+    ModalBoxComponent,
+    AddClassificationComponent
   ],
    providers: [
         MdIconRegistry,

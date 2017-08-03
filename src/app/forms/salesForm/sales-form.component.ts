@@ -1,9 +1,9 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
-import {DatePipe} from '@angular/common';
-import { Params, SalesInputFields,Response, SalesData } from '../../data-model';
+import { DatePipe } from '@angular/common';
+import { Params, SalesInputFields, Response, SalesData } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
-import { FormGroup, FormBuilder,Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 //import { classification, FormValues } from '../../form-model';
 
 // import { ProjectService } from './project-center/project.service';
@@ -25,20 +25,20 @@ export class SalesFormComponent implements OnChanges {
 
     submitted = false;
     offset: number = 0;
-    @Input() sales: SalesInputFields;
-    
-     settings: ColumnSetting[] = [
-                {primaryKey: 'sales_upc', header: 'Sales UPC'},
-                {primaryKey: 'sales_description', header: 'Sales Description'},
-                {primaryKey: 'sales_source', header: 'Source'},
-                {primaryKey: 'sales_year', header: 'Sales Year'},
-                {primaryKey: 'nielsen_category', header: 'Nielsen Category'},
-                {primaryKey: 'dollar_volume', header: 'Dollar Volume'},
-                {primaryKey: 'kilo_volume', header: 'Kilo Volume'}
-       
-                
-                ];
- 
+    sales: SalesInputFields;
+
+    settings: ColumnSetting[] = [
+        { primaryKey: 'salesUpc', header: 'Sales UPC' },
+        { primaryKey: 'salesDescription', header: 'Sales Description' },
+        { primaryKey: 'salesSource', header: 'Source' },
+        { primaryKey: 'salesYear', header: 'Sales Year' },
+        { primaryKey: 'nielsenCategory', header: 'Nielsen Category' },
+        { primaryKey: 'dollarVolume', header: 'Dollar Volume' },
+        { primaryKey: 'kiloVolume', header: 'Kilo Volume' }
+
+
+    ];
+
 
     count = 0;
     pageSizes = 10;
@@ -46,7 +46,7 @@ export class SalesFormComponent implements OnChanges {
     index: number = 0;
     flag: boolean = true;
     direction: boolean[];
-    orderby: string = '';
+    orderBy: string = '';
     emptyField: string;
     noData: string;
 
@@ -55,32 +55,32 @@ export class SalesFormComponent implements OnChanges {
 
     constructor(private fb: FormBuilder,
         private searchService: SearchService) {
-            
-       this.createForm();   
-       this.direction = [];
-       this.direction[this.index] = false;
-       this.index = 0;
-       this.flag = true;
+
+        this.createForm();
+        this.direction = [];
+        this.direction[this.index] = false;
+        this.index = 0;
+        this.flag = true;
 
 
     }
 
-    ngOnInit():void {
-     
+    ngOnInit(): void {
+
     }
 
     ngOnChanges() {
-        
+
 
         this.salesForm.reset({
-            sales_upc: this.sales.sales_upc,
-            sales_description: this.sales.sales_description,
-            sales_source: this.sales.sales_source,
-            sales_year: this.sales.sales_year,
-            nielsen_category: this.sales.nielsen_category,
-            sales_comment: this.sales.sales_comment,
-            collection_date_from: this.sales.collection_date_from,
-            collection_date_to: this.sales.collection_date_to,
+            salesUpc: this.sales.salesUpc,
+            salesDescription: this.sales.salesDescription,
+            salesSource: this.sales.salesSource,
+            salesYear: this.sales.salesYear,
+            nielsenCategory: this.sales.nielsenCategory,
+            salesComment: this.sales.salesComment,
+            collectionDateFrom: this.sales.collectionDateFrom,
+            collectionDateTo: this.sales.collectionDateTo,
         }
         );
 
@@ -88,14 +88,14 @@ export class SalesFormComponent implements OnChanges {
 
     createForm() {
         this.salesForm = this.fb.group({
-            sales_upc: ['', [Validators.pattern('\\d+')]],
-            sales_description:'',
-            sales_source: '',
-            sales_year: ['', [Validators.pattern('\\d+')]],
-            nielsen_category: '',
-            sales_comment: '',
-            collection_date_from: [''],
-            collection_date_to: ''
+            salesUpc: ['', [Validators.pattern('\\d+')]],
+            salesDescription: '',
+            salesSource: '',
+            salesYear: ['', [Validators.pattern('\\d+')]],
+            nielsenCategory: '',
+            salesComment: '',
+            collectionDateFrom: [''],
+            collectionDateTo: ''
 
 
         });
@@ -109,17 +109,17 @@ export class SalesFormComponent implements OnChanges {
 
 
     onValueChanged(data?: any) {
-        if(!this.salesForm){return;}
+        if (!this.salesForm) { return; }
         const form = this.salesForm;
 
-        for(const field in this.formErrors){
+        for (const field in this.formErrors) {
             this.formErrors[field] = '';
             const control = form.get(field);
 
-            if (control && control.dirty && !control.valid){
+            if (control && control.dirty && !control.valid) {
                 const messages = this.validationMessages[field];
-                for(const key in control.errors){
-                    this.formErrors[field]+=messages[key] + ' ';
+                for (const key in control.errors) {
+                    this.formErrors[field] += messages[key] + ' ';
                 }
             }
         }
@@ -131,51 +131,51 @@ export class SalesFormComponent implements OnChanges {
         this.setValues();
 
 
-        // this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
-        //     const {data, message, status} = response;
+        this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
+            const {data, message, status} = response;
 
-        //     if (status === 202) {
-        //         this.emptyField = message;
-        //         console.log(message);
-        //         this.tableData = null;
-        //     } else if (status === 203) {
+            if (status === 202) {
+                this.emptyField = message;
+                console.log(message);
+                this.tableData = null;
+            } else if (status === 203) {
 
-        //         this.noData = message;
+                this.noData = message;
 
-        //         this.tableData = null;
-        //     }else if (status === 204) {
-        //         this.noData = message;
+                this.tableData = null;
+            }else if (status === 204) {
+                this.noData = message;
 
-        //         this.tableData = null;
+                this.tableData = null;
 
-        //     }
-        //      else {
-        //         this.emptyField = null;
-        //         this.count = data.count;
-        //         this.tableData= data.values; 
-
-                
+            }
+             else {
+                this.emptyField = null;
+                this.count = data.count;
+                this.tableData= data.dataList; 
 
 
 
-        //         for (var num = 0; num < this.settings.length; num++) {
-        //             if (num === 0) {
-        //                 this.direction[num] = true;
-        //             } else {
-        //                 this.direction[num] = false;
-        //             }
-        //         }
-        //     }
-
-        // });
 
 
+                for (var num = 0; num < this.settings.length; num++) {
+                    if (num === 0) {
+                        this.direction[num] = true;
+                    } else {
+                        this.direction[num] = false;
+                    }
+                }
+            }
 
-       // this.ngOnChanges();
+        });
+
+
+
+        // this.ngOnChanges();
     }
 
     prepareSavesales(): SalesInputFields {
-        
+
         return this.salesForm.value;
     }
 
@@ -192,8 +192,8 @@ export class SalesFormComponent implements OnChanges {
         this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
             const {data, message, status} = response;
 
-            this.tableData = data.values;
-                    if (status === 202) {
+            this.tableData = data.dataList;
+            if (status === 202) {
                 this.emptyField = message;
                 console.log(message);
                 this.tableData = null;
@@ -202,7 +202,7 @@ export class SalesFormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
-            }else if (status === 204) {
+            } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
@@ -210,7 +210,8 @@ export class SalesFormComponent implements OnChanges {
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData= data.values; 
+                console.log("this is the data received", data.dataList);
+                this.tableData = data.dataList;
 
 
             }
@@ -227,16 +228,17 @@ export class SalesFormComponent implements OnChanges {
         this.direction = this.direction.map((item, index) => i === index ? !this.direction[i] : false);
         this.offset = 0;
         this.sales.offset = 0;
-        this.sales.orderby = this.settings[i].primaryKey;
+        this.sales.orderBy = this.settings[i].primaryKey;
         this.sales.flag = this.direction[i];
 
+console.log(JSON.stringify(this.sales));
         this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
             const {data, message, status} = response;
 
-            this.tableData = data.values;
+            this.tableData = data.dataList;
 
 
-        if (status === 202) {
+            if (status === 202) {
                 this.emptyField = message;
                 console.log(message);
                 this.tableData = null;
@@ -245,7 +247,7 @@ export class SalesFormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
-            }else if (status === 204) {
+            } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
@@ -253,8 +255,8 @@ export class SalesFormComponent implements OnChanges {
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData= data.values; 
-                console.log("Data received", data.values);
+                this.tableData = data.dataList;
+                console.log("Data received", data.dataList);
 
             }
 
@@ -278,29 +280,29 @@ export class SalesFormComponent implements OnChanges {
 
     }
 
-    setValues():void{
+    setValues(): void {
         this.offset = 0;
         this.count = 0;
-       // this.queryString = null;
+        // this.queryString = null;
         this.noData = null;
         this.emptyField = null;
 
-        
-       this.direction = [];
-       this.direction[this.index] = false;
-       this.index = 0;
-       this.flag = true;
+
+        this.direction = [];
+        this.direction[this.index] = false;
+        this.index = 0;
+        this.flag = true;
 
         this.sales = this.prepareSavesales();
         var date = new DatePipe('en-US');
-        this.sales.collection_date_from = this.sales.collection_date_from? date.transform(this.sales.collection_date_from, 'dd/MM/yyyy'):this.sales.collection_date_from ;
-        this.sales.collection_date_to = this.sales.collection_date_to? date.transform(this.sales.collection_date_to, 'dd/MM/yyyy'):this.sales.collection_date_to ;
-        this.sales.orderby = "sales_upc";
+        this.sales.collectionDateFrom = this.sales.collectionDateFrom ? date.transform(this.sales.collectionDateFrom, 'dd/MM/yyyy') : this.sales.collectionDateFrom;
+        this.sales.collectionDateTo = this.sales.collectionDateTo ? date.transform(this.sales.collectionDateTo, 'dd/MM/yyyy') : this.sales.collectionDateTo;
+        this.sales.orderBy = "salesUpc";
         this.sales.flag = this.flag;
         this.sales.offset = this.offset;
 
 
-        console.log(this.sales);
+        console.log(JSON.stringify(this.sales));
         this.submitted = true;
     }
 

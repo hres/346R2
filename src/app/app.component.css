@@ -53,7 +53,16 @@ ul li{
         
 }
 
+* {
+    filter: blue(.0px);
+    perspective: 1000;
+    backface-visibility: hidden;
+}
 
+/*html, html a, *{
+  -webkit-transform: translate3d(0,0,0) !important;
+  transform: translate3d(0,0,0) !important;
+}*/
 /** {
     font-family: Roboto, sans-serif;
 }*/

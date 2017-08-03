@@ -1,0 +1,31 @@
+<div *ngIf="1">
+    <!--{{credentials.productId}}-->
+    <form (ngSubmit)="onSubmit()" [formGroup]="classificationtForm">
+        <div class="flex row">
+
+
+
+            <md-select (ngModelChange)="callAlex($event)" placeholder="Classification Number" formControlName="classificationNumber">
+                <md-option *ngFor="let classifi of Classification_number;let i = index" [value]="classifi">{{classifi}}</md-option>
+
+            </md-select>
+            <md-select placeholder="Classification Name" formControlName="classificationName">
+                <md-option *ngFor="let classifi of Classification_name;let i = index" [value]="classifi">{{classifi}}</md-option>
+
+            </md-select>
+
+        </div>
+        <div class="flex row">
+
+            <md-input-container>
+                <input mdInput placeholder="Classification Type" formControlName="classificationType">
+            </md-input-container>
+
+
+        </div>
+        <div style="float: right">
+<button type="submit" [disabled]="!classificationtForm.valid">SUBMIT</button>
+<button (click)="resetValues()">RESET</button>
+</div>
+</form>
+</div>

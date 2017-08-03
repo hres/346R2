@@ -10,11 +10,13 @@
     width: 98.6%;
     height: 50px;
     background-color: #33cccc;
+    margin-bottom: 20px;
   
 }
 .classificationList{
     position: relative;
     top: 30%;
+    
 }
 .title{
     margin-left: 6px;

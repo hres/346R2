@@ -1,14 +1,21 @@
-
-<div *ngIf="modalType" class="modalContent" (click)="update()">
+<div *ngIf="from && ids" class="modalContent">
     <div class="modalMain">
-        <div class="modalHeader">This is a header</div>
-        <div class="modalBody">
-            Body
-        </div>
-        <div class="modalFooter">
-            <button>CANCEL</button>
-            <button>CONTINUE</button>
-        </div>
+        <div class="modalHeader">Add Classification <span *ngIf="method==='delete'">Delete</span></div>
+        <div class="modalBody" style="margin-left: 10px;">
         
-    </div>
+<add-classification [(credentials)]="ids"></add-classification>
+
+</div>
+<div class="modalFooter">
+
+
+</div>
+<div style="width: 100%; height: 25px; position: fixed; background-color:white;">
+<span style=" float: right;">
+<md-icon (click)="update()">close</md-icon>
+</span>
+</div>
+
+</div>
+
 </div>

@@ -1,38 +1,36 @@
 <div>
-<div class="container">
-<div class="classificationList">
-<span class="title">{{title}}</span>
-<span class="addButton" (click)="add('class')"><md-icon >add</md-icon></span>
-</div>
-<div class="tableData">
-<table style="width:100%;">
-  <tr>
-    <th>Classification Name</th>
-    <th>Classification Number</th> 
-    <th>Classification Type</th>
-    <th></th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-        <td>                <md-icon >delete</md-icon><md-icon >edit</md-icon>
+  <div class="container">
+    <div class="classificationList">
+      <span class="title">{{title}}</span>
+      <span class="addButton" (click)="add('class')"><md-icon >add</md-icon></span>
+    </div>
+    <div class="tableData">
+      <table style="width:100%;">
+<tr>
+  <th>Classification Name</th>
+  <th>Classification Number</th>
+  <th>Classification Type</th>
+  <th></th>
+</tr>
+<tr>
+  <td>Jill</td>
+  <td>Smith</td>
+  <td>50</td>
+  <td> <span class="addButton" (click)="delete()">  <md-icon>delete</md-icon></span>
+  <span class="addButton" (click)="update()">    <md-icon>edit</md-icon></span>
 
-</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
-    <td>                <md-icon >delete</md-icon><md-icon >edit</md-icon>
+  </td>
+</tr>
+<tr>
+  <td>Eve</td>
+  <td>Jackson</td>
+  <td>94</td>
+  <td> <span class="addButton" (click)="delete()">  <md-icon>delete</md-icon></span>
+  <span class="addButton" (click)="update()">    <md-icon>edit</md-icon></span>
 
-</td>
-  </tr>
+  </td>
+</tr>
 </table>
 </div>
 </div>
 </div>
-<modal-box
-    [(modalType)]="addClass"
-    (displayModal)="checkModal($flag)"
-></modal-box>

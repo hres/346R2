@@ -45,6 +45,7 @@ constructor(private http: Http){}
                    .map(response => response.json() as Response<Params>);
     }
 
+
         searchSales(queryString: string):Observable<Response<SalesData>>{
 
 
@@ -53,7 +54,7 @@ constructor(private http: Http){}
 
 
         return this.http
-                   .post('http://localhost:8080/fcdr/webapi/myresource/product',queryString,this.options)
+                   .post('http://10.148.179.244:8087/fcdr-rest-service/rest/SalesService/salesfiltered',queryString,this.options)
                    .map(response => response.json() as Response<SalesData>);
 
     } 
