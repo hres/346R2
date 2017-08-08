@@ -28,7 +28,7 @@ export class FormComponent implements OnChanges {
      settings: ColumnSetting[] = [
                 {primaryKey: 'product_description', header: 'Description'},
                 {primaryKey: 'product_brand', header: 'Brand'},
-                {primaryKey: 'product_manufactuer', header: 'Manufacturer'},
+                {primaryKey: 'product_manufacturer', header: 'Manufacturer'},
                 {primaryKey: 'classification_number', header: 'Classification Number'},
                 {primaryKey: 'classification_name', header: 'Classification Name'},
                 {primaryKey: 'classification_type', header: 'Classification Type'},
@@ -209,8 +209,8 @@ export class FormComponent implements OnChanges {
         this.searchService.search(JSON.stringify(this.product)).subscribe(response => {
             const {data, message, status} = response;
 
-            this.tableData = data.values;
-                    if (status === 202) {
+
+            if (status === 202) {
                 this.emptyField = message;
                 console.log(message);
                 this.tableData = null;
@@ -243,13 +243,7 @@ export class FormComponent implements OnChanges {
         this.flag = this.direction[i];
         this.direction = this.direction.map((item, index) => i === index ? !this.direction[i] : false);
         
-        // console.log(this.settings[i].primaryKey);
 
-        // this.queryString = this.queryString.replace(/(orderby=)(\w+)/, "$1" + this.settings[i].primaryKey);
-        // this.queryString = this.queryString.replace(/(flag=)(\w+)/, "$1" + this.direction[i]);
-        // this.queryString = this.queryString.replace(/(offset=)(\w+)/, "$1" + '0');
-
-        // console.log("Did Alex solved this? humm..", i, this.direction[i], this.queryString);
         this.offset = 0;
         this.product.offset = 0;
         this.product.orderby = this.settings[i].primaryKey;
@@ -258,12 +252,7 @@ export class FormComponent implements OnChanges {
         this.searchService.search(JSON.stringify(this.product)).subscribe(response => {
             const {data, message, status} = response;
 
-            //this.tableData = data.values.map((item, index) => item[index].primaryKey === "product_description" ?  "LOLO" : item['product_description']);
-
-            this.tableData = data.values;
-
-
-        if (status === 202) {
+        if (status === 205) {
                 this.emptyField = message;
                 console.log(message);
                 this.tableData = null;
@@ -310,7 +299,6 @@ export class FormComponent implements OnChanges {
     setValues():void{
         this.offset = 0;
         this.count = 0;
-       // this.queryString = null;
         this.noData = null;
         this.emptyField = null;
 

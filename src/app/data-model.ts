@@ -1,7 +1,7 @@
 export type Response<T> = {
     data: {
         count: number,
-        dataList: T[]
+        values: T[]
     },
     status: number,
     message: string
@@ -97,4 +97,9 @@ export type LabelData = {
     label_edited_by: string
     productId: number
 
+}
+
+export type InsertDataMessage = {
+    status: number,
+    message: string
 }

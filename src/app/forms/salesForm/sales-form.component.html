@@ -96,7 +96,9 @@
 
   {{noData}}
 </h2>
-
+<div *ngIf="isLoading">
+<md-progress-bar mode="indeterminate"></md-progress-bar>
+</div>
 <div *ngIf="tableData">
   
   <ct-table [records]="tableData" 
@@ -109,6 +111,7 @@
   </ct-table>
 </div>
 <!--<pagination (offSet) = "onPageChange($event)"-->
+  
 <pagination [pageSize]="pageSizes" [numberOfRecords]="count" [(pageOffset)]="offset" (offSetVal)="offSetVal($event)">
 </pagination>
 

@@ -2,10 +2,12 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SearchService } from './services/search.service';
+import { AddClassificationService } from './services/add-classification.service';
+
 // import {NgSwitch} from '@angular/common';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
- import {MdCardModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule, MdDatepickerModule} from '@angular/material'
+ import {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule, MdDatepickerModule} from '@angular/material'
 import { AppComponent }  from './app.component';
 import { FormComponent }  from './forms/productForm/form.component'; 
 import { SalesFormComponent }  from './forms/salesForm/sales-form.component'; 
@@ -51,6 +53,7 @@ import {RouterModule} from '@angular/router';
       MdSliderModule,
       MdRadioModule,
       MdDatepickerModule,
+      MdProgressBarModule,
       SharedModule,
       MdSelectModule,
       RadioButtonModule,
@@ -111,7 +114,8 @@ import {RouterModule} from '@angular/router';
   ],
    providers: [
         MdIconRegistry,
-        SearchService
+        SearchService,
+        AddClassificationService
     
 
     ],

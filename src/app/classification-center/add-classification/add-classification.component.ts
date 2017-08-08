@@ -1,7 +1,8 @@
 import { Component, OnChanges, Input, ViewChild, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
-import { Classification_name, Classification_number, addClass } from '../../data-model';
+import { Classification_name, Classification_number, addClass,InsertDataMessage } from '../../data-model';
+import { AddClassificationService } from '../../services/add-classification.service';
 
 @Component({
     selector: 'add-classification',
@@ -17,8 +18,9 @@ export class AddClassificationComponent implements OnChanges {
     classificationtForm: FormGroup;
     Classification_name = Classification_name;
     Classification_number = Classification_number;
-
-    constructor(private fb: FormBuilder) {
+    dataSaved: boolean = true;
+    constructor(private fb: FormBuilder,
+                private addClassificationService: AddClassificationService) {
         this.createForm();
 
 
@@ -45,32 +47,48 @@ export class AddClassificationComponent implements OnChanges {
             classificationName: '',
             classificationType: ''
         });
-        // this.ngOnChanges();
+
     }
 
 
     onSubmit() {
         this.setValues();
-        console.log(this.classificationList, "PYESSOOO");
+        console.log(JSON.stringify(this.classificationList), "PYESSOOO");
+
+        //         this.addClassificationService.addClassification(JSON.stringify(this.classificationList)).subscribe(response => {
+        //     const { message, status} = response;
+
+        //     if (status === 205) {
+        //         this.dataSaved = false;
+
+        //     } else if (status === 203) {
+
+            
+
+        //     }else if (status === 204) {
+
+    
+
+        //     } else {
+
+
+        //     }
+
+
+
+        // });
     }
     setValues() {
         this.classificationList = this.classificationtForm.value;
-        //this.classificationList.productId = this.credentials.productId;
+        this.classificationList.productId = this.credentials.productId;
     }
 
     callAlex(n: string) {
-        //this.classificationList.classificationName = this.Classification_name[0];
-        // console.log(this.classificationList);
+
         console.log(n, "is the index");
 
         this.classificationtForm.controls['classificationName'].setValue(this.Classification_name[0]);
-        // this.classificationtForm.patchValue({
-        //    classificationName: this.Classification_name[0]
-        // })
-        // this.classificationtForm.reset({
-        //            classificationName: this.Classification_name[0] //'First classification'
-        // }
-        // );
+
     }
     resetValues() {
         this.classificationtForm.reset();

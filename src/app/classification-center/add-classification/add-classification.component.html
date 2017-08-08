@@ -1,6 +1,6 @@
 <div *ngIf="1">
     <!--{{credentials.productId}}-->
-    <form (ngSubmit)="onSubmit()" [formGroup]="classificationtForm">
+    <form (ngSubmit)="onSubmit()" [formGroup]="classificationtForm" *ngIf="dataSaved">
         <div class="flex row">
 
 
@@ -28,4 +28,7 @@
 <button (click)="resetValues()">RESET</button>
 </div>
 </form>
+<div *ngIf="!dataSaved">
+    Data successfuly saved, exit now!
+</div>
 </div>

@@ -3,6 +3,7 @@ import {Headers, Http,RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/timeout';
 import {Params, Response, SalesData} from '../data-model';
 
 
@@ -40,6 +41,7 @@ constructor(private http: Http){}
    console.log("Function is being called ",body );
            return this.http
 //http://10.148.179.244:8087/fcdr-rest-service/rest/ProductService/
+//(response => {
                     .post('http://localhost:8080/fcdr/webapi/myresource/getproduct',body,this.options)
                   // .toPromise()
                    .map(response => response.json() as Response<Params>);

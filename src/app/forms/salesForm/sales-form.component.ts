@@ -26,7 +26,7 @@ export class SalesFormComponent implements OnChanges {
     submitted = false;
     offset: number = 0;
     sales: SalesInputFields;
-
+    isLoading: boolean = false;
     settings: ColumnSetting[] = [
         { primaryKey: 'salesUpc', header: 'Sales UPC' },
         { primaryKey: 'salesDescription', header: 'Sales Description' },
@@ -38,6 +38,7 @@ export class SalesFormComponent implements OnChanges {
 
 
     ];
+    Order: string []= ['sales_upc', 'sales_description', 'sales_source', 'sales_year', 'nielsen_category', 'dollar_volume', 'kilo_volume'];
 
 
     count = 0;
@@ -130,10 +131,10 @@ export class SalesFormComponent implements OnChanges {
 
         this.setValues();
 
-
+       
         this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
             const {data, message, status} = response;
-
+ this.isLoading = true;
             if (status === 202) {
                 this.emptyField = message;
                 console.log(message);
@@ -152,7 +153,9 @@ export class SalesFormComponent implements OnChanges {
              else {
                 this.emptyField = null;
                 this.count = data.count;
+                this.isLoading = false;
                 this.tableData= data.dataList; 
+                console.log(this.tableData);
 
 
 
@@ -188,10 +191,10 @@ export class SalesFormComponent implements OnChanges {
         // console.log(this.offset, this.queryString);
 
 
-
+this.isLoading = true;
         this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
             const {data, message, status} = response;
-
+this.isLoading = false;
             this.tableData = data.dataList;
             if (status === 202) {
                 this.emptyField = message;
@@ -228,14 +231,15 @@ export class SalesFormComponent implements OnChanges {
         this.direction = this.direction.map((item, index) => i === index ? !this.direction[i] : false);
         this.offset = 0;
         this.sales.offset = 0;
-        this.sales.orderBy = this.settings[i].primaryKey;
+        this.sales.orderBy = this.Order[i];
         this.sales.flag = this.direction[i];
 
 console.log(JSON.stringify(this.sales));
+this.isLoading = true;
         this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
             const {data, message, status} = response;
-
-            this.tableData = data.dataList;
+            this.isLoading = false;
+          //  this.tableData = data.dataList;
 
 
             if (status === 202) {
@@ -257,7 +261,7 @@ console.log(JSON.stringify(this.sales));
                 this.count = data.count;
                 this.tableData = data.dataList;
                 console.log("Data received", data.dataList);
-
+               
             }
 
 
@@ -297,7 +301,7 @@ console.log(JSON.stringify(this.sales));
         var date = new DatePipe('en-US');
         this.sales.collectionDateFrom = this.sales.collectionDateFrom ? date.transform(this.sales.collectionDateFrom, 'dd/MM/yyyy') : this.sales.collectionDateFrom;
         this.sales.collectionDateTo = this.sales.collectionDateTo ? date.transform(this.sales.collectionDateTo, 'dd/MM/yyyy') : this.sales.collectionDateTo;
-        this.sales.orderBy = "salesUpc";
+        this.sales.orderBy =this.Order[0];
         this.sales.flag = this.flag;
         this.sales.offset = this.offset;
 
