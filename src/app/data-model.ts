@@ -1,10 +1,10 @@
 export type Response<T> = {
     data: {
-        count: number,
+        count?: number,
         values: T[]
     },
-    status: number,
-    message: string
+    status?: number,
+    message?: string
 };
 
 export type  Params = {
@@ -24,6 +24,7 @@ export type  Params = {
     classification_list: ClassificationList[];
 
 };
+
 
 
 export class addClass  {
@@ -75,26 +76,26 @@ export type SalesData = {
 };
 
 export type LabelInputFields ={
-    label_upc: string,
-    label_description: string,
-    label_source: string, 
-    label_ingredients: string,
-    collection_date_from: string,
-    collection_date_to: string,
-    product_id: number,
+    labelUpc: string,
+    labelDescription: string,
+    labelSource: string, 
+    labelIngredients: string,
+    collectionDateFrom: string,
+    collectionDateTo: string,
+    productId: number,
     offset: number,
     flag: boolean,
-    orderby: string
+    orderBy: string
 };
 
 export type LabelData = {
-    label_upc: string,
-    label_description: string,
-    label_source: string,
-    label_collection_date: string,
-    label_creation_date: string,
-    label_last_edited: string, 
-    label_edited_by: string
+    labelUpc: string,
+    labelDescription: string,
+    labelSource: string,
+    labelCollectionDate: string,
+    labelLastEditDate: string,
+    labelLastEditedDate: string,
+    labelLastEditedBy: string, 
     productId: number
 
 }

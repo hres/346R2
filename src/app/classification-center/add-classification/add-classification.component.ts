@@ -1,7 +1,8 @@
 import { Component, OnChanges, Input, ViewChild, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { SearchService } from '../../services/search.service';
 
-import { Classification_name, Classification_number, addClass,InsertDataMessage } from '../../data-model';
+import { Classification_name, Classification_number, addClass,InsertDataMessage,ClassificationList } from '../../data-model';
 import { AddClassificationService } from '../../services/add-classification.service';
 
 @Component({
@@ -15,12 +16,14 @@ export class AddClassificationComponent implements OnChanges {
 
     @Input() credentials: any;
     classificationList: addClass = new addClass();
+    listOfClass: addClass[];
     classificationtForm: FormGroup;
     Classification_name = Classification_name;
     Classification_number = Classification_number;
     dataSaved: boolean = true;
     constructor(private fb: FormBuilder,
-                private addClassificationService: AddClassificationService) {
+                private addClassificationService: AddClassificationService,
+                private service: SearchService) {
         this.createForm();
 
 
@@ -39,6 +42,18 @@ export class AddClassificationComponent implements OnChanges {
 
 
     }
+    ngOnInit(){
+                console.log("HUMMM");
+                this.service.getClassification().subscribe(response =>
+                {  
+                 const cl = response;
+                 this.listOfClass = cl;
+                 console.log("HUMMM", this.listOfClass);
+
+                 }
+            );
+
+    }
 
 
     createForm() {
@@ -55,28 +70,7 @@ export class AddClassificationComponent implements OnChanges {
         this.setValues();
         console.log(JSON.stringify(this.classificationList), "PYESSOOO");
 
-        //         this.addClassificationService.addClassification(JSON.stringify(this.classificationList)).subscribe(response => {
-        //     const { message, status} = response;
 
-        //     if (status === 205) {
-        //         this.dataSaved = false;
-
-        //     } else if (status === 203) {
-
-            
-
-        //     }else if (status === 204) {
-
-    
-
-        //     } else {
-
-
-        //     }
-
-
-
-        // });
     }
     setValues() {
         this.classificationList = this.classificationtForm.value;

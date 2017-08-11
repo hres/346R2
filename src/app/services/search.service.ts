@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
-import {Params, Response, SalesData} from '../data-model';
+import {Params, Response, SalesData,LabelData, ClassificationList,addClass} from '../data-model';
 
 
 @Injectable()
@@ -61,6 +61,27 @@ constructor(private http: Http){}
 
     } 
 
+searchLabel(queryString: string):Observable<Response<LabelData>>{
+
+
+
+       console.log('here', queryString);
+
+
+        return this.http
+                   .post('http://10.148.179.244:8087/fcdr-rest-service/rest/PackageService/packagefiltered',queryString,this.options)
+                   .map(response => response.json() as Response<LabelData>);
+
+    } 
+
+getClassification():Observable<addClass[]>{
+         console.log('here');
+        return this.http
+                   .get('http://localhost:8080/fcdr/webapi/myresource/getclassification',this.options)
+                   .map(response => response.json() as addClass[]);
+
+
+}
 
 
 }

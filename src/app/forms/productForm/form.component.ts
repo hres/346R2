@@ -1,8 +1,8 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
-import { Params, Classification_name, Classification_number,Response } from '../../data-model';
+import { Params, Classification_name, Classification_number, Response } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
-import { FormGroup, FormBuilder,Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 //import { classification, FormValues } from '../../form-model';
 
 // import { ProjectService } from './project-center/project.service';
@@ -21,60 +21,60 @@ export class FormComponent implements OnChanges {
 
 
     tableData: Params[];
-
+    isLoading: boolean = false;
     submitted = false;
     offset: number = 0;
- product: Params;
-     settings: ColumnSetting[] = [
-                {primaryKey: 'product_description', header: 'Description'},
-                {primaryKey: 'product_brand', header: 'Brand'},
-                {primaryKey: 'product_manufacturer', header: 'Manufacturer'},
-                {primaryKey: 'classification_number', header: 'Classification Number'},
-                {primaryKey: 'classification_name', header: 'Classification Name'},
-                {primaryKey: 'classification_type', header: 'Classification Type'},
-                {primaryKey: 'cnf_code', header: 'CNF CODE'},
-                {primaryKey: 'cluster_number', header: 'Cluster Number'},
-                
-                ];
+    product: Params;
+    settings: ColumnSetting[] = [
+        { primaryKey: 'product_description', header: 'Description' },
+        { primaryKey: 'product_brand', header: 'Brand' },
+        { primaryKey: 'product_manufacturer', header: 'Manufacturer' },
+        { primaryKey: 'classification_number', header: 'Classification Number' },
+        { primaryKey: 'classification_name', header: 'Classification Name' },
+        { primaryKey: 'classification_type', header: 'Classification Type' },
+        { primaryKey: 'cnf_code', header: 'CNF CODE' },
+        { primaryKey: 'cluster_number', header: 'Cluster Number' },
+
+    ];
 
     Classification_name = Classification_name;
     Classification_number = Classification_number;
 
-    
+
 
     count = 0;
     pageSizes = 10;
     //value: any;
-   // queryString = '';
+    // queryString = '';
     index: number = 0;
     flag: boolean = true;
     direction: boolean[];
     orderby: string = '';
     emptyField: string;
     noData: string;
-
+    serverDown: boolean = false;
 
     productForm: FormGroup;
 
     constructor(private fb: FormBuilder,
         private searchService: SearchService) {
-            
-       this.createForm();   
-       
-       this.direction = [];
-       this.direction[this.index] = false;
-       this.index = 0;
-       this.flag = true;
+
+        this.createForm();
+
+        this.direction = [];
+        this.direction[this.index] = false;
+        this.index = 0;
+        this.flag = true;
 
 
     }
 
-    ngOnInit():void {
-            // this.createForm();          
+    ngOnInit(): void {
+        // this.createForm();          
     }
 
     ngOnChanges() {
-        
+
 
         this.productForm.reset({
             classification_name: this.product.classification_name,
@@ -94,7 +94,7 @@ export class FormComponent implements OnChanges {
     createForm() {
         this.productForm = this.fb.group({
             classification_name: '',
-            classification_number:'',
+            classification_number: '',
             classification_type: '',
             product_manufacturer: '',
             product_brand: '',
@@ -115,17 +115,17 @@ export class FormComponent implements OnChanges {
 
 
     onValueChanged(data?: any) {
-        if(!this.productForm){return;}
+        if (!this.productForm) { return; }
         const form = this.productForm;
 
-        for(const field in this.formErrors){
+        for (const field in this.formErrors) {
             this.formErrors[field] = '';
             const control = form.get(field);
 
-            if (control && control.dirty && !control.valid){
+            if (control && control.dirty && !control.valid) {
                 const messages = this.validationMessages[field];
-                for(const key in control.errors){
-                    this.formErrors[field]+=messages[key] + ' ';
+                for (const key in control.errors) {
+                    this.formErrors[field] += messages[key] + ' ';
                 }
             }
         }
@@ -147,10 +147,10 @@ export class FormComponent implements OnChanges {
         // this.queryString += `&flag=true`
         // this.queryString = this.queryString.slice(0, this.queryString.length);
         // console.log(this.queryString);
-
-        this.searchService.search(JSON.stringify(this.product)).subscribe(response => {
+this.isLoading = true;
+        this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
-
+   
             if (status === 202) {
                 this.emptyField = message;
                 console.log(message);
@@ -160,19 +160,19 @@ export class FormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
-            }else if (status === 204) {
+            } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
 
             }
-             else {
+            else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData= data.values; 
-                console.log(data.values);
+                this.tableData = data.dataList;
+                console.log(data.dataList);
 
-                
+
 
 
 
@@ -185,11 +185,14 @@ export class FormComponent implements OnChanges {
                 }
             }
 
+        }, (error) =>{
+            this.serverDown=true;
+          
         });
 
 
 
-       // this.ngOnChanges();
+        // this.ngOnChanges();
     }
 
     prepareSaveProduct(): Params {
@@ -205,10 +208,10 @@ export class FormComponent implements OnChanges {
         // console.log(this.offset, this.queryString);
 
 
-
-        this.searchService.search(JSON.stringify(this.product)).subscribe(response => {
+this.isLoading = true;
+        this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
-
+            this.isLoading = false;
 
             if (status === 202) {
                 this.emptyField = message;
@@ -219,7 +222,7 @@ export class FormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
-            }else if (status === 204) {
+            } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
@@ -227,13 +230,16 @@ export class FormComponent implements OnChanges {
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData= data.values; 
+                this.tableData = data.dataList;
 
 
             }
 
 
 
+        }, (error) =>{
+            this.serverDown=true;
+          
         });
     }
 
@@ -242,17 +248,17 @@ export class FormComponent implements OnChanges {
         this.index = i;
         this.flag = this.direction[i];
         this.direction = this.direction.map((item, index) => i === index ? !this.direction[i] : false);
-        
 
+this.isLoading = true;
         this.offset = 0;
         this.product.offset = 0;
         this.product.orderby = this.settings[i].primaryKey;
         this.product.flag = this.direction[i];
-
-        this.searchService.search(JSON.stringify(this.product)).subscribe(response => {
+        this.isLoading = false;
+        this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
 
-        if (status === 205) {
+            if (status === 205) {
                 this.emptyField = message;
                 console.log(message);
                 this.tableData = null;
@@ -261,7 +267,7 @@ export class FormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
-            }else if (status === 204) {
+            } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
@@ -269,13 +275,16 @@ export class FormComponent implements OnChanges {
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData= data.values; 
-                console.log("Data received", data.values);
+                this.tableData = data.dataList;
+                console.log("Data received", data.dataList);
 
             }
 
 
 
+        }, (error) =>{
+            this.serverDown=true;
+          
         });
 
     }
@@ -296,17 +305,17 @@ export class FormComponent implements OnChanges {
         }
 
     }
-    setValues():void{
+    setValues(): void {
         this.offset = 0;
         this.count = 0;
         this.noData = null;
         this.emptyField = null;
 
-        
-       this.direction = [];
-       this.direction[this.index] = false;
-       this.index = 0;
-       this.flag = true;
+
+        this.direction = [];
+        this.direction[this.index] = false;
+        this.index = 0;
+        this.flag = true;
 
         this.product = this.prepareSaveProduct();
         this.product.orderby = "product_description";

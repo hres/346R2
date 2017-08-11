@@ -5,6 +5,7 @@ import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 //import { classification, FormValues } from '../../form-model';
+import 'rxjs/add/operator/catch';
 
 // import { ProjectService } from './project-center/project.service';
 // import { Project, Person } from './project-center/model';
@@ -27,6 +28,7 @@ export class SalesFormComponent implements OnChanges {
     offset: number = 0;
     sales: SalesInputFields;
     isLoading: boolean = false;
+    serverDown: boolean = false;
     settings: ColumnSetting[] = [
         { primaryKey: 'salesUpc', header: 'Sales UPC' },
         { primaryKey: 'salesDescription', header: 'Sales Description' },
@@ -38,7 +40,7 @@ export class SalesFormComponent implements OnChanges {
 
 
     ];
-    Order: string []= ['sales_upc', 'sales_description', 'sales_source', 'sales_year', 'nielsen_category', 'dollar_volume', 'kilo_volume'];
+    Order: string[] = ['sales_upc', 'sales_description', 'sales_source', 'sales_year', 'nielsen_category', 'dollar_volume', 'kilo_volume'];
 
 
     count = 0;
@@ -131,10 +133,14 @@ export class SalesFormComponent implements OnChanges {
 
         this.setValues();
 
-       
-        this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
+this.isLoading = true;
+        this.searchService.searchSales(JSON.stringify(this.sales))
+
+        .finally(() => {
+            this.isLoading=false;
+        })
+        .subscribe(response => {
             const {data, message, status} = response;
- this.isLoading = true;
             if (status === 202) {
                 this.emptyField = message;
                 console.log(message);
@@ -144,18 +150,16 @@ export class SalesFormComponent implements OnChanges {
                 this.noData = message;
 
                 this.tableData = null;
-            }else if (status === 204) {
+            } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
 
             }
-             else {
+            else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.isLoading = false;
-                this.tableData= data.dataList; 
-                console.log(this.tableData);
+                this.tableData = data.dataList;
 
 
 
@@ -170,6 +174,9 @@ export class SalesFormComponent implements OnChanges {
                 }
             }
 
+        }, (error) =>{
+            this.serverDown=true;
+          
         });
 
 
@@ -186,16 +193,11 @@ export class SalesFormComponent implements OnChanges {
     offSetVal(n: number) {
         this.offset = n;
         this.sales.offset = n;
-        // this.queryString = this.queryString.replace(/(offset=)(\w+)/, "$1" + this.offset);
-        // console.log("in Parent");
-        // console.log(this.offset, this.queryString);
-
-
-this.isLoading = true;
-        this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
+        this.isLoading = true;
+        this.searchService.searchSales(JSON.stringify(this.sales)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
-this.isLoading = false;
-            this.tableData = data.dataList;
+            
+
             if (status === 202) {
                 this.emptyField = message;
                 console.log(message);
@@ -213,7 +215,6 @@ this.isLoading = false;
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                console.log("this is the data received", data.dataList);
                 this.tableData = data.dataList;
 
 
@@ -221,6 +222,9 @@ this.isLoading = false;
 
 
 
+        }, (error) =>{
+            this.serverDown=true;
+          
         });
     }
 
@@ -234,13 +238,10 @@ this.isLoading = false;
         this.sales.orderBy = this.Order[i];
         this.sales.flag = this.direction[i];
 
-console.log(JSON.stringify(this.sales));
-this.isLoading = true;
-        this.searchService.searchSales(JSON.stringify(this.sales)).subscribe(response => {
+        console.log(JSON.stringify(this.sales));
+        this.isLoading = true;
+        this.searchService.searchSales(JSON.stringify(this.sales)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
-            this.isLoading = false;
-          //  this.tableData = data.dataList;
-
 
             if (status === 202) {
                 this.emptyField = message;
@@ -260,12 +261,14 @@ this.isLoading = true;
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData = data.dataList;
-                console.log("Data received", data.dataList);
-               
+
             }
 
 
 
+        }, (error) =>{
+            this.serverDown=true;
+          
         });
 
     }
@@ -287,7 +290,6 @@ this.isLoading = true;
     setValues(): void {
         this.offset = 0;
         this.count = 0;
-        // this.queryString = null;
         this.noData = null;
         this.emptyField = null;
 
@@ -299,14 +301,11 @@ this.isLoading = true;
 
         this.sales = this.prepareSavesales();
         var date = new DatePipe('en-US');
-        this.sales.collectionDateFrom = this.sales.collectionDateFrom ? date.transform(this.sales.collectionDateFrom, 'dd/MM/yyyy') : this.sales.collectionDateFrom;
-        this.sales.collectionDateTo = this.sales.collectionDateTo ? date.transform(this.sales.collectionDateTo, 'dd/MM/yyyy') : this.sales.collectionDateTo;
-        this.sales.orderBy =this.Order[0];
+        this.sales.collectionDateFrom = this.sales.collectionDateFrom ? date.transform(this.sales.collectionDateFrom, 'yyyy-MM-dd') : this.sales.collectionDateFrom;
+        this.sales.collectionDateTo = this.sales.collectionDateTo ? date.transform(this.sales.collectionDateTo, 'yyyy-MM-dd') : this.sales.collectionDateTo;
+        this.sales.orderBy = this.Order[0];
         this.sales.flag = this.flag;
         this.sales.offset = this.offset;
-
-
-        console.log(JSON.stringify(this.sales));
         this.submitted = true;
     }
 

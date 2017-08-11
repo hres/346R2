@@ -1,19 +1,26 @@
 <div *ngIf="1">
-    <!--{{credentials.productId}}-->
+    <!--{{credentials.productId}} (ngModelChange)="callAlex($event)"-->
     <form (ngSubmit)="onSubmit()" [formGroup]="classificationtForm" *ngIf="dataSaved">
         <div class="flex row">
 
 
 
-            <md-select (ngModelChange)="callAlex($event)" placeholder="Classification Number" formControlName="classificationNumber">
+            <md-select  placeholder="Classification Number" formControlName="classificationNumber">
                 <md-option *ngFor="let classifi of Classification_number;let i = index" [value]="classifi">{{classifi}}</md-option>
 
             </md-select>
-            <md-select placeholder="Classification Name" formControlName="classificationName">
-                <md-option *ngFor="let classifi of Classification_name;let i = index" [value]="classifi">{{classifi}}</md-option>
+                       <!--<ng-container *ngIf="listOfClass">
+         
+               
+             <ng-container *ngFor="let class of listOfClass">
+                 {{class['classificationName']}}
+                </ng-container>
+                 </ng-container>-->
+            <!--<md-select placeholder="Classification Name" formControlName="classificationName">
+                <md-option *ngFor="let class of listOfClass;let i = index" [value]="class.classificationName">{{class.classificationName}}</md-option>
 
-            </md-select>
-
+            </md-select>-->
+            
         </div>
         <div class="flex row">
 

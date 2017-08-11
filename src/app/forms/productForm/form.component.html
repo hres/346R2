@@ -109,7 +109,14 @@
 
   {{noData}}
 </h2>
+<div *ngIf="isLoading">
+<md-progress-bar mode="indeterminate"></md-progress-bar>
+</div>
 
+
+<div *ngIf="serverDown">
+  Something happened on the server
+</div>
 <div *ngIf="tableData">
   
   <ct-table [records]="tableData" 

@@ -1,4 +1,3 @@
- 
 <div class="DivHeader">
   <div class="DivLogo">
     Search Label
@@ -12,31 +11,31 @@
 
 
           <div class="flex row">
-    
-           <div>
-            <md-input-container>
-              <input mdInput placeholder="Label UPC" formControlName="label_upc">
-            </md-input-container>
+
+            <div>
+              <md-input-container>
+                <input mdInput placeholder="Label UPC" formControlName="labelUpc">
+              </md-input-container>
             </div>
 
-                       <div>
-            <md-input-container>
-              <input mdInput placeholder="Label Description" formControlName="label_description">
-            </md-input-container>
+            <div>
+              <md-input-container>
+                <input mdInput placeholder="Label Description" formControlName="labelDescription">
+              </md-input-container>
             </div>
-           <div>
-            <md-input-container>
-              <input mdInput placeholder="Source" formControlName="label_source">
-            </md-input-container>
+            <div>
+              <md-input-container>
+                <input mdInput placeholder="Source" formControlName="labelSource">
+              </md-input-container>
             </div>
- 
+
 
           </div>
           <div class="flex row">
             <div>
-            <md-input-container>
-              <input mdInput placeholder="Ingredients" formControlName="label_ingredients">
-            </md-input-container>
+              <md-input-container>
+                <input mdInput placeholder="Ingredients" formControlName="labelIngredients">
+              </md-input-container>
             </div>
 
           </div>
@@ -44,27 +43,33 @@
 
             <div>
               <md-input-container>
-                <input mdInput placeholder="Collection Date From" [mdDatepicker]="pickerFrom" formControlName="collection_date_from">
+                <input mdInput placeholder="Collection Date From" [mdDatepicker]="pickerFrom" formControlName="collectionDateFrom">
                 <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerFrom"></button>
-              </md-input-container>
-              <md-datepicker #pickerFrom></md-datepicker>
-            </div>
-
-        <div>
-              <md-input-container>
-                <input mdInput placeholder="Collection Date to" [mdDatepicker]="pickerTo" formControlName="collection_date_to">
-                <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerTo"></button>
-              </md-input-container>
-              <md-datepicker #pickerTo></md-datepicker>
-            </div>
-          </div>
+<md-hint align="start"><strong>MM/DD/YYYY</strong></md-hint>
+</md-input-container>
 
 
+<md-datepicker #pickerFrom></md-datepicker>
+</div>
+
+<div>
+  <md-input-container>
+    <input mdInput placeholder="Collection Date to" [mdDatepicker]="pickerTo" formControlName="collectionDateTo">
+    <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerTo"></button>
+<md-hint align="start"><strong>MM/DD/YYYY</strong></md-hint>
+</md-input-container>
+
+
+<md-datepicker #pickerTo></md-datepicker>
+</div>
+</div>
 
 
 
-          <md-card-actions>
-            <div style="float: right">
+
+
+<md-card-actions>
+  <div style="float: right">
 <button md-raised-button type="submit" [disabled]="!labelForm.valid">SUBMIT</button>
 <button type='reset' md-raised-button>RESET</button>
 </div>
@@ -87,19 +92,19 @@
 
   {{noData}}
 </h2>
+<div *ngIf="isLoading">
+  <md-progress-bar mode="indeterminate"></md-progress-bar>
+</div>
 
+<div *ngIf="serverDown">
+  Something happened on the server
+</div>
 <div *ngIf="tableData">
-  
-  <ct-table [records]="tableData" 
-            [caption]="'ROMYYY'" 
-            [index]="index" 
-            [flag]="direction[index]"
-            [settings]="settings"
-             (trigger)="sortBy2($event)">
+
+  <ct-table [records]="tableData" [caption]="'ROMYYY'" [index]="index" [flag]="direction[index]" [settings]="settings" (trigger)="sortBy2($event)">
 
   </ct-table>
 </div>
 <!--<pagination (offSet) = "onPageChange($event)"-->
 <pagination [pageSize]="pageSizes" [numberOfRecords]="count" [(pageOffset)]="offset" (offSetVal)="offSetVal($event)">
 </pagination>
-
