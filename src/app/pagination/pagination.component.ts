@@ -2,8 +2,8 @@ import { Component, Input, EventEmitter, Output, OnChanges} from '@angular/core'
 
 @Component({
     selector: 'pagination',
-    templateUrl: 'app/pagination/pagination.component.html',
-    styleUrls: ['app/pagination/pagination.component.css']
+    templateUrl: './pagination.component.html',
+    styleUrls: ['./pagination.component.css']
  })
 
 

@@ -5,8 +5,8 @@ import 'rxjs/add/operator/switchMap';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 @Component({
     selector: 'ct-table',
-    templateUrl: 'app/shared/table-layout.component.html',
-    styleUrls: ['app/shared/table-layout.component.css']
+    templateUrl: './table-layout.component.html',
+    styleUrls: ['./table-layout.component.css']
  })
 
 export class TableLayoutComponent implements OnChanges { 

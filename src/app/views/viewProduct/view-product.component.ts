@@ -18,7 +18,7 @@ import { FormGroup, FormBuilder, FormArray, Validators, ValidatorFn, AbstractCon
 export class ViewProductComponent implements OnInit {
     Classification_name = Classification_name;
     Classification_number = Classification_number;
-    
+    flag: boolean;
     Ids:any;
     params: Params;
     productForm: FormGroup;

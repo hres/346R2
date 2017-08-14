@@ -12,21 +12,20 @@ import { AppComponent }  from './app.component';
 import { FormComponent }  from './forms/productForm/form.component'; 
 import { SalesFormComponent }  from './forms/salesForm/sales-form.component'; 
 import { LabelFormComponent }  from './forms/labelForm/label-form.component'; 
-import {ModalBoxComponent} from './modal-box/modal-box.component'
+import {ModalBoxModule} from './modal-box/modal-box.module'
 
-import { AddClassificationComponent }  from './classification-center/add-classification/add-classification.component'; 
+import { AddClassificationModule }  from './classification-center/add-classification/add-classification.module'; 
 
 
-import {ViewProductComponent} from './views/viewProduct/view-product.component';
-//import {ViewProductModule} from './views/viewProduct/view-product.module'
+import {ViewProductModule} from './views/viewProduct/view-product.module';
+import {ViewProductComponent} from './views/viewProduct/view-product.component'
 
 import {FormModule} from './forms/productForm/form.module';
 
 import {Headers, HttpModule} from '@angular/http';
 
 import {PaginationModelModule} from './pagination/pagination.model'
-import {PaginationComponent} from './pagination/pagination.component'
-import {TableComponent} from './table/table.component'
+import {CustumTableModule} from './table/table.module'
 
 import {RadioButtonModule} from './radio-button/radio-button.module'
 import {RadioButtonComponent} from './radio-button/radio-button.component'
@@ -36,31 +35,38 @@ import {SharedModule} from './shared/shared.module';
 import { MdIconModule, MdIconRegistry, MdTabsModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
 
-
+import { CommonModule } from '@angular/common';  
 
 
 @NgModule({
   imports:      [ 
-      BrowserModule,
-      ReactiveFormsModule,
       BrowserAnimationsModule,
-      FormsModule,
-      MdCardModule,
-      MdInputModule,
-      MdButtonModule,
-      HttpModule,
-      MdTabsModule,
-      MdSliderModule,
-      MdRadioModule,
-      MdDatepickerModule,
-      MdProgressBarModule,
-      SharedModule,
-      MdSelectModule,
-      RadioButtonModule,
+      BrowserModule,
       FormsCenterModule,
-      MdNativeDateModule,
-      MdSidenavModule,
+      FormModule,
+      FormsModule,
+      HttpModule,
+      MdButtonModule,
+      MdCardModule,
+      MdDatepickerModule,
       MdIconModule,
+      MdInputModule,
+      MdNativeDateModule,
+      MdProgressBarModule,
+      MdRadioModule,
+      MdSelectModule,
+      MdSidenavModule,
+      MdSliderModule,
+      MdTabsModule,
+      RadioButtonModule,
+      ReactiveFormsModule,
+      CustumTableModule,
+      PaginationModelModule,
+      SharedModule,
+      CommonModule,
+      ViewProductModule,
+      ModalBoxModule,
+      AddClassificationModule,
       RouterModule.forRoot([
 
   {
@@ -90,27 +96,18 @@ import {RouterModule} from '@angular/router';
        ],
   declarations: [ 
     AppComponent,
-    FormComponent,
-    ViewProductComponent,
-    PaginationComponent,
     RadioButtonComponent,
     FormsCenterComponent,
     SalesFormComponent,
-    LabelFormComponent,
-    TableComponent,
-    ModalBoxComponent,
-    AddClassificationComponent
+    LabelFormComponent
     
     ],
   exports: [
-    FormComponent,
+
     RadioButtonComponent,
     FormsCenterComponent,
     SalesFormComponent,
-    LabelFormComponent,
-    TableComponent,
-    ModalBoxComponent,
-    AddClassificationComponent
+    LabelFormComponent
   ],
    providers: [
         MdIconRegistry,

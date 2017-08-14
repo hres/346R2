@@ -1,4 +1,8 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
+// import {MdIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
+
+
 @Component({
     selector: 'modal-box',
     templateUrl: './modal-box.component.html',
@@ -7,6 +11,11 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 })
 export class ModalBoxComponent{
+
+  constructor() {
+
+  }
+
     @Input() from: string;
      @Input() method: string;
      @Input() ids:any;

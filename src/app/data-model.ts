@@ -1,7 +1,8 @@
 export type Response<T> = {
     data: {
         count?: number,
-        values: T[]
+        dataList?: T[],
+        values?: T[]
     },
     status?: number,
     message?: string
