@@ -7,20 +7,16 @@
 
 
 import * as i0 from '@angular/core';
-import * as i1 from '../../../../src/app/forms-center/forms-center.module';
-import * as i2 from '../../../node_modules/@angular/material/typings/index.ngfactory';
+import * as i1 from '../../../../../src/app/forms/labelForm/label-form.module';
+import * as i2 from '../../../../node_modules/@angular/material/typings/index.ngfactory';
 import * as i3 from '@angular/forms';
 import * as i4 from '@angular/cdk';
 import * as i5 from '@angular/platform-browser';
 import * as i6 from '@angular/common';
 import * as i7 from '@angular/material';
-import * as i8 from '@angular/router';
-import * as i9 from '../../../../src/app/shared/shared.module';
-import * as i10 from '../../../../src/app/pagination/pagination.model';
-import * as i11 from '../../../../src/app/forms/productForm/form.module';
-import * as i12 from '../../../../src/app/forms/salesForm/sales-form.module';
-import * as i13 from '../../../../src/app/forms/labelForm/label-form.module';
-export const FormsCenterModuleNgFactory:i0.NgModuleFactory<i1.FormsCenterModule> = i0.ɵcmf(i1.FormsCenterModule,
+import * as i8 from '../../../../../src/app/shared/shared.module';
+import * as i9 from '../../../../../src/app/pagination/pagination.model';
+export const LabelFormModuleNgFactory:i0.NgModuleFactory<i1.LabelFormModule> = i0.ɵcmf(i1.LabelFormModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
           [[8,[i2.MdDialogContainerNgFactory,i2.MdDatepickerContentNgFactory]],[3,
@@ -61,8 +57,7 @@ export const FormsCenterModuleNgFactory:i0.NgModuleFactory<i1.FormsCenterModule>
               i5.Title,i5.Title,[i6.DOCUMENT]),i0.ɵmpd(4608,i6.CurrencyPipe,i6.CurrencyPipe,
               [i0.LOCALE_ID]),i0.ɵmpd(4608,i7.MdDialog,i7.MdDialog,[i7.Overlay,i0.Injector,
               [2,i6.Location],[3,i7.MdDialog]]),i0.ɵmpd(4608,i7.MdDatepickerIntl,i7.MdDatepickerIntl,
-              ([] as any[])),i0.ɵmpd(512,i8.RouterModule,i8.RouterModule,[[2,i8.ɵa],
-              [2,i8.Router]]),i0.ɵmpd(512,i3.ɵba,i3.ɵba,([] as any[])),i0.ɵmpd(512,
+              ([] as any[])),i0.ɵmpd(512,i3.ɵba,i3.ɵba,([] as any[])),i0.ɵmpd(512,
               i3.ReactiveFormsModule,i3.ReactiveFormsModule,([] as any[])),i0.ɵmpd(512,
               i3.FormsModule,i3.FormsModule,([] as any[])),i0.ɵmpd(512,i7.CompatibilityModule,
               i7.CompatibilityModule,([] as any[])),i0.ɵmpd(512,i4.BidiModule,i4.BidiModule,
@@ -90,12 +85,9 @@ export const FormsCenterModuleNgFactory:i0.NgModuleFactory<i1.FormsCenterModule>
                   i0.ApplicationInitStatus]),i0.ɵmpd(2048,i0.ApplicationRef,(null as any),
               [i0.ɵe]),i0.ɵmpd(512,i0.ApplicationModule,i0.ApplicationModule,[i0.ApplicationRef]),
           i0.ɵmpd(512,i5.BrowserModule,i5.BrowserModule,[[3,i5.BrowserModule]]),i0.ɵmpd(512,
-              i9.SharedModule,i9.SharedModule,([] as any[])),i0.ɵmpd(512,i10.PaginationModelModule,
-              i10.PaginationModelModule,([] as any[])),i0.ɵmpd(512,i11.FormModule,
-              i11.FormModule,([] as any[])),i0.ɵmpd(512,i7.MdDialogModule,i7.MdDialogModule,
-              ([] as any[])),i0.ɵmpd(512,i7.MdDatepickerModule,i7.MdDatepickerModule,
-              ([] as any[])),i0.ɵmpd(512,i12.SalesFormModule,i12.SalesFormModule,([] as any[])),
-          i0.ɵmpd(512,i13.LabelFormModule,i13.LabelFormModule,([] as any[])),i0.ɵmpd(512,
-              i1.FormsCenterModule,i1.FormsCenterModule,([] as any[]))]);
+              i8.SharedModule,i8.SharedModule,([] as any[])),i0.ɵmpd(512,i9.PaginationModelModule,
+              i9.PaginationModelModule,([] as any[])),i0.ɵmpd(512,i7.MdDialogModule,
+              i7.MdDialogModule,([] as any[])),i0.ɵmpd(512,i7.MdDatepickerModule,i7.MdDatepickerModule,
+              ([] as any[])),i0.ɵmpd(512,i1.LabelFormModule,i1.LabelFormModule,([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMtY2VudGVyL2Zvcm1zLWNlbnRlci5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9mb3Jtcy1jZW50ZXIvZm9ybXMtY2VudGVyLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvbGFiZWxGb3JtL2xhYmVsLWZvcm0ubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvbGFiZWxGb3JtL2xhYmVsLWZvcm0ubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

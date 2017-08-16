@@ -7,7 +7,7 @@
 }
 .container{
     position: absolute;
-    width: 98.6%;
+    width: 102%;
     height: 50px;
     background-color: #33cccc;
     margin-bottom: 20px;
@@ -25,7 +25,7 @@
 .tableData{
     width: 100%;
     position: relative;
-    margin-top: 2.6%;
+    margin-top: 32px;
 }
 /*td:not(:first-child) {
     border-left: 1px solid lightgray;

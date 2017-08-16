@@ -6,9 +6,9 @@
 /* tslint:disable */
 import * as i0 from './view-product.component.css.shim.ngstyle';
 import * as i1 from '@angular/core';
-import * as i2 from '@angular/forms';
-import * as i3 from '../../../../node_modules/@angular/material/typings/index.ngfactory';
-import * as i4 from '@angular/material';
+import * as i2 from '../../../../node_modules/@angular/material/typings/index.ngfactory';
+import * as i3 from '@angular/material';
+import * as i4 from '@angular/forms';
 import * as i5 from '@angular/cdk';
 import * as i6 from '@angular/common';
 import * as i7 from '../../../../../src/app/views/viewProduct/view-product.component';
@@ -21,7 +21,235 @@ import * as i13 from '@angular/router';
 var styles_ViewProductComponent = [i0.styles];
 export var RenderType_ViewProductComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_ViewProductComponent, data: {} });
+function View_ViewProductComponent_3(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 3, 'md-option', [['class',
+                'mat-option'], ['role', 'option']], [[1, 'tabindex', 0], [2, 'mat-selected', null],
+            [2, 'mat-option-multiple', null], [2, 'mat-active', null], [8, 'id',
+                0], [1, 'aria-selected', 0], [1, 'aria-disabled', 0], [2, 'mat-option-disabled',
+                null]], [[null, 'click'], [null, 'keydown']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i1.ɵnov(_v, 2)._selectViaInteraction() !== false);
+                ad = (pd_0 && ad);
+            }
+            if (('keydown' === en)) {
+                var pd_1 = (i1.ɵnov(_v, 2)._handleKeydown($event) !== false);
+                ad = (pd_1 && ad);
+            }
+            return ad;
+        }, i2.View_MdOption_0, i2.RenderType_MdOption)), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null),
+        i1.ɵdid(49152, [[1, 4]], 0, i3.MdOption, [i1.ElementRef, [2, i3.MdOptgroup], [2, i3.MATERIAL_COMPATIBILITY_MODE]], { value: [0, 'value'] }, null), (_l()(), i1.ɵted(0, ['', '']))], function (_ck, _v) {
+        var currVal_8 = _v.context.$implicit.classificationName;
+        _ck(_v, 2, 0, currVal_8);
+    }, function (_ck, _v) {
+        var currVal_0 = i1.ɵnov(_v, 2)._getTabIndex();
+        var currVal_1 = i1.ɵnov(_v, 2).selected;
+        var currVal_2 = i1.ɵnov(_v, 2).multiple;
+        var currVal_3 = i1.ɵnov(_v, 2).active;
+        var currVal_4 = i1.ɵnov(_v, 2).id;
+        var currVal_5 = i1.ɵnov(_v, 2).selected.toString();
+        var currVal_6 = i1.ɵnov(_v, 2).disabled.toString();
+        var currVal_7 = i1.ɵnov(_v, 2).disabled;
+        _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7);
+        var currVal_9 = _v.context.$implicit.classificationName;
+        _ck(_v, 3, 0, currVal_9);
+    });
+}
+function View_ViewProductComponent_4(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 3, 'md-option', [['class',
+                'mat-option'], ['role', 'option']], [[1, 'tabindex', 0], [2, 'mat-selected', null],
+            [2, 'mat-option-multiple', null], [2, 'mat-active', null], [8, 'id',
+                0], [1, 'aria-selected', 0], [1, 'aria-disabled', 0], [2, 'mat-option-disabled',
+                null]], [[null, 'click'], [null, 'keydown']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i1.ɵnov(_v, 2)._selectViaInteraction() !== false);
+                ad = (pd_0 && ad);
+            }
+            if (('keydown' === en)) {
+                var pd_1 = (i1.ɵnov(_v, 2)._handleKeydown($event) !== false);
+                ad = (pd_1 && ad);
+            }
+            return ad;
+        }, i2.View_MdOption_0, i2.RenderType_MdOption)), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null),
+        i1.ɵdid(49152, [[3, 4]], 0, i3.MdOption, [i1.ElementRef, [2, i3.MdOptgroup], [2, i3.MATERIAL_COMPATIBILITY_MODE]], { value: [0, 'value'] }, null), (_l()(), i1.ɵted(0, ['', '']))], function (_ck, _v) {
+        var currVal_8 = _v.context.$implicit.classificationNumber;
+        _ck(_v, 2, 0, currVal_8);
+    }, function (_ck, _v) {
+        var currVal_0 = i1.ɵnov(_v, 2)._getTabIndex();
+        var currVal_1 = i1.ɵnov(_v, 2).selected;
+        var currVal_2 = i1.ɵnov(_v, 2).multiple;
+        var currVal_3 = i1.ɵnov(_v, 2).active;
+        var currVal_4 = i1.ɵnov(_v, 2).id;
+        var currVal_5 = i1.ɵnov(_v, 2).selected.toString();
+        var currVal_6 = i1.ɵnov(_v, 2).disabled.toString();
+        var currVal_7 = i1.ɵnov(_v, 2).disabled;
+        _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7);
+        var currVal_9 = _v.context.$implicit.classificationNumber;
+        _ck(_v, 3, 0, currVal_9);
+    });
+}
 function View_ViewProductComponent_2(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 35, 'div', [['class',
+                'flex']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n          \n            '])), (_l()(), i1.ɵeld(0, null, null, 15, 'md-select', [['class', 'mat-select'], ['formControlName',
+                'classificationName'], ['placeholder', 'Classification Name'], ['role',
+                'listbox']], [[2, 'ng-untouched', null], [2, 'ng-touched', null],
+            [2, 'ng-pristine', null], [2, 'ng-dirty', null], [2, 'ng-valid',
+                null], [2, 'ng-invalid', null], [2, 'ng-pending', null],
+            [1, 'tabindex', 0], [1, 'aria-label', 0], [1, 'aria-labelledby', 0], [1, 'aria-required',
+                0], [1, 'aria-disabled', 0], [1, 'aria-invalid', 0], [1, 'aria-owns', 0],
+            [2, 'mat-select-disabled', null]], [[null, 'keydown'],
+            [null, 'blur']], function (_v, en, $event) {
+            var ad = true;
+            if (('keydown' === en)) {
+                var pd_0 = (i1.ɵnov(_v, 7)._handleClosedKeydown($event) !== false);
+                ad = (pd_0 && ad);
+            }
+            if (('blur' === en)) {
+                var pd_1 = (i1.ɵnov(_v, 7)._onBlur() !== false);
+                ad = (pd_1 && ad);
+            }
+            return ad;
+        }, i2.View_MdSelect_0, i2.RenderType_MdSelect)), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [8, null], [8, null],
+            [8, null]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE],
+            i1.ElementRef], null, null), i1.ɵdid(1294336, null, 2, i3.MdSelect, [i3.ViewportRuler, i1.ChangeDetectorRef, i1.Renderer2, i1.ElementRef,
+            [2, i5.Directionality], [2, i4.NgControl], [8, null], [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], { placeholder: [0, 'placeholder'] }, null), i1.ɵqud(603979776, 1, { options: 1 }),
+        i1.ɵqud(603979776, 2, { optionGroups: 1 }), (_l()(), i1.ɵted(0, ['\n                 '])),
+        (_l()(), i1.ɵeld(0, null, 0, 2, 'md-option', [['class', 'mat-option'], ['role',
+                'option']], [[1, 'tabindex', 0], [2, 'mat-selected', null], [2, 'mat-option-multiple',
+                null], [2, 'mat-active', null], [8, 'id', 0], [1, 'aria-selected',
+                0], [1, 'aria-disabled', 0], [2, 'mat-option-disabled', null]], [[null,
+                'click'], [null, 'keydown']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i1.ɵnov(_v, 13)._selectViaInteraction() !== false);
+                ad = (pd_0 && ad);
+            }
+            if (('keydown' === en)) {
+                var pd_1 = (i1.ɵnov(_v, 13)._handleKeydown($event) !== false);
+                ad = (pd_1 && ad);
+            }
+            return ad;
+        }, i2.View_MdOption_0, i2.RenderType_MdOption)), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null), i1.ɵdid(49152, [[1, 4]], 0, i3.MdOption, [i1.ElementRef, [2, i3.MdOptgroup],
+            [2, i3.MATERIAL_COMPATIBILITY_MODE]], null, null), (_l()(),
+            i1.ɵted(0, ['\n                '])), (_l()(), i1.ɵand(16777216, null, 0, 1, null, View_ViewProductComponent_3)), i1.ɵdid(802816, null, 0, i6.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
+                'ngForOf'] }, null), (_l()(), i1.ɵted(0, ['\n\n            '])),
+        (_l()(), i1.ɵted(null, ['\n       \n \n            '])), (_l()(), i1.ɵeld(0, null, null, 15, 'md-select', [['class', 'mat-select'], ['formControlName',
+                'classificationNumber'], ['placeholder', 'Classification Number'], ['role',
+                'listbox']], [[2, 'ng-untouched', null], [2, 'ng-touched', null],
+            [2, 'ng-pristine', null], [2, 'ng-dirty', null], [2, 'ng-valid',
+                null], [2, 'ng-invalid', null], [2, 'ng-pending', null],
+            [1, 'tabindex', 0], [1, 'aria-label', 0], [1, 'aria-labelledby', 0], [1, 'aria-required',
+                0], [1, 'aria-disabled', 0], [1, 'aria-invalid', 0], [1, 'aria-owns', 0],
+            [2, 'mat-select-disabled', null]], [[null, 'keydown'],
+            [null, 'blur']], function (_v, en, $event) {
+            var ad = true;
+            if (('keydown' === en)) {
+                var pd_0 = (i1.ɵnov(_v, 24)._handleClosedKeydown($event) !== false);
+                ad = (pd_0 && ad);
+            }
+            if (('blur' === en)) {
+                var pd_1 = (i1.ɵnov(_v, 24)._onBlur() !== false);
+                ad = (pd_1 && ad);
+            }
+            return ad;
+        }, i2.View_MdSelect_0, i2.RenderType_MdSelect)), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [8, null], [8, null],
+            [8, null]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE],
+            i1.ElementRef], null, null), i1.ɵdid(1294336, null, 2, i3.MdSelect, [i3.ViewportRuler, i1.ChangeDetectorRef, i1.Renderer2, i1.ElementRef,
+            [2, i5.Directionality], [2, i4.NgControl], [8, null], [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], { placeholder: [0, 'placeholder'] }, null), i1.ɵqud(603979776, 3, { options: 1 }),
+        i1.ɵqud(603979776, 4, { optionGroups: 1 }), (_l()(), i1.ɵted(0, ['\n                '])),
+        (_l()(), i1.ɵeld(0, null, 0, 2, 'md-option', [['class', 'mat-option'], ['role',
+                'option']], [[1, 'tabindex', 0], [2, 'mat-selected', null], [2, 'mat-option-multiple',
+                null], [2, 'mat-active', null], [8, 'id', 0], [1, 'aria-selected',
+                0], [1, 'aria-disabled', 0], [2, 'mat-option-disabled', null]], [[null,
+                'click'], [null, 'keydown']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i1.ɵnov(_v, 30)._selectViaInteraction() !== false);
+                ad = (pd_0 && ad);
+            }
+            if (('keydown' === en)) {
+                var pd_1 = (i1.ɵnov(_v, 30)._handleKeydown($event) !== false);
+                ad = (pd_1 && ad);
+            }
+            return ad;
+        }, i2.View_MdOption_0, i2.RenderType_MdOption)), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null), i1.ɵdid(49152, [[3, 4]], 0, i3.MdOption, [i1.ElementRef, [2, i3.MdOptgroup],
+            [2, i3.MATERIAL_COMPATIBILITY_MODE]], null, null), (_l()(),
+            i1.ɵted(0, ['\n                '])), (_l()(), i1.ɵand(16777216, null, 0, 1, null, View_ViewProductComponent_4)), i1.ɵdid(802816, null, 0, i6.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
+                'ngForOf'] }, null), (_l()(), i1.ɵted(0, ['\n\n            '])),
+        (_l()(), i1.ɵted(null, ['\n         \n    ']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_15 = 'classificationName';
+        _ck(_v, 3, 0, currVal_15);
+        var currVal_16 = 'Classification Name';
+        _ck(_v, 7, 0, currVal_16);
+        var currVal_25 = _co.listOfClass.cl;
+        _ck(_v, 16, 0, currVal_25);
+        var currVal_41 = 'classificationNumber';
+        _ck(_v, 20, 0, currVal_41);
+        var currVal_42 = 'Classification Number';
+        _ck(_v, 24, 0, currVal_42);
+        var currVal_51 = _co.listOfClass.cl;
+        _ck(_v, 33, 0, currVal_51);
+    }, function (_ck, _v) {
+        var currVal_0 = i1.ɵnov(_v, 5).ngClassUntouched;
+        var currVal_1 = i1.ɵnov(_v, 5).ngClassTouched;
+        var currVal_2 = i1.ɵnov(_v, 5).ngClassPristine;
+        var currVal_3 = i1.ɵnov(_v, 5).ngClassDirty;
+        var currVal_4 = i1.ɵnov(_v, 5).ngClassValid;
+        var currVal_5 = i1.ɵnov(_v, 5).ngClassInvalid;
+        var currVal_6 = i1.ɵnov(_v, 5).ngClassPending;
+        var currVal_7 = i1.ɵnov(_v, 7).tabIndex;
+        var currVal_8 = i1.ɵnov(_v, 7)._ariaLabel;
+        var currVal_9 = i1.ɵnov(_v, 7).ariaLabelledby;
+        var currVal_10 = i1.ɵnov(_v, 7).required.toString();
+        var currVal_11 = i1.ɵnov(_v, 7).disabled.toString();
+        var currVal_12 = (((i1.ɵnov(_v, 7)._control == null) ? null : i1.ɵnov(_v, 7)._control.invalid) || 'false');
+        var currVal_13 = i1.ɵnov(_v, 7)._optionIds;
+        var currVal_14 = i1.ɵnov(_v, 7).disabled;
+        _ck(_v, 2, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6,
+            currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13,
+            currVal_14]);
+        var currVal_17 = i1.ɵnov(_v, 13)._getTabIndex();
+        var currVal_18 = i1.ɵnov(_v, 13).selected;
+        var currVal_19 = i1.ɵnov(_v, 13).multiple;
+        var currVal_20 = i1.ɵnov(_v, 13).active;
+        var currVal_21 = i1.ɵnov(_v, 13).id;
+        var currVal_22 = i1.ɵnov(_v, 13).selected.toString();
+        var currVal_23 = i1.ɵnov(_v, 13).disabled.toString();
+        var currVal_24 = i1.ɵnov(_v, 13).disabled;
+        _ck(_v, 11, 0, currVal_17, currVal_18, currVal_19, currVal_20, currVal_21, currVal_22, currVal_23, currVal_24);
+        var currVal_26 = i1.ɵnov(_v, 22).ngClassUntouched;
+        var currVal_27 = i1.ɵnov(_v, 22).ngClassTouched;
+        var currVal_28 = i1.ɵnov(_v, 22).ngClassPristine;
+        var currVal_29 = i1.ɵnov(_v, 22).ngClassDirty;
+        var currVal_30 = i1.ɵnov(_v, 22).ngClassValid;
+        var currVal_31 = i1.ɵnov(_v, 22).ngClassInvalid;
+        var currVal_32 = i1.ɵnov(_v, 22).ngClassPending;
+        var currVal_33 = i1.ɵnov(_v, 24).tabIndex;
+        var currVal_34 = i1.ɵnov(_v, 24)._ariaLabel;
+        var currVal_35 = i1.ɵnov(_v, 24).ariaLabelledby;
+        var currVal_36 = i1.ɵnov(_v, 24).required.toString();
+        var currVal_37 = i1.ɵnov(_v, 24).disabled.toString();
+        var currVal_38 = (((i1.ɵnov(_v, 24)._control == null) ? null : i1.ɵnov(_v, 24)._control.invalid) || 'false');
+        var currVal_39 = i1.ɵnov(_v, 24)._optionIds;
+        var currVal_40 = i1.ɵnov(_v, 24).disabled;
+        _ck(_v, 19, 1, [currVal_26, currVal_27, currVal_28, currVal_29, currVal_30, currVal_31,
+            currVal_32, currVal_33, currVal_34, currVal_35, currVal_36, currVal_37, currVal_38,
+            currVal_39, currVal_40]);
+        var currVal_43 = i1.ɵnov(_v, 30)._getTabIndex();
+        var currVal_44 = i1.ɵnov(_v, 30).selected;
+        var currVal_45 = i1.ɵnov(_v, 30).multiple;
+        var currVal_46 = i1.ɵnov(_v, 30).active;
+        var currVal_47 = i1.ɵnov(_v, 30).id;
+        var currVal_48 = i1.ɵnov(_v, 30).selected.toString();
+        var currVal_49 = i1.ɵnov(_v, 30).disabled.toString();
+        var currVal_50 = i1.ɵnov(_v, 30).disabled;
+        _ck(_v, 28, 0, currVal_43, currVal_44, currVal_45, currVal_46, currVal_47, currVal_48, currVal_49, currVal_50);
+    });
+}
+function View_ViewProductComponent_5(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class',
                 'errorMessages']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n                '])), (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class', 'textPosition']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['  ', ''])), (_l()(), i1.ɵted(null, ['\n            ']))], null, function (_ck, _v) {
@@ -30,7 +258,7 @@ function View_ViewProductComponent_2(_l) {
         _ck(_v, 3, 0, currVal_0);
     });
 }
-function View_ViewProductComponent_3(_l) {
+function View_ViewProductComponent_6(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class',
                 'errorMessages']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n                '])), (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class', 'textPosition']], null, null, null, null, null)), (_l()(), i1.ɵted(null, [' ', ''])), (_l()(), i1.ɵted(null, ['\n            ']))], null, function (_ck, _v) {
@@ -39,7 +267,7 @@ function View_ViewProductComponent_3(_l) {
         _ck(_v, 3, 0, currVal_0);
     });
 }
-function View_ViewProductComponent_4(_l) {
+function View_ViewProductComponent_7(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class',
                 'errorMessages']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n                '])), (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class', 'textPosition']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['   ', ''])), (_l()(), i1.ɵted(null, ['\n            ']))], null, function (_ck, _v) {
@@ -48,72 +276,57 @@ function View_ViewProductComponent_4(_l) {
         _ck(_v, 3, 0, currVal_0);
     });
 }
-function View_ViewProductComponent_5(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 78, 'div', [], [[2, 'ng-untouched', null], [2, 'ng-touched', null], [2, 'ng-pristine',
+function View_ViewProductComponent_1(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 226, 'div', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵeld(0, null, null, 223, 'div', [['class', 'formContent']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n        '])),
+        (_l()(), i1.ɵeld(0, null, null, 220, 'form', [['novalidate', '']], [[2, 'ng-untouched', null], [2, 'ng-touched', null], [2, 'ng-pristine',
                 null], [2, 'ng-dirty', null], [2, 'ng-valid', null],
-            [2, 'ng-invalid', null], [2, 'ng-pending', null]], null, null, null, null)), i1.ɵdid(212992, null, 0, i2.FormGroupName, [[3, i2.ControlContainer], [8, null], [8, null]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.ControlContainer, null, [i2.FormGroupName]), i1.ɵdid(16384, null, 0, i2.NgControlStatusGroup, [i2.ControlContainer], null, null), (_l()(), i1.ɵted(null, ['\n     \n             '])),
-        (_l()(), i1.ɵeld(0, null, null, 22, 'div', [['class', 'flex row']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n          '])), (_l()(), i1.ɵeld(0, null, null, 19, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n            '])),
-        (_l()(), i1.ɵeld(0, null, null, 16, 'md-input-container', [['class',
-                'mat-input-container']], [[1, 'align', 0], [2, 'mat-input-invalid', null],
-            [2, 'mat-focused', null], [2, 'ng-untouched', null], [2, 'ng-touched',
-                null], [2, 'ng-pristine', null], [2, 'ng-dirty', null],
-            [2, 'ng-valid', null], [2, 'ng-invalid', null], [2, 'ng-pending',
-                null]], [[null, 'click']], function (_v, en, $event) {
+            [2, 'ng-invalid', null], [2, 'ng-pending', null]], [[null,
+                'ngSubmit'], [null, 'submit'], [null, 'reset']], function (_v, en, $event) {
             var ad = true;
-            if (('click' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 10)._focusInput() !== false);
+            var _co = _v.component;
+            if (('submit' === en)) {
+                var pd_0 = (i1.ɵnov(_v, 6).onSubmit($event) !== false);
                 ad = (pd_0 && ad);
             }
-            return ad;
-        }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 37, { _mdInputChild: 0 }), i1.ɵqud(335544320, 38, { _placeholderChild: 0 }), i1.ɵqud(603979776, 39, { _errorChildren: 1 }), i1.ɵqud(603979776, 40, { _hintChildren: 1 }), i1.ɵqud(603979776, 41, { _prefixChildren: 1 }), i1.ɵqud(603979776, 42, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'classification_name'],
-            ['mdInput', ''], ['placeholder', 'Classification Name']], [[2, 'ng-untouched',
-                null], [2, 'ng-touched', null], [2, 'ng-pristine', null],
-            [2, 'ng-dirty', null], [2, 'ng-valid', null], [2, 'ng-invalid',
-                null], [2, 'ng-pending', null], [8, 'id', 0], [8, 'placeholder',
-                0], [8, 'disabled', 0], [8, 'required', 0], [1, 'aria-describedby', 0], [1,
-                'aria-invalid', 0]], [[null, 'input'], [null, 'blur'],
-            [null, 'compositionstart'], [null, 'compositionend'],
-            [null, 'focus']], function (_v, en, $event) {
-            var ad = true;
-            if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 19)._handleInput($event.target.value) !== false);
-                ad = (pd_0 && ad);
-            }
-            if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 19).onTouched() !== false);
+            if (('reset' === en)) {
+                var pd_1 = (i1.ɵnov(_v, 6).onReset() !== false);
                 ad = (pd_1 && ad);
             }
-            if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 19)._compositionStart() !== false);
+            if (('ngSubmit' === en)) {
+                var pd_2 = (_co.onSubmit() !== false);
                 ad = (pd_2 && ad);
             }
-            if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 19)._compositionEnd($event.target.value) !== false);
-                ad = (pd_3 && ad);
-            }
-            if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 24)._onBlur() !== false);
-                ad = (pd_4 && ad);
-            }
-            if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 24)._onFocus() !== false);
-                ad = (pd_5 && ad);
-            }
-            if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 24)._onInput() !== false);
-                ad = (pd_6 && ad);
+            return ad;
+        }, null, null)), i1.ɵdid(16384, null, 0, i4.ɵbf, [], null, null), i1.ɵdid(540672, null, 0, i4.FormGroupDirective, [[8, null], [8, null]], { form: [0, 'form'] }, { ngSubmit: 'ngSubmit' }),
+        i1.ɵprd(2048, null, i4.ControlContainer, null, [i4.FormGroupDirective]),
+        i1.ɵdid(16384, null, 0, i4.NgControlStatusGroup, [i4.ControlContainer], null, null), (_l()(), i1.ɵted(null, ['\n            '])),
+        (_l()(), i1.ɵeld(0, null, null, 19, 'div', [['class', 'productHeader'],
+            ['style', 'margin-bottom: 1em; ']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n'])), (_l()(),
+            i1.ɵeld(0, null, null, 1, 'span', [['class', 'productDetails']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['Product Details'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 13, 'span', [['class',
+                'buttons']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 4, 'button', [['class', 'mat-raised-button'], ['md-raised-button', ''], ['type',
+                'submit']], [[8, 'disabled', 0]], null, null, i2.View_MdButton_0, i2.RenderType_MdButton)), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null),
+        i1.ɵdid(180224, null, 0, i3.MdButton, [i1.Renderer2, i1.ElementRef, i5.Platform,
+            i3.FocusOriginMonitor], { disabled: [0, 'disabled'] }, null), i1.ɵdid(16384, null, 0, i3.MdRaisedButtonCssMatStyler, [], null, null), (_l()(), i1.ɵted(0, ['Save Changes'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 4, 'button', [['class',
+                'mat-raised-button'], ['md-raised-button', ''], ['style', 'background-color:lightseagreen'],
+            ['type', 'reset']], [[8, 'disabled', 0]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.revert() !== false);
+                ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
-            return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [8, null], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[37, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
-                'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n            '])),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n         '])), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(),
-            i1.ɵeld(0, null, null, 48, 'div', [['class', 'flex row']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n          '])), (_l()(), i1.ɵeld(0, null, null, 19, 'div', [], null, null, null, null, null)),
+        }, i2.View_MdButton_0, i2.RenderType_MdButton)), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null), i1.ɵdid(180224, null, 0, i3.MdButton, [i1.Renderer2,
+            i1.ElementRef, i5.Platform, i3.FocusOriginMonitor], { disabled: [0, 'disabled'] }, null), i1.ɵdid(16384, null, 0, i3.MdRaisedButtonCssMatStyler, [], null, null), (_l()(), i1.ɵted(0, ['REVERT'])),
+        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])),
+        (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵeld(0, null, null, 192, 'div', [['class', 'formContent']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_2)),
+        i1.ɵdid(16384, null, 0, i6.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
+                'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(),
+            i1.ɵeld(0, null, null, 43, 'div', [['class', 'flex row']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵeld(0, null, null, 19, 'div', [], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵeld(0, null, null, 16, 'md-input-container', [['class', 'mat-input-container']], [[1, 'align', 0], [2, 'mat-input-invalid', null], [2, 'mat-focused', null],
             [2, 'ng-untouched', null], [2, 'ng-touched', null], [2, 'ng-pristine',
                 null], [2, 'ng-dirty', null], [2, 'ng-valid', null],
@@ -121,72 +334,13 @@ function View_ViewProductComponent_5(_l) {
                 'click']], function (_v, en, $event) {
             var ad = true;
             if (('click' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 34)._focusInput() !== false);
+                var pd_0 = (i1.ɵnov(_v, 41)._focusInput() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 43, { _mdInputChild: 0 }), i1.ɵqud(335544320, 44, { _placeholderChild: 0 }), i1.ɵqud(603979776, 45, { _errorChildren: 1 }), i1.ɵqud(603979776, 46, { _hintChildren: 1 }), i1.ɵqud(603979776, 47, { _prefixChildren: 1 }), i1.ɵqud(603979776, 48, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'classification_number'],
-            ['mdInput', ''], ['placeholder', 'Classification Number']], [[2, 'ng-untouched',
-                null], [2, 'ng-touched', null], [2, 'ng-pristine', null],
-            [2, 'ng-dirty', null], [2, 'ng-valid', null], [2, 'ng-invalid',
-                null], [2, 'ng-pending', null], [8, 'id', 0], [8, 'placeholder',
-                0], [8, 'disabled', 0], [8, 'required', 0], [1, 'aria-describedby', 0], [1,
-                'aria-invalid', 0]], [[null, 'input'], [null, 'blur'],
-            [null, 'compositionstart'], [null, 'compositionend'],
-            [null, 'focus']], function (_v, en, $event) {
-            var ad = true;
-            if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 43)._handleInput($event.target.value) !== false);
-                ad = (pd_0 && ad);
-            }
-            if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 43).onTouched() !== false);
-                ad = (pd_1 && ad);
-            }
-            if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 43)._compositionStart() !== false);
-                ad = (pd_2 && ad);
-            }
-            if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 43)._compositionEnd($event.target.value) !== false);
-                ad = (pd_3 && ad);
-            }
-            if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 48)._onBlur() !== false);
-                ad = (pd_4 && ad);
-            }
-            if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 48)._onFocus() !== false);
-                ad = (pd_5 && ad);
-            }
-            if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 48)._onInput() !== false);
-                ad = (pd_6 && ad);
-            }
-            return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
-            return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [8, null], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[43, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
-                'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n            '])),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n\n                  '])), (_l()(), i1.ɵeld(0, null, null, 19, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n            '])), (_l()(),
-            i1.ɵeld(0, null, null, 16, 'md-input-container', [['class',
-                    'mat-input-container']], [[1, 'align', 0], [2, 'mat-input-invalid', null],
-                [2, 'mat-focused', null], [2, 'ng-untouched', null], [2,
-                    'ng-touched', null], [2, 'ng-pristine', null], [2, 'ng-dirty',
-                    null], [2, 'ng-valid', null], [2, 'ng-invalid', null],
-                [2, 'ng-pending', null]], [[null, 'click']], function (_v, en, $event) {
-                var ad = true;
-                if (('click' === en)) {
-                    var pd_0 = (i1.ɵnov(_v, 55)._focusInput() !== false);
-                    ad = (pd_0 && ad);
-                }
-                return ad;
-            }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 49, { _mdInputChild: 0 }), i1.ɵqud(335544320, 50, { _placeholderChild: 0 }), i1.ɵqud(603979776, 51, { _errorChildren: 1 }), i1.ɵqud(603979776, 52, { _hintChildren: 1 }), i1.ɵqud(603979776, 53, { _prefixChildren: 1 }), i1.ɵqud(603979776, 54, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'classification_type'],
+        }, i2.View_MdInputContainer_0, i2.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i3.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
+            [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 5, { _mdInputChild: 0 }), i1.ɵqud(335544320, 6, { _placeholderChild: 0 }), i1.ɵqud(603979776, 7, { _errorChildren: 1 }), i1.ɵqud(603979776, 8, { _hintChildren: 1 }), i1.ɵqud(603979776, 9, { _prefixChildren: 1 }), i1.ɵqud(603979776, 10, { _suffixChildren: 1 }), (_l()(),
+            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'classificationType'],
             ['mdInput', ''], ['placeholder', 'Classification Type']], [[2, 'ng-untouched',
                 null], [2, 'ng-touched', null], [2, 'ng-pristine', null],
             [2, 'ng-dirty', null], [2, 'ng-valid', null], [2, 'ng-invalid',
@@ -197,204 +351,40 @@ function View_ViewProductComponent_5(_l) {
             [null, 'focus']], function (_v, en, $event) {
             var ad = true;
             if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 64)._handleInput($event.target.value) !== false);
+                var pd_0 = (i1.ɵnov(_v, 50)._handleInput($event.target.value) !== false);
                 ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 64).onTouched() !== false);
+                var pd_1 = (i1.ɵnov(_v, 50).onTouched() !== false);
                 ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 64)._compositionStart() !== false);
+                var pd_2 = (i1.ɵnov(_v, 50)._compositionStart() !== false);
                 ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 64)._compositionEnd($event.target.value) !== false);
+                var pd_3 = (i1.ɵnov(_v, 50)._compositionEnd($event.target.value) !== false);
                 ad = (pd_3 && ad);
             }
             if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 69)._onBlur() !== false);
+                var pd_4 = (i1.ɵnov(_v, 55)._onBlur() !== false);
                 ad = (pd_4 && ad);
             }
             if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 69)._onFocus() !== false);
+                var pd_5 = (i1.ɵnov(_v, 55)._onFocus() !== false);
                 ad = (pd_5 && ad);
             }
             if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 69)._onInput() !== false);
+                var pd_6 = (i1.ɵnov(_v, 55)._onInput() !== false);
                 ad = (pd_6 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
+        }, null, null)), i1.ɵdid(16384, null, 0, i4.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i4.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i4.NG_VALUE_ACCESSOR, function (p0_0) {
             return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [8, null], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[49, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
+        }, [i4.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [8, null], [8, null], [2, i4.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, [[5, 4]], 0, i3.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i4.NgControl], [2, i4.NgForm], [2,
+                i4.FormGroupDirective], [2, i3.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
                 'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n            '])),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 2, 'md-icon', [], null, [[null, 'click']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('click' === en)) {
-                var pd_0 = (_co.deleteClassification(_v.context.index) !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null),
-        (_l()(), i1.ɵted(null, ['delete'])), (_l()(), i1.ɵted(null, ['\n          '])),
-        (_l()(), i1.ɵted(null, ['\n         '])), (_l()(), i1.ɵted(null, ['  \n        ']))], function (_ck, _v) {
-        var currVal_7 = _v.context.index;
-        _ck(_v, 1, 0, currVal_7);
-        var currVal_31 = 'classification_name';
-        _ck(_v, 21, 0, currVal_31);
-        var currVal_32 = 'Classification Name';
-        _ck(_v, 24, 0, currVal_32);
-        var currVal_56 = 'classification_number';
-        _ck(_v, 45, 0, currVal_56);
-        var currVal_57 = 'Classification Number';
-        _ck(_v, 48, 0, currVal_57);
-        var currVal_81 = 'classification_type';
-        _ck(_v, 66, 0, currVal_81);
-        var currVal_82 = 'Classification Type';
-        _ck(_v, 69, 0, currVal_82);
-    }, function (_ck, _v) {
-        var currVal_0 = i1.ɵnov(_v, 3).ngClassUntouched;
-        var currVal_1 = i1.ɵnov(_v, 3).ngClassTouched;
-        var currVal_2 = i1.ɵnov(_v, 3).ngClassPristine;
-        var currVal_3 = i1.ɵnov(_v, 3).ngClassDirty;
-        var currVal_4 = i1.ɵnov(_v, 3).ngClassValid;
-        var currVal_5 = i1.ɵnov(_v, 3).ngClassInvalid;
-        var currVal_6 = i1.ɵnov(_v, 3).ngClassPending;
-        _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6);
-        var currVal_8 = null;
-        var currVal_9 = i1.ɵnov(_v, 10)._mdInputChild._isErrorState();
-        var currVal_10 = i1.ɵnov(_v, 10)._mdInputChild.focused;
-        var currVal_11 = i1.ɵnov(_v, 10)._shouldForward('untouched');
-        var currVal_12 = i1.ɵnov(_v, 10)._shouldForward('touched');
-        var currVal_13 = i1.ɵnov(_v, 10)._shouldForward('pristine');
-        var currVal_14 = i1.ɵnov(_v, 10)._shouldForward('dirty');
-        var currVal_15 = i1.ɵnov(_v, 10)._shouldForward('valid');
-        var currVal_16 = i1.ɵnov(_v, 10)._shouldForward('invalid');
-        var currVal_17 = i1.ɵnov(_v, 10)._shouldForward('pending');
-        _ck(_v, 9, 0, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13, currVal_14, currVal_15, currVal_16, currVal_17);
-        var currVal_18 = i1.ɵnov(_v, 23).ngClassUntouched;
-        var currVal_19 = i1.ɵnov(_v, 23).ngClassTouched;
-        var currVal_20 = i1.ɵnov(_v, 23).ngClassPristine;
-        var currVal_21 = i1.ɵnov(_v, 23).ngClassDirty;
-        var currVal_22 = i1.ɵnov(_v, 23).ngClassValid;
-        var currVal_23 = i1.ɵnov(_v, 23).ngClassInvalid;
-        var currVal_24 = i1.ɵnov(_v, 23).ngClassPending;
-        var currVal_25 = i1.ɵnov(_v, 24).id;
-        var currVal_26 = i1.ɵnov(_v, 24).placeholder;
-        var currVal_27 = i1.ɵnov(_v, 24).disabled;
-        var currVal_28 = i1.ɵnov(_v, 24).required;
-        var currVal_29 = (i1.ɵnov(_v, 24).ariaDescribedby || null);
-        var currVal_30 = i1.ɵnov(_v, 24)._isErrorState();
-        _ck(_v, 18, 1, [currVal_18, currVal_19, currVal_20, currVal_21, currVal_22, currVal_23,
-            currVal_24, currVal_25, currVal_26, currVal_27, currVal_28, currVal_29, currVal_30]);
-        var currVal_33 = null;
-        var currVal_34 = i1.ɵnov(_v, 34)._mdInputChild._isErrorState();
-        var currVal_35 = i1.ɵnov(_v, 34)._mdInputChild.focused;
-        var currVal_36 = i1.ɵnov(_v, 34)._shouldForward('untouched');
-        var currVal_37 = i1.ɵnov(_v, 34)._shouldForward('touched');
-        var currVal_38 = i1.ɵnov(_v, 34)._shouldForward('pristine');
-        var currVal_39 = i1.ɵnov(_v, 34)._shouldForward('dirty');
-        var currVal_40 = i1.ɵnov(_v, 34)._shouldForward('valid');
-        var currVal_41 = i1.ɵnov(_v, 34)._shouldForward('invalid');
-        var currVal_42 = i1.ɵnov(_v, 34)._shouldForward('pending');
-        _ck(_v, 33, 0, currVal_33, currVal_34, currVal_35, currVal_36, currVal_37, currVal_38, currVal_39, currVal_40, currVal_41, currVal_42);
-        var currVal_43 = i1.ɵnov(_v, 47).ngClassUntouched;
-        var currVal_44 = i1.ɵnov(_v, 47).ngClassTouched;
-        var currVal_45 = i1.ɵnov(_v, 47).ngClassPristine;
-        var currVal_46 = i1.ɵnov(_v, 47).ngClassDirty;
-        var currVal_47 = i1.ɵnov(_v, 47).ngClassValid;
-        var currVal_48 = i1.ɵnov(_v, 47).ngClassInvalid;
-        var currVal_49 = i1.ɵnov(_v, 47).ngClassPending;
-        var currVal_50 = i1.ɵnov(_v, 48).id;
-        var currVal_51 = i1.ɵnov(_v, 48).placeholder;
-        var currVal_52 = i1.ɵnov(_v, 48).disabled;
-        var currVal_53 = i1.ɵnov(_v, 48).required;
-        var currVal_54 = (i1.ɵnov(_v, 48).ariaDescribedby || null);
-        var currVal_55 = i1.ɵnov(_v, 48)._isErrorState();
-        _ck(_v, 42, 1, [currVal_43, currVal_44, currVal_45, currVal_46, currVal_47, currVal_48,
-            currVal_49, currVal_50, currVal_51, currVal_52, currVal_53, currVal_54, currVal_55]);
-        var currVal_58 = null;
-        var currVal_59 = i1.ɵnov(_v, 55)._mdInputChild._isErrorState();
-        var currVal_60 = i1.ɵnov(_v, 55)._mdInputChild.focused;
-        var currVal_61 = i1.ɵnov(_v, 55)._shouldForward('untouched');
-        var currVal_62 = i1.ɵnov(_v, 55)._shouldForward('touched');
-        var currVal_63 = i1.ɵnov(_v, 55)._shouldForward('pristine');
-        var currVal_64 = i1.ɵnov(_v, 55)._shouldForward('dirty');
-        var currVal_65 = i1.ɵnov(_v, 55)._shouldForward('valid');
-        var currVal_66 = i1.ɵnov(_v, 55)._shouldForward('invalid');
-        var currVal_67 = i1.ɵnov(_v, 55)._shouldForward('pending');
-        _ck(_v, 54, 0, currVal_58, currVal_59, currVal_60, currVal_61, currVal_62, currVal_63, currVal_64, currVal_65, currVal_66, currVal_67);
-        var currVal_68 = i1.ɵnov(_v, 68).ngClassUntouched;
-        var currVal_69 = i1.ɵnov(_v, 68).ngClassTouched;
-        var currVal_70 = i1.ɵnov(_v, 68).ngClassPristine;
-        var currVal_71 = i1.ɵnov(_v, 68).ngClassDirty;
-        var currVal_72 = i1.ɵnov(_v, 68).ngClassValid;
-        var currVal_73 = i1.ɵnov(_v, 68).ngClassInvalid;
-        var currVal_74 = i1.ɵnov(_v, 68).ngClassPending;
-        var currVal_75 = i1.ɵnov(_v, 69).id;
-        var currVal_76 = i1.ɵnov(_v, 69).placeholder;
-        var currVal_77 = i1.ɵnov(_v, 69).disabled;
-        var currVal_78 = i1.ɵnov(_v, 69).required;
-        var currVal_79 = (i1.ɵnov(_v, 69).ariaDescribedby || null);
-        var currVal_80 = i1.ɵnov(_v, 69)._isErrorState();
-        _ck(_v, 63, 1, [currVal_68, currVal_69, currVal_70, currVal_71, currVal_72, currVal_73,
-            currVal_74, currVal_75, currVal_76, currVal_77, currVal_78, currVal_79, currVal_80]);
-    });
-}
-function View_ViewProductComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 220, 'md-card', [['class',
-                'mat-card']], null, null, null, i3.View_MdCard_0, i3.RenderType_MdCard)),
-        i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE],
-            i1.ElementRef], null, null), i1.ɵdid(49152, null, 0, i4.MdCard, [], null, null), (_l()(), i1.ɵted(0, ['\n\n    '])), (_l()(), i1.ɵeld(0, null, 0, 215, 'md-card-content', [['class',
-                'mat-card-content']], null, null, null, null, null)), i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE],
-            i1.ElementRef], null, null), i1.ɵdid(16384, null, 0, i4.MdCardContent, [], null, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 210, 'form', [['novalidate', '']], [[2, 'ng-untouched', null], [2, 'ng-touched', null],
-            [2, 'ng-pristine', null], [2, 'ng-dirty', null], [2, 'ng-valid',
-                null], [2, 'ng-invalid', null], [2, 'ng-pending', null]], [[null, 'ngSubmit'], [null, 'submit'], [null, 'reset']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('submit' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 10).onSubmit($event) !== false);
-                ad = (pd_0 && ad);
-            }
-            if (('reset' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 10).onReset() !== false);
-                ad = (pd_1 && ad);
-            }
-            if (('ngSubmit' === en)) {
-                var pd_2 = (_co.onSubmit() !== false);
-                ad = (pd_2 && ad);
-            }
-            return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.ɵbf, [], null, null), i1.ɵdid(540672, null, 0, i2.FormGroupDirective, [[8, null], [8, null]], { form: [0, 'form'] }, { ngSubmit: 'ngSubmit' }),
-        i1.ɵprd(2048, null, i2.ControlContainer, null, [i2.FormGroupDirective]),
-        i1.ɵdid(16384, null, 0, i2.NgControlStatusGroup, [i2.ControlContainer], null, null), (_l()(), i1.ɵted(null, ['\n            '])),
-        (_l()(), i1.ɵeld(0, null, null, 19, 'div', [['class', 'productHeader'],
-            ['style', 'margin-bottom: 1em; ']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n'])), (_l()(),
-            i1.ɵeld(0, null, null, 1, 'span', [['class', 'productDetails']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['Product Details'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 13, 'span', [['class',
-                'buttons']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 4, 'button', [['class', 'mat-raised-button'], ['md-raised-button', ''], ['type',
-                'submit']], [[8, 'disabled', 0]], null, null, i3.View_MdButton_0, i3.RenderType_MdButton)), i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null),
-        i1.ɵdid(180224, null, 0, i4.MdButton, [i1.Renderer2, i1.ElementRef, i5.Platform,
-            i4.FocusOriginMonitor], { disabled: [0, 'disabled'] }, null), i1.ɵdid(16384, null, 0, i4.MdRaisedButtonCssMatStyler, [], null, null), (_l()(), i1.ɵted(0, ['Save Changes'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 4, 'button', [['class',
-                'mat-raised-button'], ['md-raised-button', ''], ['style', 'background-color:lightseagreen'],
-            ['type', 'reset']], [[8, 'disabled', 0]], [[null, 'click']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('click' === en)) {
-                var pd_0 = (_co.revert() !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, i3.View_MdButton_0, i3.RenderType_MdButton)), i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null), i1.ɵdid(180224, null, 0, i4.MdButton, [i1.Renderer2,
-            i1.ElementRef, i5.Platform, i4.FocusOriginMonitor], { disabled: [0, 'disabled'] }, null), i1.ɵdid(16384, null, 0, i4.MdRaisedButtonCssMatStyler, [], null, null), (_l()(), i1.ɵted(0, ['REVERT'])),
-        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])),
-        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 182, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 23, 'div', [['class',
-                'flex row']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 19, 'div', [], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵted(null, ['\n          '])), (_l()(), i1.ɵeld(0, null, null, 19, 'div', [], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵeld(0, null, null, 16, 'md-input-container', [['class', 'mat-input-container']], [[1, 'align', 0], [2, 'mat-input-invalid', null], [2, 'mat-focused', null],
             [2, 'ng-untouched', null], [2, 'ng-touched', null], [2, 'ng-pristine',
                 null], [2, 'ng-dirty', null], [2, 'ng-valid', null],
@@ -402,13 +392,13 @@ function View_ViewProductComponent_1(_l) {
                 'click']], function (_v, en, $event) {
             var ad = true;
             if (('click' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 44)._focusInput() !== false);
+                var pd_0 = (i1.ɵnov(_v, 62)._focusInput() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 1, { _mdInputChild: 0 }), i1.ɵqud(335544320, 2, { _placeholderChild: 0 }), i1.ɵqud(603979776, 3, { _errorChildren: 1 }), i1.ɵqud(603979776, 4, { _hintChildren: 1 }), i1.ɵqud(603979776, 5, { _prefixChildren: 1 }), i1.ɵqud(603979776, 6, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'product_manufacturer'],
+        }, i2.View_MdInputContainer_0, i2.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i3.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
+            [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 11, { _mdInputChild: 0 }), i1.ɵqud(335544320, 12, { _placeholderChild: 0 }), i1.ɵqud(603979776, 13, { _errorChildren: 1 }), i1.ɵqud(603979776, 14, { _hintChildren: 1 }), i1.ɵqud(603979776, 15, { _prefixChildren: 1 }), i1.ɵqud(603979776, 16, { _suffixChildren: 1 }), (_l()(),
+            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'productManufacturer'],
             ['mdInput', ''], ['placeholder', 'Manufactuer']], [[2, 'ng-untouched', null],
             [2, 'ng-touched', null], [2, 'ng-pristine', null], [2, 'ng-dirty',
                 null], [2, 'ng-valid', null], [2, 'ng-invalid', null],
@@ -417,38 +407,38 @@ function View_ViewProductComponent_1(_l) {
             [null, 'compositionend'], [null, 'focus']], function (_v, en, $event) {
             var ad = true;
             if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 53)._handleInput($event.target.value) !== false);
+                var pd_0 = (i1.ɵnov(_v, 71)._handleInput($event.target.value) !== false);
                 ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 53).onTouched() !== false);
+                var pd_1 = (i1.ɵnov(_v, 71).onTouched() !== false);
                 ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 53)._compositionStart() !== false);
+                var pd_2 = (i1.ɵnov(_v, 71)._compositionStart() !== false);
                 ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 53)._compositionEnd($event.target.value) !== false);
+                var pd_3 = (i1.ɵnov(_v, 71)._compositionEnd($event.target.value) !== false);
                 ad = (pd_3 && ad);
             }
             if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 58)._onBlur() !== false);
+                var pd_4 = (i1.ɵnov(_v, 76)._onBlur() !== false);
                 ad = (pd_4 && ad);
             }
             if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 58)._onFocus() !== false);
+                var pd_5 = (i1.ɵnov(_v, 76)._onFocus() !== false);
                 ad = (pd_5 && ad);
             }
             if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 58)._onInput() !== false);
+                var pd_6 = (i1.ɵnov(_v, 76)._onInput() !== false);
                 ad = (pd_6 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
+        }, null, null)), i1.ɵdid(16384, null, 0, i4.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i4.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i4.NG_VALUE_ACCESSOR, function (p0_0) {
             return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [8, null], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[1, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
+        }, [i4.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [8, null], [8, null], [2, i4.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, [[11, 4]], 0, i3.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i4.NgControl], [2, i4.NgForm], [2,
+                i4.FormGroupDirective], [2, i3.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
                 'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n                \n            '])),
         (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 70, 'div', [['class', 'flex row']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n\n        '])), (_l()(), i1.ɵeld(0, null, null, 19, 'div', [], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵeld(0, null, null, 16, 'md-input-container', [['class', 'mat-input-container']], [[1, 'align', 0], [2, 'mat-input-invalid', null], [2, 'mat-focused', null],
@@ -458,13 +448,13 @@ function View_ViewProductComponent_1(_l) {
                 'click']], function (_v, en, $event) {
             var ad = true;
             if (('click' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 68)._focusInput() !== false);
+                var pd_0 = (i1.ɵnov(_v, 86)._focusInput() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 7, { _mdInputChild: 0 }), i1.ɵqud(335544320, 8, { _placeholderChild: 0 }), i1.ɵqud(603979776, 9, { _errorChildren: 1 }), i1.ɵqud(603979776, 10, { _hintChildren: 1 }), i1.ɵqud(603979776, 11, { _prefixChildren: 1 }), i1.ɵqud(603979776, 12, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'product_brand'], ['mdInput',
+        }, i2.View_MdInputContainer_0, i2.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i3.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
+            [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 17, { _mdInputChild: 0 }), i1.ɵqud(335544320, 18, { _placeholderChild: 0 }), i1.ɵqud(603979776, 19, { _errorChildren: 1 }), i1.ɵqud(603979776, 20, { _hintChildren: 1 }), i1.ɵqud(603979776, 21, { _prefixChildren: 1 }), i1.ɵqud(603979776, 22, { _suffixChildren: 1 }), (_l()(),
+            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'productBrand'], ['mdInput',
                 ''], ['placeholder', 'Brand']], [[2, 'ng-untouched', null], [2, 'ng-touched',
                 null], [2, 'ng-pristine', null], [2, 'ng-dirty', null],
             [2, 'ng-valid', null], [2, 'ng-invalid', null], [2, 'ng-pending',
@@ -474,38 +464,38 @@ function View_ViewProductComponent_1(_l) {
                 'compositionend'], [null, 'focus']], function (_v, en, $event) {
             var ad = true;
             if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 77)._handleInput($event.target.value) !== false);
+                var pd_0 = (i1.ɵnov(_v, 95)._handleInput($event.target.value) !== false);
                 ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 77).onTouched() !== false);
+                var pd_1 = (i1.ɵnov(_v, 95).onTouched() !== false);
                 ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 77)._compositionStart() !== false);
+                var pd_2 = (i1.ɵnov(_v, 95)._compositionStart() !== false);
                 ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 77)._compositionEnd($event.target.value) !== false);
+                var pd_3 = (i1.ɵnov(_v, 95)._compositionEnd($event.target.value) !== false);
                 ad = (pd_3 && ad);
             }
             if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 82)._onBlur() !== false);
+                var pd_4 = (i1.ɵnov(_v, 100)._onBlur() !== false);
                 ad = (pd_4 && ad);
             }
             if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 82)._onFocus() !== false);
+                var pd_5 = (i1.ɵnov(_v, 100)._onFocus() !== false);
                 ad = (pd_5 && ad);
             }
             if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 82)._onInput() !== false);
+                var pd_6 = (i1.ɵnov(_v, 100)._onInput() !== false);
                 ad = (pd_6 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
+        }, null, null)), i1.ɵdid(16384, null, 0, i4.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i4.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i4.NG_VALUE_ACCESSOR, function (p0_0) {
             return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [8, null], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[7, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
+        }, [i4.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [8, null], [8, null], [2, i4.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, [[17, 4]], 0, i3.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i4.NgControl], [2, i4.NgForm], [2,
+                i4.FormGroupDirective], [2, i3.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
                 'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n            '])),
         (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 22, 'div', [], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n\n            '])), (_l()(), i1.ɵeld(0, null, null, 16, 'md-input-container', [['class', 'mat-input-container']], [[1, 'align', 0], [2, 'mat-input-invalid', null], [2, 'mat-focused', null],
@@ -515,13 +505,13 @@ function View_ViewProductComponent_1(_l) {
                 'click']], function (_v, en, $event) {
             var ad = true;
             if (('click' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 89)._focusInput() !== false);
+                var pd_0 = (i1.ɵnov(_v, 107)._focusInput() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 13, { _mdInputChild: 0 }), i1.ɵqud(335544320, 14, { _placeholderChild: 0 }), i1.ɵqud(603979776, 15, { _errorChildren: 1 }), i1.ɵqud(603979776, 16, { _hintChildren: 1 }), i1.ɵqud(603979776, 17, { _prefixChildren: 1 }), i1.ɵqud(603979776, 18, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'cnf_code'], ['mdInput',
+        }, i2.View_MdInputContainer_0, i2.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i3.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
+            [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 23, { _mdInputChild: 0 }), i1.ɵqud(335544320, 24, { _placeholderChild: 0 }), i1.ɵqud(603979776, 25, { _errorChildren: 1 }), i1.ɵqud(603979776, 26, { _hintChildren: 1 }), i1.ɵqud(603979776, 27, { _prefixChildren: 1 }), i1.ɵqud(603979776, 28, { _suffixChildren: 1 }), (_l()(),
+            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'cnfCode'], ['mdInput',
                 ''], ['placeholder', 'CNF CODE']], [[2, 'ng-untouched', null], [2,
                 'ng-touched', null], [2, 'ng-pristine', null], [2, 'ng-dirty',
                 null], [2, 'ng-valid', null], [2, 'ng-invalid', null],
@@ -530,40 +520,40 @@ function View_ViewProductComponent_1(_l) {
             [null, 'compositionend'], [null, 'focus']], function (_v, en, $event) {
             var ad = true;
             if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 98)._handleInput($event.target.value) !== false);
+                var pd_0 = (i1.ɵnov(_v, 116)._handleInput($event.target.value) !== false);
                 ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 98).onTouched() !== false);
+                var pd_1 = (i1.ɵnov(_v, 116).onTouched() !== false);
                 ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 98)._compositionStart() !== false);
+                var pd_2 = (i1.ɵnov(_v, 116)._compositionStart() !== false);
                 ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 98)._compositionEnd($event.target.value) !== false);
+                var pd_3 = (i1.ɵnov(_v, 116)._compositionEnd($event.target.value) !== false);
                 ad = (pd_3 && ad);
             }
             if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 103)._onBlur() !== false);
+                var pd_4 = (i1.ɵnov(_v, 121)._onBlur() !== false);
                 ad = (pd_4 && ad);
             }
             if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 103)._onFocus() !== false);
+                var pd_5 = (i1.ɵnov(_v, 121)._onFocus() !== false);
                 ad = (pd_5 && ad);
             }
             if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 103)._onInput() !== false);
+                var pd_6 = (i1.ɵnov(_v, 121)._onInput() !== false);
                 ad = (pd_6 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
+        }, null, null)), i1.ɵdid(16384, null, 0, i4.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i4.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i4.NG_VALUE_ACCESSOR, function (p0_0) {
             return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [8, null], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[13, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
+        }, [i4.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [8, null], [8, null], [2, i4.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, [[23, 4]], 0, i3.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i4.NgControl], [2, i4.NgForm], [2,
+                i4.FormGroupDirective], [2, i3.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
                 'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n            '])),
-        (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_2)),
+        (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_5)),
         i1.ɵdid(16384, null, 0, i6.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
                 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(),
             i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 22, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n            '])), (_l()(),
@@ -575,13 +565,13 @@ function View_ViewProductComponent_1(_l) {
                 [2, 'ng-pending', null]], [[null, 'click']], function (_v, en, $event) {
                 var ad = true;
                 if (('click' === en)) {
-                    var pd_0 = (i1.ɵnov(_v, 113)._focusInput() !== false);
+                    var pd_0 = (i1.ɵnov(_v, 131)._focusInput() !== false);
                     ad = (pd_0 && ad);
                 }
                 return ad;
-            }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 19, { _mdInputChild: 0 }), i1.ɵqud(335544320, 20, { _placeholderChild: 0 }), i1.ɵqud(603979776, 21, { _errorChildren: 1 }), i1.ɵqud(603979776, 22, { _hintChildren: 1 }), i1.ɵqud(603979776, 23, { _prefixChildren: 1 }), i1.ɵqud(603979776, 24, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'cluster_number'], ['mdInput',
+            }, i2.View_MdInputContainer_0, i2.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i3.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
+            [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 29, { _mdInputChild: 0 }), i1.ɵqud(335544320, 30, { _placeholderChild: 0 }), i1.ɵqud(603979776, 31, { _errorChildren: 1 }), i1.ɵqud(603979776, 32, { _hintChildren: 1 }), i1.ɵqud(603979776, 33, { _prefixChildren: 1 }), i1.ɵqud(603979776, 34, { _suffixChildren: 1 }), (_l()(),
+            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'clusterNumber'], ['mdInput',
                 ''], ['placeholder', 'Cluster Number']], [[2, 'ng-untouched', null],
             [2, 'ng-touched', null], [2, 'ng-pristine', null], [2, 'ng-dirty',
                 null], [2, 'ng-valid', null], [2, 'ng-invalid', null],
@@ -590,40 +580,40 @@ function View_ViewProductComponent_1(_l) {
             [null, 'compositionend'], [null, 'focus']], function (_v, en, $event) {
             var ad = true;
             if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 122)._handleInput($event.target.value) !== false);
+                var pd_0 = (i1.ɵnov(_v, 140)._handleInput($event.target.value) !== false);
                 ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 122).onTouched() !== false);
+                var pd_1 = (i1.ɵnov(_v, 140).onTouched() !== false);
                 ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 122)._compositionStart() !== false);
+                var pd_2 = (i1.ɵnov(_v, 140)._compositionStart() !== false);
                 ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 122)._compositionEnd($event.target.value) !== false);
+                var pd_3 = (i1.ɵnov(_v, 140)._compositionEnd($event.target.value) !== false);
                 ad = (pd_3 && ad);
             }
             if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 127)._onBlur() !== false);
+                var pd_4 = (i1.ɵnov(_v, 145)._onBlur() !== false);
                 ad = (pd_4 && ad);
             }
             if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 127)._onFocus() !== false);
+                var pd_5 = (i1.ɵnov(_v, 145)._onFocus() !== false);
                 ad = (pd_5 && ad);
             }
             if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 127)._onInput() !== false);
+                var pd_6 = (i1.ɵnov(_v, 145)._onInput() !== false);
                 ad = (pd_6 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
+        }, null, null)), i1.ɵdid(16384, null, 0, i4.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i4.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i4.NG_VALUE_ACCESSOR, function (p0_0) {
             return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [8, null], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[19, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
+        }, [i4.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [8, null], [8, null], [2, i4.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, [[29, 4]], 0, i3.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i4.NgControl], [2, i4.NgForm], [2,
+                i4.FormGroupDirective], [2, i3.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
                 'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n            \n            '])),
-        (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_3)),
+        (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_6)),
         i1.ɵdid(16384, null, 0, i6.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
                 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(),
             i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵted(null, ['\n\n\n\n    '])),
@@ -637,13 +627,13 @@ function View_ViewProductComponent_1(_l) {
                 null]], [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             if (('click' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 140)._focusInput() !== false);
+                var pd_0 = (i1.ɵnov(_v, 158)._focusInput() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 25, { _mdInputChild: 0 }), i1.ɵqud(335544320, 26, { _placeholderChild: 0 }), i1.ɵqud(603979776, 27, { _errorChildren: 1 }), i1.ɵqud(603979776, 28, { _hintChildren: 1 }), i1.ɵqud(603979776, 29, { _prefixChildren: 1 }), i1.ɵqud(603979776, 30, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'product_description'],
+        }, i2.View_MdInputContainer_0, i2.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i3.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
+            [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 35, { _mdInputChild: 0 }), i1.ɵqud(335544320, 36, { _placeholderChild: 0 }), i1.ɵqud(603979776, 37, { _errorChildren: 1 }), i1.ɵqud(603979776, 38, { _hintChildren: 1 }), i1.ɵqud(603979776, 39, { _prefixChildren: 1 }), i1.ɵqud(603979776, 40, { _suffixChildren: 1 }), (_l()(),
+            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 1, 6, 'input', [['class', 'mat-input-element'], ['formControlName', 'productDescription'],
             ['mdInput', ''], ['placeholder', 'Description']], [[2, 'ng-untouched', null],
             [2, 'ng-touched', null], [2, 'ng-pristine', null], [2, 'ng-dirty',
                 null], [2, 'ng-valid', null], [2, 'ng-invalid', null],
@@ -652,59 +642,59 @@ function View_ViewProductComponent_1(_l) {
             [null, 'compositionend'], [null, 'focus']], function (_v, en, $event) {
             var ad = true;
             if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 149)._handleInput($event.target.value) !== false);
+                var pd_0 = (i1.ɵnov(_v, 167)._handleInput($event.target.value) !== false);
                 ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 149).onTouched() !== false);
+                var pd_1 = (i1.ɵnov(_v, 167).onTouched() !== false);
                 ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 149)._compositionStart() !== false);
+                var pd_2 = (i1.ɵnov(_v, 167)._compositionStart() !== false);
                 ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 149)._compositionEnd($event.target.value) !== false);
+                var pd_3 = (i1.ɵnov(_v, 167)._compositionEnd($event.target.value) !== false);
                 ad = (pd_3 && ad);
             }
             if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 154)._onBlur() !== false);
+                var pd_4 = (i1.ɵnov(_v, 172)._onBlur() !== false);
                 ad = (pd_4 && ad);
             }
             if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 154)._onFocus() !== false);
+                var pd_5 = (i1.ɵnov(_v, 172)._onFocus() !== false);
                 ad = (pd_5 && ad);
             }
             if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 154)._onInput() !== false);
+                var pd_6 = (i1.ɵnov(_v, 172)._onInput() !== false);
                 ad = (pd_6 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
+        }, null, null)), i1.ɵdid(16384, null, 0, i4.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i4.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵprd(1024, null, i4.NG_VALUE_ACCESSOR, function (p0_0) {
             return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [8, null], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[25, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
+        }, [i4.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [8, null], [8, null], [2, i4.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, [[35, 4]], 0, i3.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i4.NgControl], [2, i4.NgForm], [2,
+                i4.FormGroupDirective], [2, i3.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
                 'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n            \n            '])),
-        (_l()(), i1.ɵted(null, ['\n\n            '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_4)),
+        (_l()(), i1.ɵted(null, ['\n\n            '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_7)),
         i1.ɵdid(16384, null, 0, i6.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
                 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(),
             i1.ɵted(null, ['\n   \n    '])), (_l()(), i1.ɵted(null, ['\n\n    '])),
-        (_l()(), i1.ɵeld(0, null, null, 40, 'div', [['class', 'flex row'],
+        (_l()(), i1.ɵeld(0, null, null, 41, 'div', [['class', 'flex row'],
             ['style', 'margin-bottom: -32px;']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n        '])),
-        (_l()(), i1.ɵeld(0, null, null, 37, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵeld(0, null, null, 34, 'md-input-container', [['class', 'mat-input-container']], [[1, 'align', 0], [2, 'mat-input-invalid',
+        (_l()(), i1.ɵeld(0, null, null, 38, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵeld(0, null, null, 35, 'md-input-container', [['class', 'mat-input-container']], [[1, 'align', 0], [2, 'mat-input-invalid',
                 null], [2, 'mat-focused', null], [2, 'ng-untouched', null],
             [2, 'ng-touched', null], [2, 'ng-pristine', null], [2, 'ng-dirty',
                 null], [2, 'ng-valid', null], [2, 'ng-invalid', null],
             [2, 'ng-pending', null]], [[null, 'click']], function (_v, en, $event) {
             var ad = true;
             if (('click' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 167)._focusInput() !== false);
+                var pd_0 = (i1.ɵnov(_v, 185)._focusInput() !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, i3.View_MdInputContainer_0, i3.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i4.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
-            [2, i4.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 31, { _mdInputChild: 0 }), i1.ɵqud(335544320, 32, { _placeholderChild: 0 }), i1.ɵqud(603979776, 33, { _errorChildren: 1 }), i1.ɵqud(603979776, 34, { _hintChildren: 1 }), i1.ɵqud(603979776, 35, { _prefixChildren: 1 }), i1.ɵqud(603979776, 36, { _suffixChildren: 1 }), (_l()(),
-            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, [['comment', 1]], 1, 8, 'input', [['class', 'mat-input-element'], ['formControlName', 'product_comment'],
+        }, i2.View_MdInputContainer_0, i2.RenderType_MdInputContainer)), i1.ɵdid(7389184, null, 6, i3.MdInputContainer, [i1.ElementRef, i1.ChangeDetectorRef,
+            [2, i3.MD_PLACEHOLDER_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 41, { _mdInputChild: 0 }), i1.ɵqud(335544320, 42, { _placeholderChild: 0 }), i1.ɵqud(603979776, 43, { _errorChildren: 1 }), i1.ɵqud(603979776, 44, { _hintChildren: 1 }), i1.ɵqud(603979776, 45, { _prefixChildren: 1 }), i1.ɵqud(603979776, 46, { _suffixChildren: 1 }), (_l()(),
+            i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, [['comment', 1]], 1, 8, 'input', [['class', 'mat-input-element'], ['formControlName', 'productComment'],
             ['maxlength', '256'], ['mdInput', ''], ['placeholder', 'Comment']], [[1, 'maxlength',
                 0], [2, 'ng-untouched', null], [2, 'ng-touched', null], [2,
                 'ng-pristine', null], [2, 'ng-dirty', null], [2, 'ng-valid',
@@ -715,300 +705,314 @@ function View_ViewProductComponent_1(_l) {
                 'compositionend'], [null, 'focus']], function (_v, en, $event) {
             var ad = true;
             if (('input' === en)) {
-                var pd_0 = (i1.ɵnov(_v, 176)._handleInput($event.target.value) !== false);
+                var pd_0 = (i1.ɵnov(_v, 194)._handleInput($event.target.value) !== false);
                 ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-                var pd_1 = (i1.ɵnov(_v, 176).onTouched() !== false);
+                var pd_1 = (i1.ɵnov(_v, 194).onTouched() !== false);
                 ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-                var pd_2 = (i1.ɵnov(_v, 176)._compositionStart() !== false);
+                var pd_2 = (i1.ɵnov(_v, 194)._compositionStart() !== false);
                 ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-                var pd_3 = (i1.ɵnov(_v, 176)._compositionEnd($event.target.value) !== false);
+                var pd_3 = (i1.ɵnov(_v, 194)._compositionEnd($event.target.value) !== false);
                 ad = (pd_3 && ad);
             }
             if (('blur' === en)) {
-                var pd_4 = (i1.ɵnov(_v, 183)._onBlur() !== false);
+                var pd_4 = (i1.ɵnov(_v, 201)._onBlur() !== false);
                 ad = (pd_4 && ad);
             }
             if (('focus' === en)) {
-                var pd_5 = (i1.ɵnov(_v, 183)._onFocus() !== false);
+                var pd_5 = (i1.ɵnov(_v, 201)._onFocus() !== false);
                 ad = (pd_5 && ad);
             }
             if (('input' === en)) {
-                var pd_6 = (i1.ɵnov(_v, 183)._onInput() !== false);
+                var pd_6 = (i1.ɵnov(_v, 201)._onInput() !== false);
                 ad = (pd_6 && ad);
             }
             return ad;
-        }, null, null)), i1.ɵdid(16384, null, 0, i2.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i2.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵdid(540672, null, 0, i2.MaxLengthValidator, [], { maxlength: [0, 'maxlength'] }, null), i1.ɵprd(1024, null, i2.NG_VALIDATORS, function (p0_0) {
+        }, null, null)), i1.ɵdid(16384, null, 0, i4.DefaultValueAccessor, [i1.Renderer2, i1.ElementRef, [2, i4.COMPOSITION_BUFFER_MODE]], null, null), i1.ɵdid(540672, null, 0, i4.MaxLengthValidator, [], { maxlength: [0, 'maxlength'] }, null), i1.ɵprd(1024, null, i4.NG_VALIDATORS, function (p0_0) {
             return [p0_0];
-        }, [i2.MaxLengthValidator]), i1.ɵprd(1024, null, i2.NG_VALUE_ACCESSOR, function (p0_0) {
+        }, [i4.MaxLengthValidator]), i1.ɵprd(1024, null, i4.NG_VALUE_ACCESSOR, function (p0_0) {
             return [p0_0];
-        }, [i2.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i2.FormControlName, [[3, i2.ControlContainer], [2, i2.NG_VALIDATORS], [8, null], [2, i2.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.NgControl, null, [i2.FormControlName]), i1.ɵdid(16384, null, 0, i2.NgControlStatus, [i2.NgControl], null, null), i1.ɵdid(16384, [[31, 4]], 0, i4.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i2.NgControl], [2, i2.NgForm], [2,
-                i2.FormGroupDirective], [2, i4.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
+        }, [i4.DefaultValueAccessor]), i1.ɵdid(671744, null, 0, i4.FormControlName, [[3, i4.ControlContainer], [2, i4.NG_VALIDATORS], [8, null], [2, i4.NG_VALUE_ACCESSOR]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i4.NgControl, null, [i4.FormControlName]), i1.ɵdid(16384, null, 0, i4.NgControlStatus, [i4.NgControl], null, null), i1.ɵdid(16384, [[41, 4]], 0, i3.MdInputDirective, [i1.ElementRef, i1.Renderer2, i5.Platform, [2, i4.NgControl], [2, i4.NgForm], [2,
+                i4.FormGroupDirective], [2, i3.MD_ERROR_GLOBAL_OPTIONS]], { placeholder: [0,
                 'placeholder'] }, null), (_l()(), i1.ɵted(1, ['\n                '])),
-        (_l()(), i1.ɵeld(0, null, 3, 3, 'md-icon', [['mdSuffix', '']], null, null, null, null, null)), i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE],
-            i1.ElementRef], null, null), i1.ɵdid(16384, [[36, 4]], 0, i4.MdSuffix, [], null, null), (_l()(), i1.ɵted(null, ['delete'])), (_l()(), i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 5, 4, 'md-hint', [['align', 'start'], ['class', 'mat-hint']], [[2,
-                'mat-right', null], [1, 'id', 0]], null, null, null, null)), i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE],
-            i1.ElementRef], null, null), i1.ɵdid(16384, [[34, 4]], 0, i4.MdHint, [], { align: [0, 'align'] }, null), (_l()(), i1.ɵeld(0, null, null, 1, 'strong', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Let\'s add something here'])),
+        (_l()(), i1.ɵeld(0, null, 3, 4, 'md-icon', [['class', 'mat-icon'], ['mdSuffix',
+                ''], ['role', 'img']], null, null, null, i2.View_MdIcon_0, i2.RenderType_MdIcon)), i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null),
+        i1.ɵdid(16384, [[46, 4]], 0, i3.MdSuffix, [], null, null),
+        i1.ɵdid(638976, null, 0, i3.MdIcon, [i1.Renderer2, i1.ElementRef, i3.MdIconRegistry,
+            [8, null]], null, null), (_l()(), i1.ɵted(0, ['delete'])),
+        (_l()(), i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 5, 4, 'md-hint', [['align', 'start'], ['class', 'mat-hint']], [[2, 'mat-right', null],
+            [1, 'id', 0]], null, null, null, null)),
+        i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE],
+            i1.ElementRef], null, null), i1.ɵdid(16384, [[44, 4]], 0, i3.MdHint, [], { align: [0, 'align'] }, null), (_l()(), i1.ɵeld(0, null, null, 1, 'strong', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Let\'s add something here'])),
         (_l()(), i1.ɵted(1, ['\n                '])), (_l()(), i1.ɵeld(0, null, 6, 3, 'md-hint', [['align', 'end'], ['class', 'mat-hint']], [[2, 'mat-right', null],
             [1, 'id', 0]], null, null, null, null)),
-        i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE],
-            i1.ElementRef], null, null), i1.ɵdid(16384, [[34, 4]], 0, i4.MdHint, [], { align: [0, 'align'] }, null), (_l()(), i1.ɵted(null, ['', ' / 256'])), (_l()(), i1.ɵted(1, ['\n            '])), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵeld(0, null, null, 7, 'div', [['formArrayName',
-                'classification_list']], [[2, 'ng-untouched', null], [2, 'ng-touched',
-                null], [2, 'ng-pristine', null], [2, 'ng-dirty', null],
-            [2, 'ng-valid', null], [2, 'ng-invalid', null], [2, 'ng-pending',
-                null]], null, null, null, null)),
-        i1.ɵdid(212992, null, 0, i2.FormArrayName, [[3, i2.ControlContainer], [8,
-                null], [8, null]], { name: [0, 'name'] }, null), i1.ɵprd(2048, null, i2.ControlContainer, null, [i2.FormArrayName]), i1.ɵdid(16384, null, 0, i2.NgControlStatusGroup, [i2.ControlContainer], null, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_5)),
-        i1.ɵdid(802816, null, 0, i6.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
-            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n\n\n    '])), (_l()(), i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵeld(0, null, null, 3, 'md-card-actions', [['class', 'mat-card-actions']], null, null, null, null, null)),
-        i1.ɵdid(16384, null, 0, i4.MdPrefixRejector, [[2, i4.MATERIAL_COMPATIBILITY_MODE],
-            i1.ElementRef], null, null), i1.ɵdid(16384, null, 0, i4.MdCardActions, [], null, null), (_l()(), i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(0, ['\n\n']))], function (_ck, _v) {
+        i1.ɵdid(16384, null, 0, i3.MdPrefixRejector, [[2, i3.MATERIAL_COMPATIBILITY_MODE],
+            i1.ElementRef], null, null), i1.ɵdid(16384, [[44, 4]], 0, i3.MdHint, [], { align: [0, 'align'] }, null), (_l()(), i1.ɵted(null, ['', ' / 256'])), (_l()(), i1.ɵted(1, ['\n            '])), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵted(null, ['\n\n\n'])), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_7 = _co.productForm;
-        _ck(_v, 10, 0, currVal_7);
+        _ck(_v, 6, 0, currVal_7);
         var currVal_9 = (_co.productForm.pristine || !_co.productForm.valid);
-        _ck(_v, 23, 0, currVal_9);
+        _ck(_v, 19, 0, currVal_9);
         var currVal_11 = _co.productForm.pristine;
-        _ck(_v, 29, 0, currVal_11);
-        var currVal_35 = 'product_manufacturer';
-        _ck(_v, 55, 0, currVal_35);
-        var currVal_36 = 'Manufactuer';
-        _ck(_v, 58, 0, currVal_36);
-        var currVal_60 = 'product_brand';
-        _ck(_v, 79, 0, currVal_60);
-        var currVal_61 = 'Brand';
-        _ck(_v, 82, 0, currVal_61);
-        var currVal_85 = 'cnf_code';
-        _ck(_v, 100, 0, currVal_85);
-        var currVal_86 = 'CNF CODE';
-        _ck(_v, 103, 0, currVal_86);
-        var currVal_87 = _co.formErrors.cnf_code;
-        _ck(_v, 107, 0, currVal_87);
-        var currVal_111 = 'cluster_number';
-        _ck(_v, 124, 0, currVal_111);
-        var currVal_112 = 'Cluster Number';
-        _ck(_v, 127, 0, currVal_112);
-        var currVal_113 = _co.formErrors.cluster_number;
-        _ck(_v, 131, 0, currVal_113);
-        var currVal_137 = 'product_description';
-        _ck(_v, 151, 0, currVal_137);
-        var currVal_138 = 'Description';
-        _ck(_v, 154, 0, currVal_138);
-        var currVal_139 = _co.formErrors.product_description;
-        _ck(_v, 158, 0, currVal_139);
-        var currVal_164 = '256';
-        _ck(_v, 177, 0, currVal_164);
-        var currVal_165 = 'product_comment';
-        _ck(_v, 180, 0, currVal_165);
-        var currVal_166 = 'Comment';
-        _ck(_v, 183, 0, currVal_166);
-        var currVal_169 = 'start';
-        _ck(_v, 192, 0, currVal_169);
-        var currVal_172 = 'end';
-        _ck(_v, 198, 0, currVal_172);
-        var currVal_181 = 'classification_list';
-        _ck(_v, 205, 0, currVal_181);
-        var currVal_182 = _co.classification_list.controls;
-        _ck(_v, 210, 0, currVal_182);
+        _ck(_v, 25, 0, currVal_11);
+        var currVal_12 = (_co.listOfClass != null);
+        _ck(_v, 34, 0, currVal_12);
+        var currVal_36 = 'classificationType';
+        _ck(_v, 52, 0, currVal_36);
+        var currVal_37 = 'Classification Type';
+        _ck(_v, 55, 0, currVal_37);
+        var currVal_61 = 'productManufacturer';
+        _ck(_v, 73, 0, currVal_61);
+        var currVal_62 = 'Manufactuer';
+        _ck(_v, 76, 0, currVal_62);
+        var currVal_86 = 'productBrand';
+        _ck(_v, 97, 0, currVal_86);
+        var currVal_87 = 'Brand';
+        _ck(_v, 100, 0, currVal_87);
+        var currVal_111 = 'cnfCode';
+        _ck(_v, 118, 0, currVal_111);
+        var currVal_112 = 'CNF CODE';
+        _ck(_v, 121, 0, currVal_112);
+        var currVal_113 = _co.formErrors.cnf_code;
+        _ck(_v, 125, 0, currVal_113);
+        var currVal_137 = 'clusterNumber';
+        _ck(_v, 142, 0, currVal_137);
+        var currVal_138 = 'Cluster Number';
+        _ck(_v, 145, 0, currVal_138);
+        var currVal_139 = _co.formErrors.cluster_number;
+        _ck(_v, 149, 0, currVal_139);
+        var currVal_163 = 'productDescription';
+        _ck(_v, 169, 0, currVal_163);
+        var currVal_164 = 'Description';
+        _ck(_v, 172, 0, currVal_164);
+        var currVal_165 = _co.formErrors.product_description;
+        _ck(_v, 176, 0, currVal_165);
+        var currVal_190 = '256';
+        _ck(_v, 195, 0, currVal_190);
+        var currVal_191 = 'productComment';
+        _ck(_v, 198, 0, currVal_191);
+        var currVal_192 = 'Comment';
+        _ck(_v, 201, 0, currVal_192);
+        _ck(_v, 206, 0);
+        var currVal_195 = 'start';
+        _ck(_v, 211, 0, currVal_195);
+        var currVal_198 = 'end';
+        _ck(_v, 217, 0, currVal_198);
     }, function (_ck, _v) {
-        var currVal_0 = i1.ɵnov(_v, 12).ngClassUntouched;
-        var currVal_1 = i1.ɵnov(_v, 12).ngClassTouched;
-        var currVal_2 = i1.ɵnov(_v, 12).ngClassPristine;
-        var currVal_3 = i1.ɵnov(_v, 12).ngClassDirty;
-        var currVal_4 = i1.ɵnov(_v, 12).ngClassValid;
-        var currVal_5 = i1.ɵnov(_v, 12).ngClassInvalid;
-        var currVal_6 = i1.ɵnov(_v, 12).ngClassPending;
-        _ck(_v, 8, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6);
-        var currVal_8 = (i1.ɵnov(_v, 23).disabled || null);
-        _ck(_v, 21, 0, currVal_8);
-        var currVal_10 = (i1.ɵnov(_v, 29).disabled || null);
-        _ck(_v, 27, 0, currVal_10);
-        var currVal_12 = null;
-        var currVal_13 = i1.ɵnov(_v, 44)._mdInputChild._isErrorState();
-        var currVal_14 = i1.ɵnov(_v, 44)._mdInputChild.focused;
-        var currVal_15 = i1.ɵnov(_v, 44)._shouldForward('untouched');
-        var currVal_16 = i1.ɵnov(_v, 44)._shouldForward('touched');
-        var currVal_17 = i1.ɵnov(_v, 44)._shouldForward('pristine');
-        var currVal_18 = i1.ɵnov(_v, 44)._shouldForward('dirty');
-        var currVal_19 = i1.ɵnov(_v, 44)._shouldForward('valid');
-        var currVal_20 = i1.ɵnov(_v, 44)._shouldForward('invalid');
-        var currVal_21 = i1.ɵnov(_v, 44)._shouldForward('pending');
-        _ck(_v, 43, 0, currVal_12, currVal_13, currVal_14, currVal_15, currVal_16, currVal_17, currVal_18, currVal_19, currVal_20, currVal_21);
-        var currVal_22 = i1.ɵnov(_v, 57).ngClassUntouched;
-        var currVal_23 = i1.ɵnov(_v, 57).ngClassTouched;
-        var currVal_24 = i1.ɵnov(_v, 57).ngClassPristine;
-        var currVal_25 = i1.ɵnov(_v, 57).ngClassDirty;
-        var currVal_26 = i1.ɵnov(_v, 57).ngClassValid;
-        var currVal_27 = i1.ɵnov(_v, 57).ngClassInvalid;
-        var currVal_28 = i1.ɵnov(_v, 57).ngClassPending;
-        var currVal_29 = i1.ɵnov(_v, 58).id;
-        var currVal_30 = i1.ɵnov(_v, 58).placeholder;
-        var currVal_31 = i1.ɵnov(_v, 58).disabled;
-        var currVal_32 = i1.ɵnov(_v, 58).required;
-        var currVal_33 = (i1.ɵnov(_v, 58).ariaDescribedby || null);
-        var currVal_34 = i1.ɵnov(_v, 58)._isErrorState();
-        _ck(_v, 52, 1, [currVal_22, currVal_23, currVal_24, currVal_25, currVal_26, currVal_27,
-            currVal_28, currVal_29, currVal_30, currVal_31, currVal_32, currVal_33, currVal_34]);
-        var currVal_37 = null;
-        var currVal_38 = i1.ɵnov(_v, 68)._mdInputChild._isErrorState();
-        var currVal_39 = i1.ɵnov(_v, 68)._mdInputChild.focused;
-        var currVal_40 = i1.ɵnov(_v, 68)._shouldForward('untouched');
-        var currVal_41 = i1.ɵnov(_v, 68)._shouldForward('touched');
-        var currVal_42 = i1.ɵnov(_v, 68)._shouldForward('pristine');
-        var currVal_43 = i1.ɵnov(_v, 68)._shouldForward('dirty');
-        var currVal_44 = i1.ɵnov(_v, 68)._shouldForward('valid');
-        var currVal_45 = i1.ɵnov(_v, 68)._shouldForward('invalid');
-        var currVal_46 = i1.ɵnov(_v, 68)._shouldForward('pending');
-        _ck(_v, 67, 0, currVal_37, currVal_38, currVal_39, currVal_40, currVal_41, currVal_42, currVal_43, currVal_44, currVal_45, currVal_46);
-        var currVal_47 = i1.ɵnov(_v, 81).ngClassUntouched;
-        var currVal_48 = i1.ɵnov(_v, 81).ngClassTouched;
-        var currVal_49 = i1.ɵnov(_v, 81).ngClassPristine;
-        var currVal_50 = i1.ɵnov(_v, 81).ngClassDirty;
-        var currVal_51 = i1.ɵnov(_v, 81).ngClassValid;
-        var currVal_52 = i1.ɵnov(_v, 81).ngClassInvalid;
-        var currVal_53 = i1.ɵnov(_v, 81).ngClassPending;
-        var currVal_54 = i1.ɵnov(_v, 82).id;
-        var currVal_55 = i1.ɵnov(_v, 82).placeholder;
-        var currVal_56 = i1.ɵnov(_v, 82).disabled;
-        var currVal_57 = i1.ɵnov(_v, 82).required;
-        var currVal_58 = (i1.ɵnov(_v, 82).ariaDescribedby || null);
-        var currVal_59 = i1.ɵnov(_v, 82)._isErrorState();
-        _ck(_v, 76, 1, [currVal_47, currVal_48, currVal_49, currVal_50, currVal_51, currVal_52,
-            currVal_53, currVal_54, currVal_55, currVal_56, currVal_57, currVal_58, currVal_59]);
-        var currVal_62 = null;
-        var currVal_63 = i1.ɵnov(_v, 89)._mdInputChild._isErrorState();
-        var currVal_64 = i1.ɵnov(_v, 89)._mdInputChild.focused;
-        var currVal_65 = i1.ɵnov(_v, 89)._shouldForward('untouched');
-        var currVal_66 = i1.ɵnov(_v, 89)._shouldForward('touched');
-        var currVal_67 = i1.ɵnov(_v, 89)._shouldForward('pristine');
-        var currVal_68 = i1.ɵnov(_v, 89)._shouldForward('dirty');
-        var currVal_69 = i1.ɵnov(_v, 89)._shouldForward('valid');
-        var currVal_70 = i1.ɵnov(_v, 89)._shouldForward('invalid');
-        var currVal_71 = i1.ɵnov(_v, 89)._shouldForward('pending');
-        _ck(_v, 88, 0, currVal_62, currVal_63, currVal_64, currVal_65, currVal_66, currVal_67, currVal_68, currVal_69, currVal_70, currVal_71);
-        var currVal_72 = i1.ɵnov(_v, 102).ngClassUntouched;
-        var currVal_73 = i1.ɵnov(_v, 102).ngClassTouched;
-        var currVal_74 = i1.ɵnov(_v, 102).ngClassPristine;
-        var currVal_75 = i1.ɵnov(_v, 102).ngClassDirty;
-        var currVal_76 = i1.ɵnov(_v, 102).ngClassValid;
-        var currVal_77 = i1.ɵnov(_v, 102).ngClassInvalid;
-        var currVal_78 = i1.ɵnov(_v, 102).ngClassPending;
-        var currVal_79 = i1.ɵnov(_v, 103).id;
-        var currVal_80 = i1.ɵnov(_v, 103).placeholder;
-        var currVal_81 = i1.ɵnov(_v, 103).disabled;
-        var currVal_82 = i1.ɵnov(_v, 103).required;
-        var currVal_83 = (i1.ɵnov(_v, 103).ariaDescribedby || null);
-        var currVal_84 = i1.ɵnov(_v, 103)._isErrorState();
-        _ck(_v, 97, 1, [currVal_72, currVal_73, currVal_74, currVal_75, currVal_76, currVal_77,
-            currVal_78, currVal_79, currVal_80, currVal_81, currVal_82, currVal_83, currVal_84]);
+        var currVal_0 = i1.ɵnov(_v, 8).ngClassUntouched;
+        var currVal_1 = i1.ɵnov(_v, 8).ngClassTouched;
+        var currVal_2 = i1.ɵnov(_v, 8).ngClassPristine;
+        var currVal_3 = i1.ɵnov(_v, 8).ngClassDirty;
+        var currVal_4 = i1.ɵnov(_v, 8).ngClassValid;
+        var currVal_5 = i1.ɵnov(_v, 8).ngClassInvalid;
+        var currVal_6 = i1.ɵnov(_v, 8).ngClassPending;
+        _ck(_v, 4, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6);
+        var currVal_8 = (i1.ɵnov(_v, 19).disabled || null);
+        _ck(_v, 17, 0, currVal_8);
+        var currVal_10 = (i1.ɵnov(_v, 25).disabled || null);
+        _ck(_v, 23, 0, currVal_10);
+        var currVal_13 = null;
+        var currVal_14 = i1.ɵnov(_v, 41)._mdInputChild._isErrorState();
+        var currVal_15 = i1.ɵnov(_v, 41)._mdInputChild.focused;
+        var currVal_16 = i1.ɵnov(_v, 41)._shouldForward('untouched');
+        var currVal_17 = i1.ɵnov(_v, 41)._shouldForward('touched');
+        var currVal_18 = i1.ɵnov(_v, 41)._shouldForward('pristine');
+        var currVal_19 = i1.ɵnov(_v, 41)._shouldForward('dirty');
+        var currVal_20 = i1.ɵnov(_v, 41)._shouldForward('valid');
+        var currVal_21 = i1.ɵnov(_v, 41)._shouldForward('invalid');
+        var currVal_22 = i1.ɵnov(_v, 41)._shouldForward('pending');
+        _ck(_v, 40, 0, currVal_13, currVal_14, currVal_15, currVal_16, currVal_17, currVal_18, currVal_19, currVal_20, currVal_21, currVal_22);
+        var currVal_23 = i1.ɵnov(_v, 54).ngClassUntouched;
+        var currVal_24 = i1.ɵnov(_v, 54).ngClassTouched;
+        var currVal_25 = i1.ɵnov(_v, 54).ngClassPristine;
+        var currVal_26 = i1.ɵnov(_v, 54).ngClassDirty;
+        var currVal_27 = i1.ɵnov(_v, 54).ngClassValid;
+        var currVal_28 = i1.ɵnov(_v, 54).ngClassInvalid;
+        var currVal_29 = i1.ɵnov(_v, 54).ngClassPending;
+        var currVal_30 = i1.ɵnov(_v, 55).id;
+        var currVal_31 = i1.ɵnov(_v, 55).placeholder;
+        var currVal_32 = i1.ɵnov(_v, 55).disabled;
+        var currVal_33 = i1.ɵnov(_v, 55).required;
+        var currVal_34 = (i1.ɵnov(_v, 55).ariaDescribedby || null);
+        var currVal_35 = i1.ɵnov(_v, 55)._isErrorState();
+        _ck(_v, 49, 1, [currVal_23, currVal_24, currVal_25, currVal_26, currVal_27, currVal_28,
+            currVal_29, currVal_30, currVal_31, currVal_32, currVal_33, currVal_34, currVal_35]);
+        var currVal_38 = null;
+        var currVal_39 = i1.ɵnov(_v, 62)._mdInputChild._isErrorState();
+        var currVal_40 = i1.ɵnov(_v, 62)._mdInputChild.focused;
+        var currVal_41 = i1.ɵnov(_v, 62)._shouldForward('untouched');
+        var currVal_42 = i1.ɵnov(_v, 62)._shouldForward('touched');
+        var currVal_43 = i1.ɵnov(_v, 62)._shouldForward('pristine');
+        var currVal_44 = i1.ɵnov(_v, 62)._shouldForward('dirty');
+        var currVal_45 = i1.ɵnov(_v, 62)._shouldForward('valid');
+        var currVal_46 = i1.ɵnov(_v, 62)._shouldForward('invalid');
+        var currVal_47 = i1.ɵnov(_v, 62)._shouldForward('pending');
+        _ck(_v, 61, 0, currVal_38, currVal_39, currVal_40, currVal_41, currVal_42, currVal_43, currVal_44, currVal_45, currVal_46, currVal_47);
+        var currVal_48 = i1.ɵnov(_v, 75).ngClassUntouched;
+        var currVal_49 = i1.ɵnov(_v, 75).ngClassTouched;
+        var currVal_50 = i1.ɵnov(_v, 75).ngClassPristine;
+        var currVal_51 = i1.ɵnov(_v, 75).ngClassDirty;
+        var currVal_52 = i1.ɵnov(_v, 75).ngClassValid;
+        var currVal_53 = i1.ɵnov(_v, 75).ngClassInvalid;
+        var currVal_54 = i1.ɵnov(_v, 75).ngClassPending;
+        var currVal_55 = i1.ɵnov(_v, 76).id;
+        var currVal_56 = i1.ɵnov(_v, 76).placeholder;
+        var currVal_57 = i1.ɵnov(_v, 76).disabled;
+        var currVal_58 = i1.ɵnov(_v, 76).required;
+        var currVal_59 = (i1.ɵnov(_v, 76).ariaDescribedby || null);
+        var currVal_60 = i1.ɵnov(_v, 76)._isErrorState();
+        _ck(_v, 70, 1, [currVal_48, currVal_49, currVal_50, currVal_51, currVal_52, currVal_53,
+            currVal_54, currVal_55, currVal_56, currVal_57, currVal_58, currVal_59, currVal_60]);
+        var currVal_63 = null;
+        var currVal_64 = i1.ɵnov(_v, 86)._mdInputChild._isErrorState();
+        var currVal_65 = i1.ɵnov(_v, 86)._mdInputChild.focused;
+        var currVal_66 = i1.ɵnov(_v, 86)._shouldForward('untouched');
+        var currVal_67 = i1.ɵnov(_v, 86)._shouldForward('touched');
+        var currVal_68 = i1.ɵnov(_v, 86)._shouldForward('pristine');
+        var currVal_69 = i1.ɵnov(_v, 86)._shouldForward('dirty');
+        var currVal_70 = i1.ɵnov(_v, 86)._shouldForward('valid');
+        var currVal_71 = i1.ɵnov(_v, 86)._shouldForward('invalid');
+        var currVal_72 = i1.ɵnov(_v, 86)._shouldForward('pending');
+        _ck(_v, 85, 0, currVal_63, currVal_64, currVal_65, currVal_66, currVal_67, currVal_68, currVal_69, currVal_70, currVal_71, currVal_72);
+        var currVal_73 = i1.ɵnov(_v, 99).ngClassUntouched;
+        var currVal_74 = i1.ɵnov(_v, 99).ngClassTouched;
+        var currVal_75 = i1.ɵnov(_v, 99).ngClassPristine;
+        var currVal_76 = i1.ɵnov(_v, 99).ngClassDirty;
+        var currVal_77 = i1.ɵnov(_v, 99).ngClassValid;
+        var currVal_78 = i1.ɵnov(_v, 99).ngClassInvalid;
+        var currVal_79 = i1.ɵnov(_v, 99).ngClassPending;
+        var currVal_80 = i1.ɵnov(_v, 100).id;
+        var currVal_81 = i1.ɵnov(_v, 100).placeholder;
+        var currVal_82 = i1.ɵnov(_v, 100).disabled;
+        var currVal_83 = i1.ɵnov(_v, 100).required;
+        var currVal_84 = (i1.ɵnov(_v, 100).ariaDescribedby || null);
+        var currVal_85 = i1.ɵnov(_v, 100)._isErrorState();
+        _ck(_v, 94, 1, [currVal_73, currVal_74, currVal_75, currVal_76, currVal_77, currVal_78,
+            currVal_79, currVal_80, currVal_81, currVal_82, currVal_83, currVal_84, currVal_85]);
         var currVal_88 = null;
-        var currVal_89 = i1.ɵnov(_v, 113)._mdInputChild._isErrorState();
-        var currVal_90 = i1.ɵnov(_v, 113)._mdInputChild.focused;
-        var currVal_91 = i1.ɵnov(_v, 113)._shouldForward('untouched');
-        var currVal_92 = i1.ɵnov(_v, 113)._shouldForward('touched');
-        var currVal_93 = i1.ɵnov(_v, 113)._shouldForward('pristine');
-        var currVal_94 = i1.ɵnov(_v, 113)._shouldForward('dirty');
-        var currVal_95 = i1.ɵnov(_v, 113)._shouldForward('valid');
-        var currVal_96 = i1.ɵnov(_v, 113)._shouldForward('invalid');
-        var currVal_97 = i1.ɵnov(_v, 113)._shouldForward('pending');
-        _ck(_v, 112, 0, currVal_88, currVal_89, currVal_90, currVal_91, currVal_92, currVal_93, currVal_94, currVal_95, currVal_96, currVal_97);
-        var currVal_98 = i1.ɵnov(_v, 126).ngClassUntouched;
-        var currVal_99 = i1.ɵnov(_v, 126).ngClassTouched;
-        var currVal_100 = i1.ɵnov(_v, 126).ngClassPristine;
-        var currVal_101 = i1.ɵnov(_v, 126).ngClassDirty;
-        var currVal_102 = i1.ɵnov(_v, 126).ngClassValid;
-        var currVal_103 = i1.ɵnov(_v, 126).ngClassInvalid;
-        var currVal_104 = i1.ɵnov(_v, 126).ngClassPending;
-        var currVal_105 = i1.ɵnov(_v, 127).id;
-        var currVal_106 = i1.ɵnov(_v, 127).placeholder;
-        var currVal_107 = i1.ɵnov(_v, 127).disabled;
-        var currVal_108 = i1.ɵnov(_v, 127).required;
-        var currVal_109 = (i1.ɵnov(_v, 127).ariaDescribedby || null);
-        var currVal_110 = i1.ɵnov(_v, 127)._isErrorState();
-        _ck(_v, 121, 1, [currVal_98, currVal_99, currVal_100, currVal_101, currVal_102, currVal_103,
-            currVal_104, currVal_105, currVal_106, currVal_107, currVal_108, currVal_109,
-            currVal_110]);
+        var currVal_89 = i1.ɵnov(_v, 107)._mdInputChild._isErrorState();
+        var currVal_90 = i1.ɵnov(_v, 107)._mdInputChild.focused;
+        var currVal_91 = i1.ɵnov(_v, 107)._shouldForward('untouched');
+        var currVal_92 = i1.ɵnov(_v, 107)._shouldForward('touched');
+        var currVal_93 = i1.ɵnov(_v, 107)._shouldForward('pristine');
+        var currVal_94 = i1.ɵnov(_v, 107)._shouldForward('dirty');
+        var currVal_95 = i1.ɵnov(_v, 107)._shouldForward('valid');
+        var currVal_96 = i1.ɵnov(_v, 107)._shouldForward('invalid');
+        var currVal_97 = i1.ɵnov(_v, 107)._shouldForward('pending');
+        _ck(_v, 106, 0, currVal_88, currVal_89, currVal_90, currVal_91, currVal_92, currVal_93, currVal_94, currVal_95, currVal_96, currVal_97);
+        var currVal_98 = i1.ɵnov(_v, 120).ngClassUntouched;
+        var currVal_99 = i1.ɵnov(_v, 120).ngClassTouched;
+        var currVal_100 = i1.ɵnov(_v, 120).ngClassPristine;
+        var currVal_101 = i1.ɵnov(_v, 120).ngClassDirty;
+        var currVal_102 = i1.ɵnov(_v, 120).ngClassValid;
+        var currVal_103 = i1.ɵnov(_v, 120).ngClassInvalid;
+        var currVal_104 = i1.ɵnov(_v, 120).ngClassPending;
+        var currVal_105 = i1.ɵnov(_v, 121).id;
+        var currVal_106 = i1.ɵnov(_v, 121).placeholder;
+        var currVal_107 = i1.ɵnov(_v, 121).disabled;
+        var currVal_108 = i1.ɵnov(_v, 121).required;
+        var currVal_109 = (i1.ɵnov(_v, 121).ariaDescribedby || null);
+        var currVal_110 = i1.ɵnov(_v, 121)._isErrorState();
+        _ck(_v, 115, 1, [currVal_98, currVal_99, currVal_100, currVal_101, currVal_102, currVal_103,
+            currVal_104, currVal_105, currVal_106, currVal_107, currVal_108, currVal_109, currVal_110]);
         var currVal_114 = null;
-        var currVal_115 = i1.ɵnov(_v, 140)._mdInputChild._isErrorState();
-        var currVal_116 = i1.ɵnov(_v, 140)._mdInputChild.focused;
-        var currVal_117 = i1.ɵnov(_v, 140)._shouldForward('untouched');
-        var currVal_118 = i1.ɵnov(_v, 140)._shouldForward('touched');
-        var currVal_119 = i1.ɵnov(_v, 140)._shouldForward('pristine');
-        var currVal_120 = i1.ɵnov(_v, 140)._shouldForward('dirty');
-        var currVal_121 = i1.ɵnov(_v, 140)._shouldForward('valid');
-        var currVal_122 = i1.ɵnov(_v, 140)._shouldForward('invalid');
-        var currVal_123 = i1.ɵnov(_v, 140)._shouldForward('pending');
-        _ck(_v, 139, 0, currVal_114, currVal_115, currVal_116, currVal_117, currVal_118, currVal_119, currVal_120, currVal_121, currVal_122, currVal_123);
-        var currVal_124 = i1.ɵnov(_v, 153).ngClassUntouched;
-        var currVal_125 = i1.ɵnov(_v, 153).ngClassTouched;
-        var currVal_126 = i1.ɵnov(_v, 153).ngClassPristine;
-        var currVal_127 = i1.ɵnov(_v, 153).ngClassDirty;
-        var currVal_128 = i1.ɵnov(_v, 153).ngClassValid;
-        var currVal_129 = i1.ɵnov(_v, 153).ngClassInvalid;
-        var currVal_130 = i1.ɵnov(_v, 153).ngClassPending;
-        var currVal_131 = i1.ɵnov(_v, 154).id;
-        var currVal_132 = i1.ɵnov(_v, 154).placeholder;
-        var currVal_133 = i1.ɵnov(_v, 154).disabled;
-        var currVal_134 = i1.ɵnov(_v, 154).required;
-        var currVal_135 = (i1.ɵnov(_v, 154).ariaDescribedby || null);
-        var currVal_136 = i1.ɵnov(_v, 154)._isErrorState();
-        _ck(_v, 148, 1, [currVal_124, currVal_125, currVal_126, currVal_127, currVal_128,
-            currVal_129, currVal_130, currVal_131, currVal_132, currVal_133, currVal_134,
-            currVal_135, currVal_136]);
+        var currVal_115 = i1.ɵnov(_v, 131)._mdInputChild._isErrorState();
+        var currVal_116 = i1.ɵnov(_v, 131)._mdInputChild.focused;
+        var currVal_117 = i1.ɵnov(_v, 131)._shouldForward('untouched');
+        var currVal_118 = i1.ɵnov(_v, 131)._shouldForward('touched');
+        var currVal_119 = i1.ɵnov(_v, 131)._shouldForward('pristine');
+        var currVal_120 = i1.ɵnov(_v, 131)._shouldForward('dirty');
+        var currVal_121 = i1.ɵnov(_v, 131)._shouldForward('valid');
+        var currVal_122 = i1.ɵnov(_v, 131)._shouldForward('invalid');
+        var currVal_123 = i1.ɵnov(_v, 131)._shouldForward('pending');
+        _ck(_v, 130, 0, currVal_114, currVal_115, currVal_116, currVal_117, currVal_118, currVal_119, currVal_120, currVal_121, currVal_122, currVal_123);
+        var currVal_124 = i1.ɵnov(_v, 144).ngClassUntouched;
+        var currVal_125 = i1.ɵnov(_v, 144).ngClassTouched;
+        var currVal_126 = i1.ɵnov(_v, 144).ngClassPristine;
+        var currVal_127 = i1.ɵnov(_v, 144).ngClassDirty;
+        var currVal_128 = i1.ɵnov(_v, 144).ngClassValid;
+        var currVal_129 = i1.ɵnov(_v, 144).ngClassInvalid;
+        var currVal_130 = i1.ɵnov(_v, 144).ngClassPending;
+        var currVal_131 = i1.ɵnov(_v, 145).id;
+        var currVal_132 = i1.ɵnov(_v, 145).placeholder;
+        var currVal_133 = i1.ɵnov(_v, 145).disabled;
+        var currVal_134 = i1.ɵnov(_v, 145).required;
+        var currVal_135 = (i1.ɵnov(_v, 145).ariaDescribedby || null);
+        var currVal_136 = i1.ɵnov(_v, 145)._isErrorState();
+        _ck(_v, 139, 1, [currVal_124, currVal_125, currVal_126, currVal_127, currVal_128, currVal_129,
+            currVal_130, currVal_131, currVal_132, currVal_133, currVal_134, currVal_135, currVal_136]);
         var currVal_140 = null;
-        var currVal_141 = i1.ɵnov(_v, 167)._mdInputChild._isErrorState();
-        var currVal_142 = i1.ɵnov(_v, 167)._mdInputChild.focused;
-        var currVal_143 = i1.ɵnov(_v, 167)._shouldForward('untouched');
-        var currVal_144 = i1.ɵnov(_v, 167)._shouldForward('touched');
-        var currVal_145 = i1.ɵnov(_v, 167)._shouldForward('pristine');
-        var currVal_146 = i1.ɵnov(_v, 167)._shouldForward('dirty');
-        var currVal_147 = i1.ɵnov(_v, 167)._shouldForward('valid');
-        var currVal_148 = i1.ɵnov(_v, 167)._shouldForward('invalid');
-        var currVal_149 = i1.ɵnov(_v, 167)._shouldForward('pending');
-        _ck(_v, 166, 0, currVal_140, currVal_141, currVal_142, currVal_143, currVal_144, currVal_145, currVal_146, currVal_147, currVal_148, currVal_149);
-        var currVal_150 = (i1.ɵnov(_v, 177).maxlength ? i1.ɵnov(_v, 177).maxlength : null);
-        var currVal_151 = i1.ɵnov(_v, 182).ngClassUntouched;
-        var currVal_152 = i1.ɵnov(_v, 182).ngClassTouched;
-        var currVal_153 = i1.ɵnov(_v, 182).ngClassPristine;
-        var currVal_154 = i1.ɵnov(_v, 182).ngClassDirty;
-        var currVal_155 = i1.ɵnov(_v, 182).ngClassValid;
-        var currVal_156 = i1.ɵnov(_v, 182).ngClassInvalid;
-        var currVal_157 = i1.ɵnov(_v, 182).ngClassPending;
-        var currVal_158 = i1.ɵnov(_v, 183).id;
-        var currVal_159 = i1.ɵnov(_v, 183).placeholder;
-        var currVal_160 = i1.ɵnov(_v, 183).disabled;
-        var currVal_161 = i1.ɵnov(_v, 183).required;
-        var currVal_162 = (i1.ɵnov(_v, 183).ariaDescribedby || null);
-        var currVal_163 = i1.ɵnov(_v, 183)._isErrorState();
-        _ck(_v, 175, 1, [currVal_150, currVal_151, currVal_152, currVal_153, currVal_154,
-            currVal_155, currVal_156, currVal_157, currVal_158, currVal_159, currVal_160,
-            currVal_161, currVal_162, currVal_163]);
-        var currVal_167 = (i1.ɵnov(_v, 192).align == 'end');
-        var currVal_168 = i1.ɵnov(_v, 192).id;
-        _ck(_v, 190, 0, currVal_167, currVal_168);
-        var currVal_170 = (i1.ɵnov(_v, 198).align == 'end');
-        var currVal_171 = i1.ɵnov(_v, 198).id;
-        _ck(_v, 196, 0, currVal_170, currVal_171);
-        var currVal_173 = i1.ɵnov(_v, 175).value.length;
-        _ck(_v, 199, 0, currVal_173);
-        var currVal_174 = i1.ɵnov(_v, 207).ngClassUntouched;
-        var currVal_175 = i1.ɵnov(_v, 207).ngClassTouched;
-        var currVal_176 = i1.ɵnov(_v, 207).ngClassPristine;
-        var currVal_177 = i1.ɵnov(_v, 207).ngClassDirty;
-        var currVal_178 = i1.ɵnov(_v, 207).ngClassValid;
-        var currVal_179 = i1.ɵnov(_v, 207).ngClassInvalid;
-        var currVal_180 = i1.ɵnov(_v, 207).ngClassPending;
-        _ck(_v, 204, 0, currVal_174, currVal_175, currVal_176, currVal_177, currVal_178, currVal_179, currVal_180);
+        var currVal_141 = i1.ɵnov(_v, 158)._mdInputChild._isErrorState();
+        var currVal_142 = i1.ɵnov(_v, 158)._mdInputChild.focused;
+        var currVal_143 = i1.ɵnov(_v, 158)._shouldForward('untouched');
+        var currVal_144 = i1.ɵnov(_v, 158)._shouldForward('touched');
+        var currVal_145 = i1.ɵnov(_v, 158)._shouldForward('pristine');
+        var currVal_146 = i1.ɵnov(_v, 158)._shouldForward('dirty');
+        var currVal_147 = i1.ɵnov(_v, 158)._shouldForward('valid');
+        var currVal_148 = i1.ɵnov(_v, 158)._shouldForward('invalid');
+        var currVal_149 = i1.ɵnov(_v, 158)._shouldForward('pending');
+        _ck(_v, 157, 0, currVal_140, currVal_141, currVal_142, currVal_143, currVal_144, currVal_145, currVal_146, currVal_147, currVal_148, currVal_149);
+        var currVal_150 = i1.ɵnov(_v, 171).ngClassUntouched;
+        var currVal_151 = i1.ɵnov(_v, 171).ngClassTouched;
+        var currVal_152 = i1.ɵnov(_v, 171).ngClassPristine;
+        var currVal_153 = i1.ɵnov(_v, 171).ngClassDirty;
+        var currVal_154 = i1.ɵnov(_v, 171).ngClassValid;
+        var currVal_155 = i1.ɵnov(_v, 171).ngClassInvalid;
+        var currVal_156 = i1.ɵnov(_v, 171).ngClassPending;
+        var currVal_157 = i1.ɵnov(_v, 172).id;
+        var currVal_158 = i1.ɵnov(_v, 172).placeholder;
+        var currVal_159 = i1.ɵnov(_v, 172).disabled;
+        var currVal_160 = i1.ɵnov(_v, 172).required;
+        var currVal_161 = (i1.ɵnov(_v, 172).ariaDescribedby || null);
+        var currVal_162 = i1.ɵnov(_v, 172)._isErrorState();
+        _ck(_v, 166, 1, [currVal_150, currVal_151, currVal_152, currVal_153, currVal_154, currVal_155,
+            currVal_156, currVal_157, currVal_158, currVal_159, currVal_160, currVal_161, currVal_162]);
+        var currVal_166 = null;
+        var currVal_167 = i1.ɵnov(_v, 185)._mdInputChild._isErrorState();
+        var currVal_168 = i1.ɵnov(_v, 185)._mdInputChild.focused;
+        var currVal_169 = i1.ɵnov(_v, 185)._shouldForward('untouched');
+        var currVal_170 = i1.ɵnov(_v, 185)._shouldForward('touched');
+        var currVal_171 = i1.ɵnov(_v, 185)._shouldForward('pristine');
+        var currVal_172 = i1.ɵnov(_v, 185)._shouldForward('dirty');
+        var currVal_173 = i1.ɵnov(_v, 185)._shouldForward('valid');
+        var currVal_174 = i1.ɵnov(_v, 185)._shouldForward('invalid');
+        var currVal_175 = i1.ɵnov(_v, 185)._shouldForward('pending');
+        _ck(_v, 184, 0, currVal_166, currVal_167, currVal_168, currVal_169, currVal_170, currVal_171, currVal_172, currVal_173, currVal_174, currVal_175);
+        var currVal_176 = (i1.ɵnov(_v, 195).maxlength ? i1.ɵnov(_v, 195).maxlength : null);
+        var currVal_177 = i1.ɵnov(_v, 200).ngClassUntouched;
+        var currVal_178 = i1.ɵnov(_v, 200).ngClassTouched;
+        var currVal_179 = i1.ɵnov(_v, 200).ngClassPristine;
+        var currVal_180 = i1.ɵnov(_v, 200).ngClassDirty;
+        var currVal_181 = i1.ɵnov(_v, 200).ngClassValid;
+        var currVal_182 = i1.ɵnov(_v, 200).ngClassInvalid;
+        var currVal_183 = i1.ɵnov(_v, 200).ngClassPending;
+        var currVal_184 = i1.ɵnov(_v, 201).id;
+        var currVal_185 = i1.ɵnov(_v, 201).placeholder;
+        var currVal_186 = i1.ɵnov(_v, 201).disabled;
+        var currVal_187 = i1.ɵnov(_v, 201).required;
+        var currVal_188 = (i1.ɵnov(_v, 201).ariaDescribedby || null);
+        var currVal_189 = i1.ɵnov(_v, 201)._isErrorState();
+        _ck(_v, 193, 1, [currVal_176, currVal_177, currVal_178, currVal_179, currVal_180, currVal_181,
+            currVal_182, currVal_183, currVal_184, currVal_185, currVal_186, currVal_187, currVal_188,
+            currVal_189]);
+        var currVal_193 = (i1.ɵnov(_v, 211).align == 'end');
+        var currVal_194 = i1.ɵnov(_v, 211).id;
+        _ck(_v, 209, 0, currVal_193, currVal_194);
+        var currVal_196 = (i1.ɵnov(_v, 217).align == 'end');
+        var currVal_197 = i1.ɵnov(_v, 217).id;
+        _ck(_v, 215, 0, currVal_196, currVal_197);
+        var currVal_199 = i1.ɵnov(_v, 193).value.length;
+        _ck(_v, 218, 0, currVal_199);
     });
 }
 export function View_ViewProductComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 8, 'div', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n'])), (_l()(),
-            i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_1)),
+    return i1.ɵvid(0, [(_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 8, 'div', [['class', 'viewProduct']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  \n'])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_1)),
         i1.ɵdid(16384, null, 0, i6.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
                 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(),
             i1.ɵeld(0, null, null, 2, 'custom-table', [], null, [[null, 'deleteEvent'], [null, 'updateEvent'], [null,
@@ -1062,7 +1066,7 @@ export function View_ViewProductComponent_0(_l) {
     }, null);
 }
 export function View_ViewProductComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'view-product', [], null, null, null, View_ViewProductComponent_0, RenderType_ViewProductComponent)), i1.ɵdid(638976, null, 0, i7.ViewProductComponent, [i2.FormBuilder, i12.SearchService, i13.Router, i13.ActivatedRoute], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'view-product', [], null, null, null, View_ViewProductComponent_0, RenderType_ViewProductComponent)), i1.ɵdid(638976, null, 0, i7.ViewProductComponent, [i4.FormBuilder, i12.SearchService, i13.Router, i13.ActivatedRoute], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

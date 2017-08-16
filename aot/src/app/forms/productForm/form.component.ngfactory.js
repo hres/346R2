@@ -178,7 +178,7 @@ function View_FormComponent_10(_l) {
     }, null);
 }
 export function View_FormComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵted(null, [' \n'])), (_l()(), i1.ɵeld(0, null, null, 238, 'div', [['class', 'DivHeader']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])),
+    return i1.ɵvid(0, [(_l()(), i1.ɵted(null, [' \n\n'])), (_l()(), i1.ɵeld(0, null, null, 238, 'div', [['class', 'DivHeader']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])),
         (_l()(), i1.ɵeld(0, null, null, 1, 'div', [['class', 'DivLogo']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n    Search Product\n  '])), (_l()(), i1.ɵted(null, ['\n\n  '])), (_l()(), i1.ɵeld(0, null, null, 232, 'div', [['class',
                 'bodycard']], null, null, null, null, null)),

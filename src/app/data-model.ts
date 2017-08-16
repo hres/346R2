@@ -27,6 +27,21 @@ export type  Params = {
 };
 
 
+export type  productParams = {
+    classificationName: string;
+    classificationNumber: string;
+    classificationType: string;
+    productManufacturer: string;
+    productBrand: string;
+    cnfCode: number;
+    clusterNumber: number;
+    productDescription: string;
+    productComment: string;
+    productId?: number;
+    classification_list: ClassificationList[];
+
+};
+
 
 export class addClass  {
     classificationName= '';    
@@ -102,6 +117,7 @@ export type LabelData = {
 }
 
 export type InsertDataMessage = {
+    
     status: number,
     message: string
 }

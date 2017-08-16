@@ -44,30 +44,25 @@ function View_AppComponent_1(_l) {
     });
 }
 export function View_AppComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 18, 'md-card', [['class',
-                'headerCard mat-card']], null, null, null, i6.View_MdCard_0, i6.RenderType_MdCard)), i1.ɵdid(16384, null, 0, i2.MdPrefixRejector, [[2,
-                i2.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null),
-        i1.ɵdid(49152, null, 0, i2.MdCard, [], null, null),
-        (_l()(), i1.ɵted(0, ['\n  '])), (_l()(), i1.ɵeld(0, null, 0, 12, 'div', [['class',
-                'groupHeader']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 6, 'span', [['class', 'homeIcon']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 3, 'md-icon', [['class',
-                'mat-icon'], ['role', 'img']], null, null, null, i6.View_MdIcon_0, i6.RenderType_MdIcon)), i1.ɵdid(16384, null, 0, i2.MdPrefixRejector, [[2, i2.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null),
-        i1.ɵdid(638976, null, 0, i2.MdIcon, [i1.Renderer2, i1.ElementRef, i2.MdIconRegistry,
-            [8, null]], null, null), (_l()(), i1.ɵted(0, ['home'])),
-        (_l()(), i1.ɵted(null, [' \n  '])), (_l()(), i1.ɵted(null, ['\n    '])),
-        (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class', 'title']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    Food Component Data Repository\n    '])), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(0, ['\n\n  '])), (_l()(), i1.ɵted(0, ['\n\n\n'])),
-        (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n'])),
-        (_l()(), i1.ɵeld(0, null, null, 8, 'div', [['class', 'navBar']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 5, 'nav', [['class',
-                'mat-tab-nav-bar'], ['md-tab-nav-bar', '']], null, null, null, i6.View_MdTabNav_0, i6.RenderType_MdTabNav)), i1.ɵdid(3325952, null, 0, i2.MdTabNav, [[2, i3.Directionality], i1.NgZone], null, null),
-        (_l()(), i1.ɵted(0, ['\n    '])), (_l()(), i1.ɵand(16777216, null, 0, 1, null, View_AppComponent_1)), i1.ɵdid(802816, null, 0, i5.NgForOf, [i1.ViewContainerRef,
-            i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null),
-        (_l()(), i1.ɵted(0, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n\n\n\n\n\n  '])), (_l()(), i1.ɵeld(16777216, null, null, 1, 'router-outlet', [], null, null, null, null, null)), i1.ɵdid(212992, null, 0, i4.RouterOutlet, [i4.ChildrenOutletContexts, i1.ViewContainerRef, i1.ComponentFactoryResolver,
-            [8, null], i1.ChangeDetectorRef], null, null),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n  '])),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n  \n']))], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 26, 'div', [['class',
+                'headerCard']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 12, 'div', [['class', 'groupHeader']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])),
+        (_l()(), i1.ɵeld(0, null, null, 6, 'span', [['class', 'homeIcon']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 3, 'md-icon', [['class', 'mat-icon'], ['role', 'img']], null, null, null, i6.View_MdIcon_0, i6.RenderType_MdIcon)), i1.ɵdid(16384, null, 0, i2.MdPrefixRejector, [[2, i2.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null), i1.ɵdid(638976, null, 0, i2.MdIcon, [i1.Renderer2,
+            i1.ElementRef, i2.MdIconRegistry, [8, null]], null, null),
+        (_l()(), i1.ɵted(0, ['home'])), (_l()(), i1.ɵted(null, [' \n  '])), (_l()(),
+            i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class', 'title']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    Food Component Data Repository\n    '])),
+        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵted(null, ['\n\n  '])),
+        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 8, 'div', [['class', 'navBar']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 5, 'nav', [['class', 'mat-tab-nav-bar'], ['md-tab-nav-bar',
+                '']], null, null, null, i6.View_MdTabNav_0, i6.RenderType_MdTabNav)),
+        i1.ɵdid(3325952, null, 0, i2.MdTabNav, [[2, i3.Directionality], i1.NgZone], null, null), (_l()(), i1.ɵted(0, ['\n    '])), (_l()(), i1.ɵand(16777216, null, 0, 1, null, View_AppComponent_1)), i1.ɵdid(802816, null, 0, i5.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
+                'ngForOf'] }, null), (_l()(), i1.ɵted(0, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n\n\n\n\n\n'])), (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class', 'content']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(16777216, null, null, 1, 'router-outlet', [], null, null, null, null, null)),
+        i1.ɵdid(212992, null, 0, i4.RouterOutlet, [i4.ChildrenOutletContexts, i1.ViewContainerRef,
+            i1.ComponentFactoryResolver, [8, null], i1.ChangeDetectorRef], null, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
-        _ck(_v, 10, 0);
+        _ck(_v, 8, 0);
         var currVal_0 = _co.list;
-        _ck(_v, 27, 0, currVal_0);
+        _ck(_v, 23, 0, currVal_0);
         _ck(_v, 32, 0);
     }, null);
 }

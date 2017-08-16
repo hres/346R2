@@ -43,12 +43,12 @@ export class AddClassificationComponent implements OnChanges {
 
     }
     ngOnInit(){
-                console.log("HUMMM");
+   
                 this.service.getClassification().subscribe(response =>
                 {  
                  const cl = response;
-                 this.listOfClass = cl;
-                 console.log("HUMMM", this.listOfClass);
+                 this.listOfClass = response;
+                 console.log("HUMMM", response);
 
                  }
             );

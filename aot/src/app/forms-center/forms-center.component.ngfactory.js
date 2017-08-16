@@ -21,8 +21,9 @@ var styles_FormsCenterComponent = [i0.styles];
 export var RenderType_FormsCenterComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_FormsCenterComponent, data: {} });
 function View_FormsCenterComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 22, 'div', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(null, ['\n\n   \n        '])), (_l()(), i1.ɵeld(0, null, null, 5, 'div', [], [[8, 'hidden', 0]], null, null, null, null)), (_l()(), i1.ɵted(null, ['\n            '])),
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 22, 'div', [['class',
+                'content']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n\n   \n        '])), (_l()(), i1.ɵeld(0, null, null, 5, 'div', [], [[8, 'hidden', 0]], null, null, null, null)), (_l()(), i1.ɵted(null, ['\n            '])),
         (_l()(), i1.ɵeld(0, null, null, 2, 'form-comp', [], null, null, null, i2.View_FormComponent_0, i2.RenderType_FormComponent)),
         i1.ɵprd(512, null, i3.SearchService, i3.SearchService, [i4.Http]), i1.ɵdid(638976, null, 0, i5.FormComponent, [i6.FormBuilder, i3.SearchService], null, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 5, 'div', [], [[8, 'hidden', 0]], null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵeld(0, null, null, 2, 'sales-form', [], null, null, null, i7.View_SalesFormComponent_0, i7.RenderType_SalesFormComponent)), i1.ɵprd(512, null, i3.SearchService, i3.SearchService, [i4.Http]), i1.ɵdid(638976, null, 0, i8.SalesFormComponent, [i6.FormBuilder, i3.SearchService], null, null), (_l()(), i1.ɵted(null, ['\n        '])),

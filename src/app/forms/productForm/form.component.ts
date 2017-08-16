@@ -8,8 +8,8 @@ import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from
 // import { ProjectService } from './project-center/project.service';
 // import { Project, Person } from './project-center/model';
 import { ColumnSetting } from '../../shared/layout.model'
-import { PaginationComponent } from '../../pagination/pagination.component'
-import { TableLayoutComponent } from '../../shared/table-layout.component'
+// import { PaginationComponent } from '../../pagination/pagination.component'
+// import { TableLayoutComponent } from '../../shared/table-layout.component'
 @Component({
     selector: 'form-comp',
     templateUrl: './form.component.html',
@@ -160,17 +160,18 @@ this.isLoading = true;
                 this.noData = message;
 
                 this.tableData = null;
+                 console.log("Here 203",data.values);
             } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
-
+ console.log("Here 204",data.values);
             }
             else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.dataList;
-                console.log(data.dataList);
+                this.tableData = data.values;
+                console.log("Here",data.values);
 
 
 
@@ -209,7 +210,13 @@ this.isLoading = true;
 
 
 this.isLoading = true;
-        this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.search(JSON.stringify(this.product)).finally(()=> 
+        {this.isLoading = false;
+        console.log("failling here")    
+        }
+        
+        
+        ).subscribe(response => {
             const {data, message, status} = response;
             this.isLoading = false;
 
@@ -230,7 +237,7 @@ this.isLoading = true;
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.dataList;
+                this.tableData = data.values;
 
 
             }
@@ -275,8 +282,8 @@ this.isLoading = true;
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.dataList;
-                console.log("Data received", data.dataList);
+                this.tableData = data.values;
+                console.log("Data received", data.values);
 
             }
 

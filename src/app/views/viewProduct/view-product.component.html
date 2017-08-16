@@ -1,8 +1,9 @@
 
-<div>
-<md-card *ngIf="productForm">
+<div class="viewProduct">
+  
+<div *ngIf="productForm">
 
-    <md-card-content>
+    <div class="formContent">
         <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
             <div style="margin-bottom: 1em; " class="productHeader">
 <span class="productDetails">Product Details</span>
@@ -11,29 +12,33 @@
 <button type="reset"  (click)="revert()" md-raised-button [disabled]="productForm.pristine" style="background-color:lightseagreen">REVERT</button>
 </span>
 </div>
-<div>
-    <!--<div class="flex">
-     
-            <md-select placeholder="Classification Name" formControlName="classification_name">
-                <md-option *ngFor="let classif of Classification_name" [value]="classif">{{classif}}</md-option>
+
+<div class="formContent">
+    <div class="flex" *ngIf="listOfClass != null">
+          
+            <md-select placeholder="Classification Name" formControlName="classificationName">
+                 <md-option [value]=""></md-option>
+                <md-option *ngFor="let class of listOfClass.cl;let i = index" [value]="class.classificationName">{{class.classificationName}}</md-option>
 
             </md-select>
-     
-            <md-select placeholder="Classification Number" formControlName="classification_number">
-                <md-option *ngFor="let classifi of Classification_number" [value]="classifi">{{classifi}}</md-option>
+       
+ 
+            <md-select  placeholder="Classification Number" formControlName="classificationNumber">
+                <md-option [value]=""></md-option>
+                <md-option *ngFor="let classif of listOfClass.cl;let i = index" [value]="classif.classificationNumber">{{classif.classificationNumber}}</md-option>
 
             </md-select>
-        
-    </div>-->
+         
+    </div>
     <div class="flex row">
-        <!--<div>
+            <div>
             <md-input-container>
-                <input mdInput placeholder="Classification Type" formControlName="classification_type">
+                <input mdInput placeholder="Classification Type" formControlName="classificationType">
             </md-input-container>
-        </div>-->
-        <div>
+            </div>
+          <div>
             <md-input-container>
-                <input mdInput placeholder="Manufactuer" formControlName="product_manufacturer">
+                <input mdInput placeholder="Manufactuer" formControlName="productManufacturer">
                 
             </md-input-container>
         </div>
@@ -42,13 +47,13 @@
 
         <div>
             <md-input-container>
-                <input mdInput placeholder="Brand" formControlName="product_brand">
+                <input mdInput placeholder="Brand" formControlName="productBrand">
             </md-input-container>
         </div>
         <div>
 
             <md-input-container>
-                <input mdInput placeholder="CNF CODE" formControlName="cnf_code">
+                <input mdInput placeholder="CNF CODE" formControlName="cnfCode">
             </md-input-container>
             <div *ngIf="formErrors.cnf_code" class="errorMessages">
                 <span class="textPosition">  {{formErrors.cnf_code}}</span>
@@ -56,7 +61,7 @@
         </div>
         <div>
             <md-input-container>
-                <input mdInput placeholder="Cluster Number" formControlName="cluster_number">
+                <input mdInput placeholder="Cluster Number" formControlName="clusterNumber">
             
             </md-input-container>
             <div *ngIf="formErrors.cluster_number" class="errorMessages">
@@ -73,7 +78,7 @@
 
         <div> 
             <md-input-container >
-                <input mdInput placeholder="Description" formControlName="product_description">
+                <input mdInput placeholder="Description" formControlName="productDescription">
             
             </md-input-container>
 
@@ -87,7 +92,7 @@
     <div class="flex row" style="margin-bottom: -32px;">
         <div>
             <md-input-container>
-                <input mdInput #comment maxlength="256" placeholder="Comment" formControlName="product_comment">
+                <input mdInput #comment maxlength="256" placeholder="Comment" formControlName="productComment">
                 <md-icon mdSuffix>delete</md-icon>
                 <md-hint align="start"><strong>Let's add something here</strong></md-hint>
                 <md-hint align="end">{{comment.value.length}} / 256</md-hint>
@@ -95,7 +100,7 @@
         </div>
     </div>
 
-    <div formArrayName="classification_list">
+    <!--<div formArrayName="classification_list">
         <div *ngFor="let classification of classification_list.controls; let i=index" [formGroupName]="i" >
      
              <div class="flex row">
@@ -118,22 +123,20 @@
             </md-input-container>
         </div>
         <md-icon (click)="deleteClassification(i)" >delete</md-icon>
-          <!--<button (click)="deleteClassification(i)" type="button">Delete</button>-->
+         <button (click)="deleteClassification(i)" type="button">Delete</button>
          </div>  
         </div>
 
 
-    </div>
+    </div>-->
 
-    <md-card-actions>
 
-    </md-card-actions>
 </div>
 
 </form>
-</md-card-content>
+</div>
 
-</md-card>
+</div>
 
 <custom-table 
     (deleteEvent)="responseDelete(flag)"

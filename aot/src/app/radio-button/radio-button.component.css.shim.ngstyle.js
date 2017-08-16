@@ -4,5 +4,5 @@
  * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride}
  */
 /* tslint:disable */
-export var styles = ['.section-margin[_ngcontent-%COMP%]{\n    margin-top: 18px;\n    margin-left: 15px; \n    margin-bottom: 10px;\n}'];
+export var styles = [''];
 //# sourceMappingURL=radio-button.component.css.shim.ngstyle.js.map

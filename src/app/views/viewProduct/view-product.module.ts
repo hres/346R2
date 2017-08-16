@@ -5,7 +5,7 @@ import { SearchService } from '../../services/search.service';
 import {CustumTableModule} from '../../table/table.module'
 import {ModalBoxModule} from '../../modal-box/modal-box.module'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
- import {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule, MdDatepickerModule} from '@angular/material'
+ import {MdCardModule,MdProgressBarModule,MdIconModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule, MdDatepickerModule} from '@angular/material'
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -23,7 +23,8 @@ import { BrowserModule } from '@angular/platform-browser';
         MdSelectModule,
         MdSliderModule,
         BrowserModule,
-        ModalBoxModule
+        ModalBoxModule,
+        MdIconModule
     ],
     declarations:[
     ViewProductComponent

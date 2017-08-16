@@ -16,21 +16,18 @@ div.flex > md-select{
 .productHeader{
     height: 70px;
     background-color: #33cccc;
-    width:104.2%;
+    width:102%;
     left:0;
     right:0;
-    position: relative;
-    margin-left: -1.9%;
-    margin-right: 2.7%;
-    margin-top:-2%;
+
 
   
 }
 .buttons{
     position: relative;
-    top: 30%;
+    top: 26%;
     float: right;
-    margin-right: 7px;
+    margin-right: 20px;
 }
 .productDetails{
     position: relative;
@@ -62,4 +59,12 @@ div.flex > md-select{
 
 .viewBody{
     margin-top: 1.2em;
+}
+
+.viewProduct{
+    margin-top: 4%;
+}
+.formContent{
+    margin-top: 30px;
+    margin-bottom:40px
 }

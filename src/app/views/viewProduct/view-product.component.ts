@@ -1,7 +1,7 @@
 import 'rxjs/add/operator/switchMap';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnChanges, Input, OnInit } from '@angular/core';
-import { Response, Params, Classification_name, Classification_number, ClassificationList } from '../../data-model';
+import { Response, Params, Classification_name, Classification_number, ClassificationList,addClass,productParams } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, FormArray, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -20,12 +20,12 @@ export class ViewProductComponent implements OnInit {
     Classification_number = Classification_number;
     flag: boolean;
     Ids:any;
-    params: Params;
+    params: productParams;
     productForm: FormGroup;
     emptyField: string = null;
     queryString: string = null;
         addClass: string;
-
+listOfClass: addClass[];
     count: number = 0;
     isDisabled: boolean = true;
     noData: string = null;
@@ -45,15 +45,15 @@ export class ViewProductComponent implements OnInit {
 
     createForm() {
         this.productForm = this.fb.group({
-            classification_name: '',
-            classification_number: '',
-            classification_type: '',
-            product_manufacturer: '',
-            product_brand: '',
-            cnf_code: ['', [Validators.pattern('\\d+')]],
-            cluster_number: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            product_description: ['', [Validators.required]],
-            product_comment: { value: '', disabled: this.isDisabled },
+            classificationName: '',
+            classificationNumber: '',
+            classificationType: '',
+            productManufacturer: '',
+            productBrand: '',
+            cnfCode: ['', [Validators.pattern('\\d+')]],
+            clusterNumber: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            productDescription: ['', [Validators.required]],
+            productComment: { value: '', disabled: this.isDisabled },
             classification_list: this.fb.array([])
 
 
@@ -106,25 +106,25 @@ export class ViewProductComponent implements OnInit {
         this.params = this.prepareSaveParams();
         //Call update service 
 
-        console.log(this.params);
-        this.queryString = '?';
+        // console.log(this.params);
+        // this.queryString = '?';
 
-        for (const prop in this.params) {
-            console.log(prop, " ");
-            if (this.params.hasOwnProperty(prop)) {
-                this.queryString += encodeURIComponent(this.params[prop]) + '=' + (this.params[prop] == null ? '' : encodeURIComponent(this.params[prop])) + '&';
-            }
-        }
-        this.queryString += `product_id=${this.params['product_id']}`;
+        // for (const prop in this.params) {
+        //     console.log(prop, " ");
+        //     if (this.params.hasOwnProperty(prop)) {
+        //         this.queryString += encodeURIComponent(this.params[prop]) + '=' + (this.params[prop] == null ? '' : encodeURIComponent(this.params[prop])) + '&';
+        //     }
+        // }
+        // this.queryString += `product_id=${this.params['product_id']}`;
 
-        this.queryString = this.queryString.slice(0, this.queryString.length);
+        // this.queryString = this.queryString.slice(0, this.queryString.length);
 
-        console.log(this.queryString);
-        this.ngOnChanges();
+        // console.log(this.queryString);
+        // this.ngOnChanges();
 
 
     }
-    prepareSaveParams(): Params {
+    prepareSaveParams(): productParams {
 
         const formModel = this.productForm.value;
         
@@ -132,19 +132,19 @@ export class ViewProductComponent implements OnInit {
             (classificationList: ClassificationList) => Object.assign({}, classificationList)
         );
        
-        const saveProduct: Params = {
+        const saveProduct: productParams = {
 
-            classification_name: this.params.classification_name as string,
-            classification_number: this.params.classification_number as string,
-            classification_type: this.params.classification_type as string,
-            product_manufacturer: this.params.product_manufacturer as string,
-            product_brand: this.params.product_brand as string,
-            cnf_code: this.params.cnf_code as number,
-            cluster_number: this.params.cluster_number as number,
-            product_description: this.params.product_description as string,
-            product_comment: this.params.product_comment as string,
+            classificationName: this.params.classificationName as string,
+            classificationNumber: this.params.classificationNumber as string,
+            classificationType: this.params.classificationType as string,
+            productManufacturer: this.params.productManufacturer as string,
+            productBrand: this.params.productBrand as string,
+            cnfCode: this.params.cnfCode as number,
+            clusterNumber: this.params.clusterNumber as number,
+            productDescription: this.params.productDescription as string,
+            productComment: this.params.productComment as string,
             classification_list: classificationDeepCopy,
-            product_id: this.params.product_id,
+            productId: this.params.productId,
 
         };
 
@@ -153,18 +153,18 @@ export class ViewProductComponent implements OnInit {
     }
 
     formErrors = {
-        'product_description': '',
-        'cnf_code': '',
-        'cluster_number': ''
+        'productDescription': '',
+        'cnfCode': '',
+        'clusterNumber': ''
     }
     validationMessages = {
-        'product_description': {
+        'productDescription': {
             'required': 'Description is requiredd'
         },
-        'cnf_code': {
+        'cnfCode': {
             'pattern': 'Must be a digit'
         },
-        'cluster_number': {
+        'clusterNumber': {
             'pattern': 'Must be a number'
         }
 
@@ -176,29 +176,44 @@ export class ViewProductComponent implements OnInit {
         this.route.paramMap
             .switchMap((param: ParamMap) =>
 
-                this.searchService.getProduct(param.get('id'))).subscribe(
-            (parameter: Response<Params>) => {
-
-                this.params = parameter.data.values[0];
+                this.searchService.getAll(param.get('id'))).subscribe(
+            response => {
+                this.listOfClass = response[0];
+                this.params = response[1].data.values[0];
+                
+                console.log(response[0]);
                 this.ngOnChanges();
 
             }
             );
+
+
+            //        this.route.paramMap
+            // .switchMap((param: ParamMap) =>
+
+            //     this.searchService.getProduct(param.get('id'))).subscribe(
+            // (parameter: Response<Params>) => {
+
+            //     this.params = parameter.data.values[0];
+            //     this.ngOnChanges();
+
+            // }
+            // );
 
     }
     ngOnChanges() {
 
         this.productForm.reset({
 
-            classification_name: this.params['classification_name'] && this.params['classification_name'] != null ? this.params['classification_name'].toString() : this.params['classification_name'],
-            classification_number: this.params['classification_number'] != null ? this.params['classification_number'].toString() : this.params['classification_name'],
-            classification_type: this.params['classification_type'],
-            product_manufacturer: this.params['product_manufacturer'],
-            product_brand: this.params['product_brand'],
-            cnf_code: this.params['cnf_code'],
-            cluster_number: this.params['cluster_number'],
-            product_description: this.params['product_description'],
-            product_comment: this.params['product_comment']
+            classificationName: this.params['classificationName'] && this.params['classificationName'] != null ? this.params['classificationName'].toString() : this.params['classificationName'],
+            classificationNumber: this.params['classificationNumber'] != null ? this.params['classificationNumber'].toString() : this.params['classificationName'],
+            classificationType: this.params['classificationType'],
+            productManufacturer: this.params['productManufacturer'],
+            productBrand: this.params['productBrand'],
+            cnfCode: this.params['cnfCode'],
+            clusterNumber: this.params['clusterNumber'],
+            productDescription: this.params['productDescription'],
+            productComment: this.params['productComment']
 
 
         });
@@ -227,7 +242,7 @@ export class ViewProductComponent implements OnInit {
         this.addClass = 'add';
         this.method = 'add';
         this.from = 'product';
-        this.Ids = {productId:this.params.product_id}
+        this.Ids = {productId:this.params.productId}
         console.log("Add event triggered")
     }
     checkModal(flag: boolean){

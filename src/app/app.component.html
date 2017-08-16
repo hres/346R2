@@ -1,4 +1,4 @@
-<md-card class="headerCard">
+<div class="headerCard">
   <div class="groupHeader">
     <span class="homeIcon">
     <md-icon>home</md-icon> 
@@ -10,9 +10,14 @@
 
   <!--<a md-tab-link href="#" style="font-size: 1.2em;">Create Product</a>
         <a md-tab-link href="#" style="font-size: 1.2em;">Import Data</a>-->
+<div class="navBar">
+  <nav md-tab-nav-bar>
+    <a md-tab-link *ngFor="let l of list" [routerLink]="l" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" style="font-size: 1.2em;"> Search
+</a>
+</nav>
+</div>
 
-
-</md-card>
+</div>
 
 <!--<ul>
         <li> <a  routerLink="/search" style="border-bottom: 2.2px solid #33cccc ">search product</a> </li>
@@ -20,19 +25,14 @@
         <li>  <a href="#">Import Data</a> </li>
 
      </ul>-->
-<div class="navBar" >
-  <nav md-tab-nav-bar>
-    <a md-tab-link *ngFor="let l of list" [routerLink]="l" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" style="font-size: 1.2em;"> Search
-</a>
-</nav>
-</div>
 
 
 
 
 
+<div class="content">
   <router-outlet></router-outlet>
-  <!--<radio-button></radio-button>-->
-  <!--<form-comp></form-comp>-->
-  <!--<ct-project-center></ct-project-center>-->
-  
+</div>
+<!--<radio-button></radio-button>-->
+<!--<form-comp></form-comp>-->
+<!--<ct-project-center></ct-project-center>-->

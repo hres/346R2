@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
-import {InsertDataMessage} from '../data-model';
+import {addClass} from '../data-model';
 
 
 @Injectable()
@@ -17,7 +17,7 @@ private Url = "http://localhost:8080/fcdr/webapi/myresource";
         
 constructor(private http: Http){}
 
-    addClassification(queryString: string):Observable<InsertDataMessage>{
+    addClassification(queryString: string):Observable<addClass[]>{
 
 
 
@@ -26,7 +26,7 @@ constructor(private http: Http){}
 
         return this.http
                    .post('http://localhost:8080/fcdr/webapi/myresource/addclassification',queryString,this.options)
-                   .map(response => response.json() as InsertDataMessage);
+                   .map(response => response.json() as addClass[]);
 
     } 
 

@@ -10,7 +10,8 @@ import { BrowserModule } from '@angular/platform-browser';
     imports: [ 
         CommonModule,
         BrowserModule ],
-    declarations: [ TableLayoutComponent,
+    declarations: [ 
+    TableLayoutComponent,
     FormatCellPipe,
     StyleCellDirective ],
     exports: [
