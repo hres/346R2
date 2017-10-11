@@ -2,89 +2,117 @@
   <div class="DivLogo">
     Search Market Share
   </div>
+    <md-card style="background-color:  #ebf0fa;">
+  <div class="well2" >
+    <!--<md-card>
 
-  <div class="bodycard">
-    <md-card>
-
-      <md-card-content>
+      <md-card-content>-->
         <form (ngSubmit)="onSubmit()" [formGroup]="salesForm">
 
 
+          <div class="flex row" >
+
+  
+          <div class="form-group col-sm-4">
+            <label for="salesUpc">Label UPC</label>
+            <input type="number" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="salesUpc">
+          </div>
+
+  
+          <div class="form-group col-sm-4">
+            <label for="salesDescription">Sales Description</label>
+            <input type="text" class="form-control" id="salesDescription" placeholder="Sales Description" formControlName="salesDescription">
+          </div>
+
+
+          <div class="form-group col-sm-4">
+            <label for="salesSource">Sales Source</label>
+            <input type="text" class="form-control" id="salesSource" placeholder="Sales Source" formControlName="salesSource">
+          </div>
+
+
+          </div>
+
           <div class="flex row">
 
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Sales UPC" formControlName="salesUpc">
-              </md-input-container>
-            </div>
+          <div class="form-group col-sm-4">
+            <label for="salesYear">Sales Year</label>
+            <input type="number" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="salesYear">
+          </div>
 
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Sales Description" formControlName="salesDescription">
-              </md-input-container>
-            </div>
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Source" formControlName="salesSource">
-              </md-input-container>
-            </div>
+
+          <div class="form-group col-sm-4">
+            <label for="nielsenCategory">Nielsen Category</label>
+            <input type="text" class="form-control" id="nielsenCategory" placeholder="Sales Nielsen Category" formControlName="nielsenCategory">
+          </div>
+
+
+          <div class="form-group col-sm-4">
+            <label for="salesComment">Sales Comment</label>
+            <input type="text" class="form-control" id="salesComment" placeholder="Sales Comment" formControlName="salesComment">
+          </div>
 
 
           </div>
           <div class="flex row">
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Sales Year" formControlName="salesYear">
-              </md-input-container>
-            </div>
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Nielsen Category" formControlName="nielsenCategory">
-              </md-input-container>
-            </div>
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Sales Comment" formControlName="salesComment">
-              </md-input-container>
+
+<div class="form-group col-sm-4">
+            <label for="collectionDate">
+     Collection Date From
+      </label>
+            <div class="">
+              <div class="input-group">
+
+                <input class="form-control date1" id="collectionDate" formControlName="collectionDateFrom"  placeholder="YYYY/MM/DD" type="text" [value]=""
+                />
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar">
+         </i>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="flex row">
 
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Collection Date From" [mdDatepicker]="pickerFrom" formControlName="collectionDateFrom">
-                <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerFrom"></button>
-                <md-hint align="start"><strong>MM/DD/YYYY</strong></md-hint>
-</md-input-container>
-<md-datepicker #pickerFrom></md-datepicker>
+          <div class="form-group col-sm-4">
+            <label for="collectionDateTo">
+     Collection Date To
+      </label>
+            <div class="">
+              <div class="input-group">
+
+                <input class="form-control date2" id="collectionDateTo" formControlName="collectionDateTo" placeholder="YYYY/MM/DD" type="text" [value]=""
+                />
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar">
+              </i>
+                </div>
+              </div>
+            </div>
+          </div>
+<div class="form-group col-sm-4">
+<button style="float:right; margin-top: 28px"  type="submit" class="btn btn-primary" [disabled]="!salesForm.valid">Search</button>
 </div>
 
-<div>
-  <md-input-container>
-    <input mdInput placeholder="Collection Date to" [mdDatepicker]="pickerTo" formControlName="collectionDateTo">
-    <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerTo"></button>
-    <md-hint align="start"><strong>MM/DD/YYYY</strong></md-hint>
-</md-input-container>
-<md-datepicker #pickerTo></md-datepicker>
-</div>
 </div>
 
 
 
-
+<!--
 
 <md-card-actions>
   <div style="float: right">
-<button md-raised-button type="submit" [disabled]="!salesForm.valid">SUBMIT</button>
 <button type='reset' md-raised-button>RESET</button>
 </div>
 </md-card-actions>
-
+-->
 </form>
-</md-card-content>
 
-</md-card>
+<!--</md-card-content>
+
+</md-card>-->
 </div>
+  </md-card>
+  
 </div>
 
 <!--<div *ngIf="tableData">-->

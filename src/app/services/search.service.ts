@@ -26,7 +26,7 @@ export class SearchService {
 
 
         return this.http
-            .post('http://localhost:8080/fcdr/webapi/myresource/product', queryString, this.options)
+            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productsfiltered', queryString, this.options)
             .map(response => response.json() as Response<Params>);
         //     .post('http://localhost:8080/fcdr/webapi/myresource/product',queryString,this.options)
         //     .toPromise()
@@ -41,9 +41,11 @@ export class SearchService {
 
         console.log("Function is being called ", body);
         return this.http
-            //http://10.148.179.244:8087/fcdr-rest-service/rest/ProductService/
+            //http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productsfiltered
+            //http://localhost:8080/fcdr/webapi/myresource/getproduct
+            //
             //(response => {
-            .post('http://localhost:8080/fcdr/webapi/myresource/getproduct', body, this.options)
+            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productsfiltered', body, this.options)
             // .toPromise()
             .map(response => response.json() as Response<productParams>);
     }

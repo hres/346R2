@@ -18,6 +18,8 @@ export type  Params = {
     cluster_number: number;
     product_description: string;
     product_comment: string;
+    restaurant_type?:string;
+    type?:string;
     product_id?: number;
     offset?: number;
     flag?: boolean;

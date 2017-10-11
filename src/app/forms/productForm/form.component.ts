@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
-import { Params, Classification_name, Classification_number, Response } from '../../data-model';
+import { Params,addClass, Classification_name, Classification_number, Response } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -41,7 +41,7 @@ export class FormComponent implements OnChanges {
     Classification_number = Classification_number;
 
 
-
+  listOfClass: addClass[];
     count = 0;
     pageSizes = 10;
     //value: any;
@@ -70,11 +70,17 @@ export class FormComponent implements OnChanges {
     }
 
     ngOnInit(): void {
-        // this.createForm();          
+                       this.searchService.getClassification().subscribe(response =>
+                {  
+                 const cl = response;
+                 this.listOfClass = response;
+                
+
+                 }
+            );        
     }
 
     ngOnChanges() {
-
 
         this.productForm.reset({
             classification_name: this.product.classification_name,
@@ -85,7 +91,10 @@ export class FormComponent implements OnChanges {
             cnf_code: this.product.cnf_code,
             cluster_number: this.product.cluster_number,
             product_description: this.product.product_description,
-            product_comment: this.product.product_comment
+            product_comment: this.product.product_comment,
+            restaurant_type:this.product.restaurant_type,
+            type:this.product.type
+
         }
         );
 
@@ -100,8 +109,10 @@ export class FormComponent implements OnChanges {
             product_brand: '',
             cnf_code: ['', [Validators.pattern('\\d+')]],
             cluster_number: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            product_description: ['', [Validators.required]],
-            product_comment: ''
+            product_description: '', //['', [Validators.required]],
+            product_comment: '',
+            restaurant_type:"",
+            type:""
 
 
         });
@@ -142,36 +153,32 @@ export class FormComponent implements OnChanges {
         //         this.queryString += encodeURIComponent(prop) + '=' + (this.product[prop] == null ? '' : encodeURIComponent(this.product[prop])) + '&';
         //     }
         // }
-        // this.queryString += `offset=${this.offset}`;
-        // this.queryString += `&orderby=product_description`;
-        // this.queryString += `&flag=true`
-        // this.queryString = this.queryString.slice(0, this.queryString.length);
-        // console.log(this.queryString);
+
 this.isLoading = true;
         this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
    
             if (status === 202) {
                 this.emptyField = message;
-                console.log(message);
+                //console.log(message);
                 this.tableData = null;
             } else if (status === 203) {
 
                 this.noData = message;
 
                 this.tableData = null;
-                 console.log("Here 203",data.values);
+                // console.log("Here 203",data.dataList);
             } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
- console.log("Here 204",data.values);
+            //console.log("Here 204",data.dataList);
             }
             else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.values;
-                console.log("Here",data.values);
+                this.tableData = data.dataList;
+                //console.log("Here",data.dataList);
 
 
 
@@ -212,7 +219,7 @@ this.isLoading = true;
 this.isLoading = true;
         this.searchService.search(JSON.stringify(this.product)).finally(()=> 
         {this.isLoading = false;
-        console.log("failling here")    
+       // console.log("failling here")    
         }
         
         
@@ -222,7 +229,7 @@ this.isLoading = true;
 
             if (status === 202) {
                 this.emptyField = message;
-                console.log(message);
+               // console.log(message);
                 this.tableData = null;
             } else if (status === 203) {
 
@@ -237,7 +244,7 @@ this.isLoading = true;
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.values;
+                this.tableData = data.dataList;
 
 
             }
@@ -267,7 +274,7 @@ this.isLoading = true;
 
             if (status === 205) {
                 this.emptyField = message;
-                console.log(message);
+                //console.log(message);
                 this.tableData = null;
             } else if (status === 203) {
 
@@ -282,8 +289,8 @@ this.isLoading = true;
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-                this.tableData = data.values;
-                console.log("Data received", data.values);
+                this.tableData = data.dataList;
+                //console.log("Data received", data.dataList);
 
             }
 
@@ -330,7 +337,7 @@ this.isLoading = true;
         this.product.offset = this.offset;
 
 
-        console.log(this.product);
+        //console.log(this.product);
         this.submitted = true;
     }
 

@@ -2,85 +2,91 @@
   <div class="DivLogo">
     Search Label
   </div>
+</div>
 
-  <div class="bodycard">
-    <md-card>
+<md-card style="background-color: hsl(60, 100%, 98%)">
+  <div class="well2" >
+<form (ngSubmit)="onSubmit()" [formGroup]="labelForm">
 
-      <md-card-content>
-        <form (ngSubmit)="onSubmit()" [formGroup]="labelForm">
+  <!--<div class="row">-->
 
+  <div class="flex row">
 
-          <div class="flex row">
-
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Label UPC" formControlName="labelUpc">
-              </md-input-container>
-            </div>
-
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Label Description" formControlName="labelDescription">
-              </md-input-container>
-            </div>
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Source" formControlName="labelSource">
-              </md-input-container>
-            </div>
+    <div class="form-group col-sm-4">
+      <label for="labelUpc">Label UPC</label>
+      <input type="number" class="form-control" id="labelUpc" placeholder="Label UPC" formControlName="labelUpc">
+    </div>
 
 
+    <div class="form-group col-sm-4">
+      <label for="labelDescription">Label Description</label>
+      <input type="text" class="form-control" id="labelDescription" placeholder="Label Description" formControlName="labelDescription">
+    </div>
+
+
+    <div class="form-group col-sm-4">
+      <label for="labelSource">Label Source</label>
+      <input type="text" class="form-control" id="labelSource" placeholder="Source" formControlName="labelSource">
+    </div>
+  </div>
+
+  <div class=" row">
+
+
+    <div class="form-group col-sm-4">
+      <label for="labelIngredients">Ingredients</label>
+      <input type="text" class="form-control" id="labelIngredients" placeholder="Ingredients" formControlName="labelIngredients">
+    </div>
+    <div class="form-group col-sm-4">
+      <label for="datex">
+     Collection Date From
+      </label>
+      <div class="">
+        <div class="input-group">
+
+          <input class="form-control date1" id="datex" formControlName="collectionDateFrom" placeholder="YYYY/MM/DD" type="text" [value]=""
+          />
+          <div class="input-group-addon">
+            <i class="fa fa-calendar">
+         </i>
           </div>
-          <div class="flex row">
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Ingredients" formControlName="labelIngredients">
-              </md-input-container>
-            </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="form-group col-sm-4">
+      <label for="collectionDate">
+     Collection Date To
+      </label>
+      <div class="">
+        <div class="input-group">
+
+          <input class="form-control date2" id="collectionDate" formControlName="collectionDateTo" placeholder="YYYY/MM/DD" type="text"
+            [value]="" />
+          <div class="input-group-addon">
+            <i class="fa fa-calendar">
+              </i>
           </div>
-          <div class="flex row">
-
-            <div>
-              <md-input-container>
-                <input mdInput placeholder="Collection Date From" [mdDatepicker]="pickerFrom" formControlName="collectionDateFrom">
-                <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerFrom"></button>
-<md-hint align="start"><strong>MM/DD/YYYY</strong></md-hint>
-</md-input-container>
+        </div>
+      </div>
+    </div>
 
 
-<md-datepicker #pickerFrom></md-datepicker>
-</div>
+  </div>
 
-<div>
-  <md-input-container>
-    <input mdInput placeholder="Collection Date to" [mdDatepicker]="pickerTo" formControlName="collectionDateTo">
-    <button style="font-size: 1.2em;" mdSuffix [mdDatepickerToggle]="pickerTo"></button>
-<md-hint align="start"><strong>MM/DD/YYYY</strong></md-hint>
-</md-input-container>
-
-
-<md-datepicker #pickerTo></md-datepicker>
+  <div class=" row">
+    <div style="float: right; margin-right: 15px">
+<button style="margin-top: 28px" type="submit" class="btn btn-primary" [disabled]="!labelForm.valid">Search</button>
+<!--<button type='reset' md-raised-button>RESET</button>-->
 </div>
 </div>
-
-
-
-
-
-<md-card-actions>
-  <div style="float: right">
-<button md-raised-button type="submit" [disabled]="!labelForm.valid">SUBMIT</button>
-<button type='reset' md-raised-button>RESET</button>
-</div>
-</md-card-actions>
 
 </form>
-</md-card-content>
+</div>
+
 
 </md-card>
-</div>
-</div>
+
 
 <!--<div *ngIf="tableData">-->
 <!--<table-template [tableValues]="tableData"></table-template>-->

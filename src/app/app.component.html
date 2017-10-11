@@ -10,15 +10,16 @@
 
   <!--<a md-tab-link href="#" style="font-size: 1.2em;">Create Product</a>
         <a md-tab-link href="#" style="font-size: 1.2em;">Import Data</a>-->
+
+
+</div>
+<div style="margin-left: 40px; margin-right: 40px">
 <div class="navBar">
   <nav md-tab-nav-bar>
     <a md-tab-link *ngFor="let l of list" [routerLink]="l" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" style="font-size: 1.2em;"> Search
 </a>
 </nav>
 </div>
-
-</div>
-
 <!--<ul>
         <li> <a  routerLink="/search" style="border-bottom: 2.2px solid #33cccc ">search product</a> </li>
         <li>  <a href="#">Create Product</a> </li>
@@ -32,6 +33,7 @@
 
 <div class="content">
   <router-outlet></router-outlet>
+</div>
 </div>
 <!--<radio-button></radio-button>-->
 <!--<form-comp></form-comp>-->

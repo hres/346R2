@@ -53,7 +53,7 @@ function View_AppComponent_1(_l:any):i1.ɵViewDefinition {
   });
 }
 export function View_AppComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),26,'div',[['class',
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),16,'div',[['class',
       'headerCard']],(null as any),(null as any),(null as any),(null as any),(null as any))),
       (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
           12,'div',[['class','groupHeader']],(null as any),(null as any),(null as any),
@@ -71,6 +71,9 @@ export function View_AppComponent_0(_l:any):i1.ɵViewDefinition {
           1,'span',[['class','title']],(null as any),(null as any),(null as any),(null as any),
           (null as any))),(_l()(),i1.ɵted((null as any),['\n    Food Component Data Repository\n    '])),
       (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵted((null as any),['\n\n  '])),
+      (_l()(),i1.ɵted((null as any),['\n\n\n'])),(_l()(),i1.ɵted((null as any),['\n'])),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),18,'div',[['style','margin-left: 40px; margin-right: 40px']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
       (_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
           8,'div',[['class','navBar']],(null as any),(null as any),(null as any),(null as any),
           (null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,
@@ -81,22 +84,23 @@ export function View_AppComponent_0(_l:any):i1.ɵViewDefinition {
           (null as any),0,1,(null as any),View_AppComponent_1)),i1.ɵdid(802816,(null as any),
           0,i5.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,
               'ngForOf']},(null as any)),(_l()(),i1.ɵted(0,['\n'])),(_l()(),i1.ɵted((null as any),
-          ['\n'])),(_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵted((null as any),
-          ['\n\n'])),(_l()(),i1.ɵted((null as any),['\n\n\n\n\n\n'])),(_l()(),i1.ɵeld(0,
-          (null as any),(null as any),4,'div',[['class','content']],(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n  '])),(_l()(),i1.ɵeld(16777216,(null as any),(null as any),1,'router-outlet',
-          ([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
-      i1.ɵdid(212992,(null as any),0,i4.RouterOutlet,[i4.ChildrenOutletContexts,i1.ViewContainerRef,
-          i1.ComponentFactoryResolver,[8,(null as any)],i1.ChangeDetectorRef],(null as any),
-          (null as any)),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),
           ['\n'])),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),
-          ['\n']))],(_ck,_v) => {
+          ['\n\n\n\n\n\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),4,'div',
+          [['class','content']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(16777216,
+          (null as any),(null as any),1,'router-outlet',([] as any[]),(null as any),
+          (null as any),(null as any),(null as any),(null as any))),i1.ɵdid(212992,
+          (null as any),0,i4.RouterOutlet,[i4.ChildrenOutletContexts,i1.ViewContainerRef,
+              i1.ComponentFactoryResolver,[8,(null as any)],i1.ChangeDetectorRef],
+          (null as any),(null as any)),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),
+          i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),
+          i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n']))],(_ck,
+      _v) => {
     var _co:i7.AppComponent = _v.component;
     _ck(_v,8,0);
     const currVal_0:any = _co.list;
-    _ck(_v,23,0,currVal_0);
-    _ck(_v,32,0);
+    _ck(_v,26,0,currVal_0);
+    _ck(_v,34,0);
   },(null as any));
 }
 export function View_AppComponent_Host_0(_l:any):i1.ɵViewDefinition {
@@ -107,4 +111,4 @@ export function View_AppComponent_Host_0(_l:any):i1.ɵViewDefinition {
 }
 export const AppComponentNgFactory:i1.ComponentFactory<i7.AppComponent> = i1.ɵccf('my-app',
     i7.AppComponent,View_AppComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL2FwcC5jb21wb25lbnQudHMiLCJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL2FwcC5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvYXBwLmNvbXBvbmVudC50cy5BcHBDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwiaGVhZGVyQ2FyZFwiPlxuICA8ZGl2IGNsYXNzPVwiZ3JvdXBIZWFkZXJcIj5cbiAgICA8c3BhbiBjbGFzcz1cImhvbWVJY29uXCI+XG4gICAgPG1kLWljb24+aG9tZTwvbWQtaWNvbj4gXG4gIDwvc3Bhbj5cbiAgICA8c3BhbiBjbGFzcz1cInRpdGxlXCI+XG4gICAgRm9vZCBDb21wb25lbnQgRGF0YSBSZXBvc2l0b3J5XG4gICAgPC9zcGFuPlxuICA8L2Rpdj5cblxuICA8IS0tPGEgbWQtdGFiLWxpbmsgaHJlZj1cIiNcIiBzdHlsZT1cImZvbnQtc2l6ZTogMS4yZW07XCI+Q3JlYXRlIFByb2R1Y3Q8L2E+XG4gICAgICAgIDxhIG1kLXRhYi1saW5rIGhyZWY9XCIjXCIgc3R5bGU9XCJmb250LXNpemU6IDEuMmVtO1wiPkltcG9ydCBEYXRhPC9hPi0tPlxuPGRpdiBjbGFzcz1cIm5hdkJhclwiPlxuICA8bmF2IG1kLXRhYi1uYXYtYmFyPlxuICAgIDxhIG1kLXRhYi1saW5rICpuZ0Zvcj1cImxldCBsIG9mIGxpc3RcIiBbcm91dGVyTGlua109XCJsXCIgcm91dGVyTGlua0FjdGl2ZSAjcmxhPVwicm91dGVyTGlua0FjdGl2ZVwiIFthY3RpdmVdPVwicmxhLmlzQWN0aXZlXCIgc3R5bGU9XCJmb250LXNpemU6IDEuMmVtO1wiPiBTZWFyY2hcbjwvYT5cbjwvbmF2PlxuPC9kaXY+XG5cbjwvZGl2PlxuXG48IS0tPHVsPlxuICAgICAgICA8bGk+IDxhICByb3V0ZXJMaW5rPVwiL3NlYXJjaFwiIHN0eWxlPVwiYm9yZGVyLWJvdHRvbTogMi4ycHggc29saWQgIzMzY2NjYyBcIj5zZWFyY2ggcHJvZHVjdDwvYT4gPC9saT5cbiAgICAgICAgPGxpPiAgPGEgaHJlZj1cIiNcIj5DcmVhdGUgUHJvZHVjdDwvYT4gPC9saT5cbiAgICAgICAgPGxpPiAgPGEgaHJlZj1cIiNcIj5JbXBvcnQgRGF0YTwvYT4gPC9saT5cblxuICAgICA8L3VsPi0tPlxuXG5cblxuXG5cbjxkaXYgY2xhc3M9XCJjb250ZW50XCI+XG4gIDxyb3V0ZXItb3V0bGV0Pjwvcm91dGVyLW91dGxldD5cbjwvZGl2PlxuPCEtLTxyYWRpby1idXR0b24+PC9yYWRpby1idXR0b24+LS0+XG48IS0tPGZvcm0tY29tcD48L2Zvcm0tY29tcD4tLT5cbjwhLS08Y3QtcHJvamVjdC1jZW50ZXI+PC9jdC1wcm9qZWN0LWNlbnRlcj4tLT4iLCI8bXktYXBwPjwvbXktYXBwPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O29CQ2NJO01BQUE7TUFBQTtVQUFBO1FBQUE7UUFBQTtVQUFBO2NBQUE7VUFBQTtRQUFBO1FBQUE7TUFBQSx1Q0FBQTtNQUFBO01BQUEsNENBQUE7TUFBQTtNQUFBLHNCQUFBO3FEQUFBO01BQUE7TUFBa0o7SUFBbEQ7SUFBaEcsV0FBZ0csU0FBaEc7SUFBc0M7SUFBdEMsV0FBc0MsU0FBdEM7SUFBdUQ7SUFBdkQsV0FBdUQsU0FBdkQ7O0lBQUE7SUFBQTtJQUFBO0lBQUE7SUFBQTtJQUFBLFdBQUEsOEJBQUEsbUJBQUE7Ozs7b0JBZEo7TUFBQTtNQUF3Qix5Q0FDdEI7VUFBQTtVQUFBLDhCQUF5QjtNQUN2QjtVQUFBO01BQXVCLDJDQUN2QjtVQUFBO1VBQUEsNkRBQUE7VUFBQTtVQUFBLG9DQUFBOzBDQUFBO01BQVMsNkJBQWMsMENBQ2xCO2lCQUFBLDRCQUNMO1VBQUE7VUFBQSxnQkFBb0I7TUFFYix5Q0FDSDtNQUdvRSx1Q0FDNUU7VUFBQTtVQUFBLGdCQUFvQix5Q0FDbEI7VUFBQTtjQUFBO2FBQUE7VUFBQSw2QkFBb0IsK0JBQ2xCO1VBQUEsNkRBQUE7VUFBQTtjQUFBLDJCQUNBLDJCQUNFO1VBQUEsU0FDQSx5Q0FFQTtVQUFBLFdBT08saURBTWI7VUFBQTtVQUFBLDBEQUFxQjtVQUFBLFdBQ25CO1VBQUE7YUFBQTtzQ0FBQTtVQUFBLGVBQStCLHVDQUMzQjtVQUFBLFNBQzhCLHVDQUNOO1VBQUE7O0lBakMxQjtJQVdlO0lBQWYsWUFBZSxTQUFmO0lBbUJGOzs7O29CQ2pDRjtNQUFBO2FBQUE7VUFBQTs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL2FwcC5jb21wb25lbnQudHMiLCJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL2FwcC5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvYXBwLmNvbXBvbmVudC50cy5BcHBDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2IGNsYXNzPVwiaGVhZGVyQ2FyZFwiPlxuICA8ZGl2IGNsYXNzPVwiZ3JvdXBIZWFkZXJcIj5cbiAgICA8c3BhbiBjbGFzcz1cImhvbWVJY29uXCI+XG4gICAgPG1kLWljb24+aG9tZTwvbWQtaWNvbj4gXG4gIDwvc3Bhbj5cbiAgICA8c3BhbiBjbGFzcz1cInRpdGxlXCI+XG4gICAgRm9vZCBDb21wb25lbnQgRGF0YSBSZXBvc2l0b3J5XG4gICAgPC9zcGFuPlxuICA8L2Rpdj5cblxuICA8IS0tPGEgbWQtdGFiLWxpbmsgaHJlZj1cIiNcIiBzdHlsZT1cImZvbnQtc2l6ZTogMS4yZW07XCI+Q3JlYXRlIFByb2R1Y3Q8L2E+XG4gICAgICAgIDxhIG1kLXRhYi1saW5rIGhyZWY9XCIjXCIgc3R5bGU9XCJmb250LXNpemU6IDEuMmVtO1wiPkltcG9ydCBEYXRhPC9hPi0tPlxuXG5cbjwvZGl2PlxuPGRpdiBzdHlsZT1cIm1hcmdpbi1sZWZ0OiA0MHB4OyBtYXJnaW4tcmlnaHQ6IDQwcHhcIj5cbjxkaXYgY2xhc3M9XCJuYXZCYXJcIj5cbiAgPG5hdiBtZC10YWItbmF2LWJhcj5cbiAgICA8YSBtZC10YWItbGluayAqbmdGb3I9XCJsZXQgbCBvZiBsaXN0XCIgW3JvdXRlckxpbmtdPVwibFwiIHJvdXRlckxpbmtBY3RpdmUgI3JsYT1cInJvdXRlckxpbmtBY3RpdmVcIiBbYWN0aXZlXT1cInJsYS5pc0FjdGl2ZVwiIHN0eWxlPVwiZm9udC1zaXplOiAxLjJlbTtcIj4gU2VhcmNoXG48L2E+XG48L25hdj5cbjwvZGl2PlxuPCEtLTx1bD5cbiAgICAgICAgPGxpPiA8YSAgcm91dGVyTGluaz1cIi9zZWFyY2hcIiBzdHlsZT1cImJvcmRlci1ib3R0b206IDIuMnB4IHNvbGlkICMzM2NjY2MgXCI+c2VhcmNoIHByb2R1Y3Q8L2E+IDwvbGk+XG4gICAgICAgIDxsaT4gIDxhIGhyZWY9XCIjXCI+Q3JlYXRlIFByb2R1Y3Q8L2E+IDwvbGk+XG4gICAgICAgIDxsaT4gIDxhIGhyZWY9XCIjXCI+SW1wb3J0IERhdGE8L2E+IDwvbGk+XG5cbiAgICAgPC91bD4tLT5cblxuXG5cblxuXG48ZGl2IGNsYXNzPVwiY29udGVudFwiPlxuICA8cm91dGVyLW91dGxldD48L3JvdXRlci1vdXRsZXQ+XG48L2Rpdj5cbjwvZGl2PlxuPCEtLTxyYWRpby1idXR0b24+PC9yYWRpby1idXR0b24+LS0+XG48IS0tPGZvcm0tY29tcD48L2Zvcm0tY29tcD4tLT5cbjwhLS08Y3QtcHJvamVjdC1jZW50ZXI+PC9jdC1wcm9qZWN0LWNlbnRlcj4tLT4iLCI8bXktYXBwPjwvbXktYXBwPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O29CQ2tCSTtNQUFBO01BQUE7VUFBQTtRQUFBO1FBQUE7VUFBQTtjQUFBO1VBQUE7UUFBQTtRQUFBO01BQUEsdUNBQUE7TUFBQTtNQUFBLDRDQUFBO01BQUE7TUFBQSxzQkFBQTtxREFBQTtNQUFBO01BQWtKO0lBQWxEO0lBQWhHLFdBQWdHLFNBQWhHO0lBQXNDO0lBQXRDLFdBQXNDLFNBQXRDO0lBQXVEO0lBQXZELFdBQXVELFNBQXZEOztJQUFBO0lBQUE7SUFBQTtJQUFBO0lBQUE7SUFBQSxXQUFBLDhCQUFBLG1CQUFBOzs7O29CQWxCSjtNQUFBO01BQXdCLHlDQUN0QjtVQUFBO1VBQUEsOEJBQXlCO01BQ3ZCO1VBQUE7TUFBdUIsMkNBQ3ZCO1VBQUE7VUFBQSw2REFBQTtVQUFBO1VBQUEsb0NBQUE7MENBQUE7TUFBUyw2QkFBYywwQ0FDbEI7aUJBQUEsNEJBQ0w7VUFBQTtVQUFBLGdCQUFvQjtNQUViLHlDQUNIO01BR29FLDJDQUd0RTtNQUNOO1VBQUE7TUFBbUQsdUNBQ25EO1VBQUE7VUFBQSxnQkFBb0IseUNBQ2xCO1VBQUE7Y0FBQTthQUFBO1VBQUEsNkJBQW9CLCtCQUNsQjtVQUFBLDZEQUFBO1VBQUE7Y0FBQSwyQkFDQSwyQkFDRTtVQUFBLFNBQ0EsdUNBTU87VUFBQSxtQkFNYjtVQUFBO1VBQUEsZ0JBQXFCLHlDQUNuQjtVQUFBO1VBQUEsaUVBQUE7VUFBQTswQ0FBQTtVQUFBLDZCQUErQix1Q0FDM0I7aUJBQUEsd0JBQ0EsdUNBQzhCO2lCQUFBLHdCQUNOOzs7SUFuQzFCO0lBZWU7SUFBZixZQUFlLFNBQWY7SUFnQkY7Ozs7b0JDbENGO01BQUE7YUFBQTtVQUFBOzs7In0=

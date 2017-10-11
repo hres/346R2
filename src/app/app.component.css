@@ -60,14 +60,16 @@ ul li{
     backface-visibility: hidden;
 }
 .navBar{
-    position: fixed;
-    margin: 130px auto 0;
+ 
+    margin-top: 132px;
     height: 40px;
     width: 100%;
     border-bottom-color: #33cccc;
+
+    
 }
 .content{
-    margin: 195px auto 0;
+    margin-top:25px;
     z-index: 100;
 }
 

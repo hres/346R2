@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
- import {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule} from '@angular/material'
+ import {MdCardModule,MdProgressBarModule, MdSidenavModule,  MdSliderModule} from '@angular/material'
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormComponent }  from './form.component';
@@ -18,10 +18,7 @@ ReactiveFormsModule,
 FormsModule,
 MdCardModule,
 MdProgressBarModule,
-MdInputModule,
-MdButtonModule,
 MdSidenavModule,
-MdSelectModule,
 MdSliderModule,
 BrowserModule,
 SharedModule,
