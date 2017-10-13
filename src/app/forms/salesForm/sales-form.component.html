@@ -14,8 +14,11 @@
 
   
           <div class="form-group col-sm-4">
-            <label for="salesUpc">Label UPC</label>
-            <input type="number" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="salesUpc">
+            <label for="salesUpc">Sales UPC</label>
+            <input type="text" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="salesUpc">
+              <div *ngIf="formErrors.salesUpc" class="errorMessages">
+            <span class="textPosition">  {{formErrors.salesUpc}}</span>
+    </div>
           </div>
 
   
@@ -37,7 +40,10 @@
 
           <div class="form-group col-sm-4">
             <label for="salesYear">Sales Year</label>
-            <input type="number" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="salesYear">
+            <input type="text" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="salesYear">
+              <div *ngIf="formErrors.salesYear" class="errorMessages">
+            <span class="textPosition">  {{formErrors.salesYear}}</span>
+    </div>
           </div>
 
 

@@ -272,13 +272,13 @@ export class LabelFormComponent implements OnChanges {
     }
     formErrors = {
 
-        'label_upc': ''
+        'labelUpc': ''
     }
 
     validationMessages = {
 
-        'label_upc': {
-            'pattern': 'Must be a digit'
+        'labelUpc': {
+            'pattern': 'Invalid UPC number'
         }
 
     }

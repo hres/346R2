@@ -123,3 +123,50 @@ export type InsertDataMessage = {
     status: number,
     message: string
 }
+
+export type  SearchAllInputFields = {
+ //Produt Fields    
+    product_description: string,
+    product_manufacturer: string,
+    product_brand: string,
+    classification_name: string,
+    classification_number: string,
+    classification_type: string,
+    cnf_code: number,
+    cluster_number: number,
+    product_comment: string,
+
+    restaurant_type?:string,
+    type?:string,
+ //Market Share Fields
+
+    sales_upc: string,
+    sales_description: string,
+    sales_year: number,
+    nielsen_category: string, 
+    sales_source: string,
+    sales_collection_date_from: string,
+    sales_collection_date_to: string,
+    dollar_rank_from:number,
+    dollar_rank_to:number,
+    sales_comment: string,
+
+//Labels Fields
+
+
+    label_upc: string,
+    label_description: string,
+    label_source: string, 
+    label_ingredients: string,
+    label_collection_date_from: string,
+    label_collection_date_to: string,
+    label_comment:string,
+
+
+    product_id?: number,
+    offset?: number,
+    flag?: boolean,
+    orderby?: string,
+
+
+};

@@ -6,6 +6,6 @@
  */
 /* tslint:disable */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.styles = ['.DivLogo[_ngcontent-%COMP%]{\n\n    background-color: lightblue;\n    padding: 15px 15px;\n    border: 2px solid lightblue;\n\n}\n.DivHeader[_ngcontent-%COMP%]{\n    position: relative;\n}\ndiv.bodycard[_ngcontent-%COMP%]{\n    position: relative;\n}\n\n\n\n.errorMessages[_ngcontent-%COMP%]{\n\n    color: red;\n\n font-size: 0.8em;\n    width: 100%;\n    margin-top: -10px;\n       \n       margin-left: 6px;\n   \n\n}'];
+exports.styles = ['.DivLogo[_ngcontent-%COMP%]{\n\n    background-color: lightblue;\n    padding: 15px 15px;\n    border: 2px solid lightblue;\n\n}\n.DivHeader[_ngcontent-%COMP%]{\n    position: relative;\n}\ndiv.bodycard[_ngcontent-%COMP%]{\n    position: relative;\n}\n\n\n\n.errorMessages[_ngcontent-%COMP%]{\n\n    color: red;\n    font-size: 1.1em;\n    width: 100%;\n    margin-left: 1px;\n   \n\n}\n.ng-invalid[_ngcontent-%COMP%]:not(form){\n    border-left: 5px solid #a94442;\n}'];
 //# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvbGFiZWxGb3JtL2xhYmVsLWZvcm0uY29tcG9uZW50LmNzcy5zaGltLm5nc3R5bGUudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL2Zvcm1zL2xhYmVsRm9ybS9sYWJlbC1mb3JtLmNvbXBvbmVudC5jc3MiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7OyJ9
 //# sourceMappingURL=label-form.component.css.shim.ngstyle.js.map

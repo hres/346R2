@@ -1,0 +1,334 @@
+<div class="DivHeader">
+    <div class="DivLogo">
+        Search All
+    </div>
+
+    <div class="bodycard">
+        <md-card style="background-color: #f5f5f5">
+
+
+<form (ngSubmit)="onSubmit()" [formGroup]="labelForm">
+    <!--First Block with product fields-->
+    <div class="well">
+
+
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label for="product_description">Product Description</label>
+                <input type="text" class="form-control" id="product_description" placeholder="Product Description" formControlName="product_description">
+
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="product_manufacturer">Product Manufactuer </label>
+                <input type="text" class="form-control" id="product_manufacturer" placeholder="Product Manufactuer" formControlName="product_manufacturer">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="product_brand">Product Brand</label>
+                <input type="text" class="form-control" id="product_brand" placeholder="Product Brand" formControlName="product_brand">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-4" *ngIf="listOfClass">
+                <label for="classification_name">Classification Name</label>
+                <select class="form-control" id="classification_name" formControlName="classification_name">
+<option value="" selected>Select a Classification Name</option>
+<option *ngFor="let class of listOfClass.cl;let i = index" [value]="class.classificationName">{{class.classificationName}}</option>
+
+</select>
+
+
+            </div>
+            <div class="form-group col-sm-4" *ngIf="listOfClass">
+                <label for="classification_number">Classification Number</label>
+                <select class="form-control" id="classification_number" formControlName="classification_number">
+      <option value="" selected>Select a Classification Number</option>
+      <option *ngFor="let classifi of listOfClass.cl;let i = index" [value]="classifi.classificationNumber">{{classifi.classificationNumber}}</option>
+     
+
+</select>
+
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="classification_type">Classification Type  </label>
+                <input type="text" class="form-control" id="classification_type" placeholder="Enter the Classification Type" formControlName="classification_type">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+
+                <label for="cnf_code">CNF CODE    </label>
+                <input type="text" class="form-control" id="cnf_code" placeholder="CNF CODE" formControlName="cnf_code">
+
+                <div *ngIf="formErrors.cnf_code" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.cnf_code}}</span>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="cluster_number">Cluster Number</label>
+                <input type="text" class="form-control" id="cluster_number" placeholder="Cluster Number" formControlName="cluster_number">
+                <div *ngIf="formErrors.cluster_number" class="errorMessages">
+                    <span class="textPosition"> {{formErrors.cluster_number}}</span>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="product_comment">Product Comment</label>
+                <input type="text" class="form-control" id="product_comment" placeholder="Product Comment" formControlName="product_comment">
+
+            </div>
+        </div>
+
+    </div>
+    <!--End of the first block-->
+
+    <!--Start of the second block with Market share input fields-->
+    <div class="well" style="background-color:  #ebf0fa;">
+
+<div class="flex row">
+
+
+    <div class="form-group col-sm-4">
+        <label for="salesUpc">Sales UPC</label>
+        <input type="number" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="sales_upc">
+        <div *ngIf="formErrors.sales_upc" class="errorMessages">
+            <span class="textPosition">  {{formErrors.sales_upc}}</span>
+        </div>
+    </div>
+
+
+    <div class="form-group col-sm-4">
+        <label for="salesDescription">Sales Description</label>
+        <input type="text" class="form-control" id="salesDescription" placeholder="Sales Description" formControlName="sales_description">
+    </div>
+
+
+    <div class="form-group col-sm-4">
+        <label for="salesYear">Sales Year</label>
+        <input type="number" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="sales_year">
+        <div *ngIf="formErrors.sales_upc" class="errorMessages">
+            <span class="textPosition">  {{formErrors.sales_upc}}</span>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="flex row">
+    <div class="form-group col-sm-4">
+        <label for="nielsenCategory">Nielsen Category</label>
+        <input type="text" class="form-control" id="nielsenCategory" placeholder="Sales Nielsen Category" formControlName="nielsen_category">
+    </div>
+    <div class="form-group col-sm-4">
+        <label for="salesSource">Sales Source</label>
+        <input type="text" class="form-control" id="salesSource" placeholder="Sales Source" formControlName="sales_source">
+    </div>
+
+    <div class="form-group col-sm-4">
+        <label for="collectionDate">
+     Collection Date From
+      </label>
+        <div class="">
+            <div class="input-group">
+
+                <input class="form-control date1" id="collectionDate" formControlName="sales_collection_date_from" placeholder="YYYY/MM/DD"
+                    type="text" [value]="" />
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar">
+         </i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+<div class="flex row">
+
+
+
+
+
+    <div class="form-group col-sm-4">
+        <label for="collectionDateTo">
+     Collection Date To
+      </label>
+        <div class="">
+            <div class="input-group">
+
+                <input class="form-control date2" id="collectionDateTo" formControlName="sales_collection_date_to" placeholder="YYYY/MM/DD"
+                    type="text" [value]="" />
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar">
+              </i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-4">
+        <label for="dollar_rank_from">Dollar Rank From</label>
+        <input type="text" class="form-control" id="dollar_rank_from" placeholder="Dollar Rank From" formControlName="dollar_rank_from">
+        <div *ngIf="formErrors.dollar_rank_from" class="errorMessages">
+            <span class="textPosition">  {{formErrors.dollar_rank_from}}</span>
+        </div>
+
+    </div>
+
+    <div class="form-group col-sm-4">
+        <label for="dollar_rank_to">Dollar Rank To</label>
+        <input type="text" class="form-control" id="dollar_rank_to" placeholder="Dollar Rank To" formControlName="dollar_rank_to">
+        <div *ngIf="formErrors.dollar_rank_to" class="errorMessages">
+            <span class="textPosition">  {{formErrors.dollar_rank_to}}</span>
+        </div>
+
+
+
+
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-4">
+        <label for="salesComment">Sales Comment</label>
+        <input type="text" class="form-control" id="salesComment" placeholder="Sales Comment" formControlName="sales_comment">
+    </div>
+</div>
+
+
+</div>
+
+<!--End of the second block-->
+<!--Start of the second block Label Inputs Fields-->
+
+<div class="well" style="background-color: hsl(60, 100%, 98%)">
+
+<div class="flex row">
+
+    <div class="form-group col-sm-4">
+        <label for="label_upc">Label UPC</label>
+        <input type="number" class="form-control" id="label_upc" placeholder="Label UPC" formControlName="label_upc">
+        <div *ngIf="formErrors.label_upc" class="errorMessages">
+            <span class="textPosition">  {{formErrors.label_upc}}</span>
+        </div>
+    </div>
+
+
+    <div class="form-group col-sm-4">
+        <label for="label_description">Label Description</label>
+        <input type="text" class="form-control" id="label_description" placeholder="Label Description" formControlName="label_description">
+    </div>
+
+
+    <div class="form-group col-sm-4">
+        <label for="label_source">Label Source</label>
+        <input type="text" class="form-control" id="label_source" placeholder="Source" formControlName="label_source">
+    </div>
+</div>
+
+<div class=" row">
+
+
+    <div class="form-group col-sm-4">
+        <label for="label_ingredients">Ingredients</label>
+        <input type="text" class="form-control" id="label_ingredients" placeholder="Ingredients" formControlName="label_ingredients">
+    </div>
+    <div class="form-group col-sm-4">
+        <label for="datex">
+     Collection Date From
+      </label>
+        <div class="">
+            <div class="input-group">
+
+                <input class="form-control date1" id="datex" formControlName="label_collection_date_from" placeholder="YYYY/MM/DD" type="text"
+                    [value]="" />
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar">
+         </i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-4">
+        <label for="label_collection_to">
+     Collection Date To
+      </label>
+        <div class="">
+            <div class="input-group">
+
+                <input class="form-control date2" id="label_collection_date_to" formControlName="label_collection_date_to" placeholder="YYYY/MM/DD"
+                    type="text" [value]="" />
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar">
+              </i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class=" row">
+    <div class="form-group col-sm-4">
+        <label for="label_comment">Label Source</label>
+        <input type="text" class="form-control" id="label_comment" placeholder="Label Comment" formControlName="label_comment">
+    </div>
+
+</div>
+<div style="float:right;">
+<button style="float:right; margin-top: 28px" type="submit" class="btn btn-primary" [disabled]="!labelForm.valid">Search</button>
+</div>
+</div>
+
+
+
+
+</form>
+
+
+</md-card>
+</div>
+</div>
+
+<h2 *ngIf="emptyField">
+
+    {{emptyField}}
+</h2>
+<h2 *ngIf="noData">
+
+    {{noData}}
+</h2>
+<div *ngIf="isLoading">
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+</div>
+
+
+<div *ngIf="serverDown">
+    Something happened on the server
+</div>
+<div *ngIf="tableData">
+
+    <ct-table [records]="tableData" [caption]="'ROMYYY'" [index]="index" [flag]="direction[index]" [settings]="settings" (trigger)="sortBy2($event)">
+
+    </ct-table>
+</div>
+
+<div *ngIf="tableData">
+    <pagination [pageSize]="pageSizes" [numberOfRecords]="count" [(pageOffset)]="offset" (offSetVal)="offSetVal($event)">
+    </pagination>
+</div>

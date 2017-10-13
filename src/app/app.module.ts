@@ -16,6 +16,11 @@ import { SalesFormModule }  from './forms/salesForm/sales-form.module';
 import { LabelFormComponent }  from './forms/labelForm/label-form.component'; 
 import { LabelFormModule}  from './forms/labelForm/label-form.module'; 
 
+import { SearchAllModule }  from './forms/searchAllForm/search-all.module'; 
+import { SearchAllComponent }  from './forms/searchAllForm/search-all.component'; 
+
+//SearchAllModule
+
 import {ModalBoxModule} from './modal-box/modal-box.module'
 
 import { AddClassificationModule }  from './classification-center/add-classification/add-classification.module'; 
@@ -54,6 +59,7 @@ import { CommonModule } from '@angular/common';
       // MdButtonModule,
       // MdCardModule,
       // MdDatepickerModule,
+      SearchAllModule,
        MdIconModule,
       // MdInputModule,
        MdNativeDateModule,
@@ -91,6 +97,10 @@ import { CommonModule } from '@angular/common';
     {
     path: 'radiobutton',
     component: RadioButtonComponent
+  },
+  {
+    path:'searchAll',
+    component:SearchAllComponent
   },
   {
     path: '',

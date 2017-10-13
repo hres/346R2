@@ -14,7 +14,10 @@
 
     <div class="form-group col-sm-4">
       <label for="labelUpc">Label UPC</label>
-      <input type="number" class="form-control" id="labelUpc" placeholder="Label UPC" formControlName="labelUpc">
+      <input type="text" class="form-control" id="labelUpc" placeholder="Label UPC" formControlName="labelUpc">
+       <div *ngIf="formErrors.labelUpc" class="errorMessages">
+            <span class="textPosition">  {{formErrors.labelUpc}}</span>
+    </div>
     </div>
 
 
@@ -70,7 +73,6 @@
         </div>
       </div>
     </div>
-
 
   </div>
 

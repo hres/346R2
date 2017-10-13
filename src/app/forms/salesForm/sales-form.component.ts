@@ -94,7 +94,12 @@ export class SalesFormComponent implements OnChanges {
             salesUpc: ['', [Validators.pattern('\\d+')]],
             salesDescription: '',
             salesSource: '',
-            salesYear: ['', [Validators.pattern('\\d+')]],
+            salesYear: ['', [
+                    Validators.pattern('\\d+'),
+                    Validators.maxLength(4),
+                    Validators.minLength(4)
+                    
+                    ]],
             nielsenCategory: '',
             salesComment: '',
             collectionDateFrom: [''],
@@ -273,16 +278,18 @@ this.isLoading = true;
 
     }
     formErrors = {
-        'sales_year': '',
-        'sales_upc': ''
+        'salesYear': '',
+        'salesUpc': ''
     }
 
     validationMessages = {
-        'sales_year': {
-            'pattern': 'Must be a digit'
+        'salesYear': {
+            'pattern': 'Invalid Sales Year'
         },
-        'sales_upc': {
-            'pattern': 'Must be a digit'
+        'salesUpc': {
+            'pattern': 'Invalid Sales UPC',
+            'maxLength': 'Must be 4 digits',
+            'minLength': 'Must be 4 digits'
         }
 
     }
