@@ -1,4 +1,4 @@
-.homeIcon{
+/*.homeIcon{
 
     font-size: 170%
 }
@@ -18,15 +18,11 @@
     position: absolute;
     padding-left: 2.5%;
     padding-top: 40px;
-    /*z-index: 99;*/
+ 
 }
 
 
-/*.navigation{
-overflow: hidden;
 
-margin-bottom: -4px;
-}*/
 
 
   ul{
@@ -71,7 +67,7 @@ ul li{
 .content{
     margin-top:25px;
     z-index: 100;
-}
+}*/
 
 
 /*html, html a, *{
@@ -81,3 +77,10 @@ ul li{
 /** {
     font-family: Roboto, sans-serif;
 }*/
+#wb-cont{
+    border-bottom: 1px solid #af3c43;
+    font-size: 34px;
+    margin-bottom:.2em;
+    margin-top:1.25em;
+    padding-bottom: .2em;
+}

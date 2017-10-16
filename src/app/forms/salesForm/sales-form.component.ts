@@ -1,6 +1,6 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { Params, SalesInputFields, Response, SalesData } from '../../data-model';
+import { Params, SalesInputFields, Response, SalesData, salesYearList } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -23,7 +23,7 @@ export class SalesFormComponent implements OnChanges {
 
 
     tableData: SalesData[];
-
+  listSalesYear: salesYearList[];
     submitted = false;
     offset: number = 0;
     sales: SalesInputFields;
@@ -68,7 +68,19 @@ export class SalesFormComponent implements OnChanges {
 
     }
 
-    ngOnInit(): void {
+
+            ngOnInit(): void {
+                       this.searchService.getSalesYearList().subscribe(response =>
+                {  
+
+                      const {data, message, status} = response;   
+                     this.listSalesYear = data.dataList;
+                
+
+                 }
+            );        
+   
+
 
     }
 

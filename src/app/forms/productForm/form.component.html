@@ -32,7 +32,7 @@
     <label for="classification_name">Classification Name</label>
     <select class="form-control" id="classification_name" formControlName="classification_name">
 <option value="" selected>Select a Classification Name</option>
-<option *ngFor="let class of listOfClass.cl;let i = index" [value]="class.classificationName">{{class.classificationName}}</option>
+<option *ngFor="let class of listOfClass;let i = index" [value]="class.classification_name">{{class.classification_name}}</option>
 
 </select>
 
@@ -42,7 +42,7 @@
     <label for="classification_number">Classification Number</label>
     <select class="form-control" id="classification_number" formControlName="classification_number">
       <option value="" selected>Select a Classification Number</option>
-      <option *ngFor="let classifi of listOfClass.cl;let i = index" [value]="classifi.classificationNumber">{{classifi.classificationNumber}}</option>
+      <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
      
 
 <!--<option *ngFor="let class_number of Classification_number" [value] = "class_number">{{class_number}}</option>-->

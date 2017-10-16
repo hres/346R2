@@ -6,7 +6,7 @@
 
 
             <md-select  placeholder="Classification Number" formControlName="classificationNumber">
-                <md-option *ngFor="let classifi of listOfClass.cl;let i = index" [value]="classifi.classificationNumber">{{classifi.classificationNumber}}</md-option>
+                <md-option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classificationNumber">{{classifi.classificationNumber}}</md-option>
 
             </md-select>
 
@@ -16,7 +16,7 @@
 
 
             <md-select placeholder="Classification Name" formControlName="classificationName">
-                <md-option *ngFor="let class of listOfClass.cl;let i = index" [value]="class.classificationName">{{class.classificationName}}</md-option>
+                <md-option *ngFor="let class of listOfClass;let i = index" [value]="class.classificationName">{{class.classificationName}}</md-option>
 
             </md-select>
     

@@ -20,6 +20,9 @@
     </script>-->
       <link rel="stylesheet" href="bootstarp/bootstrap.min.css">
 
+<link href="GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="GCWeb/css/theme.min.css">
+
     <link href="../node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" integrity="sha384-MI32KR77SgI9QAPUs+6R7leEOwtop70UsjEtFEezfKnMjXWx15NENsZpfDgq8m8S" crossorigin="anonymous">
@@ -28,9 +31,11 @@
   </head>
 
   <body>
-		<div >
+
+	
     <my-app>Loading AppComponent content here ...</my-app>
-		</div>
+
+
   </body>
      <script src="build.js"></script>
        <script src="bootstarp/jquery.min.js"></script>
@@ -55,6 +60,64 @@
 	<script>
 	$(document).ready(function(){
 		var date_input=$('input[formControlName="collectionDateTo"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			container:'#datex',
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>
+
+
+
+
+	<script>
+	$(document).ready(function(){
+		var date_input=$('input[formControlName="label_collection_date_from"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>
+
+	<script>
+	$(document).ready(function(){
+		var date_input=$('input[formControlName="label_collection_date_to"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			container:'#datex',
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>
+
+
+	<script>
+	$(document).ready(function(){
+		var date_input=$('input[formControlName="sales_collection_date_from"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>
+
+	<script>
+	$(document).ready(function(){
+		var date_input=$('input[formControlName="sales_collection_date_to"]'); //our date input has the name "date"
 		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
 		date_input.datepicker({
 			container:'#datex',

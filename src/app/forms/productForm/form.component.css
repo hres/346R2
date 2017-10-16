@@ -1,21 +1,31 @@
 
 /*div.flex{
     display: flex;
+}
+div.flex > md-input-container, div.flex > md-select{
+    flex: 1;
+    margin: 0 7px;
+    font-size: 15px;
+}
+div.flex > md-select{
+    margin-bottom: 7px;
 }*/
-
-/*.DivHeader{
+.DivHeader{
     position: relative;
     display: block;
     width: 100%;
     background-color: lightblue;
-}*/
-.DivLogo{
+}
 
+.form-control {
+    width: 100% !important;
+}
+
+.DivLogo{
 
     background-color: lightblue;
     padding: 15px 15px;
     border: 2px solid lightblue;
-    
 
 }
 .DivHeader{
@@ -24,6 +34,13 @@
 div.bodycard{
     position: relative;
 }
+
+/*.row > div, .row > div  md-input-container, .row > div  md-select {
+    width: 100%;
+     margin: 0 7px;
+     font-size: 15px;
+     flex: 1;
+}*/
 
 .errorMessages{
 
@@ -40,9 +57,4 @@ div.bodycard{
 
 /*.tab{
     margin-top: 7px;
-}*/
-
-/*row > div  input, .row > div select  {
-    width: 100%;
-     flex: 1;
 }*/

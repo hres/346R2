@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
-import { Params, Response, SalesData, LabelData, ClassificationList, addClass,productParams} from '../data-model';
+import { Params, Response, SalesData, LabelData, ClassificationList, addClass,productParams, classificationList, salesYearList} from '../data-model';
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -59,7 +59,7 @@ export class SearchService {
 
 
         return this.http
-            .post('http://10.148.179.244:8087/fcdr-rest-service/rest/SalesService/salesfiltered', queryString, this.options)
+            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/SalesService/salesfiltered', queryString, this.options)
             .map(response => response.json() as Response<SalesData>);
 
     }
@@ -72,19 +72,39 @@ export class SearchService {
 
 
         return this.http
-            .post('http://10.148.179.244:8087/fcdr-rest-service/rest/PackageService/packagefiltered', queryString, this.options)
+            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/PackageService/packagefiltered', queryString, this.options)
             .map(response => response.json() as Response<LabelData>);
 
     }
 
-    getClassification(): Observable<addClass[]> {
+    getClassification(): Observable<Response<addClass>> {
         console.log('here');
         return this.http
-            .get('http://localhost:8080/fcdr/webapi/myresource/getclassification', this.options)
-            .map(response => response.json() as addClass[]);
+            .get('http://10.148.179.244:8088/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+            .map(response => response.json() as Response<addClass>);
 
 
     }
+    getClassificationLatest(): Observable<Response<classificationList>> {
+        console.log('here');
+        return this.http
+            .get('http://10.148.179.244:8088/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+            .map(response => response.json() as Response<classificationList>);
+
+
+    }
+
+    //getSalesYearList
+    getSalesYearList(): Observable<Response<salesYearList>> {
+        console.log('here');
+        return this.http
+            .get('http://10.148.179.244:8088/fcdr-rest-service/rest/SalesService/salesyears', this.options)
+            .map(response => response.json() as Response<salesYearList>);
+    }
+
+
+
+
 
     getAll(id: number | string){
 

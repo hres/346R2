@@ -47,8 +47,8 @@ export class AddClassificationComponent implements OnChanges {
                 this.service.getClassification().subscribe(response =>
                 {  
                  const cl = response;
-                 this.listOfClass = response;
-                 console.log("HUMMM", response);
+                  this.listOfClass = response.data.dataList;
+                 console.log("HUMMM",  this.listOfClass);
 
                  }
             );

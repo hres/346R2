@@ -1,3 +1,21 @@
+
+/*div.flex{
+    display: flex;
+}
+div.flex > md-input-container, div.flex > md-select{
+    flex: 1;
+    margin: 0 7px;
+    font-size: 15px;
+}
+div.flex > md-select{
+    margin-bottom: 7px;
+}*/
+/*.DivHeader{
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: lightblue;
+}*/
 .DivLogo{
 
     background-color: lightblue;
@@ -10,8 +28,18 @@
 }
 div.bodycard{
     position: relative;
+    padding-bottom:70px;
 }
+
+/*.row > div, .row > div  md-input-container, .row > div  md-select {
+    width: 100%;
+     margin: 0 7px;
+     font-size: 15px;
+     flex: 1;
+}*/
+
 .errorMessages{
+
 
     color: red;
     font-size: 1.1em;
@@ -20,6 +48,19 @@ div.bodycard{
    
 
 }
+
+.tab{
+    margin-top: 7px;
+}
+
+
 .ng-invalid:not(form){
     border-left: 5px solid #a94442;
 }
+
+.form-control {
+    width: 100% !important;
+}
+/*.ng-valid.ng-dirty:not(form){
+    border-left: 5px solid #42A948;
+}*/

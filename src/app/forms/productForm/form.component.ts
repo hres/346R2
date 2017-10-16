@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
-import { Params,addClass, Classification_name, Classification_number, Response } from '../../data-model';
+import { Params,classificationList, Classification_name, Classification_number, Response } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -41,7 +41,7 @@ export class FormComponent implements OnChanges {
     Classification_number = Classification_number;
 
 
-  listOfClass: addClass[];
+  listOfClass: classificationList[];
     count = 0;
     pageSizes = 10;
     //value: any;
@@ -70,10 +70,13 @@ export class FormComponent implements OnChanges {
     }
 
     ngOnInit(): void {
-                       this.searchService.getClassification().subscribe(response =>
+                       this.searchService.getClassificationLatest().subscribe(response =>
                 {  
-                 const cl = response;
-                 this.listOfClass = response;
+                 const {data, message, status} = response;   
+                 //const cl = response;
+                 this.listOfClass = data.dataList;
+                 console.log( this.listOfClass[0]['classification_name'], "is the class number")
+
                 
 
                  }

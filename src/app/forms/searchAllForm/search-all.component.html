@@ -14,20 +14,20 @@
 
         <div class="row">
             <div class="form-group col-sm-4">
-                <label for="product_description">Product Description</label>
-                <input type="text" class="form-control" id="product_description" placeholder="Product Description" formControlName="product_description">
+                <label for="productDescription">Product Description</label>
+                <input type="text" class="form-control" id="productDescription" placeholder="Product Description" formControlName="product_description">
 
             </div>
             <div class="form-group col-sm-4">
-                <label for="product_manufacturer">Product Manufactuer </label>
-                <input type="text" class="form-control" id="product_manufacturer" placeholder="Product Manufactuer" formControlName="product_manufacturer">
+                <label for="productManufacturer">Product Manufactuer </label>
+                <input type="text" class="form-control" id="productManufacturer" placeholder="Product Manufactuer" formControlName="product_manufacturer">
 
             </div>
 
             <div class="form-group col-sm-4">
 
-                <label for="product_brand">Product Brand</label>
-                <input type="text" class="form-control" id="product_brand" placeholder="Product Brand" formControlName="product_brand">
+                <label for="productBrand">Product Brand</label>
+                <input type="text" class="form-control" id="productBrand" placeholder="Product Brand" formControlName="product_brand">
 
             </div>
 
@@ -35,28 +35,28 @@
 
         <div class="row">
             <div class="form-group col-sm-4" *ngIf="listOfClass">
-                <label for="classification_name">Classification Name</label>
-                <select class="form-control" id="classification_name" formControlName="classification_name">
+                <label for="classificationName">Classification Name</label>
+                <select class="form-control" id="classificationName" formControlName="classification_name">
 <option value="" selected>Select a Classification Name</option>
-<option *ngFor="let class of listOfClass.cl;let i = index" [value]="class.classificationName">{{class.classificationName}}</option>
+<option *ngFor="let class of listOfClass;let i = index" [value]="class.classification_name">{{class.classification_name}}</option>
 
 </select>
 
 
             </div>
             <div class="form-group col-sm-4" *ngIf="listOfClass">
-                <label for="classification_number">Classification Number</label>
-                <select class="form-control" id="classification_number" formControlName="classification_number">
+                <label for="classificationNumber">Classification Number</label>
+                <select class="form-control" id="classificationNumber" formControlName="classification_number">
       <option value="" selected>Select a Classification Number</option>
-      <option *ngFor="let classifi of listOfClass.cl;let i = index" [value]="classifi.classificationNumber">{{classifi.classificationNumber}}</option>
+      <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
      
 
 </select>
 
             </div>
             <div class="form-group col-sm-4">
-                <label for="classification_type">Classification Type  </label>
-                <input type="text" class="form-control" id="classification_type" placeholder="Enter the Classification Type" formControlName="classification_type">
+                <label for="classificationType">Classification Type  </label>
+                <input type="text" class="form-control" id="classificationType" placeholder="Enter the Classification Type" formControlName="classification_type">
 
             </div>
 
@@ -66,8 +66,8 @@
 
             <div class="form-group col-sm-4">
 
-                <label for="cnf_code">CNF CODE    </label>
-                <input type="text" class="form-control" id="cnf_code" placeholder="CNF CODE" formControlName="cnf_code">
+                <label for="cnfCode">CNF CODE    </label>
+                <input type="text" class="form-control" id="cnfCode" placeholder="CNF CODE" formControlName="cnf_code">
 
                 <div *ngIf="formErrors.cnf_code" class="errorMessages">
                     <span class="textPosition">  {{formErrors.cnf_code}}</span>
@@ -75,16 +75,16 @@
             </div>
 
             <div class="form-group col-sm-4">
-                <label for="cluster_number">Cluster Number</label>
-                <input type="text" class="form-control" id="cluster_number" placeholder="Cluster Number" formControlName="cluster_number">
+                <label for="clusterNumber">Cluster Number</label>
+                <input type="text" class="form-control" id="clusterNumber" placeholder="Cluster Number" formControlName="cluster_number">
                 <div *ngIf="formErrors.cluster_number" class="errorMessages">
                     <span class="textPosition"> {{formErrors.cluster_number}}</span>
                 </div>
             </div>
 
             <div class="form-group col-sm-4">
-                <label for="product_comment">Product Comment</label>
-                <input type="text" class="form-control" id="product_comment" placeholder="Product Comment" formControlName="product_comment">
+                <label for="productComment">Product Comment</label>
+                <input type="text" class="form-control" id="productComment" placeholder="Product Comment" formControlName="product_comment">
 
             </div>
         </div>
@@ -100,7 +100,7 @@
 
     <div class="form-group col-sm-4">
         <label for="salesUpc">Sales UPC</label>
-        <input type="number" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="sales_upc">
+        <input type="text" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="sales_upc">
         <div *ngIf="formErrors.sales_upc" class="errorMessages">
             <span class="textPosition">  {{formErrors.sales_upc}}</span>
         </div>
@@ -113,13 +113,24 @@
     </div>
 
 
-    <div class="form-group col-sm-4">
+    <!--<div class="form-group col-sm-4">
         <label for="salesYear">Sales Year</label>
-        <input type="number" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="sales_year">
+        <input type="text" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="sales_year">
         <div *ngIf="formErrors.sales_upc" class="errorMessages">
             <span class="textPosition">  {{formErrors.sales_upc}}</span>
         </div>
+    </div>-->
+
+
+
+    <div class="form-group col-sm-4" *ngIf="listSalesYear">
+        <label for="salesYear">Sales Year</label>
+        <select class="form-control" id="salesYear" formControlName="sales_year">
+<option value="" selected>Select a Sales Year</option>
+<option *ngFor="let class of listSalesYear;let i = index" [value]="class.salesYear">{{class.salesYear}}</option>
+</select>
     </div>
+
 
 
 </div>
@@ -135,13 +146,13 @@
     </div>
 
     <div class="form-group col-sm-4">
-        <label for="collectionDate">
+        <label for="salesCollectionDateFrom">
      Collection Date From
       </label>
         <div class="">
             <div class="input-group">
 
-                <input class="form-control date1" id="collectionDate" formControlName="sales_collection_date_from" placeholder="YYYY/MM/DD"
+                <input class="form-control date1" id="salesCollectionDateFrom" formControlName="sales_collection_date_from" placeholder="YYYY/MM/DD"
                     type="text" [value]="" />
                 <div class="input-group-addon">
                     <i class="fa fa-calendar">
@@ -162,13 +173,13 @@
 
 
     <div class="form-group col-sm-4">
-        <label for="collectionDateTo">
+        <label for="SalescollectionDateTo">
      Collection Date To
       </label>
         <div class="">
             <div class="input-group">
 
-                <input class="form-control date2" id="collectionDateTo" formControlName="sales_collection_date_to" placeholder="YYYY/MM/DD"
+                <input class="form-control date2" id="SalescollectionDateTo" formControlName="sales_collection_date_to" placeholder="YYYY/MM/DD"
                     type="text" [value]="" />
                 <div class="input-group-addon">
                     <i class="fa fa-calendar">
@@ -179,8 +190,8 @@
     </div>
 
     <div class="form-group col-sm-4">
-        <label for="dollar_rank_from">Dollar Rank From</label>
-        <input type="text" class="form-control" id="dollar_rank_from" placeholder="Dollar Rank From" formControlName="dollar_rank_from">
+        <label for="dollarRankFrom">Dollar Rank From</label>
+        <input type="text" class="form-control" id="dollarRankFrom" placeholder="Dollar Rank From" formControlName="dollar_rank_from">
         <div *ngIf="formErrors.dollar_rank_from" class="errorMessages">
             <span class="textPosition">  {{formErrors.dollar_rank_from}}</span>
         </div>
@@ -188,8 +199,8 @@
     </div>
 
     <div class="form-group col-sm-4">
-        <label for="dollar_rank_to">Dollar Rank To</label>
-        <input type="text" class="form-control" id="dollar_rank_to" placeholder="Dollar Rank To" formControlName="dollar_rank_to">
+        <label for="dollarRankTo">Dollar Rank To</label>
+        <input type="text" class="form-control" id="dollarRankTo" placeholder="Dollar Rank To" formControlName="dollar_rank_to">
         <div *ngIf="formErrors.dollar_rank_to" class="errorMessages">
             <span class="textPosition">  {{formErrors.dollar_rank_to}}</span>
         </div>
@@ -220,8 +231,8 @@
 <div class="flex row">
 
     <div class="form-group col-sm-4">
-        <label for="label_upc">Label UPC</label>
-        <input type="number" class="form-control" id="label_upc" placeholder="Label UPC" formControlName="label_upc">
+        <label for="labelUpc">Label UPC</label>
+        <input type="text" class="form-control" id="labelUpc" placeholder="Label UPC" formControlName="label_upc">
         <div *ngIf="formErrors.label_upc" class="errorMessages">
             <span class="textPosition">  {{formErrors.label_upc}}</span>
         </div>
@@ -229,14 +240,14 @@
 
 
     <div class="form-group col-sm-4">
-        <label for="label_description">Label Description</label>
-        <input type="text" class="form-control" id="label_description" placeholder="Label Description" formControlName="label_description">
+        <label for="labelDescription">Label Description</label>
+        <input type="text" class="form-control" id="labelDescription" placeholder="Label Description" formControlName="label_description">
     </div>
 
 
     <div class="form-group col-sm-4">
-        <label for="label_source">Label Source</label>
-        <input type="text" class="form-control" id="label_source" placeholder="Source" formControlName="label_source">
+        <label for="labelSource">Label Source</label>
+        <input type="text" class="form-control" id="labelSource" placeholder="Source" formControlName="label_source">
     </div>
 </div>
 
@@ -244,8 +255,8 @@
 
 
     <div class="form-group col-sm-4">
-        <label for="label_ingredients">Ingredients</label>
-        <input type="text" class="form-control" id="label_ingredients" placeholder="Ingredients" formControlName="label_ingredients">
+        <label for="labelIngredients">Ingredients</label>
+        <input type="text" class="form-control" id="labelIngredients" placeholder="Ingredients" formControlName="label_ingredients">
     </div>
     <div class="form-group col-sm-4">
         <label for="datex">
@@ -265,13 +276,13 @@
     </div>
 
     <div class="form-group col-sm-4">
-        <label for="label_collection_to">
+        <label for="labelCollectionDateTo">
      Collection Date To
       </label>
         <div class="">
             <div class="input-group">
 
-                <input class="form-control date2" id="label_collection_date_to" formControlName="label_collection_date_to" placeholder="YYYY/MM/DD"
+                <input class="form-control date2" id="labelCollectionDateTo" formControlName="label_collection_date_to" placeholder="YYYY/MM/DD"
                     type="text" [value]="" />
                 <div class="input-group-addon">
                     <i class="fa fa-calendar">
@@ -285,8 +296,8 @@
 </div>
 <div class=" row">
     <div class="form-group col-sm-4">
-        <label for="label_comment">Label Source</label>
-        <input type="text" class="form-control" id="label_comment" placeholder="Label Comment" formControlName="label_comment">
+        <label for="labelComment">Label Source</label>
+        <input type="text" class="form-control" id="labelComment" placeholder="Label Comment" formControlName="label_comment">
     </div>
 
 </div>

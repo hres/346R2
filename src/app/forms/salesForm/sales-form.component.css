@@ -1,5 +1,5 @@
 
-div.flex{
+/*div.flex{
     display: flex;
 }
 div.flex > md-input-container, div.flex > md-select{
@@ -9,7 +9,7 @@ div.flex > md-input-container, div.flex > md-select{
 }
 div.flex > md-select{
     margin-bottom: 7px;
-}
+}*/
 /*.DivHeader{
     position: relative;
     display: block;
@@ -30,12 +30,12 @@ div.bodycard{
     position: relative;
 }
 
-.row > div, .row > div  md-input-container, .row > div  md-select {
+/*.row > div, .row > div  md-input-container, .row > div  md-select {
     width: 100%;
      margin: 0 7px;
      font-size: 15px;
      flex: 1;
-}
+}*/
 
 .errorMessages{
 
@@ -57,6 +57,9 @@ div.bodycard{
     border-left: 5px solid #a94442;
 }
 
+.form-control {
+    width: 100% !important;
+}
 /*.ng-valid.ng-dirty:not(form){
     border-left: 5px solid #42A948;
 }*/

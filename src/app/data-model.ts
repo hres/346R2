@@ -53,6 +53,18 @@ export class addClass  {
     productId?: number; 
 }
 
+export class classificationList  {
+    classification_name= '';    
+    classification_number= '';
+    classification_type= '';
+    classificationId?:number;
+    productId?: number; 
+}
+
+export class salesYearList  {
+    salesYear= '';    
+ 
+}
 
 export const Classification_name = ['First classification', 'Second Classification',''];
 export const Classification_number = ['1.0121', '1.0122', '1.0123', ''];

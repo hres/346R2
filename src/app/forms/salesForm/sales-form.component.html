@@ -37,14 +37,28 @@
           </div>
 
           <div class="flex row">
-
+<!--
           <div class="form-group col-sm-4">
             <label for="salesYear">Sales Year</label>
             <input type="text" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="salesYear">
               <div *ngIf="formErrors.salesYear" class="errorMessages">
             <span class="textPosition">  {{formErrors.salesYear}}</span>
     </div>
-          </div>
+          </div>-->
+
+
+  <div class="form-group col-sm-4" *ngIf="listSalesYear">
+    <label for="salesYear">Sales Year</label>
+    <select class="form-control" id="salesYear" formControlName="salesYear">
+<option value="" selected>Select a Sales Year</option>
+<option *ngFor="let class of listSalesYear;let i = index" [value]="class.salesYear">{{class.salesYear}}</option>
+</select>
+  </div>
+
+
+
+
+
 
 
           <div class="form-group col-sm-4">

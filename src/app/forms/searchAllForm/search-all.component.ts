@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
-import { SearchAllInputFields, Response,addClass } from '../../data-model';
+import { SearchAllInputFields, Response,salesYearList, classificationList } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -57,7 +57,8 @@ export class SearchAllComponent implements OnChanges {
 
 
 
-  listOfClass: addClass[];
+  listOfClass: classificationList[];
+    listSalesYear: salesYearList[];
     count = 0;
     pageSizes = 10;
     //value: any;
@@ -86,14 +87,24 @@ export class SearchAllComponent implements OnChanges {
     }
 
     ngOnInit(): void {
-                       this.searchService.getClassification().subscribe(response =>
+                       this.searchService.getClassificationLatest().subscribe(response =>
                 {  
-                 const cl = response;
-                 this.listOfClass = response;
+
+                      const {data, message, status} = response;   
+                     this.listOfClass = data.dataList;
                 
 
                  }
             );        
+                this.searchService.getSalesYearList().subscribe(response =>
+                {  
+
+                      const {data, message, status} = response;   
+                     this.listSalesYear = data.dataList;
+                
+
+                 }
+            ); 
     }
 
 
@@ -146,14 +157,14 @@ export class SearchAllComponent implements OnChanges {
             cnf_code: ['', [Validators.pattern('\\d+')]],
             cluster_number: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             product_comment: '',
-            sales_upc:['', [
+            sales_year :['', [
                     Validators.pattern('\\d+'),
                     Validators.maxLength(4),
                     Validators.minLength(4)
                     
                     ]],
             sales_description:'',
-            sales_year: ['', [Validators.pattern('\\d+')]],
+            sales_upc: ['', [Validators.pattern('\\d+')]],
             nielsen_category: '',
             sales_source: '',
             sales_collection_date_from: '',
