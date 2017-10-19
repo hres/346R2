@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Input,Output } from '@angular/core';
+import {ColumnSetting} from '../shared/layout.model'
+import {Params, Response} from '../data-model';
+
 @Component({
     selector: 'custom-table',
     templateUrl: './table.component.html',
@@ -7,9 +10,16 @@ import { Component, EventEmitter, Input,Output } from '@angular/core';
 
 })
 export class TableComponent{
+
+    @Input() records: any;
+    @Input() caption: string;
+    @Input() settings: ColumnSetting[];
+
     @Output() deleteEvent = new EventEmitter<boolean>();
     @Output() updateEvent = new EventEmitter<boolean>();
      @Output() addEvent = new EventEmitter<boolean>();
+
+     
     title ="Classifications";
     addClass: string;
     flag: boolean = true;

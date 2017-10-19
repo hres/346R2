@@ -1,150 +1,92 @@
-
-<div class="viewProduct">
-  
-<div *ngIf="productForm">
-
-    <div class="formContent">
-        <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
-            <div style="margin-bottom: 1em; " class="productHeader">
-<span class="productDetails">Product Details</span>
-<span class="buttons">
-<button md-raised-button type="submit" [disabled]="productForm.pristine || !productForm.valid">Save Changes</button>
-<button type="reset"  (click)="revert()" md-raised-button [disabled]="productForm.pristine" style="background-color:lightseagreen">REVERT</button>
-</span>
+<div class="row">
+  <div class="col-md-6">
+    <h2 style="margin-top:0px">Product Details</h2>
 </div>
+<div class="col-md-6" style="text-align: right" >
 
-<div class="formContent">
-    <div class="flex" *ngIf="listOfClass != null">
-          
-            <md-select placeholder="Classification Name" formControlName="classificationName">
-                 <md-option [value]=""></md-option>
-                <md-option *ngFor="let class of listOfClass.cl;let i = index" [value]="class.classificationName">{{class.classificationName}}</md-option>
-
-            </md-select>
-       
- 
-            <md-select  placeholder="Classification Number" formControlName="classificationNumber">
-                <md-option [value]=""></md-option>
-                <md-option *ngFor="let classif of listOfClass.cl;let i = index" [value]="classif.classificationNumber">{{classif.classificationNumber}}</md-option>
-
-            </md-select>
-         
-    </div>
-    <div class="flex row">
-            <div>
-            <md-input-container>
-                <input mdInput placeholder="Classification Type" formControlName="classificationType">
-            </md-input-container>
-            </div>
-          <div>
-            <md-input-container>
-                <input mdInput placeholder="Manufactuer" formControlName="productManufacturer">
-                
-            </md-input-container>
-        </div>
-    </div>
-    <div class="flex row">
-
-        <div>
-            <md-input-container>
-                <input mdInput placeholder="Brand" formControlName="productBrand">
-            </md-input-container>
-        </div>
-        <div>
-
-            <md-input-container>
-                <input mdInput placeholder="CNF CODE" formControlName="cnfCode">
-            </md-input-container>
-            <div *ngIf="formErrors.cnf_code" class="errorMessages">
-                <span class="textPosition">  {{formErrors.cnf_code}}</span>
-            </div>
-        </div>
-        <div>
-            <md-input-container>
-                <input mdInput placeholder="Cluster Number" formControlName="clusterNumber">
-            
-            </md-input-container>
-            <div *ngIf="formErrors.cluster_number" class="errorMessages">
-                <span class="textPosition"> {{formErrors.cluster_number}}</span>
-            </div>
-        </div>
-
-    </div>
-
-
-
-    <div class="flex row">
-
-
-        <div> 
-            <md-input-container >
-                <input mdInput placeholder="Description" formControlName="productDescription">
-            
-            </md-input-container>
-
-            <div *ngIf="formErrors.product_description" class="errorMessages">
-                <span class="textPosition">   {{formErrors.product_description}}</span>
-            </div>
-        </div>
-   
-    </div>
-
-    <div class="flex row" style="margin-bottom: -32px;">
-        <div>
-            <md-input-container>
-                <input mdInput #comment maxlength="256" placeholder="Comment" formControlName="productComment">
-                <md-icon mdSuffix>delete</md-icon>
-                <md-hint align="start"><strong>Let's add something here</strong></md-hint>
-                <md-hint align="end">{{comment.value.length}} / 256</md-hint>
-            </md-input-container>
-        </div>
-    </div>
-
-    <!--<div formArrayName="classification_list">
-        <div *ngFor="let classification of classification_list.controls; let i=index" [formGroupName]="i" >
-     
-             <div class="flex row">
-          <div>
-            <md-input-container>
-                <input mdInput placeholder="Classification Name" formControlName="classification_name">
-            </md-input-container>
-        </div>
-         </div>
-        <div class="flex row">
-          <div>
-            <md-input-container>
-                <input mdInput placeholder="Classification Number" formControlName="classification_number">
-            </md-input-container>
-        </div>
-
-                  <div>
-            <md-input-container>
-                <input mdInput placeholder="Classification Type" formControlName="classification_type">
-            </md-input-container>
-        </div>
-        <md-icon (click)="deleteClassification(i)" >delete</md-icon>
-         <button (click)="deleteClassification(i)" type="button">Delete</button>
-         </div>  
-        </div>
-
-
-    </div>-->
+<button class="btn btn-default">Delete Product</button>
+<button class="btn btn-default">Edit Product</button>
 
 
 </div>
-
-</form>
 </div>
 
-</div>
 
-<custom-table 
-    (deleteEvent)="responseDelete(flag)"
-    (updateEvent)="responseUpdate(flag)"
-    (addEvent)="responseAdd(flag)"
->
-</custom-table>
+<div *ngIf="params" class="viewProduct">
+  <table style="width:100%; margin-top:10px;">
+
+<tr>
+  <th>Classification Name</th>
+  <td>{{params.classification_name}}</td>
+</tr>
+
+<tr>
+  <th>Classification Number</th>
+  <td>{{params.classification_number}}</td>
+
+</tr>
+<tr>
+  <th>Classification Type</th>
+  <td>{{params.classification_type}}</td>
+
+</tr>
+<tr>
+  <th>Manufacturer</th>
+  <td>{{params.product_manufacturer}}</td>
+</tr>
+
+<tr>
+  <th>Brand</th>
+  <td>{{params.producy_brand}}</td>
+
+</tr>
+<tr>
+  <th>CNF CODE</th>
+  <td>{{params.cnf_code}}</td>
+
+</tr>
+<tr>
+  <th>Cluster Number</th>
+  <td>{{params.cluster_number}}</td>
+
+</tr>
+
+<tr>
+  <th>Description</th>
+  <td>{{params.product_description}}</td>
+
+</tr>
+<tr>
+  <th>Restaurant Type</th>
+  <td>{{params.restaurant_type}}</td>
+
+</tr>
+<tr>
+  <th>Type</th>
+  <td>{{params.type}}</td>
+
+</tr>
+</table>
+<table style="width:100%; margin-top:10px;">
+
+<tr>
+  <th>Creation Date</th>
+  <th>Last Edit date</th>
+  <th>Edited By</th>
+</tr>
+<tr>
+  <td>{{params.creation_date}}</td>
+  <td>{{params.last_edit_date}}</td>
+  <td>{{params.edited_by}}</td>
+</tr>
+</table>
+
 </div>
-<modal-box [(from)]="from" [(method)]="method" (displayModal)="checkModal(flag)" [(ids)]="Ids"></modal-box>
-<!--<div *ngIf="tableData">-->
-<!--<table-template [tableValues]="tableData"></table-template>-->
+<div *ngIf="salesData" style="margin-bottom: 40px;">
+  <custom-table [records]="salesData" 
+                [caption]="'Sales Records'" 
+                [settings]="settingsSales">
+
+  </custom-table>
+
+</div>

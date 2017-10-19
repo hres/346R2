@@ -182,3 +182,33 @@ export type  SearchAllInputFields = {
 
 
 };
+
+
+
+export type  productAllFields = {
+    classification_name: string;
+    classification_number: string;
+    classification_type: string;
+    cluster_number: string;
+    cnf_code: number;
+    creation_date: string;
+    edited_by: string;
+    last_edit_date: string;
+    product_description: string;
+    product_id: number;
+    product_manufacturer:string;
+    restaurant_type:string;
+    type: string;
+
+};
+
+
+
+export type  salesFieldsView = {
+    sales_id: number,
+    dollar_volume: string;
+    nielsen_category: string;
+    sales_source: string;
+    sales_upc: string;
+    sales_year: number;
+};

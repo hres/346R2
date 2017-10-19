@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SearchService } from './services/search.service';
+
 import { AddClassificationService } from './services/add-classification.service';
 
 // import {NgSwitch} from '@angular/common'; {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule,
@@ -45,6 +46,10 @@ import {RouterModule} from '@angular/router';
 
 import { CommonModule } from '@angular/common';  
 
+//Create imports
+import { CreateProductComponent }  from './createRecords/createProduct/create-product.component'; 
+import { CreateProductModule }  from './createRecords/createProduct/create-product.module'; 
+import { CreateRecordService } from './services/create-records.service';
 
 @NgModule({
   imports:      [ 
@@ -79,6 +84,7 @@ import { CommonModule } from '@angular/common';
       MdDatepickerModule,
       ModalBoxModule,
       AddClassificationModule,
+      CreateProductModule,
       RouterModule.forRoot([
 
   {
@@ -106,6 +112,10 @@ import { CommonModule } from '@angular/common';
     path: '',
     redirectTo: '/radiobutton',
     pathMatch: 'full'
+  },
+  {
+    path:'createproduct',
+    component: CreateProductComponent
   }
 ])
       
@@ -121,7 +131,8 @@ import { CommonModule } from '@angular/common';
    providers: [
         MdIconRegistry,
         SearchService,
-        AddClassificationService
+        AddClassificationService,
+        CreateRecordService
     
 
     ],

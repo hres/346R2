@@ -178,10 +178,11 @@ this.isLoading = true;
             //console.log("Here 204",data.dataList);
             }
             else {
+            
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData = data.dataList;
-                //console.log("Here",data.dataList);
+                console.log("Here received",data.dataList);
 
 
 
