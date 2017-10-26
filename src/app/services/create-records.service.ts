@@ -66,5 +66,9 @@ export class CreateRecordService {
 
     }
 
+ createSales(queryString: string): number {
+
+     return 1;
+ }
 
 }

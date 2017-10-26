@@ -25,8 +25,9 @@ table{
 tr:last-child, th{
   border-bottom:   1px solid lightgray;
 }
-
-
+.displayTables{
+    margin-bottom:124px;
+}
 
 
 

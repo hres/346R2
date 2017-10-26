@@ -26,7 +26,7 @@ export class SearchService {
 
 
         return this.http
-            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productsfiltered', queryString, this.options)
+            .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/productsfiltered', queryString, this.options)
             .map(response => response.json() as Response<Params>);
         //     .post('http://localhost:8080/fcdr/webapi/myresource/product',queryString,this.options)
         //     .toPromise()
@@ -45,7 +45,7 @@ export class SearchService {
             //http://localhost:8080/fcdr/webapi/myresource/getproduct
             //
             //(response => {
-            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productsfiltered', body, this.options)
+            .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/productsfiltered', body, this.options)
             // .toPromise()
             .map(response => response.json() as Response<productParams>);
     }
@@ -59,7 +59,7 @@ export class SearchService {
 
 
         return this.http
-            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/SalesService/salesfiltered', queryString, this.options)
+            .post('http://localhost:8080/fcdr-rest-service/rest/SalesService/salesfiltered', queryString, this.options)
             .map(response => response.json() as Response<SalesData>);
 
     }
@@ -72,7 +72,7 @@ export class SearchService {
 
 
         return this.http
-            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/PackageService/packagefiltered', queryString, this.options)
+            .post('http://localhost:8080/fcdr-rest-service/rest/PackageService/packagefiltered', queryString, this.options)
             .map(response => response.json() as Response<LabelData>);
 
     }
@@ -80,7 +80,7 @@ export class SearchService {
     getClassification(): Observable<Response<addClass>> {
         console.log('here');
         return this.http
-            .get('http://10.148.179.244:8088/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
             .map(response => response.json() as Response<addClass>);
 
 
@@ -88,7 +88,7 @@ export class SearchService {
     getClassificationLatest(): Observable<Response<classificationList>> {
         console.log('here');
         return this.http
-            .get('http://10.148.179.244:8088/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
             .map(response => response.json() as Response<classificationList>);
 
 
@@ -98,7 +98,7 @@ export class SearchService {
     getSalesYearList(): Observable<Response<salesYearList>> {
         console.log('here');
         return this.http
-            .get('http://10.148.179.244:8088/fcdr-rest-service/rest/SalesService/salesyears', this.options)
+            .get('http://localhost:8080/fcdr-rest-service/rest/SalesService/salesyears', this.options)
             .map(response => response.json() as Response<salesYearList>);
     }
 

@@ -8,18 +8,22 @@
 
 import * as i0 from './view-product.component.css.shim.ngstyle';
 import * as i1 from '@angular/core';
-import * as i2 from '../../table/table.component.ngfactory';
-import * as i3 from '../../../../../src/app/table/table.component';
-import * as i4 from '@angular/common';
-import * as i5 from '../../../../../src/app/views/viewProduct/view-product.component';
-import * as i6 from '@angular/forms';
-import * as i7 from '../../../../../src/app/services/search.service';
-import * as i8 from '../../../../../src/app/services/getRecord.service';
-import * as i9 from '@angular/router';
+import * as i2 from '@angular/common';
+import * as i3 from '../../editForms/editProduct/edit-product.component.ngfactory';
+import * as i4 from '../../../../../src/app/services/create-records.service';
+import * as i5 from '@angular/http';
+import * as i6 from '../../../../../src/app/editForms/editProduct/edit-product.component';
+import * as i7 from '@angular/forms';
+import * as i8 from '../../../../../src/app/services/search.service';
+import * as i9 from '../../../../../src/app/services/getRecord.service';
+import * as i10 from '@angular/router';
+import * as i11 from '../../table/table.component.ngfactory';
+import * as i12 from '../../../../../src/app/table/table.component';
+import * as i13 from '../../../../../src/app/views/viewProduct/view-product.component';
 const styles_ViewProductComponent:any[] = [i0.styles];
 export const RenderType_ViewProductComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_ViewProductComponent,data:{}});
-function View_ViewProductComponent_1(_l:any):i1.ɵViewDefinition {
+function View_ViewProductComponent_2(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),123,'div',[['class',
       'viewProduct']],(null as any),(null as any),(null as any),(null as any),(null as any))),
       (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
@@ -150,7 +154,7 @@ function View_ViewProductComponent_1(_l:any):i1.ɵViewDefinition {
     _ck(_v,29,0,currVal_2);
     const currVal_3:any = _co.params.product_manufacturer;
     _ck(_v,38,0,currVal_3);
-    const currVal_4:any = _co.params.producy_brand;
+    const currVal_4:any = _co.params.product_brand;
     _ck(_v,47,0,currVal_4);
     const currVal_5:any = _co.params.cnf_code;
     _ck(_v,56,0,currVal_5);
@@ -170,64 +174,143 @@ function View_ViewProductComponent_1(_l:any):i1.ɵViewDefinition {
     _ck(_v,120,0,currVal_12);
   });
 }
-function View_ViewProductComponent_2(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),5,'div',[['style',
-      'margin-bottom: 40px;']],(null as any),(null as any),(null as any),(null as any),
+function View_ViewProductComponent_1(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),22,'div',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      16,'div',[['class','row']],(null as any),(null as any),(null as any),(null as any),
       (null as any))),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),
-      (null as any),2,'custom-table',([] as any[]),(null as any),(null as any),(null as any),
-      i2.View_TableComponent_0,i2.RenderType_TableComponent)),i1.ɵdid(49152,(null as any),
-      0,i3.TableComponent,([] as any[]),{records:[0,'records'],caption:[1,'caption'],
-          settings:[2,'settings']},(null as any)),(_l()(),i1.ɵted((null as any),['\n\n  '])),
-      (_l()(),i1.ɵted((null as any),['\n\n']))],(_ck,_v) => {
-    var _co:any = _v.component;
-    const currVal_0:any = _co.salesData;
-    const currVal_1:any = 'Sales Records';
-    const currVal_2:any = _co.settingsSales;
-    _ck(_v,3,0,currVal_0,currVal_1,currVal_2);
-  },(null as any));
-}
-export function View_ViewProductComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),16,'div',[['class',
-      'row']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          4,'div',[['class','col-md-6']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'h2',[['style','margin-top:0px']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['Product Details'])),(_l()(),i1.ɵted((null as any),
-          ['\n'])),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),7,'div',[['class','col-md-6'],['style','text-align: right']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'button',[['class','btn btn-default']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Delete Product'])),
+      (null as any),4,'div',[['class','col-md-6']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),
+      i1.ɵeld(0,(null as any),(null as any),1,'h2',[['style','margin-top:0px']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+      ['Product Details'])),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),
+      ['\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),7,'div',[['class','col-md-6'],
+      ['style','text-align: right']],(null as any),(null as any),(null as any),(null as any),
+      (null as any))),(_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵeld(0,(null as any),
+      (null as any),1,'button',[['class','btn btn-default']],(null as any),(null as any),
+      (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Delete Product'])),
       (_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'button',[['class','btn btn-default']],(null as any),(null as any),(null as any),
-          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Edit Product'])),
+          1,'button',[['class','btn btn-default']],(null as any),[[(null as any),'click']],
+          (_v,en,$event) => {
+            var ad:boolean = true;
+            var _co:any = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.callEdit()) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Edit Product'])),
       (_l()(),i1.ɵted((null as any),['\n\n\n'])),(_l()(),i1.ɵted((null as any),['\n'])),
       (_l()(),i1.ɵted((null as any),['\n\n\n'])),(_l()(),i1.ɵand(16777216,(null as any),
-          (null as any),1,(null as any),View_ViewProductComponent_1)),i1.ɵdid(16384,
-          (null as any),0,i4.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
-          (null as any)),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_ViewProductComponent_2)),
-      i1.ɵdid(16384,(null as any),0,i4.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
-          'ngIf']},(null as any))],(_ck,_v) => {
-    var _co:i5.ViewProductComponent = _v.component;
+          (null as any),1,(null as any),View_ViewProductComponent_2)),i1.ɵdid(16384,
+          (null as any),0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
+          (null as any)),(_l()(),i1.ɵted((null as any),['\n']))],(_ck,_v) => {
+    var _co:any = _v.component;
     const currVal_0:any = _co.params;
-    _ck(_v,19,0,currVal_0);
-    const currVal_1:any = _co.salesData;
-    _ck(_v,22,0,currVal_1);
+    _ck(_v,21,0,currVal_0);
+  },(null as any));
+}
+function View_ViewProductComponent_3(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),6,'div',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      3,'edit-product',([] as any[]),(null as any),(null as any),(null as any),i3.View_EditProductComponent_0,
+      i3.RenderType_EditProductComponent)),i1.ɵprd(4608,(null as any),i4.CreateRecordService,
+      i4.CreateRecordService,[i5.Http]),i1.ɵdid(638976,(null as any),0,i6.EditProductComponent,
+      [i7.FormBuilder,i8.SearchService,i9.GetRecordService,i10.Router,i10.ActivatedRoute],
+      {product:[0,'product']},(null as any)),(_l()(),i1.ɵted((null as any),['\n\n\n'])),
+      (_l()(),i1.ɵted((null as any),['\n']))],(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.editFields;
+    _ck(_v,4,0,currVal_0);
+  },(null as any));
+}
+function View_ViewProductComponent_4(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),5,'div',[['class',
+      'displayTables']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+          2,'custom-table',([] as any[]),(null as any),[[(null as any),'addSalesRecord']],
+          (_v,en,$event) => {
+            var ad:boolean = true;
+            var _co:any = _v.component;
+            if (('addSalesRecord' === en)) {
+              const pd_0:any = ((<any>_co.addSales($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },i11.View_TableComponent_0,i11.RenderType_TableComponent)),i1.ɵdid(49152,
+          (null as any),0,i12.TableComponent,([] as any[]),{records:[0,'records'],
+              caption:[1,'caption'],flager:[2,'flager'],settings:[3,'settings']},{addSalesRecord:'addSalesRecord'}),
+      (_l()(),i1.ɵted((null as any),['\n\n  '])),(_l()(),i1.ɵted((null as any),['\n\n']))],
+      (_ck,_v) => {
+        var _co:any = _v.component;
+        const currVal_0:any = _co.salesData;
+        const currVal_1:any = 'Sales Records';
+        const currVal_2:any = 1;
+        const currVal_3:any = _co.settingsSales;
+        _ck(_v,3,0,currVal_0,currVal_1,currVal_2,currVal_3);
+      },(null as any));
+}
+function View_ViewProductComponent_5(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),5,'div',[['class',
+      'displayTables']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+          2,'custom-table',([] as any[]),(null as any),[[(null as any),'addLabelRecord']],
+          (_v,en,$event) => {
+            var ad:boolean = true;
+            var _co:any = _v.component;
+            if (('addLabelRecord' === en)) {
+              const pd_0:any = ((<any>_co.addLabel($event)) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },i11.View_TableComponent_0,i11.RenderType_TableComponent)),i1.ɵdid(49152,
+          (null as any),0,i12.TableComponent,([] as any[]),{records:[0,'records'],
+              caption:[1,'caption'],flager:[2,'flager'],settings:[3,'settings']},{addLabelRecord:'addLabelRecord'}),
+      (_l()(),i1.ɵted((null as any),['\n\n  '])),(_l()(),i1.ɵted((null as any),['\n\n  ']))],
+      (_ck,_v) => {
+        var _co:any = _v.component;
+        const currVal_0:any = _co.labelData;
+        const currVal_1:any = 'Label Records';
+        const currVal_2:any = 2;
+        const currVal_3:any = _co.settingsLabel;
+        _ck(_v,3,0,currVal_0,currVal_1,currVal_2,currVal_3);
+      },(null as any));
+}
+export function View_ViewProductComponent_0(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_ViewProductComponent_1)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),
+      ['\n'])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_ViewProductComponent_3)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),
+      ['\n'])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_ViewProductComponent_4)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),
+      ['\n\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_ViewProductComponent_5)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any))],(_ck,_v) => {
+    var _co:i13.ViewProductComponent = _v.component;
+    const currVal_0:boolean = !_co.editFields;
+    _ck(_v,1,0,currVal_0);
+    const currVal_1:any = _co.editFields;
+    _ck(_v,4,0,currVal_1);
+    const currVal_2:any = _co.salesData;
+    _ck(_v,7,0,currVal_2);
+    const currVal_3:any = _co.labelData;
+    _ck(_v,10,0,currVal_3);
   },(null as any));
 }
 export function View_ViewProductComponent_Host_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'view-product',
       ([] as any[]),(null as any),(null as any),(null as any),View_ViewProductComponent_0,
-      RenderType_ViewProductComponent)),i1.ɵdid(638976,(null as any),0,i5.ViewProductComponent,
-      [i6.FormBuilder,i7.SearchService,i8.GetRecordService,i9.Router,i9.ActivatedRoute],
+      RenderType_ViewProductComponent)),i1.ɵdid(638976,(null as any),0,i13.ViewProductComponent,
+      [i7.FormBuilder,i8.SearchService,i9.GetRecordService,i10.Router,i10.ActivatedRoute],
       (null as any),(null as any))],(_ck,_v) => {
     _ck(_v,1,0);
   },(null as any));
 }
-export const ViewProductComponentNgFactory:i1.ComponentFactory<i5.ViewProductComponent> = i1.ɵccf('view-product',
-    i5.ViewProductComponent,View_ViewProductComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1Byb2R1Y3Qvdmlldy1wcm9kdWN0LmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL3ZpZXdzL3ZpZXdQcm9kdWN0L3ZpZXctcHJvZHVjdC5jb21wb25lbnQudHMiLCJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL3ZpZXdzL3ZpZXdQcm9kdWN0L3ZpZXctcHJvZHVjdC5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1Byb2R1Y3Qvdmlldy1wcm9kdWN0LmNvbXBvbmVudC50cy5WaWV3UHJvZHVjdENvbXBvbmVudF9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxkaXYgY2xhc3M9XCJyb3dcIj5cbiAgPGRpdiBjbGFzcz1cImNvbC1tZC02XCI+XG4gICAgPGgyIHN0eWxlPVwibWFyZ2luLXRvcDowcHhcIj5Qcm9kdWN0IERldGFpbHM8L2gyPlxuPC9kaXY+XG48ZGl2IGNsYXNzPVwiY29sLW1kLTZcIiBzdHlsZT1cInRleHQtYWxpZ246IHJpZ2h0XCIgPlxuXG48YnV0dG9uIGNsYXNzPVwiYnRuIGJ0bi1kZWZhdWx0XCI+RGVsZXRlIFByb2R1Y3Q8L2J1dHRvbj5cbjxidXR0b24gY2xhc3M9XCJidG4gYnRuLWRlZmF1bHRcIj5FZGl0IFByb2R1Y3Q8L2J1dHRvbj5cblxuXG48L2Rpdj5cbjwvZGl2PlxuXG5cbjxkaXYgKm5nSWY9XCJwYXJhbXNcIiBjbGFzcz1cInZpZXdQcm9kdWN0XCI+XG4gIDx0YWJsZSBzdHlsZT1cIndpZHRoOjEwMCU7IG1hcmdpbi10b3A6MTBweDtcIj5cblxuPHRyPlxuICA8dGg+Q2xhc3NpZmljYXRpb24gTmFtZTwvdGg+XG4gIDx0ZD57e3BhcmFtcy5jbGFzc2lmaWNhdGlvbl9uYW1lfX08L3RkPlxuPC90cj5cblxuPHRyPlxuICA8dGg+Q2xhc3NpZmljYXRpb24gTnVtYmVyPC90aD5cbiAgPHRkPnt7cGFyYW1zLmNsYXNzaWZpY2F0aW9uX251bWJlcn19PC90ZD5cblxuPC90cj5cbjx0cj5cbiAgPHRoPkNsYXNzaWZpY2F0aW9uIFR5cGU8L3RoPlxuICA8dGQ+e3twYXJhbXMuY2xhc3NpZmljYXRpb25fdHlwZX19PC90ZD5cblxuPC90cj5cbjx0cj5cbiAgPHRoPk1hbnVmYWN0dXJlcjwvdGg+XG4gIDx0ZD57e3BhcmFtcy5wcm9kdWN0X21hbnVmYWN0dXJlcn19PC90ZD5cbjwvdHI+XG5cbjx0cj5cbiAgPHRoPkJyYW5kPC90aD5cbiAgPHRkPnt7cGFyYW1zLnByb2R1Y3lfYnJhbmR9fTwvdGQ+XG5cbjwvdHI+XG48dHI+XG4gIDx0aD5DTkYgQ09ERTwvdGg+XG4gIDx0ZD57e3BhcmFtcy5jbmZfY29kZX19PC90ZD5cblxuPC90cj5cbjx0cj5cbiAgPHRoPkNsdXN0ZXIgTnVtYmVyPC90aD5cbiAgPHRkPnt7cGFyYW1zLmNsdXN0ZXJfbnVtYmVyfX08L3RkPlxuXG48L3RyPlxuXG48dHI+XG4gIDx0aD5EZXNjcmlwdGlvbjwvdGg+XG4gIDx0ZD57e3BhcmFtcy5wcm9kdWN0X2Rlc2NyaXB0aW9ufX08L3RkPlxuXG48L3RyPlxuPHRyPlxuICA8dGg+UmVzdGF1cmFudCBUeXBlPC90aD5cbiAgPHRkPnt7cGFyYW1zLnJlc3RhdXJhbnRfdHlwZX19PC90ZD5cblxuPC90cj5cbjx0cj5cbiAgPHRoPlR5cGU8L3RoPlxuICA8dGQ+e3twYXJhbXMudHlwZX19PC90ZD5cblxuPC90cj5cbjwvdGFibGU+XG48dGFibGUgc3R5bGU9XCJ3aWR0aDoxMDAlOyBtYXJnaW4tdG9wOjEwcHg7XCI+XG5cbjx0cj5cbiAgPHRoPkNyZWF0aW9uIERhdGU8L3RoPlxuICA8dGg+TGFzdCBFZGl0IGRhdGU8L3RoPlxuICA8dGg+RWRpdGVkIEJ5PC90aD5cbjwvdHI+XG48dHI+XG4gIDx0ZD57e3BhcmFtcy5jcmVhdGlvbl9kYXRlfX08L3RkPlxuICA8dGQ+e3twYXJhbXMubGFzdF9lZGl0X2RhdGV9fTwvdGQ+XG4gIDx0ZD57e3BhcmFtcy5lZGl0ZWRfYnl9fTwvdGQ+XG48L3RyPlxuPC90YWJsZT5cblxuPC9kaXY+XG48ZGl2ICpuZ0lmPVwic2FsZXNEYXRhXCIgc3R5bGU9XCJtYXJnaW4tYm90dG9tOiA0MHB4O1wiPlxuICA8Y3VzdG9tLXRhYmxlIFtyZWNvcmRzXT1cInNhbGVzRGF0YVwiIFxuICAgICAgICAgICAgICAgIFtjYXB0aW9uXT1cIidTYWxlcyBSZWNvcmRzJ1wiIFxuICAgICAgICAgICAgICAgIFtzZXR0aW5nc109XCJzZXR0aW5nc1NhbGVzXCI+XG5cbiAgPC9jdXN0b20tdGFibGU+XG5cbjwvZGl2PiIsIjx2aWV3LXByb2R1Y3Q+PC92aWV3LXByb2R1Y3Q+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNjQTtNQUFBO01BQXdDLHlDQUN0QztVQUFBO1VBQUEsNENBQTRDO1VBQUEsV0FFOUM7VUFBQTtNQUFBO1VBQUEsMERBQUk7VUFBQSxXQUNGO1VBQUE7TUFBSSx3REFBd0I7VUFBQSxXQUM1QjtVQUFBO01BQUksd0NBQW1DO01BQ3BDLHlDQUVMO1VBQUE7VUFBQSxnQkFBSSx5Q0FDRjtVQUFBO1VBQUEsNENBQUk7VUFBQSw0QkFBMEIseUNBQzlCO2lCQUFBO2NBQUEsMERBQUk7VUFBQSxVQUFxQyx5Q0FFdEM7VUFBQSxTQUNMO1VBQUE7TUFBSSx5Q0FDRjtVQUFBO1VBQUEsZ0JBQUk7TUFBd0IseUNBQzVCO1VBQUE7VUFBQSxnQkFBSSx3Q0FBbUM7VUFBQSxXQUVwQyx1Q0FDTDtVQUFBO1VBQUEsOEJBQUkseUNBQ0Y7aUJBQUE7Y0FBQSwwREFBSTtVQUFBLG1CQUFpQix5Q0FDckI7VUFBQTtVQUFBLDRDQUFJO1VBQUEsVUFBb0MsdUNBQ3JDO1VBQUEsV0FFTDtVQUFBO01BQUkseUNBQ0Y7VUFBQTtVQUFBLGdCQUFJLDBDQUFVO1VBQUEsV0FDZDtVQUFBO01BQUksd0NBQTZCO01BRTlCLHVDQUNMO1VBQUE7VUFBQSxnQkFBSSx5Q0FDRjtVQUFBO1VBQUEsNENBQUk7VUFBQSxlQUFhLHlDQUNqQjtVQUFBO1VBQUEsNENBQUk7VUFBQSxVQUF3Qix5Q0FFekI7VUFBQSxTQUNMO1VBQUE7TUFBSSx5Q0FDRjtVQUFBO1VBQUEsZ0JBQUksbURBQW1CO2lCQUFBLDBCQUN2QjtVQUFBO1VBQUEsZ0JBQUksd0NBQThCO1VBQUEsV0FFL0IseUNBRUw7VUFBQTtVQUFBLDhCQUFJLHlDQUNGO2lCQUFBO2NBQUEsMERBQUk7VUFBQSxrQkFBZ0IseUNBQ3BCO1VBQUE7VUFBQSw0Q0FBSTtVQUFBLFVBQW1DLHlDQUVwQztVQUFBLFNBQ0w7VUFBQTtNQUFJLHlDQUNGO1VBQUE7VUFBQSxnQkFBSSxvREFBb0I7aUJBQUEsMEJBQ3hCO1VBQUE7VUFBQSxnQkFBSSx3Q0FBK0I7VUFBQSxXQUVoQyx1Q0FDTDtVQUFBO1VBQUEsOEJBQUkseUNBQ0Y7aUJBQUE7Y0FBQSwwREFBSTtVQUFBLFdBQVMseUNBQ2I7VUFBQTtVQUFBLDhCQUFJLHdDQUFvQjtpQkFBQSwwQkFFckI7TUFDRyx1Q0FDUjtVQUFBO1VBQUEsNENBQTRDO1VBQUEsV0FFNUM7VUFBQTtNQUFBO1VBQUEsMERBQUk7VUFBQSxXQUNGO1VBQUE7TUFBSSxrREFBa0I7VUFBQSxXQUN0QjtVQUFBO01BQUksbURBQW1CO1VBQUEsV0FDdkI7VUFBQTtNQUFJLDhDQUFjO1VBQUEsU0FDZix1Q0FDTDtVQUFBO1VBQUEsOEJBQUkseUNBQ0Y7aUJBQUE7Y0FBQSwwREFBSTtVQUFBLFVBQTZCLHlDQUNqQztVQUFBO1VBQUEsOEJBQUksd0NBQThCO2lCQUFBLDBCQUNsQztVQUFBO1VBQUEsZ0JBQUksd0NBQXlCO1VBQUEsU0FDMUIsdUNBQ0c7VUFBQTs7SUE5REY7SUFBQTtJQUtBO0lBQUE7SUFLQTtJQUFBO0lBS0E7SUFBQTtJQUtBO0lBQUE7SUFLQTtJQUFBO0lBS0E7SUFBQTtJQU1BO0lBQUE7SUFLQTtJQUFBO0lBS0E7SUFBQTtJQVlBO0lBQUE7SUFDQTtJQUFBO0lBQ0E7SUFBQTs7OztvQkFLTjtNQUFBO01BQUEsZ0JBQW9ELHlDQUNsRDtNQUFBOzJEQUFBLFVBQUE7TUFBQTtVQUFBLHdDQUV5QztNQUUxQjs7SUFKRDtJQUNBO0lBQ0E7SUFGZCxXQUFjLFVBQ0EsVUFDQSxTQUZkOzs7O29CQXJGRjtNQUFBO01BQWlCLHlDQUNmO1VBQUE7VUFBQSw4QkFBc0I7TUFDcEI7VUFBQTtNQUEyQixvREFBb0I7VUFBQSxTQUM3Qyx1Q0FDTjtVQUFBO1VBQUE7TUFBaUQseUNBRWpEO1VBQUE7VUFBQSw4QkFBZ0M7TUFBdUIsdUNBQ3ZEO1VBQUE7VUFBQSw4QkFBZ0M7TUFBcUIsMkNBRy9DO01BQ0EsMkNBR047VUFBQSxtRUFBQTtVQUFBO1VBQUEsZUFxRU0sdUNBQ047VUFBQTthQUFBO1VBQUE7O0lBdEVLO0lBQUwsWUFBSyxTQUFMO0lBc0VLO0lBQUwsWUFBSyxTQUFMOzs7O29CQ3BGQTtNQUFBO3FDQUFBLFVBQUE7TUFBQTtNQUFBO0lBQUE7Ozs7In0=
+export const ViewProductComponentNgFactory:i1.ComponentFactory<i13.ViewProductComponent> = i1.ɵccf('view-product',
+    i13.ViewProductComponent,View_ViewProductComponent_Host_0,{},{},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1Byb2R1Y3Qvdmlldy1wcm9kdWN0LmNvbXBvbmVudC5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL3ZpZXdzL3ZpZXdQcm9kdWN0L3ZpZXctcHJvZHVjdC5jb21wb25lbnQudHMiLCJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL3ZpZXdzL3ZpZXdQcm9kdWN0L3ZpZXctcHJvZHVjdC5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1Byb2R1Y3Qvdmlldy1wcm9kdWN0LmNvbXBvbmVudC50cy5WaWV3UHJvZHVjdENvbXBvbmVudF9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxkaXYgKm5nSWY9XCIhZWRpdEZpZWxkc1wiPlxuPGRpdiBjbGFzcz1cInJvd1wiPlxuICA8ZGl2IGNsYXNzPVwiY29sLW1kLTZcIj5cbiAgICA8aDIgc3R5bGU9XCJtYXJnaW4tdG9wOjBweFwiPlByb2R1Y3QgRGV0YWlsczwvaDI+XG48L2Rpdj5cbjxkaXYgY2xhc3M9XCJjb2wtbWQtNlwiIHN0eWxlPVwidGV4dC1hbGlnbjogcmlnaHRcIiA+XG5cbjxidXR0b24gY2xhc3M9XCJidG4gYnRuLWRlZmF1bHRcIj5EZWxldGUgUHJvZHVjdDwvYnV0dG9uPlxuPGJ1dHRvbiBjbGFzcz1cImJ0biBidG4tZGVmYXVsdFwiIChjbGljayk9XCJjYWxsRWRpdCgpXCI+RWRpdCBQcm9kdWN0PC9idXR0b24+XG5cblxuPC9kaXY+XG48L2Rpdj5cblxuXG48ZGl2ICpuZ0lmPVwicGFyYW1zXCIgY2xhc3M9XCJ2aWV3UHJvZHVjdFwiPlxuICA8dGFibGUgc3R5bGU9XCJ3aWR0aDoxMDAlOyBtYXJnaW4tdG9wOjEwcHg7XCI+XG5cbjx0cj5cbiAgPHRoPkNsYXNzaWZpY2F0aW9uIE5hbWU8L3RoPlxuICA8dGQ+e3twYXJhbXMuY2xhc3NpZmljYXRpb25fbmFtZX19PC90ZD5cbjwvdHI+XG5cbjx0cj5cbiAgPHRoPkNsYXNzaWZpY2F0aW9uIE51bWJlcjwvdGg+XG4gIDx0ZD57e3BhcmFtcy5jbGFzc2lmaWNhdGlvbl9udW1iZXJ9fTwvdGQ+XG5cbjwvdHI+XG48dHI+XG4gIDx0aD5DbGFzc2lmaWNhdGlvbiBUeXBlPC90aD5cbiAgPHRkPnt7cGFyYW1zLmNsYXNzaWZpY2F0aW9uX3R5cGV9fTwvdGQ+XG5cbjwvdHI+XG48dHI+XG4gIDx0aD5NYW51ZmFjdHVyZXI8L3RoPlxuICA8dGQ+e3twYXJhbXMucHJvZHVjdF9tYW51ZmFjdHVyZXJ9fTwvdGQ+XG48L3RyPlxuXG48dHI+XG4gIDx0aD5CcmFuZDwvdGg+XG4gIDx0ZD57e3BhcmFtcy5wcm9kdWN0X2JyYW5kfX08L3RkPlxuXG48L3RyPlxuPHRyPlxuICA8dGg+Q05GIENPREU8L3RoPlxuICA8dGQ+e3twYXJhbXMuY25mX2NvZGV9fTwvdGQ+XG5cbjwvdHI+XG48dHI+XG4gIDx0aD5DbHVzdGVyIE51bWJlcjwvdGg+XG4gIDx0ZD57e3BhcmFtcy5jbHVzdGVyX251bWJlcn19PC90ZD5cblxuPC90cj5cblxuPHRyPlxuICA8dGg+RGVzY3JpcHRpb248L3RoPlxuICA8dGQ+e3twYXJhbXMucHJvZHVjdF9kZXNjcmlwdGlvbn19PC90ZD5cblxuPC90cj5cbjx0cj5cbiAgPHRoPlJlc3RhdXJhbnQgVHlwZTwvdGg+XG4gIDx0ZD57e3BhcmFtcy5yZXN0YXVyYW50X3R5cGV9fTwvdGQ+XG5cbjwvdHI+XG48dHI+XG4gIDx0aD5UeXBlPC90aD5cbiAgPHRkPnt7cGFyYW1zLnR5cGV9fTwvdGQ+XG5cbjwvdHI+XG48L3RhYmxlPlxuPHRhYmxlIHN0eWxlPVwid2lkdGg6MTAwJTsgbWFyZ2luLXRvcDoxMHB4O1wiPlxuXG48dHI+XG4gIDx0aD5DcmVhdGlvbiBEYXRlPC90aD5cbiAgPHRoPkxhc3QgRWRpdCBkYXRlPC90aD5cbiAgPHRoPkVkaXRlZCBCeTwvdGg+XG48L3RyPlxuPHRyPlxuICA8dGQ+e3twYXJhbXMuY3JlYXRpb25fZGF0ZX19PC90ZD5cbiAgPHRkPnt7cGFyYW1zLmxhc3RfZWRpdF9kYXRlfX08L3RkPlxuICA8dGQ+e3twYXJhbXMuZWRpdGVkX2J5fX08L3RkPlxuPC90cj5cbjwvdGFibGU+XG5cbjwvZGl2PlxuPC9kaXY+XG48ZGl2ICpuZ0lmPVwiZWRpdEZpZWxkc1wiPlxuPGVkaXQtcHJvZHVjdCBbcHJvZHVjdF09XCJlZGl0RmllbGRzXCJcblxuPlxuXG5cbjwvZWRpdC1wcm9kdWN0PlxuPC9kaXY+XG48ZGl2ICpuZ0lmPVwic2FsZXNEYXRhXCIgY2xhc3M9XCJkaXNwbGF5VGFibGVzXCI+XG4gIDxjdXN0b20tdGFibGUgW3JlY29yZHNdPVwic2FsZXNEYXRhXCIgXG4gICAgICAgICAgICAgICAgW2NhcHRpb25dPVwiJ1NhbGVzIFJlY29yZHMnXCIgXG4gICAgICAgICAgICAgICAgW3NldHRpbmdzXT1cInNldHRpbmdzU2FsZXNcIlxuICAgICAgICAgICAgICAgIFtmbGFnZXJdPVwiMVwiXG4gICAgICAgICAgICAgICAgKGFkZFNhbGVzUmVjb3JkKT1cImFkZFNhbGVzKCRldmVudClcIlxuICAgICAgICAgICAgICA+XG5cbiAgPC9jdXN0b20tdGFibGU+XG5cbjwvZGl2PlxuXG4gIDxkaXYgKm5nSWY9XCJsYWJlbERhdGFcIiBjbGFzcz1cImRpc3BsYXlUYWJsZXNcIj5cbiAgPGN1c3RvbS10YWJsZSBbcmVjb3Jkc109XCJsYWJlbERhdGFcIiBcbiAgICAgICAgICAgICAgICBbY2FwdGlvbl09XCInTGFiZWwgUmVjb3JkcydcIiBcbiAgICAgICAgICAgICAgICBbc2V0dGluZ3NdPVwic2V0dGluZ3NMYWJlbFwiXG4gICAgICAgICAgICAgICAgW2ZsYWdlcl09XCIyXCJcbiAgICAgICAgICAgICAgICAoYWRkTGFiZWxSZWNvcmQpPVwiYWRkTGFiZWwoJGV2ZW50KVwiXG5cbiAgICAgICAgICAgICAgICA+XG5cbiAgPC9jdXN0b20tdGFibGU+XG5cbiAgPC9kaXY+IiwiPHZpZXctcHJvZHVjdD48L3ZpZXctcHJvZHVjdD4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvQkNlQTtNQUFBO01BQXdDLHlDQUN0QztVQUFBO1VBQUEsNENBQTRDO1VBQUEsV0FFOUM7VUFBQTtNQUFBO1VBQUEsMERBQUk7VUFBQSxXQUNGO1VBQUE7TUFBSSx3REFBd0I7VUFBQSxXQUM1QjtVQUFBO01BQUksd0NBQW1DO01BQ3BDLHlDQUVMO1VBQUE7VUFBQSxnQkFBSSx5Q0FDRjtVQUFBO1VBQUEsNENBQUk7VUFBQSw0QkFBMEIseUNBQzlCO2lCQUFBO2NBQUEsMERBQUk7VUFBQSxVQUFxQyx5Q0FFdEM7VUFBQSxTQUNMO1VBQUE7TUFBSSx5Q0FDRjtVQUFBO1VBQUEsZ0JBQUk7TUFBd0IseUNBQzVCO1VBQUE7VUFBQSxnQkFBSSx3Q0FBbUM7VUFBQSxXQUVwQyx1Q0FDTDtVQUFBO1VBQUEsOEJBQUkseUNBQ0Y7aUJBQUE7Y0FBQSwwREFBSTtVQUFBLG1CQUFpQix5Q0FDckI7VUFBQTtVQUFBLDRDQUFJO1VBQUEsVUFBb0MsdUNBQ3JDO1VBQUEsV0FFTDtVQUFBO01BQUkseUNBQ0Y7VUFBQTtVQUFBLGdCQUFJLDBDQUFVO1VBQUEsV0FDZDtVQUFBO01BQUksd0NBQTZCO01BRTlCLHVDQUNMO1VBQUE7VUFBQSxnQkFBSSx5Q0FDRjtVQUFBO1VBQUEsNENBQUk7VUFBQSxlQUFhLHlDQUNqQjtVQUFBO1VBQUEsNENBQUk7VUFBQSxVQUF3Qix5Q0FFekI7VUFBQSxTQUNMO1VBQUE7TUFBSSx5Q0FDRjtVQUFBO1VBQUEsZ0JBQUksbURBQW1CO2lCQUFBLDBCQUN2QjtVQUFBO1VBQUEsZ0JBQUksd0NBQThCO1VBQUEsV0FFL0IseUNBRUw7VUFBQTtVQUFBLDhCQUFJLHlDQUNGO2lCQUFBO2NBQUEsMERBQUk7VUFBQSxrQkFBZ0IseUNBQ3BCO1VBQUE7VUFBQSw0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

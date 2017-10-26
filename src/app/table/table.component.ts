@@ -13,11 +13,12 @@ export class TableComponent{
 
     @Input() records: any;
     @Input() caption: string;
+    @Input() flager: number;
     @Input() settings: ColumnSetting[];
 
     @Output() deleteEvent = new EventEmitter<boolean>();
-    @Output() updateEvent = new EventEmitter<boolean>();
-     @Output() addEvent = new EventEmitter<boolean>();
+    @Output() addSalesRecord = new EventEmitter<boolean>();
+     @Output() addLabelRecord = new EventEmitter<boolean>();
 
      
     title ="Classifications";
@@ -26,20 +27,27 @@ export class TableComponent{
    
 add(name: string){
     console.log("CLICKED");
-    this.addEvent.emit(true);
+    // this.addEvent.emit(true);
      this.flag = true;
     this.addClass = name;
 }
 
-checkModal(flag: boolean){
-    this.addClass = null;
-}
-delete(){
-    this.deleteEvent.emit(true);
-}
-update(){
-    this.updateEvent.emit(true);
+// checkModal(flag: boolean){
+//     this.addClass = null;
+// }
+// delete(){
+//     this.deleteEvent.emit(true);
+// }
+// update(){
+//     this.updateEvent.emit(true);
 
+// }
+
+addSales(){
+this.addSalesRecord.emit(true);
+}
+addLabel(){
+this.addLabelRecord.emit(true);
 }
 
 }

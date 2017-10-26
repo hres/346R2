@@ -1,0 +1,256 @@
+<div class="DivHeader">
+    <div class="DivLogo">
+        Create Sales
+    </div>
+
+    <div class="bodycard">
+        <md-card style="background-color: #f5f5f5">
+
+<div class="well2">
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="salesForm">
+
+
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="salesUPC">Sales UPC</label>
+                <input type="text" class="form-control" id="salesUPC" placeholder="Sales UPC" formControlName="sales_upc">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="dollarVolume">Dollar Volume</label>
+                <input type="text" class="form-control" id="dollarVolume" placeholder="Dollar Volume" formControlName="dollar_volume">
+
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="KiloVolume">CNF CODE    </label>
+                <input type="text" class="form-control" id="KiloVolume" placeholder="Kilo Volume" formControlName="kilo_volume">
+<!--
+                <div *ngIf="formErrors.kilo_volume" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.kilo_volume}}</span>
+                </div>-->
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="salesYear">Sales Year</label>
+                <input type="text" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="sales_year">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="NielsenCategory">Nielsen Category</label>
+                <input type="text" class="form-control" id="NielsenCategory" placeholder="Nielsen Category" formControlName="nielsen_category">
+
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="salesSource">Sales Source</label>
+                <input type="text" class="form-control" id="salesSource" placeholder="Sales Source" formControlName="sales_source">
+<!--
+                <div *ngIf="formErrors.kilo_volume" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.kilo_volume}}</span>
+                </div>-->
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="salesDescription">Sales Description</label>
+                <input type="text" class="form-control" id="salesDescription" placeholder="Sales Description" formControlName="sales_description">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="SalesComment">Sales Comment</label>
+                <input type="text" class="form-control" id="SalesComment" placeholder="Sales Comment" formControlName="sales_comment">
+
+            </div>
+
+          <div class="form-group col-sm-4">
+            <label for="SalescollectionDate">
+     Collection Date 
+      </label>
+            <div class="">
+              <div class="input-group">
+
+                <input class="form-control date2" id="SalescollectionDate" formControlName="sales_collection_date" placeholder="YYYY/MM/DD" type="text" [value]=""
+                />
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar">
+              </i>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+</div>
+
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="salesBrand">Sales Brand</label>
+                <input type="text" class="form-control" id="salesBrand" placeholder="Sales Brand" formControlName="sales_brand">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="DollarRank">Dollar Rank</label>
+                <input type="text" class="form-control" id="DollarRank" placeholder="Dollar Rank" formControlName="dollar_rank">
+
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="DollarVolumePercentageChange">Dollar Volume % Change</label>
+                <input type="text" class="form-control" id="DollarVolumePercentageChange" placeholder="Dollar Volume % Change" formControlName="dollar_volume_percentage_change">
+<!--
+                <div *ngIf="formErrors.kilo_volume" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.kilo_volume}}</span>
+                </div>-->
+            </div>
+        </div>
+
+                <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="KiloVolumePercentageChange">Kilo Volume % Change</label>
+                <input type="text" class="form-control" id="KiloVolumePercentageChange" placeholder="Kilo Volume % Change" formControlName="kilo_volume_percentage_change">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="AverageAcDist">Average AC Dist</label>
+                <input type="text" class="form-control" id="AverageAcDist" placeholder="Average AC Dist" formControlName="average_ac_dist">
+
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="AverageRetailPrice">Average Retail Price</label>
+                <input type="text" class="form-control" id="AverageRetailPrice" placeholder="Average Retail Price" formControlName="average_retail_price">
+<!--
+                <div *ngIf="formErrors.kilo_volume" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.kilo_volume}}</span>
+                </div>-->
+            </div>
+        </div>
+
+                        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="DollarVolumeTotal">Dollar Volume Total</label>
+                <input type="text" class="form-control" id="DollarVolumeTotal" placeholder="Dollar Volume Total" formControlName="dollar_volume_total">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="KiloVolumeTotal">Kilo Volume Total</label>
+                <input type="text" class="form-control" id="KiloVolumeTotal" placeholder="Kilo Volume Total" formControlName="kilo_volume_total">
+
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="ControlLabelFlag"> Control Label Flag</label>
+                <input type="text" class="form-control" id="ControlLabelFlag" placeholder="Control Label Flag" formControlName="control_label_flag">
+<!--
+                <div *ngIf="formErrors.kilo_volume" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.kilo_volume}}</span>
+                </div>-->
+            </div>
+        </div>
+                        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="DollarShare">Dollar Slare</label>
+                <input type="text" class="form-control" id="DollarShare" placeholder="Dollar Share" formControlName="dollar_share">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="KiloShare">Kilo Share</label>
+                <input type="text" class="form-control" id="KiloShare" placeholder="Kilo Share" formControlName="kilo_share">
+
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="ClusterNumber"> Cluster Number</label>
+                <input type="text" class="form-control" id="ClusterNumber" placeholder="Cluster Number" formControlName="cluster_number">
+<!--
+                <div *ngIf="formErrors.kilo_volume" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.kilo_volume}}</span>
+                </div>-->
+            </div>
+        </div>
+
+                        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="KiloRank">Kilo Rank</label>
+                <input type="text" class="form-control" id="KiloRank" placeholder="Kilo Rank" formControlName="kilo_rank">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="SalesManufacturer">Sales Manufacturer</label>
+                <input type="text" class="form-control" id="SalesManufacturer" placeholder="Sales Manufacturer" formControlName="sales_manufacturer">
+
+            </div>
+
+  <div class="form-group col-sm-4" *ngIf="listOfClass">
+    <label for="classificationNumber">Classification Number</label>
+    <select class="form-control" id="classificationNumber" formControlName="classification_number">
+      <option value="" selected>Select a Classification Number</option>
+      <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
+     
+
+<!--<option *ngFor="let class_number of Classification_number" [value] = "class_number">{{class_number}}</option>-->
+</select>
+
+  </div>
+
+        </div>
+<div class="row">
+      <div class="form-group col-sm-4">
+    <label for="classificationType">Classification Type  </label>
+    <input type="text" class="form-control" id="classificationType" placeholder="Enter the Classification Type" formControlName="classification_type">
+
+  </div>
+              <div class="form-group col-sm-4">
+                <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!salesForm.valid">Save</button>
+</div>
+</div>
+
+</form>
+</div>
+
+</md-card>
+</div>
+</div>

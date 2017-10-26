@@ -13,7 +13,7 @@ import * as i3 from '../../../../src/app/table/table.component';
 const styles_TableComponent:any[] = [i0.styles];
 export const RenderType_TableComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_TableComponent,data:{}});
-function View_TableComponent_2(_l:any):i1.ɵViewDefinition {
+function View_TableComponent_3(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'th',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
       i1.ɵted((null as any),['\n\n    ',' \n  ']))],(null as any),(_ck,_v) => {
@@ -21,7 +21,7 @@ function View_TableComponent_2(_l:any):i1.ɵViewDefinition {
     _ck(_v,1,0,currVal_0);
   });
 }
-function View_TableComponent_5(_l:any):i1.ɵViewDefinition {
+function View_TableComponent_6(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'td',[['style',
       'text-decoration: underline; cursor: pointer;']],(null as any),[[(null as any),
       'click']],(_v,en,$event) => {
@@ -38,7 +38,7 @@ function View_TableComponent_5(_l:any):i1.ɵViewDefinition {
         _ck(_v,1,0,currVal_0);
       });
 }
-function View_TableComponent_6(_l:any):i1.ɵViewDefinition {
+function View_TableComponent_7(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
       i1.ɵted((null as any),['\n         ',' \n\n     ']))],(null as any),(_ck,_v) => {
@@ -46,14 +46,14 @@ function View_TableComponent_6(_l:any):i1.ɵViewDefinition {
     _ck(_v,1,0,currVal_0);
   });
 }
-function View_TableComponent_4(_l:any):i1.ɵViewDefinition {
+function View_TableComponent_5(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),7,(null as any),
       (null as any),(null as any),(null as any),(null as any),(null as any),(null as any))),
       (_l()(),i1.ɵted((null as any),['\n        \n        '])),(_l()(),i1.ɵand(16777216,
-          (null as any),(null as any),1,(null as any),View_TableComponent_5)),i1.ɵdid(16384,
+          (null as any),(null as any),1,(null as any),View_TableComponent_6)),i1.ɵdid(16384,
           (null as any),0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
           (null as any)),(_l()(),i1.ɵted((null as any),['\n             '])),(_l()(),
-          i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_TableComponent_6)),
+          i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_TableComponent_7)),
       i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
           'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n     ']))],(_ck,
       _v) => {
@@ -63,11 +63,11 @@ function View_TableComponent_4(_l:any):i1.ɵViewDefinition {
     _ck(_v,6,0,currVal_1);
   },(null as any));
 }
-function View_TableComponent_3(_l:any):i1.ɵViewDefinition {
+function View_TableComponent_4(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),4,'tr',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
       i1.ɵted((null as any),['\n\n    '])),(_l()(),i1.ɵand(16777216,(null as any),
-      (null as any),1,(null as any),View_TableComponent_4)),i1.ɵdid(802816,(null as any),
+      (null as any),1,(null as any),View_TableComponent_5)),i1.ɵdid(802816,(null as any),
       0,i2.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,
           'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n']))],(_ck,
       _v) => {
@@ -76,7 +76,7 @@ function View_TableComponent_3(_l:any):i1.ɵViewDefinition {
     _ck(_v,3,0,currVal_0);
   },(null as any));
 }
-function View_TableComponent_1(_l:any):i1.ɵViewDefinition {
+function View_TableComponent_2(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),14,'div',[['class',
       'tableData']],(null as any),(null as any),(null as any),(null as any),(null as any))),
       (_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),
@@ -87,10 +87,10 @@ function View_TableComponent_1(_l:any):i1.ɵViewDefinition {
       (_l()(),i1.ɵeld(0,(null as any),(null as any),4,'tr',([] as any[]),(null as any),
           (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
           ['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
-          View_TableComponent_2)),i1.ɵdid(802816,(null as any),0,i2.NgForOf,[i1.ViewContainerRef,
+          View_TableComponent_3)),i1.ɵdid(802816,(null as any),0,i2.NgForOf,[i1.ViewContainerRef,
           i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),
       (_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵted((null as any),['\n'])),
-      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_TableComponent_3)),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_TableComponent_4)),
       i1.ɵdid(802816,(null as any),0,i2.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
           i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
           ['\n\n\n\n\n'])),(_l()(),i1.ɵted((null as any),['\n']))],(_ck,_v) => {
@@ -101,30 +101,175 @@ function View_TableComponent_1(_l:any):i1.ɵViewDefinition {
     _ck(_v,12,0,currVal_1);
   },(null as any));
 }
-export function View_TableComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),13,'div',([] as any[]),
-      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
-      i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-      10,'div',[['class','container']],(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,
-      (null as any),(null as any),4,'div',[['class','classificationList']],(null as any),
-      (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-      ['\n      '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'span',[['class',
-      'title']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['',''])),(_l()(),i1.ɵted((null as any),['\n      \n    '])),
+function View_TableComponent_1(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),12,'div',[['class',
+      'container']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+          6,'div',[['class','classificationList']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'span',[['class','title']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+          ['',''])),(_l()(),i1.ɵted((null as any),['\n           \n '])),(_l()(),i1.ɵeld(0,
+          (null as any),(null as any),0,'span',[['class','glyphicon glyphicon-plus addIcon']],
+          (null as any),[[(null as any),'click']],(_v,en,$event) => {
+            var ad:boolean = true;
+            var _co:any = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.addSales()) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n\n\n    '])),
       (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵand(16777216,(null as any),
-          (null as any),1,(null as any),View_TableComponent_1)),i1.ɵdid(16384,(null as any),
+          (null as any),1,(null as any),View_TableComponent_2)),i1.ɵdid(16384,(null as any),
           0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
-      (_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n'])),
-      (_l()(),i1.ɵted((null as any),['\n\n']))],(_ck,_v) => {
-    var _co:i3.TableComponent = _v.component;
+      (_l()(),i1.ɵted((null as any),['\n']))],(_ck,_v) => {
+    var _co:any = _v.component;
     const currVal_1:any = (_co.records && _co.settings);
     _ck(_v,11,0,currVal_1);
   },(_ck,_v) => {
-    var _co:i3.TableComponent = _v.component;
+    var _co:any = _v.component;
     const currVal_0:any = _co.caption;
-    _ck(_v,7,0,currVal_0);
+    _ck(_v,5,0,currVal_0);
   });
+}
+function View_TableComponent_10(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'th',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n\n    ',' \n  ']))],(null as any),(_ck,_v) => {
+    const currVal_0:any = _v.context.$implicit.header;
+    _ck(_v,1,0,currVal_0);
+  });
+}
+function View_TableComponent_13(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'td',[['style',
+      'text-decoration: underline; cursor: pointer;']],(null as any),[[(null as any),
+      'click']],(_v,en,$event) => {
+    var ad:boolean = true;
+    var _co:any = _v.component;
+    if (('click' === en)) {
+      const pd_0:any = ((<any>_co.passIt((<any>(<any>_v.parent).parent).context.$implicit.label_id)) !== false);
+      ad = (pd_0 && ad);
+    }
+    return ad;
+  },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n         ',' \n\n     ']))],
+      (null as any),(_ck,_v) => {
+        const currVal_0:any = (<any>(<any>_v.parent).parent).context.$implicit[(<any>_v.parent).context.$implicit.primaryKey];
+        _ck(_v,1,0,currVal_0);
+      });
+}
+function View_TableComponent_14(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'td',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n         ',' \n\n     ']))],(null as any),(_ck,_v) => {
+    const currVal_0:any = (<any>(<any>_v.parent).parent).context.$implicit[(<any>_v.parent).context.$implicit.primaryKey];
+    _ck(_v,1,0,currVal_0);
+  });
+}
+function View_TableComponent_12(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),7,(null as any),
+      (null as any),(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted((null as any),['\n        \n        '])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_TableComponent_13)),i1.ɵdid(16384,
+          (null as any),0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},
+          (null as any)),(_l()(),i1.ɵted((null as any),['\n             '])),(_l()(),
+          i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_TableComponent_14)),
+      i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,
+          'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n     ']))],(_ck,
+      _v) => {
+    const currVal_0:any = (_v.context.$implicit.primaryKey === 'label_upc');
+    _ck(_v,3,0,currVal_0);
+    const currVal_1:any = (_v.context.$implicit.primaryKey != 'label_upc');
+    _ck(_v,6,0,currVal_1);
+  },(null as any));
+}
+function View_TableComponent_11(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),4,'tr',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n\n    '])),(_l()(),i1.ɵand(16777216,(null as any),
+      (null as any),1,(null as any),View_TableComponent_12)),i1.ɵdid(802816,(null as any),
+      0,i2.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,
+          'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n']))],(_ck,
+      _v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.settings;
+    _ck(_v,3,0,currVal_0);
+  },(null as any));
+}
+function View_TableComponent_9(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),14,'div',[['class',
+      'tableData']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),
+          (null as any),11,'table',[['style','width:100%;']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+          ['\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),9,'tbody',([] as any[]),
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),4,'tr',([] as any[]),(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+          ['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+          View_TableComponent_10)),i1.ɵdid(802816,(null as any),0,i2.NgForOf,[i1.ViewContainerRef,
+          i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),
+      (_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵted((null as any),['\n'])),
+      (_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),View_TableComponent_11)),
+      i1.ɵdid(802816,(null as any),0,i2.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
+          ['\n\n\n\n\n'])),(_l()(),i1.ɵted((null as any),['\n']))],(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.settings;
+    _ck(_v,8,0,currVal_0);
+    const currVal_1:any = _co.records;
+    _ck(_v,12,0,currVal_1);
+  },(null as any));
+}
+function View_TableComponent_8(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),12,'div',[['class',
+      'container']],(null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+          6,'div',[['class','classificationList']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n      '])),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'span',[['class','title']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+          ['',''])),(_l()(),i1.ɵted((null as any),['\n     \n '])),(_l()(),i1.ɵeld(0,
+          (null as any),(null as any),0,'span',[['class','glyphicon glyphicon-plus addIcon']],
+          (null as any),[[(null as any),'click']],(_v,en,$event) => {
+            var ad:boolean = true;
+            var _co:any = _v.component;
+            if (('click' === en)) {
+              const pd_0:any = ((<any>_co.addLabel()) !== false);
+              ad = (pd_0 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n\n\n      \n    '])),
+      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵand(16777216,(null as any),
+          (null as any),1,(null as any),View_TableComponent_9)),i1.ɵdid(16384,(null as any),
+          0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      (_l()(),i1.ɵted((null as any),['\n']))],(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_1:any = (_co.records && _co.settings);
+    _ck(_v,11,0,currVal_1);
+  },(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.caption;
+    _ck(_v,5,0,currVal_0);
+  });
+}
+export function View_TableComponent_0(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),7,'div',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
+      1,(null as any),View_TableComponent_1)),i1.ɵdid(16384,(null as any),0,i2.NgIf,
+      [i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),
+      i1.ɵted((null as any),['\n\n\n\n'])),(_l()(),i1.ɵand(16777216,(null as any),
+      (null as any),1,(null as any),View_TableComponent_8)),i1.ɵdid(16384,(null as any),
+      0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      (_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n\n']))],
+      (_ck,_v) => {
+        var _co:i3.TableComponent = _v.component;
+        const currVal_0:any = (_co.flager === 1);
+        _ck(_v,3,0,currVal_0);
+        const currVal_1:any = (_co.flager === 2);
+        _ck(_v,6,0,currVal_1);
+      },(null as any));
 }
 export function View_TableComponent_Host_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'custom-table',
@@ -134,6 +279,6 @@ export function View_TableComponent_Host_0(_l:any):i1.ɵViewDefinition {
 }
 export const TableComponentNgFactory:i1.ComponentFactory<i3.TableComponent> = i1.ɵccf('custom-table',
     i3.TableComponent,View_TableComponent_Host_0,{records:'records',caption:'caption',
-        settings:'settings'},{deleteEvent:'deleteEvent',updateEvent:'updateEvent',
-        addEvent:'addEvent'},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUuY29tcG9uZW50LnRzIiwibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC90YWJsZS90YWJsZS5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUuY29tcG9uZW50LnRzLlRhYmxlQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdj5cbiAgPGRpdiBjbGFzcz1cImNvbnRhaW5lclwiPlxuICAgIDxkaXYgY2xhc3M9XCJjbGFzc2lmaWNhdGlvbkxpc3RcIj5cbiAgICAgIDxzcGFuIGNsYXNzPVwidGl0bGVcIj57e2NhcHRpb259fTwvc3Bhbj5cbiAgICAgIFxuICAgIDwvZGl2PlxuICAgIDxkaXYgY2xhc3M9XCJ0YWJsZURhdGFcIiAqbmdJZj1cInJlY29yZHMgJiYgc2V0dGluZ3NcIj5cbiAgICAgIDx0YWJsZSBzdHlsZT1cIndpZHRoOjEwMCU7XCI+XG48dHI+XG4gIDx0aCAqbmdGb3I9XCJsZXQgbWFwIG9mIHNldHRpbmdzIDsgbGV0IGk9aW5kZXhcIj5cblxuICAgIHt7bWFwLmhlYWRlcn19IFxuICA8L3RoPlxuXG48L3RyPlxuPHRyICpuZ0Zvcj1cImxldCByZWNvcmQgb2YgcmVjb3Jkc1wiPlxuXG4gICAgPG5nLWNvbnRhaW5lciAqbmdGb3I9XCJsZXQgbWFwIG9mIHNldHRpbmdzXCI+XG4gICAgICAgIFxuICAgICAgICA8dGQgKm5nSWY9XCJtYXAucHJpbWFyeUtleSA9PT0gJ3NhbGVzX3VwYydcIiBcbiAgICAgICBcbiAgICAgICAgKGNsaWNrKT1cInBhc3NJdChyZWNvcmQuc2FsZXNfaWQpXCIgc3R5bGU9XCJ0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgY3Vyc29yOiBwb2ludGVyO1wiPlxuICAgICAgICAge3sgcmVjb3JkW21hcC5wcmltYXJ5S2V5XX19IFxuXG4gICAgIDwvdGQ+XG4gICAgICAgICAgICAgPHRkICpuZ0lmPVwibWFwLnByaW1hcnlLZXkgIT0gJ3NhbGVzX3VwYydcIiBcbiAgICAgXG4gICAgICAgID5cbiAgICAgICAgIHt7IHJlY29yZFttYXAucHJpbWFyeUtleV0gIH19IFxuXG4gICAgIDwvdGQ+XG4gICAgIDwvbmctY29udGFpbmVyPlxuPC90cj5cblxuXG5cblxuPC90YWJsZT5cbjwvZGl2PlxuPC9kaXY+XG48L2Rpdj5cblxuIiwiPGN1c3RvbS10YWJsZT48L2N1c3RvbS10YWJsZT4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7O29CQ1NFO01BQUEsd0VBQStDO2FBQUE7SUFBQTtJQUFBOzs7O29CQVV6QztNQUFBO01BQUE7SUFBQTtJQUFBO0lBRUE7TUFBQTtNQUFBO0lBQUE7SUFGQTtFQUFBLGdDQUV1Rjs7UUFBQTtRQUFBOzs7O29CQUlsRjtNQUFBLHdFQUVKO2FBQUE7SUFBQTtJQUFBOzs7O29CQVZMO01BQUE7TUFBMkMseURBRXZDO1VBQUEsMkVBQUE7VUFBQTtVQUFBLGVBS0Usb0RBQ0c7aUJBQUE7YUFBQTtVQUFBLHdCQUtIOztJQVhFO0lBQUosV0FBSSxTQUFKO0lBTVM7SUFBSixXQUFJLFNBQUo7Ozs7b0JBVmI7TUFBQSx3RUFBbUM7YUFBQSw4QkFFL0I7TUFBQSw2REFBQTtNQUFBO1VBQUEsMkJBY2dCOzs7SUFkRjtJQUFkLFdBQWMsU0FBZDs7OztvQkFYQTtNQUFBO01BQW1ELDZDQUNqRDtVQUFBO1VBQUEsNENBQTJCO1VBQUEsU0FDakM7VUFBQTtNQUFBO1VBQUEsMERBQUk7VUFBQSxXQUNGO1VBQUEsK0JBQUE7MkNBQUE7TUFHSyx5Q0FFRjtNQUNMO2FBQUE7NEJBQUEseUNBaUJLO1VBQUEsaUJBS0c7O0lBNUJGO0lBQUosV0FBSSxTQUFKO0lBTUU7SUFBSixZQUFJLFNBQUo7Ozs7b0JBZkE7TUFBQSx3RUFBSzthQUFBLDBCQUNIO01BQUE7TUFBQSxnQkFBdUIsMkNBQ3JCO01BQUE7TUFBQSwwREFBZ0M7TUFBQSxlQUM5QjtNQUFBO01BQW9CLHdDQUFrQjtNQUVsQywyQ0FDTjtVQUFBLDZEQUFBO1VBQUE7TUFnQ0UsdUNBQ0E7TUFDQTs7SUFsQ3FCO0lBQXZCLFlBQXVCLFNBQXZCOzs7SUFIc0I7SUFBQTs7OztvQkNIMUI7TUFBQTsrQkFBQSxVQUFBO01BQUE7Ozs7OyJ9
+        flager:'flager',settings:'settings'},{deleteEvent:'deleteEvent',addSalesRecord:'addSalesRecord',
+        addLabelRecord:'addLabelRecord'},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUuY29tcG9uZW50Lm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUuY29tcG9uZW50LnRzIiwibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC90YWJsZS90YWJsZS5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUuY29tcG9uZW50LnRzLlRhYmxlQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdj5cbiAgPGRpdiBjbGFzcz1cImNvbnRhaW5lclwiICpuZ0lmPVwiZmxhZ2VyID09PSAxXCIgPlxuICAgIDxkaXYgY2xhc3M9XCJjbGFzc2lmaWNhdGlvbkxpc3RcIj5cbiAgICAgIDxzcGFuIGNsYXNzPVwidGl0bGVcIj57e2NhcHRpb259fTwvc3Bhbj5cbiAgICAgICAgICAgXG4gPHNwYW4gIGNsYXNzPVwiZ2x5cGhpY29uIGdseXBoaWNvbi1wbHVzIGFkZEljb25cIiAoY2xpY2spPVwiYWRkU2FsZXMoKVwiPjwvc3Bhbj5cblxuXG4gICAgPC9kaXY+XG4gICAgPGRpdiBjbGFzcz1cInRhYmxlRGF0YVwiICpuZ0lmPVwicmVjb3JkcyAmJiBzZXR0aW5nc1wiPlxuICAgICAgPHRhYmxlIHN0eWxlPVwid2lkdGg6MTAwJTtcIj5cbjx0cj5cbiAgPHRoICpuZ0Zvcj1cImxldCBtYXAgb2Ygc2V0dGluZ3MgOyBsZXQgaT1pbmRleFwiPlxuXG4gICAge3ttYXAuaGVhZGVyfX0gXG4gIDwvdGg+XG5cbjwvdHI+XG48dHIgKm5nRm9yPVwibGV0IHJlY29yZCBvZiByZWNvcmRzXCI+XG5cbiAgICA8bmctY29udGFpbmVyICpuZ0Zvcj1cImxldCBtYXAgb2Ygc2V0dGluZ3NcIj5cbiAgICAgICAgXG4gICAgICAgIDx0ZCAqbmdJZj1cIm1hcC5wcmltYXJ5S2V5ID09PSAnc2FsZXNfdXBjJ1wiIFxuICAgICAgIFxuICAgICAgICAoY2xpY2spPVwicGFzc0l0KHJlY29yZC5zYWxlc19pZClcIiBzdHlsZT1cInRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyBjdXJzb3I6IHBvaW50ZXI7XCI+XG4gICAgICAgICB7eyByZWNvcmRbbWFwLnByaW1hcnlLZXldfX0gXG5cbiAgICAgPC90ZD5cbiAgICAgICAgICAgICA8dGQgKm5nSWY9XCJtYXAucHJpbWFyeUtleSAhPSAnc2FsZXNfdXBjJ1wiIFxuICAgICBcbiAgICAgICAgPlxuICAgICAgICAge3sgcmVjb3JkW21hcC5wcmltYXJ5S2V5XSAgfX0gXG5cbiAgICAgPC90ZD5cbiAgICAgPC9uZy1jb250YWluZXI+XG48L3RyPlxuXG5cblxuXG48L3RhYmxlPlxuPC9kaXY+XG48L2Rpdj5cblxuXG5cbjxkaXYgY2xhc3M9XCJjb250YWluZXJcIiAqbmdJZj1cImZsYWdlciA9PT0gMlwiPlxuICAgIDxkaXYgY2xhc3M9XCJjbGFzc2lmaWNhdGlvbkxpc3RcIj5cbiAgICAgIDxzcGFuIGNsYXNzPVwidGl0bGVcIj57e2NhcHRpb259fTwvc3Bhbj5cbiAgICAgXG4gPHNwYW4gIGNsYXNzPVwiZ2x5cGhpY29uIGdseXBoaWNvbi1wbHVzIGFkZEljb25cIiAoY2xpY2spPVwiYWRkTGFiZWwoKVwiPjwvc3Bhbj5cblxuXG4gICAgICBcbiAgICA8L2Rpdj5cbiAgICA8ZGl2IGNsYXNzPVwidGFibGVEYXRhXCIgKm5nSWY9XCJyZWNvcmRzICYmIHNldHRpbmdzXCI+XG4gICAgICA8dGFibGUgc3R5bGU9XCJ3aWR0aDoxMDAlO1wiPlxuPHRyPlxuICA8dGggKm5nRm9yPVwibGV0IG1hcCBvZiBzZXR0aW5ncyA7IGxldCBpPWluZGV4XCI+XG5cbiAgICB7e21hcC5oZWFkZXJ9fSBcbiAgPC90aD5cblxuPC90cj5cbjx0ciAqbmdGb3I9XCJsZXQgcmVjb3JkIG9mIHJlY29yZHNcIj5cblxuICAgIDxuZy1jb250YWluZXIgKm5nRm9yPVwibGV0IG1hcCBvZiBzZXR0aW5nc1wiPlxuICAgICAgICBcbiAgICAgICAgPHRkICpuZ0lmPVwibWFwLnByaW1hcnlLZXkgPT09ICdsYWJlbF91cGMnXCIgXG4gICAgICAgXG4gICAgICAgIChjbGljayk9XCJwYXNzSXQocmVjb3JkLmxhYmVsX2lkKVwiIHN0eWxlPVwidGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7IGN1cnNvcjogcG9pbnRlcjtcIj5cbiAgICAgICAgIHt7IHJlY29yZFttYXAucHJpbWFyeUtleV19fSBcblxuICAgICA8L3RkPlxuICAgICAgICAgICAgIDx0ZCAqbmdJZj1cIm1hcC5wcmltYXJ5S2V5ICE9ICdsYWJlbF91cGMnXCIgXG4gICAgIFxuICAgICAgICA+XG4gICAgICAgICB7eyByZWNvcmRbbWFwLnByaW1hcnlLZXldICB9fSBcblxuICAgICA8L3RkPlxuICAgICA8L25nLWNvbnRhaW5lcj5cbjwvdHI+XG5cblxuXG5cbjwvdGFibGU+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+XG5cbiIsIjxjdXN0b20tdGFibGU+PC9jdXN0b20tdGFibGU+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7OztvQkNZRTtNQUFBLHdFQUErQzthQUFBO0lBQUE7SUFBQTs7OztvQkFVekM7TUFBQTtNQUFBO0lBQUE7SUFBQTtJQUVBO01BQUE7TUFBQTtJQUFBO0lBRkE7RUFBQSxnQ0FFdUY7O1FBQUE7UUFBQTs7OztvQkFJbEY7TUFBQSx3RUFFSjthQUFBO0lBQUE7SUFBQTs7OztvQkFWTDtNQUFBO01BQTJDLHlEQUV2QztVQUFBLDJFQUFBO1VBQUE7VUFBQSxlQUtFLG9EQUNHO2lCQUFBO2FBQUE7VUFBQSx3QkFLSDs7SUFYRTtJQUFKLFdBQUksU0FBSjtJQU1TO0lBQUosV0FBSSxTQUFKOzs7O29CQVZiO01BQUEsd0VBQW1DO2FBQUEsOEJBRS9CO01BQUEsNkRBQUE7TUFBQTtVQUFBLDJCQWNnQjs7O0lBZEY7SUFBZCxXQUFjLFNBQWQ7Ozs7b0JBWEE7TUFBQTtNQUFtRCw2Q0FDakQ7VUFBQTtVQUFBLDRDQUEyQjtVQUFBLFNBQ2pDO1VBQUE7TUFBQTtVQUFBLDBEQUFJO1VBQUEsV0FDRjtVQUFBLCtCQUFBOzJDQUFBO01BR0sseUNBRUY7TUFDTDthQUFBOzRCQUFBLHlDQWlCSztVQUFBLGlCQUtHOztJQTVCRjtJQUFKLFdBQUksU0FBSjtJQU1FO0lBQUosWUFBSSxTQUFKOzs7O29CQWpCRTtNQUFBO01BQTZDLDJDQUMzQztVQUFBO1VBQUEsOEJBQWdDO01BQzlCO1VBQUEsMERBQW9CO1VBQUEsVUFBa0IscURBRTNDO1VBQUE7VUFBQTtZQUFBO1lBQUE7WUFBZ0Q7Y0FBQTtjQUFBO1lBQUE7WUFBaEQ7VUFBQSxnQ0FBNEU7TUFHbkUsMkNBQ047VUFBQSw2REFBQTtVQUFBO01BZ0NFOztJQWhDcUI7SUFBdkIsWUFBdUIsU0FBdkI7OztJQU5zQjtJQUFBOzs7O29CQXVEeEI7TUFBQSx3RUFBK0M7YUFBQTtJQUFBO0lBQUE7Ozs7b0JBVXpDO01BQUE7TUFBQTtJQUFBO0lBQUE7SUFFQTtNQUFBO01BQUE7SUFBQTtJQUZBO0VBQUEsZ0NBRXVGOztRQUFBO1FBQUE7Ozs7b0JBSWxGO01BQUEsd0VBRUo7YUFBQTtJQUFBO0lBQUE7Ozs7b0JBVkw7TUFBQTtNQUEyQyx5REFFdkM7VUFBQSw0RUFBQTtVQUFBO1VBQUEsZUFLRSxvREFDRztpQkFBQTthQUFBO1VBQUEsd0JBS0g7O0lBWEU7SUFBSixXQUFJLFNBQUo7SUFNUztJQUFKLFdBQUksU0FBSjs7OztvQkFWYjtNQUFBLHdFQUFtQzthQUFBLDhCQUUvQjtNQUFBLDhEQUFBO01BQUE7VUFBQSwyQkFjZ0I7OztJQWRGO0lBQWQsV0FBYyxTQUFkOzs7O29CQVhBO01BQUE7TUFBbUQsNkNBQ2pEO1VBQUE7VUFBQSw0Q0FBMkI7VUFBQSxTQUNqQztVQUFBO01BQUE7VUFBQSwwREFBSTtVQUFBLFdBQ0Y7VUFBQSxnQ0FBQTsyQ0FBQTtNQUdLLHlDQUVGO01BQ0w7YUFBQTs0QkFBQSx5Q0FpQks7VUFBQSxpQkFLRzs7SUE1QkY7SUFBSixXQUFJLFNBQUo7SUFNRTtJQUFKLFlBQUksU0FBSjs7OztvQkFsQkE7TUFBQTtNQUE0QywyQ0FDeEM7VUFBQTtVQUFBLDhCQUFnQztNQUM5QjtVQUFBLDBEQUFvQjtVQUFBLFVBQWtCLCtDQUUzQztVQUFBO1VBQUE7WUFBQTtZQUFBO1lBQWdEO2NBQUE7Y0FBQTtZQUFBO1lBQWhEO1VBQUEsZ0NBQTRFO01BSW5FLDJDQUNOO1VBQUEsNkRBQUE7VUFBQTtNQWdDRTs7SUFoQ3FCO0lBQXZCLFlBQXVCLFNBQXZCOzs7SUFQc0I7SUFBQTs7OztvQkFoRDFCO01BQUEsd0VBQUs7YUFBQSwwQkFDSDtNQUFBLCtDQUFBO01BQUEsc0VBeUNJO2FBQUEsOEJBSU47TUFBQSw2REFBQTtNQUFBO01BMENNLHVDQUNBOzs7UUF4Rm1CO1FBQXZCLFdBQXVCLFNBQXZCO1FBNkNxQjtRQUF2QixXQUF1QixTQUF2Qjs7OztvQkM5Q0E7TUFBQTsrQkFBQSxVQUFBO01BQUE7Ozs7OyJ9

@@ -11,14 +11,14 @@ import * as i3 from '../../../../src/app/table/table.component';
 var styles_TableComponent = [i0.styles];
 export var RenderType_TableComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_TableComponent, data: {} });
-function View_TableComponent_2(_l) {
+function View_TableComponent_3(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'th', [], null, null, null, null, null)), (_l()(),
             i1.ɵted(null, ['\n\n    ', ' \n  ']))], null, function (_ck, _v) {
         var currVal_0 = _v.context.$implicit.header;
         _ck(_v, 1, 0, currVal_0);
     });
 }
-function View_TableComponent_5(_l) {
+function View_TableComponent_6(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'td', [['style',
                 'text-decoration: underline; cursor: pointer;']], null, [[null,
                 'click']], function (_v, en, $event) {
@@ -34,17 +34,17 @@ function View_TableComponent_5(_l) {
         _ck(_v, 1, 0, currVal_0);
     });
 }
-function View_TableComponent_6(_l) {
+function View_TableComponent_7(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'td', [], null, null, null, null, null)), (_l()(),
             i1.ɵted(null, ['\n         ', ' \n\n     ']))], null, function (_ck, _v) {
         var currVal_0 = _v.parent.parent.context.$implicit[_v.parent.context.$implicit.primaryKey];
         _ck(_v, 1, 0, currVal_0);
     });
 }
-function View_TableComponent_4(_l) {
+function View_TableComponent_5(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 7, null, null, null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n        \n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_5)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n             '])), (_l()(),
-            i1.ɵand(16777216, null, null, 1, null, View_TableComponent_6)),
+        (_l()(), i1.ɵted(null, ['\n        \n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_6)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n             '])), (_l()(),
+            i1.ɵand(16777216, null, null, 1, null, View_TableComponent_7)),
         i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
                 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n     ']))], function (_ck, _v) {
         var currVal_0 = (_v.context.$implicit.primaryKey === 'sales_upc');
@@ -53,23 +53,23 @@ function View_TableComponent_4(_l) {
         _ck(_v, 6, 0, currVal_1);
     }, null);
 }
-function View_TableComponent_3(_l) {
+function View_TableComponent_4(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 4, 'tr', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_4)), i1.ɵdid(802816, null, 0, i2.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
+            i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_5)), i1.ɵdid(802816, null, 0, i2.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
                 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.settings;
         _ck(_v, 3, 0, currVal_0);
     }, null);
 }
-function View_TableComponent_1(_l) {
+function View_TableComponent_2(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 14, 'div', [['class',
                 'tableData']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 11, 'table', [['style', 'width:100%;']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 9, 'tbody', [], null, null, null, null, null)),
-        (_l()(), i1.ɵeld(0, null, null, 4, 'tr', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_2)), i1.ɵdid(802816, null, 0, i2.NgForOf, [i1.ViewContainerRef,
+        (_l()(), i1.ɵeld(0, null, null, 4, 'tr', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_3)), i1.ɵdid(802816, null, 0, i2.NgForOf, [i1.ViewContainerRef,
             i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null),
         (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n'])),
-        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_3)),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_4)),
         i1.ɵdid(802816, null, 0, i2.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
             i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n\n\n\n\n'])), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
@@ -79,27 +79,138 @@ function View_TableComponent_1(_l) {
         _ck(_v, 12, 0, currVal_1);
     }, null);
 }
-export function View_TableComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 13, 'div', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 10, 'div', [['class', 'container']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class', 'classificationList']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class',
-                'title']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n      \n    '])),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_1)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
-        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])),
-        (_l()(), i1.ɵted(null, ['\n\n']))], function (_ck, _v) {
+function View_TableComponent_1(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 12, 'div', [['class',
+                'container']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 6, 'div', [['class', 'classificationList']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])),
+        (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class', 'title']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n           \n '])), (_l()(), i1.ɵeld(0, null, null, 0, 'span', [['class', 'glyphicon glyphicon-plus addIcon']], null, [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.addSales() !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), (_l()(), i1.ɵted(null, ['\n\n\n    '])),
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_2)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_1 = (_co.records && _co.settings);
         _ck(_v, 11, 0, currVal_1);
     }, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.caption;
-        _ck(_v, 7, 0, currVal_0);
+        _ck(_v, 5, 0, currVal_0);
     });
+}
+function View_TableComponent_10(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'th', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n\n    ', ' \n  ']))], null, function (_ck, _v) {
+        var currVal_0 = _v.context.$implicit.header;
+        _ck(_v, 1, 0, currVal_0);
+    });
+}
+function View_TableComponent_13(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'td', [['style',
+                'text-decoration: underline; cursor: pointer;']], null, [[null,
+                'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.passIt(_v.parent.parent.context.$implicit.label_id) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), (_l()(), i1.ɵted(null, ['\n         ', ' \n\n     ']))], null, function (_ck, _v) {
+        var currVal_0 = _v.parent.parent.context.$implicit[_v.parent.context.$implicit.primaryKey];
+        _ck(_v, 1, 0, currVal_0);
+    });
+}
+function View_TableComponent_14(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'td', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n         ', ' \n\n     ']))], null, function (_ck, _v) {
+        var currVal_0 = _v.parent.parent.context.$implicit[_v.parent.context.$implicit.primaryKey];
+        _ck(_v, 1, 0, currVal_0);
+    });
+}
+function View_TableComponent_12(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 7, null, null, null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n        \n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_13)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n             '])), (_l()(),
+            i1.ɵand(16777216, null, null, 1, null, View_TableComponent_14)),
+        i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
+                'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n     ']))], function (_ck, _v) {
+        var currVal_0 = (_v.context.$implicit.primaryKey === 'label_upc');
+        _ck(_v, 3, 0, currVal_0);
+        var currVal_1 = (_v.context.$implicit.primaryKey != 'label_upc');
+        _ck(_v, 6, 0, currVal_1);
+    }, null);
+}
+function View_TableComponent_11(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 4, 'tr', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_12)), i1.ɵdid(802816, null, 0, i2.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0,
+                'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.settings;
+        _ck(_v, 3, 0, currVal_0);
+    }, null);
+}
+function View_TableComponent_9(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 14, 'div', [['class',
+                'tableData']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n      '])), (_l()(), i1.ɵeld(0, null, null, 11, 'table', [['style', 'width:100%;']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 9, 'tbody', [], null, null, null, null, null)),
+        (_l()(), i1.ɵeld(0, null, null, 4, 'tr', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_10)), i1.ɵdid(802816, null, 0, i2.NgForOf, [i1.ViewContainerRef,
+            i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null),
+        (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n'])),
+        (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_11)),
+        i1.ɵdid(802816, null, 0, i2.NgForOf, [i1.ViewContainerRef, i1.TemplateRef,
+            i1.IterableDiffers], { ngForOf: [0, 'ngForOf'] }, null), (_l()(), i1.ɵted(null, ['\n\n\n\n\n'])), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.settings;
+        _ck(_v, 8, 0, currVal_0);
+        var currVal_1 = _co.records;
+        _ck(_v, 12, 0, currVal_1);
+    }, null);
+}
+function View_TableComponent_8(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 12, 'div', [['class',
+                'container']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 6, 'div', [['class', 'classificationList']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n      '])),
+        (_l()(), i1.ɵeld(0, null, null, 1, 'span', [['class', 'title']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['', ''])), (_l()(), i1.ɵted(null, ['\n     \n '])), (_l()(), i1.ɵeld(0, null, null, 0, 'span', [['class', 'glyphicon glyphicon-plus addIcon']], null, [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.addLabel() !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), (_l()(), i1.ɵted(null, ['\n\n\n      \n    '])),
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_9)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_1 = (_co.records && _co.settings);
+        _ck(_v, 11, 0, currVal_1);
+    }, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.caption;
+        _ck(_v, 5, 0, currVal_0);
+    });
+}
+export function View_TableComponent_0(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 7, 'div', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_1)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(),
+            i1.ɵted(null, ['\n\n\n\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_TableComponent_8)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null),
+        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n\n']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = (_co.flager === 1);
+        _ck(_v, 3, 0, currVal_0);
+        var currVal_1 = (_co.flager === 2);
+        _ck(_v, 6, 0, currVal_1);
+    }, null);
 }
 export function View_TableComponent_Host_0(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'custom-table', [], null, null, null, View_TableComponent_0, RenderType_TableComponent)), i1.ɵdid(49152, null, 0, i3.TableComponent, [], null, null)], null, null);
 }
 export var TableComponentNgFactory = i1.ɵccf('custom-table', i3.TableComponent, View_TableComponent_Host_0, { records: 'records', caption: 'caption',
-    settings: 'settings' }, { deleteEvent: 'deleteEvent', updateEvent: 'updateEvent',
-    addEvent: 'addEvent' }, []);
+    flager: 'flager', settings: 'settings' }, { deleteEvent: 'deleteEvent', addSalesRecord: 'addSalesRecord',
+    addLabelRecord: 'addLabelRecord' }, []);
 //# sourceMappingURL=table.component.ngfactory.js.map

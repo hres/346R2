@@ -29,7 +29,7 @@ export class GetRecordService {
      
         return this.http
 
-            .get(`http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
+            .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
             .map(response => response.json() as Response<productAllFields>);
     }
 
@@ -57,22 +57,20 @@ export class GetRecordService {
     }
 
  getAllRecords(id: number | string){
-
         // let body = JSON.stringify({ "product_id": id });
 
         // console.log('here');
 
        return Observable.forkJoin(
             this.http
-                 .get(`http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
-                .map(response => response.json() )
-        ,
+                 .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
+                .map(response => response.json() ),
             this.http
-                //http://10.148.179.244:8087/fcdr-rest-service/rest/ProductService/
-                //(response => {
-                .get(`http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productsales/${id}`, this.options)
-                // .toPromise()
-                .map(response => response.json())
+                .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productlabels/${id}`, this.options)
+                .map(response => response.json()),
+            this.http
+                .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productsales/${id}`, this.options)
+                .map(response => response.json() )
         );
 
     }

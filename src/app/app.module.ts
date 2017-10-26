@@ -48,6 +48,10 @@ import { CommonModule } from '@angular/common';
 
 //Create imports
 import { CreateProductComponent }  from './createRecords/createProduct/create-product.component'; 
+import {CreateSalesModule} from './createRecords/createSales/create-sales.module'
+import {CreateSalesComponent} from './createRecords/createSales/create-sales.component'
+
+import { EditProductModule}  from './editForms/editProduct/edit-product.module'; 
 import { CreateProductModule }  from './createRecords/createProduct/create-product.module'; 
 import { CreateRecordService } from './services/create-records.service';
 
@@ -61,6 +65,8 @@ import { CreateRecordService } from './services/create-records.service';
       HttpModule,
       SalesFormModule,
       LabelFormModule,
+      EditProductModule,
+      CreateSalesModule,
       // MdButtonModule,
       // MdCardModule,
       // MdDatepickerModule,
@@ -90,6 +96,10 @@ import { CreateRecordService } from './services/create-records.service';
   {
     path: 'search',
     component: FormComponent
+  },
+    {
+    path: 'salescreate/:id',
+    component: CreateSalesComponent
   },
   {
     path: 'salesSearch',

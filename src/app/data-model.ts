@@ -193,6 +193,8 @@ export type  productAllFields = {
     cnf_code: number;
     creation_date: string;
     edited_by: string;
+    product_comment: string;
+    product_brand?:string;
     last_edit_date: string;
     product_description: string;
     product_id: number;
@@ -212,3 +214,52 @@ export type  salesFieldsView = {
     sales_upc: string;
     sales_year: number;
 };
+
+export type  labelFieldsView = {
+    label_id: number;
+    label_upc: string;
+    label_description: string;
+    label_collection_date: string;
+    label_source: string;
+    label_creation_date: string;
+    label_last_edited_by: string;
+    label_last_edit_date: string;
+};
+
+
+
+
+    export type  salesFieldsCreate = {
+    product_id:number,    
+    sales_description:string,
+    sales_upc:string,
+    sales_brand:string,
+    sales_manufacturer:string,
+    dollar_rank:number,
+    dollar_volume:number,
+    dollar_share:number,
+    dollar_volume_percentage_change:number,
+    kilo_volume:number,
+    kilo_share:number,
+    kilo_rank:number,
+    kilo_volume_percentage_change:number,
+    average_ac_dist:number,
+    average_retail_price:number,
+    sales_source:string,
+    nielsen_category:string,
+    sales_year:number,
+    control_label_flag: boolean,
+    kilo_volume_total:number,
+    kilo_volume_rank:number,
+    dollar_volume_total:number,
+    cluster_number:number,
+    product_grouping:number,
+    sales_product_description:string,
+    classification_number:number,
+    classification_type:string,
+    sales_comment:string,
+    sales_collection_date:string,
+    number_of_units:number,
+    edited_by:string
+
+    }

@@ -6,18 +6,22 @@
 /* tslint:disable */
 import * as i0 from './view-product.component.css.shim.ngstyle';
 import * as i1 from '@angular/core';
-import * as i2 from '../../table/table.component.ngfactory';
-import * as i3 from '../../../../../src/app/table/table.component';
-import * as i4 from '@angular/common';
-import * as i5 from '../../../../../src/app/views/viewProduct/view-product.component';
-import * as i6 from '@angular/forms';
-import * as i7 from '../../../../../src/app/services/search.service';
-import * as i8 from '../../../../../src/app/services/getRecord.service';
-import * as i9 from '@angular/router';
+import * as i2 from '@angular/common';
+import * as i3 from '../../editForms/editProduct/edit-product.component.ngfactory';
+import * as i4 from '../../../../../src/app/services/create-records.service';
+import * as i5 from '@angular/http';
+import * as i6 from '../../../../../src/app/editForms/editProduct/edit-product.component';
+import * as i7 from '@angular/forms';
+import * as i8 from '../../../../../src/app/services/search.service';
+import * as i9 from '../../../../../src/app/services/getRecord.service';
+import * as i10 from '@angular/router';
+import * as i11 from '../../table/table.component.ngfactory';
+import * as i12 from '../../../../../src/app/table/table.component';
+import * as i13 from '../../../../../src/app/views/viewProduct/view-product.component';
 var styles_ViewProductComponent = [i0.styles];
 export var RenderType_ViewProductComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_ViewProductComponent, data: {} });
-function View_ViewProductComponent_1(_l) {
+function View_ViewProductComponent_2(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 123, 'div', [['class',
                 'viewProduct']], null, null, null, null, null)),
         (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 92, 'table', [['style', 'width:100%; margin-top:10px;']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵeld(0, null, null, 90, 'tbody', [], null, null, null, null, null)),
@@ -55,7 +59,7 @@ function View_ViewProductComponent_1(_l) {
         _ck(_v, 29, 0, currVal_2);
         var currVal_3 = _co.params.product_manufacturer;
         _ck(_v, 38, 0, currVal_3);
-        var currVal_4 = _co.params.producy_brand;
+        var currVal_4 = _co.params.product_brand;
         _ck(_v, 47, 0, currVal_4);
         var currVal_5 = _co.params.cnf_code;
         _ck(_v, 56, 0, currVal_5);
@@ -75,41 +79,101 @@ function View_ViewProductComponent_1(_l) {
         _ck(_v, 120, 0, currVal_12);
     });
 }
-function View_ViewProductComponent_2(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 5, 'div', [['style',
-                'margin-bottom: 40px;']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 2, 'custom-table', [], null, null, null, i2.View_TableComponent_0, i2.RenderType_TableComponent)), i1.ɵdid(49152, null, 0, i3.TableComponent, [], { records: [0, 'records'], caption: [1, 'caption'],
-            settings: [2, 'settings'] }, null), (_l()(), i1.ɵted(null, ['\n\n  '])),
-        (_l()(), i1.ɵted(null, ['\n\n']))], function (_ck, _v) {
+function View_ViewProductComponent_1(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 22, 'div', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 16, 'div', [['class', 'row']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class', 'col-md-6']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])), (_l()(),
+            i1.ɵeld(0, null, null, 1, 'h2', [['style', 'margin-top:0px']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Product Details'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 7, 'div', [['class', 'col-md-6'],
+            ['style', 'text-align: right']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'button', [['class', 'btn btn-default']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Delete Product'])),
+        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'button', [['class', 'btn btn-default']], null, [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.callEdit() !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), (_l()(), i1.ɵted(null, ['Edit Product'])),
+        (_l()(), i1.ɵted(null, ['\n\n\n'])), (_l()(), i1.ɵted(null, ['\n'])),
+        (_l()(), i1.ɵted(null, ['\n\n\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_2)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.params;
+        _ck(_v, 21, 0, currVal_0);
+    }, null);
+}
+function View_ViewProductComponent_3(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 6, 'div', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 3, 'edit-product', [], null, null, null, i3.View_EditProductComponent_0, i3.RenderType_EditProductComponent)), i1.ɵprd(4608, null, i4.CreateRecordService, i4.CreateRecordService, [i5.Http]), i1.ɵdid(638976, null, 0, i6.EditProductComponent, [i7.FormBuilder, i8.SearchService, i9.GetRecordService, i10.Router, i10.ActivatedRoute], { product: [0, 'product'] }, null), (_l()(), i1.ɵted(null, ['\n\n\n'])),
+        (_l()(), i1.ɵted(null, ['\n']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.editFields;
+        _ck(_v, 4, 0, currVal_0);
+    }, null);
+}
+function View_ViewProductComponent_4(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 5, 'div', [['class',
+                'displayTables']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 2, 'custom-table', [], null, [[null, 'addSalesRecord']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('addSalesRecord' === en)) {
+                var pd_0 = (_co.addSales($event) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, i11.View_TableComponent_0, i11.RenderType_TableComponent)), i1.ɵdid(49152, null, 0, i12.TableComponent, [], { records: [0, 'records'],
+            caption: [1, 'caption'], flager: [2, 'flager'], settings: [3, 'settings'] }, { addSalesRecord: 'addSalesRecord' }),
+        (_l()(), i1.ɵted(null, ['\n\n  '])), (_l()(), i1.ɵted(null, ['\n\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = _co.salesData;
         var currVal_1 = 'Sales Records';
-        var currVal_2 = _co.settingsSales;
-        _ck(_v, 3, 0, currVal_0, currVal_1, currVal_2);
+        var currVal_2 = 1;
+        var currVal_3 = _co.settingsSales;
+        _ck(_v, 3, 0, currVal_0, currVal_1, currVal_2, currVal_3);
+    }, null);
+}
+function View_ViewProductComponent_5(_l) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 5, 'div', [['class',
+                'displayTables']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 2, 'custom-table', [], null, [[null, 'addLabelRecord']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('addLabelRecord' === en)) {
+                var pd_0 = (_co.addLabel($event) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, i11.View_TableComponent_0, i11.RenderType_TableComponent)), i1.ɵdid(49152, null, 0, i12.TableComponent, [], { records: [0, 'records'],
+            caption: [1, 'caption'], flager: [2, 'flager'], settings: [3, 'settings'] }, { addLabelRecord: 'addLabelRecord' }),
+        (_l()(), i1.ɵted(null, ['\n\n  '])), (_l()(), i1.ɵted(null, ['\n\n  ']))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.labelData;
+        var currVal_1 = 'Label Records';
+        var currVal_2 = 2;
+        var currVal_3 = _co.settingsLabel;
+        _ck(_v, 3, 0, currVal_0, currVal_1, currVal_2, currVal_3);
     }, null);
 }
 export function View_ViewProductComponent_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 16, 'div', [['class',
-                'row']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n  '])), (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class', 'col-md-6']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n    '])),
-        (_l()(), i1.ɵeld(0, null, null, 1, 'h2', [['style', 'margin-top:0px']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['Product Details'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 7, 'div', [['class', 'col-md-6'], ['style', 'text-align: right']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'button', [['class', 'btn btn-default']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Delete Product'])),
-        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'button', [['class', 'btn btn-default']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Edit Product'])),
-        (_l()(), i1.ɵted(null, ['\n\n\n'])), (_l()(), i1.ɵted(null, ['\n'])),
-        (_l()(), i1.ɵted(null, ['\n\n\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_1)), i1.ɵdid(16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_2)),
-        i1.ɵdid(16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0,
-                'ngIf'] }, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_1)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef,
+            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_3)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef,
+            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_4)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef,
+            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n\n  '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ViewProductComponent_5)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef,
+            i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null)], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_0 = _co.params;
-        _ck(_v, 19, 0, currVal_0);
-        var currVal_1 = _co.salesData;
-        _ck(_v, 22, 0, currVal_1);
+        var currVal_0 = !_co.editFields;
+        _ck(_v, 1, 0, currVal_0);
+        var currVal_1 = _co.editFields;
+        _ck(_v, 4, 0, currVal_1);
+        var currVal_2 = _co.salesData;
+        _ck(_v, 7, 0, currVal_2);
+        var currVal_3 = _co.labelData;
+        _ck(_v, 10, 0, currVal_3);
     }, null);
 }
 export function View_ViewProductComponent_Host_0(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'view-product', [], null, null, null, View_ViewProductComponent_0, RenderType_ViewProductComponent)), i1.ɵdid(638976, null, 0, i5.ViewProductComponent, [i6.FormBuilder, i7.SearchService, i8.GetRecordService, i9.Router, i9.ActivatedRoute], null, null)], function (_ck, _v) {
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'view-product', [], null, null, null, View_ViewProductComponent_0, RenderType_ViewProductComponent)), i1.ɵdid(638976, null, 0, i13.ViewProductComponent, [i7.FormBuilder, i8.SearchService, i9.GetRecordService, i10.Router, i10.ActivatedRoute], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }
-export var ViewProductComponentNgFactory = i1.ɵccf('view-product', i5.ViewProductComponent, View_ViewProductComponent_Host_0, {}, {}, []);
+export var ViewProductComponentNgFactory = i1.ɵccf('view-product', i13.ViewProductComponent, View_ViewProductComponent_Host_0, {}, {}, []);
 //# sourceMappingURL=view-product.component.ngfactory.js.map

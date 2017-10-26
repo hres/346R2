@@ -73,3 +73,11 @@ md-icon{
     cursor: pointer;
 }
 
+.addIcon{
+
+font-size: 25px; 
+float:right;    
+margin-top: -3px; 
+cursor: pointer; 
+
+}
