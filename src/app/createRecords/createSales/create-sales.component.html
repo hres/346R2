@@ -50,7 +50,10 @@
             <div class="form-group col-sm-4">
                 <label for="salesYear">Sales Year</label>
                 <input type="text" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="sales_year">
-                <span class="textPosition">  {{formErrors.sales_year}}</span>
+                               
+                <div *ngIf="formErrors.sales_year" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.sales_year}}</span>
+                </div>
             </div>
 
 
