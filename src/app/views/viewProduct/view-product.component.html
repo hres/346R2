@@ -85,10 +85,7 @@
 </div>
 </div>
 <div *ngIf="editFields">
-<edit-product [product]="editFields"
-
->
-
+<edit-product [product]="editFields">
 
 </edit-product>
 </div>
@@ -97,7 +94,7 @@
                 [caption]="'Sales Records'" 
                 [settings]="settingsSales"
                 [flager]="1"
-                (addSalesRecord)="addSales($event)"
+                (addRecord)="addNewRecord($event)"
               >
 
   </custom-table>
@@ -109,7 +106,7 @@
                 [caption]="'Label Records'" 
                 [settings]="settingsLabel"
                 [flager]="2"
-                (addLabelRecord)="addLabel($event)"
+                (addRecord)="addNewRecord($event)"
 
                 >
 

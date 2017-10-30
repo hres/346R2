@@ -13,6 +13,7 @@ import * as i3 from '@angular/platform-browser';
 import * as i4 from '@angular/cdk';
 import * as i5 from '@angular/material';
 import * as i6 from '@angular/http';
+import * as i7 from '@angular/router';
 export const CustumTableModuleNgFactory:i0.NgModuleFactory<i1.CustumTableModule> = i0.ɵcmf(i1.CustumTableModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -51,7 +52,8 @@ export const CustumTableModuleNgFactory:i0.NgModuleFactory<i1.CustumTableModule>
               i4.BidiModule,i4.BidiModule,([] as any[])),i0.ɵmpd(256,i5.MATERIAL_SANITY_CHECKS,
               true,([] as any[])),i0.ɵmpd(512,i5.MdCommonModule,i5.MdCommonModule,
               [[2,i3.DOCUMENT],[2,i5.MATERIAL_SANITY_CHECKS]]),i0.ɵmpd(512,i5.MdIconModule,
-              i5.MdIconModule,([] as any[])),i0.ɵmpd(512,i1.CustumTableModule,i1.CustumTableModule,
+              i5.MdIconModule,([] as any[])),i0.ɵmpd(512,i7.RouterModule,i7.RouterModule,
+              [[2,i7.ɵa],[2,i7.Router]]),i0.ɵmpd(512,i1.CustumTableModule,i1.CustumTableModule,
               ([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=

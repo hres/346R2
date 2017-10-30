@@ -4,12 +4,14 @@ import { TableLayoutComponent } from './table-layout.component';
 import { FormatCellPipe } from './format-cell.pipe';
 import {StyleCellDirective} from './style-cell.directive'
 import { BrowserModule } from '@angular/platform-browser';
+import {RouterModule} from '@angular/router'
 
 
 @NgModule({
     imports: [ 
         CommonModule,
-        BrowserModule ],
+        BrowserModule,
+        RouterModule ],
     declarations: [ 
     TableLayoutComponent,
     FormatCellPipe,

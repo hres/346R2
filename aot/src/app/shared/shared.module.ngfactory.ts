@@ -10,6 +10,7 @@ import * as i0 from '@angular/core';
 import * as i1 from '../../../../src/app/shared/shared.module';
 import * as i2 from '@angular/common';
 import * as i3 from '@angular/platform-browser';
+import * as i4 from '@angular/router';
 export const SharedModuleNgFactory:i0.NgModuleFactory<i1.SharedModule> = i0.ɵcmf(i1.SharedModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -42,6 +43,7 @@ export const SharedModuleNgFactory:i0.NgModuleFactory<i1.SharedModule> = i0.ɵcm
                   i0.ApplicationInitStatus]),i0.ɵmpd(2048,i0.ApplicationRef,(null as any),
               [i0.ɵe]),i0.ɵmpd(512,i0.ApplicationModule,i0.ApplicationModule,[i0.ApplicationRef]),
           i0.ɵmpd(512,i3.BrowserModule,i3.BrowserModule,[[3,i3.BrowserModule]]),i0.ɵmpd(512,
+              i4.RouterModule,i4.RouterModule,[[2,i4.ɵa],[2,i4.Router]]),i0.ɵmpd(512,
               i1.SharedModule,i1.SharedModule,([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvc2hhcmVkL3NoYXJlZC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9zaGFyZWQvc2hhcmVkLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvc2hhcmVkL3NoYXJlZC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9zaGFyZWQvc2hhcmVkLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=

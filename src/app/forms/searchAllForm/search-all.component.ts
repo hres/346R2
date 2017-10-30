@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
-import { SearchAllInputFields, Response,salesYearList, classificationList } from '../../data-model';
+import { SearchAllInputFields, Response,salesYearList, classificationList, SearchAllResponse } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -20,7 +20,7 @@ import { ColumnSetting } from '../../shared/layout.model'
 export class SearchAllComponent implements OnChanges {
 
 
-    tableData: SearchAllInputFields[];
+    tableData: SearchAllResponse[];
     isLoading: boolean = false;
     submitted = false;
     offset: number = 0;
@@ -222,7 +222,7 @@ export class SearchAllComponent implements OnChanges {
         // }
 
 this.isLoading = true;
-        this.searchService.search(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.searchAll(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
    
             if (status === 202) {
@@ -244,8 +244,8 @@ this.isLoading = true;
             else {
                 this.emptyField = null;
                 this.count = data.count;
-               // this.tableData = data.dataList;
-                //console.log("Here",data.dataList);
+               this.tableData = data.dataList;
+                console.log("Here",data.dataList);
 
 
 
@@ -284,7 +284,7 @@ this.isLoading = true;
 
 
 this.isLoading = true;
-        this.searchService.search(JSON.stringify(this.label)).finally(()=> 
+        this.searchService.searchAll(JSON.stringify(this.label)).finally(()=> 
         {this.isLoading = false;
        // console.log("failling here")    
         }
@@ -311,7 +311,7 @@ this.isLoading = true;
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-              //  this.tableData = data.dataList;
+              this.tableData = data.dataList;
 
 
             }
@@ -336,7 +336,7 @@ this.isLoading = true;
         this.label.orderby = this.settings[i].primaryKey;
         this.label.flag = this.direction[i];
         this.isLoading = false;
-        this.searchService.search(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.searchAll(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
 
             if (status === 205) {
@@ -356,7 +356,7 @@ this.isLoading = true;
             } else {
                 this.emptyField = null;
                 this.count = data.count;
-               //this.tableData = data.dataList;
+                this.tableData = data.dataList;
                 //console.log("Data received", data.dataList);
 
             }

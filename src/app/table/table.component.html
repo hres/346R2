@@ -1,9 +1,9 @@
 <div>
-  <div class="container" *ngIf="flager === 1" >
+  <div class="container">
     <div class="classificationList">
       <span class="title">{{caption}}</span>
-           
- <span  class="glyphicon glyphicon-plus addIcon" (click)="addSales()"></span>
+
+      <span class="glyphicon glyphicon-plus addIcon" (click)="addNewRecord()"></span>
 
 
     </div>
@@ -12,27 +12,24 @@
 <tr>
   <th *ngFor="let map of settings ; let i=index">
 
-    {{map.header}} 
+    {{map.header}}
   </th>
 
 </tr>
 <tr *ngFor="let record of records">
 
-    <ng-container *ngFor="let map of settings">
-        
-        <td *ngIf="map.primaryKey === 'sales_upc'" 
-       
-        (click)="passIt(record.sales_id)" style="text-decoration: underline; cursor: pointer;">
-         {{ record[map.primaryKey]}} 
+  <ng-container *ngFor="let map of settings; let i=index">
+    
+    <td *ngIf="i === 0" style="text-decoration: underline; cursor: pointer;">  <a [routerLink]='viewData()'>{{ record[map.primaryKey]}}
+      </a>
+</td>
+<td *ngIf="i > 0">
 
-     </td>
-             <td *ngIf="map.primaryKey != 'sales_upc'" 
-     
-        >
-         {{ record[map.primaryKey]  }} 
 
-     </td>
-     </ng-container>
+  {{ record[map.primaryKey] }}
+
+</td>
+</ng-container>
 </tr>
 
 
@@ -44,41 +41,36 @@
 
 
 
-<div class="container" *ngIf="flager === 2">
-    <div class="classificationList">
-      <span class="title">{{caption}}</span>
-     
- <span  class="glyphicon glyphicon-plus addIcon" (click)="addLabel()"></span>
+<!--<div class="container" *ngIf="flager === 2">
+  <div class="classificationList">
+    <span class="title">{{caption}}</span>
+
+    <span class="glyphicon glyphicon-plus addIcon" (click)="addLabel()"></span>
 
 
-      
-    </div>
-    <div class="tableData" *ngIf="records && settings">
-      <table style="width:100%;">
+
+  </div>
+  <div class="tableData" *ngIf="records && settings">
+    <table style="width:100%;">
 <tr>
   <th *ngFor="let map of settings ; let i=index">
 
-    {{map.header}} 
+    {{map.header}}
   </th>
 
 </tr>
-<tr *ngFor="let record of records">
+<tr *ngFor="let record of records; let i=index">
 
-    <ng-container *ngFor="let map of settings">
-        
-        <td *ngIf="map.primaryKey === 'label_upc'" 
-       
-        (click)="passIt(record.label_id)" style="text-decoration: underline; cursor: pointer;">
-         {{ record[map.primaryKey]}} 
+  <ng-container *ngFor="let map of settings">
 
-     </td>
-             <td *ngIf="map.primaryKey != 'label_upc'" 
-     
-        >
-         {{ record[map.primaryKey]  }} 
+    <td *ngIf="i===0" style="text-decoration: underline; cursor: pointer;"> {{ record[map.primaryKey]}}
 
-     </td>
-     </ng-container>
+</td>
+<td *ngIf="i > 0">
+  {{ record[map.primaryKey] }}
+
+</td>
+</ng-container>
 </tr>
 
 
@@ -86,6 +78,5 @@
 
 </table>
 </div>
+</div>-->
 </div>
-</div>
-

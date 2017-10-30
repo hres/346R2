@@ -19,10 +19,11 @@ import * as i9 from '@angular/forms';
 import * as i10 from '@angular/animations';
 import * as i11 from '../../../../../src/app/services/search.service';
 import * as i12 from '../../../../../src/app/services/getRecord.service';
-import * as i13 from '../../../../../src/app/table/table.module';
-import * as i14 from '../../../../../src/app/classification-center/add-classification/add-classification.module';
-import * as i15 from '../../../../../src/app/modal-box/modal-box.module';
-import * as i16 from '../../../../../src/app/editForms/editProduct/edit-product.module';
+import * as i13 from '@angular/router';
+import * as i14 from '../../../../../src/app/table/table.module';
+import * as i15 from '../../../../../src/app/classification-center/add-classification/add-classification.module';
+import * as i16 from '../../../../../src/app/modal-box/modal-box.module';
+import * as i17 from '../../../../../src/app/editForms/editProduct/edit-product.module';
 export const ViewProductModuleNgFactory:i0.NgModuleFactory<i1.ViewProductModule> = i0.ɵcmf(i1.ViewProductModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -81,7 +82,8 @@ export const ViewProductModuleNgFactory:i0.NgModuleFactory<i1.ViewProductModule>
               i6.BidiModule,i6.BidiModule,([] as any[])),i0.ɵmpd(256,i7.MATERIAL_SANITY_CHECKS,
               true,([] as any[])),i0.ɵmpd(512,i7.MdCommonModule,i7.MdCommonModule,
               [[2,i3.DOCUMENT],[2,i7.MATERIAL_SANITY_CHECKS]]),i0.ɵmpd(512,i7.MdIconModule,
-              i7.MdIconModule,([] as any[])),i0.ɵmpd(512,i13.CustumTableModule,i13.CustumTableModule,
+              i7.MdIconModule,([] as any[])),i0.ɵmpd(512,i13.RouterModule,i13.RouterModule,
+              [[2,i13.ɵa],[2,i13.Router]]),i0.ɵmpd(512,i14.CustumTableModule,i14.CustumTableModule,
               ([] as any[])),i0.ɵmpd(512,i9.ɵba,i9.ɵba,([] as any[])),i0.ɵmpd(512,
               i9.ReactiveFormsModule,i9.ReactiveFormsModule,([] as any[])),i0.ɵmpd(512,
               i9.FormsModule,i9.FormsModule,([] as any[])),i0.ɵmpd(512,i7.MdCardModule,
@@ -97,11 +99,11 @@ export const ViewProductModuleNgFactory:i0.NgModuleFactory<i1.ViewProductModule>
               ([] as any[])),i0.ɵmpd(512,i7.MdSelectionModule,i7.MdSelectionModule,
               ([] as any[])),i0.ɵmpd(512,i7.MdOptionModule,i7.MdOptionModule,([] as any[])),
           i0.ɵmpd(512,i7.MdSelectModule,i7.MdSelectModule,([] as any[])),i0.ɵmpd(512,
-              i7.MdSliderModule,i7.MdSliderModule,([] as any[])),i0.ɵmpd(512,i14.AddClassificationModule,
-              i14.AddClassificationModule,([] as any[])),i0.ɵmpd(512,i5.BrowserAnimationsModule,
-              i5.BrowserAnimationsModule,([] as any[])),i0.ɵmpd(512,i15.ModalBoxModule,
-              i15.ModalBoxModule,([] as any[])),i0.ɵmpd(512,i16.EditProductModule,
-              i16.EditProductModule,([] as any[])),i0.ɵmpd(512,i1.ViewProductModule,
+              i7.MdSliderModule,i7.MdSliderModule,([] as any[])),i0.ɵmpd(512,i15.AddClassificationModule,
+              i15.AddClassificationModule,([] as any[])),i0.ɵmpd(512,i5.BrowserAnimationsModule,
+              i5.BrowserAnimationsModule,([] as any[])),i0.ɵmpd(512,i16.ModalBoxModule,
+              i16.ModalBoxModule,([] as any[])),i0.ɵmpd(512,i17.EditProductModule,
+              i17.EditProductModule,([] as any[])),i0.ɵmpd(512,i1.ViewProductModule,
               i1.ViewProductModule,([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1Byb2R1Y3Qvdmlldy1wcm9kdWN0Lm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL3ZpZXdzL3ZpZXdQcm9kdWN0L3ZpZXctcHJvZHVjdC5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1Byb2R1Y3Qvdmlldy1wcm9kdWN0Lm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL3ZpZXdzL3ZpZXdQcm9kdWN0L3ZpZXctcHJvZHVjdC5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

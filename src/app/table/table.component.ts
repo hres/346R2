@@ -19,6 +19,7 @@ export class TableComponent{
     @Output() deleteEvent = new EventEmitter<boolean>();
     @Output() addSalesRecord = new EventEmitter<boolean>();
      @Output() addLabelRecord = new EventEmitter<boolean>();
+    @Output() addRecord = new EventEmitter<number>();
 
      
     title ="Classifications";
@@ -48,6 +49,17 @@ this.addSalesRecord.emit(true);
 }
 addLabel(){
 this.addLabelRecord.emit(true);
+}
+
+addNewRecord(){
+console.log("here again");
+this.addRecord.emit(this.flager);
+
+
+}
+viewData(): string{
+
+   return  '/viewproduct/372430';
 }
 
 }

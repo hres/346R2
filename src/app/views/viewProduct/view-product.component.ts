@@ -44,8 +44,8 @@ export class ViewProductComponent implements OnInit {
         { primaryKey: 'label_collection_date', header: 'Label Collection Date' },
         { primaryKey: 'label_source', header: 'Label  Source' },
         { primaryKey: 'label_creation_date', header: 'Label Creation Date' },
-        { primaryKey: 'label_last_edited_by', header: 'Last Edit Date' },
-        { primaryKey: 'label_last_edit_date', header: 'Edited By' }
+        { primaryKey: 'label_last_edit_date', header: 'Last Edit Date' },
+        { primaryKey: 'label_last_edited_by', header: 'Edited By' }
 
     ];
 
@@ -100,6 +100,16 @@ export class ViewProductComponent implements OnInit {
     }
     callEdit() {
         this.editFields = this.params;
+       
+    }
+
+    addNewRecord(value: number){
+        console.log("clicked")
+        if(value===1){
+            this.router.navigate(['/salescreate', this.params.product_id])
+        }else if(value===2){
+            this.router.navigate(['/add-label', this.params.product_id])
+        }
     }
 
 

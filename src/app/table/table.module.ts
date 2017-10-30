@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TableComponent } from './table.component';
 import {  CommonModule} from '@angular/common';  
 import { MdIconModule} from '@angular/material';
+import {RouterModule} from '@angular/router'
 
 @NgModule({
     imports:[
 BrowserModule,
 CommonModule,
-MdIconModule
+MdIconModule,
+RouterModule
     ],
     declarations: [ 
         TableComponent

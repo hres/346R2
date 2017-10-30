@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
-import { Params, Response, SalesData, LabelData, ClassificationList, addClass,productParams, classificationList, salesYearList} from '../data-model';
+import { Params, Response, SalesData, LabelData, ClassificationList, addClass,productParams,SearchAllResponse, classificationList, salesYearList} from '../data-model';
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -28,6 +28,23 @@ export class SearchService {
         return this.http
             .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/productsfiltered', queryString, this.options)
             .map(response => response.json() as Response<Params>);
+        //     .post('http://localhost:8080/fcdr/webapi/myresource/product',queryString,this.options)
+        //     .toPromise()
+        //     .then(response => response.json() as Response);
+        //http://10.148.179.244:8087/fcdr-rest-service/rest/ProductService/productsfiltered
+    }
+
+
+    searchAll(queryString: string): Observable<Response<SearchAllResponse>> {
+
+
+
+        console.log('here', queryString);
+
+
+        return this.http
+            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productsaleslabel', queryString, this.options)
+            .map(response => response.json() as Response<SearchAllResponse>);
         //     .post('http://localhost:8080/fcdr/webapi/myresource/product',queryString,this.options)
         //     .toPromise()
         //     .then(response => response.json() as Response);

@@ -13,8 +13,9 @@ import * as i3 from '@angular/cdk';
 import * as i4 from '@angular/platform-browser';
 import * as i5 from '@angular/common';
 import * as i6 from '@angular/material';
-import * as i7 from '../../../../../src/app/shared/shared.module';
-import * as i8 from '../../../../../src/app/pagination/pagination.model';
+import * as i7 from '@angular/router';
+import * as i8 from '../../../../../src/app/shared/shared.module';
+import * as i9 from '../../../../../src/app/pagination/pagination.model';
 export const FormModuleNgFactory:i0.NgModuleFactory<i1.FormModule> = i0.ɵcmf(i1.FormModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -77,8 +78,9 @@ export const FormModuleNgFactory:i0.NgModuleFactory<i1.FormModule> = i0.ɵcmf(i1
                   i0.ApplicationInitStatus]),i0.ɵmpd(2048,i0.ApplicationRef,(null as any),
               [i0.ɵe]),i0.ɵmpd(512,i0.ApplicationModule,i0.ApplicationModule,[i0.ApplicationRef]),
           i0.ɵmpd(512,i4.BrowserModule,i4.BrowserModule,[[3,i4.BrowserModule]]),i0.ɵmpd(512,
-              i7.SharedModule,i7.SharedModule,([] as any[])),i0.ɵmpd(512,i8.PaginationModelModule,
-              i8.PaginationModelModule,([] as any[])),i0.ɵmpd(512,i1.FormModule,i1.FormModule,
+              i7.RouterModule,i7.RouterModule,[[2,i7.ɵa],[2,i7.Router]]),i0.ɵmpd(512,
+              i8.SharedModule,i8.SharedModule,([] as any[])),i0.ɵmpd(512,i9.PaginationModelModule,
+              i9.PaginationModelModule,([] as any[])),i0.ɵmpd(512,i1.FormModule,i1.FormModule,
               ([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvcHJvZHVjdEZvcm0vZm9ybS5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9mb3Jtcy9wcm9kdWN0Rm9ybS9mb3JtLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvcHJvZHVjdEZvcm0vZm9ybS5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9mb3Jtcy9wcm9kdWN0Rm9ybS9mb3JtLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

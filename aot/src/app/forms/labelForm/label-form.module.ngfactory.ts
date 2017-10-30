@@ -14,8 +14,9 @@ import * as i4 from '@angular/cdk';
 import * as i5 from '@angular/platform-browser';
 import * as i6 from '@angular/common';
 import * as i7 from '@angular/material';
-import * as i8 from '../../../../../src/app/shared/shared.module';
-import * as i9 from '../../../../../src/app/pagination/pagination.model';
+import * as i8 from '@angular/router';
+import * as i9 from '../../../../../src/app/shared/shared.module';
+import * as i10 from '../../../../../src/app/pagination/pagination.model';
 export const LabelFormModuleNgFactory:i0.NgModuleFactory<i1.LabelFormModule> = i0.ɵcmf(i1.LabelFormModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -85,9 +86,10 @@ export const LabelFormModuleNgFactory:i0.NgModuleFactory<i1.LabelFormModule> = i
                   i0.ApplicationInitStatus]),i0.ɵmpd(2048,i0.ApplicationRef,(null as any),
               [i0.ɵe]),i0.ɵmpd(512,i0.ApplicationModule,i0.ApplicationModule,[i0.ApplicationRef]),
           i0.ɵmpd(512,i5.BrowserModule,i5.BrowserModule,[[3,i5.BrowserModule]]),i0.ɵmpd(512,
-              i8.SharedModule,i8.SharedModule,([] as any[])),i0.ɵmpd(512,i9.PaginationModelModule,
-              i9.PaginationModelModule,([] as any[])),i0.ɵmpd(512,i7.MdDialogModule,
+              i8.RouterModule,i8.RouterModule,[[2,i8.ɵa],[2,i8.Router]]),i0.ɵmpd(512,
+              i9.SharedModule,i9.SharedModule,([] as any[])),i0.ɵmpd(512,i10.PaginationModelModule,
+              i10.PaginationModelModule,([] as any[])),i0.ɵmpd(512,i7.MdDialogModule,
               i7.MdDialogModule,([] as any[])),i0.ɵmpd(512,i7.MdDatepickerModule,i7.MdDatepickerModule,
               ([] as any[])),i0.ɵmpd(512,i1.LabelFormModule,i1.LabelFormModule,([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvbGFiZWxGb3JtL2xhYmVsLWZvcm0ubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvbGFiZWxGb3JtL2xhYmVsLWZvcm0ubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvbGFiZWxGb3JtL2xhYmVsLWZvcm0ubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZm9ybXMvbGFiZWxGb3JtL2xhYmVsLWZvcm0ubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=

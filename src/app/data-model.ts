@@ -263,3 +263,29 @@ export type  labelFieldsView = {
     edited_by:string
 
     }
+   export type  SearchAllResponse = {
+        classification_name: string,
+        classification_number: number,
+        classification_type: string,
+        cluster_number: number,
+        cnf_code:number,
+        dollar_rank: number,
+        label_collection_date:string,
+        label_comment: string,
+        label_description: string,
+        label_ingredients: string,
+        label_source:string,
+        label_upc: string,
+        nielsen_category: string,
+        product_brand: string,
+        product_comment: string,
+        product_description: string,
+        product_id: number,
+        product_manufacturer: string,
+        sales_collection_date: string,
+        sales_comment:string,
+        sales_description: string,
+        sales_source: string,
+        sales_upc: string,
+        sales_year: number
+   }

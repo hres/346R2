@@ -16,18 +16,19 @@
     <tbody>
 <tr *ngFor="let record of records">
 
-    <ng-container *ngFor="let map of columnMaps">
+    <ng-container *ngFor="let map of columnMaps; let i=index">
         
-        <td *ngIf="map.primaryKey === 'product_description'" 
+        <td *ngIf="i === 0" 
         [ctStyleCell]="record[map.primaryKey]"
-        (click)="passIt(record.product_id)" style="text-decoration: underline; cursor: pointer;">
-         {{ record[map.primaryKey] | formatCell:map.format }} 
+         style="text-decoration: underline; cursor: pointer;">
+         
+         <a routerLink='/viewproduct/{{record.product_id || record.productId}}'> {{ record[map.primaryKey] | formatCell:map.format }} </a>
      <!--<td *ngFor="let map of columnMaps"
      [ctStyleCell]="record[map.primaryKey]" 
                  (click)="passIt(record.product_id)">
            {{ record[map.primaryKey] | formatCell:map.format }}-->
      </td>
-             <td *ngIf="map.primaryKey != 'product_description'" 
+             <td *ngIf="i > 0" 
         [ctStyleCell]="record[map.primaryKey]"
         >
          {{ record[map.primaryKey] | formatCell:map.format }} 

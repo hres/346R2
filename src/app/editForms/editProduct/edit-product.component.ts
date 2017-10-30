@@ -23,6 +23,7 @@ export class EditProductComponent implements OnChanges {
     submitted = false;
     offset: number = 0;
     @Input() product: productAllFields;
+    id: number;
 
 //    product: productAllFields;
   listOfClass: classificationList[];
@@ -191,12 +192,13 @@ export class EditProductComponent implements OnChanges {
 
     }
     setValues(): void {
-
+        this.id = this.product.product_id;
         this.product = this.prepareSaveProduct();
+        this.product.product_id = this.id;
+        
 
 
-
-        //console.log(this.product);
+        console.log("FIELDSS", this.product);
         this.submitted = true;
     }
 
