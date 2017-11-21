@@ -1,0 +1,45 @@
+.confirmBox{
+
+position: fixed;
+left: 0;
+right: 0;
+bottom: -100px;
+height: 100px;
+-webkit-animation-name: example;
+-webkit-animation-duration: 3s;
+animation-name: example;
+animation-duration: 3s;
+z-index: 100;
+
+}
+
+.mainContaint{
+
+    top: 20%;
+    left:70%;     
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    font-size: 2em;
+    margin: auto;
+
+    -webkit-transform: translate3d(-50%,0,0) !important;
+    transform: translate3d(-50%,0,0) !important;
+}
+@keyframes example{
+0% {bottom: -100px; }    
+20%{bottom: 0;}
+80%{bottom: 0;}
+100%{bottom: -100px}
+
+
+}
+.success{
+background-color: #dff0d8;
+color: #3c763d;
+}
+
+.failure{
+    background-color: #f2dede;
+color: #a94442;
+}

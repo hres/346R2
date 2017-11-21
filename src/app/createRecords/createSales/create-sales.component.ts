@@ -1,10 +1,11 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter} from '@angular/core';
 import { salesFieldsCreate,classificationList, Classification_name, Classification_number, Response } from '../../data-model';
 import { CreateRecordService } from '../../services/create-records.service';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'add-sales',
@@ -19,14 +20,16 @@ export class CreateSalesComponent implements OnChanges {
 
 
     isLoading: boolean = false;
-    submitted = false;
+    submitted: boolean = false;
     offset: number = 0;
+    message: string = null;
     salesField: salesFieldsCreate;
-
-
-   listOfClass: classificationList[];
-   serverDown: boolean = false;
-   salesForm: FormGroup;
+    id: number;
+    flag: number = null;
+    listOfClass: classificationList[];
+    serverDown: boolean = false;
+    salesForm: FormGroup;
+    @Output() updateView = new EventEmitter<number>();
 
     constructor(private fb: FormBuilder,
         private createRecordService: CreateRecordService,
@@ -54,6 +57,8 @@ export class CreateSalesComponent implements OnChanges {
     }
 
     ngOnChanges() {
+        this.flag = null;
+        this.submitted = false;
 
         this.salesForm.reset({
             sales_description:this.salesField.sales_description,
@@ -101,52 +106,52 @@ export class CreateSalesComponent implements OnChanges {
                 ]],
             sales_brand:'',
             sales_manufacturer:'',
-            dollar_rank: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            dollar_volume: ['', [
+            dollar_rank: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            dollar_volume: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                  Validators.required]],
-            dollar_share:  ['', [
+            dollar_share:  [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                  Validators.required]],
-            dollar_volume_percentage_change:  ['', [
+            dollar_volume_percentage_change:  [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                  Validators.required]],
-            kilo_volume: ['', [
+            kilo_volume: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                 Validators.required
                 
                 ]],
-            kilo_share:  ['', [
+            kilo_share:  [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                  Validators.required]],
-            kilo_volume_percentage_change:  ['', [
+            kilo_volume_percentage_change:  [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                  Validators.required]],
-            average_ac_dist: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            average_retail_price: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            average_ac_dist: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            average_retail_price: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             sales_source:['', [Validators.required]],
             nielsen_category:['', [Validators.required]],
-            sales_year:['', [
+            sales_year:[null, [
                 Validators.pattern('\\d+'),
                 Validators.minLength(4),
                 Validators.maxLength(4)]],
-            control_label_flag: '',
-            kilo_volume_total:  ['', [
+            control_label_flag: null,
+            kilo_volume_total:  [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                  Validators.required]],
-            kilo_volume_rank: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            dollar_volume_total:  ['', [
+            kilo_volume_rank: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            dollar_volume_total:  [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                  Validators.required]],
-            cluster_number: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            product_grouping: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            cluster_number: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            product_grouping: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             sales_product_description:'',
-            classification_number:'',
+            classification_number:null,
             classification_type:'',
             sales_comment:'',
             sales_collection_date:'',
-            number_of_units:['', [Validators.pattern('\\d+')]],
-            kilo_rank:  ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]]
+            number_of_units:[null, [Validators.pattern('\\d+')]],
+            kilo_rank:  [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]]
         });
         this.salesForm.valueChanges
             .subscribe(data => this.onValueChanged(data));
@@ -176,30 +181,69 @@ export class CreateSalesComponent implements OnChanges {
     }
     onSubmit() {
 
-
+        this.flag = null;
         this.setValues();
 
+        this.isLoading = true;
 
-        // this.createRecordService.createSales(JSON.stringify(this.salesField)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.createRecordService.createSales(JSON.stringify(this.salesField)).finally(()=> this.isLoading = false).subscribe(response => {
 
-        //     const { message, status} = response;
+            const { message, status} = response;
    
-        //     if (status === 202) {
-   
-              
-        //     } else if (status === 203) {
+            if (status === 202) {
+                this.flag = 2;
+                // setTimeout(() => {
+                //     this.router.navigate(['/viewproduct', this.id]);
 
+                // },
+                // 4000); 
+              this.submitted = false;
+            } else if (status === 203) {
+                this.flag = 2;
+                this.submitted = false;
+                // setTimeout(() => {
+                //     this.router.navigate(['/viewproduct', this.id]);
 
-        //     } else if (status === 204) {
+                // },
+                // 4000); 
 
-        //     }
-        //     else {
-        //     }
+            } else if (status === 204) {
+                this.flag = 2;
+                // setTimeout(() => {
+                //     this.router.navigate(['/viewproduct', this.id]);
 
-        // }, (error) =>{
-        //     this.serverDown=true;
+                // },
+                // 4000); 
+                this.submitted = false;
+            }else if (status === 200){
+                 this.flag = 1;
+                setTimeout(() => {
+                    this.router.navigate(['/viewproduct', this.id]);
+
+                },
+                4000); 
+            }else if(status === 604){
+                this.flag = 2;
+                this.message = "UPC code belong to a diffent product";
+                this.submitted = false;
+            }
+            else {
+                this.flag = 2;
+                this.submitted = false;
+                // setTimeout(() => {
+                //     this.router.navigate(['/viewproduct', this.id]);
+
+                // },
+                // 4000); 
+            }
+            
+        }, (error) =>{
+            
+            this.serverDown=true;
+             this.flag = 2;     
+            this.submitted = false; 
           
-        // });
+        });
 
     }
 
@@ -314,10 +358,15 @@ export class CreateSalesComponent implements OnChanges {
     }
     setValues(): void {
         this.submitted = true;
+                var date = new DatePipe('en-US');
+     
         this.salesField = this.prepareSaveProduct();
+        this.salesField.sales_collection_date = this.salesField.sales_collection_date? date.transform(this.salesField.sales_collection_date, 'yyyy-MM-dd') : this.salesField.sales_collection_date;
+
         this.route.params.subscribe( params => {
 
         this.salesField.product_id = +params['id'];
+        this.id = this.salesField.product_id;
         console.log(this.salesField);
 
         });

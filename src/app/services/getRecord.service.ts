@@ -43,7 +43,7 @@ export class GetRecordService {
 
        return Observable.forkJoin(
             this.http
-                .get('http://localhost:8080/fcdr/webapi/myresource/getclassification', this.options)
+                .get('http://10.148.179.244:8088/fcdr/webapi/myresource/getclassification', this.options)
                 .map(response => response.json() )
         ,
             this.http
@@ -73,6 +73,13 @@ export class GetRecordService {
                 .map(response => response.json() )
         );
 
+    }
+    getSalesRecords(id: number | string){
+        console.log("call to sales", id);
+         return Observable.forkJoin(
+            this.http
+                 .get(`http://localhost:8080/fcdr-rest-service/rest/SalesService/sales/${id}`, this.options)
+         .map(response => response.json()));
     }
 
 }

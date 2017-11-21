@@ -13,7 +13,12 @@ import * as i3 from '@angular/platform-browser';
 import * as i4 from '@angular/cdk';
 import * as i5 from '@angular/material';
 import * as i6 from '@angular/http';
-import * as i7 from '@angular/router';
+import * as i7 from '@angular/forms';
+import * as i8 from '../../../../src/app/services/getRecord.service';
+import * as i9 from '@angular/router';
+import * as i10 from '../../../../src/app/confirmbox/confirm-box.module';
+import * as i11 from '../../../../src/app/editForms/editSales/edit-sales.module';
+import * as i12 from '../../../../src/app/views/viewSales/view-sales.module';
 export const CustumTableModuleNgFactory:i0.NgModuleFactory<i1.CustumTableModule> = i0.ɵcmf(i1.CustumTableModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -38,11 +43,16 @@ export const CustumTableModuleNgFactory:i0.NgModuleFactory<i1.CustumTableModule>
               i3.Title,i3.Title,[i2.DOCUMENT]),i0.ɵmpd(6144,i4.DIR_DOCUMENT,(null as any),
               [i3.DOCUMENT]),i0.ɵmpd(4608,i4.Directionality,i4.Directionality,[[2,
               i4.DIR_DOCUMENT]]),i0.ɵmpd(5120,i5.MdIconRegistry,i5.ICON_REGISTRY_PROVIDER_FACTORY,
-              [[3,i5.MdIconRegistry],[2,i6.Http],i3.DomSanitizer]),i0.ɵmpd(512,i2.CommonModule,
-              i2.CommonModule,([] as any[])),i0.ɵmpd(1024,i0.ErrorHandler,i3.ɵa,([] as any[])),
-          i0.ɵmpd(1024,i0.APP_INITIALIZER,(p0_0:any,p0_1:any) => {
-            return [i3.ɵc(p0_0,p0_1)];
-          },[[2,i3.NgProbeToken],[2,i0.NgProbeToken]]),i0.ɵmpd(512,i0.ApplicationInitStatus,
+              [[3,i5.MdIconRegistry],[2,i6.Http],i3.DomSanitizer]),i0.ɵmpd(4608,i7.FormBuilder,
+              i7.FormBuilder,([] as any[])),i0.ɵmpd(4608,i7.ɵi,i7.ɵi,([] as any[])),
+          i0.ɵmpd(4608,i4.Platform,i4.Platform,([] as any[])),i0.ɵmpd(5120,i5.FocusOriginMonitor,
+              i5.FOCUS_ORIGIN_MONITOR_PROVIDER_FACTORY,[[3,i5.FocusOriginMonitor],
+                  i0.NgZone,i4.Platform]),i0.ɵmpd(4608,i8.GetRecordService,i8.GetRecordService,
+              [i6.Http]),i0.ɵmpd(512,i2.CommonModule,i2.CommonModule,([] as any[])),
+          i0.ɵmpd(1024,i0.ErrorHandler,i3.ɵa,([] as any[])),i0.ɵmpd(1024,i0.APP_INITIALIZER,
+              (p0_0:any,p0_1:any) => {
+                return [i3.ɵc(p0_0,p0_1)];
+              },[[2,i3.NgProbeToken],[2,i0.NgProbeToken]]),i0.ɵmpd(512,i0.ApplicationInitStatus,
               i0.ApplicationInitStatus,[[2,i0.APP_INITIALIZER]]),i0.ɵmpd(131584,i0.ɵe,
               i0.ɵe,[i0.NgZone,i0.ɵConsole,i0.Injector,i0.ErrorHandler,i0.ComponentFactoryResolver,
                   i0.ApplicationInitStatus]),i0.ɵmpd(2048,i0.ApplicationRef,(null as any),
@@ -52,8 +62,17 @@ export const CustumTableModuleNgFactory:i0.NgModuleFactory<i1.CustumTableModule>
               i4.BidiModule,i4.BidiModule,([] as any[])),i0.ɵmpd(256,i5.MATERIAL_SANITY_CHECKS,
               true,([] as any[])),i0.ɵmpd(512,i5.MdCommonModule,i5.MdCommonModule,
               [[2,i3.DOCUMENT],[2,i5.MATERIAL_SANITY_CHECKS]]),i0.ɵmpd(512,i5.MdIconModule,
-              i5.MdIconModule,([] as any[])),i0.ɵmpd(512,i7.RouterModule,i7.RouterModule,
-              [[2,i7.ɵa],[2,i7.Router]]),i0.ɵmpd(512,i1.CustumTableModule,i1.CustumTableModule,
+              i5.MdIconModule,([] as any[])),i0.ɵmpd(512,i9.RouterModule,i9.RouterModule,
+              [[2,i9.ɵa],[2,i9.Router]]),i0.ɵmpd(512,i7.ɵba,i7.ɵba,([] as any[])),
+          i0.ɵmpd(512,i7.ReactiveFormsModule,i7.ReactiveFormsModule,([] as any[])),
+          i0.ɵmpd(512,i7.FormsModule,i7.FormsModule,([] as any[])),i0.ɵmpd(512,i5.MdProgressBarModule,
+              i5.MdProgressBarModule,([] as any[])),i0.ɵmpd(512,i4.PlatformModule,
+              i4.PlatformModule,([] as any[])),i0.ɵmpd(512,i5.StyleModule,i5.StyleModule,
+              ([] as any[])),i0.ɵmpd(512,i5.MdSliderModule,i5.MdSliderModule,([] as any[])),
+          i0.ɵmpd(512,i10.ConfirmBoxModule,i10.ConfirmBoxModule,([] as any[])),i0.ɵmpd(512,
+              i5.MdCardModule,i5.MdCardModule,([] as any[])),i0.ɵmpd(512,i11.EditSalesModule,
+              i11.EditSalesModule,([] as any[])),i0.ɵmpd(512,i12.ViewSalesModule,i12.ViewSalesModule,
+              ([] as any[])),i0.ɵmpd(512,i1.CustumTableModule,i1.CustumTableModule,
               ([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

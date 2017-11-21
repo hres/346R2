@@ -280,19 +280,47 @@
 
         </div>
         <div class="row">
-            <div class="form-group col-sm-6">
+            <div class="form-group col-sm-4">
+                <label for="kiloVolumeRank">Kilo Volume Rank</label>
+                <input type="text" class="form-control" id="kiloVolumeRank" placeholder="Kilo Volume Rank" formControlName="kilo_volume_rank">
+                <div *ngIf="formErrors.kilo_volume_rank" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.kilo_volume_rank}}</span>
+                </div>
+            </div>
+                   <div class="form-group col-sm-4">
+                <label for="numberOfUnits">Number of units</label>
+                <input type="text" class="form-control" id="numberOfUnits" placeholder="Number of units" formControlName="number_of_units">
+                <div *ngIf="formErrors.number_of_units" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.number_of_units}}</span>
+                </div>
+            </div>
+       
+       
+                        <div class="form-group col-sm-4">
                 <label for="classificationType">Classification Type  </label>
                 <input type="text" class="form-control" id="classificationType" placeholder="Enter the Classification Type" formControlName="classification_type">
 
             </div>
-            <div class="form-group col-sm-6">
-                <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!salesForm.valid">Save</button>
+
 </div>
+<div class="row">
+            <div class="form-group col-sm-12">
+                <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!salesForm.valid || salesForm.pristine || isLoading || submitted">Save</button>
 </div>
 
+</div>
 </form>
 </div>
 
 </md-card>
 </div>
+</div>
+
+<confirm-box [flag]="flag"  *ngIf="flag"></confirm-box>
+
+<div *ngIf="isLoading">
+  <md-progress-bar mode="indeterminate"></md-progress-bar>
+</div>
+<div *ngIf="message">
+    {{message}}
 </div>

@@ -21,7 +21,7 @@
 
   <ng-container *ngFor="let map of settings; let i=index">
     
-    <td *ngIf="i === 0" style="text-decoration: underline; cursor: pointer;">  <a [routerLink]='viewData()'>{{ record[map.primaryKey]}}
+    <td *ngIf="i === 0" style="text-decoration: underline; cursor: pointer;">  <a [routerLink]='viewData(record)'>{{ record[map.primaryKey]}}
       </a>
 </td>
 <td *ngIf="i > 0">

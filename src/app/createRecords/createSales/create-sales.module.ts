@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { CreateSalesComponent }  from './create-sales.component';
 import {RouterModule} from '@angular/router';
+import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 
 
 
@@ -16,7 +17,9 @@ FormsModule,
 MdCardModule,
 MdProgressBarModule,
 MdSliderModule,
-BrowserModule
+BrowserModule,
+ConfirmBoxModule,
+RouterModule
 
       
        ],

@@ -85,10 +85,15 @@
 </div>
 </div>
 <div *ngIf="editFields">
-<edit-product [product]="editFields">
+<edit-product [product]="editFields"
+              (callP)="receiveCall($event)"
+      
+      >
 
 </edit-product>
 </div>
+<confirm-box [flag]="flag"></confirm-box>
+
 <div *ngIf="salesData" class="displayTables">
   <custom-table [records]="salesData" 
                 [caption]="'Sales Records'" 

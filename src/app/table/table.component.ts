@@ -57,9 +57,15 @@ this.addRecord.emit(this.flager);
 
 
 }
-viewData(): string{
+viewData(value: any): string{
+console.log("something", value);
+if(this.flager ===1) {
+       
+   return  `/view-sales/${value.sales_id}`;
 
-   return  '/viewproduct/372430';
+   }else if(this.flager ===2){
+         return  '/viewproduct/372431';
+   }
 }
 
 }

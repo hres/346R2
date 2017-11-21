@@ -5,8 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { EditProductComponent }  from './edit-product.component';
 import {RouterModule} from '@angular/router';
-
-
+import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 
 
 @NgModule({
@@ -16,7 +15,9 @@ FormsModule,
 MdCardModule,
 MdProgressBarModule,
 MdSliderModule,
-BrowserModule
+BrowserModule,
+ConfirmBoxModule,
+RouterModule
 
       
        ],

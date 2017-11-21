@@ -13,6 +13,8 @@ import * as i3 from '@angular/cdk';
 import * as i4 from '@angular/platform-browser';
 import * as i5 from '@angular/common';
 import * as i6 from '@angular/material';
+import * as i7 from '../../../../../src/app/confirmbox/confirm-box.module';
+import * as i8 from '@angular/router';
 export const CreateSalesModuleNgFactory:i0.NgModuleFactory<i1.CreateSalesModule> = i0.ɵcmf(i1.CreateSalesModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -59,6 +61,8 @@ export const CreateSalesModuleNgFactory:i0.NgModuleFactory<i1.CreateSalesModule>
                   i0.ApplicationInitStatus]),i0.ɵmpd(2048,i0.ApplicationRef,(null as any),
               [i0.ɵe]),i0.ɵmpd(512,i0.ApplicationModule,i0.ApplicationModule,[i0.ApplicationRef]),
           i0.ɵmpd(512,i4.BrowserModule,i4.BrowserModule,[[3,i4.BrowserModule]]),i0.ɵmpd(512,
-              i1.CreateSalesModule,i1.CreateSalesModule,([] as any[]))]);
+              i7.ConfirmBoxModule,i7.ConfirmBoxModule,([] as any[])),i0.ɵmpd(512,i8.RouterModule,
+              i8.RouterModule,[[2,i8.ɵa],[2,i8.Router]]),i0.ɵmpd(512,i1.CreateSalesModule,
+              i1.CreateSalesModule,([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVTYWxlcy9jcmVhdGUtc2FsZXMubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVTYWxlcy9jcmVhdGUtc2FsZXMubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVTYWxlcy9jcmVhdGUtc2FsZXMubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVTYWxlcy9jcmVhdGUtc2FsZXMubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=

@@ -6,6 +6,8 @@ import {GetRecordService} from '../../services/getRecord.service'
 import {CustumTableModule} from '../../table/table.module'
 import {EditProductModule} from '../../editForms/editProduct/edit-product.module'
 import {ModalBoxModule} from '../../modal-box/modal-box.module'
+import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
  import {MdCardModule,MdProgressBarModule,MdIconModule, MdInputModule} from '@angular/material'
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +17,8 @@ import { BrowserModule } from '@angular/platform-browser';
         CommonModule,
         CustumTableModule,
         ModalBoxModule,
-        EditProductModule
+        EditProductModule,
+        ConfirmBoxModule
        
     ],
     declarations:[

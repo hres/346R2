@@ -1,18 +1,36 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { MdDatepickerModule,MdNativeDateModule} from '@angular/material'
+import {Headers, HttpModule} from '@angular/http';
+import { MdIconModule, MdIconRegistry, MdTabsModule} from '@angular/material';
+import { CommonModule } from '@angular/common'; 
+
+import { AppComponent }  from './app.component';
+
+
+
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SearchService } from './services/search.service';
-
 import { AddClassificationService } from './services/add-classification.service';
-
+import { CreateRecordService } from './services/create-records.service';
+import { EditRecordService } from './services/edit-records.service'
 // import {NgSwitch} from '@angular/common'; {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule,
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-  import { MdDatepickerModule,MdNativeDateModule} from '@angular/material'
-import { AppComponent }  from './app.component';
+
+
 import { FormComponent }  from './forms/productForm/form.component'; 
+import {FormModule} from './forms/productForm/form.module';
+
 import { SalesFormComponent }  from './forms/salesForm/sales-form.component'; 
 import { SalesFormModule }  from './forms/salesForm/sales-form.module'; 
+import {ViewSalesModule} from './views/viewSales/view-sales.module';
+import {ViewSalesComponent} from './views/viewSales/view-sales.component';
+import {CreateSalesModule} from './createRecords/createSales/create-sales.module'
+import {CreateSalesComponent} from './createRecords/createSales/create-sales.component'
+import { EditSalesModule}  from './editForms/editSales/edit-sales.module'; 
+
+
 
 import { LabelFormComponent }  from './forms/labelForm/label-form.component'; 
 import { LabelFormModule}  from './forms/labelForm/label-form.module'; 
@@ -22,51 +40,48 @@ import { SearchAllComponent }  from './forms/searchAllForm/search-all.component'
 
 //SearchAllModule
 
-import {ModalBoxModule} from './modal-box/modal-box.module'
 
-import { AddClassificationModule }  from './classification-center/add-classification/add-classification.module'; 
 
 
 import {ViewProductModule} from './views/viewProduct/view-product.module';
 import {ViewProductComponent} from './views/viewProduct/view-product.component'
+import { CreateProductComponent }  from './createRecords/createProduct/create-product.component'; 
+import { EditProductModule}  from './editForms/editProduct/edit-product.module'; 
+import { CreateProductModule }  from './createRecords/createProduct/create-product.module'; 
+import {FormsCenterModule} from './forms-center/forms-center.module'
 
-import {FormModule} from './forms/productForm/form.module';
 
-import {Headers, HttpModule} from '@angular/http';
+
 
 import {PaginationModelModule} from './pagination/pagination.model'
 import {CustumTableModule} from './table/table.module'
-
 import {RadioButtonModule} from './radio-button/radio-button.module'
 import {RadioButtonComponent} from './radio-button/radio-button.component'
-import {FormsCenterModule} from './forms-center/forms-center.module'
 import {SharedModule} from './shared/shared.module';
-import { MdIconModule, MdIconRegistry, MdTabsModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
-
-import { CommonModule } from '@angular/common';  
+import {ModalBoxModule} from './modal-box/modal-box.module'
+import { AddClassificationModule }  from './classification-center/add-classification/add-classification.module'; 
+ 
 
 //Create imports
-import { CreateProductComponent }  from './createRecords/createProduct/create-product.component'; 
-import {CreateSalesModule} from './createRecords/createSales/create-sales.module'
-import {CreateSalesComponent} from './createRecords/createSales/create-sales.component'
 
-import { EditProductModule}  from './editForms/editProduct/edit-product.module'; 
-import { CreateProductModule }  from './createRecords/createProduct/create-product.module'; 
-import { CreateRecordService } from './services/create-records.service';
 
+import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
 @NgModule({
   imports:      [ 
       BrowserAnimationsModule,
       BrowserModule,
       FormsCenterModule,
       FormModule,
+      ConfirmBoxModule,
+      EditSalesModule,
       // FormsModule,
       HttpModule,
       SalesFormModule,
       LabelFormModule,
       EditProductModule,
       CreateSalesModule,
+      ViewSalesModule,
       // MdButtonModule,
       // MdCardModule,
       // MdDatepickerModule,
@@ -100,6 +115,10 @@ import { CreateRecordService } from './services/create-records.service';
     {
     path: 'salescreate/:id',
     component: CreateSalesComponent
+  },
+  {
+    path: 'view-sales/:id',
+    component: ViewSalesComponent
   },
   {
     path: 'salesSearch',
@@ -142,7 +161,8 @@ import { CreateRecordService } from './services/create-records.service';
         MdIconRegistry,
         SearchService,
         AddClassificationService,
-        CreateRecordService
+        CreateRecordService//,
+        // EditRecordService
     
 
     ],

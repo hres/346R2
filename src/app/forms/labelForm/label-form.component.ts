@@ -149,8 +149,10 @@ export class LabelFormComponent implements OnChanges {
 
                 this.tableData = null;
 
+            }else if (status === 205){
+                this.noData = message;
             }
-             else {
+             else if (status === 200) {
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData= data.dataList; 
@@ -167,6 +169,8 @@ export class LabelFormComponent implements OnChanges {
                         this.direction[num] = false;
                     }
                 }
+            }else{
+                this.noData = "Something happened";
             }
 
         }, (error) =>{

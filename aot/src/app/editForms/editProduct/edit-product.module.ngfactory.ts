@@ -13,6 +13,8 @@ import * as i3 from '@angular/cdk';
 import * as i4 from '@angular/platform-browser';
 import * as i5 from '@angular/common';
 import * as i6 from '@angular/material';
+import * as i7 from '../../../../../src/app/confirmbox/confirm-box.module';
+import * as i8 from '@angular/router';
 export const EditProductModuleNgFactory:i0.NgModuleFactory<i1.EditProductModule> = i0.ɵcmf(i1.EditProductModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -59,6 +61,8 @@ export const EditProductModuleNgFactory:i0.NgModuleFactory<i1.EditProductModule>
                   i0.ApplicationInitStatus]),i0.ɵmpd(2048,i0.ApplicationRef,(null as any),
               [i0.ɵe]),i0.ɵmpd(512,i0.ApplicationModule,i0.ApplicationModule,[i0.ApplicationRef]),
           i0.ɵmpd(512,i4.BrowserModule,i4.BrowserModule,[[3,i4.BrowserModule]]),i0.ɵmpd(512,
-              i1.EditProductModule,i1.EditProductModule,([] as any[]))]);
+              i7.ConfirmBoxModule,i7.ConfirmBoxModule,([] as any[])),i0.ɵmpd(512,i8.RouterModule,
+              i8.RouterModule,[[2,i8.ɵa],[2,i8.Router]]),i0.ɵmpd(512,i1.EditProductModule,
+              i1.EditProductModule,([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZWRpdEZvcm1zL2VkaXRQcm9kdWN0L2VkaXQtcHJvZHVjdC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9lZGl0Rm9ybXMvZWRpdFByb2R1Y3QvZWRpdC1wcm9kdWN0Lm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvZWRpdEZvcm1zL2VkaXRQcm9kdWN0L2VkaXQtcHJvZHVjdC5tb2R1bGUubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9lZGl0Rm9ybXMvZWRpdFByb2R1Y3QvZWRpdC1wcm9kdWN0Lm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

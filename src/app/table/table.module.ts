@@ -5,13 +5,14 @@ import { TableComponent } from './table.component';
 import {  CommonModule} from '@angular/common';  
 import { MdIconModule} from '@angular/material';
 import {RouterModule} from '@angular/router'
-
+import {ViewSalesModule} from '../views/viewSales/view-sales.module'
 @NgModule({
     imports:[
 BrowserModule,
 CommonModule,
 MdIconModule,
-RouterModule
+RouterModule,
+ViewSalesModule
     ],
     declarations: [ 
         TableComponent

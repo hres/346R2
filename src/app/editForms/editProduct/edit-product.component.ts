@@ -1,6 +1,6 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter} from '@angular/core';
 import { Params,classificationList, Classification_name, Classification_number, Response, productAllFields} from '../../data-model';
-import { CreateRecordService } from '../../services/create-records.service';
+import { EditRecordService } from '../../services/edit-records.service';
 import { SearchService } from '../../services/search.service';
 import { GetRecordService } from '../../services/getRecord.service';
 
@@ -12,7 +12,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
     selector: 'edit-product',
     templateUrl: './edit-product.component.html',
     styleUrls: ['./edit-product.component.css'],
-    providers: [CreateRecordService]
+    providers: [EditRecordService]
 
 })
 export class EditProductComponent implements OnChanges {
@@ -20,24 +20,25 @@ export class EditProductComponent implements OnChanges {
 
 
     isLoading: boolean = false;
-    submitted = false;
+    submitted: boolean = false;
+    @Output() callP =new EventEmitter<number>();
+
     offset: number = 0;
     @Input() product: productAllFields;
     id: number;
 
-//    product: productAllFields;
-  listOfClass: classificationList[];
-
-
-
-
+    productDeepCopy: productAllFields;
+    listOfClass: classificationList[];
     serverDown: boolean = false;
 
+    flag: number = null;
     productForm: FormGroup;
+
 
     constructor(private fb: FormBuilder,
         private searchService: SearchService,
         private getRecordService: GetRecordService,
+        private editRecordService: EditRecordService,
         private router: Router,
         private route: ActivatedRoute)  {
 
@@ -50,7 +51,6 @@ export class EditProductComponent implements OnChanges {
                        this.searchService.getClassificationLatest().subscribe(response =>
                 {  
                  const {data, message, status} = response;   
-                 //const cl = response;
                  this.listOfClass = data.dataList;
                  console.log( this.listOfClass[0]['classification_name'], "is the class number")
 
@@ -63,6 +63,8 @@ export class EditProductComponent implements OnChanges {
     }
 
     ngOnChanges() {
+        this.flag = null;
+        this.submitted = false;
 
         this.productForm.reset({
             classification_name: this.product.classification_name,
@@ -93,8 +95,8 @@ export class EditProductComponent implements OnChanges {
             cluster_number: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             product_description: ['', [Validators.required]],
             product_comment: '',
-            restaurant_type:"",
-            type:""
+            restaurant_type:'',
+            type:''
 
 
         });
@@ -126,52 +128,75 @@ export class EditProductComponent implements OnChanges {
     }
     onSubmit() {
 
+  
 
         this.setValues();
 
-// this.isLoading = true;
-//         this.createRecordService.createProduct(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
-//             const {data, message, status} = response;
-   
-//             if (status === 202) {
-//                // this.emptyField = message;
-              
-//             } else if (status === 203) {
+        this.isLoading = true;
+        this.editRecordService.updateProduct(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
+            
+            const {message, status} = response;
 
-//                 //this.noData = message;
+            if (status === 202) { 
+                setTimeout(() => {
+                    this.router.navigate(['/viewproduct', this.id]);
 
+                },
+                4000);
+            } else if (status === 203) {
+               this.flag = 2;  
+                setTimeout(() => {
+                    this.router.navigate(['/viewproduct', this.id]);
+
+                },
+                4000);
                
-//                 // console.log("Here 203",data.dataList);
-//             } else if (status === 204) {
-//                // this.noData = message;
+            } else if (status === 204) {
+                 this.flag = 2;
+                   setTimeout(() => {
+                    this.router.navigate(['/viewproduct', this.id]);
+                },
+                4000);            
+            }else if (status === 200){
+                 
+                this.callP.emit(1);
+                 //this.flag = 1;
+                setTimeout(() => {
+                                      
+                    this.router.navigate(['/viewproduct', this.id]);
+                },
+                4000);     
+            }
+            else {
+                 this.flag = 2;
+                setTimeout(() => {
+                    this.router.navigate(['/viewproduct', this.id]);
 
-               
-//             //console.log("Here 204",data.dataList);
-//             }
-//             else {
-//                // this.emptyField = null;
-//                // this.count = data.count;
-               
-//             }
+                },
+                4000);    
+            }
 
-//         }, (error) =>{
-//             this.serverDown=true;
+        }, (error) =>{
+            this.serverDown=true;
+             this.flag = 2;
+                setTimeout(() => {
+                    this.router.navigate(['/viewproduct', this.id]);
+
+                },
+                4000); 
           
-//         });
-
-
-
-        // this.ngOnChanges();
+        });
+         
     }
 
     prepareSaveProduct(): productAllFields {
         return this.productForm.value;
     }
 
-    revert(){
-        
-        this.ngOnChanges();
-    }
+revert(){
+
+    this.ngOnChanges();
+}
 
 
     formErrors = {
@@ -192,14 +217,12 @@ export class EditProductComponent implements OnChanges {
 
     }
     setValues(): void {
+        this.submitted = true;
         this.id = this.product.product_id;
         this.product = this.prepareSaveProduct();
         this.product.product_id = this.id;
         
-
-
-        console.log("FIELDSS", this.product);
-        this.submitted = true;
+        
     }
 
 }

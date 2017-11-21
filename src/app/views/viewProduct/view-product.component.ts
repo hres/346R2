@@ -19,7 +19,7 @@ import { ColumnSetting } from '../../shared/layout.model'
 
 export class ViewProductComponent implements OnInit {
 
-    flag: boolean;
+    flag: number;
     Ids: any;
     params: productAllFields;
     salesData: salesFieldsView[];
@@ -61,7 +61,11 @@ export class ViewProductComponent implements OnInit {
 
 
     ngOnInit(): void {
-
+     
+    this.params=null;
+    this.salesData=null;
+    this.labelData=null;
+    this.editFields = null;
         this.route.paramMap
             .switchMap((param: ParamMap) =>
 
@@ -74,18 +78,23 @@ export class ViewProductComponent implements OnInit {
                 this.salesData = response[2].data.dataList;
                 this.labelData = response[1].data.dataList;
 
-
-
             }
             );
 
-
-
     }
     ngOnChanges() {
-
+        
 
     }
+
+    // updateView(value: number){
+
+    //     this.ngOnInit();
+    //     this.flag = value;
+
+    // }
+
+
     addSales(event: boolean){
         if(event){
             this.router.navigate(['/salescreate', this.params.product_id])
@@ -100,7 +109,14 @@ export class ViewProductComponent implements OnInit {
     }
     callEdit() {
         this.editFields = this.params;
+        this.flag = null;
        
+    }
+    receiveCall(event: number){
+
+            this.editFields = null;
+            this.flag = event;
+            this.ngOnInit();
     }
 
     addNewRecord(value: number){

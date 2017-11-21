@@ -43,7 +43,7 @@ export class SearchService {
 
 
         return this.http
-            .post('http://10.148.179.244:8088/fcdr-rest-service/rest/ProductService/productsaleslabel', queryString, this.options)
+            .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/productsaleslabel', queryString, this.options)
             .map(response => response.json() as Response<SearchAllResponse>);
         //     .post('http://localhost:8080/fcdr/webapi/myresource/product',queryString,this.options)
         //     .toPromise()
@@ -102,11 +102,11 @@ export class SearchService {
 
 
     }
-    getClassificationLatest(): Observable<Response<classificationList>> {
-        console.log('here');
+    getClassificationLatest(): Observable<Response<ClassificationList>> {
+       //http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification
         return this.http
             .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
-            .map(response => response.json() as Response<classificationList>);
+            .map(response => response.json() as Response<ClassificationList>);
 
 
     }

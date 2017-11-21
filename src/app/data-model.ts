@@ -54,9 +54,9 @@ export class addClass  {
 }
 
 export class classificationList  {
-    classification_name= '';    
-    classification_number= '';
-    classification_type= '';
+    classification_name:string;    
+    classification_number:string;
+    classification_type:string;
     classificationId?:number;
     productId?: number; 
 }
@@ -70,9 +70,9 @@ export const Classification_name = ['First classification', 'Second Classificati
 export const Classification_number = ['1.0121', '1.0122', '1.0123', ''];
 
 export class ClassificationList{
-    classification_name= '';    
-    classification_number= ''; 
-    classification_type= '';  
+    classification_name:string;    
+    classification_number:string;
+    classification_type:string;
 
 
 }
@@ -261,6 +261,45 @@ export type  labelFieldsView = {
     sales_collection_date:string,
     number_of_units:number,
     edited_by:string
+    
+
+    }
+
+        export type  AllSalesFieldsView = {
+    product_id?:number,    
+    sales_id?: number,
+    sales_description:string,
+    sales_upc:string,
+    sales_brand:string,
+    sales_manufacturer:string,
+    dollar_rank:number | string,
+    dollar_volume:number | string,
+    dollar_share:number | string,
+    dollar_volume_percentage_change:number | string,
+    kilo_volume:number | string,
+    kilo_share:number | string,
+    kilo_rank:number | string,
+    kilo_volume_percentage_change:number,
+    average_ac_dist:number | string,
+    average_retail_price:number| string,
+    sales_source:string,
+    nielsen_category:string,
+    sales_year:number | string,
+    control_label_flag: boolean | string,
+    kilo_volume_total:number | string,
+    kilo_volume_rank:number | string,
+    dollar_volume_total:number,
+    cluster_number:number | string,
+    product_grouping:number | string,
+    sales_product_description:string,
+    classification_number:number | string,
+    classification_type:string,
+    sales_comment:string,
+    sales_collection_date:string,
+    number_of_units:number | string,
+    edited_by?:string,
+    creation_date?: string,
+    last_edit_date?: string; 
 
     }
    export type  SearchAllResponse = {
@@ -288,4 +327,8 @@ export type  labelFieldsView = {
         sales_source: string,
         sales_upc: string,
         sales_year: number
+   }
+     export type   UpdateResponse = {
+       message: string;
+       status: number
    }

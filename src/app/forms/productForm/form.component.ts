@@ -176,16 +176,15 @@ this.isLoading = true;
 
                 this.tableData = null;
             //console.log("Here 204",data.dataList);
+            }else if (status === 205){
+                this.noData = message;
             }
-            else {
+            else if(status === 200) {
             
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData = data.dataList;
                 console.log("Here received",data.dataList);
-
-
-
 
 
                 for (var num = 0; num < this.settings.length; num++) {
@@ -195,6 +194,8 @@ this.isLoading = true;
                         this.direction[num] = false;
                     }
                 }
+            }else{
+                this.noData = "Something happened";
             }
 
         }, (error) =>{
