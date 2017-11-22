@@ -254,6 +254,7 @@ export class CreateSalesComponent implements OnChanges {
 
 
 
+
     formErrors = {
         'sales_description': '',
         'sales_upc': '',
@@ -367,7 +368,29 @@ export class CreateSalesComponent implements OnChanges {
 
         this.salesField.product_id = +params['id'];
         this.id = this.salesField.product_id;
-        console.log(this.salesField);
+        
+                this.salesField.number_of_units = this.salesField.number_of_units == "" ? null : this.salesField.number_of_units;
+        this.salesField.product_grouping = this.salesField.product_grouping ==""?null:this.salesField.product_grouping;
+        this.salesField.average_retail_price = this.salesField.average_retail_price== ""?null:this.salesField.average_retail_price;
+        this.salesField.sales_year = this.salesField.sales_year == "" ? null : this.salesField.sales_year;
+        this.salesField.classification_number = this.salesField.classification_number ==""?null:this.salesField.classification_number;
+
+        this.salesField.dollar_rank = this.salesField.dollar_rank == "" ? null : this.salesField.dollar_rank;
+        this.salesField.dollar_volume = this.salesField.dollar_volume ==""?null:this.salesField.dollar_volume;
+        this.salesField.dollar_share = this.salesField.dollar_share== ""?null:this.salesField.dollar_share;
+        this.salesField.dollar_volume_percentage_change = this.salesField.dollar_volume_percentage_change == "" ? null : this.salesField.dollar_volume_percentage_change;
+        this.salesField.kilo_volume = this.salesField.kilo_volume ==""?null:this.salesField.kilo_volume;
+
+        this.salesField.kilo_share = this.salesField.kilo_share == "" ? null : this.salesField.kilo_share;
+        this.salesField.kilo_volume_percentage_change = this.salesField.kilo_volume_percentage_change ==""?null:this.salesField.kilo_volume_percentage_change;
+        this.salesField.average_ac_dist = this.salesField.average_ac_dist== ""?null:this.salesField.average_ac_dist;
+       
+        this.salesField.kilo_volume_total = this.salesField.kilo_volume_total == "" ? null : this.salesField.kilo_volume_total;
+        this.salesField.kilo_volume_rank = this.salesField.kilo_volume_rank ==""?null:this.salesField.kilo_volume_rank;
+
+        this.salesField.dollar_volume_total = this.salesField.dollar_volume_total == "" ? null : this.salesField.dollar_volume_total;
+        this.salesField.cluster_number = this.salesField.cluster_number ==""?null:this.salesField.cluster_number;
+
 
         });
        

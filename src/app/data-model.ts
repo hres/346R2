@@ -28,6 +28,21 @@ export type  Params = {
 
 };
 
+export type  createProductFields = {
+    classification_name: string;
+    classification_number: number | string;
+    classification_type: string;
+    product_manufacturer: string;
+    product_brand: string;
+    cnf_code: number | string;
+    cluster_number: number | string;
+    product_description: string;
+    product_comment: string;
+    restaurant_type:string;
+    type:string;
+
+
+};
 
 export type  productParams = {
     classificationName: string;
@@ -235,31 +250,31 @@ export type  labelFieldsView = {
     sales_upc:string,
     sales_brand:string,
     sales_manufacturer:string,
-    dollar_rank:number,
-    dollar_volume:number,
-    dollar_share:number,
-    dollar_volume_percentage_change:number,
-    kilo_volume:number,
-    kilo_share:number,
-    kilo_rank:number,
-    kilo_volume_percentage_change:number,
-    average_ac_dist:number,
-    average_retail_price:number,
+    dollar_rank:number | string,
+    dollar_volume:number| string,
+    dollar_share:number| string,
+    dollar_volume_percentage_change:number| string,
+    kilo_volume:number| string,
+    kilo_share:number| string,
+    kilo_rank:number| string,
+    kilo_volume_percentage_change:number| string,
+    average_ac_dist:number| string,
+    average_retail_price:number| string,
     sales_source:string,
     nielsen_category:string,
-    sales_year:number,
+    sales_year:number| string,
     control_label_flag: boolean,
-    kilo_volume_total:number,
-    kilo_volume_rank:number,
-    dollar_volume_total:number,
-    cluster_number:number,
-    product_grouping:number,
+    kilo_volume_total:number| string,
+    kilo_volume_rank:number| string,
+    dollar_volume_total:number| string,
+    cluster_number:number| string,
+    product_grouping:number| string,
     sales_product_description:string,
-    classification_number:number,
-    classification_type:string,
+    classification_number:number| string,
+    classification_type:string | string,
     sales_comment:string,
     sales_collection_date:string,
-    number_of_units:number,
+    number_of_units:number | string,
     edited_by:string
     
 
@@ -279,7 +294,7 @@ export type  labelFieldsView = {
     kilo_volume:number | string,
     kilo_share:number | string,
     kilo_rank:number | string,
-    kilo_volume_percentage_change:number,
+    kilo_volume_percentage_change:number | string,
     average_ac_dist:number | string,
     average_retail_price:number| string,
     sales_source:string,
@@ -288,7 +303,7 @@ export type  labelFieldsView = {
     control_label_flag: boolean | string,
     kilo_volume_total:number | string,
     kilo_volume_rank:number | string,
-    dollar_volume_total:number,
+    dollar_volume_total:number | string,
     cluster_number:number | string,
     product_grouping:number | string,
     sales_product_description:string,
@@ -303,6 +318,7 @@ export type  labelFieldsView = {
 
     }
    export type  SearchAllResponse = {
+
         classification_name: string,
         classification_number: number,
         classification_type: string,
@@ -332,3 +348,13 @@ export type  labelFieldsView = {
        message: string;
        status: number
    }
+
+    export type productCreateResponse ={
+       id: {
+           value: number;
+           type:number;
+       };
+       message: string;
+       status: number ;
+
+    }

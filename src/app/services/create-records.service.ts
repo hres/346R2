@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
-import { productParams, UpdateResponse, Response} from '../data-model';
+import { productParams, UpdateResponse, Response, productCreateResponse} from '../data-model';
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -20,14 +20,14 @@ export class CreateRecordService {
 
 
 
-    createProduct(queryString: string): Observable<Response<productParams>> {
+    createProduct(queryString: string): Observable<productCreateResponse> {
 
  console.log('here', queryString);  
 
         return this.http
-            .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/productsfiltered', queryString, this.options)
+            .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/create', queryString, this.options)
             // .toPromise()
-            .map(response => response.json() as Response<productParams>);
+            .map(response => response.json() as productCreateResponse);
     }
 
 

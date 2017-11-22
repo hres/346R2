@@ -15,7 +15,7 @@
         <div class="row">
 
             <div class="form-group col-sm-4">
-                <label for="salesUPC">Sales UPC</label>
+                <label for="salesUPC" class="required">Sales UPC <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="salesUPC" placeholder="Sales UPC" formControlName="sales_upc">
                 <div *ngIf="formErrors.sales_upc" class="errorMessages">
                     <span class="textPosition">  {{formErrors.sales_upc}}</span>
@@ -25,7 +25,7 @@
 
             <div class="form-group col-sm-4">
 
-                <label for="dollarVolume">Dollar Volume</label>
+                <label for="dollarVolume" class="required">Dollar Volume <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="dollarVolume" placeholder="Dollar Volume" formControlName="dollar_volume">
                 <div *ngIf="formErrors.dollar_volume" class="errorMessages">
                     <span class="textPosition">  {{formErrors.dollar_volume}}</span>
@@ -36,7 +36,7 @@
 
             <div class="form-group col-sm-4">
 
-                <label for="KiloVolume">Kilo Volume  </label>
+                <label for="KiloVolume" class="required">Kilo Volume <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="KiloVolume" placeholder="Kilo Volume" formControlName="kilo_volume">
 
                 <div *ngIf="formErrors.kilo_volume" class="errorMessages">
@@ -59,7 +59,7 @@
 
             <div class="form-group col-sm-4">
 
-                <label for="NielsenCategory">Nielsen Category</label>
+                <label for="NielsenCategory" class="required">Nielsen Category <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="NielsenCategory" placeholder="Nielsen Category" formControlName="nielsen_category">
                 <div *ngIf="formErrors.nielsen_category" class="errorMessages">
                     <span class="textPosition">  {{formErrors.nielsen_category}}</span>
@@ -82,7 +82,7 @@
         <div class="row">
 
             <div class="form-group col-sm-4">
-                <label for="salesDescription">Sales Description</label>
+                <label for="salesDescription" class="required">Sales Description <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="salesDescription" placeholder="Sales Description" formControlName="sales_description">
                 <div *ngIf="formErrors.sales_description" class="errorMessages">
                     <span class="textPosition">  {{formErrors.sales_description}}</span>
@@ -136,7 +136,7 @@
 
             <div class="form-group col-sm-4">
 
-                <label for="DollarVolumePercentageChange">Dollar Volume % Change</label>
+                <label for="DollarVolumePercentageChange" class="required">Dollar Volume % Change <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="DollarVolumePercentageChange" placeholder="Dollar Volume % Change" formControlName="dollar_volume_percentage_change">
 
                 <div *ngIf="formErrors.dollar_volume_percentage_change" class="errorMessages">
@@ -148,7 +148,7 @@
         <div class="row">
 
             <div class="form-group col-sm-4">
-                <label for="KiloVolumePercentageChange">Kilo Volume % Change</label>
+                <label for="KiloVolumePercentageChange" class="required">Kilo Volume % Change <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="KiloVolumePercentageChange" placeholder="Kilo Volume % Change" formControlName="kilo_volume_percentage_change">
                 <div *ngIf="formErrors.kilo_volume_percentage_change" class="errorMessages">
                     <span class="textPosition">  {{formErrors.kilo_volume_percentage_change}}</span>
@@ -179,7 +179,7 @@
         <div class="row">
 
             <div class="form-group col-sm-4">
-                <label for="DollarVolumeTotal">Dollar Volume Total</label>
+                <label for="DollarVolumeTotal" class="required">Dollar Volume Total <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="DollarVolumeTotal" placeholder="Dollar Volume Total" formControlName="dollar_volume_total">
                 <div *ngIf="formErrors.dollar_volume_total" class="errorMessages">
                     <span class="textPosition">  {{formErrors.dollar_volume_total}}</span>
@@ -188,7 +188,7 @@
 
             <div class="form-group col-sm-4">
 
-                <label for="KiloVolumeTotal">Kilo Volume Total</label>
+                <label for="KiloVolumeTotal" class="required">Kilo Volume Total <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="KiloVolumeTotal" placeholder="Kilo Volume Total" formControlName="kilo_volume_total">
                 <div *ngIf="formErrors.kilo_volume_total" class="errorMessages">
                     <span class="textPosition">  {{formErrors.kilo_volume_total}}</span>
@@ -219,7 +219,7 @@
         <div class="row">
 
             <div class="form-group col-sm-4">
-                <label for="DollarShare">Dollar Slare</label>
+                <label for="DollarShare" class="required">Dollar Share <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="DollarShare" placeholder="Dollar Share" formControlName="dollar_share">
                 <div *ngIf="formErrors.dollar_share" class="errorMessages">
                     <span class="textPosition">  {{formErrors.dollar_share}}</span>
@@ -229,7 +229,7 @@
 
             <div class="form-group col-sm-4">
 
-                <label for="KiloShare">Kilo Share</label>
+                <label for="KiloShare" class="required">Kilo Share <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="KiloShare" placeholder="Kilo Share" formControlName="kilo_share">
                 <div *ngIf="formErrors.kilo_share" class="errorMessages">
                     <span class="textPosition">  {{formErrors.kilo_share}}</span>
