@@ -52,11 +52,11 @@ import * as i42 from '../../../src/app/confirmbox/confirm-box.module';
 import * as i43 from '../../../src/app/editForms/editSales/edit-sales.module';
 import * as i44 from '../../../src/app/editForms/editProduct/edit-product.module';
 import * as i45 from '../../../src/app/createRecords/createSales/create-sales.module';
-import * as i46 from '../../../src/app/views/viewSales/view-sales.module';
-import * as i47 from '../../../src/app/radio-button/radio-button.module';
-import * as i48 from '../../../src/app/table/table.module';
-import * as i49 from '../../../src/app/classification-center/add-classification/add-classification.module';
-import * as i50 from '../../../src/app/modal-box/modal-box.module';
+import * as i46 from '../../../src/app/classification-center/add-classification/add-classification.module';
+import * as i47 from '../../../src/app/modal-box/modal-box.module';
+import * as i48 from '../../../src/app/views/viewSales/view-sales.module';
+import * as i49 from '../../../src/app/radio-button/radio-button.module';
+import * as i50 from '../../../src/app/table/table.module';
 import * as i51 from '../../../src/app/views/viewProduct/view-product.module';
 import * as i52 from '../../../src/app/createRecords/createProduct/create-product.module';
 export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.AppModule,
@@ -114,10 +114,10 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
               i21.ɵb,([] as any[])),i0.ɵmpd(4608,i21.XHRBackend,i21.XHRBackend,[i21.BrowserXhr,
               i21.ResponseOptions,i21.XSRFStrategy]),i0.ɵmpd(4608,i21.RequestOptions,
               i21.BaseRequestOptions,([] as any[])),i0.ɵmpd(5120,i21.Http,i21.ɵc,[i21.XHRBackend,
-              i21.RequestOptions]),i0.ɵmpd(4608,i22.GetRecordService,i22.GetRecordService,
-              [i21.Http]),i0.ɵmpd(4608,i20.MdIconRegistry,i20.MdIconRegistry,[[2,i21.Http],
-              i14.DomSanitizer]),i0.ɵmpd(4608,i20.DateAdapter,i20.NativeDateAdapter,
-              ([] as any[])),i0.ɵmpd(4608,i19.MdMutationObserverFactory,i19.MdMutationObserverFactory,
+              i21.RequestOptions]),i0.ɵmpd(4608,i20.MdIconRegistry,i20.MdIconRegistry,
+              [[2,i21.Http],i14.DomSanitizer]),i0.ɵmpd(4608,i22.GetRecordService,i22.GetRecordService,
+              [i21.Http]),i0.ɵmpd(4608,i20.DateAdapter,i20.NativeDateAdapter,([] as any[])),
+          i0.ɵmpd(4608,i19.MdMutationObserverFactory,i19.MdMutationObserverFactory,
               ([] as any[])),i0.ɵmpd(5120,i20.UniqueSelectionDispatcher,i20.ɵh,[[3,
               i20.UniqueSelectionDispatcher]]),i0.ɵmpd(4608,i23.SearchService,i23.SearchService,
               [i21.Http]),i0.ɵmpd(5120,i24.ActivatedRoute,i24.ɵf,[i24.Router]),i0.ɵmpd(4608,
@@ -195,19 +195,19 @@ export const AppModuleNgFactory:i0.NgModuleFactory<i1.AppModule> = i0.ɵcmf(i1.A
               i43.EditSalesModule,([] as any[])),i0.ɵmpd(512,i21.HttpModule,i21.HttpModule,
               ([] as any[])),i0.ɵmpd(512,i44.EditProductModule,i44.EditProductModule,
               ([] as any[])),i0.ɵmpd(512,i45.CreateSalesModule,i45.CreateSalesModule,
-              ([] as any[])),i0.ɵmpd(512,i46.ViewSalesModule,i46.ViewSalesModule,([] as any[])),
-          i0.ɵmpd(512,i20.MdIconModule,i20.MdIconModule,([] as any[])),i0.ɵmpd(512,
-              i20.NativeDateModule,i20.NativeDateModule,([] as any[])),i0.ɵmpd(512,
-              i20.MdNativeDateModule,i20.MdNativeDateModule,([] as any[])),i0.ɵmpd(512,
-              i19.ObserveContentModule,i19.ObserveContentModule,([] as any[])),i0.ɵmpd(512,
-              i20.MdTabsModule,i20.MdTabsModule,([] as any[])),i0.ɵmpd(512,i20.MdRadioModule,
-              i20.MdRadioModule,([] as any[])),i0.ɵmpd(512,i47.RadioButtonModule,i47.RadioButtonModule,
-              ([] as any[])),i0.ɵmpd(512,i48.CustumTableModule,i48.CustumTableModule,
-              ([] as any[])),i0.ɵmpd(512,i49.AddClassificationModule,i49.AddClassificationModule,
-              ([] as any[])),i0.ɵmpd(512,i50.ModalBoxModule,i50.ModalBoxModule,([] as any[])),
-          i0.ɵmpd(512,i51.ViewProductModule,i51.ViewProductModule,([] as any[])),i0.ɵmpd(512,
-              i52.CreateProductModule,i52.CreateProductModule,([] as any[])),i0.ɵmpd(512,
-              i1.AppModule,i1.AppModule,([] as any[])),i0.ɵmpd(256,i20.MD_DATE_FORMATS,
-              i20.MD_NATIVE_DATE_FORMATS,([] as any[]))]);
+              ([] as any[])),i0.ɵmpd(512,i46.AddClassificationModule,i46.AddClassificationModule,
+              ([] as any[])),i0.ɵmpd(512,i20.MdIconModule,i20.MdIconModule,([] as any[])),
+          i0.ɵmpd(512,i47.ModalBoxModule,i47.ModalBoxModule,([] as any[])),i0.ɵmpd(512,
+              i48.ViewSalesModule,i48.ViewSalesModule,([] as any[])),i0.ɵmpd(512,i20.NativeDateModule,
+              i20.NativeDateModule,([] as any[])),i0.ɵmpd(512,i20.MdNativeDateModule,
+              i20.MdNativeDateModule,([] as any[])),i0.ɵmpd(512,i19.ObserveContentModule,
+              i19.ObserveContentModule,([] as any[])),i0.ɵmpd(512,i20.MdTabsModule,
+              i20.MdTabsModule,([] as any[])),i0.ɵmpd(512,i20.MdRadioModule,i20.MdRadioModule,
+              ([] as any[])),i0.ɵmpd(512,i49.RadioButtonModule,i49.RadioButtonModule,
+              ([] as any[])),i0.ɵmpd(512,i50.CustumTableModule,i50.CustumTableModule,
+              ([] as any[])),i0.ɵmpd(512,i51.ViewProductModule,i51.ViewProductModule,
+              ([] as any[])),i0.ɵmpd(512,i52.CreateProductModule,i52.CreateProductModule,
+              ([] as any[])),i0.ɵmpd(512,i1.AppModule,i1.AppModule,([] as any[])),
+          i0.ɵmpd(256,i20.MD_DATE_FORMATS,i20.MD_NATIVE_DATE_FORMATS,([] as any[]))]);
     });
 //# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvYXBwLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL2FwcC5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=

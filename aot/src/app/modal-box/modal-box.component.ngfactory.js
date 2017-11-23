@@ -9,77 +9,65 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = require("./modal-box.component.css.shim.ngstyle");
 var i1 = require("@angular/core");
 var i2 = require("@angular/common");
-var i3 = require("../classification-center/add-classification/add-classification.component.ngfactory");
-var i4 = require("../../../../src/app/classification-center/add-classification/add-classification.component");
-var i5 = require("@angular/forms");
-var i6 = require("../../../../src/app/services/add-classification.service");
-var i7 = require("../../../../src/app/services/search.service");
-var i8 = require("../../../node_modules/@angular/material/typings/index.ngfactory");
-var i9 = require("@angular/material");
-var i10 = require("../../../../src/app/modal-box/modal-box.component");
+var i3 = require("../../../../src/app/modal-box/modal-box.component");
 var styles_ModalBoxComponent = [i0.styles];
 exports.RenderType_ModalBoxComponent = i1.ɵcrt({ encapsulation: 0,
     styles: styles_ModalBoxComponent, data: {} });
 function View_ModalBoxComponent_2(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'span', [], null, null, null, null, null)), (_l()(),
-            i1.ɵted(null, ['Delete']))], null, null);
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 4, 'div', [], null, null, null, null, null)), (_l()(),
+            i1.ɵted(null, ['\n            '])), (_l()(), i1.ɵeld(0, null, null, 1, 'h2', [], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['Are you sure you want to delete this record?'])),
+        (_l()(), i1.ɵted(null, ['\n        ']))], null, null);
 }
 function View_ModalBoxComponent_1(_l) {
-    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 29, 'div', [['class',
+    return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 27, 'div', [['class',
                 'modalContent']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 26, 'div', [['class', 'modalMain']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n        '])),
-        (_l()(), i1.ɵeld(0, null, null, 3, 'div', [['class', 'modalHeader']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['Add Classification '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ModalBoxComponent_2)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class', 'modalBody'], ['style', 'margin-left: 10px;']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n        \n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'add-classification', [], null, [[null,
-                'credentialsChange']], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (('credentialsChange' === en)) {
-                var pd_0 = ((_co.ids = $event) !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, i3.View_AddClassificationComponent_0, i3.RenderType_AddClassificationComponent)),
-        i1.ɵdid(638976, null, 0, i4.AddClassificationComponent, [i5.FormBuilder,
-            i6.AddClassificationService, i7.SearchService], { credentials: [0, 'credentials'] }, null), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'div', [['class',
-                'modalFooter']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n\n\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 9, 'div', [['style',
-                'width: 100%; height: 25px; position: fixed; background-color:white;']], null, null, null, null, null)),
-        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 6, 'span', [['style', ' float: right;']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n'])), (_l()(),
-            i1.ɵeld(0, null, null, 3, 'md-icon', [['class', 'mat-icon'],
-                ['role', 'img']], null, [[null, 'click']], function (_v, en, $event) {
+        (_l()(), i1.ɵted(null, ['\n    '])), (_l()(), i1.ɵeld(0, null, null, 24, 'div', [['class', 'modalMain']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n        '])),
+        (_l()(), i1.ɵeld(0, null, null, 0, 'div', [['class', 'modalHeader']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n        '])), (_l()(), i1.ɵeld(0, null, null, 4, 'div', [['class', 'modalBody'], ['style', 'margin-left: 10px;']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n        \n        '])), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_ModalBoxComponent_2)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'div', [['class',
+                'modalFooter']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 10, 'div', [['style',
+                'width: 100%; height: 50px; position: fixed; background-color:white; padding-right:50px; ']], null, null, null, null, null)),
+        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 7, 'span', [['style', ' float: right;']], null, null, null, null, null)), (_l()(), i1.ɵted(null, ['\n'])), (_l()(),
+            i1.ɵeld(0, null, null, 1, 'button', [['class', 'btn btn-default'],
+                ['style', 'width:140px']], null, [[null, 'click']], function (_v, en, $event) {
                 var ad = true;
                 var _co = _v.component;
                 if (('click' === en)) {
-                    var pd_0 = (_co.update() !== false);
+                    var pd_0 = (_co.responseToCall(true) !== false);
                     ad = (pd_0 && ad);
                 }
                 return ad;
-            }, i8.View_MdIcon_0, i8.RenderType_MdIcon)), i1.ɵdid(16384, null, 0, i9.MdPrefixRejector, [[2, i9.MATERIAL_COMPATIBILITY_MODE], i1.ElementRef], null, null), i1.ɵdid(638976, null, 0, i9.MdIcon, [i1.Renderer2, i1.ElementRef,
-            i9.MdIconRegistry, [8, null]], null, null), (_l()(),
-            i1.ɵted(0, ['close'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n\n']))], function (_ck, _v) {
+            }, null, null)), (_l()(), i1.ɵted(null, ['Delete Record'])),
+        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵeld(0, null, null, 1, 'button', [['class', 'btn btn-default'], ['style', 'width:140px']], null, [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            var _co = _v.component;
+            if (('click' === en)) {
+                var pd_0 = (_co.responseToCall(false) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), (_l()(), i1.ɵted(null, ['Cancel'])),
+        (_l()(), i1.ɵted(null, ['\n'])), (_l()(), i1.ɵted(null, ['\n'])),
+        (_l()(), i1.ɵted(null, ['\n\n'])), (_l()(), i1.ɵted(null, ['\n\n']))], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_0 = (_co.method === 'delete');
-        _ck(_v, 7, 0, currVal_0);
-        var currVal_1 = _co.ids;
-        _ck(_v, 12, 0, currVal_1);
-        _ck(_v, 24, 0);
+        var currVal_0 = (_co.modalType == 'delete');
+        _ck(_v, 9, 0, currVal_0);
     }, null);
 }
 function View_ModalBoxComponent_0(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵand(16777216, null, null, 1, null, View_ModalBoxComponent_1)), i1.ɵdid(16384, null, 0, i2.NgIf, [i1.ViewContainerRef,
             i1.TemplateRef], { ngIf: [0, 'ngIf'] }, null)], function (_ck, _v) {
         var _co = _v.component;
-        var currVal_0 = (_co.from && _co.ids);
+        var currVal_0 = _co.modalType;
         _ck(_v, 1, 0, currVal_0);
     }, null);
 }
 exports.View_ModalBoxComponent_0 = View_ModalBoxComponent_0;
 function View_ModalBoxComponent_Host_0(_l) {
     return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, null, null, 1, 'modal-box', [], null, null, null, View_ModalBoxComponent_0, exports.RenderType_ModalBoxComponent)),
-        i1.ɵdid(49152, null, 0, i10.ModalBoxComponent, [], null, null)], null, null);
+        i1.ɵdid(49152, null, 0, i3.ModalBoxComponent, [], null, null)], null, null);
 }
 exports.View_ModalBoxComponent_Host_0 = View_ModalBoxComponent_Host_0;
-exports.ModalBoxComponentNgFactory = i1.ɵccf('modal-box', i10.ModalBoxComponent, View_ModalBoxComponent_Host_0, { from: 'from', method: 'method',
-    ids: 'ids', modalType: 'modalType' }, { displayModal: 'displayModal' }, []);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvbW9kYWwtYm94L21vZGFsLWJveC5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9tb2RhbC1ib3gvbW9kYWwtYm94LmNvbXBvbmVudC50cyIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvbW9kYWwtYm94L21vZGFsLWJveC5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvbW9kYWwtYm94L21vZGFsLWJveC5jb21wb25lbnQudHMuTW9kYWxCb3hDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2ICpuZ0lmPVwiZnJvbSAmJiBpZHNcIiBjbGFzcz1cIm1vZGFsQ29udGVudFwiPlxuICAgIDxkaXYgY2xhc3M9XCJtb2RhbE1haW5cIj5cbiAgICAgICAgPGRpdiBjbGFzcz1cIm1vZGFsSGVhZGVyXCI+QWRkIENsYXNzaWZpY2F0aW9uIDxzcGFuICpuZ0lmPVwibWV0aG9kPT09J2RlbGV0ZSdcIj5EZWxldGU8L3NwYW4+PC9kaXY+XG4gICAgICAgIDxkaXYgY2xhc3M9XCJtb2RhbEJvZHlcIiBzdHlsZT1cIm1hcmdpbi1sZWZ0OiAxMHB4O1wiPlxuICAgICAgICBcbjxhZGQtY2xhc3NpZmljYXRpb24gWyhjcmVkZW50aWFscyldPVwiaWRzXCI+PC9hZGQtY2xhc3NpZmljYXRpb24+XG5cbjwvZGl2PlxuPGRpdiBjbGFzcz1cIm1vZGFsRm9vdGVyXCI+XG5cblxuPC9kaXY+XG48ZGl2IHN0eWxlPVwid2lkdGg6IDEwMCU7IGhlaWdodDogMjVweDsgcG9zaXRpb246IGZpeGVkOyBiYWNrZ3JvdW5kLWNvbG9yOndoaXRlO1wiPlxuPHNwYW4gc3R5bGU9XCIgZmxvYXQ6IHJpZ2h0O1wiPlxuPG1kLWljb24gKGNsaWNrKT1cInVwZGF0ZSgpXCI+Y2xvc2U8L21kLWljb24+XG48L3NwYW4+XG48L2Rpdj5cblxuPC9kaXY+XG5cbjwvZGl2PiIsIjxtb2RhbC1ib3g+PC9tb2RhbC1ib3g+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7b0JDRW9EO01BQUEsd0VBQWdDO2FBQUE7OztvQkFGcEY7TUFBQTtNQUE4QywyQ0FDMUM7VUFBQTtVQUFBLDhCQUF1QjtNQUNuQjtVQUFBO01BQXlCLHdEQUFtQjtVQUFBLDhFQUFBO1VBQUE7VUFBQSxlQUFtRCwrQ0FDL0Y7VUFBQTtVQUFBO01BQWtELGlEQUUxRDtVQUFBO2NBQUE7WUFBQTtZQUFBO1lBQW9CO2NBQUE7Y0FBQTtZQUFBO1lBQXBCO1VBQUE7YUFBQTtzREFBQTtVQUFBLGVBQStELHlDQUV6RDtVQUFBLFNBQ047VUFBQTtVQUFBLGdCQUF5QiwyQ0FHbkI7VUFBQSxTQUNOO1VBQUE7VUFBQTtNQUFpRix1Q0FDakY7VUFBQTtVQUFBLDhCQUE2Qix1Q0FDN0I7aUJBQUE7Y0FBQTtZQUFBO1lBQUE7WUFBUztjQUFBO2NBQUE7WUFBQTtZQUFUO1VBQUEsaURBQUE7OEJBQUE7VUFBQSxzQkFBQTs0QkFBQSxnREFBNEI7aUJBQUEsZUFBZSx1Q0FDcEM7VUFBQSxTQUNELHlDQUVBO1VBQUE7O0lBaEJvRDtJQUFOLFdBQU0sU0FBTjtJQUdoQztJQUFwQixZQUFvQixTQUFwQjtJQVNBOzs7O29CQWRBO01BQUEsa0NBQUE7b0JBQUE7O0lBQUs7SUFBTCxXQUFLLFNBQUw7Ozs7b0JDQUE7TUFBQTthQUFBO1VBQUE7Ozs7In0=
+exports.ModalBoxComponentNgFactory = i1.ɵccf('modal-box', i3.ModalBoxComponent, View_ModalBoxComponent_Host_0, { from: 'from', modalType: 'modalType' }, { fireBack: 'fireBack' }, []);
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvbW9kYWwtYm94L21vZGFsLWJveC5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9tb2RhbC1ib3gvbW9kYWwtYm94LmNvbXBvbmVudC50cyIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvbW9kYWwtYm94L21vZGFsLWJveC5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvbW9kYWwtYm94L21vZGFsLWJveC5jb21wb25lbnQudHMuTW9kYWxCb3hDb21wb25lbnRfSG9zdC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbIiAiLCI8ZGl2ICpuZ0lmPVwibW9kYWxUeXBlXCIgY2xhc3M9XCJtb2RhbENvbnRlbnRcIj5cbiAgICA8ZGl2IGNsYXNzPVwibW9kYWxNYWluXCI+XG4gICAgICAgIDxkaXYgY2xhc3M9XCJtb2RhbEhlYWRlclwiPjwvZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzPVwibW9kYWxCb2R5XCIgc3R5bGU9XCJtYXJnaW4tbGVmdDogMTBweDtcIj5cbiAgICAgICAgXG4gICAgICAgIDxkaXYgKm5nSWY9XCJtb2RhbFR5cGUgPT0gJ2RlbGV0ZSdcIj5cbiAgICAgICAgICAgIDxoMj5BcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gZGVsZXRlIHRoaXMgcmVjb3JkPzwvaDI+XG4gICAgICAgIDwvZGl2PlxuXG48L2Rpdj5cbjxkaXYgY2xhc3M9XCJtb2RhbEZvb3RlclwiPlxuPC9kaXY+XG48ZGl2IHN0eWxlPVwid2lkdGg6IDEwMCU7IGhlaWdodDogNTBweDsgcG9zaXRpb246IGZpeGVkOyBiYWNrZ3JvdW5kLWNvbG9yOndoaXRlOyBwYWRkaW5nLXJpZ2h0OjUwcHg7IFwiPlxuPHNwYW4gc3R5bGU9XCIgZmxvYXQ6IHJpZ2h0O1wiPlxuPGJ1dHRvbiBjbGFzcz1cImJ0biBidG4tZGVmYXVsdFwiIChjbGljayk9XCJyZXNwb25zZVRvQ2FsbCh0cnVlKVwiIHN0eWxlPVwid2lkdGg6MTQwcHhcIj5EZWxldGUgUmVjb3JkPC9idXR0b24+XG48YnV0dG9uIGNsYXNzPVwiYnRuIGJ0bi1kZWZhdWx0XCIgKGNsaWNrKT1cInJlc3BvbnNlVG9DYWxsKGZhbHNlKVwiIHN0eWxlPVwid2lkdGg6MTQwcHhcIj5DYW5jZWw8L2J1dHRvbj5cbjwvc3Bhbj5cbjwvZGl2PlxuXG48L2Rpdj5cblxuPC9kaXY+IiwiPG1vZGFsLWJveD48L21vZGFsLWJveD4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7O29CQ0tRO01BQUEsd0VBQW1DO2FBQUEsb0NBQy9CO01BQUE7TUFBQSxnQkFBSTtNQUFpRDs7O29CQU5qRTtNQUFBO01BQTRDLDJDQUN4QztVQUFBO1VBQUEsOEJBQXVCO01BQ25CO1VBQUE7TUFBK0IsK0NBQy9CO1VBQUE7VUFBQTtNQUFrRCx5REFFbEQ7VUFBQSw4RUFBQTtVQUFBO1VBQUEsZUFFTSx5Q0FFUjtVQUFBLFNBQ047VUFBQTtVQUFBLGdCQUF5Qix1Q0FDbkI7VUFBQSxTQUNOO1VBQUE7VUFBQTtNQUFzRyx1Q0FDdEc7VUFBQTtVQUFBLDhCQUE2Qix1Q0FDN0I7aUJBQUE7Y0FBQTt1QkFBQTtZQUFBO1lBQUE7WUFBZ0M7Y0FBQTtjQUFBO1lBQUE7WUFBaEM7VUFBQSxnQ0FBbUY7TUFBc0IsdUNBQ3pHO1VBQUE7VUFBQTtZQUFBO1lBQUE7WUFBZ0M7Y0FBQTtjQUFBO1lBQUE7WUFBaEM7VUFBQSxnQ0FBb0Y7TUFBZSx1Q0FDNUY7TUFDRCx5Q0FFQTs7O1FBZE87UUFBTCxXQUFLLFNBQUw7Ozs7b0JBTFI7TUFBQSxrQ0FBQTtvQkFBQTs7SUFBSztJQUFMLFdBQUssU0FBTDs7OztvQkNBQTtNQUFBO2FBQUE7VUFBQTs7OzsifQ==
 //# sourceMappingURL=modal-box.component.ngfactory.js.map

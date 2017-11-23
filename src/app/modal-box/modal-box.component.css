@@ -30,7 +30,7 @@
     left:50%;     
     position: absolute;
     transform: translate(-50%,-50%);
-    width: 80%;
+    width: 60%;
     
     margin: auto;
 
@@ -54,5 +54,6 @@ md-icon{
     max-height: 80%;
     overflow: auto;
     z-index: 102;
+    padding-left:110px;
 
 }

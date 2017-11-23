@@ -5,22 +5,16 @@
 </div>
 <div class="col-md-6" style="text-align: right" >
 
-<button class="btn btn-default">Delete Sales</button>
+<button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Sales</button>
 <button class="btn btn-default" (click)="callEdit()">Edit Sales</button>
 
 
 </div>
 </div>
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Label 1</a></li>
-    <li><a data-toggle="tab" href="#menu1">Label 2 </a></li>
-    <li><a data-toggle="tab" href="#menu2">Label 3</a></li>
-    <li><a data-toggle="tab" href="#menu3">Label 4</a></li>
-  </ul>
 
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-  <table style="width:100%; margin-top:10px;">
+
+
+<table style="width:100%; margin-top:10px;">
     <tr>
         <th>Sales UPC</th>
         <td>{{salesData.sales_upc}}</td>
@@ -59,12 +53,6 @@
         <th>Classification Type</th>
         <td>{{salesData.classification_type}}</td>
     </tr>
-  </table>
-    
-    </div>
-    <div id="menu1" class="tab-pane fade">
-
-<table style="width:100%; margin-top:10px;">
     <tr>
         <th>Kilo volume</th>
         <td>{{salesData.kilo_volume}}</td>
@@ -104,14 +92,7 @@
         <th>Kilo volume rank</th>
         <td>{{salesData.kilo_volume_rank}}</td>
     </tr>
-  </table>
-
-
-    </div>
-    <div id="menu2" class="tab-pane fade">
-
-  <table style="width:100%; margin-top:10px;">
-    <tr>
+     <tr>
         <th>Average retail price</th>
         <td>{{salesData.average_retail_price}}</td>
     </tr>
@@ -140,13 +121,7 @@
         <th>Nielsen Category</th>
         <td>{{salesData.nielsen_category}}</td>
     </tr>
-
-  </table>
-
-    </div>
-    <div id="menu3" class="tab-pane fade">
-  <table style="width:100%; margin-top:10px;">
-    <tr>
+        <tr>
         <th>Collection date</th>
         <td>{{salesData.sales_collection_date}}</td>
     </tr>
@@ -162,16 +137,12 @@
         <th>Edited by</th>
         <td>{{salesData.edited_by}}</td>
     </tr>
-
-
   </table>
 
 
+  
 
 
-
-    </div>
-  </div>
 </div>
 <div *ngIf="editFields">
 <edit-sales [salesField]="editFields"
@@ -182,3 +153,6 @@
 </edit-sales>
 </div>
 <confirm-box [flag]="flag"></confirm-box>
+<modal-box [modalType]="type"
+            (fireBack)="responseFromModal($event)">
+            </modal-box>

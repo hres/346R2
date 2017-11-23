@@ -358,3 +358,55 @@ export type  labelFieldsView = {
        status: number ;
 
     }
+         export type   DeleteResponse = {
+       message: string;
+       status: number
+   }
+
+   export type labelCreateFields = {
+product_id: number; 
+ package_description: string;                    
+ package_upc: string;                             
+ package_brand : string;                          
+ package_manufacturer : string;                   
+ package_country  : string;                       
+ package_size  : number;                         
+ package_size_unit_of_measure  : string;         
+ storage_type      : string;                      
+ storage_statements  : string;                    
+ health_claims  : string;                         
+ other_package_statements   : string;             
+ suggested_directions: string;                    
+ ingredients      : string;                       
+ multi_part_flag             : boolean;           
+ nutrition_fact_table : string;                   
+ as_prepared_per_serving_amount       : number;     
+ as_prepared_unit_of_measure      : string;       
+ as_sold_per_serving_amount        : number;        
+ as_sold_unit_of_measure      : string;           
+ as_prepared_per_serving_amount_in_grams: number;   
+ as_sold_per_serving_amount_in_grams  : number;     
+ package_comment      : string;                   
+ package_source     : string;                     
+ package_product_description     : string;        
+ package_collection_date    : string;             
+ number_of_units      : number;                              
+ edited_by       : string;                                       
+ informed_dining_program  : string;               
+ nft_last_update_date      : string;              
+ product_grouping      : number;                    
+ child_item       : boolean; 
+ package_classification_number : number | string;  
+  package_classification_name :  string;    
+  nielsen_item_rank: string;   
+  nutrient_claims: string              
+
+   }
+
+export type labelNft = {
+    amount: number | string;
+    unit_of_measure: string;
+    flag: boolean;
+    daily_value_amount: number | string;
+    labelId?: number; 
+}

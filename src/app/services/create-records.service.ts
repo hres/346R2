@@ -39,6 +39,16 @@ console.log('here', queryString);
             .post('http://localhost:8080/fcdr-rest-service/rest/SalesService/insert', queryString, this.options)
             .map(response => response.json() as UpdateResponse)
     }
+     createLabel(queryString: string): Observable<UpdateResponse> {
+
+console.log('here', queryString);
+        return this.http
+            .post('http://localhost:8080/fcdr-rest-service/rest/SalesService/insert', queryString, this.options)
+            .map(response => response.json() as UpdateResponse)
+    }
 
 
 }
+
+
+

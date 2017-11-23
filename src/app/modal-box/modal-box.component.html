@@ -1,18 +1,19 @@
-<div *ngIf="from && ids" class="modalContent">
+<div *ngIf="modalType" class="modalContent">
     <div class="modalMain">
-        <div class="modalHeader">Add Classification <span *ngIf="method==='delete'">Delete</span></div>
+        <div class="modalHeader"></div>
         <div class="modalBody" style="margin-left: 10px;">
         
-<add-classification [(credentials)]="ids"></add-classification>
+        <div *ngIf="modalType == 'delete'">
+            <h2>Are you sure you want to delete this record?</h2>
+        </div>
 
 </div>
 <div class="modalFooter">
-
-
 </div>
-<div style="width: 100%; height: 25px; position: fixed; background-color:white;">
+<div style="width: 100%; height: 50px; position: fixed; background-color:white; padding-right:50px; ">
 <span style=" float: right;">
-<md-icon (click)="update()">close</md-icon>
+<button class="btn btn-default" (click)="responseToCall(true)" style="width:140px">Delete Record</button>
+<button class="btn btn-default" (click)="responseToCall(false)" style="width:140px">Cancel</button>
 </span>
 </div>
 

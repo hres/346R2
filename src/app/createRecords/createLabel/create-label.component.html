@@ -1,0 +1,342 @@
+<div class="DivHeader" style="margin-bottom: 60px;">
+<div class="DivLogo">
+    Create Sales
+</div>
+
+<div class="bodycard">
+    <md-card style="background-color: #f5f5f5">
+
+<div class="well2">
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="labelForm">
+
+
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="informedDiningProgram">Informed Dining Program </label>
+                <input type="text" class="form-control" id="informedDiningProgram" placeholder="Informed Dining Program" formControlName="informed_dining_program">
+                <!--<div *ngIf="formErrors.informed_dining_program" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.informed_dining_program}}</span>
+                </div>-->
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="nftLastUpdate">NFT Last Update </label>
+                <input type="text" class="form-control" id="nftLastUpdate" placeholder="NFT Last Update" formControlName="nft_last_update">
+                <!--<div *ngIf="formErrors.nft_last_update" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.nft_last_update}}</span>
+                </div>-->
+
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="childItem">Child Item </label>
+                <input type="text" class="form-control" id="childItem" placeholder="Child Item" formControlName="child_item">
+                <!--<div *ngIf="formErrors.child_item" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.child_item}}</span>
+                </div>-->
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="productGrouping">Product Grouping</label>
+                <input type="text" class="form-control" id="productGrouping" placeholder="Product Grouping" formControlName="product_grouping">
+
+                <!--<div *ngIf="formErrors.product_grouping" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.product_grouping}}</span>
+                </div>-->
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="packageUpc" class="required">Label UPC <strong class="required">(required)</strong></label>
+                <input type="text" class="form-control" id="packageUpc" placeholder="Label UPC" formControlName="package_upc">
+                <!--<div *ngIf="formErrors.package_upc" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.package_upc}}</span>
+                </div>-->
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="packageDescription" class="required">Label Description <strong class="required">(required)</strong></label>
+                <input type="text" class="form-control" id="packageDescription" placeholder="Sales Source" formControlName="package_description">
+                <!--
+                <div *ngIf="formErrors.package_description" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.package_description}}</span>
+                </div>-->
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="form-group col-sm-4" *ngIf="listOfClass">
+                <label for="packageClassificationName">Classification Name</label>
+                <select class="form-control" id="packageClassificationName" formControlName="package_classification_name">
+                <option value="" selected>Select a Classification Name</option>
+                <option *ngFor="let class of listOfClass;let i = index" [value]="class.classification_name">{{class.classification_name}}</option>
+
+    </select>
+
+
+            </div>
+            <div class="form-group col-sm-4" *ngIf="listOfClass">
+                <label for="packageClassificationNumber">Classification Number</label>
+                <select class="form-control" id="packageClassificationNumber" formControlName="package_classification_number">
+      <option value="" selected>Select a Classification Number</option>
+      <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
+     
+
+</select>
+
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="nielsenItemRank">Nielsen Item Rank UPC</label>
+                <input type="text" class="form-control" id="nielsenItemRank" placeholder="Nielsen Item Rank UPC" formControlName="nielsen_item_rank">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="nielsenCategory">Nielsen Category</label>
+                <input type="text" class="form-control" id="nielsenCategory" placeholder="Nielsen Category" formControlName="package_nielsen_category">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="packageBrand">Brand</label>
+                <input type="text" class="form-control" id="packageBrand" placeholder="Brand" formControlName="package_brand">
+
+            </div>
+
+
+            <div class="form-group col-sm-4">
+
+                <label for="packageManufacturer">Manufacturer </label>
+                <input type="text" class="form-control" id="packageManufacturer" placeholder="Manufacturer" formControlName="package_manufacturer">
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-sm-4">
+                <label for="packageCountry">Country</label>
+                <input type="text" class="form-control" id="packageCountry" placeholder="Manufacturer" formControlName="package_country">
+
+            </div>
+
+            <div class="form-group col-sm-4">
+
+                <label for="packageSize">Net Quantity</label>
+                <input type="text" class="form-control" id="packageSize" placeholder="Net Quantity" formControlName="package_size">
+                <!--<div *ngIf="formErrors.package_size" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.package_size}}</span>
+                </div>-->
+            </div>
+
+
+
+
+            <div class="form-group col-sm-4">
+                <label for="packageSizeUnitOfMeasure">Net Quantity unit of measure</label>
+                <select class="form-control" id="packageSizeUnitOfMeasure" formControlName="package_size_unit_of_measure">
+
+			<option value="" selected>Select a Unit of Measure</option>
+			  <option value="g" >g</option>
+			<option value="l">l</option>
+			 </select>
+            </div>
+        </div>
+
+            <div class="row">
+
+                <div class="form-group col-sm-6">
+                    <label for="numberOfUnits">Number of Units</label>
+                    <input type="text" class="form-control" id="numberOfUnits" placeholder="Number of Units" style="width:540px" formControlName="number_of_units">
+<!--<div *ngIf="formErrors.number_of_units" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.number_of_units}}</span>
+                </div>-->
+</div>
+
+<div class="form-group col-sm-6">
+    <label for="multiPartPackage">Multi Part Package?</label>
+    <select class="form-control" id="multiPartPackage" formControlName="multi_part_flag" style="width:540px">
+
+<option value="" selected>Select a Multi Part Package</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+</div>
+
+
+
+
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+        <label for="Ingredients">Ingredients</label>
+        <textarea class="form-control" id="Ingredients" placeholder="Ingredients" formControlName="ingredients" rows="2">
+                </textarea>
+
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-sm-12">
+        <label for="nutritionFactTable">Ingredients</label>
+        <textarea class="form-control" id="nutritionFactTable" placeholder="Nutrition Fact Table" formControlName="nutrition_fact_table"
+            rows="2">
+                </textarea>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+
+        <label for="suggestedDirections">Suggested Direction </label>
+        <input type="text" class="form-control" id="suggestedDirections" placeholder="Suggested Directions" formControlName="suggested_directions">
+
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+
+        <label for="nutrientClaims">Nutrient Claims </label>
+        <input type="text" class="form-control" id="nutrientClaims" placeholder="Nutrient Claims" formControlName="nutrient_claims">
+
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+
+        <label for="otherPackageStatements">Other Package Statements </label>
+        <input type="text" class="form-control" id="otherPackageStatements" placeholder="Other Package Statements" formControlName="other_package_statements">
+
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+
+        <label for="healthClaims">Health Claims </label>
+        <input type="text" class="form-control" id="healthClaims" placeholder="Health Claims" formControlName="health_claims">
+
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+
+        <label for="storageStatements">Storage Statements </label>
+        <input type="text" class="form-control" id="storageStatements" placeholder="Storage Statements" formControlName="storage_statements">
+
+
+    </div>
+
+</div>
+
+
+<div class="row">
+
+    <div class="form-group col-sm-4">
+        <label for="packageComments">Comments</label>
+        <input type="text" class="form-control" id="packageComments" placeholder="Comments" formControlName="package_comments">
+
+    </div>
+
+    <div class="form-group col-sm-4">
+
+        <label for="packageCollectionDate">Collection Date</label>
+        <input type="text" class="form-control" id="packageCollectionDate" placeholder="++++++++++++" formControlName="package_collection_date">
+
+    </div>
+
+    <div class="form-group col-sm-4">
+
+        <label for="packageSource" class="required">Source <strong class="required">(required)</strong></label>
+        <input type="text" class="form-control" id="packageSource" placeholder=" Source" formControlName="package_source">
+        <!--
+                <div *ngIf="formErrors.package_source" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.package_source}}</span>
+                </div>-->
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="form-group col-sm-6">
+        <label for="asSoldPerServingAmountInGram">Per Serving Amount (grams)</label>
+        <input type="text" class="form-control" id="asSoldPerServingAmountInGram" style="width:540px" placeholder="Per Serving Amount (grams)" formControlName="as_sold_per_serving_amount_in_grams">
+<!--<div *ngIf="formErrors.as_sold_per_serving_amount_in_grams" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.as_sold_per_serving_amount_in_grams}}</span>
+                </div>-->
+</div>
+<div class="form-group col-sm-6">
+    <label for="numberOfUnits">PPD Per Serving Amount (grams)</label>
+    <input type="text" class="form-control" id="numberOfUnits" style="width:540px" placeholder="PPD Per Serving Amount (grams)" formControlName="as_prepared_per_serving_amount_in_grams">
+<!--<div *ngIf="formErrors.as_prepared_per_serving_amount_in_grams" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.as_prepared_per_serving_amount_in_grams}}</span>
+                </div>-->
+</div>
+
+
+
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-12">
+
+        <label for="productDescription">Product Description</label>
+        <input type="text" class="form-control" id="productDescription" placeholder="Product Description" formControlName="package_product_description">
+
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="form-group col-sm-12">
+        <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!labelForm.valid || labelForm.pristine || isLoading || submitted">Save</button>
+</div>
+
+</div>
+</form>
+</div>
+
+</md-card>
+</div>
+</div>
+
+<confirm-box [flag]="flag" *ngIf="flag"></confirm-box>
+
+<div *ngIf="isLoading">
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+</div>
+<div *ngIf="message">
+    {{message}}
+</div>

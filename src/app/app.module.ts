@@ -15,6 +15,8 @@ import { SearchService } from './services/search.service';
 import { AddClassificationService } from './services/add-classification.service';
 import { CreateRecordService } from './services/create-records.service';
 import { EditRecordService } from './services/edit-records.service'
+import { DeleteRecordService } from './services/delete-record.service'
+
 // import {NgSwitch} from '@angular/common'; {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule,
 
 
@@ -160,6 +162,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
    providers: [
         MdIconRegistry,
         SearchService,
+        
         AddClassificationService,
         CreateRecordService//,
         // EditRecordService

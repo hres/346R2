@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 // import {MdIconRegistry} from '@angular/material';
-import {DomSanitizer} from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -10,20 +10,24 @@ import {DomSanitizer} from '@angular/platform-browser';
 
 
 })
-export class ModalBoxComponent{
+export class ModalBoxComponent {
 
-  constructor() {
+    constructor() {
 
-  }
+    }
 
     @Input() from: string;
-     @Input() method: string;
-     @Input() ids:any;
 
-@Input() modalType: string;
-@Output() displayModal= new EventEmitter<boolean>();
+    @Input() modalType: string;
+    @Output() fireBack = new EventEmitter<boolean>();
 
-update(){
-    this.displayModal.emit(true);
-}
+    update() {
+        this.fireBack.emit(true);
+    }
+
+    responseToCall(value : boolean){
+        
+        this.fireBack.emit(value);
+
+    }
 }

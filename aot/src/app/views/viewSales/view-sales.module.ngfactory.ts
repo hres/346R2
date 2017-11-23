@@ -13,11 +13,16 @@ import * as i3 from '@angular/forms';
 import * as i4 from '@angular/cdk';
 import * as i5 from '@angular/platform-browser';
 import * as i6 from '@angular/material';
-import * as i7 from '../../../../../src/app/services/getRecord.service';
-import * as i8 from '@angular/http';
-import * as i9 from '../../../../../src/app/confirmbox/confirm-box.module';
-import * as i10 from '@angular/router';
-import * as i11 from '../../../../../src/app/editForms/editSales/edit-sales.module';
+import * as i7 from '@angular/animations/browser';
+import * as i8 from '@angular/platform-browser/animations';
+import * as i9 from '@angular/http';
+import * as i10 from '@angular/animations';
+import * as i11 from '../../../../../src/app/services/getRecord.service';
+import * as i12 from '../../../../../src/app/confirmbox/confirm-box.module';
+import * as i13 from '@angular/router';
+import * as i14 from '../../../../../src/app/editForms/editSales/edit-sales.module';
+import * as i15 from '../../../../../src/app/classification-center/add-classification/add-classification.module';
+import * as i16 from '../../../../../src/app/modal-box/modal-box.module';
 export const ViewSalesModuleNgFactory:i0.NgModuleFactory<i1.ViewSalesModule> = i0.ɵcmf(i1.ViewSalesModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -41,12 +46,28 @@ export const ViewSalesModuleNgFactory:i0.NgModuleFactory<i1.ViewSalesModule> = i
               i5.EventManager,i5.EventManager,[i5.EVENT_MANAGER_PLUGINS,i0.NgZone]),
           i0.ɵmpd(135680,i5.ɵDomSharedStylesHost,i5.ɵDomSharedStylesHost,[i2.DOCUMENT]),
           i0.ɵmpd(4608,i5.ɵDomRendererFactory2,i5.ɵDomRendererFactory2,[i5.EventManager,
-              i5.ɵDomSharedStylesHost]),i0.ɵmpd(6144,i0.RendererFactory2,(null as any),
-              [i5.ɵDomRendererFactory2]),i0.ɵmpd(6144,i5.ɵSharedStylesHost,(null as any),
-              [i5.ɵDomSharedStylesHost]),i0.ɵmpd(4608,i0.Testability,i0.Testability,
-              [i0.NgZone]),i0.ɵmpd(4608,i5.Meta,i5.Meta,[i2.DOCUMENT]),i0.ɵmpd(4608,
-              i5.Title,i5.Title,[i2.DOCUMENT]),i0.ɵmpd(4608,i7.GetRecordService,i7.GetRecordService,
-              [i8.Http]),i0.ɵmpd(512,i2.CommonModule,i2.CommonModule,([] as any[])),
+              i5.ɵDomSharedStylesHost]),i0.ɵmpd(5120,i7.AnimationDriver,i8.ɵc,([] as any[])),
+          i0.ɵmpd(5120,i7.ɵAnimationStyleNormalizer,i8.ɵd,([] as any[])),i0.ɵmpd(4608,
+              i7.ɵAnimationEngine,i8.ɵb,[i7.AnimationDriver,i7.ɵAnimationStyleNormalizer]),
+          i0.ɵmpd(5120,i0.RendererFactory2,i8.ɵe,[i5.ɵDomRendererFactory2,i7.ɵAnimationEngine,
+              i0.NgZone]),i0.ɵmpd(6144,i5.ɵSharedStylesHost,(null as any),[i5.ɵDomSharedStylesHost]),
+          i0.ɵmpd(4608,i0.Testability,i0.Testability,[i0.NgZone]),i0.ɵmpd(4608,i5.Meta,
+              i5.Meta,[i2.DOCUMENT]),i0.ɵmpd(4608,i5.Title,i5.Title,[i2.DOCUMENT]),
+          i0.ɵmpd(5120,i6.ScrollDispatcher,i6.ɵe,[[3,i6.ScrollDispatcher],i0.NgZone,
+              i4.Platform]),i0.ɵmpd(5120,i6.ViewportRuler,i6.ɵc,[[3,i6.ViewportRuler],
+              i6.ScrollDispatcher]),i0.ɵmpd(4608,i6.ScrollStrategyOptions,i6.ScrollStrategyOptions,
+              [i6.ScrollDispatcher,i6.ViewportRuler]),i0.ɵmpd(4608,i4.InteractivityChecker,
+              i4.InteractivityChecker,[i4.Platform]),i0.ɵmpd(4608,i4.FocusTrapFactory,
+              i4.FocusTrapFactory,[i4.InteractivityChecker,i4.Platform,i0.NgZone]),
+          i0.ɵmpd(5120,i4.LiveAnnouncer,i4.LIVE_ANNOUNCER_PROVIDER_FACTORY,[[3,i4.LiveAnnouncer],
+              [2,i4.LIVE_ANNOUNCER_ELEMENT_TOKEN],i4.Platform]),i0.ɵmpd(5120,i6.OverlayContainer,
+              i6.ɵa,[[3,i6.OverlayContainer]]),i0.ɵmpd(4608,i6.ɵt,i6.ɵt,[i6.ViewportRuler]),
+          i0.ɵmpd(4608,i6.Overlay,i6.Overlay,[i6.ScrollStrategyOptions,i6.OverlayContainer,
+              i0.ComponentFactoryResolver,i6.ɵt,i0.ApplicationRef,i0.Injector,i0.NgZone]),
+          i0.ɵmpd(5120,i6.MdIconRegistry,i6.ICON_REGISTRY_PROVIDER_FACTORY,[[3,i6.MdIconRegistry],
+              [2,i9.Http],i5.DomSanitizer]),i0.ɵmpd(4608,i10.AnimationBuilder,i8.ɵBrowserAnimationBuilder,
+              [i0.RendererFactory2]),i0.ɵmpd(4608,i11.GetRecordService,i11.GetRecordService,
+              [i9.Http]),i0.ɵmpd(512,i2.CommonModule,i2.CommonModule,([] as any[])),
           i0.ɵmpd(512,i3.ɵba,i3.ɵba,([] as any[])),i0.ɵmpd(512,i3.ReactiveFormsModule,
               i3.ReactiveFormsModule,([] as any[])),i0.ɵmpd(512,i3.FormsModule,i3.FormsModule,
               ([] as any[])),i0.ɵmpd(512,i6.CompatibilityModule,i6.CompatibilityModule,
@@ -65,9 +86,23 @@ export const ViewSalesModuleNgFactory:i0.NgModuleFactory<i1.ViewSalesModule> = i
                   i0.ApplicationInitStatus]),i0.ɵmpd(2048,i0.ApplicationRef,(null as any),
               [i0.ɵe]),i0.ɵmpd(512,i0.ApplicationModule,i0.ApplicationModule,[i0.ApplicationRef]),
           i0.ɵmpd(512,i5.BrowserModule,i5.BrowserModule,[[3,i5.BrowserModule]]),i0.ɵmpd(512,
-              i9.ConfirmBoxModule,i9.ConfirmBoxModule,([] as any[])),i0.ɵmpd(512,i10.RouterModule,
-              i10.RouterModule,[[2,i10.ɵa],[2,i10.Router]]),i0.ɵmpd(512,i6.MdCardModule,
-              i6.MdCardModule,([] as any[])),i0.ɵmpd(512,i11.EditSalesModule,i11.EditSalesModule,
-              ([] as any[])),i0.ɵmpd(512,i1.ViewSalesModule,i1.ViewSalesModule,([] as any[]))]);
+              i12.ConfirmBoxModule,i12.ConfirmBoxModule,([] as any[])),i0.ɵmpd(512,
+              i13.RouterModule,i13.RouterModule,[[2,i13.ɵa],[2,i13.Router]]),i0.ɵmpd(512,
+              i6.MdCardModule,i6.MdCardModule,([] as any[])),i0.ɵmpd(512,i14.EditSalesModule,
+              i14.EditSalesModule,([] as any[])),i0.ɵmpd(512,i6.MdInputModule,i6.MdInputModule,
+              ([] as any[])),i0.ɵmpd(512,i6.ScrollDispatchModule,i6.ScrollDispatchModule,
+              ([] as any[])),i0.ɵmpd(512,i6.MdRippleModule,i6.MdRippleModule,([] as any[])),
+          i0.ɵmpd(512,i6.MdButtonModule,i6.MdButtonModule,([] as any[])),i0.ɵmpd(512,
+              i4.A11yModule,i4.A11yModule,([] as any[])),i0.ɵmpd(512,i4.PortalModule,
+              i4.PortalModule,([] as any[])),i0.ɵmpd(512,i6.OverlayModule,i6.OverlayModule,
+              ([] as any[])),i0.ɵmpd(512,i6.MdSidenavModule,i6.MdSidenavModule,([] as any[])),
+          i0.ɵmpd(512,i6.MdSelectionModule,i6.MdSelectionModule,([] as any[])),i0.ɵmpd(512,
+              i6.MdOptionModule,i6.MdOptionModule,([] as any[])),i0.ɵmpd(512,i6.MdSelectModule,
+              i6.MdSelectModule,([] as any[])),i0.ɵmpd(512,i15.AddClassificationModule,
+              i15.AddClassificationModule,([] as any[])),i0.ɵmpd(512,i6.MdIconModule,
+              i6.MdIconModule,([] as any[])),i0.ɵmpd(512,i8.BrowserAnimationsModule,
+              i8.BrowserAnimationsModule,([] as any[])),i0.ɵmpd(512,i16.ModalBoxModule,
+              i16.ModalBoxModule,([] as any[])),i0.ɵmpd(512,i1.ViewSalesModule,i1.ViewSalesModule,
+              ([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1NhbGVzL3ZpZXctc2FsZXMubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1NhbGVzL3ZpZXctc2FsZXMubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1NhbGVzL3ZpZXctc2FsZXMubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdmlld3Mvdmlld1NhbGVzL3ZpZXctc2FsZXMubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

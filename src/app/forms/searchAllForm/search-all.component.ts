@@ -240,9 +240,7 @@ this.isLoading = true;
 
                 this.tableData = null;
             //console.log("Here 204",data.dataList);
-            } else if (status){
-                this.noData = message;
-            }
+            } 
             else if (status === 200) {
                 this.emptyField = null;
                 this.count = data.count;
