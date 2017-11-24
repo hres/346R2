@@ -184,7 +184,7 @@ this.isLoading = true;
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData = data.dataList;
-                console.log("Here received",data.dataList);
+                console.log("Number of data",this.count);
 
 
                 for (var num = 0; num < this.settings.length; num++) {

@@ -36,6 +36,9 @@ import { EditSalesModule}  from './editForms/editSales/edit-sales.module';
 
 import { LabelFormComponent }  from './forms/labelForm/label-form.component'; 
 import { LabelFormModule}  from './forms/labelForm/label-form.module'; 
+import { CreateLabelModule }  from './createRecords/createLabel/create-label.module'; 
+import { CreateLabelComponent }  from './createRecords/createLabel/create-label.component'; 
+
 
 import { SearchAllModule }  from './forms/searchAllForm/search-all.module'; 
 import { SearchAllComponent }  from './forms/searchAllForm/search-all.component'; 
@@ -88,6 +91,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
       // MdCardModule,
       // MdDatepickerModule,
       SearchAllModule,
+      CreateLabelModule,
        MdIconModule,
       // MdInputModule,
        MdNativeDateModule,
@@ -117,6 +121,9 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
     {
     path: 'salescreate/:id',
     component: CreateSalesComponent
+  },{
+    path: 'add-label/:id',
+    component: CreateLabelComponent
   },
   {
     path: 'view-sales/:id',

@@ -1,6 +1,6 @@
 <div class="DivHeader" style="margin-bottom: 60px;">
 <div class="DivLogo">
-    Create Sales
+    Create Label
 </div>
 
 <div class="bodycard">
@@ -14,33 +14,36 @@
 
         <div class="row">
 
-            <div class="form-group col-sm-4">
-                <label for="informedDiningProgram">Informed Dining Program </label>
-                <input type="text" class="form-control" id="informedDiningProgram" placeholder="Informed Dining Program" formControlName="informed_dining_program">
-                <!--<div *ngIf="formErrors.informed_dining_program" class="errorMessages">
-                    <span class="textPosition">  {{formErrors.informed_dining_program}}</span>
-                </div>-->
 
+            <div class="form-group col-sm-4">
+                <label for="informedDiningProgram">Informed Dining Program</label>
+                <select class="form-control" id="informedDiningProgram" formControlName="informed_dining_program">
+
+			<option value="" selected></option>
+			  <option value="1" >Yes</option>
+			<option value="0">No</option>
+			 </select>
             </div>
 
             <div class="form-group col-sm-4">
 
                 <label for="nftLastUpdate">NFT Last Update </label>
-                <input type="text" class="form-control" id="nftLastUpdate" placeholder="NFT Last Update" formControlName="nft_last_update">
-                <!--<div *ngIf="formErrors.nft_last_update" class="errorMessages">
-                    <span class="textPosition">  {{formErrors.nft_last_update}}</span>
-                </div>-->
+                <input type="text" class="form-control" id="nftLastUpdate" placeholder="NFT Last Update" formControlName="nft_last_update_date">
+
 
             </div>
 
 
-            <div class="form-group col-sm-4">
 
-                <label for="childItem">Child Item </label>
-                <input type="text" class="form-control" id="childItem" placeholder="Child Item" formControlName="child_item">
-                <!--<div *ngIf="formErrors.child_item" class="errorMessages">
-                    <span class="textPosition">  {{formErrors.child_item}}</span>
-                </div>-->
+
+            <div class="form-group col-sm-4">
+                <label for="childItem">Child Item</label>
+                <select class="form-control" id="childItem" formControlName="child_item">
+
+			<option value="" selected></option>
+			  <option value="1" >Yes</option>
+			<option value="0">No</option>
+			 </select>
             </div>
         </div>
 
@@ -50,9 +53,9 @@
                 <label for="productGrouping">Product Grouping</label>
                 <input type="text" class="form-control" id="productGrouping" placeholder="Product Grouping" formControlName="product_grouping">
 
-                <!--<div *ngIf="formErrors.product_grouping" class="errorMessages">
+                <div *ngIf="formErrors.product_grouping" class="errorMessages">
                     <span class="textPosition">  {{formErrors.product_grouping}}</span>
-                </div>-->
+                </div>
             </div>
 
 
@@ -60,9 +63,9 @@
 
                 <label for="packageUpc" class="required">Label UPC <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="packageUpc" placeholder="Label UPC" formControlName="package_upc">
-                <!--<div *ngIf="formErrors.package_upc" class="errorMessages">
+                <div *ngIf="formErrors.package_upc" class="errorMessages">
                     <span class="textPosition">  {{formErrors.package_upc}}</span>
-                </div>-->
+                </div>
             </div>
 
 
@@ -70,10 +73,10 @@
 
                 <label for="packageDescription" class="required">Label Description <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="packageDescription" placeholder="Sales Source" formControlName="package_description">
-                <!--
+                
                 <div *ngIf="formErrors.package_description" class="errorMessages">
                     <span class="textPosition">  {{formErrors.package_description}}</span>
-                </div>-->
+                </div>
             </div>
         </div>
 
@@ -103,7 +106,9 @@
             <div class="form-group col-sm-4">
                 <label for="nielsenItemRank">Nielsen Item Rank UPC</label>
                 <input type="text" class="form-control" id="nielsenItemRank" placeholder="Nielsen Item Rank UPC" formControlName="nielsen_item_rank">
-
+                <div *ngIf="formErrors.nielsen_item_rank" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.nielsen_item_rank}}</span>
+                </div>
             </div>
 
         </div>
@@ -144,9 +149,9 @@
 
                 <label for="packageSize">Net Quantity</label>
                 <input type="text" class="form-control" id="packageSize" placeholder="Net Quantity" formControlName="package_size">
-                <!--<div *ngIf="formErrors.package_size" class="errorMessages">
+                <div *ngIf="formErrors.package_size" class="errorMessages">
                     <span class="textPosition">  {{formErrors.package_size}}</span>
-                </div>-->
+                </div>
             </div>
 
 
@@ -156,21 +161,21 @@
                 <label for="packageSizeUnitOfMeasure">Net Quantity unit of measure</label>
                 <select class="form-control" id="packageSizeUnitOfMeasure" formControlName="package_size_unit_of_measure">
 
-			<option value="" selected>Select a Unit of Measure</option>
+			<option value="" selected>Net Quantity unit of measure</option>
 			  <option value="g" >g</option>
 			<option value="l">l</option>
 			 </select>
             </div>
         </div>
 
-            <div class="row">
+        <div class="row">
 
-                <div class="form-group col-sm-6">
-                    <label for="numberOfUnits">Number of Units</label>
-                    <input type="text" class="form-control" id="numberOfUnits" placeholder="Number of Units" style="width:540px" formControlName="number_of_units">
-<!--<div *ngIf="formErrors.number_of_units" class="errorMessages">
+            <div class="form-group col-sm-6">
+                <label for="numberOfUnits">Number of Units</label>
+                <input type="text" class="form-control" id="numberOfUnits" placeholder="Number of Units" style="width:540px" formControlName="number_of_units">
+<div *ngIf="formErrors.number_of_units" class="errorMessages">
                     <span class="textPosition">  {{formErrors.number_of_units}}</span>
-                </div>-->
+                </div>
 </div>
 
 <div class="form-group col-sm-6">
@@ -187,7 +192,25 @@
 
 
 </div>
+<div class="row">
+    <div class="form-group col-sm-6">
+        <label for="storageType">Storage Type</label>
+        <input type="text" class="form-control" id="storageType" style="width:540px" placeholder="Storage Type" formControlName="storage_type">
+<!--<div *ngIf="formErrors.as_sold_per_serving_amount_in_grams" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.as_sold_per_serving_amount_in_grams}}</span>
+                </div>-->
+</div>
+<div class="form-group col-sm-6">
+    <label for="commonHouseholdMeasure">Common Household Measure</label>
+    <input type="text" class="form-control" id="commonHouseholdMeasure" style="width:540px" placeholder="Common Household Measure" formControlName="common_household_measure">
+<!--<div *ngIf="formErrors.as_prepared_per_serving_amount_in_grams" class="errorMessages">
+                    <span class="textPosition">  {{formErrors.as_prepared_per_serving_amount_in_grams}}</span>
+                </div>-->
+</div>
 
+
+
+</div>
 <div class="row">
     <div class="form-group col-sm-12">
         <label for="Ingredients">Ingredients</label>
@@ -266,13 +289,13 @@
 
     <div class="form-group col-sm-4">
         <label for="packageComments">Comments</label>
-        <input type="text" class="form-control" id="packageComments" placeholder="Comments" formControlName="package_comments">
+        <input type="text" class="form-control" id="packageComments" placeholder="Comments" formControlName="package_comment">
 
     </div>
 
     <div class="form-group col-sm-4">
 
-        <label for="packageCollectionDate">Collection Date</label>
+        <label for="packageCollectionDate" class="required">Collection Date <strong class="required">(required)</strong></label>
         <input type="text" class="form-control" id="packageCollectionDate" placeholder="++++++++++++" formControlName="package_collection_date">
 
     </div>
@@ -281,10 +304,10 @@
 
         <label for="packageSource" class="required">Source <strong class="required">(required)</strong></label>
         <input type="text" class="form-control" id="packageSource" placeholder=" Source" formControlName="package_source">
-        <!--
+        
                 <div *ngIf="formErrors.package_source" class="errorMessages">
                     <span class="textPosition">  {{formErrors.package_source}}</span>
-                </div>-->
+                </div>
     </div>
 
 
@@ -293,16 +316,16 @@
     <div class="form-group col-sm-6">
         <label for="asSoldPerServingAmountInGram">Per Serving Amount (grams)</label>
         <input type="text" class="form-control" id="asSoldPerServingAmountInGram" style="width:540px" placeholder="Per Serving Amount (grams)" formControlName="as_sold_per_serving_amount_in_grams">
-<!--<div *ngIf="formErrors.as_sold_per_serving_amount_in_grams" class="errorMessages">
+<div *ngIf="formErrors.as_sold_per_serving_amount_in_grams" class="errorMessages">
                     <span class="textPosition">  {{formErrors.as_sold_per_serving_amount_in_grams}}</span>
-                </div>-->
+                </div>
 </div>
 <div class="form-group col-sm-6">
     <label for="numberOfUnits">PPD Per Serving Amount (grams)</label>
     <input type="text" class="form-control" id="numberOfUnits" style="width:540px" placeholder="PPD Per Serving Amount (grams)" formControlName="as_prepared_per_serving_amount_in_grams">
-<!--<div *ngIf="formErrors.as_prepared_per_serving_amount_in_grams" class="errorMessages">
+<div *ngIf="formErrors.as_prepared_per_serving_amount_in_grams" class="errorMessages">
                     <span class="textPosition">  {{formErrors.as_prepared_per_serving_amount_in_grams}}</span>
-                </div>-->
+                </div>
 </div>
 
 

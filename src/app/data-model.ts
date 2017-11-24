@@ -8,7 +8,7 @@ export type Response<T> = {
     message?: string
 };
 
-export type  Params = {
+export type Params = {
     classification_name: string;
     classification_number: string;
     classification_type: string;
@@ -18,8 +18,8 @@ export type  Params = {
     cluster_number: number;
     product_description: string;
     product_comment: string;
-    restaurant_type?:string;
-    type?:string;
+    restaurant_type?: string;
+    type?: string;
     product_id?: number;
     offset?: number;
     flag?: boolean;
@@ -28,7 +28,7 @@ export type  Params = {
 
 };
 
-export type  createProductFields = {
+export type createProductFields = {
     classification_name: string;
     classification_number: number | string;
     classification_type: string;
@@ -38,13 +38,13 @@ export type  createProductFields = {
     cluster_number: number | string;
     product_description: string;
     product_comment: string;
-    restaurant_type:string;
-    type:string;
+    restaurant_type: string;
+    type: string;
 
 
 };
 
-export type  productParams = {
+export type productParams = {
     classificationName: string;
     classificationNumber: string;
     classificationType: string;
@@ -60,34 +60,34 @@ export type  productParams = {
 };
 
 
-export class addClass  {
-    classificationName= '';    
-    classificationNumber= '';
-    classificationType= '';
-    classificationId?:number;
-    productId?: number; 
+export class addClass {
+    classificationName = '';
+    classificationNumber = '';
+    classificationType = '';
+    classificationId?: number;
+    productId?: number;
 }
 
-export class classificationList  {
-    classification_name:string;    
-    classification_number:string;
-    classification_type:string;
-    classificationId?:number;
-    productId?: number; 
+export class classificationList {
+    classification_name: string;
+    classification_number: string;
+    classification_type: string;
+    classificationId?: number;
+    productId?: number;
 }
 
-export class salesYearList  {
-    salesYear= '';    
- 
+export class salesYearList {
+    salesYear = '';
+
 }
 
-export const Classification_name = ['First classification', 'Second Classification',''];
+export const Classification_name = ['First classification', 'Second Classification', ''];
 export const Classification_number = ['1.0121', '1.0122', '1.0123', ''];
 
-export class ClassificationList{
-    classification_name:string;    
-    classification_number:string;
-    classification_type:string;
+export class ClassificationList {
+    classification_name: string;
+    classification_number: string;
+    classification_type: string;
 
 
 }
@@ -99,7 +99,7 @@ export type SalesInputFields = {
     salesDescription: string,
     salesSource: string,
     salesYear: number,
-    nielsenCategory: string, 
+    nielsenCategory: string,
     salesComment: string,
     collectionDateFrom: string,
     collectionDateTo: string,
@@ -114,16 +114,16 @@ export type SalesData = {
     salesDescription: string,
     salesSource: string,
     salesYear: number,
-    nielsenCategory: string, 
+    nielsenCategory: string,
     dollarVolume: number,
     kiloVolume: number,
     productId: number
 };
 
-export type LabelInputFields ={
+export type LabelInputFields = {
     labelUpc: string,
     labelDescription: string,
-    labelSource: string, 
+    labelSource: string,
     labelIngredients: string,
     collectionDateFrom: string,
     collectionDateTo: string,
@@ -140,19 +140,19 @@ export type LabelData = {
     labelCollectionDate: string,
     labelLastEditDate: string,
     labelLastEditedDate: string,
-    labelLastEditedBy: string, 
+    labelLastEditedBy: string,
     productId: number
 
 }
 
 export type InsertDataMessage = {
-    
+
     status: number,
     message: string
 }
 
-export type  SearchAllInputFields = {
- //Produt Fields    
+export type SearchAllInputFields = {
+    //Produt Fields    
     product_description: string,
     product_manufacturer: string,
     product_brand: string,
@@ -163,31 +163,31 @@ export type  SearchAllInputFields = {
     cluster_number: number,
     product_comment: string,
 
-    restaurant_type?:string,
-    type?:string,
- //Market Share Fields
+    restaurant_type?: string,
+    type?: string,
+    //Market Share Fields
 
     sales_upc: string,
     sales_description: string,
     sales_year: number,
-    nielsen_category: string, 
+    nielsen_category: string,
     sales_source: string,
     sales_collection_date_from: string,
     sales_collection_date_to: string,
-    dollar_rank_from:number,
-    dollar_rank_to:number,
+    dollar_rank_from: number,
+    dollar_rank_to: number,
     sales_comment: string,
 
-//Labels Fields
+    //Labels Fields
 
 
     label_upc: string,
     label_description: string,
-    label_source: string, 
+    label_source: string,
     label_ingredients: string,
     label_collection_date_from: string,
     label_collection_date_to: string,
-    label_comment:string,
+    label_comment: string,
 
 
     product_id?: number,
@@ -200,7 +200,7 @@ export type  SearchAllInputFields = {
 
 
 
-export type  productAllFields = {
+export type productAllFields = {
     classification_name: string;
     classification_number: string;
     classification_type: string;
@@ -209,19 +209,19 @@ export type  productAllFields = {
     creation_date: string;
     edited_by: string;
     product_comment: string;
-    product_brand?:string;
+    product_brand?: string;
     last_edit_date: string;
     product_description: string;
     product_id: number;
-    product_manufacturer:string;
-    restaurant_type:string;
+    product_manufacturer: string;
+    restaurant_type: string;
     type: string;
 
 };
 
 
 
-export type  salesFieldsView = {
+export type salesFieldsView = {
     sales_id: number,
     dollar_volume: string;
     nielsen_category: string;
@@ -230,7 +230,7 @@ export type  salesFieldsView = {
     sales_year: number;
 };
 
-export type  labelFieldsView = {
+export type labelFieldsView = {
     label_id: number;
     label_upc: string;
     label_description: string;
@@ -244,169 +244,171 @@ export type  labelFieldsView = {
 
 
 
-    export type  salesFieldsCreate = {
-    product_id:number,    
-    sales_description:string,
-    sales_upc:string,
-    sales_brand:string,
-    sales_manufacturer:string,
-    dollar_rank:number | string,
-    dollar_volume:number| string,
-    dollar_share:number| string,
-    dollar_volume_percentage_change:number| string,
-    kilo_volume:number| string,
-    kilo_share:number| string,
-    kilo_rank:number| string,
-    kilo_volume_percentage_change:number| string,
-    average_ac_dist:number| string,
-    average_retail_price:number| string,
-    sales_source:string,
-    nielsen_category:string,
-    sales_year:number| string,
+export type salesFieldsCreate = {
+    product_id: number,
+    sales_description: string,
+    sales_upc: string,
+    sales_brand: string,
+    sales_manufacturer: string,
+    dollar_rank: number | string,
+    dollar_volume: number | string,
+    dollar_share: number | string,
+    dollar_volume_percentage_change: number | string,
+    kilo_volume: number | string,
+    kilo_share: number | string,
+    kilo_rank: number | string,
+    kilo_volume_percentage_change: number | string,
+    average_ac_dist: number | string,
+    average_retail_price: number | string,
+    sales_source: string,
+    nielsen_category: string,
+    sales_year: number | string,
     control_label_flag: boolean,
-    kilo_volume_total:number| string,
-    kilo_volume_rank:number| string,
-    dollar_volume_total:number| string,
-    cluster_number:number| string,
-    product_grouping:number| string,
-    sales_product_description:string,
-    classification_number:number| string,
-    classification_type:string | string,
-    sales_comment:string,
-    sales_collection_date:string,
-    number_of_units:number | string,
-    edited_by:string
-    
+    kilo_volume_total: number | string,
+    kilo_volume_rank: number | string,
+    dollar_volume_total: number | string,
+    cluster_number: number | string,
+    product_grouping: number | string,
+    sales_product_description: string,
+    classification_number: number | string,
+    classification_type: string | string,
+    sales_comment: string,
+    sales_collection_date: string,
+    number_of_units: number | string,
+    edited_by: string
 
-    }
 
-        export type  AllSalesFieldsView = {
-    product_id?:number,    
+}
+
+export type AllSalesFieldsView = {
+    product_id?: number,
     sales_id?: number,
-    sales_description:string,
-    sales_upc:string,
-    sales_brand:string,
-    sales_manufacturer:string,
-    dollar_rank:number | string,
-    dollar_volume:number | string,
-    dollar_share:number | string,
-    dollar_volume_percentage_change:number | string,
-    kilo_volume:number | string,
-    kilo_share:number | string,
-    kilo_rank:number | string,
-    kilo_volume_percentage_change:number | string,
-    average_ac_dist:number | string,
-    average_retail_price:number| string,
-    sales_source:string,
-    nielsen_category:string,
-    sales_year:number | string,
+    sales_description: string,
+    sales_upc: string,
+    sales_brand: string,
+    sales_manufacturer: string,
+    dollar_rank: number | string,
+    dollar_volume: number | string,
+    dollar_share: number | string,
+    dollar_volume_percentage_change: number | string,
+    kilo_volume: number | string,
+    kilo_share: number | string,
+    kilo_rank: number | string,
+    kilo_volume_percentage_change: number | string,
+    average_ac_dist: number | string,
+    average_retail_price: number | string,
+    sales_source: string,
+    nielsen_category: string,
+    sales_year: number | string,
     control_label_flag: boolean | string,
-    kilo_volume_total:number | string,
-    kilo_volume_rank:number | string,
-    dollar_volume_total:number | string,
-    cluster_number:number | string,
-    product_grouping:number | string,
-    sales_product_description:string,
-    classification_number:number | string,
-    classification_type:string,
-    sales_comment:string,
-    sales_collection_date:string,
-    number_of_units:number | string,
-    edited_by?:string,
+    kilo_volume_total: number | string,
+    kilo_volume_rank: number | string,
+    dollar_volume_total: number | string,
+    cluster_number: number | string,
+    product_grouping: number | string,
+    sales_product_description: string,
+    classification_number: number | string,
+    classification_type: string,
+    sales_comment: string,
+    sales_collection_date: string,
+    number_of_units: number | string,
+    edited_by?: string,
     creation_date?: string,
-    last_edit_date?: string; 
+    last_edit_date?: string;
 
-    }
-   export type  SearchAllResponse = {
+}
+export type SearchAllResponse = {
 
-        classification_name: string,
-        classification_number: number,
-        classification_type: string,
-        cluster_number: number,
-        cnf_code:number,
-        dollar_rank: number,
-        label_collection_date:string,
-        label_comment: string,
-        label_description: string,
-        label_ingredients: string,
-        label_source:string,
-        label_upc: string,
-        nielsen_category: string,
-        product_brand: string,
-        product_comment: string,
-        product_description: string,
-        product_id: number,
-        product_manufacturer: string,
-        sales_collection_date: string,
-        sales_comment:string,
-        sales_description: string,
-        sales_source: string,
-        sales_upc: string,
-        sales_year: number
-   }
-     export type   UpdateResponse = {
-       message: string;
-       status: number
-   }
+    classification_name: string,
+    classification_number: number,
+    classification_type: string,
+    cluster_number: number,
+    cnf_code: number,
+    dollar_rank: number,
+    label_collection_date: string,
+    label_comment: string,
+    label_description: string,
+    label_ingredients: string,
+    label_source: string,
+    label_upc: string,
+    nielsen_category: string,
+    product_brand: string,
+    product_comment: string,
+    product_description: string,
+    product_id: number,
+    product_manufacturer: string,
+    sales_collection_date: string,
+    sales_comment: string,
+    sales_description: string,
+    sales_source: string,
+    sales_upc: string,
+    sales_year: number
+}
+export type UpdateResponse = {
+    message: string;
+    status: number
+}
 
-    export type productCreateResponse ={
-       id: {
-           value: number;
-           type:number;
-       };
-       message: string;
-       status: number ;
+export type productCreateResponse = {
+    id: {
+        value: number;
+        type: number;
+    };
+    message: string;
+    status: number;
 
-    }
-         export type   DeleteResponse = {
-       message: string;
-       status: number
-   }
+}
+export type DeleteResponse = {
+    message: string;
+    status: number
+}
 
-   export type labelCreateFields = {
-product_id: number; 
- package_description: string;                    
- package_upc: string;                             
- package_brand : string;                          
- package_manufacturer : string;                   
- package_country  : string;                       
- package_size  : number;                         
- package_size_unit_of_measure  : string;         
- storage_type      : string;                      
- storage_statements  : string;                    
- health_claims  : string;                         
- other_package_statements   : string;             
- suggested_directions: string;                    
- ingredients      : string;                       
- multi_part_flag             : boolean;           
- nutrition_fact_table : string;                   
- as_prepared_per_serving_amount       : number;     
- as_prepared_unit_of_measure      : string;       
- as_sold_per_serving_amount        : number;        
- as_sold_unit_of_measure      : string;           
- as_prepared_per_serving_amount_in_grams: number;   
- as_sold_per_serving_amount_in_grams  : number;     
- package_comment      : string;                   
- package_source     : string;                     
- package_product_description     : string;        
- package_collection_date    : string;             
- number_of_units      : number;                              
- edited_by       : string;                                       
- informed_dining_program  : string;               
- nft_last_update_date      : string;              
- product_grouping      : number;                    
- child_item       : boolean; 
- package_classification_number : number | string;  
-  package_classification_name :  string;    
-  nielsen_item_rank: string;   
-  nutrient_claims: string              
+export type labelCreateFields = {
+    product_id: number;
+    package_description: string;
+    package_upc: string;
+    package_brand: string;
+    package_manufacturer: string;
+    package_country: string;
+    package_size: number;
+    package_size_unit_of_measure: string;
+    storage_type: string;
+    storage_statements: string;
+    health_claims: string;
+    other_package_statements: string;
+    suggested_directions: string;
+    ingredients: string;
+    multi_part_flag: boolean;
+    nutrition_fact_table: string;
+    as_prepared_per_serving_amount: number;
+    as_prepared_unit_of_measure: string;
+    as_sold_per_serving_amount: number;
+    as_sold_unit_of_measure: string;
+    as_prepared_per_serving_amount_in_grams: number;
+    as_sold_per_serving_amount_in_grams: number;
+    package_comment: string;
+    package_source: string;
+    package_product_description: string;
+    package_collection_date: string;
+    number_of_units: number;
+    edited_by: string;
+    informed_dining_program: string;
+    nft_last_update_date: string;
+    product_grouping: number;
+    child_item: boolean;
+    package_classification_number: number | string;
+    package_classification_name: string;
+    nielsen_item_rank: string;
+    nutrient_claims: string,
+    package_nielsen_category: string;
+    common_household_measure: string;
 
-   }
+}
 
 export type labelNft = {
     amount: number | string;
     unit_of_measure: string;
     flag: boolean;
     daily_value_amount: number | string;
-    labelId?: number; 
+    labelId?: number;
 }

@@ -95,7 +95,9 @@ export class CreateLabelComponent implements OnChanges {
                 package_classification_number:   this.labelField.package_classification_number  ,
                 package_classification_name:   this.labelField.package_classification_name, 
                 nielsen_item_rank:       this.labelField.nielsen_item_rank,
-                nutrient_claims: this.labelField.nutrient_claims
+                nutrient_claims: this.labelField.nutrient_claims,
+                package_nielsen_category: this.labelField.package_nielsen_category,
+                common_household_measure: this.labelField.common_household_measure
 
 
 
@@ -110,7 +112,7 @@ export class CreateLabelComponent implements OnChanges {
         this.labelForm = this.fb.group({
                 package_description :  ['', [Validators.required]],                   
                 package_upc: ['', [
-                Validators.pattern('\\d+'),
+               Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                 Validators.required
                 ]],                             
                 package_brand : '',                          
@@ -136,15 +138,19 @@ export class CreateLabelComponent implements OnChanges {
                 package_source: ['', [Validators.required]],                          
                 package_product_description :'',            
                 package_collection_date: ['', [Validators.required]],                 
-                number_of_units      : [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],                                                                 
+                number_of_units      : [null, [ Validators.pattern('\\d+')]],                                                                 
                 informed_dining_program  : [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],               
-                nft_last_update_date    : ['', [Validators.required]],               
+                nft_last_update_date    : '',               
                 product_grouping        : [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],                
                 child_item            : [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],       
                 package_classification_number: null ,
                 package_classification_name:   '', 
-                nielsen_item_rank:       null ,
-                nutrient_claims: ''         
+                nielsen_item_rank:     ['', [
+                Validators.pattern('\\d+')
+                ]],  
+                nutrient_claims: ''  ,
+                package_nielsen_category: '',
+                common_household_measure:''       
 
         });
 
@@ -234,17 +240,58 @@ export class CreateLabelComponent implements OnChanges {
 
 
     formErrors = {
-        'sales_description': ''
+        'package_description': '', 
+        'package_upc':'',
+        'as_prepared_per_serving_amount:':'',
+        'as_sold_per_serving_amount':'',
+        'as_prepared_per_serving_amount_in_grams':'',
+        'as_sold_per_serving_amount_in_grams':'',
+        'number_of_units': '',
+        'product_grouping': '', 
+        'nielsen_item_rank':'',
+        'package_source': '',
+        'package_collection_date':'',
+        'package_size':''
+
     }
 
     validationMessages = {
    
-        'sales_year': {
-            'pattern': 'Must be a digit',
-            'required': 'Sales Year is required',
-            'minLength': 'Minimum of 4 digis',
-            'maxLength': 'Maximum of 4 digits'
+        'package_description': {
+            'required': 'Package description is required'
+        },
+        'package_upc': {
+            'required': 'Label is required',
+            'pattern': 'Must be a number'
+        },
+        'as_prepared_per_serving_amount_in_grams': {
+            'pattern': 'Must be a number'
+        },
+        'as_sold_per_serving_amount': {
+            'pattern': 'Must be a number'
+        },
+        'as_sold_per_serving_amount_in_grams': {
+            'pattern': 'Must be a number'
+        },
+        'number_of_units': {
+            'pattern': 'Must be a number'
+        },
+        'product_grouping': {
+            'pattern': 'Must be a number'
+        },
+        'nielsen_item_rank': {
+            'pattern': 'Must be a number'
+        },
+        'package_source': {
+            'required': 'Source is required'
+        },
+        'package_collection_date': {
+            'required': 'Source is required'
+        },
+        'package_size': {
+            'required': 'Source is required'
         }
+
     }
     setValues(): void {
         this.submitted = true;
@@ -252,17 +299,18 @@ export class CreateLabelComponent implements OnChanges {
      
         this.labelField = this.prepareSaveProduct();
         this.labelField.package_collection_date = this.labelField.package_collection_date? date.transform(this.labelField.package_collection_date, 'yyyy-MM-dd') : this.labelField.package_collection_date;
+        this.labelField.nft_last_update_date = this.labelField.nft_last_update_date? date.transform(this.labelField.nft_last_update_date, 'yyyy-MM-dd') : this.labelField.nft_last_update_date;
 
         this.route.params.subscribe( params => {
 
         this.labelField.product_id = +params['id'];
         this.id = this.labelField.product_id;
-        //Check that the fields will not yield to zeros 
 
 
 
         });
        
+       console.log("package label fields", this.labelField);
     }
 
 }
