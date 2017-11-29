@@ -92,13 +92,13 @@ export class CreateLabelComponent implements OnChanges {
                 nft_last_update_date     : this.labelField.nft_last_update_date,               
                 product_grouping       : this.labelField.product_grouping,                
                 child_item                 : this.labelField.child_item ,
-                package_classification_number:   this.labelField.package_classification_number  ,
-                package_classification_name:   this.labelField.package_classification_name, 
+                classification_number:   this.labelField.classification_number,
+                classification_name:   this.labelField.classification_name, 
                 nielsen_item_rank:       this.labelField.nielsen_item_rank,
                 nutrient_claims: this.labelField.nutrient_claims,
                 package_nielsen_category: this.labelField.package_nielsen_category,
-                common_household_measure: this.labelField.common_household_measure
-
+                common_household_measure: this.labelField.common_household_measure,
+                calculated: this.labelField.calculated
 
 
 
@@ -139,18 +139,19 @@ export class CreateLabelComponent implements OnChanges {
                 package_product_description :'',            
                 package_collection_date: ['', [Validators.required]],                 
                 number_of_units      : [null, [ Validators.pattern('\\d+')]],                                                                 
-                informed_dining_program  : [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],               
+                informed_dining_program  : null,               
                 nft_last_update_date    : '',               
                 product_grouping        : [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],                
-                child_item            : [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],       
-                package_classification_number: null ,
-                package_classification_name:   '', 
+                child_item            : null,       
+                classification_number: null ,
+                classification_name:   '', 
                 nielsen_item_rank:     ['', [
                 Validators.pattern('\\d+')
                 ]],  
                 nutrient_claims: ''  ,
                 package_nielsen_category: '',
-                common_household_measure:''       
+                common_household_measure:'',
+                calculated: null      
 
         });
 
@@ -214,9 +215,14 @@ export class CreateLabelComponent implements OnChanges {
                 this.flag = 2;
                 this.message = "UPC code belong to a diffent product";
                 this.submitted = false;
+            }else if(status === 803){
+                this.flag = 2;
+                this.message = "Missing mandatory field(s)";
+                this.submitted = false;
             }
             else {
                 this.flag = 2;
+                 this.message = "Something went wrong, try again...";
                 this.submitted = false;
 
             }
@@ -242,7 +248,7 @@ export class CreateLabelComponent implements OnChanges {
     formErrors = {
         'package_description': '', 
         'package_upc':'',
-        'as_prepared_per_serving_amount:':'',
+        'as_prepared_per_serving_amount':'',
         'as_sold_per_serving_amount':'',
         'as_prepared_per_serving_amount_in_grams':'',
         'as_sold_per_serving_amount_in_grams':'',
@@ -302,15 +308,36 @@ export class CreateLabelComponent implements OnChanges {
         this.labelField.nft_last_update_date = this.labelField.nft_last_update_date? date.transform(this.labelField.nft_last_update_date, 'yyyy-MM-dd') : this.labelField.nft_last_update_date;
 
         this.route.params.subscribe( params => {
-
         this.labelField.product_id = +params['id'];
         this.id = this.labelField.product_id;
-
-
-
         });
        
-       console.log("package label fields", this.labelField);
+      this.labelField.multi_part_flag = this.labelField.multi_part_flag == "" ? null : this.labelField.multi_part_flag;
+      this.labelField.as_prepared_per_serving_amount = this.labelField.as_prepared_per_serving_amount == "" ? null : this.labelField.as_prepared_per_serving_amount;
+      this.labelField.as_sold_per_serving_amount = this.labelField.as_sold_per_serving_amount == "" ? null : this.labelField.as_sold_per_serving_amount;
+      this.labelField.as_prepared_per_serving_amount_in_grams = this.labelField.as_prepared_per_serving_amount_in_grams == "" ? null : this.labelField.as_prepared_per_serving_amount_in_grams;
+      this.labelField.as_sold_per_serving_amount_in_grams = this.labelField.as_sold_per_serving_amount_in_grams == "" ? null : this.labelField.as_sold_per_serving_amount_in_grams;
+      this.labelField.number_of_units = this.labelField.number_of_units == "" ? null : this.labelField.number_of_units;
+      this.labelField.informed_dining_program  = this.labelField.informed_dining_program  == "" ? null : this.labelField.informed_dining_program ;
+      this.labelField.product_grouping = this.labelField.product_grouping == "" ? null : this.labelField.product_grouping;
+      this.labelField.child_item = this.labelField.number_of_units == "" ? null : this.labelField.child_item;
+      this.labelField.calculated = this.labelField.calculated == "" ? null : this.labelField.calculated;
+      this.labelField.nielsen_item_rank = this.labelField.nielsen_item_rank == "" ? null : this.labelField.nielsen_item_rank;
+
+
+
     }
+
+    callAlex(n: String) {
+
+var index = this.listOfClass.findIndex(function(item, i){
+  return item.classification_number === n;
+});
+
+
+ this.labelForm.controls['classification_name'].setValue(this.listOfClass[index]['classification_name']); 
+
+    }
+
 
 }

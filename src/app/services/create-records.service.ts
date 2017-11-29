@@ -43,7 +43,7 @@ console.log('here', queryString);
 
 console.log('here', queryString);
         return this.http
-            .post('http://localhost:8080/fcdr-rest-service/rest/SalesService/insert', queryString, this.options)
+            .post('http://localhost:8080/fcdr-rest-service/rest/PackageService/insert', queryString, this.options)
             .map(response => response.json() as UpdateResponse)
     }
 

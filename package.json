@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc -p src/",
     "build:watch": "tsc -p src/ -w",
-    "build:aot":"ngc -p tsconfig-aot.json && rollup -c rollup-config.js",
+    "build:aot": "ngc -p tsconfig-aot.json && rollup -c rollup-config.js",
     "build:e2e": "tsc -p e2e/",
     "serve": "lite-server -c=bs-config.json",
     "serve:e2e": "lite-server -c=bs-config.e2e.json",
@@ -21,7 +21,6 @@
     "test:once": "karma start karma.conf.js --single-run",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "dev": "lite-server"
-    
   },
   "keywords": [],
   "author": "",

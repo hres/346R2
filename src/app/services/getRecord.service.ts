@@ -81,5 +81,12 @@ export class GetRecordService {
                  .get(`http://localhost:8080/fcdr-rest-service/rest/SalesService/sales/${id}`, this.options)
          .map(response => response.json()));
     }
-
+    //getPackageRecords
+    getPackageRecords(id: number | string){
+        console.log("call to sales", id);
+         return Observable.forkJoin(
+            this.http
+                 .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/package/${id}`, this.options)
+         .map(response => response.json()));
+    }
 }

@@ -64,7 +64,7 @@ if(this.flager ===1) {
    return  `/view-sales/${value.sales_id}`;
 
    }else if(this.flager ===2){
-         return  '/viewproduct/372431';
+   return  `/view-package/${value.label_id}`;
    }
 }
 

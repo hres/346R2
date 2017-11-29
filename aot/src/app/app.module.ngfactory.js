@@ -13,126 +13,136 @@ var i3 = require("../../node_modules/@angular/material/typings/index.ngfactory")
 var i4 = require("./forms/productForm/form.component.ngfactory");
 var i5 = require("./createRecords/createSales/create-sales.component.ngfactory");
 var i6 = require("./createRecords/createLabel/create-label.component.ngfactory");
-var i7 = require("./views/viewSales/view-sales.component.ngfactory");
-var i8 = require("./forms/salesForm/sales-form.component.ngfactory");
-var i9 = require("./views/viewProduct/view-product.component.ngfactory");
-var i10 = require("./radio-button/radio-button.component.ngfactory");
-var i11 = require("./forms/searchAllForm/search-all.component.ngfactory");
-var i12 = require("./createRecords/createProduct/create-product.component.ngfactory");
-var i13 = require("./app.component.ngfactory");
-var i14 = require("@angular/common");
-var i15 = require("@angular/platform-browser");
-var i16 = require("@angular/animations/browser");
-var i17 = require("@angular/platform-browser/animations");
-var i18 = require("@angular/animations");
-var i19 = require("@angular/forms");
-var i20 = require("@angular/cdk");
-var i21 = require("@angular/material");
-var i22 = require("@angular/http");
-var i23 = require("../../../src/app/services/getRecord.service");
-var i24 = require("../../../src/app/services/search.service");
-var i25 = require("@angular/router");
-var i26 = require("../../../src/app/services/add-classification.service");
-var i27 = require("../../../src/app/services/create-records.service");
-var i28 = require("../../../src/app/forms/productForm/form.component");
-var i29 = require("../../../src/app/createRecords/createSales/create-sales.component");
-var i30 = require("../../../src/app/createRecords/createLabel/create-label.component");
-var i31 = require("../../../src/app/views/viewSales/view-sales.component");
-var i32 = require("../../../src/app/forms/salesForm/sales-form.component");
-var i33 = require("../../../src/app/views/viewProduct/view-product.component");
-var i34 = require("../../../src/app/radio-button/radio-button.component");
-var i35 = require("../../../src/app/forms/searchAllForm/search-all.component");
-var i36 = require("../../../src/app/createRecords/createProduct/create-product.component");
-var i37 = require("../../../src/app/shared/shared.module");
-var i38 = require("../../../src/app/pagination/pagination.model");
-var i39 = require("../../../src/app/forms/productForm/form.module");
-var i40 = require("../../../src/app/forms/salesForm/sales-form.module");
-var i41 = require("../../../src/app/forms/labelForm/label-form.module");
-var i42 = require("../../../src/app/forms/searchAllForm/search-all.module");
-var i43 = require("../../../src/app/forms-center/forms-center.module");
-var i44 = require("../../../src/app/confirmbox/confirm-box.module");
-var i45 = require("../../../src/app/editForms/editSales/edit-sales.module");
-var i46 = require("../../../src/app/editForms/editProduct/edit-product.module");
-var i47 = require("../../../src/app/createRecords/createSales/create-sales.module");
-var i48 = require("../../../src/app/classification-center/add-classification/add-classification.module");
-var i49 = require("../../../src/app/modal-box/modal-box.module");
-var i50 = require("../../../src/app/views/viewSales/view-sales.module");
-var i51 = require("../../../src/app/table/table.module");
-var i52 = require("../../../src/app/views/viewProduct/view-product.module");
-var i53 = require("../../../src/app/createRecords/createLabel/create-label.module");
-var i54 = require("../../../src/app/radio-button/radio-button.module");
-var i55 = require("../../../src/app/createRecords/createProduct/create-product.module");
+var i7 = require("./createRecords/createNft/create-nft.component.ngfactory");
+var i8 = require("./views/viewSales/view-sales.component.ngfactory");
+var i9 = require("./views/viewPackage/view-package.component.ngfactory");
+var i10 = require("./forms/salesForm/sales-form.component.ngfactory");
+var i11 = require("./views/viewProduct/view-product.component.ngfactory");
+var i12 = require("./radio-button/radio-button.component.ngfactory");
+var i13 = require("./forms/searchAllForm/search-all.component.ngfactory");
+var i14 = require("./createRecords/createProduct/create-product.component.ngfactory");
+var i15 = require("./app.component.ngfactory");
+var i16 = require("@angular/common");
+var i17 = require("@angular/platform-browser");
+var i18 = require("@angular/animations/browser");
+var i19 = require("@angular/platform-browser/animations");
+var i20 = require("@angular/animations");
+var i21 = require("@angular/forms");
+var i22 = require("@angular/cdk");
+var i23 = require("@angular/material");
+var i24 = require("@angular/http");
+var i25 = require("../../../src/app/services/getRecord.service");
+var i26 = require("../../../src/app/services/search.service");
+var i27 = require("@angular/router");
+var i28 = require("../../../src/app/services/add-classification.service");
+var i29 = require("../../../src/app/services/create-records.service");
+var i30 = require("../../../src/app/forms/productForm/form.component");
+var i31 = require("../../../src/app/createRecords/createSales/create-sales.component");
+var i32 = require("../../../src/app/createRecords/createLabel/create-label.component");
+var i33 = require("../../../src/app/createRecords/createNft/create-nft.component");
+var i34 = require("../../../src/app/views/viewSales/view-sales.component");
+var i35 = require("../../../src/app/views/viewPackage/view-package.component");
+var i36 = require("../../../src/app/forms/salesForm/sales-form.component");
+var i37 = require("../../../src/app/views/viewProduct/view-product.component");
+var i38 = require("../../../src/app/radio-button/radio-button.component");
+var i39 = require("../../../src/app/forms/searchAllForm/search-all.component");
+var i40 = require("../../../src/app/createRecords/createProduct/create-product.component");
+var i41 = require("../../../src/app/shared/shared.module");
+var i42 = require("../../../src/app/pagination/pagination.model");
+var i43 = require("../../../src/app/forms/productForm/form.module");
+var i44 = require("../../../src/app/forms/salesForm/sales-form.module");
+var i45 = require("../../../src/app/forms/labelForm/label-form.module");
+var i46 = require("../../../src/app/forms/searchAllForm/search-all.module");
+var i47 = require("../../../src/app/forms-center/forms-center.module");
+var i48 = require("../../../src/app/confirmbox/confirm-box.module");
+var i49 = require("../../../src/app/editForms/editSales/edit-sales.module");
+var i50 = require("../../../src/app/editForms/editProduct/edit-product.module");
+var i51 = require("../../../src/app/createRecords/createSales/create-sales.module");
+var i52 = require("../../../src/app/createRecords/createNft/create-nft.module");
+var i53 = require("../../../src/app/classification-center/add-classification/add-classification.module");
+var i54 = require("../../../src/app/modal-box/modal-box.module");
+var i55 = require("../../../src/app/views/viewSales/view-sales.module");
+var i56 = require("../../../src/app/views/viewPackage/view-package.module");
+var i57 = require("../../../src/app/table/table.module");
+var i58 = require("../../../src/app/views/viewProduct/view-product.module");
+var i59 = require("../../../src/app/createRecords/createLabel/create-label.module");
+var i60 = require("../../../src/app/radio-button/radio-button.module");
+var i61 = require("../../../src/app/createRecords/createProduct/create-product.module");
 exports.AppModuleNgFactory = i0.ɵcmf(i1.AppModule, [i2.AppComponent], function (_l) {
     return i0.ɵmod([i0.ɵmpd(512, i0.ComponentFactoryResolver, i0.ɵCodegenComponentFactoryResolver, [[8, [i3.MdDialogContainerNgFactory, i3.MdDatepickerContentNgFactory, i4.FormComponentNgFactory,
-                    i5.CreateSalesComponentNgFactory, i6.CreateLabelComponentNgFactory, i7.ViewSalesComponentNgFactory,
-                    i8.SalesFormComponentNgFactory, i9.ViewProductComponentNgFactory, i10.RadioButtonComponentNgFactory,
-                    i11.SearchAllComponentNgFactory, i12.CreateProductComponentNgFactory,
-                    i13.AppComponentNgFactory]], [3, i0.ComponentFactoryResolver], i0.NgModuleRef]),
-        i0.ɵmpd(5120, i0.LOCALE_ID, i0.ɵm, [[3, i0.LOCALE_ID]]), i0.ɵmpd(4608, i14.NgLocalization, i14.NgLocaleLocalization, [i0.LOCALE_ID]), i0.ɵmpd(5120, i0.APP_ID, i0.ɵf, []), i0.ɵmpd(5120, i0.IterableDiffers, i0.ɵk, []),
-        i0.ɵmpd(5120, i0.KeyValueDiffers, i0.ɵl, []), i0.ɵmpd(4608, i15.DomSanitizer, i15.ɵe, [i14.DOCUMENT]), i0.ɵmpd(6144, i0.Sanitizer, null, [i15.DomSanitizer]),
-        i0.ɵmpd(4608, i15.HAMMER_GESTURE_CONFIG, i15.HammerGestureConfig, []),
-        i0.ɵmpd(5120, i15.EVENT_MANAGER_PLUGINS, function (p0_0, p1_0, p2_0, p2_1) {
-            return [new i15.ɵDomEventsPlugin(p0_0), new i15.ɵKeyEventsPlugin(p1_0),
-                new i15.ɵHammerGesturesPlugin(p2_0, p2_1)];
-        }, [i14.DOCUMENT, i14.DOCUMENT, i14.DOCUMENT, i15.HAMMER_GESTURE_CONFIG]), i0.ɵmpd(4608, i15.EventManager, i15.EventManager, [i15.EVENT_MANAGER_PLUGINS, i0.NgZone]),
-        i0.ɵmpd(135680, i15.ɵDomSharedStylesHost, i15.ɵDomSharedStylesHost, [i14.DOCUMENT]),
-        i0.ɵmpd(4608, i15.ɵDomRendererFactory2, i15.ɵDomRendererFactory2, [i15.EventManager,
-            i15.ɵDomSharedStylesHost]), i0.ɵmpd(5120, i16.AnimationDriver, i17.ɵc, []),
-        i0.ɵmpd(5120, i16.ɵAnimationStyleNormalizer, i17.ɵd, []), i0.ɵmpd(4608, i16.ɵAnimationEngine, i17.ɵb, [i16.AnimationDriver, i16.ɵAnimationStyleNormalizer]),
-        i0.ɵmpd(5120, i0.RendererFactory2, i17.ɵe, [i15.ɵDomRendererFactory2, i16.ɵAnimationEngine,
-            i0.NgZone]), i0.ɵmpd(6144, i15.ɵSharedStylesHost, null, [i15.ɵDomSharedStylesHost]),
-        i0.ɵmpd(4608, i0.Testability, i0.Testability, [i0.NgZone]), i0.ɵmpd(4608, i15.Meta, i15.Meta, [i14.DOCUMENT]), i0.ɵmpd(4608, i15.Title, i15.Title, [i14.DOCUMENT]),
-        i0.ɵmpd(4608, i18.AnimationBuilder, i17.ɵBrowserAnimationBuilder, [i0.RendererFactory2]),
-        i0.ɵmpd(4608, i19.FormBuilder, i19.FormBuilder, []), i0.ɵmpd(4608, i19.ɵi, i19.ɵi, []), i0.ɵmpd(6144, i20.DIR_DOCUMENT, null, [i15.DOCUMENT]), i0.ɵmpd(4608, i20.Directionality, i20.Directionality, [[2,
-                i20.DIR_DOCUMENT]]), i0.ɵmpd(4608, i20.Platform, i20.Platform, []),
-        i0.ɵmpd(4608, i20.InteractivityChecker, i20.InteractivityChecker, [i20.Platform]),
-        i0.ɵmpd(4608, i20.FocusTrapFactory, i20.FocusTrapFactory, [i20.InteractivityChecker,
-            i20.Platform, i0.NgZone]), i0.ɵmpd(5120, i20.LiveAnnouncer, i20.LIVE_ANNOUNCER_PROVIDER_FACTORY, [[3, i20.LiveAnnouncer], [2, i20.LIVE_ANNOUNCER_ELEMENT_TOKEN], i20.Platform]),
-        i0.ɵmpd(5120, i21.ScrollDispatcher, i21.ɵe, [[3, i21.ScrollDispatcher], i0.NgZone,
-            i20.Platform]), i0.ɵmpd(5120, i21.ViewportRuler, i21.ɵc, [[3, i21.ViewportRuler],
-            i21.ScrollDispatcher]), i0.ɵmpd(4608, i21.ScrollStrategyOptions, i21.ScrollStrategyOptions, [i21.ScrollDispatcher, i21.ViewportRuler]), i0.ɵmpd(5120, i21.OverlayContainer, i21.ɵa, [[3, i21.OverlayContainer]]), i0.ɵmpd(4608, i21.ɵt, i21.ɵt, [i21.ViewportRuler]),
-        i0.ɵmpd(4608, i21.Overlay, i21.Overlay, [i21.ScrollStrategyOptions, i21.OverlayContainer,
-            i0.ComponentFactoryResolver, i21.ɵt, i0.ApplicationRef, i0.Injector, i0.NgZone]),
-        i0.ɵmpd(5120, i21.FocusOriginMonitor, i21.FOCUS_ORIGIN_MONITOR_PROVIDER_FACTORY, [[3, i21.FocusOriginMonitor], i0.NgZone, i20.Platform]), i0.ɵmpd(4608, i14.CurrencyPipe, i14.CurrencyPipe, [i0.LOCALE_ID]), i0.ɵmpd(4608, i21.MdDialog, i21.MdDialog, [i21.Overlay, i0.Injector, [2, i14.Location], [3, i21.MdDialog]]), i0.ɵmpd(4608, i21.MdDatepickerIntl, i21.MdDatepickerIntl, []), i0.ɵmpd(4608, i22.BrowserXhr, i22.BrowserXhr, []), i0.ɵmpd(4608, i22.ResponseOptions, i22.BaseResponseOptions, []), i0.ɵmpd(5120, i22.XSRFStrategy, i22.ɵb, []), i0.ɵmpd(4608, i22.XHRBackend, i22.XHRBackend, [i22.BrowserXhr,
-            i22.ResponseOptions, i22.XSRFStrategy]), i0.ɵmpd(4608, i22.RequestOptions, i22.BaseRequestOptions, []), i0.ɵmpd(5120, i22.Http, i22.ɵc, [i22.XHRBackend,
-            i22.RequestOptions]), i0.ɵmpd(4608, i21.MdIconRegistry, i21.MdIconRegistry, [[2, i22.Http], i15.DomSanitizer]), i0.ɵmpd(4608, i23.GetRecordService, i23.GetRecordService, [i22.Http]), i0.ɵmpd(4608, i24.SearchService, i24.SearchService, [i22.Http]),
-        i0.ɵmpd(4608, i21.DateAdapter, i21.NativeDateAdapter, []), i0.ɵmpd(4608, i20.MdMutationObserverFactory, i20.MdMutationObserverFactory, []),
-        i0.ɵmpd(5120, i21.UniqueSelectionDispatcher, i21.ɵh, [[3, i21.UniqueSelectionDispatcher]]),
-        i0.ɵmpd(5120, i25.ActivatedRoute, i25.ɵf, [i25.Router]), i0.ɵmpd(4608, i25.NoPreloading, i25.NoPreloading, []), i0.ɵmpd(6144, i25.PreloadingStrategy, null, [i25.NoPreloading]), i0.ɵmpd(135680, i25.RouterPreloader, i25.RouterPreloader, [i25.Router, i0.NgModuleFactoryLoader, i0.Compiler,
-            i0.Injector, i25.PreloadingStrategy]), i0.ɵmpd(4608, i25.PreloadAllModules, i25.PreloadAllModules, []), i0.ɵmpd(5120, i25.ROUTER_INITIALIZER, i25.ɵi, [i25.ɵg]), i0.ɵmpd(5120, i0.APP_BOOTSTRAP_LISTENER, function (p0_0) {
+                    i5.CreateSalesComponentNgFactory, i6.CreateLabelComponentNgFactory, i7.CreateNftComponentNgFactory,
+                    i8.ViewSalesComponentNgFactory, i9.ViewPackageComponentNgFactory, i10.SalesFormComponentNgFactory,
+                    i11.ViewProductComponentNgFactory, i12.RadioButtonComponentNgFactory,
+                    i13.SearchAllComponentNgFactory, i14.CreateProductComponentNgFactory,
+                    i15.AppComponentNgFactory]], [3, i0.ComponentFactoryResolver], i0.NgModuleRef]),
+        i0.ɵmpd(5120, i0.LOCALE_ID, i0.ɵm, [[3, i0.LOCALE_ID]]), i0.ɵmpd(4608, i16.NgLocalization, i16.NgLocaleLocalization, [i0.LOCALE_ID]), i0.ɵmpd(5120, i0.APP_ID, i0.ɵf, []), i0.ɵmpd(5120, i0.IterableDiffers, i0.ɵk, []),
+        i0.ɵmpd(5120, i0.KeyValueDiffers, i0.ɵl, []), i0.ɵmpd(4608, i17.DomSanitizer, i17.ɵe, [i16.DOCUMENT]), i0.ɵmpd(6144, i0.Sanitizer, null, [i17.DomSanitizer]),
+        i0.ɵmpd(4608, i17.HAMMER_GESTURE_CONFIG, i17.HammerGestureConfig, []),
+        i0.ɵmpd(5120, i17.EVENT_MANAGER_PLUGINS, function (p0_0, p1_0, p2_0, p2_1) {
+            return [new i17.ɵDomEventsPlugin(p0_0), new i17.ɵKeyEventsPlugin(p1_0),
+                new i17.ɵHammerGesturesPlugin(p2_0, p2_1)];
+        }, [i16.DOCUMENT, i16.DOCUMENT, i16.DOCUMENT, i17.HAMMER_GESTURE_CONFIG]), i0.ɵmpd(4608, i17.EventManager, i17.EventManager, [i17.EVENT_MANAGER_PLUGINS, i0.NgZone]),
+        i0.ɵmpd(135680, i17.ɵDomSharedStylesHost, i17.ɵDomSharedStylesHost, [i16.DOCUMENT]),
+        i0.ɵmpd(4608, i17.ɵDomRendererFactory2, i17.ɵDomRendererFactory2, [i17.EventManager,
+            i17.ɵDomSharedStylesHost]), i0.ɵmpd(5120, i18.AnimationDriver, i19.ɵc, []),
+        i0.ɵmpd(5120, i18.ɵAnimationStyleNormalizer, i19.ɵd, []), i0.ɵmpd(4608, i18.ɵAnimationEngine, i19.ɵb, [i18.AnimationDriver, i18.ɵAnimationStyleNormalizer]),
+        i0.ɵmpd(5120, i0.RendererFactory2, i19.ɵe, [i17.ɵDomRendererFactory2, i18.ɵAnimationEngine,
+            i0.NgZone]), i0.ɵmpd(6144, i17.ɵSharedStylesHost, null, [i17.ɵDomSharedStylesHost]),
+        i0.ɵmpd(4608, i0.Testability, i0.Testability, [i0.NgZone]), i0.ɵmpd(4608, i17.Meta, i17.Meta, [i16.DOCUMENT]), i0.ɵmpd(4608, i17.Title, i17.Title, [i16.DOCUMENT]),
+        i0.ɵmpd(4608, i20.AnimationBuilder, i19.ɵBrowserAnimationBuilder, [i0.RendererFactory2]),
+        i0.ɵmpd(4608, i21.FormBuilder, i21.FormBuilder, []), i0.ɵmpd(4608, i21.ɵi, i21.ɵi, []), i0.ɵmpd(6144, i22.DIR_DOCUMENT, null, [i17.DOCUMENT]), i0.ɵmpd(4608, i22.Directionality, i22.Directionality, [[2,
+                i22.DIR_DOCUMENT]]), i0.ɵmpd(4608, i22.Platform, i22.Platform, []),
+        i0.ɵmpd(4608, i22.InteractivityChecker, i22.InteractivityChecker, [i22.Platform]),
+        i0.ɵmpd(4608, i22.FocusTrapFactory, i22.FocusTrapFactory, [i22.InteractivityChecker,
+            i22.Platform, i0.NgZone]), i0.ɵmpd(5120, i22.LiveAnnouncer, i22.LIVE_ANNOUNCER_PROVIDER_FACTORY, [[3, i22.LiveAnnouncer], [2, i22.LIVE_ANNOUNCER_ELEMENT_TOKEN], i22.Platform]),
+        i0.ɵmpd(5120, i23.ScrollDispatcher, i23.ɵe, [[3, i23.ScrollDispatcher], i0.NgZone,
+            i22.Platform]), i0.ɵmpd(5120, i23.ViewportRuler, i23.ɵc, [[3, i23.ViewportRuler],
+            i23.ScrollDispatcher]), i0.ɵmpd(4608, i23.ScrollStrategyOptions, i23.ScrollStrategyOptions, [i23.ScrollDispatcher, i23.ViewportRuler]), i0.ɵmpd(5120, i23.OverlayContainer, i23.ɵa, [[3, i23.OverlayContainer]]), i0.ɵmpd(4608, i23.ɵt, i23.ɵt, [i23.ViewportRuler]),
+        i0.ɵmpd(4608, i23.Overlay, i23.Overlay, [i23.ScrollStrategyOptions, i23.OverlayContainer,
+            i0.ComponentFactoryResolver, i23.ɵt, i0.ApplicationRef, i0.Injector, i0.NgZone]),
+        i0.ɵmpd(5120, i23.FocusOriginMonitor, i23.FOCUS_ORIGIN_MONITOR_PROVIDER_FACTORY, [[3, i23.FocusOriginMonitor], i0.NgZone, i22.Platform]), i0.ɵmpd(4608, i16.CurrencyPipe, i16.CurrencyPipe, [i0.LOCALE_ID]), i0.ɵmpd(4608, i23.MdDialog, i23.MdDialog, [i23.Overlay, i0.Injector, [2, i16.Location], [3, i23.MdDialog]]), i0.ɵmpd(4608, i23.MdDatepickerIntl, i23.MdDatepickerIntl, []), i0.ɵmpd(4608, i24.BrowserXhr, i24.BrowserXhr, []), i0.ɵmpd(4608, i24.ResponseOptions, i24.BaseResponseOptions, []), i0.ɵmpd(5120, i24.XSRFStrategy, i24.ɵb, []), i0.ɵmpd(4608, i24.XHRBackend, i24.XHRBackend, [i24.BrowserXhr,
+            i24.ResponseOptions, i24.XSRFStrategy]), i0.ɵmpd(4608, i24.RequestOptions, i24.BaseRequestOptions, []), i0.ɵmpd(5120, i24.Http, i24.ɵc, [i24.XHRBackend,
+            i24.RequestOptions]), i0.ɵmpd(4608, i23.MdIconRegistry, i23.MdIconRegistry, [[2, i24.Http], i17.DomSanitizer]), i0.ɵmpd(4608, i25.GetRecordService, i25.GetRecordService, [i24.Http]), i0.ɵmpd(4608, i26.SearchService, i26.SearchService, [i24.Http]),
+        i0.ɵmpd(4608, i23.DateAdapter, i23.NativeDateAdapter, []), i0.ɵmpd(4608, i22.MdMutationObserverFactory, i22.MdMutationObserverFactory, []),
+        i0.ɵmpd(5120, i23.UniqueSelectionDispatcher, i23.ɵh, [[3, i23.UniqueSelectionDispatcher]]),
+        i0.ɵmpd(5120, i27.ActivatedRoute, i27.ɵf, [i27.Router]), i0.ɵmpd(4608, i27.NoPreloading, i27.NoPreloading, []), i0.ɵmpd(6144, i27.PreloadingStrategy, null, [i27.NoPreloading]), i0.ɵmpd(135680, i27.RouterPreloader, i27.RouterPreloader, [i27.Router, i0.NgModuleFactoryLoader, i0.Compiler,
+            i0.Injector, i27.PreloadingStrategy]), i0.ɵmpd(4608, i27.PreloadAllModules, i27.PreloadAllModules, []), i0.ɵmpd(5120, i27.ROUTER_INITIALIZER, i27.ɵi, [i27.ɵg]), i0.ɵmpd(5120, i0.APP_BOOTSTRAP_LISTENER, function (p0_0) {
             return [p0_0];
-        }, [i25.ROUTER_INITIALIZER]), i0.ɵmpd(4608, i26.AddClassificationService, i26.AddClassificationService, [i22.Http]), i0.ɵmpd(4608, i27.CreateRecordService, i27.CreateRecordService, [i22.Http]), i0.ɵmpd(512, i14.CommonModule, i14.CommonModule, []),
-        i0.ɵmpd(1024, i0.ErrorHandler, i15.ɵa, []), i0.ɵmpd(1024, i0.NgProbeToken, function () {
-            return [i25.ɵb()];
-        }, []), i0.ɵmpd(512, i25.ɵg, i25.ɵg, [i0.Injector]), i0.ɵmpd(1024, i0.APP_INITIALIZER, function (p0_0, p0_1, p1_0) {
-            return [i15.ɵc(p0_0, p0_1), i25.ɵh(p1_0)];
-        }, [[2, i15.NgProbeToken], [2, i0.NgProbeToken], i25.ɵg]), i0.ɵmpd(512, i0.ApplicationInitStatus, i0.ApplicationInitStatus, [[2, i0.APP_INITIALIZER]]), i0.ɵmpd(131584, i0.ɵe, i0.ɵe, [i0.NgZone, i0.ɵConsole, i0.Injector, i0.ErrorHandler, i0.ComponentFactoryResolver,
+        }, [i27.ROUTER_INITIALIZER]), i0.ɵmpd(4608, i28.AddClassificationService, i28.AddClassificationService, [i24.Http]), i0.ɵmpd(4608, i29.CreateRecordService, i29.CreateRecordService, [i24.Http]), i0.ɵmpd(512, i16.CommonModule, i16.CommonModule, []),
+        i0.ɵmpd(1024, i0.ErrorHandler, i17.ɵa, []), i0.ɵmpd(1024, i0.NgProbeToken, function () {
+            return [i27.ɵb()];
+        }, []), i0.ɵmpd(512, i27.ɵg, i27.ɵg, [i0.Injector]), i0.ɵmpd(1024, i0.APP_INITIALIZER, function (p0_0, p0_1, p1_0) {
+            return [i17.ɵc(p0_0, p0_1), i27.ɵh(p1_0)];
+        }, [[2, i17.NgProbeToken], [2, i0.NgProbeToken], i27.ɵg]), i0.ɵmpd(512, i0.ApplicationInitStatus, i0.ApplicationInitStatus, [[2, i0.APP_INITIALIZER]]), i0.ɵmpd(131584, i0.ɵe, i0.ɵe, [i0.NgZone, i0.ɵConsole, i0.Injector, i0.ErrorHandler, i0.ComponentFactoryResolver,
             i0.ApplicationInitStatus]), i0.ɵmpd(2048, i0.ApplicationRef, null, [i0.ɵe]), i0.ɵmpd(512, i0.ApplicationModule, i0.ApplicationModule, [i0.ApplicationRef]),
-        i0.ɵmpd(512, i15.BrowserModule, i15.BrowserModule, [[3, i15.BrowserModule]]),
-        i0.ɵmpd(512, i17.BrowserAnimationsModule, i17.BrowserAnimationsModule, []),
-        i0.ɵmpd(1024, i25.ɵa, i25.ɵd, [[3, i25.Router]]), i0.ɵmpd(512, i25.UrlSerializer, i25.DefaultUrlSerializer, []), i0.ɵmpd(512, i25.ChildrenOutletContexts, i25.ChildrenOutletContexts, []), i0.ɵmpd(256, i25.ROUTER_CONFIGURATION, {}, []), i0.ɵmpd(1024, i14.LocationStrategy, i25.ɵc, [i14.PlatformLocation,
-            [2, i14.APP_BASE_HREF], i25.ROUTER_CONFIGURATION]), i0.ɵmpd(512, i14.Location, i14.Location, [i14.LocationStrategy]), i0.ɵmpd(512, i0.Compiler, i0.Compiler, []), i0.ɵmpd(512, i0.NgModuleFactoryLoader, i0.SystemJsNgModuleLoader, [i0.Compiler, [2, i0.SystemJsNgModuleLoaderConfig]]), i0.ɵmpd(1024, i25.ROUTES, function () {
-            return [[{ path: 'search', component: i28.FormComponent }, { path: 'salescreate/:id',
-                        component: i29.CreateSalesComponent }, { path: 'add-label/:id', component: i30.CreateLabelComponent },
-                    { path: 'view-sales/:id', component: i31.ViewSalesComponent }, { path: 'salesSearch',
-                        component: i32.SalesFormComponent }, { path: 'viewproduct/:id',
-                        component: i33.ViewProductComponent }, { path: 'radiobutton', component: i34.RadioButtonComponent },
-                    { path: 'searchAll', component: i35.SearchAllComponent }, { path: '', redirectTo: '/radiobutton',
-                        pathMatch: 'full' }, { path: 'createproduct', component: i36.CreateProductComponent }]];
-        }, []), i0.ɵmpd(1024, i25.Router, i25.ɵe, [i0.ApplicationRef, i25.UrlSerializer,
-            i25.ChildrenOutletContexts, i14.Location, i0.Injector, i0.NgModuleFactoryLoader,
-            i0.Compiler, i25.ROUTES, i25.ROUTER_CONFIGURATION, [2, i25.UrlHandlingStrategy],
-            [2, i25.RouteReuseStrategy]]), i0.ɵmpd(512, i25.RouterModule, i25.RouterModule, [[2, i25.ɵa], [2, i25.Router]]), i0.ɵmpd(512, i19.ɵba, i19.ɵba, []),
-        i0.ɵmpd(512, i19.ReactiveFormsModule, i19.ReactiveFormsModule, []),
-        i0.ɵmpd(512, i19.FormsModule, i19.FormsModule, []), i0.ɵmpd(512, i21.CompatibilityModule, i21.CompatibilityModule, []), i0.ɵmpd(512, i20.BidiModule, i20.BidiModule, []), i0.ɵmpd(256, i21.MATERIAL_SANITY_CHECKS, true, []),
-        i0.ɵmpd(512, i21.MdCommonModule, i21.MdCommonModule, [[2, i15.DOCUMENT], [2, i21.MATERIAL_SANITY_CHECKS]]),
-        i0.ɵmpd(512, i21.MdCardModule, i21.MdCardModule, []), i0.ɵmpd(512, i21.MdProgressBarModule, i21.MdProgressBarModule, []), i0.ɵmpd(512, i20.PlatformModule, i20.PlatformModule, []), i0.ɵmpd(512, i20.A11yModule, i20.A11yModule, []), i0.ɵmpd(512, i20.PortalModule, i20.PortalModule, []), i0.ɵmpd(512, i21.ScrollDispatchModule, i21.ScrollDispatchModule, []), i0.ɵmpd(512, i21.OverlayModule, i21.OverlayModule, []),
-        i0.ɵmpd(512, i21.MdSidenavModule, i21.MdSidenavModule, []), i0.ɵmpd(512, i21.StyleModule, i21.StyleModule, []), i0.ɵmpd(512, i21.MdSliderModule, i21.MdSliderModule, []), i0.ɵmpd(512, i37.SharedModule, i37.SharedModule, []), i0.ɵmpd(512, i38.PaginationModelModule, i38.PaginationModelModule, []), i0.ɵmpd(512, i39.FormModule, i39.FormModule, []),
-        i0.ɵmpd(512, i21.MdInputModule, i21.MdInputModule, []), i0.ɵmpd(512, i21.MdRippleModule, i21.MdRippleModule, []), i0.ɵmpd(512, i21.MdButtonModule, i21.MdButtonModule, []), i0.ɵmpd(512, i21.MdSelectionModule, i21.MdSelectionModule, []), i0.ɵmpd(512, i21.MdOptionModule, i21.MdOptionModule, []), i0.ɵmpd(512, i21.MdSelectModule, i21.MdSelectModule, []), i0.ɵmpd(512, i21.MdDialogModule, i21.MdDialogModule, []),
-        i0.ɵmpd(512, i21.MdDatepickerModule, i21.MdDatepickerModule, []),
-        i0.ɵmpd(512, i40.SalesFormModule, i40.SalesFormModule, []), i0.ɵmpd(512, i41.LabelFormModule, i41.LabelFormModule, []), i0.ɵmpd(512, i42.SearchAllModule, i42.SearchAllModule, []), i0.ɵmpd(512, i43.FormsCenterModule, i43.FormsCenterModule, []), i0.ɵmpd(512, i44.ConfirmBoxModule, i44.ConfirmBoxModule, []), i0.ɵmpd(512, i45.EditSalesModule, i45.EditSalesModule, []), i0.ɵmpd(512, i22.HttpModule, i22.HttpModule, []), i0.ɵmpd(512, i46.EditProductModule, i46.EditProductModule, []), i0.ɵmpd(512, i47.CreateSalesModule, i47.CreateSalesModule, []), i0.ɵmpd(512, i48.AddClassificationModule, i48.AddClassificationModule, []), i0.ɵmpd(512, i21.MdIconModule, i21.MdIconModule, []),
-        i0.ɵmpd(512, i49.ModalBoxModule, i49.ModalBoxModule, []), i0.ɵmpd(512, i50.ViewSalesModule, i50.ViewSalesModule, []), i0.ɵmpd(512, i51.CustumTableModule, i51.CustumTableModule, []), i0.ɵmpd(512, i52.ViewProductModule, i52.ViewProductModule, []), i0.ɵmpd(512, i53.CreateLabelModule, i53.CreateLabelModule, []), i0.ɵmpd(512, i21.NativeDateModule, i21.NativeDateModule, []), i0.ɵmpd(512, i21.MdNativeDateModule, i21.MdNativeDateModule, []), i0.ɵmpd(512, i20.ObserveContentModule, i20.ObserveContentModule, []), i0.ɵmpd(512, i21.MdTabsModule, i21.MdTabsModule, []), i0.ɵmpd(512, i21.MdRadioModule, i21.MdRadioModule, []), i0.ɵmpd(512, i54.RadioButtonModule, i54.RadioButtonModule, []), i0.ɵmpd(512, i55.CreateProductModule, i55.CreateProductModule, []), i0.ɵmpd(512, i1.AppModule, i1.AppModule, []),
-        i0.ɵmpd(256, i21.MD_DATE_FORMATS, i21.MD_NATIVE_DATE_FORMATS, [])]);
+        i0.ɵmpd(512, i17.BrowserModule, i17.BrowserModule, [[3, i17.BrowserModule]]),
+        i0.ɵmpd(512, i19.BrowserAnimationsModule, i19.BrowserAnimationsModule, []),
+        i0.ɵmpd(1024, i27.ɵa, i27.ɵd, [[3, i27.Router]]), i0.ɵmpd(512, i27.UrlSerializer, i27.DefaultUrlSerializer, []), i0.ɵmpd(512, i27.ChildrenOutletContexts, i27.ChildrenOutletContexts, []), i0.ɵmpd(256, i27.ROUTER_CONFIGURATION, {}, []), i0.ɵmpd(1024, i16.LocationStrategy, i27.ɵc, [i16.PlatformLocation,
+            [2, i16.APP_BASE_HREF], i27.ROUTER_CONFIGURATION]), i0.ɵmpd(512, i16.Location, i16.Location, [i16.LocationStrategy]), i0.ɵmpd(512, i0.Compiler, i0.Compiler, []), i0.ɵmpd(512, i0.NgModuleFactoryLoader, i0.SystemJsNgModuleLoader, [i0.Compiler, [2, i0.SystemJsNgModuleLoaderConfig]]), i0.ɵmpd(1024, i27.ROUTES, function () {
+            return [[{ path: 'search', component: i30.FormComponent }, { path: 'salescreate/:id',
+                        component: i31.CreateSalesComponent }, { path: 'add-label/:id', component: i32.CreateLabelComponent },
+                    { path: 'add-nft/:id', component: i33.CreateNftComponent }, { path: 'view-sales/:id',
+                        component: i34.ViewSalesComponent }, { path: 'view-package/:id',
+                        component: i35.ViewPackageComponent }, { path: 'salesSearch', component: i36.SalesFormComponent },
+                    { path: 'viewproduct/:id', component: i37.ViewProductComponent }, { path: 'radiobutton',
+                        component: i38.RadioButtonComponent }, { path: 'searchAll', component: i39.SearchAllComponent },
+                    { path: '', redirectTo: '/radiobutton', pathMatch: 'full' }, { path: 'createproduct',
+                        component: i40.CreateProductComponent }]];
+        }, []), i0.ɵmpd(1024, i27.Router, i27.ɵe, [i0.ApplicationRef, i27.UrlSerializer,
+            i27.ChildrenOutletContexts, i16.Location, i0.Injector, i0.NgModuleFactoryLoader,
+            i0.Compiler, i27.ROUTES, i27.ROUTER_CONFIGURATION, [2, i27.UrlHandlingStrategy],
+            [2, i27.RouteReuseStrategy]]), i0.ɵmpd(512, i27.RouterModule, i27.RouterModule, [[2, i27.ɵa], [2, i27.Router]]), i0.ɵmpd(512, i21.ɵba, i21.ɵba, []),
+        i0.ɵmpd(512, i21.ReactiveFormsModule, i21.ReactiveFormsModule, []),
+        i0.ɵmpd(512, i21.FormsModule, i21.FormsModule, []), i0.ɵmpd(512, i23.CompatibilityModule, i23.CompatibilityModule, []), i0.ɵmpd(512, i22.BidiModule, i22.BidiModule, []), i0.ɵmpd(256, i23.MATERIAL_SANITY_CHECKS, true, []),
+        i0.ɵmpd(512, i23.MdCommonModule, i23.MdCommonModule, [[2, i17.DOCUMENT], [2, i23.MATERIAL_SANITY_CHECKS]]),
+        i0.ɵmpd(512, i23.MdCardModule, i23.MdCardModule, []), i0.ɵmpd(512, i23.MdProgressBarModule, i23.MdProgressBarModule, []), i0.ɵmpd(512, i22.PlatformModule, i22.PlatformModule, []), i0.ɵmpd(512, i22.A11yModule, i22.A11yModule, []), i0.ɵmpd(512, i22.PortalModule, i22.PortalModule, []), i0.ɵmpd(512, i23.ScrollDispatchModule, i23.ScrollDispatchModule, []), i0.ɵmpd(512, i23.OverlayModule, i23.OverlayModule, []),
+        i0.ɵmpd(512, i23.MdSidenavModule, i23.MdSidenavModule, []), i0.ɵmpd(512, i23.StyleModule, i23.StyleModule, []), i0.ɵmpd(512, i23.MdSliderModule, i23.MdSliderModule, []), i0.ɵmpd(512, i41.SharedModule, i41.SharedModule, []), i0.ɵmpd(512, i42.PaginationModelModule, i42.PaginationModelModule, []), i0.ɵmpd(512, i43.FormModule, i43.FormModule, []),
+        i0.ɵmpd(512, i23.MdInputModule, i23.MdInputModule, []), i0.ɵmpd(512, i23.MdRippleModule, i23.MdRippleModule, []), i0.ɵmpd(512, i23.MdButtonModule, i23.MdButtonModule, []), i0.ɵmpd(512, i23.MdSelectionModule, i23.MdSelectionModule, []), i0.ɵmpd(512, i23.MdOptionModule, i23.MdOptionModule, []), i0.ɵmpd(512, i23.MdSelectModule, i23.MdSelectModule, []), i0.ɵmpd(512, i23.MdDialogModule, i23.MdDialogModule, []),
+        i0.ɵmpd(512, i23.MdDatepickerModule, i23.MdDatepickerModule, []),
+        i0.ɵmpd(512, i44.SalesFormModule, i44.SalesFormModule, []), i0.ɵmpd(512, i45.LabelFormModule, i45.LabelFormModule, []), i0.ɵmpd(512, i46.SearchAllModule, i46.SearchAllModule, []), i0.ɵmpd(512, i47.FormsCenterModule, i47.FormsCenterModule, []), i0.ɵmpd(512, i48.ConfirmBoxModule, i48.ConfirmBoxModule, []), i0.ɵmpd(512, i49.EditSalesModule, i49.EditSalesModule, []), i0.ɵmpd(512, i24.HttpModule, i24.HttpModule, []), i0.ɵmpd(512, i50.EditProductModule, i50.EditProductModule, []), i0.ɵmpd(512, i51.CreateSalesModule, i51.CreateSalesModule, []), i0.ɵmpd(512, i52.CreateNftModule, i52.CreateNftModule, []),
+        i0.ɵmpd(512, i53.AddClassificationModule, i53.AddClassificationModule, []),
+        i0.ɵmpd(512, i23.MdIconModule, i23.MdIconModule, []), i0.ɵmpd(512, i54.ModalBoxModule, i54.ModalBoxModule, []), i0.ɵmpd(512, i55.ViewSalesModule, i55.ViewSalesModule, []), i0.ɵmpd(512, i56.ViewPackageModule, i56.ViewPackageModule, []), i0.ɵmpd(512, i57.CustumTableModule, i57.CustumTableModule, []), i0.ɵmpd(512, i58.ViewProductModule, i58.ViewProductModule, []), i0.ɵmpd(512, i59.CreateLabelModule, i59.CreateLabelModule, []), i0.ɵmpd(512, i23.NativeDateModule, i23.NativeDateModule, []), i0.ɵmpd(512, i23.MdNativeDateModule, i23.MdNativeDateModule, []), i0.ɵmpd(512, i22.ObserveContentModule, i22.ObserveContentModule, []), i0.ɵmpd(512, i23.MdTabsModule, i23.MdTabsModule, []), i0.ɵmpd(512, i23.MdRadioModule, i23.MdRadioModule, []), i0.ɵmpd(512, i60.RadioButtonModule, i60.RadioButtonModule, []), i0.ɵmpd(512, i61.CreateProductModule, i61.CreateProductModule, []), i0.ɵmpd(512, i1.AppModule, i1.AppModule, []),
+        i0.ɵmpd(256, i23.MD_DATE_FORMATS, i23.MD_NATIVE_DATE_FORMATS, [])]);
 });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvYXBwLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL2FwcC5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvYXBwLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9ob21lL3JvbWFyaW8vYW5ndWxhcmFwaS9zcmMvYXBwL2FwcC5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiICJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
 //# sourceMappingURL=app.module.ngfactory.js.map

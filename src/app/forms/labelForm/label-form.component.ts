@@ -171,10 +171,12 @@ export class LabelFormComponent implements OnChanges {
                 }
             }else{
                 this.noData = "Something happened";
+                this.tableData = null;
             }
 
         }, (error) =>{
             this.serverDown=true;
+            this.tableData = null;
           
         });
 
@@ -225,6 +227,7 @@ export class LabelFormComponent implements OnChanges {
 
         }, (error) =>{
             this.serverDown=true;
+            this.tableData = null;
           
         });
     }
@@ -262,7 +265,6 @@ export class LabelFormComponent implements OnChanges {
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData= data.dataList; 
-                console.log("Data received", data.dataList);
 
             }
 

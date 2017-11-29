@@ -370,7 +370,7 @@ export type labelCreateFields = {
     package_brand: string;
     package_manufacturer: string;
     package_country: string;
-    package_size: number;
+    package_size: number | string;
     package_size_unit_of_measure: string;
     storage_type: string;
     storage_statements: string;
@@ -378,30 +378,31 @@ export type labelCreateFields = {
     other_package_statements: string;
     suggested_directions: string;
     ingredients: string;
-    multi_part_flag: boolean;
+    multi_part_flag: boolean| string;
     nutrition_fact_table: string;
-    as_prepared_per_serving_amount: number;
+    as_prepared_per_serving_amount: number| string;
     as_prepared_unit_of_measure: string;
-    as_sold_per_serving_amount: number;
+    as_sold_per_serving_amount: number| string;
     as_sold_unit_of_measure: string;
-    as_prepared_per_serving_amount_in_grams: number;
-    as_sold_per_serving_amount_in_grams: number;
+    as_prepared_per_serving_amount_in_grams: number| string;
+    as_sold_per_serving_amount_in_grams: number| string;
     package_comment: string;
     package_source: string;
     package_product_description: string;
     package_collection_date: string;
-    number_of_units: number;
+    number_of_units: number | string;
     edited_by: string;
     informed_dining_program: string;
     nft_last_update_date: string;
-    product_grouping: number;
-    child_item: boolean;
-    package_classification_number: number | string;
-    package_classification_name: string;
+    product_grouping: number | string;
+    child_item: boolean | string;
+    classification_number: number | string;
+    classification_name: string;
     nielsen_item_rank: string;
     nutrient_claims: string,
     package_nielsen_category: string;
     common_household_measure: string;
+    calculated: boolean | string;
 
 }
 
@@ -412,3 +413,85 @@ export type labelNft = {
     daily_value_amount: number | string;
     labelId?: number;
 }
+
+export type labelViewFields = {
+    product_id: number;
+    package_id: number;
+    package_description: string;
+    package_upc: string;
+    package_brand: string;
+    package_manufacturer: string;
+    package_country: string;
+    package_size: number | string;
+    package_size_unit_of_measure: string;
+    storage_type: string;
+    storage_statements: string;
+    health_claims: string;
+    other_package_statements: string;
+    suggested_directions: string;
+    ingredients: string;
+    multi_part_flag: boolean| string;
+    nutrition_fact_table: string;
+    as_prepared_per_serving_amount: number| string;
+    as_prepared_unit_of_measure: string;
+    as_sold_per_serving_amount: number| string;
+    as_sold_unit_of_measure: string;
+    as_prepared_per_serving_amount_in_grams: number| string;
+    as_sold_per_serving_amount_in_grams: number| string;
+    package_comment: string;
+    package_source: string;
+    package_product_description: string;
+    package_collection_date: string;
+    number_of_units: number | string;
+    edited_by: string;
+    informed_dining_program: string;
+    nft_last_update_date: string;
+    product_grouping: number | string;
+    child_item: boolean | string;
+    classification_number: number | string;
+    classification_name: string;
+    nielsen_item_rank: string;
+    nutrient_claims: string,
+    package_nielsen_category: string;
+    common_household_measure: string;
+    calculated: boolean | string;
+    creation_date: string;
+    last_edit_date: string; 
+
+}
+
+export class nftFields {
+    name = '';
+    amount = '';
+    unit_of_measure = '';
+    daily_value = '';
+
+}
+
+export const UofM = ['mg', 'g', 'kj', 'kcal'];
+
+export class nftList {
+    nft: nftFields[];
+}
+
+export const nftFieldsList : nftFields[] = [
+    {name: 'Energy', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Fat', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Saturated Fat', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Trans Fat', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Omega-6 Polyunsaturated Fat', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Omega-3 Polyunsaturated Fat', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Carbohydrates', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Fibre', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Soluble Fibre', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Insoluble Fibre', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Sugar', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Sugar Alcohols', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Starch', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Protein', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Cholesterol', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Sodium', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Saturated + Trans Fat', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Energy KJ', amount: '', unit_of_measure: '', daily_value:''}
+   
+]

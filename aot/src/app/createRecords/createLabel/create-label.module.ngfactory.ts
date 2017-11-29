@@ -25,9 +25,10 @@ import * as i15 from '../../../../../src/app/editForms/editSales/edit-sales.modu
 import * as i16 from '../../../../../src/app/classification-center/add-classification/add-classification.module';
 import * as i17 from '../../../../../src/app/modal-box/modal-box.module';
 import * as i18 from '../../../../../src/app/views/viewSales/view-sales.module';
-import * as i19 from '../../../../../src/app/table/table.module';
-import * as i20 from '../../../../../src/app/editForms/editProduct/edit-product.module';
-import * as i21 from '../../../../../src/app/views/viewProduct/view-product.module';
+import * as i19 from '../../../../../src/app/views/viewPackage/view-package.module';
+import * as i20 from '../../../../../src/app/table/table.module';
+import * as i21 from '../../../../../src/app/editForms/editProduct/edit-product.module';
+import * as i22 from '../../../../../src/app/views/viewProduct/view-product.module';
 export const CreateLabelModuleNgFactory:i0.NgModuleFactory<i1.CreateLabelModule> = i0.ɵcmf(i1.CreateLabelModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -108,10 +109,11 @@ export const CreateLabelModuleNgFactory:i0.NgModuleFactory<i1.CreateLabelModule>
               i16.AddClassificationModule,([] as any[])),i0.ɵmpd(512,i8.BrowserAnimationsModule,
               i8.BrowserAnimationsModule,([] as any[])),i0.ɵmpd(512,i17.ModalBoxModule,
               i17.ModalBoxModule,([] as any[])),i0.ɵmpd(512,i18.ViewSalesModule,i18.ViewSalesModule,
-              ([] as any[])),i0.ɵmpd(512,i19.CustumTableModule,i19.CustumTableModule,
-              ([] as any[])),i0.ɵmpd(512,i20.EditProductModule,i20.EditProductModule,
-              ([] as any[])),i0.ɵmpd(512,i21.ViewProductModule,i21.ViewProductModule,
+              ([] as any[])),i0.ɵmpd(512,i19.ViewPackageModule,i19.ViewPackageModule,
+              ([] as any[])),i0.ɵmpd(512,i20.CustumTableModule,i20.CustumTableModule,
+              ([] as any[])),i0.ɵmpd(512,i21.EditProductModule,i21.EditProductModule,
+              ([] as any[])),i0.ɵmpd(512,i22.ViewProductModule,i22.ViewProductModule,
               ([] as any[])),i0.ɵmpd(512,i1.CreateLabelModule,i1.CreateLabelModule,
               ([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVMYWJlbC9jcmVhdGUtbGFiZWwubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVMYWJlbC9jcmVhdGUtbGFiZWwubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVMYWJlbC9jcmVhdGUtbGFiZWwubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVMYWJlbC9jcmVhdGUtbGFiZWwubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=

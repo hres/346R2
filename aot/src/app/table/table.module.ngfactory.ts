@@ -24,6 +24,7 @@ import * as i14 from '../../../../src/app/editForms/editSales/edit-sales.module'
 import * as i15 from '../../../../src/app/classification-center/add-classification/add-classification.module';
 import * as i16 from '../../../../src/app/modal-box/modal-box.module';
 import * as i17 from '../../../../src/app/views/viewSales/view-sales.module';
+import * as i18 from '../../../../src/app/views/viewPackage/view-package.module';
 export const CustumTableModuleNgFactory:i0.NgModuleFactory<i1.CustumTableModule> = i0.ɵcmf(i1.CustumTableModule,
     ([] as any[]),(_l:any) => {
       return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
@@ -103,7 +104,8 @@ export const CustumTableModuleNgFactory:i0.NgModuleFactory<i1.CustumTableModule>
               i15.AddClassificationModule,([] as any[])),i0.ɵmpd(512,i5.BrowserAnimationsModule,
               i5.BrowserAnimationsModule,([] as any[])),i0.ɵmpd(512,i16.ModalBoxModule,
               i16.ModalBoxModule,([] as any[])),i0.ɵmpd(512,i17.ViewSalesModule,i17.ViewSalesModule,
+              ([] as any[])),i0.ɵmpd(512,i18.ViewPackageModule,i18.ViewPackageModule,
               ([] as any[])),i0.ɵmpd(512,i1.CustumTableModule,i1.CustumTableModule,
               ([] as any[]))]);
     });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvdGFibGUvdGFibGUubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

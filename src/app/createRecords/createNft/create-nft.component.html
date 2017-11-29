@@ -1,0 +1,54 @@
+<form [formGroup]="nftForm" (ngSubmit)="onSubmit()" novalidate>
+  <div style="margin-bottom: 1em">
+    <button type="submit"
+            [disabled]="nftForm.pristine" class="btn btn-success">Save</button> &nbsp;
+    <button type="reset" (click)="revert()"
+            [disabled]="nftForm.pristine" class="btn btn-danger">Revert</button>
+  </div>
+
+  <!-- Hero Detail Controls -->
+
+
+  <div formArrayName="secretComponents" class="well well-lg">
+    <div *ngFor="let address of secretComponents.controls; let i=index" [formGroupName]="i" >
+      <!-- The repeated address template -->
+      <h4>Component #{{i + 1}}</h4>
+      <div style="margin-left: 1em;">
+        <div class="form-group">
+          <label class="center-block">Name
+            <input class="form-control" formControlName="name">
+          </label>
+        </div>
+          <div class="form-group">
+          <label class="center-block">Amount
+            <input class="form-control" formControlName="amount">
+          </label>
+        </div>      
+
+        <div class="form-group">
+          <label class="center-block">Unit of Measure
+            <select class="form-control" formControlName="unit_of_measure">
+              <option *ngFor="let unit of unit_of_measure" [value]="unit">{{unit}}</option>
+            </select>
+          </label>
+        </div>
+                  <div class="form-group">
+          <label class="center-block">Daily Value
+            <input class="form-control" formControlName="daily_value">
+          </label>
+        </div>  
+
+      </div>
+      <br>
+      <!-- End of the repeated address template -->
+    </div>
+    <button (click)="addComponent()" type="button">Add a Component</button>
+  </div>
+  <!--<div class="form-group radio">
+    <h4>Super power:</h4>
+    <label class="center-block"><input type="radio" formControlName="power" value="flight">Flight</label>
+    <label class="center-block"><input type="radio" formControlName="power" value="x-ray vision">X-ray vision</label>
+    <label class="center-block"><input type="radio" formControlName="power" value="strength">Strength</label>
+  </div>-->
+
+</form>

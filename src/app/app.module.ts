@@ -38,6 +38,10 @@ import { LabelFormComponent }  from './forms/labelForm/label-form.component';
 import { LabelFormModule}  from './forms/labelForm/label-form.module'; 
 import { CreateLabelModule }  from './createRecords/createLabel/create-label.module'; 
 import { CreateLabelComponent }  from './createRecords/createLabel/create-label.component'; 
+import {ViewPackageModule} from './views/viewPackage/view-package.module';
+import {ViewPackageComponent} from './views/viewPackage/view-package.component';
+import { CreateNftModule }  from './createRecords/createNft/create-nft.module'; 
+import { CreateNftComponent }  from './createRecords/createNft/create-nft.component'; 
 
 
 import { SearchAllModule }  from './forms/searchAllForm/search-all.module'; 
@@ -86,7 +90,9 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
       LabelFormModule,
       EditProductModule,
       CreateSalesModule,
+    CreateNftModule,
       ViewSalesModule,
+      
       // MdButtonModule,
       // MdCardModule,
       // MdDatepickerModule,
@@ -109,6 +115,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
       CommonModule,
       ViewProductModule,
       MdDatepickerModule,
+        //ViewPackageModule,
       ModalBoxModule,
       AddClassificationModule,
       CreateProductModule,
@@ -125,9 +132,19 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
     path: 'add-label/:id',
     component: CreateLabelComponent
   },
+  //CreateNftComponent
+  {
+    path: 'add-nft/:id',
+    component: CreateNftComponent
+  },
   {
     path: 'view-sales/:id',
     component: ViewSalesComponent
+  },
+  
+  {
+    path: 'view-package/:id',
+    component: ViewPackageComponent
   },
   {
     path: 'salesSearch',
@@ -164,7 +181,8 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
     ],
   exports: [
 
-    RadioButtonComponent
+    RadioButtonComponent,
+    CreateSalesComponent
   ],
    providers: [
         MdIconRegistry,
@@ -176,7 +194,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
     
 
     ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent]
 })
 export class AppModule { }
 //BrowserModule /* or CommonModule */, 
