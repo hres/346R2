@@ -1,6 +1,7 @@
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { Component, Input, OnChanges }       from '@angular/core';
-import { nftFields, UofM, nftFieldsList, nftList} from '../../data-model';
+import { Component, Input, OnChanges } from '@angular/core';
+import { nftFields, UofM, nftFieldsList, nftList } from '../../data-model';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 @Component({
@@ -16,20 +17,29 @@ export class CreateNftComponent implements OnChanges {
   unit_of_measure = UofM;
   nftFieldsInput: nftFields;
   nftListArray: nftList;
+  errorMessage: string = null;
+  missingName: string = null;
+  fat: number = 0;
+  sumOfAllFat: number = 0;
+  duplicateEntries: string = null; 
+  invalidInput: string = null;
+  id: number;
 
 
 
   constructor(
-    private fb: FormBuilder) {
+    private fb: FormBuilder, private router: Router,
+         private route: ActivatedRoute) {
 
     this.createForm();
-    // this.logNameChange();
+    this.logNameChange();
   }
 
   createForm() {
     this.nftForm = this.fb.group({
 
       secretComponents: this.fb.array([]),
+      flag:null
 
     });
     this.setComponents(nftFieldsList);
@@ -56,9 +66,12 @@ export class CreateNftComponent implements OnChanges {
   }
 
   onSubmit() {
-     this.nftListArray = this.preparenftFieldsInput();
+    this.nftListArray = this.preparenftFieldsInput();
+    
+    console.log("listtooo",this.nftListArray);
+
     // this.heroService.updateHero(this.hero).subscribe(/* error handling */);
-    this.ngOnChanges();
+   // this.ngOnChanges();
   }
 
   preparenftFieldsInput(): nftList {
@@ -71,20 +84,83 @@ export class CreateNftComponent implements OnChanges {
 
     // return new `Hero` object containing a combination of original hero value(s)
     // and deep copies of changed form model values
+    this.route.params.subscribe( params => {
+        this.id = +params['id'];
+        });
     const saveNft: nftList = {
 
-      // Componentses: formModel.secretLairs // <-- bad!
-      nft: componentsDeepCopy
+      nft: componentsDeepCopy,
+      package_id:this.id,
+      flag:formModel.flag
     };
     return saveNft;
   }
 
   revert() { this.ngOnChanges(); }
 
-//   logNameChange() {
-//     const nameControl = this.nftForm.get('name');
-//     nameControl.valueChanges.forEach(
-//       (value: string) => this.nameChangeLog.push(value)
-//     );
-//   }
+  deleteClassification(i: number) {
+
+    this.secretComponents.removeAt(i)
+
+  }
+
+  logNameChange() {
+    const nameControl = this.nftForm.get('secretComponents');
+
+    // nameControl.value.forEach(function (element : any)  {
+    //   if((element.amount!= "" && element.unit_of_measure == "") ||(element.amount== "" && element.unit_of_measure != "")){
+    //     this.errorMessage = element.name;
+    //   }
+    //   console.log("oyesooo", element.name, element.amount)
+    // });
+
+    nameControl.valueChanges.forEach(
+
+      (value: any) => {
+        this.errorMessage = null;
+        this.nameChangeLog = [];
+        this.missingName = null;
+        this.duplicateEntries = null;
+        this.invalidInput = null;
+
+          //Will return an array containing all of the names
+          var valueArr = value.map((item: any ) =>  item.name );
+
+         valueArr = valueArr.filter(function(n: any){ return n != undefined }); 
+
+          var isDuplicate = valueArr.some(function(item : any, idx : number){ 
+
+               return valueArr.indexOf(item) != idx 
+          });
+          if(isDuplicate){
+            this.duplicateEntries = "One or more components have been selected more than once";
+          }
+
+        value.forEach((element: any) => {
+          if (element.name != null && element.name!= ""){
+            
+            if ((element.amount != "" && element.unit_of_measure == "") || (element.amount == "" && element.unit_of_measure != "")) {
+
+              this.nameChangeLog.push(element.name);
+              this.errorMessage = "not null";
+            }
+            ///^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/.test(this.value);
+            var re = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
+              if(element.amount.length && !re.test(element.amount)){
+                console.log("wrong!");
+                  this.invalidInput = element.name;
+              }
+
+            
+          } else {
+            this.missingName = "Missing component's name in one or more fields";
+          }
+
+        });
+
+      }
+    );
+  }
+
+
 }

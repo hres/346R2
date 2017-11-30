@@ -8,17 +8,94 @@
 
 import * as i0 from './create-nft.component.css.shim.ngstyle';
 import * as i1 from '@angular/core';
-import * as i2 from '@angular/forms';
-import * as i3 from '@angular/common';
+import * as i2 from '@angular/common';
+import * as i3 from '@angular/forms';
 import * as i4 from '../../../../../src/app/createRecords/createNft/create-nft.component';
+import * as i5 from '@angular/router';
 const styles_CreateNftComponent:any[] = [i0.styles];
 export const RenderType_CreateNftComponent:i1.RendererType2 = i1.ɵcrt({encapsulation:0,
     styles:styles_CreateNftComponent,data:{}});
+function View_CreateNftComponent_1(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),6,'div',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n\n\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      3,'div',[['class','alert alert-danger']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      1,'strong',([] as any[]),(null as any),(null as any),(null as any),(null as any),
+      (null as any))),(_l()(),i1.ɵted((null as any),['Error!'])),(_l()(),i1.ɵted((null as any),
+      [' ',' '])),(_l()(),i1.ɵted((null as any),['\n']))],(null as any),(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.missingName;
+    _ck(_v,5,0,currVal_0);
+  });
+}
+function View_CreateNftComponent_3(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'div',[['class',
+      'alert alert-danger']],(null as any),(null as any),(null as any),(null as any),
+      (null as any))),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'strong',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['Error!'])),(_l()(),i1.ɵted((null as any),[' Invalid amount for ',
+      ' ']))],(null as any),(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.invalidInput;
+    _ck(_v,3,0,currVal_0);
+  });
+}
 function View_CreateNftComponent_2(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),4,'div',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n\n\n  '])),(_l()(),i1.ɵand(16777216,(null as any),
+      (null as any),1,(null as any),View_CreateNftComponent_3)),i1.ɵdid(16384,(null as any),
+      0,i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      (_l()(),i1.ɵted((null as any),['\n']))],(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.invalidInput;
+    _ck(_v,3,0,currVal_0);
+  },(null as any));
+}
+function View_CreateNftComponent_4(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),6,'div',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n\n\n  '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      3,'div',[['class','alert alert-danger']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      1,'strong',([] as any[]),(null as any),(null as any),(null as any),(null as any),
+      (null as any))),(_l()(),i1.ɵted((null as any),['Error!'])),(_l()(),i1.ɵted((null as any),
+      [' ',' '])),(_l()(),i1.ɵted((null as any),['\n']))],(null as any),(_ck,_v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.duplicateEntries;
+    _ck(_v,5,0,currVal_0);
+  });
+}
+function View_CreateNftComponent_6(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'div',[['class',
+      'alert alert-danger']],(null as any),(null as any),(null as any),(null as any),
+      (null as any))),(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'strong',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['',''])),(_l()(),i1.ɵted((null as any),['  is missing amount or unit of Measure']))],
+      (null as any),(_ck,_v) => {
+        const currVal_0:any = _v.context.$implicit;
+        _ck(_v,2,0,currVal_0);
+      });
+}
+function View_CreateNftComponent_5(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),4,'div',([] as any[]),
+      (null as any),(null as any),(null as any),(null as any),(null as any))),(_l()(),
+      i1.ɵted((null as any),['\n\n\n  '])),(_l()(),i1.ɵand(16777216,(null as any),
+      (null as any),1,(null as any),View_CreateNftComponent_6)),i1.ɵdid(802816,(null as any),
+      0,i2.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,
+          'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n']))],(_ck,
+      _v) => {
+    var _co:any = _v.component;
+    const currVal_0:any = _co.nameChangeLog;
+    _ck(_v,3,0,currVal_0);
+  },(null as any));
+}
+function View_CreateNftComponent_8(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'option',([] as any[]),
       (null as any),(null as any),(null as any),(null as any),(null as any))),i1.ɵdid(147456,
-      (null as any),0,i2.NgSelectOption,[i1.ElementRef,i1.Renderer2,[2,i2.SelectControlValueAccessor]],
-      {value:[0,'value']},(null as any)),i1.ɵdid(147456,(null as any),0,i2.ɵq,[i1.ElementRef,
+      (null as any),0,i3.NgSelectOption,[i1.ElementRef,i1.Renderer2,[2,i3.SelectControlValueAccessor]],
+      {value:[0,'value']},(null as any)),i1.ɵdid(147456,(null as any),0,i3.ɵq,[i1.ElementRef,
       i1.Renderer2,[8,(null as any)]],{value:[0,'value']},(null as any)),(_l()(),i1.ɵted((null as any),
       ['','']))],(_ck,_v) => {
     const currVal_0:any = _v.context.$implicit;
@@ -30,28 +107,74 @@ function View_CreateNftComponent_2(_l:any):i1.ɵViewDefinition {
     _ck(_v,3,0,currVal_2);
   });
 }
-function View_CreateNftComponent_1(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),70,'div',([] as any[]),
+function View_CreateNftComponent_9(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),0,'span',[['class',
+      'glyphicon glyphicon-remove deleteIcon']],(null as any),[[(null as any),'click']],
+      (_v,en,$event) => {
+        var ad:boolean = true;
+        var _co:any = _v.component;
+        if (('click' === en)) {
+          const pd_0:any = ((<any>_co.deleteClassification((<any>_v.parent).context.index)) !== false);
+          ad = (pd_0 && ad);
+        }
+        return ad;
+      },(null as any),(null as any)))],(null as any),(null as any));
+}
+function View_CreateNftComponent_7(_l:any):i1.ɵViewDefinition {
+  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),63,'div',([] as any[]),
       [[2,'ng-untouched',(null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',
           (null as any)],[2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],
           [2,'ng-invalid',(null as any)],[2,'ng-pending',(null as any)]],(null as any),
-      (null as any),(null as any),(null as any))),i1.ɵdid(212992,(null as any),0,i2.FormGroupName,
-      [[3,i2.ControlContainer],[8,(null as any)],[8,(null as any)]],{name:[0,'name']},
-      (null as any)),i1.ɵprd(2048,(null as any),i2.ControlContainer,(null as any),
-      [i2.FormGroupName]),i1.ɵdid(16384,(null as any),0,i2.NgControlStatusGroup,[i2.ControlContainer],
-      (null as any),(null as any)),(_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),
-      i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-      1,'h4',([] as any[]),(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i1.ɵted((null as any),['Component #',''])),(_l()(),i1.ɵted((null as any),
-      ['\n      '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),57,'div',[['style',
-      'margin-left: 1em;']],(null as any),(null as any),(null as any),(null as any),
-      (null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),i1.ɵeld(0,
-      (null as any),(null as any),11,'div',[['class','form-group']],(null as any),
-      (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-      ['\n          '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),8,'label',[['class',
-      'center-block']],(null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['Name\n            '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),5,'input',[['class','form-control'],['formControlName','name']],
+      (null as any),(null as any),(null as any))),i1.ɵdid(212992,(null as any),0,i3.FormGroupName,
+      [[3,i3.ControlContainer],[8,(null as any)],[8,(null as any)]],{name:[0,'name']},
+      (null as any)),i1.ɵprd(2048,(null as any),i3.ControlContainer,(null as any),
+      [i3.FormGroupName]),i1.ɵdid(16384,(null as any),0,i3.NgControlStatusGroup,[i3.ControlContainer],
+      (null as any),(null as any)),(_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),
+      i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      54,'div',[['class','row append']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n\n\n      '])),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),8,'div',[['class','form-group col-sm-3']],
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted((null as any),['\n\n        '])),(_l()(),i1.ɵeld(0,(null as any),
+          (null as any),5,'input',[['class','form-control'],['formControlName','name'],
+              ['placeholder','Component\'s Name']],[[8,'readOnly',0],[2,'ng-untouched',
+              (null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',(null as any)],
+              [2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],[2,'ng-invalid',
+                  (null as any)],[2,'ng-pending',(null as any)]],[[(null as any),'input'],
+              [(null as any),'blur'],[(null as any),'compositionstart'],[(null as any),
+                  'compositionend']],(_v,en,$event) => {
+            var ad:boolean = true;
+            if (('input' === en)) {
+              const pd_0:any = ((<any>i1.ɵnov(_v,11)._handleInput($event.target.value)) !== false);
+              ad = (pd_0 && ad);
+            }
+            if (('blur' === en)) {
+              const pd_1:any = ((<any>i1.ɵnov(_v,11).onTouched()) !== false);
+              ad = (pd_1 && ad);
+            }
+            if (('compositionstart' === en)) {
+              const pd_2:any = ((<any>i1.ɵnov(_v,11)._compositionStart()) !== false);
+              ad = (pd_2 && ad);
+            }
+            if (('compositionend' === en)) {
+              const pd_3:any = ((<any>i1.ɵnov(_v,11)._compositionEnd($event.target.value)) !== false);
+              ad = (pd_3 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i3.DefaultValueAccessor,
+          [i1.Renderer2,i1.ElementRef,[2,i3.COMPOSITION_BUFFER_MODE]],(null as any),
+          (null as any)),i1.ɵprd(1024,(null as any),i3.NG_VALUE_ACCESSOR,(p0_0:any) => {
+        return [p0_0];
+      },[i3.DefaultValueAccessor]),i1.ɵdid(671744,(null as any),0,i3.FormControlName,
+          [[3,i3.ControlContainer],[8,(null as any)],[8,(null as any)],[2,i3.NG_VALUE_ACCESSOR]],
+          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i3.NgControl,
+          (null as any),[i3.FormControlName]),i1.ɵdid(16384,(null as any),0,i3.NgControlStatus,
+          [i3.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
+          ['\n\n      '])),(_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,
+          (null as any),(null as any),8,'div',[['class','form-group col-sm-3']],(null as any),
+          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+          ['\n\n        '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),5,'input',
+          [['class','form-control'],['formControlName','amount'],['placeholder','Component\'s Amount']],
           [[2,'ng-untouched',(null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',
               (null as any)],[2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],
               [2,'ng-invalid',(null as any)],[2,'ng-pending',(null as any)]],[[(null as any),
@@ -59,216 +182,191 @@ function View_CreateNftComponent_1(_l:any):i1.ɵViewDefinition {
               'compositionend']],(_v,en,$event) => {
             var ad:boolean = true;
             if (('input' === en)) {
-              const pd_0:any = ((<any>i1.ɵnov(_v,16)._handleInput($event.target.value)) !== false);
+              const pd_0:any = ((<any>i1.ɵnov(_v,21)._handleInput($event.target.value)) !== false);
               ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-              const pd_1:any = ((<any>i1.ɵnov(_v,16).onTouched()) !== false);
+              const pd_1:any = ((<any>i1.ɵnov(_v,21).onTouched()) !== false);
               ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-              const pd_2:any = ((<any>i1.ɵnov(_v,16)._compositionStart()) !== false);
+              const pd_2:any = ((<any>i1.ɵnov(_v,21)._compositionStart()) !== false);
               ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-              const pd_3:any = ((<any>i1.ɵnov(_v,16)._compositionEnd($event.target.value)) !== false);
+              const pd_3:any = ((<any>i1.ɵnov(_v,21)._compositionEnd($event.target.value)) !== false);
               ad = (pd_3 && ad);
             }
             return ad;
-          },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i2.DefaultValueAccessor,
-          [i1.Renderer2,i1.ElementRef,[2,i2.COMPOSITION_BUFFER_MODE]],(null as any),
-          (null as any)),i1.ɵprd(1024,(null as any),i2.NG_VALUE_ACCESSOR,(p0_0:any) => {
+          },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i3.DefaultValueAccessor,
+          [i1.Renderer2,i1.ElementRef,[2,i3.COMPOSITION_BUFFER_MODE]],(null as any),
+          (null as any)),i1.ɵprd(1024,(null as any),i3.NG_VALUE_ACCESSOR,(p0_0:any) => {
         return [p0_0];
-      },[i2.DefaultValueAccessor]),i1.ɵdid(671744,(null as any),0,i2.FormControlName,
-          [[3,i2.ControlContainer],[8,(null as any)],[8,(null as any)],[2,i2.NG_VALUE_ACCESSOR]],
-          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i2.NgControl,
-          (null as any),[i2.FormControlName]),i1.ɵdid(16384,(null as any),0,i2.NgControlStatus,
-          [i2.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n          '])),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),
-          i1.ɵted((null as any),['\n          '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),11,'div',[['class','form-group']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n          '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),8,'label',
-          [['class','center-block']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['Amount\n            '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),5,'input',[['class','form-control'],
-          ['formControlName','amount']],[[2,'ng-untouched',(null as any)],[2,'ng-touched',
-          (null as any)],[2,'ng-pristine',(null as any)],[2,'ng-dirty',(null as any)],
-          [2,'ng-valid',(null as any)],[2,'ng-invalid',(null as any)],[2,'ng-pending',
-              (null as any)]],[[(null as any),'input'],[(null as any),'blur'],[(null as any),
-          'compositionstart'],[(null as any),'compositionend']],(_v,en,$event) => {
-        var ad:boolean = true;
-        if (('input' === en)) {
-          const pd_0:any = ((<any>i1.ɵnov(_v,29)._handleInput($event.target.value)) !== false);
-          ad = (pd_0 && ad);
-        }
-        if (('blur' === en)) {
-          const pd_1:any = ((<any>i1.ɵnov(_v,29).onTouched()) !== false);
-          ad = (pd_1 && ad);
-        }
-        if (('compositionstart' === en)) {
-          const pd_2:any = ((<any>i1.ɵnov(_v,29)._compositionStart()) !== false);
-          ad = (pd_2 && ad);
-        }
-        if (('compositionend' === en)) {
-          const pd_3:any = ((<any>i1.ɵnov(_v,29)._compositionEnd($event.target.value)) !== false);
-          ad = (pd_3 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i2.DefaultValueAccessor,
-          [i1.Renderer2,i1.ElementRef,[2,i2.COMPOSITION_BUFFER_MODE]],(null as any),
-          (null as any)),i1.ɵprd(1024,(null as any),i2.NG_VALUE_ACCESSOR,(p0_0:any) => {
-        return [p0_0];
-      },[i2.DefaultValueAccessor]),i1.ɵdid(671744,(null as any),0,i2.FormControlName,
-          [[3,i2.ControlContainer],[8,(null as any)],[8,(null as any)],[2,i2.NG_VALUE_ACCESSOR]],
-          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i2.NgControl,
-          (null as any),[i2.FormControlName]),i1.ɵdid(16384,(null as any),0,i2.NgControlStatus,
-          [i2.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n          '])),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),
-          i1.ɵted((null as any),['      \n\n        '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),15,'div',[['class','form-group']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n          '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),12,'label',
-          [['class','center-block']],(null as any),(null as any),(null as any),(null as any),
-          (null as any))),(_l()(),i1.ɵted((null as any),['Unit of Measure\n            '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),9,'select',[['class','form-control'],
-          ['formControlName','unit_of_measure']],[[2,'ng-untouched',(null as any)],
-          [2,'ng-touched',(null as any)],[2,'ng-pristine',(null as any)],[2,'ng-dirty',
-              (null as any)],[2,'ng-valid',(null as any)],[2,'ng-invalid',(null as any)],
-          [2,'ng-pending',(null as any)]],[[(null as any),'change'],[(null as any),
-          'blur']],(_v,en,$event) => {
-        var ad:boolean = true;
-        if (('change' === en)) {
-          const pd_0:any = ((<any>i1.ɵnov(_v,42).onChange($event.target.value)) !== false);
-          ad = (pd_0 && ad);
-        }
-        if (('blur' === en)) {
-          const pd_1:any = ((<any>i1.ɵnov(_v,42).onTouched()) !== false);
-          ad = (pd_1 && ad);
-        }
-        return ad;
-      },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i2.SelectControlValueAccessor,
+      },[i3.DefaultValueAccessor]),i1.ɵdid(671744,(null as any),0,i3.FormControlName,
+          [[3,i3.ControlContainer],[8,(null as any)],[8,(null as any)],[2,i3.NG_VALUE_ACCESSOR]],
+          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i3.NgControl,
+          (null as any),[i3.FormControlName]),i1.ɵdid(16384,(null as any),0,i3.NgControlStatus,
+          [i3.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
+          ['\n\n      '])),(_l()(),i1.ɵted((null as any),['\n\n      '])),(_l()(),
+          i1.ɵeld(0,(null as any),(null as any),17,'div',[['class','form-group col-sm-3']],
+              (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵted((null as any),['\n\n        '])),(_l()(),i1.ɵeld(0,(null as any),
+          (null as any),14,'select',[['class','form-control'],['formControlName','unit_of_measure']],
+          [[2,'ng-untouched',(null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',
+              (null as any)],[2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],
+              [2,'ng-invalid',(null as any)],[2,'ng-pending',(null as any)]],[[(null as any),
+              'change'],[(null as any),'blur']],(_v,en,$event) => {
+            var ad:boolean = true;
+            if (('change' === en)) {
+              const pd_0:any = ((<any>i1.ɵnov(_v,31).onChange($event.target.value)) !== false);
+              ad = (pd_0 && ad);
+            }
+            if (('blur' === en)) {
+              const pd_1:any = ((<any>i1.ɵnov(_v,31).onTouched()) !== false);
+              ad = (pd_1 && ad);
+            }
+            return ad;
+          },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i3.SelectControlValueAccessor,
           [i1.Renderer2,i1.ElementRef],(null as any),(null as any)),i1.ɵprd(1024,(null as any),
-          i2.NG_VALUE_ACCESSOR,(p0_0:any) => {
+          i3.NG_VALUE_ACCESSOR,(p0_0:any) => {
             return [p0_0];
-          },[i2.SelectControlValueAccessor]),i1.ɵdid(671744,(null as any),0,i2.FormControlName,
-          [[3,i2.ControlContainer],[8,(null as any)],[8,(null as any)],[2,i2.NG_VALUE_ACCESSOR]],
-          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i2.NgControl,
-          (null as any),[i2.FormControlName]),i1.ɵdid(16384,(null as any),0,i2.NgControlStatus,
-          [i2.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n              '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),
-          1,(null as any),View_CreateNftComponent_2)),i1.ɵdid(802816,(null as any),
-          0,i3.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,
-              'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),['\n            '])),
-      (_l()(),i1.ɵted((null as any),['\n          '])),(_l()(),i1.ɵted((null as any),
-          ['\n        '])),(_l()(),i1.ɵted((null as any),['\n                  '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),11,'div',[['class','form-group']],
-          (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n          '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),8,'label',[['class','center-block']],(null as any),(null as any),
-          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['Daily Value\n            '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          5,'input',[['class','form-control'],['formControlName','daily_value']],[[2,
-              'ng-untouched',(null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',
+          },[i3.SelectControlValueAccessor]),i1.ɵdid(671744,(null as any),0,i3.FormControlName,
+          [[3,i3.ControlContainer],[8,(null as any)],[8,(null as any)],[2,i3.NG_VALUE_ACCESSOR]],
+          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i3.NgControl,
+          (null as any),[i3.FormControlName]),i1.ɵdid(16384,(null as any),0,i3.NgControlStatus,
+          [i3.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
+          ['\n              '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),3,'option',
+          [['selected','']],(null as any),(null as any),(null as any),(null as any),
+          (null as any))),i1.ɵdid(147456,(null as any),0,i3.NgSelectOption,[i1.ElementRef,
+          i1.Renderer2,[2,i3.SelectControlValueAccessor]],(null as any),(null as any)),
+      i1.ɵdid(147456,(null as any),0,i3.ɵq,[i1.ElementRef,i1.Renderer2,[8,(null as any)]],
+          (null as any),(null as any)),(_l()(),i1.ɵted((null as any),['Select a unit of measure'])),
+      (_l()(),i1.ɵted((null as any),['\n              '])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_CreateNftComponent_8)),
+      i1.ɵdid(802816,(null as any),0,i2.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
+          ['\n            '])),(_l()(),i1.ɵted((null as any),['\n\n      '])),(_l()(),
+          i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+          11,'div',[['class','form-group col-sm-3']],(null as any),(null as any),(null as any),
+          (null as any),(null as any))),(_l()(),i1.ɵted((null as any),['\n        '])),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),5,'input',[['class','form-control'],
+          ['formControlName','daily_value'],['placeholder','Component\'s daily value']],
+          [[2,'ng-untouched',(null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',
               (null as any)],[2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],
               [2,'ng-invalid',(null as any)],[2,'ng-pending',(null as any)]],[[(null as any),
               'input'],[(null as any),'blur'],[(null as any),'compositionstart'],[(null as any),
               'compositionend']],(_v,en,$event) => {
             var ad:boolean = true;
             if (('input' === en)) {
-              const pd_0:any = ((<any>i1.ɵnov(_v,59)._handleInput($event.target.value)) !== false);
+              const pd_0:any = ((<any>i1.ɵnov(_v,50)._handleInput($event.target.value)) !== false);
               ad = (pd_0 && ad);
             }
             if (('blur' === en)) {
-              const pd_1:any = ((<any>i1.ɵnov(_v,59).onTouched()) !== false);
+              const pd_1:any = ((<any>i1.ɵnov(_v,50).onTouched()) !== false);
               ad = (pd_1 && ad);
             }
             if (('compositionstart' === en)) {
-              const pd_2:any = ((<any>i1.ɵnov(_v,59)._compositionStart()) !== false);
+              const pd_2:any = ((<any>i1.ɵnov(_v,50)._compositionStart()) !== false);
               ad = (pd_2 && ad);
             }
             if (('compositionend' === en)) {
-              const pd_3:any = ((<any>i1.ɵnov(_v,59)._compositionEnd($event.target.value)) !== false);
+              const pd_3:any = ((<any>i1.ɵnov(_v,50)._compositionEnd($event.target.value)) !== false);
               ad = (pd_3 && ad);
             }
             return ad;
-          },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i2.DefaultValueAccessor,
-          [i1.Renderer2,i1.ElementRef,[2,i2.COMPOSITION_BUFFER_MODE]],(null as any),
-          (null as any)),i1.ɵprd(1024,(null as any),i2.NG_VALUE_ACCESSOR,(p0_0:any) => {
+          },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i3.DefaultValueAccessor,
+          [i1.Renderer2,i1.ElementRef,[2,i3.COMPOSITION_BUFFER_MODE]],(null as any),
+          (null as any)),i1.ɵprd(1024,(null as any),i3.NG_VALUE_ACCESSOR,(p0_0:any) => {
         return [p0_0];
-      },[i2.DefaultValueAccessor]),i1.ɵdid(671744,(null as any),0,i2.FormControlName,
-          [[3,i2.ControlContainer],[8,(null as any)],[8,(null as any)],[2,i2.NG_VALUE_ACCESSOR]],
-          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i2.NgControl,
-          (null as any),[i2.FormControlName]),i1.ɵdid(16384,(null as any),0,i2.NgControlStatus,
-          [i2.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n          '])),(_l()(),i1.ɵted((null as any),['\n        '])),(_l()(),
-          i1.ɵted((null as any),['  \n\n      '])),(_l()(),i1.ɵted((null as any),['\n      '])),
-      (_l()(),i1.ɵeld(0,(null as any),(null as any),0,'br',([] as any[]),(null as any),
-          (null as any),(null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
-          ['\n      '])),(_l()(),i1.ɵted((null as any),['\n    ']))],(_ck,_v) => {
-    var _co:any = _v.component;
-    const currVal_7:any = _v.context.index;
-    _ck(_v,1,0,currVal_7);
-    const currVal_16:any = 'name';
-    _ck(_v,18,0,currVal_16);
-    const currVal_24:any = 'amount';
-    _ck(_v,31,0,currVal_24);
-    const currVal_32:any = 'unit_of_measure';
-    _ck(_v,44,0,currVal_32);
-    const currVal_33:any = _co.unit_of_measure;
-    _ck(_v,49,0,currVal_33);
-    const currVal_41:any = 'daily_value';
-    _ck(_v,61,0,currVal_41);
-  },(_ck,_v) => {
-    const currVal_0:any = i1.ɵnov(_v,3).ngClassUntouched;
-    const currVal_1:any = i1.ɵnov(_v,3).ngClassTouched;
-    const currVal_2:any = i1.ɵnov(_v,3).ngClassPristine;
-    const currVal_3:any = i1.ɵnov(_v,3).ngClassDirty;
-    const currVal_4:any = i1.ɵnov(_v,3).ngClassValid;
-    const currVal_5:any = i1.ɵnov(_v,3).ngClassInvalid;
-    const currVal_6:any = i1.ɵnov(_v,3).ngClassPending;
-    _ck(_v,0,0,currVal_0,currVal_1,currVal_2,currVal_3,currVal_4,currVal_5,currVal_6);
-    const currVal_8:any = (_v.context.index + 1);
-    _ck(_v,7,0,currVal_8);
-    const currVal_9:any = i1.ɵnov(_v,20).ngClassUntouched;
-    const currVal_10:any = i1.ɵnov(_v,20).ngClassTouched;
-    const currVal_11:any = i1.ɵnov(_v,20).ngClassPristine;
-    const currVal_12:any = i1.ɵnov(_v,20).ngClassDirty;
-    const currVal_13:any = i1.ɵnov(_v,20).ngClassValid;
-    const currVal_14:any = i1.ɵnov(_v,20).ngClassInvalid;
-    const currVal_15:any = i1.ɵnov(_v,20).ngClassPending;
-    _ck(_v,15,0,currVal_9,currVal_10,currVal_11,currVal_12,currVal_13,currVal_14,currVal_15);
-    const currVal_17:any = i1.ɵnov(_v,33).ngClassUntouched;
-    const currVal_18:any = i1.ɵnov(_v,33).ngClassTouched;
-    const currVal_19:any = i1.ɵnov(_v,33).ngClassPristine;
-    const currVal_20:any = i1.ɵnov(_v,33).ngClassDirty;
-    const currVal_21:any = i1.ɵnov(_v,33).ngClassValid;
-    const currVal_22:any = i1.ɵnov(_v,33).ngClassInvalid;
-    const currVal_23:any = i1.ɵnov(_v,33).ngClassPending;
-    _ck(_v,28,0,currVal_17,currVal_18,currVal_19,currVal_20,currVal_21,currVal_22,
-        currVal_23);
-    const currVal_25:any = i1.ɵnov(_v,46).ngClassUntouched;
-    const currVal_26:any = i1.ɵnov(_v,46).ngClassTouched;
-    const currVal_27:any = i1.ɵnov(_v,46).ngClassPristine;
-    const currVal_28:any = i1.ɵnov(_v,46).ngClassDirty;
-    const currVal_29:any = i1.ɵnov(_v,46).ngClassValid;
-    const currVal_30:any = i1.ɵnov(_v,46).ngClassInvalid;
-    const currVal_31:any = i1.ɵnov(_v,46).ngClassPending;
-    _ck(_v,41,0,currVal_25,currVal_26,currVal_27,currVal_28,currVal_29,currVal_30,
-        currVal_31);
-    const currVal_34:any = i1.ɵnov(_v,63).ngClassUntouched;
-    const currVal_35:any = i1.ɵnov(_v,63).ngClassTouched;
-    const currVal_36:any = i1.ɵnov(_v,63).ngClassPristine;
-    const currVal_37:any = i1.ɵnov(_v,63).ngClassDirty;
-    const currVal_38:any = i1.ɵnov(_v,63).ngClassValid;
-    const currVal_39:any = i1.ɵnov(_v,63).ngClassInvalid;
-    const currVal_40:any = i1.ɵnov(_v,63).ngClassPending;
-    _ck(_v,58,0,currVal_34,currVal_35,currVal_36,currVal_37,currVal_38,currVal_39,
-        currVal_40);
-  });
+      },[i3.DefaultValueAccessor]),i1.ɵdid(671744,(null as any),0,i3.FormControlName,
+          [[3,i3.ControlContainer],[8,(null as any)],[8,(null as any)],[2,i3.NG_VALUE_ACCESSOR]],
+          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i3.NgControl,
+          (null as any),[i3.FormControlName]),i1.ɵdid(16384,(null as any),0,i3.NgControlStatus,
+          [i3.NgControl],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
+          ['\n        '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,
+          (null as any),View_CreateNftComponent_9)),i1.ɵdid(16384,(null as any),0,
+          i2.NgIf,[i1.ViewContainerRef,i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),
+      (_l()(),i1.ɵted((null as any),['\n      '])),(_l()(),i1.ɵted((null as any),['\n      '])),
+      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n\n    '])),
+      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵted((null as any),['\n  ']))],
+      (_ck,_v) => {
+        var _co:any = _v.component;
+        const currVal_7:any = _v.context.index;
+        _ck(_v,1,0,currVal_7);
+        const currVal_16:any = 'name';
+        _ck(_v,13,0,currVal_16);
+        const currVal_24:any = 'amount';
+        _ck(_v,23,0,currVal_24);
+        const currVal_32:any = 'unit_of_measure';
+        _ck(_v,33,0,currVal_32);
+        const currVal_33:any = _co.unit_of_measure;
+        _ck(_v,43,0,currVal_33);
+        const currVal_41:any = 'daily_value';
+        _ck(_v,52,0,currVal_41);
+        const currVal_42:any = (_v.context.index > 17);
+        _ck(_v,57,0,currVal_42);
+      },(_ck,_v) => {
+        const currVal_0:any = i1.ɵnov(_v,3).ngClassUntouched;
+        const currVal_1:any = i1.ɵnov(_v,3).ngClassTouched;
+        const currVal_2:any = i1.ɵnov(_v,3).ngClassPristine;
+        const currVal_3:any = i1.ɵnov(_v,3).ngClassDirty;
+        const currVal_4:any = i1.ɵnov(_v,3).ngClassValid;
+        const currVal_5:any = i1.ɵnov(_v,3).ngClassInvalid;
+        const currVal_6:any = i1.ɵnov(_v,3).ngClassPending;
+        _ck(_v,0,0,currVal_0,currVal_1,currVal_2,currVal_3,currVal_4,currVal_5,currVal_6);
+        const currVal_8:any = (_v.context.index <= 17);
+        const currVal_9:any = i1.ɵnov(_v,15).ngClassUntouched;
+        const currVal_10:any = i1.ɵnov(_v,15).ngClassTouched;
+        const currVal_11:any = i1.ɵnov(_v,15).ngClassPristine;
+        const currVal_12:any = i1.ɵnov(_v,15).ngClassDirty;
+        const currVal_13:any = i1.ɵnov(_v,15).ngClassValid;
+        const currVal_14:any = i1.ɵnov(_v,15).ngClassInvalid;
+        const currVal_15:any = i1.ɵnov(_v,15).ngClassPending;
+        _ck(_v,10,0,currVal_8,currVal_9,currVal_10,currVal_11,currVal_12,currVal_13,
+            currVal_14,currVal_15);
+        const currVal_17:any = i1.ɵnov(_v,25).ngClassUntouched;
+        const currVal_18:any = i1.ɵnov(_v,25).ngClassTouched;
+        const currVal_19:any = i1.ɵnov(_v,25).ngClassPristine;
+        const currVal_20:any = i1.ɵnov(_v,25).ngClassDirty;
+        const currVal_21:any = i1.ɵnov(_v,25).ngClassValid;
+        const currVal_22:any = i1.ɵnov(_v,25).ngClassInvalid;
+        const currVal_23:any = i1.ɵnov(_v,25).ngClassPending;
+        _ck(_v,20,0,currVal_17,currVal_18,currVal_19,currVal_20,currVal_21,currVal_22,
+            currVal_23);
+        const currVal_25:any = i1.ɵnov(_v,35).ngClassUntouched;
+        const currVal_26:any = i1.ɵnov(_v,35).ngClassTouched;
+        const currVal_27:any = i1.ɵnov(_v,35).ngClassPristine;
+        const currVal_28:any = i1.ɵnov(_v,35).ngClassDirty;
+        const currVal_29:any = i1.ɵnov(_v,35).ngClassValid;
+        const currVal_30:any = i1.ɵnov(_v,35).ngClassInvalid;
+        const currVal_31:any = i1.ɵnov(_v,35).ngClassPending;
+        _ck(_v,30,0,currVal_25,currVal_26,currVal_27,currVal_28,currVal_29,currVal_30,
+            currVal_31);
+        const currVal_34:any = i1.ɵnov(_v,54).ngClassUntouched;
+        const currVal_35:any = i1.ɵnov(_v,54).ngClassTouched;
+        const currVal_36:any = i1.ɵnov(_v,54).ngClassPristine;
+        const currVal_37:any = i1.ɵnov(_v,54).ngClassDirty;
+        const currVal_38:any = i1.ɵnov(_v,54).ngClassValid;
+        const currVal_39:any = i1.ɵnov(_v,54).ngClassInvalid;
+        const currVal_40:any = i1.ɵnov(_v,54).ngClassPending;
+        _ck(_v,49,0,currVal_34,currVal_35,currVal_36,currVal_37,currVal_38,currVal_39,
+            currVal_40);
+      });
 }
 export function View_CreateNftComponent_0(_l:any):i1.ɵViewDefinition {
-  return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),28,'form',[['novalidate',
+  return i1.ɵvid(0,[(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_CreateNftComponent_1)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),
+      ['\n\n'])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_CreateNftComponent_2)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),
+      ['\n'])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_CreateNftComponent_4)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),
+      ['\n'])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
+      View_CreateNftComponent_5)),i1.ɵdid(16384,(null as any),0,i2.NgIf,[i1.ViewContainerRef,
+      i1.TemplateRef],{ngIf:[0,'ngIf']},(null as any)),(_l()(),i1.ɵted((null as any),
+      ['\n\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),50,'form',[['novalidate',
       '']],[[2,'ng-untouched',(null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',
       (null as any)],[2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],[2,
       'ng-invalid',(null as any)],[2,'ng-pending',(null as any)]],[[(null as any),
@@ -276,11 +374,11 @@ export function View_CreateNftComponent_0(_l:any):i1.ɵViewDefinition {
     var ad:boolean = true;
     var _co:i4.CreateNftComponent = _v.component;
     if (('submit' === en)) {
-      const pd_0:any = ((<any>i1.ɵnov(_v,2).onSubmit($event)) !== false);
+      const pd_0:any = ((<any>i1.ɵnov(_v,14).onSubmit($event)) !== false);
       ad = (pd_0 && ad);
     }
     if (('reset' === en)) {
-      const pd_1:any = ((<any>i1.ɵnov(_v,2).onReset()) !== false);
+      const pd_1:any = ((<any>i1.ɵnov(_v,14).onReset()) !== false);
       ad = (pd_1 && ad);
     }
     if (('ngSubmit' === en)) {
@@ -288,18 +386,18 @@ export function View_CreateNftComponent_0(_l:any):i1.ɵViewDefinition {
       ad = (pd_2 && ad);
     }
     return ad;
-  },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i2.ɵbf,([] as any[]),
-      (null as any),(null as any)),i1.ɵdid(540672,(null as any),0,i2.FormGroupDirective,
+  },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i3.ɵbf,([] as any[]),
+      (null as any),(null as any)),i1.ɵdid(540672,(null as any),0,i3.FormGroupDirective,
       [[8,(null as any)],[8,(null as any)]],{form:[0,'form']},{ngSubmit:'ngSubmit'}),
-      i1.ɵprd(2048,(null as any),i2.ControlContainer,(null as any),[i2.FormGroupDirective]),
-      i1.ɵdid(16384,(null as any),0,i2.NgControlStatusGroup,[i2.ControlContainer],
+      i1.ɵprd(2048,(null as any),i3.ControlContainer,(null as any),[i3.FormGroupDirective]),
+      i1.ɵdid(16384,(null as any),0,i3.NgControlStatusGroup,[i3.ControlContainer],
           (null as any),(null as any)),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),
           i1.ɵeld(0,(null as any),(null as any),7,'div',[['style','margin-bottom: 1em']],
               (null as any),(null as any),(null as any),(null as any),(null as any))),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+      (_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
           1,'button',[['class','btn btn-success'],['type','submit']],[[8,'disabled',
               0]],(null as any),(null as any),(null as any),(null as any))),(_l()(),
-          i1.ɵted((null as any),['Save'])),(_l()(),i1.ɵted((null as any),['  \n    '])),
+          i1.ɵted((null as any),['Save'])),(_l()(),i1.ɵted((null as any),['  \n'])),
       (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'button',[['class','btn btn-danger'],
           ['type','reset']],[[8,'disabled',0]],[[(null as any),'click']],(_v,en,$event) => {
         var ad:boolean = true;
@@ -310,72 +408,205 @@ export function View_CreateNftComponent_0(_l:any):i1.ɵViewDefinition {
         }
         return ad;
       },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Revert'])),(_l()(),
-          i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵted((null as any),['\n\n  '])),
-      (_l()(),i1.ɵted((null as any),['\n\n\n  '])),(_l()(),i1.ɵeld(0,(null as any),
-          (null as any),10,'div',[['class','well well-lg'],['formArrayName','secretComponents']],
-          [[2,'ng-untouched',(null as any)],[2,'ng-touched',(null as any)],[2,'ng-pristine',
-              (null as any)],[2,'ng-dirty',(null as any)],[2,'ng-valid',(null as any)],
-              [2,'ng-invalid',(null as any)],[2,'ng-pending',(null as any)]],(null as any),
-          (null as any),(null as any),(null as any))),i1.ɵdid(212992,(null as any),
-          0,i2.FormArrayName,[[3,i2.ControlContainer],[8,(null as any)],[8,(null as any)]],
-          {name:[0,'name']},(null as any)),i1.ɵprd(2048,(null as any),i2.ControlContainer,
-          (null as any),[i2.FormArrayName]),i1.ɵdid(16384,(null as any),0,i2.NgControlStatusGroup,
-          [i2.ControlContainer],(null as any),(null as any)),(_l()(),i1.ɵted((null as any),
-          ['\n    '])),(_l()(),i1.ɵand(16777216,(null as any),(null as any),1,(null as any),
-          View_CreateNftComponent_1)),i1.ɵdid(802816,(null as any),0,i3.NgForOf,[i1.ViewContainerRef,
-          i1.TemplateRef,i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),
-      (_l()(),i1.ɵted((null as any),['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
-          1,'button',[['type','button']],(null as any),[[(null as any),'click']],(_v,
-              en,$event) => {
-            var ad:boolean = true;
-            var _co:i4.CreateNftComponent = _v.component;
-            if (('click' === en)) {
-              const pd_0:any = ((<any>_co.addComponent()) !== false);
-              ad = (pd_0 && ad);
-            }
-            return ad;
-          },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Add a Component'])),
-      (_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵted((null as any),['\n  '])),
-      (_l()(),i1.ɵted((null as any),['\n\n'])),(_l()(),i1.ɵted((null as any),['\n']))],
-      (_ck,_v) => {
+          i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n\n'])),
+      (_l()(),i1.ɵted((null as any),['\n\n\n'])),(_l()(),i1.ɵeld(0,(null as any),(null as any),
+          7,'div',[['formArrayName','secretComponents']],[[2,'ng-untouched',(null as any)],
+              [2,'ng-touched',(null as any)],[2,'ng-pristine',(null as any)],[2,'ng-dirty',
+                  (null as any)],[2,'ng-valid',(null as any)],[2,'ng-invalid',(null as any)],
+              [2,'ng-pending',(null as any)]],(null as any),(null as any),(null as any),
+          (null as any))),i1.ɵdid(212992,(null as any),0,i3.FormArrayName,[[3,i3.ControlContainer],
+          [8,(null as any)],[8,(null as any)]],{name:[0,'name']},(null as any)),i1.ɵprd(2048,
+          (null as any),i3.ControlContainer,(null as any),[i3.FormArrayName]),i1.ɵdid(16384,
+          (null as any),0,i3.NgControlStatusGroup,[i3.ControlContainer],(null as any),
+          (null as any)),(_l()(),i1.ɵted((null as any),['\n  '])),(_l()(),i1.ɵand(16777216,
+          (null as any),(null as any),1,(null as any),View_CreateNftComponent_7)),
+      i1.ɵdid(802816,(null as any),0,i2.NgForOf,[i1.ViewContainerRef,i1.TemplateRef,
+          i1.IterableDiffers],{ngForOf:[0,'ngForOf']},(null as any)),(_l()(),i1.ɵted((null as any),
+          ['\n\n'])),(_l()(),i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵeld(0,(null as any),
+          (null as any),21,'div',[['class','form-group radio']],(null as any),(null as any),
+          (null as any),(null as any),(null as any))),(_l()(),i1.ɵted((null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),8,'span',([] as any[]),
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),6,'input',[['formControlName',
+          'flag'],['type','radio'],['value','true']],[[2,'ng-untouched',(null as any)],
+          [2,'ng-touched',(null as any)],[2,'ng-pristine',(null as any)],[2,'ng-dirty',
+              (null as any)],[2,'ng-valid',(null as any)],[2,'ng-invalid',(null as any)],
+          [2,'ng-pending',(null as any)]],[[(null as any),'input'],[(null as any),
+          'blur'],[(null as any),'compositionstart'],[(null as any),'compositionend'],
+          [(null as any),'change']],(_v,en,$event) => {
+        var ad:boolean = true;
+        if (('input' === en)) {
+          const pd_0:any = ((<any>i1.ɵnov(_v,41)._handleInput($event.target.value)) !== false);
+          ad = (pd_0 && ad);
+        }
+        if (('blur' === en)) {
+          const pd_1:any = ((<any>i1.ɵnov(_v,41).onTouched()) !== false);
+          ad = (pd_1 && ad);
+        }
+        if (('compositionstart' === en)) {
+          const pd_2:any = ((<any>i1.ɵnov(_v,41)._compositionStart()) !== false);
+          ad = (pd_2 && ad);
+        }
+        if (('compositionend' === en)) {
+          const pd_3:any = ((<any>i1.ɵnov(_v,41)._compositionEnd($event.target.value)) !== false);
+          ad = (pd_3 && ad);
+        }
+        if (('change' === en)) {
+          const pd_4:any = ((<any>i1.ɵnov(_v,42).onChange()) !== false);
+          ad = (pd_4 && ad);
+        }
+        if (('blur' === en)) {
+          const pd_5:any = ((<any>i1.ɵnov(_v,42).onTouched()) !== false);
+          ad = (pd_5 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i3.DefaultValueAccessor,
+          [i1.Renderer2,i1.ElementRef,[2,i3.COMPOSITION_BUFFER_MODE]],(null as any),
+          (null as any)),i1.ɵdid(212992,(null as any),0,i3.RadioControlValueAccessor,
+          [i1.Renderer2,i1.ElementRef,i3.ɵi,i1.Injector],{formControlName:[0,'formControlName'],
+              value:[1,'value']},(null as any)),i1.ɵprd(1024,(null as any),i3.NG_VALUE_ACCESSOR,
+          (p0_0:any,p1_0:any) => {
+            return [p0_0,p1_0];
+          },[i3.DefaultValueAccessor,i3.RadioControlValueAccessor]),i1.ɵdid(671744,
+          (null as any),0,i3.FormControlName,[[3,i3.ControlContainer],[8,(null as any)],
+              [8,(null as any)],[2,i3.NG_VALUE_ACCESSOR]],{name:[0,'name']},(null as any)),
+      i1.ɵprd(2048,(null as any),i3.NgControl,(null as any),[i3.FormControlName]),
+      i1.ɵdid(16384,(null as any),0,i3.NgControlStatus,[i3.NgControl],(null as any),
+          (null as any)),(_l()(),i1.ɵted((null as any),['As sold?'])),(_l()(),i1.ɵted((null as any),
+          ['\n    '])),(_l()(),i1.ɵeld(0,(null as any),(null as any),8,'span',([] as any[]),
+          (null as any),(null as any),(null as any),(null as any),(null as any))),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),6,'input',[['formControlName',
+          'flag'],['type','radio'],['value','false']],[[2,'ng-untouched',(null as any)],
+          [2,'ng-touched',(null as any)],[2,'ng-pristine',(null as any)],[2,'ng-dirty',
+              (null as any)],[2,'ng-valid',(null as any)],[2,'ng-invalid',(null as any)],
+          [2,'ng-pending',(null as any)]],[[(null as any),'input'],[(null as any),
+          'blur'],[(null as any),'compositionstart'],[(null as any),'compositionend'],
+          [(null as any),'change']],(_v,en,$event) => {
+        var ad:boolean = true;
+        if (('input' === en)) {
+          const pd_0:any = ((<any>i1.ɵnov(_v,51)._handleInput($event.target.value)) !== false);
+          ad = (pd_0 && ad);
+        }
+        if (('blur' === en)) {
+          const pd_1:any = ((<any>i1.ɵnov(_v,51).onTouched()) !== false);
+          ad = (pd_1 && ad);
+        }
+        if (('compositionstart' === en)) {
+          const pd_2:any = ((<any>i1.ɵnov(_v,51)._compositionStart()) !== false);
+          ad = (pd_2 && ad);
+        }
+        if (('compositionend' === en)) {
+          const pd_3:any = ((<any>i1.ɵnov(_v,51)._compositionEnd($event.target.value)) !== false);
+          ad = (pd_3 && ad);
+        }
+        if (('change' === en)) {
+          const pd_4:any = ((<any>i1.ɵnov(_v,52).onChange()) !== false);
+          ad = (pd_4 && ad);
+        }
+        if (('blur' === en)) {
+          const pd_5:any = ((<any>i1.ɵnov(_v,52).onTouched()) !== false);
+          ad = (pd_5 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),i1.ɵdid(16384,(null as any),0,i3.DefaultValueAccessor,
+          [i1.Renderer2,i1.ElementRef,[2,i3.COMPOSITION_BUFFER_MODE]],(null as any),
+          (null as any)),i1.ɵdid(212992,(null as any),0,i3.RadioControlValueAccessor,
+          [i1.Renderer2,i1.ElementRef,i3.ɵi,i1.Injector],{formControlName:[0,'formControlName'],
+              value:[1,'value']},(null as any)),i1.ɵprd(1024,(null as any),i3.NG_VALUE_ACCESSOR,
+          (p0_0:any,p1_0:any) => {
+            return [p0_0,p1_0];
+          },[i3.DefaultValueAccessor,i3.RadioControlValueAccessor]),i1.ɵdid(671744,
+          (null as any),0,i3.FormControlName,[[3,i3.ControlContainer],[8,(null as any)],
+              [8,(null as any)],[2,i3.NG_VALUE_ACCESSOR]],{name:[0,'name']},(null as any)),
+      i1.ɵprd(2048,(null as any),i3.NgControl,(null as any),[i3.FormControlName]),
+      i1.ɵdid(16384,(null as any),0,i3.NgControlStatus,[i3.NgControl],(null as any),
+          (null as any)),(_l()(),i1.ɵted((null as any),['As prepared?'])),(_l()(),
+          i1.ɵted((null as any),['\n'])),(_l()(),i1.ɵted((null as any),['\n  '])),
+      (_l()(),i1.ɵeld(0,(null as any),(null as any),1,'button',[['style','float:right'],
+          ['type','button']],(null as any),[[(null as any),'click']],(_v,en,$event) => {
+        var ad:boolean = true;
         var _co:i4.CreateNftComponent = _v.component;
-        const currVal_7:any = _co.nftForm;
-        _ck(_v,2,0,currVal_7);
-        const currVal_17:any = 'secretComponents';
-        _ck(_v,17,0,currVal_17);
-        const currVal_18:any = _co.secretComponents.controls;
-        _ck(_v,22,0,currVal_18);
-      },(_ck,_v) => {
-        var _co:i4.CreateNftComponent = _v.component;
-        const currVal_0:any = i1.ɵnov(_v,4).ngClassUntouched;
-        const currVal_1:any = i1.ɵnov(_v,4).ngClassTouched;
-        const currVal_2:any = i1.ɵnov(_v,4).ngClassPristine;
-        const currVal_3:any = i1.ɵnov(_v,4).ngClassDirty;
-        const currVal_4:any = i1.ɵnov(_v,4).ngClassValid;
-        const currVal_5:any = i1.ɵnov(_v,4).ngClassInvalid;
-        const currVal_6:any = i1.ɵnov(_v,4).ngClassPending;
-        _ck(_v,0,0,currVal_0,currVal_1,currVal_2,currVal_3,currVal_4,currVal_5,currVal_6);
-        const currVal_8:any = _co.nftForm.pristine;
-        _ck(_v,8,0,currVal_8);
-        const currVal_9:any = _co.nftForm.pristine;
-        _ck(_v,11,0,currVal_9);
-        const currVal_10:any = i1.ɵnov(_v,19).ngClassUntouched;
-        const currVal_11:any = i1.ɵnov(_v,19).ngClassTouched;
-        const currVal_12:any = i1.ɵnov(_v,19).ngClassPristine;
-        const currVal_13:any = i1.ɵnov(_v,19).ngClassDirty;
-        const currVal_14:any = i1.ɵnov(_v,19).ngClassValid;
-        const currVal_15:any = i1.ɵnov(_v,19).ngClassInvalid;
-        const currVal_16:any = i1.ɵnov(_v,19).ngClassPending;
-        _ck(_v,16,0,currVal_10,currVal_11,currVal_12,currVal_13,currVal_14,currVal_15,
-            currVal_16);
-      });
+        if (('click' === en)) {
+          const pd_0:any = ((<any>_co.addComponent()) !== false);
+          ad = (pd_0 && ad);
+        }
+        return ad;
+      },(null as any),(null as any))),(_l()(),i1.ɵted((null as any),['Add a Component'])),
+      (_l()(),i1.ɵted((null as any),['\n\n']))],(_ck,_v) => {
+    var _co:i4.CreateNftComponent = _v.component;
+    const currVal_0:any = _co.missingName;
+    _ck(_v,1,0,currVal_0);
+    const currVal_1:any = _co.invalidInput;
+    _ck(_v,4,0,currVal_1);
+    const currVal_2:any = _co.duplicateEntries;
+    _ck(_v,7,0,currVal_2);
+    const currVal_3:any = _co.errorMessage;
+    _ck(_v,10,0,currVal_3);
+    const currVal_11:any = _co.nftForm;
+    _ck(_v,14,0,currVal_11);
+    const currVal_21:any = 'secretComponents';
+    _ck(_v,29,0,currVal_21);
+    const currVal_22:any = _co.secretComponents.controls;
+    _ck(_v,34,0,currVal_22);
+    const currVal_30:any = 'flag';
+    const currVal_31:any = 'true';
+    _ck(_v,42,0,currVal_30,currVal_31);
+    const currVal_32:any = 'flag';
+    _ck(_v,44,0,currVal_32);
+    const currVal_40:any = 'flag';
+    const currVal_41:any = 'false';
+    _ck(_v,52,0,currVal_40,currVal_41);
+    const currVal_42:any = 'flag';
+    _ck(_v,54,0,currVal_42);
+  },(_ck,_v) => {
+    var _co:i4.CreateNftComponent = _v.component;
+    const currVal_4:any = i1.ɵnov(_v,16).ngClassUntouched;
+    const currVal_5:any = i1.ɵnov(_v,16).ngClassTouched;
+    const currVal_6:any = i1.ɵnov(_v,16).ngClassPristine;
+    const currVal_7:any = i1.ɵnov(_v,16).ngClassDirty;
+    const currVal_8:any = i1.ɵnov(_v,16).ngClassValid;
+    const currVal_9:any = i1.ɵnov(_v,16).ngClassInvalid;
+    const currVal_10:any = i1.ɵnov(_v,16).ngClassPending;
+    _ck(_v,12,0,currVal_4,currVal_5,currVal_6,currVal_7,currVal_8,currVal_9,currVal_10);
+    const currVal_12:any = _co.nftForm.pristine;
+    _ck(_v,20,0,currVal_12);
+    const currVal_13:any = _co.nftForm.pristine;
+    _ck(_v,23,0,currVal_13);
+    const currVal_14:any = i1.ɵnov(_v,31).ngClassUntouched;
+    const currVal_15:any = i1.ɵnov(_v,31).ngClassTouched;
+    const currVal_16:any = i1.ɵnov(_v,31).ngClassPristine;
+    const currVal_17:any = i1.ɵnov(_v,31).ngClassDirty;
+    const currVal_18:any = i1.ɵnov(_v,31).ngClassValid;
+    const currVal_19:any = i1.ɵnov(_v,31).ngClassInvalid;
+    const currVal_20:any = i1.ɵnov(_v,31).ngClassPending;
+    _ck(_v,28,0,currVal_14,currVal_15,currVal_16,currVal_17,currVal_18,currVal_19,
+        currVal_20);
+    const currVal_23:any = i1.ɵnov(_v,46).ngClassUntouched;
+    const currVal_24:any = i1.ɵnov(_v,46).ngClassTouched;
+    const currVal_25:any = i1.ɵnov(_v,46).ngClassPristine;
+    const currVal_26:any = i1.ɵnov(_v,46).ngClassDirty;
+    const currVal_27:any = i1.ɵnov(_v,46).ngClassValid;
+    const currVal_28:any = i1.ɵnov(_v,46).ngClassInvalid;
+    const currVal_29:any = i1.ɵnov(_v,46).ngClassPending;
+    _ck(_v,40,0,currVal_23,currVal_24,currVal_25,currVal_26,currVal_27,currVal_28,
+        currVal_29);
+    const currVal_33:any = i1.ɵnov(_v,56).ngClassUntouched;
+    const currVal_34:any = i1.ɵnov(_v,56).ngClassTouched;
+    const currVal_35:any = i1.ɵnov(_v,56).ngClassPristine;
+    const currVal_36:any = i1.ɵnov(_v,56).ngClassDirty;
+    const currVal_37:any = i1.ɵnov(_v,56).ngClassValid;
+    const currVal_38:any = i1.ɵnov(_v,56).ngClassInvalid;
+    const currVal_39:any = i1.ɵnov(_v,56).ngClassPending;
+    _ck(_v,50,0,currVal_33,currVal_34,currVal_35,currVal_36,currVal_37,currVal_38,
+        currVal_39);
+  });
 }
 export function View_CreateNftComponent_Host_0(_l:any):i1.ɵViewDefinition {
   return i1.ɵvid(0,[(_l()(),i1.ɵeld(0,(null as any),(null as any),1,'add-nft',([] as any[]),
       (null as any),(null as any),(null as any),View_CreateNftComponent_0,RenderType_CreateNftComponent)),
-      i1.ɵdid(573440,(null as any),0,i4.CreateNftComponent,[i2.FormBuilder],(null as any),
-          (null as any))],(null as any),(null as any));
+      i1.ɵdid(573440,(null as any),0,i4.CreateNftComponent,[i3.FormBuilder,i5.Router,
+          i5.ActivatedRoute],(null as any),(null as any))],(null as any),(null as any));
 }
 export const CreateNftComponentNgFactory:i1.ComponentFactory<i4.CreateNftComponent> = i1.ɵccf('add-nft',
     i4.CreateNftComponent,View_CreateNftComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVOZnQvY3JlYXRlLW5mdC5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9jcmVhdGVSZWNvcmRzL2NyZWF0ZU5mdC9jcmVhdGUtbmZ0LmNvbXBvbmVudC50cyIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVOZnQvY3JlYXRlLW5mdC5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVOZnQvY3JlYXRlLW5mdC5jb21wb25lbnQudHMuQ3JlYXRlTmZ0Q29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGZvcm0gW2Zvcm1Hcm91cF09XCJuZnRGb3JtXCIgKG5nU3VibWl0KT1cIm9uU3VibWl0KClcIiBub3ZhbGlkYXRlPlxuICA8ZGl2IHN0eWxlPVwibWFyZ2luLWJvdHRvbTogMWVtXCI+XG4gICAgPGJ1dHRvbiB0eXBlPVwic3VibWl0XCJcbiAgICAgICAgICAgIFtkaXNhYmxlZF09XCJuZnRGb3JtLnByaXN0aW5lXCIgY2xhc3M9XCJidG4gYnRuLXN1Y2Nlc3NcIj5TYXZlPC9idXR0b24+ICZuYnNwO1xuICAgIDxidXR0b24gdHlwZT1cInJlc2V0XCIgKGNsaWNrKT1cInJldmVydCgpXCJcbiAgICAgICAgICAgIFtkaXNhYmxlZF09XCJuZnRGb3JtLnByaXN0aW5lXCIgY2xhc3M9XCJidG4gYnRuLWRhbmdlclwiPlJldmVydDwvYnV0dG9uPlxuICA8L2Rpdj5cblxuICA8IS0tIEhlcm8gRGV0YWlsIENvbnRyb2xzIC0tPlxuXG5cbiAgPGRpdiBmb3JtQXJyYXlOYW1lPVwic2VjcmV0Q29tcG9uZW50c1wiIGNsYXNzPVwid2VsbCB3ZWxsLWxnXCI+XG4gICAgPGRpdiAqbmdGb3I9XCJsZXQgYWRkcmVzcyBvZiBzZWNyZXRDb21wb25lbnRzLmNvbnRyb2xzOyBsZXQgaT1pbmRleFwiIFtmb3JtR3JvdXBOYW1lXT1cImlcIiA+XG4gICAgICA8IS0tIFRoZSByZXBlYXRlZCBhZGRyZXNzIHRlbXBsYXRlIC0tPlxuICAgICAgPGg0PkNvbXBvbmVudCAje3tpICsgMX19PC9oND5cbiAgICAgIDxkaXYgc3R5bGU9XCJtYXJnaW4tbGVmdDogMWVtO1wiPlxuICAgICAgICA8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cFwiPlxuICAgICAgICAgIDxsYWJlbCBjbGFzcz1cImNlbnRlci1ibG9ja1wiPk5hbWVcbiAgICAgICAgICAgIDxpbnB1dCBjbGFzcz1cImZvcm0tY29udHJvbFwiIGZvcm1Db250cm9sTmFtZT1cIm5hbWVcIj5cbiAgICAgICAgICA8L2xhYmVsPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cFwiPlxuICAgICAgICAgIDxsYWJlbCBjbGFzcz1cImNlbnRlci1ibG9ja1wiPkFtb3VudFxuICAgICAgICAgICAgPGlucHV0IGNsYXNzPVwiZm9ybS1jb250cm9sXCIgZm9ybUNvbnRyb2xOYW1lPVwiYW1vdW50XCI+XG4gICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgPC9kaXY+ICAgICAgXG5cbiAgICAgICAgPGRpdiBjbGFzcz1cImZvcm0tZ3JvdXBcIj5cbiAgICAgICAgICA8bGFiZWwgY2xhc3M9XCJjZW50ZXItYmxvY2tcIj5Vbml0IG9mIE1lYXN1cmVcbiAgICAgICAgICAgIDxzZWxlY3QgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiBmb3JtQ29udHJvbE5hbWU9XCJ1bml0X29mX21lYXN1cmVcIj5cbiAgICAgICAgICAgICAgPG9wdGlvbiAqbmdGb3I9XCJsZXQgdW5pdCBvZiB1bml0X29mX21lYXN1cmVcIiBbdmFsdWVdPVwidW5pdFwiPnt7dW5pdH19PC9vcHRpb24+XG4gICAgICAgICAgICA8L3NlbGVjdD5cbiAgICAgICAgICA8L2xhYmVsPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XG4gICAgICAgICAgPGxhYmVsIGNsYXNzPVwiY2VudGVyLWJsb2NrXCI+RGFpbHkgVmFsdWVcbiAgICAgICAgICAgIDxpbnB1dCBjbGFzcz1cImZvcm0tY29udHJvbFwiIGZvcm1Db250cm9sTmFtZT1cImRhaWx5X3ZhbHVlXCI+XG4gICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgPC9kaXY+ICBcblxuICAgICAgPC9kaXY+XG4gICAgICA8YnI+XG4gICAgICA8IS0tIEVuZCBvZiB0aGUgcmVwZWF0ZWQgYWRkcmVzcyB0ZW1wbGF0ZSAtLT5cbiAgICA8L2Rpdj5cbiAgICA8YnV0dG9uIChjbGljayk9XCJhZGRDb21wb25lbnQoKVwiIHR5cGU9XCJidXR0b25cIj5BZGQgYSBDb21wb25lbnQ8L2J1dHRvbj5cbiAgPC9kaXY+XG4gIDwhLS08ZGl2IGNsYXNzPVwiZm9ybS1ncm91cCByYWRpb1wiPlxuICAgIDxoND5TdXBlciBwb3dlcjo8L2g0PlxuICAgIDxsYWJlbCBjbGFzcz1cImNlbnRlci1ibG9ja1wiPjxpbnB1dCB0eXBlPVwicmFkaW9cIiBmb3JtQ29udHJvbE5hbWU9XCJwb3dlclwiIHZhbHVlPVwiZmxpZ2h0XCI+RmxpZ2h0PC9sYWJlbD5cbiAgICA8bGFiZWwgY2xhc3M9XCJjZW50ZXItYmxvY2tcIj48aW5wdXQgdHlwZT1cInJhZGlvXCIgZm9ybUNvbnRyb2xOYW1lPVwicG93ZXJcIiB2YWx1ZT1cIngtcmF5IHZpc2lvblwiPlgtcmF5IHZpc2lvbjwvbGFiZWw+XG4gICAgPGxhYmVsIGNsYXNzPVwiY2VudGVyLWJsb2NrXCI+PGlucHV0IHR5cGU9XCJyYWRpb1wiIGZvcm1Db250cm9sTmFtZT1cInBvd2VyXCIgdmFsdWU9XCJzdHJlbmd0aFwiPlN0cmVuZ3RoPC9sYWJl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
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVOZnQvY3JlYXRlLW5mdC5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vaG9tZS9yb21hcmlvL2FuZ3VsYXJhcGkvc3JjL2FwcC9jcmVhdGVSZWNvcmRzL2NyZWF0ZU5mdC9jcmVhdGUtbmZ0LmNvbXBvbmVudC50cyIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVOZnQvY3JlYXRlLW5mdC5jb21wb25lbnQuaHRtbCIsIm5nOi8vL2hvbWUvcm9tYXJpby9hbmd1bGFyYXBpL3NyYy9hcHAvY3JlYXRlUmVjb3Jkcy9jcmVhdGVOZnQvY3JlYXRlLW5mdC5jb21wb25lbnQudHMuQ3JlYXRlTmZ0Q29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiPGRpdiAqbmdJZj1cIm1pc3NpbmdOYW1lXCI+XG5cblxuICA8ZGl2IGNsYXNzPVwiYWxlcnQgYWxlcnQtZGFuZ2VyXCI+PHN0cm9uZz5FcnJvciE8L3N0cm9uZz4ge3ttaXNzaW5nTmFtZX19IDwvZGl2PlxuPC9kaXY+XG5cbjxkaXYgKm5nSWY9XCJpbnZhbGlkSW5wdXRcIj5cblxuXG4gIDxkaXYgY2xhc3M9XCJhbGVydCBhbGVydC1kYW5nZXJcIiAqbmdJZj1cImludmFsaWRJbnB1dFwiPjxzdHJvbmc+RXJyb3IhPC9zdHJvbmc+IEludmFsaWQgYW1vdW50IGZvciB7e2ludmFsaWRJbnB1dH19IDwvZGl2PlxuPC9kaXY+XG48ZGl2ICpuZ0lmPVwiZHVwbGljYXRlRW50cmllc1wiPlxuXG5cbiAgPGRpdiBjbGFzcz1cImFsZXJ0IGFsZXJ0LWRhbmdlclwiPjxzdHJvbmc+RXJyb3IhPC9zdHJvbmc+IHt7ZHVwbGljYXRlRW50cmllc319IDwvZGl2PlxuPC9kaXY+XG48ZGl2ICpuZ0lmPVwiZXJyb3JNZXNzYWdlXCI+XG5cblxuICA8ZGl2ICpuZ0Zvcj1cImxldCBuYW1lIG9mIG5hbWVDaGFuZ2VMb2dcIiBjbGFzcz1cImFsZXJ0IGFsZXJ0LWRhbmdlclwiPjxzdHJvbmc+e3tuYW1lfX08L3N0cm9uZz4gIGlzIG1pc3NpbmcgYW1vdW50IG9yIHVuaXQgb2YgTWVhc3VyZTwvZGl2PlxuPC9kaXY+XG5cbjxmb3JtIFtmb3JtR3JvdXBdPVwibmZ0Rm9ybVwiIChuZ1N1Ym1pdCk9XCJvblN1Ym1pdCgpXCIgbm92YWxpZGF0ZT5cbiAgPGRpdiBzdHlsZT1cIm1hcmdpbi1ib3R0b206IDFlbVwiPlxuPGJ1dHRvbiB0eXBlPVwic3VibWl0XCIgW2Rpc2FibGVkXT1cIm5mdEZvcm0ucHJpc3RpbmVcIiBjbGFzcz1cImJ0biBidG4tc3VjY2Vzc1wiPlNhdmU8L2J1dHRvbj4gJm5ic3A7XG48YnV0dG9uIHR5cGU9XCJyZXNldFwiIChjbGljayk9XCJyZXZlcnQoKVwiIFtkaXNhYmxlZF09XCJuZnRGb3JtLnByaXN0aW5lXCIgY2xhc3M9XCJidG4gYnRuLWRhbmdlclwiPlJldmVydDwvYnV0dG9uPlxuPC9kaXY+XG5cbjwhLS0gSGVybyBEZXRhaWwgQ29udHJvbHMgLS0+XG5cblxuPGRpdiBmb3JtQXJyYXlOYW1lPVwic2VjcmV0Q29tcG9uZW50c1wiPlxuICA8ZGl2ICpuZ0Zvcj1cImxldCBhZGRyZXNzIG9mIHNlY3JldENvbXBvbmVudHMuY29udHJvbHM7IGxldCBpPWluZGV4XCIgW2Zvcm1Hcm91cE5hbWVdPVwiaVwiPlxuICAgIDwhLS0gVGhlIHJlcGVhdGVkIGFkZHJlc3MgdGVtcGxhdGUgLS0+XG4gICAgPGRpdiBjbGFzcz1cInJvdyBhcHBlbmRcIj5cblxuXG4gICAgICA8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cCBjb2wtc20tM1wiPlxuXG4gICAgICAgIDxpbnB1dCBjbGFzcz1cImZvcm0tY29udHJvbFwiIGZvcm1Db250cm9sTmFtZT1cIm5hbWVcIiBwbGFjZWhvbGRlcj1cIkNvbXBvbmVudCdzIE5hbWVcIiBbcmVhZE9ubHldPVwiICBpIDw9IDE3XCI+XG5cbiAgICAgIDwvZGl2PlxuICAgICAgPGRpdiBjbGFzcz1cImZvcm0tZ3JvdXAgY29sLXNtLTNcIj5cblxuICAgICAgICA8aW5wdXQgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiBmb3JtQ29udHJvbE5hbWU9XCJhbW91bnRcIiBwbGFjZWhvbGRlcj1cIkNvbXBvbmVudCdzIEFtb3VudFwiID5cblxuICAgICAgPC9kaXY+XG5cbiAgICAgIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwIGNvbC1zbS0zXCI+XG5cbiAgICAgICAgPHNlbGVjdCBjbGFzcz1cImZvcm0tY29udHJvbFwiIGZvcm1Db250cm9sTmFtZT1cInVuaXRfb2ZfbWVhc3VyZVwiPlxuICAgICAgICAgICAgICA8b3B0aW9uIFt2YWx1ZV09XCJcIiBzZWxlY3RlZD5TZWxlY3QgYSB1bml0IG9mIG1lYXN1cmU8L29wdGlvbj5cbiAgICAgICAgICAgICAgPG9wdGlvbiAqbmdGb3I9XCJsZXQgdW5pdCBvZiB1bml0X29mX21lYXN1cmVcIiBbdmFsdWVdPVwidW5pdFwiPnt7dW5pdH19PC9vcHRpb24+XG4gICAgICAgICAgICA8L3NlbGVjdD5cblxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cCBjb2wtc20tM1wiPlxuICAgICAgICA8aW5wdXQgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiBmb3JtQ29udHJvbE5hbWU9XCJkYWlseV92YWx1ZVwiIHBsYWNlaG9sZGVyPVwiQ29tcG9uZW50J3MgZGFpbHkgdmFsdWVcIj5cbiAgICAgICAgPHNwYW4gY2xhc3M9XCJnbHlwaGljb24gZ2x5cGhpY29uLXJlbW92ZSBkZWxldGVJY29uXCIgKGNsaWNrKT1cImRlbGV0ZUNsYXNzaWZpY2F0aW9uKGkpXCIgKm5nSWY9XCJpID4gMTdcIj48L3NwYW4+XG4gICAgICA8L2Rpdj5cbiAgICAgIDwhLS08c3BhbiBjbGFzcz1cImdseXBoaWNvbiBnbHlwaGljb24tcmVtb3ZlIGRlbGV0ZUljb25cIiAoY2xpY2spPVwiZGVsZXRlQ2xhc3NpZmljYXRpb24oaSlcIiAqbmdJZj1cImkgPiAxN1wiPjwvc3Bhbj4tLT5cbiAgICA8L2Rpdj5cblxuICAgIDwhLS08bWQtaWNvbiAoY2xpY2spPVwiZGVsZXRlQ2xhc3NpZmljYXRpb24oaSlcIiAqbmdJZj1cImkgPiAxNlwiPmRlbGV0ZTwvbWQtaWNvbj4tLT5cbiAgICA8IS0tIEVuZCBvZiB0aGUgcmVwZWF0ZWQgYWRkcmVzcyB0ZW1wbGF0ZSAtLT5cbiAgPC9kaXY+XG5cbjwvZGl2PlxuPGRpdiBjbGFzcz1cImZvcm0tZ3JvdXAgcmFkaW9cIj5cbiAgICA8c3Bhbj48aW5wdXQgdHlwZT1cInJhZGlvXCIgZm9ybUNvbnRyb2xOYW1lPVwiZmxhZ1wiIHZhbHVlPVwidHJ1ZVwiPkFzIHNvbGQ/PC9zcGFuPlxuICAgIDxzcGFuPjxpbnB1dCB0eXBlPVwicmFkaW9cIiBmb3JtQ29udHJvbE5hbWU9XCJmbGFnXCIgdmFsdWU9XCJmYWxzZVwiPkFzIHByZXBhcmVkPzwvc3Bhbj5cbjwvZGl2PlxuICA8YnV0dG9uIChjbGljayk9XCJhZGRDb21wb25lbnQoKVwiIHR5cGU9XCJidXR0b25cIiBzdHlsZT1cImZsb2F0OnJpZ2h0XCI+QWRkIGEgQ29tcG9uZW50PC9idXR0b24+XG5cbjwvZm9ybT4iLCI8YWRkLW5mdD48L2FkZC1uZnQ+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7O29CQ0FBO01BQUEsd0VBQXlCO2FBQUEsOEJBR3ZCO01BQUE7TUFBQSw4QkFBZ0M7TUFBQTtNQUFBLGdCQUFRLDJDQUFlO01BQUEsWUFBdUI7O0lBQXZCO0lBQUE7Ozs7b0JBTXZEO01BQUE7TUFBQSxnQkFBcUQ7TUFBQSx3RUFBUTthQUFBLDRCQUFlO01BQUE7O0lBQUE7SUFBQTs7OztvQkFIOUU7TUFBQSx3RUFBMEI7YUFBQSw4QkFHeEI7TUFBQSxpRUFBQTtNQUFBO01BQXVIOztJQUF2RjtJQUFoQyxXQUFnQyxTQUFoQzs7OztvQkFFRjtNQUFB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

@@ -472,10 +472,13 @@ export const UofM = ['mg', 'g', 'kj', 'kcal'];
 
 export class nftList {
     nft: nftFields[];
+    flag: boolean;
+    package_id: number;
 }
 
 export const nftFieldsList : nftFields[] = [
     {name: 'Energy', amount: '', unit_of_measure: '', daily_value:''},
+    {name: 'Energy KJ', amount: '', unit_of_measure: '', daily_value:''},
     {name: 'Fat', amount: '', unit_of_measure: '', daily_value:''},
     {name: 'Saturated Fat', amount: '', unit_of_measure: '', daily_value:''},
     {name: 'Trans Fat', amount: '', unit_of_measure: '', daily_value:''},
@@ -491,7 +494,7 @@ export const nftFieldsList : nftFields[] = [
     {name: 'Protein', amount: '', unit_of_measure: '', daily_value:''},
     {name: 'Cholesterol', amount: '', unit_of_measure: '', daily_value:''},
     {name: 'Sodium', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Saturated + Trans Fat', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Energy KJ', amount: '', unit_of_measure: '', daily_value:''}
+    {name: 'Saturated + Trans Fat', amount: '', unit_of_measure: '', daily_value:''}
+   
    
 ]

@@ -1,54 +1,75 @@
+<div *ngIf="missingName">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{missingName}} </div>
+</div>
+
+<div *ngIf="invalidInput">
+
+
+  <div class="alert alert-danger" *ngIf="invalidInput"><strong>Error!</strong> Invalid amount for {{invalidInput}} </div>
+</div>
+<div *ngIf="duplicateEntries">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{duplicateEntries}} </div>
+</div>
+<div *ngIf="errorMessage">
+
+
+  <div *ngFor="let name of nameChangeLog" class="alert alert-danger"><strong>{{name}}</strong>  is missing amount or unit of Measure</div>
+</div>
+
 <form [formGroup]="nftForm" (ngSubmit)="onSubmit()" novalidate>
   <div style="margin-bottom: 1em">
-    <button type="submit"
-            [disabled]="nftForm.pristine" class="btn btn-success">Save</button> &nbsp;
-    <button type="reset" (click)="revert()"
-            [disabled]="nftForm.pristine" class="btn btn-danger">Revert</button>
-  </div>
+<button type="submit" [disabled]="nftForm.pristine" class="btn btn-success">Save</button> &nbsp;
+<button type="reset" (click)="revert()" [disabled]="nftForm.pristine" class="btn btn-danger">Revert</button>
+</div>
 
-  <!-- Hero Detail Controls -->
+<!-- Hero Detail Controls -->
 
 
-  <div formArrayName="secretComponents" class="well well-lg">
-    <div *ngFor="let address of secretComponents.controls; let i=index" [formGroupName]="i" >
-      <!-- The repeated address template -->
-      <h4>Component #{{i + 1}}</h4>
-      <div style="margin-left: 1em;">
-        <div class="form-group">
-          <label class="center-block">Name
-            <input class="form-control" formControlName="name">
-          </label>
-        </div>
-          <div class="form-group">
-          <label class="center-block">Amount
-            <input class="form-control" formControlName="amount">
-          </label>
-        </div>      
+<div formArrayName="secretComponents">
+  <div *ngFor="let address of secretComponents.controls; let i=index" [formGroupName]="i">
+    <!-- The repeated address template -->
+    <div class="row append">
 
-        <div class="form-group">
-          <label class="center-block">Unit of Measure
-            <select class="form-control" formControlName="unit_of_measure">
-              <option *ngFor="let unit of unit_of_measure" [value]="unit">{{unit}}</option>
-            </select>
-          </label>
-        </div>
-                  <div class="form-group">
-          <label class="center-block">Daily Value
-            <input class="form-control" formControlName="daily_value">
-          </label>
-        </div>  
+
+      <div class="form-group col-sm-3">
+
+        <input class="form-control" formControlName="name" placeholder="Component's Name" [readOnly]="  i <= 17">
 
       </div>
-      <br>
-      <!-- End of the repeated address template -->
+      <div class="form-group col-sm-3">
+
+        <input class="form-control" formControlName="amount" placeholder="Component's Amount" >
+
+      </div>
+
+      <div class="form-group col-sm-3">
+
+        <select class="form-control" formControlName="unit_of_measure">
+              <option value="" selected>Select a unit of measure</option>
+              <option *ngFor="let unit of unit_of_measure" [value]="unit">{{unit}}</option>
+            </select>
+
+      </div>
+      <div class="form-group col-sm-3">
+        <input class="form-control" formControlName="daily_value" placeholder="Component's daily value">
+        <span class="glyphicon glyphicon-remove deleteIcon" (click)="deleteClassification(i)" *ngIf="i > 17"></span>
+      </div>
+      <!--<span class="glyphicon glyphicon-remove deleteIcon" (click)="deleteClassification(i)" *ngIf="i > 17"></span>-->
     </div>
-    <button (click)="addComponent()" type="button">Add a Component</button>
+
+    <!--<md-icon (click)="deleteClassification(i)" *ngIf="i > 16">delete</md-icon>-->
+    <!-- End of the repeated address template -->
   </div>
-  <!--<div class="form-group radio">
-    <h4>Super power:</h4>
-    <label class="center-block"><input type="radio" formControlName="power" value="flight">Flight</label>
-    <label class="center-block"><input type="radio" formControlName="power" value="x-ray vision">X-ray vision</label>
-    <label class="center-block"><input type="radio" formControlName="power" value="strength">Strength</label>
-  </div>-->
+
+</div>
+<div class="form-group radio">
+    <span><input type="radio" formControlName="flag" value="true">As sold?</span>
+    <span><input type="radio" formControlName="flag" value="false">As prepared?</span>
+</div>
+  <button (click)="addComponent()" type="button" style="float:right">Add a Component</button>
 
 </form>
