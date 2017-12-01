@@ -47,7 +47,13 @@ console.log('here', queryString);
             .map(response => response.json() as UpdateResponse)
     }
 
+     createNft(queryString: string) {
 
+console.log('here', queryString);
+        return this.http
+            .post('http://localhost:8080/fcdr-rest-service/rest/PackageService/insertNft', queryString, this.options)
+            .map(response => response.json() )
+    }
 }
 
 

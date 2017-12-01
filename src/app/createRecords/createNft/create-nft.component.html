@@ -1,3 +1,21 @@
+
+
+<div *ngIf="invalidInputDailyValue">
+
+
+  <div class="alert alert-danger" *ngIf="invalidInputDailyValue"><strong>Error!</strong> Invalid daily value amount for {{invalidInputDailyValue}} </div>
+</div>
+<div *ngIf="fibreExeeced">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{fibreExeeced}} </div>
+</div>
+<div *ngIf="fatExeeced">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{fatExeeced}} </div>
+</div>
+
 <div *ngIf="missingName">
 
 
@@ -21,10 +39,10 @@
 </div>
 
 <form [formGroup]="nftForm" (ngSubmit)="onSubmit()" novalidate>
-  <div style="margin-bottom: 1em">
+  <!--<div style="margin-bottom: 1em">
 <button type="submit" [disabled]="nftForm.pristine" class="btn btn-success">Save</button> &nbsp;
 <button type="reset" (click)="revert()" [disabled]="nftForm.pristine" class="btn btn-danger">Revert</button>
-</div>
+</div>-->
 
 <!-- Hero Detail Controls -->
 
@@ -66,10 +84,21 @@
   </div>
 
 </div>
-<div class="form-group radio">
-    <span><input type="radio" formControlName="flag" value="true">As sold?</span>
-    <span><input type="radio" formControlName="flag" value="false">As prepared?</span>
+ <div data-toggle="buttons">
+        <div class="btn-group">
+ 
+    <span style="margin-left: 20px"><input type="radio" formControlName="flag" value="true"   required>As sold?</span>
+   
+   
+    <span style="margin-left: 20px"><input type="radio" formControlName="flag" value="false"   required>As prepared?</span>
+   
 </div>
-  <button (click)="addComponent()" type="button" style="float:right">Add a Component</button>
+</div>
+  
+            <div class="form-group ">
+              <button (click)="addComponent()" type="button" style="float:right">Add a Component</button>
+                <button style="float:right;  width:140px" type="submit" class="btn btn-default"  [disabled]="nftForm.pristine || !formValid || !nftForm.valid">Save</button>
+                <button style="float:right;  width:140px" type="reset" (click)="revert()"  [disabled]="nftForm.pristine"  class="btn btn-danger">Revert</button>
 
+</div>
 </form>
