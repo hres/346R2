@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
- import {MdProgressBarModule,MdCardModule,  MdSliderModule} from '@angular/material'
+ import {MatCardModule} from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { EditSalesComponent }  from './edit-sales.component';
@@ -12,12 +13,11 @@ import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
   imports:      [ 
 ReactiveFormsModule,
 FormsModule,
-MdProgressBarModule,
-MdSliderModule,
+MatProgressBarModule,
 BrowserModule,
 ConfirmBoxModule,
 RouterModule,
-MdCardModule
+MatCardModule
 
       
        ],

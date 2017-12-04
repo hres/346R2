@@ -1,8 +1,9 @@
 import { NgModule }      from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
- import {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdDatepickerModule} from '@angular/material'
+
+ import {MatCardModule} from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserModule } from '@angular/platform-browser';
-import { TableLayoutComponent } from '../../shared/table-layout.component'
 
 import { LabelFormComponent }  from './label-form.component';
 import {SharedModule} from '../../shared/shared.module'
@@ -17,17 +18,12 @@ import {RouterModule} from '@angular/router';
   imports:      [ 
 ReactiveFormsModule,
 FormsModule,
-MdCardModule,
-MdProgressBarModule,
-MdInputModule,
-MdButtonModule,
-MdSidenavModule,
-MdSelectModule,
-MdSliderModule,
+MatCardModule,
+MatProgressBarModule,
+SharedModule,
 BrowserModule,
 SharedModule,
-PaginationModelModule,
-MdDatepickerModule
+PaginationModelModule
       
        ],
   declarations: [ 

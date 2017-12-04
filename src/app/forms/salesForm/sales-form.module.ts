@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
- import {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule,MdDatepickerModule, MdSliderModule} from '@angular/material'
+ import {MatCardModule} from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { TableLayoutComponent } from '../../shared/table-layout.component'
 
@@ -17,17 +18,12 @@ import {RouterModule} from '@angular/router';
   imports:      [ 
 ReactiveFormsModule,
 FormsModule,
-MdCardModule,
-MdProgressBarModule,
-MdInputModule,
-MdButtonModule,
-MdSidenavModule,
-MdSelectModule,
-MdSliderModule,
+MatCardModule,
+MatProgressBarModule,
+
 BrowserModule,
 SharedModule,
-PaginationModelModule,
-MdDatepickerModule
+PaginationModelModule
       
        ],
   declarations: [ 

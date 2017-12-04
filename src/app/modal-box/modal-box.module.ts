@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
  import { ModalBoxComponent} from './modal-box.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
  import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import { MdIconModule} from '@angular/material';
+import { MatIconModule} from '@angular/material/icon';
 
 //  import {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule, MdDatepickerModule} from '@angular/material'
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,7 +13,7 @@ import { AddClassificationModule }  from '../classification-center/add-classific
     imports:[
         CommonModule,
         AddClassificationModule,
-MdIconModule,
+MatIconModule,
 
         // ReactiveFormsModule,
         // FormsModule,

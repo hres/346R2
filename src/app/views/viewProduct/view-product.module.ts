@@ -9,7 +9,8 @@ import {ModalBoxModule} from '../../modal-box/modal-box.module'
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
- import {MdCardModule,MdProgressBarModule,MdIconModule, MdInputModule} from '@angular/material'
+ import {MatCardModule} from '@angular/material/card';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { TableComponent } from './table.component';
 import {  CommonModule} from '@angular/common';  
-import { MdIconModule} from '@angular/material';
+import { MatIconModule} from '@angular/material/icon';
 import {RouterModule} from '@angular/router'
 import {ViewSalesModule} from '../views/viewSales/view-sales.module'
 import {ViewPackageModule} from '../views/viewPackage/view-package.module'
@@ -12,7 +12,7 @@ import {ViewPackageModule} from '../views/viewPackage/view-package.module'
     imports:[
 BrowserModule,
 CommonModule,
-MdIconModule,
+MatIconModule,
 RouterModule,
 ViewSalesModule,
 ViewPackageModule

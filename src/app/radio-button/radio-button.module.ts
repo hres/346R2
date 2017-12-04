@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { RadioButtonComponent }  from './radio-button.component';
-import {MdRadioModule} from '@angular/material'
+import {MatRadioModule} from '@angular/material/radio'
 import {FormsCenterModule} from '../forms-center/forms-center.module'
 import {RouterModule} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,7 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports:      [ 
-MdRadioModule,
+MatRadioModule,
 FormsCenterModule,
 BrowserModule,
 FormsModule

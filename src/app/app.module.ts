@@ -1,10 +1,10 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import { MdDatepickerModule,MdNativeDateModule} from '@angular/material'
 import {Headers, HttpModule} from '@angular/http';
-import { MdIconModule, MdIconRegistry, MdTabsModule} from '@angular/material';
+import {  MatIconRegistry} from '@angular/material';
 import { CommonModule } from '@angular/common'; 
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent }  from './app.component';
 
@@ -98,15 +98,15 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
       // MdDatepickerModule,
       SearchAllModule,
       CreateLabelModule,
-       MdIconModule,
+
       // MdInputModule,
-       MdNativeDateModule,
+    
       // MdProgressBarModule,
       // MdRadioModule,
       // MdSelectModule,
       // MdSidenavModule,
       // MdSliderModule,
-      MdTabsModule,
+  
       RadioButtonModule,
       // ReactiveFormsModule,
       CustumTableModule,
@@ -114,7 +114,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
       SharedModule,
       CommonModule,
       ViewProductModule,
-      MdDatepickerModule,
+      MatIconModule,
         //ViewPackageModule,
       ModalBoxModule,
       AddClassificationModule,
@@ -185,7 +185,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
     CreateSalesComponent
   ],
    providers: [
-        MdIconRegistry,
+        MatIconRegistry,
         SearchService,
         
         AddClassificationService,
