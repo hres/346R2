@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
-import { productParams, Response, productAllFields} from '../data-model';
+import { productParams, Response, productAllFields, ResponseComponentName} from '../data-model';
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -88,5 +88,15 @@ export class GetRecordService {
             this.http
                  .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/package/${id}`, this.options)
          .map(response => response.json()));
+    }
+
+
+        getComponentNames(): Observable<ResponseComponentName> {
+       //http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification
+        return this.http
+                 .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/listofcomponents`, this.options)
+            .map(response => response.json() as ResponseComponentName);
+
+
     }
 }

@@ -1,8 +1,10 @@
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Component, Input, OnChanges } from '@angular/core';
-import { nftFields, UofM, nftFieldsList, nftList } from '../../data-model';
+import { nftFields, UofM, nftFieldsList, nftList,ResponseComponentName, Components } from '../../data-model';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CreateRecordService } from '../../services/create-records.service';
+import { GetRecordService } from '../../services/getRecord.service';
+
 
 
 @Component({
@@ -25,6 +27,8 @@ export class CreateNftComponent implements OnChanges {
   duplicateEntries: string = null; 
   invalidInput: string = null;
   id: number;
+  
+  responseComponentName: Components[];
   isLoading: boolean;
   fatExeeced: string;
   fibreExeeced: string;
@@ -37,26 +41,49 @@ export class CreateNftComponent implements OnChanges {
   constructor(
     private fb: FormBuilder, private router: Router,
          private route: ActivatedRoute,
-         private createRecordService: CreateRecordService) {
+         private createRecordService: CreateRecordService,
+         private getRecordService: GetRecordService) {
 
     this.createForm();
     this.logNameChange();
   }
 
+    ngOnInit(): void {
+        
+         this.responseComponentName=null;
+
+         this.getRecordService.getComponentNames().subscribe(response => {
+            const {dataList} = response;
+            //const cl = response;
+            this.responseComponentName = dataList;
+
+
+
+         });
+
+
+
+    }
+    check(){
+      console.log("yes")
+    }
   createForm() {
     this.nftForm = this.fb.group({
 
       secretComponents: this.fb.array([]),
-      flag:null
+      flag:''
 
     });
     this.setComponents(nftFieldsList);
   }
 
   ngOnChanges() {
+    
     this.nftForm.reset({
     });
+
     this.setComponents(nftFieldsList);
+
   }
 
   get secretComponents(): FormArray {
@@ -79,7 +106,7 @@ export class CreateNftComponent implements OnChanges {
     console.log("listtooo",this.nftListArray);
 
  this.createRecordService.createNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
-            const {id, message, status} = response;
+            const {message, status} = response;
 
             if (status === 803) {
                 //Mandatory fields missing

@@ -498,3 +498,16 @@ export const nftFieldsList : nftFields[] = [
    
    
 ]
+
+
+
+export type ResponseComponentName = {
+
+        // dataList: {
+        //     component_name: string
+        // }[],
+        dataList: Components[]
+};
+export type Components = {
+    component_name: string;
+}

@@ -53,11 +53,32 @@
     <div class="row append">
 
 
-      <div class="form-group col-sm-3">
+      <div class="form-group col-sm-3"  *ngIf="responseComponentName && i > 17">
+
+        <!--<input class="form-control" formControlName="name" placeholder="Component's Name" [readOnly]="  i <= 17">-->
+
+                <select class="form-control" id="componentName" formControlName="name" >
+      <!--<option [value]="classification_number" >{{classification_number}}</option>-->
+      <option *ngFor="let component of responseComponentName;let i = index" [value]="component.component_name" >{{component.component_name}}</option>
+     
+
+        </select>
+
+            </div>
+
+         <div class="form-group col-sm-3"  *ngIf="responseComponentName && i <= 17">
 
         <input class="form-control" formControlName="name" placeholder="Component's Name" [readOnly]="  i <= 17">
+<!--
+                <select class="form-control" id="componentName" formControlName="name" >
+      <option *ngFor="let component of responseComponentName;let i = index" [value]="component.component_name" >{{component.component_name}}</option>
+     
 
-      </div>
+        </select>-->
+
+            </div>   
+
+      <!--responseComponentName-->
       <div class="form-group col-sm-3">
 
         <input class="form-control" formControlName="amount" placeholder="Component's Amount" >
@@ -98,7 +119,7 @@
             <div class="form-group ">
               <button (click)="addComponent()" type="button" style="float:right">Add a Component</button>
                 <button style="float:right;  width:140px" type="submit" class="btn btn-default"  [disabled]="nftForm.pristine || !formValid || !nftForm.valid">Save</button>
-                <button style="float:right;  width:140px" type="reset" (click)="revert()"  [disabled]="nftForm.pristine"  class="btn btn-danger">Revert</button>
+                <!--<button style="float:right;  width:140px" type="reset" (click)="revert()"  [disabled]="nftForm.pristine"  class="btn btn-danger">Revert</button>-->
 
 </div>
 </form>
