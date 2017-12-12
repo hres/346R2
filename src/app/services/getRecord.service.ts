@@ -83,10 +83,18 @@ export class GetRecordService {
     }
     //getPackageRecords
     getPackageRecords(id: number | string){
-        console.log("call to sales", id);
+         let body = JSON.stringify({ "package_id": id, "flag":"true"});
+         let body_prepared = JSON.stringify({ "package_id": id, "flag":"false"});
+
          return Observable.forkJoin(
             this.http
                  .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/package/${id}`, this.options)
+         .map(response => response.json()),
+          this.http
+                 .post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getNft`,body, this.options)
+         .map(response => response.json()),
+          this.http
+                 .post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getNft`,body_prepared, this.options)
          .map(response => response.json()));
     }
 

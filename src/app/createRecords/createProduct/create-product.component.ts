@@ -80,7 +80,7 @@ export class CreateProductComponent implements OnChanges {
     createForm() {
         this.productForm = this.fb.group({
             classification_name: '',
-            classification_number: '',
+            classification_number: null,
             classification_type: '',
             product_manufacturer: '',
             product_brand: '',
@@ -195,6 +195,29 @@ export class CreateProductComponent implements OnChanges {
         this.product.cnf_code = this.product.cnf_code == "" ? null : this.product.cnf_code;
         this.product.cluster_number = this.product.cluster_number == "" ? null : this.product.cluster_number;
 
+
+    }
+
+        setClassificationName(n: String) {
+
+var index = this.listOfClass.findIndex(function(item, i){
+  return item.classification_name === n;
+});
+
+
+ this.productForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']); 
+
+    }
+
+
+        callAlex(n: String) {
+
+// var index = this.listOfClass.findIndex(function(item, i){
+//   return item.classification_number === n;
+// });
+
+
+//  this.productForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']); 
 
     }
 

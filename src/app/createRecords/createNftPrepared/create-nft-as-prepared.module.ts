@@ -2,8 +2,9 @@ import { NgModule }      from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
-import { CreateNftComponent }  from './create-nft.component';
+import { CreateNftAsPreparedComponent }  from './create-nft-as-prepared.component';
 import {RouterModule} from '@angular/router';
+// import {ViewPackageModule} from '../../views/viewPackage/view-package.module'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
@@ -13,22 +14,21 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
   imports:      [ 
 ReactiveFormsModule,
 FormsModule,
+//ViewPackageModule,
 BrowserModule,
 ConfirmBoxModule,
 MatProgressBarModule
-
 
       
        ],
   declarations: [ 
 
-    CreateNftComponent
-    ],
+CreateNftAsPreparedComponent    ],
   exports: [
-    CreateNftComponent
+    CreateNftAsPreparedComponent
    ]
 
 })
-export class CreateNftModule { }
+export class CreateNftAsPreparedModule { }
 //BrowserModule /* or CommonModule */, 
  //     FormsModule, ReactiveFormsModule

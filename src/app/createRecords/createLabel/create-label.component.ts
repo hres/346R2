@@ -323,6 +323,8 @@ export class CreateLabelComponent implements OnChanges {
       this.labelField.child_item = this.labelField.number_of_units == "" ? null : this.labelField.child_item;
       this.labelField.calculated = this.labelField.calculated == "" ? null : this.labelField.calculated;
       this.labelField.nielsen_item_rank = this.labelField.nielsen_item_rank == "" ? null : this.labelField.nielsen_item_rank;
+      this.labelField.package_size = this.labelField.package_size == "" ? null : this.labelField.package_size;
+
 
 
 
@@ -333,7 +335,6 @@ export class CreateLabelComponent implements OnChanges {
 var index = this.listOfClass.findIndex(function(item, i){
   return item.classification_number === n;
 });
-
 
  this.labelForm.controls['classification_name'].setValue(this.listOfClass[index]['classification_name']); 
 

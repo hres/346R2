@@ -1,7 +1,7 @@
 <div class="container" *ngIf="packageData">
-<div class="row">
-  <div class="col-md-6">
-    <h2 style="margin-top:0px">Package Details</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 style="margin-top:0px">Package Details</h2>
 </div>
 <div class="col-md-6" style="text-align: right" >
 
@@ -12,122 +12,55 @@
 
 
 
-<table style="width:100%; margin-top:10px;">
-    <tr>
-        <th>Label Description</th>
-        <td>{{packageData.package_description}}</td>
-    </tr>
-    <tr>
-        <th>Label UPC</th>
-        <td>{{packageData.package_upc}}</td>
-    </tr>
-        <tr>
-        <th>Package Brand</th>
-        <td>{{packageData.package_brand}}</td>
-    </tr>
-        <tr>
-        <th>Package Manufacturer</th>
-        <td>{{packageData.package_manufacturer}}</td>
-    </tr>
-        <tr>
-        <th>Package Country</th>
-        <td>{{packageData.package_country}}</td>
-    </tr>
-        <tr>
-        <th>Net Quantity</th>
-        <td>{{packageData.package_size}}</td>
-    </tr>
+<div class="container2">
 
-        <tr>
-        <th>Net Quantity Unit of MEasure</th>
-        <td>{{packageData.package_size_unit_of_measure}}</td>
-    </tr>
-        <tr>
-        <th>Storage Type</th>
-        <td>{{packageData.storage_type}}</td>
-    </tr>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
 
-        <tr>
-        <th>Storage Statements</th>
-        <td>{{packageData.storage_statements}}</td>
-    </tr>
-    <tr>
-        <th>Health Claims</th>
-        <td>{{packageData.health_claims}}</td>
-    </tr>
-    <tr>
-        <th>Other Package Statements</th>
-        <td>{{packageData.other_package_statements}}</td>
-    </tr>
-        <tr>
-        <th>Suggested Direction</th>
-        <td>{{packageData.suggested_directions}}</td>
-    </tr>
-        <tr>
-        <th>Ingredients</th>
-        <td>{{packageData.ingredients}}</td>
-    </tr>
-        <tr>
-        <th>Multi Part Flag</th>
-        <td>{{packageData.multi_part_flag}}</td>
-    </tr>
-        <tr>
-        <th>Nutrition Fact Table</th>
-        <td>{{packageData.nutrition_fact_table}}</td>
-    </tr>
+    </ul>
 
-        <tr>
-        <th>Per Serving Amount (as Prepared)</th>
-        <td>{{packageData.as_prepared_per_serving_amount}}</td>
-    </tr>
-        <tr>
-        <th>Per Serving Amount Unit of Measure (as Prepared)</th>
-        <td>{{packageData.as_prepared_unit_of_measure}}</td>
-    </tr>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <!--Start of the first tab-->
 
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Informed Dining Program
+                        </div>
 
-            <tr>
-        <th>Per Serving Amount (as Sold)</th>
-        <td>{{packageData.as_sold_per_serving_amount}}</td>
-    </tr>
-     <tr>
-        <th>Per Serving Amount Unit of Measure (as Prepared)</th>
-        <td>{{packageData.as_sold_unit_of_measure}}</td>
-    </tr>
-    <tr>
-        <th>Per Serving Amount in Grams (as prepared)</th>
-        <td>{{packageData.as_prepared_per_serving_amount_in_grams}}</td>
-    </tr>
-        <tr>
-        <th>Per Serving Amount in Grams (as sold)</th>
-        <td>{{packageData.as_sold_per_serving_amount_in_grams}}</td>
-    </tr>
-        <tr>
-        <th>Package Comment</th>
-        <td>{{packageData.package_comment}}</td>
-    </tr>
-        <tr>
-        <th>Package Source</th>
-        <td>{{packageData.package_source}}</td>
-    </tr>
-        <tr>
-        <th>Product Description</th>
-        <td>{{packageData.package_product_description}}</td>
-    </tr>
+                        <div class="panel-body">
+                            {{packageData.informed_dining_program}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Nft Last Update Date
+                        </div>
 
-        <tr>
-        <th>Collection Date</th>
-        <td>{{packageData.package_collection_date}}</td>
-    </tr>
-        <tr>
-        <th>Number of Units </th>
-        <td>{{packageData.number_of_units}}</td>
-    </tr>
-    <tr>
-        <th>Edited By</th>
-        <td>{{packageData.edited_by}}</td>
-    </tr>
-        <tr>
+                        <div class="panel-body">
+                            {{packageData.nft_last_update_date}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Child Item
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.child_item}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<table style="width:100%; margin-top:10px;">-->
+            <!--<tr>
         <th>Informed  Dining Program</th>
         <td>{{packageData.informed_dining_program}}</td>
     </tr>
@@ -136,57 +69,513 @@
         <td>{{packageData.nft_last_update_date}}</td>
     </tr>
 
-    <!---------------->
-       <tr>
-        <th>Product Grouping</th>
-        <td>{{packageData.product_grouping}}</td>
-    </tr>
         <tr>
         <th>Child Item</th>
         <td>{{packageData.child_item}}</td>
     </tr>
-        <tr>
-        <th>Classification Number</th>
-        <td>{{packageData.classification_number}}</td>
-    </tr>
-        <tr>
-        <th>Classification Name</th>
-        <td>{{packageData.classification_name}}</td>
-    </tr>
-        <tr>
-        <th>Nielsen Item Rank</th>
-        <td>{{packageData.nielsen_item_rank}}</td>
-    </tr>
+               <tr>
+        <th>Product Grouping</th>
+        <td>{{packageData.product_grouping}}</td>
+    </tr>-->
 
-        <tr>
-        <th>Nutrient Claims</th>
-        <td>{{packageData.nutrient_claims}}</td>
-    </tr>
-        <tr>
-        <th>Nielsen Category </th>
-        <td>{{packageData.package_nielsen_category}}</td>
-    </tr>
-    <tr>
-        <th>Common Household Measure</th>
-        <td>{{packageData.common_household_measure}}</td>
-    </tr>
-        <tr>
-        <th>Creation Date</th>
-        <td>{{packageData.creation_date}}</td>
-    </tr>
-        <tr>
-        <th>Last Edit Date</th>
-        <td>{{packageData.last_edit_date}}</td>
-    </tr>
-            <tr>
-        <th>Calculated?</th>
-        <td>{{packageData.calculated}}</td>
-    </tr>
-  </table>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Label UPC
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.package_upc}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Label Description
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.package_description}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Classification Number
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.classification_number}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Classification Name
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.classification_name}}
+                        </div>
+                    </div>
+                    <!--end of the first tab-->
+                </div>
+            </div>
 
 
-  
 
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <!--Start of the second tab-->
+           <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Nielsen Item Rank
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.nielsen_item_rank}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Nielsen Category 
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.package_nielsen_category}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Package Brand
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.package_brand}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                       <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Package Manufacturer
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.package_manufacturer}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Package Country 
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.package_country}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Net Quantity
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.package_size}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                                   <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Net Quantity Unit of MEasure
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.package_size_unit_of_measure}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Number of Units 
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.number_of_units}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                           Multi Part Flag
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.multi_part_flag}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-12">
+                                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                           Storage Type
+                        </div>
+
+                        <div class="panel-body">
+                            {{packageData.storage_type}}
+                        </div>
+                    </div>
+            </div>
+            </div>
+
+<!--end of the second tab-->
 
 </div>
 
+
+<!--end of fourth tab-->
+
+
+</div>
+</div>
+
+<div class="row">
+
+    <!--start of the left panel-->
+    <div class="col-sm-6" style="min-height: 500px">
+
+<div class="row">
+    <div >
+
+
+        <div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
+            <a href="#sold" class="btn btn-default active" data-toggle="tab">
+                <input type="radio" />As sold
+            </a>
+            <a href="#prepared" class="btn btn-default" data-toggle="tab">
+                <input type="radio" />As Prepared
+            </a>
+
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="sold">
+
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Per Serving <br> Size
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.as_sold_per_serving_amount}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Per Serving Unit of Measure
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.as_sold_unit_of_measure}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Per Serving Unit of Measure
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.as_sold_per_serving_amount_in_grams}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Common Household Measure
+                    </div>
+
+                    <div class="panel-body">
+                        {{packageData.common_household_measure}}
+                    </div>
+                </div>
+
+
+                <div *ngIf="componentViewSold">
+                    <table>
+                        <tr>
+                            <th *ngFor="let map of nftSettings ; let i=index">
+
+                                {{map.header}}
+                            </th>
+
+                        </tr>
+                        <tr *ngFor="let record of componentViewSold">
+
+                            <ng-container *ngFor="let map of nftSettings; let i=index">
+
+                                <td> {{ record[map.primaryKey]}}
+
+                                </td>
+
+                            </ng-container>
+                        </tr>
+
+
+
+
+                    </table>
+                </div>
+                <div *ngIf="!componentViewSold">
+                    <a [routerLink]='getPathAsSold()' class="btn btn-default">Add NFT as sold</a>
+
+                </div>
+
+                <!--End of as sold content-->
+            </div>
+            <div class="tab-pane" id="prepared">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Per Serving Size
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.as_prepared_per_serving_amount}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Per Serving Unit of Measure
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.as_prepared_unit_of_measure}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Per Serving Unit of Measure
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.as_prepared_per_serving_amount_in_grams}}
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Calculated?
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.calculated}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div *ngIf="componentViewPrepared">
+                    <table>
+                        <tr>
+                            <th *ngFor="let map of nftSettings ; let i=index">
+
+                                {{map.header}}
+                            </th>
+
+                        </tr>
+                        <tr *ngFor="let record of componentViewPrepared">
+
+                            <ng-container *ngFor="let map of nftSettings; let i=index">
+
+                                <td> {{ record[map.primaryKey]}}
+
+                                </td>
+
+                            </ng-container>
+                        </tr>
+
+
+
+
+                    </table>
+                </div>
+                <div *ngIf="!componentViewPrepared">
+                    <a [routerLink]='getPath()' class="btn btn-default">Add NFT as prepared</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</div>
+<!--end of the left panel-->
+<!--start of the right panel-->
+<div class="col-sm-6">
+
+
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Ingregients
+        </div>
+
+        <div class="panel-body">
+            {{packageData.ingredients}}
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Nutrition Fact Table
+        </div>
+
+        <div class="panel-body">
+            {{packageData.nutrition_fact_table}}
+        </div>
+    </div>
+
+</div>
+</div>
+<!--end of the right panel-->
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Storage Statements
+    </div>
+
+    <div class="panel-body">
+        {{packageData.storage_statements}}
+    </div>
+</div>
+
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Health Claims
+    </div>
+
+    <div class="panel-body">
+        {{packageData.health_claims}}
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Other Package Statements
+    </div>
+
+    <div class="panel-body">
+        {{packageData.other_package_statements}}
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Suggested Direction
+    </div>
+
+    <div class="panel-body">
+        {{packageData.suggested_directions}}
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Nutrient Claims
+    </div>
+
+    <div class="panel-body">
+        {{packageData.nutrient_claims}}
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Package Comment
+    </div>
+
+    <div class="panel-body">
+        {{packageData.package_comment}}
+    </div>
+</div>
+<table style="width:100%;" class="table table-striped">
+<tr>
+    <th>Package Source</th>
+    <th>Collection Date</th>
+    <th>Edited By</th>
+    <th>Creation Date</th>
+    <th>Last Edit Date</th>
+</tr>
+
+<tr>
+
+    <td>{{packageData.package_source}}</td>
+
+
+    <td>{{packageData.package_collection_date}}</td>
+
+
+    <td>{{packageData.edited_by}}</td>
+
+    <td>{{packageData.creation_date}}</td>
+
+
+    <td>{{packageData.last_edit_date}}</td>
+</tr>
+
+</table>
+
+</div>

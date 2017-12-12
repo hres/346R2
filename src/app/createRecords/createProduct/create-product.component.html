@@ -12,9 +12,9 @@
 
 
         <div class="row">
-            <div class="form-group col-sm-4" *ngIf="listOfClass">
+            <div class="form-group col-lg-4" *ngIf="listOfClass">
                 <label for="classification_name">Classification Name</label>
-                <select class="form-control" id="classification_name" formControlName="classification_name">
+                <select class="form-control" id="classification_name" formControlName="classification_name" (ngModelChange)="setClassificationName($event)">
 <option value="" selected>Select a Classification Name</option>
 <option *ngFor="let class of listOfClass;let i = index" [value]="class.classification_name">{{class.classification_name}}</option>
 
@@ -22,9 +22,9 @@
 
 
             </div>
-            <div class="form-group col-sm-4" *ngIf="listOfClass">
+            <div class="form-group col-lg-4" *ngIf="listOfClass">
                 <label for="classification_number">Classification Number</label>
-                <select class="form-control" id="classification_number" formControlName="classification_number">
+                <select class="form-control" id="classification_number" formControlName="classification_number" (ngModelChange)="callAlex($event)">
       <option value="" selected>Select a Classification Number</option>
       <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
      
@@ -32,7 +32,7 @@
 </select>
 
             </div>
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="classification_type">Classification Type  </label>
                 <input type="text" class="form-control" id="classification_type" placeholder="Enter the Classification Type" formControlName="classification_type">
 
@@ -42,13 +42,13 @@
 
         <div class="row">
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="product_manufacturer">Product Manufactuer </label>
                 <input type="text" class="form-control" id="product_manufacturer" placeholder="Product Manufactuer" formControlName="product_manufacturer">
 
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
 
                 <label for="product_brand">Product Brand</label>
                 <input type="text" class="form-control" id="product_brand" placeholder="Product Brand" formControlName="product_brand">
@@ -56,7 +56,7 @@
             </div>
 
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
 
                 <label for="cnf_code">CNF CODE    </label>
                 <input type="text" class="form-control" id="cnf_code" placeholder="CNF CODE" formControlName="cnf_code">
@@ -70,14 +70,14 @@
 
 
         <div class=" row">
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="cluster_number">Cluster Number</label>
                 <input type="text" class="form-control" id="cluster_number" placeholder="Cluster Number" formControlName="cluster_number">
                 <div *ngIf="formErrors.cluster_number" class="errorMessages">
                     <span class="textPosition"> {{formErrors.cluster_number}}</span>
                 </div>
             </div>
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="product_description" class="required">Product Description <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="product_description" placeholder="Product Description" formControlName="product_description">
 
@@ -85,14 +85,14 @@
                     <span class="textPosition">   {{formErrors.product_description}}</span>
                 </div>
             </div>
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="product_comment">Product Comment</label>
                 <input type="text" class="form-control" id="product_comment" placeholder="Product Comment" formControlName="product_comment">
 
             </div>
         </div>
         <div class=" row">
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="restaurant_type">Restaurant Type</label>
                 <select class="form-control" id="restaurant_type" placeholder="Select a Restaurant Type" formControlName="restaurant_type">
 
@@ -107,7 +107,7 @@
 			<option value="Quick Service" >Quick Service</option>
 			 </select>
             </div>
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="type">Type</label>
                 <select class="form-control" id="Type" formControlName="type">
 
@@ -116,7 +116,7 @@
 			<option value="Food Service">Food Service</option>
 			 </select>
             </div>
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!productForm.valid || submitted">Save</button>
 </div>
 </div>

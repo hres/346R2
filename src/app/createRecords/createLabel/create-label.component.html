@@ -17,7 +17,7 @@
         <div class="row">
 
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="informedDiningProgram">Informed Dining Program</label>
                 <select class="form-control" id="informedDiningProgram" formControlName="informed_dining_program">
 
@@ -27,7 +27,7 @@
 			 </select>
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
 
                 <label for="nftLastUpdate">NFT Last Update </label>
                 <input type="text" class="form-control" id="nftLastUpdate" placeholder="NFT Last Update" formControlName="nft_last_update_date">
@@ -38,7 +38,7 @@
 
 
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="childItem">Child Item</label>
                 <select class="form-control" id="childItem" formControlName="child_item">
 
@@ -51,7 +51,7 @@
 
         <div class="row">
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="productGrouping">Product Grouping</label>
                 <input type="text" class="form-control" id="productGrouping" placeholder="Product Grouping" formControlName="product_grouping">
 
@@ -61,7 +61,7 @@
             </div>
 
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
 
                 <label for="packageUpc" class="required">Label UPC <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="packageUpc" placeholder="Label UPC" formControlName="package_upc">
@@ -71,7 +71,7 @@
             </div>
 
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
 
                 <label for="packageDescription" class="required">Label Description <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="packageDescription" placeholder="Sales Source" formControlName="package_description">
@@ -85,7 +85,7 @@
 
         <div class="row">
 
-            <div class="form-group col-sm-4" *ngIf="listOfClass">
+            <div class="form-group col-lg-4" *ngIf="listOfClass">
                 <label for="packageClassificationName">Classification Name</label>
                 <select class="form-control" id="packageClassificationName" formControlName="classification_name">
                 <option value="" selected>Select a Classification Name</option>
@@ -95,7 +95,7 @@
 
 
             </div>
-            <div class="form-group col-sm-4" *ngIf="listOfClass">
+            <div class="form-group col-lg-4" *ngIf="listOfClass">
                 <label for="packageClassificationNumber">Classification Number</label>
                 <select class="form-control" id="packageClassificationNumber" formControlName="classification_number" (ngModelChange)="callAlex($event)">
       <option value="" selected>Select a Classification Number</option>
@@ -105,7 +105,7 @@
 </select>
 
             </div>
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="nielsenItemRank">Nielsen Item Rank UPC</label>
                 <input type="text" class="form-control" id="nielsenItemRank" placeholder="Nielsen Item Rank UPC" formControlName="nielsen_item_rank">
                 <div *ngIf="formErrors.nielsen_item_rank" class="errorMessages">
@@ -117,13 +117,13 @@
 
         <div class="row">
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="nielsenCategory">Nielsen Category</label>
                 <input type="text" class="form-control" id="nielsenCategory" placeholder="Nielsen Category" formControlName="package_nielsen_category">
 
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
 
                 <label for="packageBrand">Brand</label>
                 <input type="text" class="form-control" id="packageBrand" placeholder="Brand" formControlName="package_brand">
@@ -131,7 +131,7 @@
             </div>
 
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
 
                 <label for="packageManufacturer">Manufacturer </label>
                 <input type="text" class="form-control" id="packageManufacturer" placeholder="Manufacturer" formControlName="package_manufacturer">
@@ -141,13 +141,13 @@
 
         <div class="row">
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="packageCountry">Country</label>
                 <input type="text" class="form-control" id="packageCountry" placeholder="Manufacturer" formControlName="package_country">
 
             </div>
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
 
                 <label for="packageSize">Net Quantity</label>
                 <input type="text" class="form-control" id="packageSize" placeholder="Net Quantity" formControlName="package_size">
@@ -159,7 +159,7 @@
 
 
 
-            <div class="form-group col-sm-4">
+            <div class="form-group col-lg-4">
                 <label for="packageSizeUnitOfMeasure">Net Quantity unit of measure</label>
                 <select class="form-control" id="packageSizeUnitOfMeasure" formControlName="package_size_unit_of_measure">
 
@@ -172,7 +172,7 @@
 
         <div class="row">
 
-            <div class="form-group col-sm-6">
+            <div class="form-group col-lg-6">
                 <label for="numberOfUnits">Number of Units</label>
                 <input type="text" class="form-control" id="numberOfUnits" placeholder="Number of Units" style="width:540px" formControlName="number_of_units">
 <div *ngIf="formErrors.number_of_units" class="errorMessages">
@@ -180,7 +180,7 @@
 </div>
 </div>
 
-<div class="form-group col-sm-6">
+<div class="form-group col-lg-6">
     <label for="multiPartPackage">Multi Part Package?</label>
     <select class="form-control" id="multiPartPackage" formControlName="multi_part_flag" style="width:540px">
 
@@ -195,14 +195,14 @@
 
 </div>
 <div class="row">
-    <div class="form-group col-sm-6">
+    <div class="form-group col-lg-6">
         <label for="storageType">Storage Type</label>
         <input type="text" class="form-control" id="storageType" style="width:540px" placeholder="Storage Type" formControlName="storage_type">
 <!--<div *ngIf="formErrors.as_sold_per_serving_amount_in_grams" class="errorMessages">
                     <span class="textPosition">  {{formErrors.as_sold_per_serving_amount_in_grams}}</span>
                 </div>-->
 </div>
-<div class="form-group col-sm-6">
+<div class="form-group col-lg-6">
     <label for="commonHouseholdMeasure">Common Household Measure</label>
     <input type="text" class="form-control" id="commonHouseholdMeasure" style="width:540px" placeholder="Common Household Measure" formControlName="common_household_measure">
 <!--<div *ngIf="formErrors.as_prepared_per_serving_amount_in_grams" class="errorMessages">
@@ -214,7 +214,7 @@
 
 </div>
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
         <label for="Ingredients">Ingredients</label>
         <textarea class="form-control" id="Ingredients" placeholder="Ingredients" formControlName="ingredients" rows="2">
                 </textarea>
@@ -222,7 +222,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
         <label for="nutritionFactTable">Ingredients</label>
         <textarea class="form-control" id="nutritionFactTable" placeholder="Nutrition Fact Table" formControlName="nutrition_fact_table"
             rows="2">
@@ -232,7 +232,7 @@
 </div>
 
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
 
         <label for="suggestedDirections">Suggested Direction </label>
         <input type="text" class="form-control" id="suggestedDirections" placeholder="Suggested Directions" formControlName="suggested_directions">
@@ -243,7 +243,7 @@
 </div>
 
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
 
         <label for="nutrientClaims">Nutrient Claims </label>
         <input type="text" class="form-control" id="nutrientClaims" placeholder="Nutrient Claims" formControlName="nutrient_claims">
@@ -254,7 +254,7 @@
 </div>
 
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
 
         <label for="otherPackageStatements">Other Package Statements </label>
         <input type="text" class="form-control" id="otherPackageStatements" placeholder="Other Package Statements" formControlName="other_package_statements">
@@ -265,7 +265,7 @@
 </div>
 
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
 
         <label for="healthClaims">Health Claims </label>
         <input type="text" class="form-control" id="healthClaims" placeholder="Health Claims" formControlName="health_claims">
@@ -276,7 +276,7 @@
 </div>
 
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
 
         <label for="storageStatements">Storage Statements </label>
         <input type="text" class="form-control" id="storageStatements" placeholder="Storage Statements" formControlName="storage_statements">
@@ -289,20 +289,20 @@
 
 <div class="row">
 
-    <div class="form-group col-sm-4">
+    <div class="form-group col-lg-4">
         <label for="packageComments">Comments</label>
         <input type="text" class="form-control" id="packageComments" placeholder="Comments" formControlName="package_comment">
 
     </div>
 
-    <div class="form-group col-sm-4">
+    <div class="form-group col-lg-4">
 
         <label for="packageCollectionDate" class="required">Collection Date <strong class="required">(required)</strong></label>
         <input type="text" class="form-control" id="packageCollectionDate" placeholder="++++++++++++" formControlName="package_collection_date">
 
     </div>
 
-    <div class="form-group col-sm-4">
+    <div class="form-group col-lg-4">
 
         <label for="packageSource" class="required">Source <strong class="required">(required)</strong></label>
         <input type="text" class="form-control" id="packageSource" placeholder=" Source" formControlName="package_source">
@@ -315,14 +315,14 @@
 
 </div>
 <div class="row">
-    <div class="form-group col-sm-6">
+    <div class="form-group col-lg-6">
         <label for="asSoldPerServingAmountInGram">Per Serving Amount (grams)</label>
         <input type="text" class="form-control" id="asSoldPerServingAmountInGram" style="width:540px" placeholder="Per Serving Amount (grams)" formControlName="as_sold_per_serving_amount_in_grams">
 <div *ngIf="formErrors.as_sold_per_serving_amount_in_grams" class="errorMessages">
     <span class="textPosition">  {{formErrors.as_sold_per_serving_amount_in_grams}}</span>
 </div>
 </div>
-<div class="form-group col-sm-6">
+<div class="form-group col-lg-6">
     <label for="numberOfUnits">PPD Per Serving Amount (grams)</label>
     <input type="text" class="form-control" id="numberOfUnits" style="width:540px" placeholder="PPD Per Serving Amount (grams)" formControlName="as_prepared_per_serving_amount_in_grams">
 <div *ngIf="formErrors.as_prepared_per_serving_amount_in_grams" class="errorMessages">
@@ -333,7 +333,7 @@
 </div>
 
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
 
         <label for="productDescription">Product Description</label>
         <input type="text" class="form-control" id="productDescription" placeholder="Product Description" formControlName="package_product_description">
@@ -343,14 +343,14 @@
 
 </div>
 <div class="row">
-    <div class="form-group col-sm-6">
+    <div class="form-group col-lg-6">
         <label for="asSoldPerServingAmount">Per Serving Amount(As sold)</label>
         <input type="text" class="form-control" id="asSoldPerServingAmount" style="width:540px" placeholder="Per Serving Amount (grams)" formControlName="as_sold_per_serving_amount">
 <div *ngIf="formErrors.as_sold_per_serving_amount" class="errorMessages">
     <span class="textPosition">  {{formErrors.as_sold_per_serving_amount}}</span>
 </div>
 </div>
-<div class="form-group col-sm-6">
+<div class="form-group col-lg-6">
     <label for="asSoldUnitOfMeasure">Per Serving Unit of Measure (As sold)</label>
     <select class="form-control" id="asSoldUnitOfMeasure" formControlName="as_sold_unit_of_measure" style="width:540px">
 
@@ -362,14 +362,14 @@
 
 </div>
 <div class="row">
-    <div class="form-group col-sm-4">
+    <div class="form-group col-lg-4">
         <label for="asPreparedPerServingAmount">Per Serving Amount(As prepared)</label>
         <input type="text" class="form-control" id="asPreparedPerServingAmount"  placeholder="Per Serving Amount (grams)" formControlName="as_prepared_per_serving_amount">
 <div *ngIf="formErrors.as_prepared_per_serving_amount" class="errorMessages">
     <span class="textPosition">  {{formErrors.as_prepared_per_serving_amount}}</span>
 </div>
 </div>
-<div class="form-group col-sm-4">
+<div class="form-group col-lg-4">
     <label for="asSoldUnitOfMeasure">Per Serving Unit of Measure (As prepared)</label>
     <select class="form-control" id="asSoldUnitOfMeasure" formControlName="as_prepared_unit_of_measure" >
 
@@ -378,7 +378,7 @@
 <option value="0">No</option>
 </select>
 </div>
-<div class="form-group col-sm-4">
+<div class="form-group col-lg-4">
     <label for="calculated">calculated?</label>
     <select class="form-control" id="calculated" formControlName="calculated">
 
@@ -390,7 +390,7 @@
 
 </div>
 <div class="row">
-    <div class="form-group col-sm-12">
+    <div class="form-group col-lg-12">
         <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!labelForm.valid || labelForm.pristine || isLoading || submitted">Save</button>
 </div>
 

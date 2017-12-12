@@ -7,6 +7,8 @@ import {ModalBoxModule} from '../../modal-box/modal-box.module'
 import { BrowserModule } from '@angular/platform-browser';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import {RouterModule} from '@angular/router';
+import {CreateNftAsPreparedModule} from '../../createRecords/createNftPrepared/create-nft-as-prepared.module'
+ import {CreateNftModule} from '../../createRecords/createNft/create-nft.module'
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import {RouterModule} from '@angular/router';
         CommonModule,
         ConfirmBoxModule,
         ModalBoxModule,
-        RouterModule
+        RouterModule,
+        CreateNftAsPreparedModule,
+        CreateNftModule
         
        
     ],

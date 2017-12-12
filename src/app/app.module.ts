@@ -40,7 +40,6 @@ import { CreateLabelModule }  from './createRecords/createLabel/create-label.mod
 import { CreateLabelComponent }  from './createRecords/createLabel/create-label.component'; 
 import {ViewPackageModule} from './views/viewPackage/view-package.module';
 import {ViewPackageComponent} from './views/viewPackage/view-package.component';
-import { CreateNftModule }  from './createRecords/createNft/create-nft.module'; 
 import { CreateNftComponent }  from './createRecords/createNft/create-nft.component'; 
 
 
@@ -75,7 +74,10 @@ import { AddClassificationModule }  from './classification-center/add-classifica
 //Create imports
 
 
-import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
+import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
+import { CreateNftAsPreparedComponent } from './createRecords/createNftPrepared/create-nft-as-prepared.component';
+// import { CreateNftAsPreparedModule } from './createRecords/createNftPrepared/create-nft-as-prepared.module'
+
 @NgModule({
   imports:      [ 
       BrowserAnimationsModule,
@@ -90,8 +92,8 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
       LabelFormModule,
       EditProductModule,
       CreateSalesModule,
-    CreateNftModule,
       ViewSalesModule,
+      //CreateNftAsPreparedModule,
       
       // MdButtonModule,
       // MdCardModule,
@@ -171,6 +173,10 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module'
   {
     path:'createproduct',
     component: CreateProductComponent
+  },
+  {
+    path: 'package/create-nft-asprepared/:id',
+    component: CreateNftAsPreparedComponent
   }
 ])
       

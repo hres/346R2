@@ -1,0 +1,97 @@
+<div *ngIf="invalidInputDailyValue">
+
+
+  <div class="alert alert-danger" *ngIf="invalidInputDailyValue"><strong>Error!</strong> Invalid daily value amount for {{invalidInputDailyValue}} </div>
+</div>
+<div *ngIf="fibreExeeced">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{fibreExeeced}} </div>
+</div>
+<div *ngIf="fatExeeced">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{fatExeeced}} </div>
+</div>
+
+<div *ngIf="missingName">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{missingName}} </div>
+</div>
+
+<div *ngIf="invalidInput">
+
+
+  <div class="alert alert-danger" *ngIf="invalidInput"><strong>Error!</strong> Invalid amount for {{invalidInput}} </div>
+</div>
+<div *ngIf="duplicateEntries">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{duplicateEntries}} </div>
+</div>
+<div *ngIf="errorMessage">
+
+
+  <div *ngFor="let name of nameChangeLog" class="alert alert-danger"><strong>{{name}}</strong> is missing amount or unit of Measure</div>
+</div>
+
+<form [formGroup]="nftForm" (ngSubmit)="onSubmit()" novalidate>
+
+
+
+  <div formArrayName="secretComponents">
+    <div *ngFor="let address of secretComponents.controls; let i=index" [formGroupName]="i">
+      <!-- The repeated address template -->
+      <div class="row append">
+
+
+        <div class="form-group col-sm-3">
+
+
+          <select class="form-control" id="componentName" formControlName="name">
+      <option *ngFor="let component of responseComponentName;let i = index" [value]="component.component_name" >{{component.component_name}}</option>
+     
+
+        </select>
+
+        </div>
+
+
+
+        <div class="form-group col-sm-3">
+
+          <input class="form-control" formControlName="amount" placeholder="Component's Amount">
+
+        </div>
+
+        <div class="form-group col-sm-3">
+
+          <select class="form-control" formControlName="unit_of_measure">
+              <option value="" selected>Select a unit of measure</option>
+              <option *ngFor="let unit of unit_of_measure" [value]="unit">{{unit}}</option>
+            </select>
+
+        </div>
+        <div class="form-group col-sm-3">
+          <input class="form-control" formControlName="daily_value" placeholder="Component's daily value">
+          <span class="glyphicon glyphicon-remove deleteIcon" (click)="deleteClassification(i)"></span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="form-group ">
+    <button (click)="addComponent()" type="button" style="float:right">Add a Component</button>
+<button style="float:right;  width:140px" type="submit" class="btn btn-default" [disabled]=" !formValid || !nftForm.valid || submitted">Save</button>
+
+</div>
+</form>
+
+<confirm-box [flag]="flag" *ngIf="flag"></confirm-box>
+<div *ngIf="isLoading">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>

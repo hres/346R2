@@ -1,10 +1,11 @@
 import 'rxjs/add/operator/switchMap';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnChanges, Input, OnInit } from '@angular/core';
-import { Response,  labelViewFields} from '../../data-model';
+import { Response,  labelViewFields, NftAsSold, componentView, NftAsPrepared} from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { GetRecordService } from '../../services/getRecord.service';
 import { DeleteRecordService } from '../../services/delete-record.service';
+import { ColumnSetting } from '../../shared/layout.model'
 
 import { Observable } from 'rxjs/Observable';
 import { AbstractControl } from '@angular/forms';
@@ -29,6 +30,18 @@ export class ViewPackageComponent implements OnInit {
     emptyField: string = null;
     serverDown: boolean;
     submitted: boolean = false;
+    nftAsSold: NftAsSold;
+    nftAsPrepared: NftAsPrepared;
+    componentViewPrepared: componentView[];
+    componentViewSold: componentView[];
+
+    nftSettings: ColumnSetting[] = [
+        { primaryKey: 'name', header: 'Component' },
+        { primaryKey: 'amount', header: 'Amount' },
+        { primaryKey: 'unit_of_measure', header: 'Unit of Measure' },
+        { primaryKey: 'daily_value', header: '% DV' }
+
+    ];
 
 
 
@@ -47,6 +60,7 @@ export class ViewPackageComponent implements OnInit {
     ngOnInit(): void {
         
          this.packageData=null;
+         this.componentViewPrepared = null;
 
         this.route.paramMap
             .switchMap((param: ParamMap) =>
@@ -56,7 +70,22 @@ export class ViewPackageComponent implements OnInit {
                 console.log(response);
 
                 this.packageData = response[0].data.dataList[0];
+                this.nftAsPrepared = response[2];
+                if(this.nftAsPrepared.nft.length < 1){
+                    this.componentViewPrepared = null;
+                }else{
+                this.componentViewPrepared = this.nftAsPrepared.nft;
 
+                }
+
+                 this.nftAsSold = response[1];
+                if(this.nftAsSold.nft.length < 1){
+                    this.componentViewSold = null;
+                }else{
+                this.componentViewSold = this.nftAsSold.nft;
+
+                }
+                this.ngOnChanges();
 
             }
             );
@@ -66,6 +95,13 @@ export class ViewPackageComponent implements OnInit {
     }
     ngOnChanges() {
 
+
+    }
+    getPath(){
+         return  `/package/create-nft-asprepared/${+this.route.snapshot.paramMap.get('id')}`;
+    }
+    getPathAsSold(){
+                 return  `/add-nft/${+this.route.snapshot.paramMap.get('id')}`;
 
     }
     //     receiveCall(event: number){

@@ -43,7 +43,7 @@
 </ng-container>
 
 
-<ng-container *ngIf="pageOffset >= 4 && pageOffset <= pages.length - 5 && pages.length > 5">
+<ng-container *ngIf="pageOffset >= 4 && pageOffset <= pages.length - 4 && pages.length > 5">
 
 <ng-container *ngFor="let page of pages; let i = index">
 <div class="custom" (click)="updateOffset(page)" *ngIf="i === 0" [ngClass]="{'selected': page === pageOffset}"><span>{{page}} </span></div>

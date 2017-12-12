@@ -13,7 +13,7 @@
           <div class="flex row" >
 
   
-          <div class="form-group col-sm-4">
+          <div class="form-group col-lg-4">
             <label for="salesUpc">Sales UPC</label>
             <input type="text" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="salesUpc">
               <div *ngIf="formErrors.salesUpc" class="errorMessages">
@@ -22,13 +22,13 @@
           </div>
 
   
-          <div class="form-group col-sm-4">
+          <div class="form-group col-lg-4">
             <label for="salesDescription">Sales Description</label>
             <input type="text" class="form-control" id="salesDescription" placeholder="Sales Description" formControlName="salesDescription">
           </div>
 
 
-          <div class="form-group col-sm-4">
+          <div class="form-group col-lg-4">
             <label for="salesSource">Sales Source</label>
             <input type="text" class="form-control" id="salesSource" placeholder="Sales Source" formControlName="salesSource">
           </div>
@@ -38,7 +38,7 @@
 
           <div class="flex row">
 <!--
-          <div class="form-group col-sm-4">
+          <div class="form-group col-lg-4">
             <label for="salesYear">Sales Year</label>
             <input type="text" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="salesYear">
               <div *ngIf="formErrors.salesYear" class="errorMessages">
@@ -47,7 +47,7 @@
           </div>-->
 
 
-  <div class="form-group col-sm-4" *ngIf="listSalesYear">
+  <div class="form-group col-lg-4" *ngIf="listSalesYear">
     <label for="salesYear">Sales Year</label>
     <select class="form-control" id="salesYear" formControlName="salesYear">
 <option value="" selected>Select a Sales Year</option>
@@ -61,13 +61,13 @@
 
 
 
-          <div class="form-group col-sm-4">
+          <div class="form-group col-lg-4">
             <label for="nielsenCategory">Nielsen Category</label>
             <input type="text" class="form-control" id="nielsenCategory" placeholder="Sales Nielsen Category" formControlName="nielsenCategory">
           </div>
 
 
-          <div class="form-group col-sm-4">
+          <div class="form-group col-lg-4">
             <label for="salesComment">Sales Comment</label>
             <input type="text" class="form-control" id="salesComment" placeholder="Sales Comment" formControlName="salesComment">
           </div>
@@ -76,7 +76,7 @@
           </div>
           <div class="flex row">
 
-<div class="form-group col-sm-4">
+<div class="form-group col-lg-4">
             <label for="collectionDate">
      Collection Date From
       </label>
@@ -93,7 +93,7 @@
             </div>
           </div>
 
-          <div class="form-group col-sm-4">
+          <div class="form-group col-lg-4">
             <label for="collectionDateTo">
      Collection Date To
       </label>
@@ -109,7 +109,7 @@
               </div>
             </div>
           </div>
-<div class="form-group col-sm-4">
+<div class="form-group col-lg-4">
 <button style="float:right; margin-top: 28px; width:140px"  type="submit" class="btn btn-default" [disabled]="!salesForm.valid">Search</button>
 </div>
 

@@ -498,7 +498,12 @@ export const nftFieldsList : nftFields[] = [
    
    
 ]
+export const nftFieldsListAsPrepared : nftFields[] = [
+    {name: 'Energy', amount: '', unit_of_measure: '', daily_value:''}
 
+   
+   
+]
 
 
 export type ResponseComponentName = {
@@ -510,4 +515,22 @@ export type ResponseComponentName = {
 };
 export type Components = {
     component_name: string;
+}
+
+export type componentView = {
+
+    name: string;
+    amount: number;
+    unit_of_measure: string;
+    daily_value: string; 
+} 
+export type NftAsSold = {
+
+    nft:  componentView[],
+    status: number;
+}
+export type NftAsPrepared = {
+
+    nft:  componentView[],
+    status: number;
 }
