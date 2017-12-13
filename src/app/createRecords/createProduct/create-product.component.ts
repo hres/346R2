@@ -204,20 +204,22 @@ var index = this.listOfClass.findIndex(function(item, i){
   return item.classification_name === n;
 });
 
-
+if(this.productForm.controls['classification_number'].value != this.listOfClass[index]['classification_number']){
  this.productForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']); 
+}
 
     }
 
 
         callAlex(n: String) {
 
-// var index = this.listOfClass.findIndex(function(item, i){
-//   return item.classification_number === n;
-// });
+var index = this.listOfClass.findIndex(function(item, i){
+  return item.classification_number === n;
+});
 
-
-//  this.productForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']); 
+if(this.productForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']){
+ this.productForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']); 
+}
 
     }
 

@@ -14,7 +14,7 @@
         <div class="row">
             <div class="form-group col-lg-4" *ngIf="listOfClass">
                 <label for="classification_name">Classification Name</label>
-                <select class="form-control" id="classification_name" formControlName="classification_name">
+                <select class="form-control" id="classification_name" formControlName="classification_name" (ngModelChange)="setClassificationName($event)">
 <!--<option [value]="classification_name" selected>{{classification_name}}</option>-->
 <option *ngFor="let class of listOfClass;let i = index" [value]="class.classification_name">{{class.classification_name}}</option>
 
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group col-lg-4" *ngIf="listOfClass">
                 <label for="classification_number">Classification Number</label>
-                <select class="form-control" id="classification_number" formControlName="classification_number">
+                <select class="form-control" id="classification_number" formControlName="classification_number" (ngModelChange)="callAlex($event)">
       <!--<option [value]="classification_number" >{{classification_number}}</option>-->
       <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
      

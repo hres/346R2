@@ -1,5 +1,5 @@
-import { Component, OnChanges, Input, Output, EventEmitter} from '@angular/core';
-import { salesFieldsCreate,classificationList, Classification_name, Classification_number, Response } from '../../data-model';
+import { Component, OnChanges, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { salesFieldsCreate, classificationList, Classification_name, Classification_number, Response } from '../../data-model';
 import { CreateRecordService } from '../../services/create-records.service';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
@@ -18,7 +18,7 @@ export class CreateSalesComponent implements OnChanges {
 
 
 
-
+    date_input: any;
     isLoading: boolean = false;
     submitted: boolean = false;
     offset: number = 0;
@@ -35,61 +35,76 @@ export class CreateSalesComponent implements OnChanges {
         private createRecordService: CreateRecordService,
         private searchService: SearchService,
         private router: Router,
-         private route: ActivatedRoute
-        ) {
+        private route: ActivatedRoute
+    ) {
 
         this.createForm();
 
 
     }
     ngOnInit(): void {
-                       this.searchService.getClassificationLatest().subscribe(response =>
-                {  
-                 const {data, message, status} = response;   
-                 //const cl = response;
-                 this.listOfClass = data.dataList;
-                 console.log( this.listOfClass[0]['classification_name'], "is the class number")
 
-                
+        this.searchService.getClassificationLatest().subscribe(response => {
+            const {data, message, status} = response;
+            //const cl = response;
+            this.listOfClass = data.dataList;
+            console.log(this.listOfClass[0]['classification_name'], "is the class number");
 
-                 }
-            );        
+
+
+
+        }
+        );
+      
+  
     }
+        ngAfterViewInit(){
 
+
+
+        }
+
+    ngOnDestroy(){
+		$('input[formControlName="sales_collection_date"]').datepicker('remove');
+
+    }
     ngOnChanges() {
+
+
+
         this.flag = null;
         this.submitted = false;
 
         this.salesForm.reset({
-            sales_description:this.salesField.sales_description,
-            sales_upc:this.salesField.sales_upc,
-            sales_brand:this.salesField.sales_brand,
-            sales_manufacturer:this.salesField.sales_manufacturer,
-            dollar_rank:this.salesField.dollar_rank,
-            dollar_volume:this.salesField.dollar_volume,
-            dollar_share:this.salesField.dollar_share,
-            dollar_volume_percentage_change:this.salesField.dollar_volume_percentage_change,
-            kilo_volume:this.salesField.kilo_volume,
-            kilo_share:this.salesField.kilo_share,
-            kilo_volume_percentage_change:this.salesField.kilo_volume_percentage_change,
-            average_ac_dist:this.salesField.average_ac_dist,
-            average_retail_price:this.salesField.average_retail_price,
-            sales_source:this.salesField.sales_source,
-            nielsen_category:this.salesField.nielsen_category,
-            sales_year:this.salesField.sales_year,
-            control_label_flag:this.salesField.control_label_flag ,
-            kilo_volume_total:this.salesField.kilo_volume_total,
-            kilo_volume_rank:this.salesField.kilo_volume_rank,
-            dollar_volume_total:this.salesField.dollar_volume_total,
-            cluster_number:this.salesField.cluster_number,
-            product_grouping:this.salesField.product_grouping,
-            sales_product_description:this.salesField.sales_product_description,
-            classification_number:this.salesField.classification_number,
-            classification_type:this.salesField.classification_type,
-            sales_comment:this.salesField.sales_comment,
-            sales_collection_date:this.salesField.sales_collection_date,
-            number_of_units:this.salesField.number_of_units,
-            kilo_rank:this.salesField.kilo_rank
+            sales_description: this.salesField.sales_description,
+            sales_upc: this.salesField.sales_upc,
+            sales_brand: this.salesField.sales_brand,
+            sales_manufacturer: this.salesField.sales_manufacturer,
+            dollar_rank: this.salesField.dollar_rank,
+            dollar_volume: this.salesField.dollar_volume,
+            dollar_share: this.salesField.dollar_share,
+            dollar_volume_percentage_change: this.salesField.dollar_volume_percentage_change,
+            kilo_volume: this.salesField.kilo_volume,
+            kilo_share: this.salesField.kilo_share,
+            kilo_volume_percentage_change: this.salesField.kilo_volume_percentage_change,
+            average_ac_dist: this.salesField.average_ac_dist,
+            average_retail_price: this.salesField.average_retail_price,
+            sales_source: this.salesField.sales_source,
+            nielsen_category: this.salesField.nielsen_category,
+            sales_year: this.salesField.sales_year,
+            control_label_flag: this.salesField.control_label_flag,
+            kilo_volume_total: this.salesField.kilo_volume_total,
+            kilo_volume_rank: this.salesField.kilo_volume_rank,
+            dollar_volume_total: this.salesField.dollar_volume_total,
+            cluster_number: this.salesField.cluster_number,
+            product_grouping: this.salesField.product_grouping,
+            sales_product_description: this.salesField.sales_product_description,
+            classification_number: this.salesField.classification_number,
+            classification_type: this.salesField.classification_type,
+            sales_comment: this.salesField.sales_comment,
+            sales_collection_date: this.salesField.sales_collection_date,
+            number_of_units: this.salesField.number_of_units,
+            kilo_rank: this.salesField.kilo_rank
 
         }
         );
@@ -99,59 +114,59 @@ export class CreateSalesComponent implements OnChanges {
     createForm() {
         this.salesForm = this.fb.group({
             sales_description: ['', [Validators.required]],
-            sales_upc:['', [
+            sales_upc: ['', [
                 Validators.pattern('\\d+'),
                 Validators.required
-                
-                ]],
-            sales_brand:'',
-            sales_manufacturer:'',
+
+            ]],
+            sales_brand: '',
+            sales_manufacturer: '',
             dollar_rank: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             dollar_volume: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
-                 Validators.required]],
-            dollar_share:  [null, [
+                Validators.required]],
+            dollar_share: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
-                 Validators.required]],
-            dollar_volume_percentage_change:  [null, [
+                Validators.required]],
+            dollar_volume_percentage_change: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
-                 Validators.required]],
+                Validators.required]],
             kilo_volume: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                 Validators.required
-                
-                ]],
-            kilo_share:  [null, [
+
+            ]],
+            kilo_share: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
-                 Validators.required]],
-            kilo_volume_percentage_change:  [null, [
+                Validators.required]],
+            kilo_volume_percentage_change: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
-                 Validators.required]],
+                Validators.required]],
             average_ac_dist: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             average_retail_price: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            sales_source:['', [Validators.required]],
-            nielsen_category:['', [Validators.required]],
-            sales_year:[null, [
+            sales_source: ['', [Validators.required]],
+            nielsen_category: ['', [Validators.required]],
+            sales_year: [null, [
                 Validators.pattern('\\d+'),
                 Validators.minLength(4),
                 Validators.maxLength(4)]],
             control_label_flag: null,
-            kilo_volume_total:  [null, [
+            kilo_volume_total: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
-                 Validators.required]],
+                Validators.required]],
             kilo_volume_rank: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            dollar_volume_total:  [null, [
+            dollar_volume_total: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
-                 Validators.required]],
+                Validators.required]],
             cluster_number: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             product_grouping: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            sales_product_description:'',
-            classification_number:null,
-            classification_type:'',
-            sales_comment:'',
-            sales_collection_date:'',
-            number_of_units:[null, [Validators.pattern('\\d+')]],
-            kilo_rank:  [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]]
+            sales_product_description: '',
+            classification_number: null,
+            classification_type: '',
+            sales_comment: '',
+            sales_collection_date: '',
+            number_of_units: [null, [Validators.pattern('\\d+')]],
+            kilo_rank: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]]
         });
         this.salesForm.valueChanges
             .subscribe(data => this.onValueChanged(data));
@@ -186,10 +201,10 @@ export class CreateSalesComponent implements OnChanges {
 
         this.isLoading = true;
 
-        this.createRecordService.createSales(JSON.stringify(this.salesField)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.createRecordService.createSales(JSON.stringify(this.salesField)).finally(() => this.isLoading = false).subscribe(response => {
 
             const { message, status} = response;
-   
+
             if (status === 202) {
                 this.flag = 2;
                 // setTimeout(() => {
@@ -197,7 +212,7 @@ export class CreateSalesComponent implements OnChanges {
 
                 // },
                 // 4000); 
-              this.submitted = false;
+                this.submitted = false;
             } else if (status === 203) {
                 this.flag = 2;
                 this.submitted = false;
@@ -215,14 +230,14 @@ export class CreateSalesComponent implements OnChanges {
                 // },
                 // 4000); 
                 this.submitted = false;
-            }else if (status === 200){
-                 this.flag = 1;
+            } else if (status === 200) {
+                this.flag = 1;
                 setTimeout(() => {
                     this.router.navigate(['/viewproduct', this.id]);
 
                 },
-                4000); 
-            }else if(status === 604){
+                    4000);
+            } else if (status === 604) {
                 this.flag = 2;
                 this.message = "UPC code belong to a diffent product";
                 this.submitted = false;
@@ -236,13 +251,13 @@ export class CreateSalesComponent implements OnChanges {
                 // },
                 // 4000); 
             }
-            
-        }, (error) =>{
-            
-            this.serverDown=true;
-             this.flag = 2;     
-            this.submitted = false; 
-          
+
+        }, (error) => {
+
+            this.serverDown = true;
+            this.flag = 2;
+            this.submitted = false;
+
         });
 
     }
@@ -326,7 +341,7 @@ export class CreateSalesComponent implements OnChanges {
         },
         'nielsen_category': {
             'required': 'Nielsen Category is required',
-            
+
         },
         'sales_year': {
             'pattern': 'Must be a digit',
@@ -359,41 +374,57 @@ export class CreateSalesComponent implements OnChanges {
     }
     setValues(): void {
         this.submitted = true;
-                var date = new DatePipe('en-US');
-     
+        var date = new DatePipe('en-US');
+
         this.salesField = this.prepareSaveProduct();
-        this.salesField.sales_collection_date = this.salesField.sales_collection_date? date.transform(this.salesField.sales_collection_date, 'yyyy-MM-dd') : this.salesField.sales_collection_date;
+        this.salesField.sales_collection_date = this.salesField.sales_collection_date ? date.transform(this.salesField.sales_collection_date, 'yyyy-MM-dd') : this.salesField.sales_collection_date;
 
-        this.route.params.subscribe( params => {
+        this.route.params.subscribe(params => {
 
-        this.salesField.product_id = +params['id'];
-        this.id = this.salesField.product_id;
-        
-                this.salesField.number_of_units = this.salesField.number_of_units == "" ? null : this.salesField.number_of_units;
-        this.salesField.product_grouping = this.salesField.product_grouping ==""?null:this.salesField.product_grouping;
-        this.salesField.average_retail_price = this.salesField.average_retail_price== ""?null:this.salesField.average_retail_price;
-        this.salesField.sales_year = this.salesField.sales_year == "" ? null : this.salesField.sales_year;
-        this.salesField.classification_number = this.salesField.classification_number ==""?null:this.salesField.classification_number;
+            this.salesField.product_id = +params['id'];
+            this.id = this.salesField.product_id;
 
-        this.salesField.dollar_rank = this.salesField.dollar_rank == "" ? null : this.salesField.dollar_rank;
-        this.salesField.dollar_volume = this.salesField.dollar_volume ==""?null:this.salesField.dollar_volume;
-        this.salesField.dollar_share = this.salesField.dollar_share== ""?null:this.salesField.dollar_share;
-        this.salesField.dollar_volume_percentage_change = this.salesField.dollar_volume_percentage_change == "" ? null : this.salesField.dollar_volume_percentage_change;
-        this.salesField.kilo_volume = this.salesField.kilo_volume ==""?null:this.salesField.kilo_volume;
+            this.salesField.number_of_units = this.salesField.number_of_units == "" ? null : this.salesField.number_of_units;
+            this.salesField.product_grouping = this.salesField.product_grouping == "" ? null : this.salesField.product_grouping;
+            this.salesField.average_retail_price = this.salesField.average_retail_price == "" ? null : this.salesField.average_retail_price;
+            this.salesField.sales_year = this.salesField.sales_year == "" ? null : this.salesField.sales_year;
+            this.salesField.classification_number = this.salesField.classification_number == "" ? null : this.salesField.classification_number;
 
-        this.salesField.kilo_share = this.salesField.kilo_share == "" ? null : this.salesField.kilo_share;
-        this.salesField.kilo_volume_percentage_change = this.salesField.kilo_volume_percentage_change ==""?null:this.salesField.kilo_volume_percentage_change;
-        this.salesField.average_ac_dist = this.salesField.average_ac_dist== ""?null:this.salesField.average_ac_dist;
-       
-        this.salesField.kilo_volume_total = this.salesField.kilo_volume_total == "" ? null : this.salesField.kilo_volume_total;
-        this.salesField.kilo_volume_rank = this.salesField.kilo_volume_rank ==""?null:this.salesField.kilo_volume_rank;
+            this.salesField.dollar_rank = this.salesField.dollar_rank == "" ? null : this.salesField.dollar_rank;
+            this.salesField.dollar_volume = this.salesField.dollar_volume == "" ? null : this.salesField.dollar_volume;
+            this.salesField.dollar_share = this.salesField.dollar_share == "" ? null : this.salesField.dollar_share;
+            this.salesField.dollar_volume_percentage_change = this.salesField.dollar_volume_percentage_change == "" ? null : this.salesField.dollar_volume_percentage_change;
+            this.salesField.kilo_volume = this.salesField.kilo_volume == "" ? null : this.salesField.kilo_volume;
 
-        this.salesField.dollar_volume_total = this.salesField.dollar_volume_total == "" ? null : this.salesField.dollar_volume_total;
-        this.salesField.cluster_number = this.salesField.cluster_number ==""?null:this.salesField.cluster_number;
+            this.salesField.kilo_share = this.salesField.kilo_share == "" ? null : this.salesField.kilo_share;
+            this.salesField.kilo_volume_percentage_change = this.salesField.kilo_volume_percentage_change == "" ? null : this.salesField.kilo_volume_percentage_change;
+            this.salesField.average_ac_dist = this.salesField.average_ac_dist == "" ? null : this.salesField.average_ac_dist;
+
+            this.salesField.kilo_volume_total = this.salesField.kilo_volume_total == "" ? null : this.salesField.kilo_volume_total;
+            this.salesField.kilo_volume_rank = this.salesField.kilo_volume_rank == "" ? null : this.salesField.kilo_volume_rank;
+
+            this.salesField.dollar_volume_total = this.salesField.dollar_volume_total == "" ? null : this.salesField.dollar_volume_total;
+            this.salesField.cluster_number = this.salesField.cluster_number == "" ? null : this.salesField.cluster_number;
 
 
         });
-       
+
+    }
+
+    getDate() {
+            //$(this).parent().siblings('.date2').trigger('focus');
+         this.date_input = $('input[formControlName="sales_collection_date"]'); //our date input has the name "date"  sales_collection_date
+		var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        this.date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+            $('.input-group').find('.fa-calendar').parent().siblings('.date2').trigger('focus');
+
+ //$('.input-group').find('.fa-calendar').on('click', function(){
+// });
     }
 
 }

@@ -330,15 +330,29 @@ export class CreateLabelComponent implements OnChanges {
 
     }
 
-    callAlex(n: String) {
+        setClassificationName(n: String) {
+
+var index = this.listOfClass.findIndex(function(item, i){
+  return item.classification_name === n;
+});
+
+if(this.labelForm.controls['classification_number'].value != this.listOfClass[index]['classification_number']){
+ this.labelForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']); 
+}
+
+    }
+
+
+        callAlex(n: String) {
 
 var index = this.listOfClass.findIndex(function(item, i){
   return item.classification_number === n;
 });
 
- this.labelForm.controls['classification_name'].setValue(this.listOfClass[index]['classification_name']); 
+if(this.labelForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']){
+ this.labelForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']); 
+}
 
     }
-
 
 }

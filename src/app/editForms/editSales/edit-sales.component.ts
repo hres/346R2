@@ -60,6 +60,9 @@ export class EditSalesComponent implements OnChanges {
         );
 
 
+// $('.input-group').find('.fa-calendar').on('click', function(){
+//     $(this).parent().siblings('.date2').trigger('focus');
+// });
 
     }
 
@@ -326,7 +329,7 @@ export class EditSalesComponent implements OnChanges {
         },
         'kilo_volume_total': {
             'pattern': 'Must be a number',
-             'required': 'Kilo volume total is required'
+            'required': 'Kilo volume total is required'
         },
         'kilo_volume_rank': {
             'pattern': 'Must be a number'
@@ -354,7 +357,7 @@ export class EditSalesComponent implements OnChanges {
         var date = new DatePipe('en-US');
 
         this.salesField = this.prepareSaveSales();
-        this.salesField.sales_collection_date = this.salesField.sales_collection_date? date.transform(this.salesField.sales_collection_date, 'yyyy-MM-dd') : this.salesField.sales_collection_date;
+        this.salesField.sales_collection_date = this.salesField.sales_collection_date ? date.transform(this.salesField.sales_collection_date, 'yyyy-MM-dd') : this.salesField.sales_collection_date;
 
         this.salesField.sales_id = this.id;
         this.salesField.number_of_units = this.salesField.number_of_units == "" ? null : this.salesField.number_of_units;
@@ -386,7 +389,8 @@ export class EditSalesComponent implements OnChanges {
         // }
 
     }
+    getDate() {
 
-}
+    }
 
 
