@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
-
+declare var $: any;
 @Component({
     selector: 'add-sales',
     templateUrl: './create-sales.component.html',
@@ -16,7 +16,7 @@ import { DatePipe } from '@angular/common';
 })
 export class CreateSalesComponent implements OnChanges {
 
-
+    
 
     date_input: any;
     isLoading: boolean = false;
@@ -121,15 +121,15 @@ export class CreateSalesComponent implements OnChanges {
             ]],
             sales_brand: '',
             sales_manufacturer: '',
-            dollar_rank: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            dollar_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]],
             dollar_volume: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
                 Validators.required]],
             dollar_share: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
                 Validators.required]],
             dollar_volume_percentage_change: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
                 Validators.required]],
             kilo_volume: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
@@ -137,10 +137,10 @@ export class CreateSalesComponent implements OnChanges {
 
             ]],
             kilo_share: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
                 Validators.required]],
             kilo_volume_percentage_change: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
                 Validators.required]],
             average_ac_dist: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             average_retail_price: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
@@ -154,7 +154,7 @@ export class CreateSalesComponent implements OnChanges {
             kilo_volume_total: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                 Validators.required]],
-            kilo_volume_rank: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            kilo_volume_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]],
             dollar_volume_total: [null, [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                 Validators.required]],
@@ -166,7 +166,7 @@ export class CreateSalesComponent implements OnChanges {
             sales_comment: '',
             sales_collection_date: '',
             number_of_units: [null, [Validators.pattern('\\d+')]],
-            kilo_rank: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]]
+            kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
         });
         this.salesForm.valueChanges
             .subscribe(data => this.onValueChanged(data));
@@ -197,6 +197,7 @@ export class CreateSalesComponent implements OnChanges {
     onSubmit() {
 
         this.flag = null;
+        this.message = null;
         this.setValues();
 
         this.isLoading = true;
@@ -241,6 +242,8 @@ export class CreateSalesComponent implements OnChanges {
                 this.flag = 2;
                 this.message = "UPC code belong to a diffent product";
                 this.submitted = false;
+                window.scrollTo(0,0);
+                
             }
             else {
                 this.flag = 2;

@@ -41,4 +41,10 @@ div.bodycard{
     border-left: 5px solid #a94442;
 }
 
+.dateIcon{
 
+    position: absolute;
+top: 26px;
+    right: 9px;
+
+}

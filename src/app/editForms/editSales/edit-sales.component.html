@@ -12,6 +12,7 @@
 
 
 
+
         <div class="row">
 
             <div class="form-group col-sm-4">
@@ -50,7 +51,7 @@
             <div class="form-group col-sm-4">
                 <label for="salesYear">Sales Year</label>
                 <input type="text" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="sales_year">
-                               
+
                 <div *ngIf="formErrors.sales_year" class="errorMessages">
                     <span class="textPosition">  {{formErrors.sales_year}}</span>
                 </div>
@@ -97,20 +98,12 @@
             </div>
 
             <div class="form-group col-sm-4">
-                <label for="SalescollectionDate">
-     Collection Date 
-      </label>
-                <div class="">
-                    <div class="input-group">
+                <label for="SalesCollectionDate">Collection Date</label>
+                <input class="form-control" [matDatepicker]="myDatepicker" id="SalesCollectionDate" formControlName="sales_collection_date">
+               
+                <mat-datepicker-toggle class="dateIcon" [for]="myDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker  #myDatepicker></mat-datepicker>
 
-                        <input class="form-control date2" id="SalescollectionDate" formControlName="sales_collection_date" placeholder="YYYY/MM/DD"
-                            type="text" [value]="" />
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar">
-              </i>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -204,7 +197,7 @@
 
 
             <div class="form-group col-sm-4">
-                <label for="ControlLabelFlag">Type</label>
+                <label for="ControlLabelFlag">Control label flag</label>
                 <select class="form-control" id="ControlLabelFlag" formControlName="control_label_flag">
 
 			<option value="" selected>Control label flag?</option>
@@ -219,7 +212,7 @@
         <div class="row">
 
             <div class="form-group col-sm-4">
-                <label for="DollarShare" class="required">Dollar Slare <strong class="required">(required)</strong></label>
+                <label for="DollarShare" class="required">Dollar Share <strong class="required">(required)</strong></label>
                 <input type="text" class="form-control" id="DollarShare" placeholder="Dollar Share" formControlName="dollar_share">
                 <div *ngIf="formErrors.dollar_share" class="errorMessages">
                     <span class="textPosition">  {{formErrors.dollar_share}}</span>
@@ -286,26 +279,26 @@
                     <span class="textPosition">  {{formErrors.kilo_volume_rank}}</span>
                 </div>
             </div>
-                   <div class="form-group col-sm-4">
+            <div class="form-group col-sm-4">
                 <label for="numberOfUnits">Number of units</label>
                 <input type="text" class="form-control" id="numberOfUnits" placeholder="Number of units" formControlName="number_of_units">
                 <div *ngIf="formErrors.number_of_units" class="errorMessages">
                     <span class="textPosition">  {{formErrors.number_of_units}}</span>
                 </div>
             </div>
-       
-       
-                        <div class="form-group col-sm-4">
+
+
+            <div class="form-group col-sm-4">
                 <label for="classificationType">Classification Type  </label>
                 <input type="text" class="form-control" id="classificationType" placeholder="Enter the Classification Type" formControlName="classification_type">
 
             </div>
 
-</div>
-<div class="row">
+        </div>
+        <div class="row">
             <div class="form-group col-sm-12">
                 <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!salesForm.valid || salesForm.pristine || isLoading || submitted">Save</button>
-                <button style="float:right; margin-top: 28px; width:140px" type="reset" (click)="revert()"  class="btn btn-danger" [disabled]="salesForm.pristine || isLoading || submitted">Revert</button>
+<button style="float:right; margin-top: 28px; width:140px" type="reset" (click)="revert()" class="btn btn-danger" [disabled]="salesForm.pristine || isLoading || submitted">Revert</button>
 
 </div>
 
@@ -317,10 +310,10 @@
 </div>
 </div>
 
-<confirm-box [flag]="flag"  *ngIf="flag"></confirm-box>
+<confirm-box [flag]="flag" *ngIf="flag"></confirm-box>
 
 <div *ngIf="isLoading">
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
 <!--<div *ngIf="message">
     {{message}}

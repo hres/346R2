@@ -58,3 +58,10 @@ div.bodycard{
 /*.tab{
     margin-top: 7px;
 }*/
+.dateIcon{
+
+    position: absolute;
+top: 26px;
+    right: 9px;
+
+}

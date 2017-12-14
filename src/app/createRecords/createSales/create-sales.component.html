@@ -1,3 +1,8 @@
+<div *ngIf="message">
+
+
+  <div class="alert alert-danger"><strong>Error!</strong> {{message}}</div>
+</div>
 <div class="DivHeader" style="margin-bottom: 60px;">
 <div class="DivLogo">
     Create Sales
@@ -92,25 +97,17 @@
             <div class="form-group col-lg-4">
 
                 <label for="SalesComment">Sales Comment</label>
-                <input type="text" class="form-control" id="SalesComment" placeholder="Sales Comment" formControlName="sales_comment">
+                <input type="text" class="form-control" id="SalesCsomment" placeholder="Sales Comment" formControlName="sales_comment">
 
             </div>
 
             <div class="form-group col-lg-4">
-                <label for="SalescollectionDate">
-     Collection Date 
-      </label>
-                <div class="">
-                    <div class="input-group">
+                <label for="SalesCollectionDate">Collection Date</label>
+                <input class="form-control" [matDatepicker]="myDatepicker" id="SalesCollectionDate" formControlName="sales_collection_date">
+               
+                <mat-datepicker-toggle class="dateIcon" [for]="myDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker  #myDatepicker></mat-datepicker>
 
-                        <input class="form-control date2" id="SalescollectionDate" formControlName="sales_collection_date" placeholder="YYYY/MM/DD"
-                            type="text" [value]="" />
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar" (click)="getDate()">
-              </i>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -204,7 +201,7 @@
 
 
             <div class="form-group col-lg-4">
-                <label for="ControlLabelFlag">Type</label>
+                <label for="ControlLabelFlag">Control label flag</label>
                 <select class="form-control" id="ControlLabelFlag" formControlName="control_label_flag">
 
 			<option value="" selected>Control label flag?</option>
@@ -321,6 +318,4 @@
 <div *ngIf="isLoading">
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
-<div *ngIf="message">
-    {{message}}
-</div>
+

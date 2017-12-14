@@ -10,6 +10,7 @@ import {SharedModule} from '../../shared/shared.module'
  import {PaginationModelModule} from '../../pagination/pagination.model'
 
 import {RouterModule} from '@angular/router';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -23,7 +24,8 @@ MatProgressBarModule,
 
 BrowserModule,
 SharedModule,
-PaginationModelModule
+PaginationModelModule,
+MatDatepickerModule
       
        ],
   declarations: [ 

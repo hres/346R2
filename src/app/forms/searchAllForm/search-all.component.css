@@ -64,3 +64,10 @@ div.bodycard{
 /*.ng-valid.ng-dirty:not(form){
     border-left: 5px solid #42A948;
 }*/
+.dateIcon{
+
+    position: absolute;
+top: 26px;
+    right: 9px;
+
+}

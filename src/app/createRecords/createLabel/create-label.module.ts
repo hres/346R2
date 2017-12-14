@@ -8,6 +8,7 @@ import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import { ViewProductModule} from '../../views/viewProduct/view-product.module'
 import { CreateLabelComponent }  from './create-label.component';
 import {RouterModule} from '@angular/router';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -21,7 +22,8 @@ MatCardModule,
 MatProgressBarModule,
 BrowserModule,
 ConfirmBoxModule,
-ViewProductModule
+ViewProductModule,
+MatDatepickerModule
 
       
        ],

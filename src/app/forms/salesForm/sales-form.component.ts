@@ -12,6 +12,9 @@ import 'rxjs/add/operator/catch';
 import { ColumnSetting } from '../../shared/layout.model'
 import { PaginationComponent } from '../../pagination/pagination.component'
 import { TableLayoutComponent } from '../../shared/table-layout.component'
+declare var $: any;
+
+
 @Component({
     selector: 'sales-form',
     templateUrl: './sales-form.component.html',
@@ -331,5 +334,9 @@ this.isLoading = true;
         this.sales.offset = this.offset;
         this.submitted = true;
     }
+
+  
+
+ 
 
 }

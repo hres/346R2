@@ -289,7 +289,7 @@ export type AllSalesFieldsView = {
     sales_manufacturer: string,
     dollar_rank: number | string,
     dollar_volume: number | string,
-    dollar_share: number | string,
+    dollar_share:  string,
     dollar_volume_percentage_change: number | string,
     kilo_volume: number | string,
     kilo_share: number | string,

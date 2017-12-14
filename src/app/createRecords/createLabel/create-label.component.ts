@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
-
+declare var $: any;
 @Component({
     selector: 'add-label',
     templateUrl: './create-label.component.html',
@@ -18,7 +18,7 @@ export class CreateLabelComponent implements OnChanges {
 
 
 
-
+    date_input: any;
     isLoading: boolean = false;
     submitted: boolean = false;
     offset: number = 0;
@@ -352,6 +352,25 @@ var index = this.listOfClass.findIndex(function(item, i){
 if(this.labelForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']){
  this.labelForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']); 
 }
+
+    }
+
+        getDate() {
+           
+         this.date_input = $('input[formControlName="package_collection_date"]'); 
+		var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        this.date_input.datepicker({
+			format: 'yyyy/mm/dd',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+            $('.input-group').find('.fa-calendar').parent().siblings('.date2').trigger('focus');
+
+}
+
+    ngOnDestroy(){
+		$('input[formControlName="package_collection_date"]').datepicker('remove');
 
     }
 

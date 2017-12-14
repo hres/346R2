@@ -13,6 +13,8 @@ import { DatePipe } from '@angular/common';
 import { ColumnSetting } from '../../shared/layout.model'
 import { PaginationComponent } from '../../pagination/pagination.component'
 import { TableLayoutComponent } from '../../shared/table-layout.component'
+declare var $: any;
+
 @Component({
     selector: 'label-form',
     templateUrl: './label-form.component.html',
@@ -316,5 +318,7 @@ export class LabelFormComponent implements OnChanges {
         console.log(JSON.stringify(this.label));
         this.submitted = true;
     }
+
+
 
 }

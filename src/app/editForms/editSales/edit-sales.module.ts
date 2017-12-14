@@ -7,6 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EditSalesComponent }  from './edit-sales.component';
 import {RouterModule} from '@angular/router';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material'
 
 
 @NgModule({
@@ -17,7 +19,9 @@ MatProgressBarModule,
 BrowserModule,
 ConfirmBoxModule,
 RouterModule,
-MatCardModule
+MatCardModule,
+MatDatepickerModule,
+MatNativeDateModule
 
       
        ],

@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CreateSalesComponent }  from './create-sales.component';
 import {RouterModule} from '@angular/router';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -19,7 +20,8 @@ MatCardModule,
 MatProgressBarModule,
 BrowserModule,
 ConfirmBoxModule,
-RouterModule
+RouterModule,
+MatDatepickerModule
 
       
        ],

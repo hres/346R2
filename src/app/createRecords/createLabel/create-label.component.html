@@ -295,12 +295,18 @@
 
     </div>
 
-    <div class="form-group col-lg-4">
 
-        <label for="packageCollectionDate" class="required">Collection Date <strong class="required">(required)</strong></label>
-        <input type="text" class="form-control" id="packageCollectionDate" placeholder="++++++++++++" formControlName="package_collection_date">
 
-    </div>
+
+            <div class="form-group col-lg-4">
+              <label for="package_collection_date">Collection Date</label>
+                <input class="form-control" [matDatepicker]="myDatepicker" id="package_collection_date" formControlName="package_collection_date">
+               
+                <mat-datepicker-toggle class="dateIcon" [for]="myDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker  #myDatepicker></mat-datepicker>
+
+
+            </div>
 
     <div class="form-group col-lg-4">
 

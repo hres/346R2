@@ -36,7 +36,7 @@
         <div class="row">
             <div class="form-group col-lg-4" *ngIf="listOfClass">
                 <label for="classificationName">Classification Name</label>
-          <input type="text" class="form-control" id="classification_name" placeholder="Classification Name" formControlName="classification_name">
+                <input type="text" class="form-control" id="classification_name" placeholder="Classification Name" formControlName="classification_name">
 
             </div>
             <div class="form-group col-lg-4" *ngIf="listOfClass">
@@ -139,20 +139,13 @@
     </div>
 
     <div class="form-group col-lg-4">
-        <label for="salesCollectionDateFrom">
-     Collection Date From
-      </label>
-        <div class="">
-            <div class="input-group">
 
-                <input class="form-control date1" id="salesCollectionDateFrom" formControlName="sales_collection_date_from" placeholder="YYYY/MM/DD"
-                    type="text" [value]="" />
-                <div class="input-group-addon">
-                    <i class="fa fa-calendar">
-         </i>
-                </div>
-            </div>
-        </div>
+        <label for="sales_collection_date_from">Collection Date To</label>
+        <input class="form-control" [matDatepicker]="myDatepickerSalesFrom" id="sales_collection_date_from" formControlName="sales_collection_date_from">
+
+        <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerSalesFrom"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepickerSalesFrom></mat-datepicker>
+
     </div>
 
 
@@ -166,20 +159,13 @@
 
 
     <div class="form-group col-lg-4">
-        <label for="SalescollectionDateTo">
-     Collection Date To
-      </label>
-        <div class="">
-            <div class="input-group">
 
-                <input class="form-control date2" id="SalescollectionDateTo" formControlName="sales_collection_date_to" placeholder="YYYY/MM/DD"
-                    type="text" [value]="" />
-                <div class="input-group-addon">
-                    <i class="fa fa-calendar">
-              </i>
-                </div>
-            </div>
-        </div>
+        <label for="sales_collection_date_to">Collection Date To</label>
+        <input class="form-control" [matDatepicker]="myDatepickerSalesTo" id="sales_collection_date_to" formControlName="sales_collection_date_to">
+
+        <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerSalesTo"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepickerSalesTo></mat-datepicker>
+
     </div>
 
     <div class="form-group col-lg-4">
@@ -252,37 +238,25 @@
         <input type="text" class="form-control" id="labelIngredients" placeholder="Ingredients" formControlName="label_ingredients">
     </div>
     <div class="form-group col-lg-4">
-        <label for="datex">
-     Collection Date From
-      </label>
-        <div class="">
-            <div class="input-group">
 
-                <input class="form-control date1" id="datex" formControlName="label_collection_date_from" placeholder="YYYY/MM/DD" type="text"
-                    [value]="" />
-                <div class="input-group-addon">
-                    <i class="fa fa-calendar">
-         </i>
-                </div>
-            </div>
-        </div>
+
+        <label for="label_collection_date_from">Collection Date From</label>
+        <input class="form-control" [matDatepicker]="myDatepicker" id="label_collection_date_from" formControlName="label_collection_date_from">
+
+        <mat-datepicker-toggle class="dateIcon" [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
     </div>
 
     <div class="form-group col-lg-4">
-        <label for="labelCollectionDateTo">
-     Collection Date To
-      </label>
-        <div class="">
-            <div class="input-group">
 
-                <input class="form-control date2" id="labelCollectionDateTo" formControlName="label_collection_date_to" placeholder="YYYY/MM/DD"
-                    type="text" [value]="" />
-                <div class="input-group-addon">
-                    <i class="fa fa-calendar">
-              </i>
-                </div>
-            </div>
-        </div>
+
+
+        <label for="label_collection_date_to">Collection Date To</label>
+        <input class="form-control" [matDatepicker]="myDatepickerLabelTo" id="label_collection_date_to" formControlName="label_collection_date_to">
+
+        <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerLabelTo"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepickerLabelTo></mat-datepicker>
+
     </div>
 
 
