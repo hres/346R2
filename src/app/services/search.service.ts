@@ -102,13 +102,30 @@ export class SearchService {
 
 
     }
+
+
+
+
+
+
     getClassificationLatest(): Observable<Response<ClassificationList>> {
-       //http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification
         return this.http
             .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
             .map(response => response.json() as Response<ClassificationList>);
 
 
+    }
+
+        getClassificationAndUnitofMeasure(){
+        return Observable.forkJoin(
+        this.http
+            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+            .map(response => response.json() as Response<ClassificationList>),
+            this.http
+                 .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/unitOfMeasure`, this.options)
+                 .map(response => response.json()),
+
+        );
     }
 
     //getSalesYearList

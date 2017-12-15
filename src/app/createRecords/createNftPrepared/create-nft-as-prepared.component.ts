@@ -28,7 +28,8 @@ export class CreateNftAsPreparedComponent implements OnChanges{
   id: number;
   flag: number = null;
   submitted: boolean = false;
-  
+      listOfUnitOfMeasure: string[];
+
   responseComponentName: Components[];
   isLoading: boolean;
   fatExeeced: string;
@@ -51,17 +52,18 @@ export class CreateNftAsPreparedComponent implements OnChanges{
 
     ngOnInit(): void {
         
-         this.responseComponentName=null;
+    this.responseComponentName = null;
 
-         this.getRecordService.getComponentNames().subscribe(response => {
-            const {dataList} = response;
-            //const cl = response;
-            this.responseComponentName = dataList;
+    this.getRecordService.getComponentNames().subscribe(response => {
+      const {dataList} = response[0];
+      //const cl = response;
+      this.responseComponentName = dataList;
+      this.listOfUnitOfMeasure  = response[1].dataList;
 
 
 
-         });
 
+    });
 
 
     }

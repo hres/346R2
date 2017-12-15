@@ -29,6 +29,7 @@ export class CreateNftComponent implements OnChanges {
   id: number;
   flag: number = null;
   submitted: boolean = false;
+  listOfUnitOfMeasure: string[];
 
   responseComponentName: Components[];
   isLoading: boolean;
@@ -55,9 +56,11 @@ export class CreateNftComponent implements OnChanges {
     this.responseComponentName = null;
 
     this.getRecordService.getComponentNames().subscribe(response => {
-      const {dataList} = response;
+      const {dataList} = response[0];
       //const cl = response;
       this.responseComponentName = dataList;
+      this.listOfUnitOfMeasure  = response[1].dataList;
+
 
 
 

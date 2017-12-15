@@ -5,6 +5,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormComponent }  from './form.component';
+import {FormRoutingModule} from './form-routing.module'
 import {SharedModule} from '../../shared/shared.module'
  import {PaginationModelModule} from '../../pagination/pagination.model'
 
@@ -19,6 +20,7 @@ ReactiveFormsModule,
 FormsModule,
 MatCardModule,
 MatProgressBarModule,
+FormRoutingModule,
 
 BrowserModule,
 SharedModule,

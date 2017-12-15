@@ -6,6 +6,10 @@ import {MatRadioModule} from '@angular/material/radio'
 import {FormsCenterModule} from '../forms-center/forms-center.module'
 import {RouterModule} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import {SalesFormModule} from '../forms/salesForm/sales-form.module'
+import {FormModule} from '../forms/productForm/form.module'
+import {RadioButtonRoutingModule} from './radio-button-routing.module'
+
 
 
 
@@ -15,7 +19,11 @@ import { BrowserModule } from '@angular/platform-browser';
 MatRadioModule,
 FormsCenterModule,
 BrowserModule,
-FormsModule
+FormsModule,
+SalesFormModule,
+FormModule,
+RouterModule,
+RadioButtonRoutingModule
       
        ],
   declarations: [ 
