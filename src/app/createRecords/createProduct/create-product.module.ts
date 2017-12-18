@@ -4,10 +4,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
-import { ViewProductModule} from '../../views/viewProduct/view-product.module'
+// import { ViewProductModule} from '../../views/viewProduct/view-product.module'
 import { CreateProductComponent }  from './create-product.component';
 import {RouterModule} from '@angular/router';
-
+import {CreateProductRoutingModule} from './create-product-routing.module'
 
 
 
@@ -19,7 +19,8 @@ MatCardModule,
 MatProgressBarModule,
 BrowserModule,
 ConfirmBoxModule,
-ViewProductModule
+// ViewProductModule
+CreateProductRoutingModule
 
       
        ],

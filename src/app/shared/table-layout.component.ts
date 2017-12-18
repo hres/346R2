@@ -31,6 +31,7 @@ export class TableLayoutComponent implements OnChanges {
     columnMaps: ColumnSetting[]; 
     selectedRow: number;
 
+
     ngOnChanges() {
 
 

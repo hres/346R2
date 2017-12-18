@@ -74,6 +74,20 @@ export class GetRecordService {
         );
 
     }
+
+    getProductAndClassificationList(id: number | string){
+       return Observable.forkJoin(
+            this.http
+                .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
+                .map(response => response.json()),
+          this.http
+            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+          .map(response => response.json())
+         
+        );
+
+
+    }
     getSalesRecords(id: number | string) {
         console.log("call to sales", id);
         return Observable.forkJoin(

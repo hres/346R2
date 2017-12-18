@@ -8,7 +8,7 @@ import { GetRecordService } from '../../services/getRecord.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, FormArray, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ColumnSetting } from '../../shared/layout.model'
-
+import {CommunicationServiceService } from '../../services/communication-service.service'
 
 @Component({
     selector: 'view-product',
@@ -97,7 +97,9 @@ export class ViewProductComponent implements OnInit {
 
     addSales(event: boolean){
         if(event){
-            this.router.navigate(['/salescreate', this.params.product_id])
+
+
+            this.router.navigate(['/salescreate'], {queryParams:{ id:this.params.product_id}, skipLocationChange: true });
         }
     }
     addLabel(event: boolean){
@@ -108,7 +110,7 @@ export class ViewProductComponent implements OnInit {
 
     }
     callEdit() {
-        this.editFields = this.params;
+        this.router.navigate(['/edit-product', this.params.product_id])
         this.flag = null;
        
     }

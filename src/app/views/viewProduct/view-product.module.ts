@@ -12,14 +12,16 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
  import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserModule } from '@angular/platform-browser';
+import {ViewProductRoutingModule} from './view-product-routing.module'
 
 @NgModule({
     imports:[
         CommonModule,
         CustumTableModule,
         ModalBoxModule,
-        EditProductModule,
-        ConfirmBoxModule
+      //  EditProductModule,
+        ConfirmBoxModule,
+        ViewProductRoutingModule
        
     ],
     declarations:[

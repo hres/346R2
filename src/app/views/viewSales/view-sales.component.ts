@@ -49,19 +49,27 @@ export class ViewSalesComponent implements OnInit {
         
          this.salesData=null;
          this.editFields = null;
-
-        this.route.paramMap
-            .switchMap((param: ParamMap) =>
-
-                this.getRecordService.getSalesRecords(param.get('id'))).subscribe(
+  let id = this.route.snapshot.paramMap.get('id');
+                this.getRecordService.getSalesRecords(id).subscribe(
             response => {
                 console.log(response);
 
                 this.salesData = response[0].data.dataList[0];
 
 
-            }
-            );
+                });
+        // this.route.paramMap
+        //     .switchMap((param: ParamMap) =>
+
+        //         this.getRecordService.getSalesRecords(param.get('id'))).subscribe(
+        //     response => {
+        //         console.log(response);
+
+        //         this.salesData = response[0].data.dataList[0];
+
+
+        //     }
+        //     );
 
 
 

@@ -6,7 +6,7 @@ import { CreateNftAsPreparedComponent }  from './create-nft-as-prepared.componen
 import {RouterModule} from '@angular/router';
 // import {ViewPackageModule} from '../../views/viewPackage/view-package.module'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {CreateNftAsPreparedRoutingModule} from './create-nft-as-prepared-routing.module'
 
 
 
@@ -17,7 +17,8 @@ FormsModule,
 //ViewPackageModule,
 BrowserModule,
 ConfirmBoxModule,
-MatProgressBarModule
+MatProgressBarModule,
+CreateNftAsPreparedRoutingModule
 
       
        ],

@@ -21,10 +21,10 @@ export class EditProductComponent implements OnChanges {
 
     isLoading: boolean = false;
     submitted: boolean = false;
-    @Output() callP =new EventEmitter<number>();
+   // @Output() callP =new EventEmitter<number>();
 
     offset: number = 0;
-    @Input() product: productAllFields;
+    product: productAllFields;
     id: number;
 
     productDeepCopy: productAllFields;
@@ -48,13 +48,19 @@ export class EditProductComponent implements OnChanges {
     }
     ngOnInit(): void {
 
-                       this.searchService.getClassificationLatest().subscribe(response =>
+        this.product = null;
+  this.route.paramMap
+            .switchMap((param: ParamMap) =>
+                       this.getRecordService.getProductAndClassificationList(param.get('id'))).subscribe(
+                           response =>
                 {  
-                 const {data, message, status} = response;   
-                 this.listOfClass = data.dataList;
-                 console.log( this.listOfClass[0]['classification_name'], "is the class number")
-
+                 this.product = response[0].data.dataList[0];
+                 console.log("humm", this.product );
+                 const {data, message, status} = response[1];   
+                this.listOfClass = data.dataList;
                 
+            
+                this.ngOnChanges();
 
                  }
             );        
@@ -159,8 +165,8 @@ export class EditProductComponent implements OnChanges {
                 4000);            
             }else if (status === 200){
                  
-                this.callP.emit(1);
-                 //this.flag = 1;
+                //this.callP.emit(1);
+                 this.flag = 1;
                 setTimeout(() => {
                                       
                     this.router.navigate(['/viewproduct', this.id]);

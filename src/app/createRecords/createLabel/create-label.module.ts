@@ -9,7 +9,7 @@ import { ViewProductModule} from '../../views/viewProduct/view-product.module'
 import { CreateLabelComponent }  from './create-label.component';
 import {RouterModule} from '@angular/router';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import {CreateLabelRoutingModule} from './create-label-routing.module'
 
 
 
@@ -23,7 +23,8 @@ MatProgressBarModule,
 BrowserModule,
 ConfirmBoxModule,
 ViewProductModule,
-MatDatepickerModule
+MatDatepickerModule,
+CreateLabelRoutingModule
 
       
        ],

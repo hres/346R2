@@ -8,8 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import {RouterModule} from '@angular/router';
 import {CreateNftAsPreparedModule} from '../../createRecords/createNftPrepared/create-nft-as-prepared.module'
- import {CreateNftModule} from '../../createRecords/createNft/create-nft.module'
-
+import {CreateNftModule} from '../../createRecords/createNft/create-nft.module'
+import {ViewPackageRoutingModule} from './view-package-routing.module'
 
 @NgModule({
     imports:[
@@ -18,7 +18,9 @@ import {CreateNftAsPreparedModule} from '../../createRecords/createNftPrepared/c
         ModalBoxModule,
         RouterModule,
         CreateNftAsPreparedModule,
-        CreateNftModule
+       
+        ViewPackageRoutingModule,
+         // CreateNftModule
         
        
     ],

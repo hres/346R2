@@ -8,7 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EditProductComponent }  from './edit-product.component';
 import {RouterModule} from '@angular/router';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
-
+import {EditProductRoutingModule} from './edit-product-rouding.module'
+import { ViewProductModule} from '../../views/viewProduct/view-product.module'
 
 @NgModule({
   imports:      [ 
@@ -18,7 +19,9 @@ MatCardModule,
 MatProgressBarModule,
 BrowserModule,
 ConfirmBoxModule,
-RouterModule
+RouterModule,
+EditProductRoutingModule,
+ViewProductModule
 
       
        ],

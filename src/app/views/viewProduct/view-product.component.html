@@ -6,6 +6,8 @@
 <div class="col-md-6" style="text-align: right" >
 
 <button class="btn btn-default">Delete Product</button>
+<!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
+
 <button class="btn btn-default" (click)="callEdit()">Edit Product</button>
 
 
@@ -84,15 +86,15 @@
 
 </div>
 </div>
-<div *ngIf="editFields">
+<!--<div *ngIf="editFields">
 <edit-product [product]="editFields"
               (callP)="receiveCall($event)"
       
-      >
+      >-->
 
-</edit-product>
-</div>
-<confirm-box [flag]="flag"></confirm-box>
+<!--</edit-product>
+</div>-->
+<!--<confirm-box [flag]="flag"></confirm-box>-->
 
 <div *ngIf="salesData" class="displayTables">
   <custom-table [records]="salesData" 

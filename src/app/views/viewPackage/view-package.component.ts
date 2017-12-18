@@ -98,7 +98,7 @@ export class ViewPackageComponent implements OnInit {
 
     }
     getPath(){
-         return  `/package/create-nft-asprepared/${+this.route.snapshot.paramMap.get('id')}`;
+         return  `/add-nft-prepared/${+this.route.snapshot.paramMap.get('id')}`;
     }
     getPathAsSold(){
                  return  `/add-nft/${+this.route.snapshot.paramMap.get('id')}`;

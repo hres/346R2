@@ -6,6 +6,9 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { CommunicationServiceService } from '../../services/communication-service.service'
+import { Subscription } from 'rxjs/Subscription';
+
 declare var $: any;
 @Component({
     selector: 'add-sales',
@@ -16,7 +19,8 @@ declare var $: any;
 })
 export class CreateSalesComponent implements OnChanges {
 
-    
+
+
 
     date_input: any;
     isLoading: boolean = false;
@@ -29,6 +33,12 @@ export class CreateSalesComponent implements OnChanges {
     listOfClass: classificationList[];
     serverDown: boolean = false;
     salesForm: FormGroup;
+    confirmed = false;
+    announced = false;
+    subscription: Subscription;
+      mission = null;
+
+
     @Output() updateView = new EventEmitter<number>();
 
     constructor(private fb: FormBuilder,
@@ -38,7 +48,9 @@ export class CreateSalesComponent implements OnChanges {
         private route: ActivatedRoute
     ) {
 
-        this.createForm();
+ this.createForm();
+  
+       
 
 
     }
@@ -55,17 +67,18 @@ export class CreateSalesComponent implements OnChanges {
 
         }
         );
-      
-  
+
+
     }
-        ngAfterViewInit(){
+    ngAfterViewInit() {
 
 
 
-        }
+    }
 
-    ngOnDestroy(){
-		$('input[formControlName="sales_collection_date"]').datepicker('remove');
+    ngOnDestroy() {
+        $('input[formControlName="sales_collection_date"]').datepicker('remove');
+
 
     }
     ngOnChanges() {
@@ -242,8 +255,8 @@ export class CreateSalesComponent implements OnChanges {
                 this.flag = 2;
                 this.message = "UPC code belong to a diffent product";
                 this.submitted = false;
-                window.scrollTo(0,0);
-                
+                window.scrollTo(0, 0);
+
             }
             else {
                 this.flag = 2;
@@ -384,7 +397,9 @@ export class CreateSalesComponent implements OnChanges {
 
         this.route.params.subscribe(params => {
 
-            this.salesField.product_id = +params['id'];
+             this.salesField.product_id = +params['id'];
+                       // this.salesField.product_id = this.mission;
+
             this.id = this.salesField.product_id;
 
             this.salesField.number_of_units = this.salesField.number_of_units == "" ? null : this.salesField.number_of_units;
@@ -415,19 +430,19 @@ export class CreateSalesComponent implements OnChanges {
     }
 
     getDate() {
-            //$(this).parent().siblings('.date2').trigger('focus');
-         this.date_input = $('input[formControlName="sales_collection_date"]'); //our date input has the name "date"  sales_collection_date
-		var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        //$(this).parent().siblings('.date2').trigger('focus');
+        this.date_input = $('input[formControlName="sales_collection_date"]'); //our date input has the name "date"  sales_collection_date
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
         this.date_input.datepicker({
-			format: 'yyyy/mm/dd',
-			container: container,
-			todayHighlight: true,
-			autoclose: true,
-		})
-            $('.input-group').find('.fa-calendar').parent().siblings('.date2').trigger('focus');
+            format: 'yyyy/mm/dd',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+        $('.input-group').find('.fa-calendar').parent().siblings('.date2').trigger('focus');
 
- //$('.input-group').find('.fa-calendar').on('click', function(){
-// });
+        //$('.input-group').find('.fa-calendar').on('click', function(){
+        // });
     }
 
 }

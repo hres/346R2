@@ -8,7 +8,7 @@ import { CreateSalesComponent }  from './create-sales.component';
 import {RouterModule} from '@angular/router';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import {CreateSalesRoutingModule} from './create-sales-routing.module'
 
 
 
@@ -21,7 +21,8 @@ MatProgressBarModule,
 BrowserModule,
 ConfirmBoxModule,
 RouterModule,
-MatDatepickerModule
+MatDatepickerModule,
+CreateSalesRoutingModule
 
       
        ],

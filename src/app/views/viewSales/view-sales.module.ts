@@ -8,7 +8,7 @@ import {ModalBoxModule} from '../../modal-box/modal-box.module'
 import { BrowserModule } from '@angular/platform-browser';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import {RouterModule} from '@angular/router';
-
+import {ViewSalesRoutingModule} from './view-sales-routing.module'
 
 @NgModule({
     imports:[
@@ -16,7 +16,8 @@ import {RouterModule} from '@angular/router';
         EditSalesModule,
         ConfirmBoxModule,
         ModalBoxModule,
-        RouterModule
+        RouterModule,
+        ViewSalesRoutingModule
         
        
     ],

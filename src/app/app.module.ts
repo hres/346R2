@@ -17,6 +17,7 @@ import { AddClassificationService } from './services/add-classification.service'
 import { CreateRecordService } from './services/create-records.service';
 import { EditRecordService } from './services/edit-records.service'
 import { DeleteRecordService } from './services/delete-record.service'
+import {CommunicationServiceService} from './services/communication-service.service'
 
 
 
@@ -56,9 +57,12 @@ import {ModalBoxModule} from './modal-box/modal-box.module'
 import { AddClassificationModule }  from './classification-center/add-classification/add-classification.module'; 
  
 
-
+import {CreateNftModule} from './createRecords/createNft/create-nft.module'
 
 import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
+
+
+
 
 @NgModule({
   imports:      [ 
@@ -72,7 +76,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       HttpModule,
       SalesFormModule,
       LabelFormModule,
-      EditProductModule,
+     EditProductModule,
       CreateSalesModule,
       ViewSalesModule,
       MatRadioModule,
@@ -89,7 +93,8 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       MatIconModule,
       ModalBoxModule,
       AddClassificationModule,
-      CreateProductModule
+      CreateProductModule,
+      CreateNftModule
       
        ],
   declarations: [ 
@@ -104,6 +109,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
    providers: [
         MatIconRegistry,
         SearchService,
+        //CommunicationServiceService,
         
        // AddClassificationService,
         CreateRecordService

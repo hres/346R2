@@ -5,7 +5,7 @@ import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import { CreateNftComponent }  from './create-nft.component';
 import {RouterModule} from '@angular/router';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {CreateNftRoutingModule} from './create-nft-routing.module'
 
 
 
@@ -15,10 +15,8 @@ ReactiveFormsModule,
 FormsModule,
 BrowserModule,
 ConfirmBoxModule,
-MatProgressBarModule
-
-
-      
+MatProgressBarModule,
+CreateNftRoutingModule
        ],
   declarations: [ 
 
