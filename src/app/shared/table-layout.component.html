@@ -22,7 +22,7 @@
         [ctStyleCell]="record[map.primaryKey]"
          style="text-decoration: underline; cursor: pointer;">
          
-         <a routerLink='/viewproduct/{{record.product_id || record.productId}}'> {{ record[map.primaryKey] | formatCell:map.format }} </a>
+         <a [routerLink]='returnUrl(record)'> {{ record[map.primaryKey] | formatCell:map.format }} </a>
      <!--<td *ngFor="let map of columnMaps"
      [ctStyleCell]="record[map.primaryKey]" 
                  (click)="passIt(record.product_id)">

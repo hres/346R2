@@ -66,6 +66,11 @@ export class TableLayoutComponent implements OnChanges {
 this.router.navigate(['/viewproduct', pid]);
         console.log(pid, "NOOOO");
     }
+    returnUrl(record: any){
+
+        history.pushState(this.records, "something");
+        return `/viewproduct/${record.product_id || record.productId}`;
+    }
 
 
 

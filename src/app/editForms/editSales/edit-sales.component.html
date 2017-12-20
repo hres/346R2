@@ -17,7 +17,7 @@
 
             <div class="form-group col-sm-4">
                 <label for="salesUPC" class="required">Sales UPC <strong class="required">(required)</strong></label>
-                <input type="text" class="form-control" id="salesUPC" placeholder="Sales UPC" formControlName="sales_upc">
+                <input type="text" class="form-control" id="salesUPC" placeholder="Sales UPC" formControlName="sales_upc" readOnly>
                 <div *ngIf="formErrors.sales_upc" class="errorMessages">
                     <span class="textPosition">  {{formErrors.sales_upc}}</span>
                 </div>

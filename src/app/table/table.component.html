@@ -8,7 +8,7 @@
 
     </div>
     </div>
-    <div class="tableData" *ngIf="records && settings">
+    <div class="tableData" *ngIf="records && settings" style="max-height: 500px; overflow-y: scroll">
       <table>
 <tr>
   <th *ngFor="let map of settings ; let i=index">

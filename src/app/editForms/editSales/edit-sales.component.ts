@@ -8,7 +8,6 @@ import { DatePipe } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-declare var $: any;
 
 @Component({
     selector: 'edit-sales',
@@ -26,16 +25,14 @@ export class EditSalesComponent implements OnChanges {
     @Output() callP = new EventEmitter<number>();
 
     offset: number = 0;
-    @Input() salesField: AllSalesFieldsView;
+     salesField: AllSalesFieldsView;
     id: number;
 
-    salesDeepCopy: AllSalesFieldsView;
     listOfClass: classificationList[];
     serverDown: boolean = false;
 
     flag: number = null;
     salesForm: FormGroup;
-    date_input: any;
 
     constructor(private fb: FormBuilder,
         private searchService: SearchService,
@@ -49,44 +46,22 @@ export class EditSalesComponent implements OnChanges {
 
     }
     ngOnInit(): void {
-
-        this.searchService.getClassificationLatest().subscribe(response => {
-            const {data, message, status} = response;
+  this.route.paramMap
+            .switchMap((param: ParamMap) =>
+        this.getRecordService.getSalesRecordsAndClassification(param.get('id'))).subscribe(response => {
+            const {data, message, status} = response[1];
             this.listOfClass = data.dataList;
-            console.log(this.listOfClass[0]['classification_name'], "is the class number")
-
+             this.salesField = response[0].data.dataList[0];
+             this.ngOnChanges();
 
 
         }
         );
 
 
-        // $('.input-group').find('.fa-calendar').on('click', function(){
-        //     $(this).parent().siblings('.date2').trigger('focus');
-        // });
-
     }
-    // ngAfterViewChecked() {
-    //     this.date_input = $('input[formControlName="sales_collection_date"]'); //our date input has the name "date"  sales_collection_date
-    //     var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-    //     this.date_input.datepicker({
-    //         format: 'yyyy/mm/dd',
-    //         container: container,
-    //         todayHighlight: true,
-    //         autoclose: true,
-    //     })
-    //     // $('.input-group').find('.fa-calendar').parent().siblings('.date2').trigger('focus');
 
-    //     $('.input-group').find('.fa-calendar').on('click', function () {
-    //         $(this).parent().siblings('.date2').trigger('focus');
-    //     });
 
-    // }
-
-    ngOnDestroy() {
-        $('input[formControlName="sales_collection_date"]').datepicker('remove');
-
-    }
 
     ngOnChanges() {
         this.flag = null;
@@ -238,8 +213,8 @@ export class EditSalesComponent implements OnChanges {
                 this.submitted = false;
             } else if (status === 200) {
 
-                this.callP.emit(1);
-                //this.flag = 1;
+                //this.callP.emit(1);
+                this.flag = 1;
                 setTimeout(() => {
 
                     this.router.navigate(['/view-sales', this.id]);

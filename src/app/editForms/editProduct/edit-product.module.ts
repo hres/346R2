@@ -10,6 +10,7 @@ import {RouterModule} from '@angular/router';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import {EditProductRoutingModule} from './edit-product-rouding.module'
 import { ViewProductModule} from '../../views/viewProduct/view-product.module'
+import {SaveFormsGuard} from './save-forms-guard'
 
 @NgModule({
   imports:      [ 
@@ -31,7 +32,10 @@ ViewProductModule
     ],
   exports: [
     EditProductComponent
-   ]
+   ],providers: [
+
+    SaveFormsGuard
+  ],
 
 })
 export class EditProductModule { }

@@ -8,7 +8,8 @@ import { EditSalesComponent }  from './edit-sales.component';
 import {RouterModule} from '@angular/router';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material'
+import {MatNativeDateModule} from '@angular/material';
+import {EditSalesRoutingModule} from './edit-sales-routing.module'
 
 
 @NgModule({
@@ -21,7 +22,8 @@ ConfirmBoxModule,
 RouterModule,
 MatCardModule,
 MatDatepickerModule,
-MatNativeDateModule
+MatNativeDateModule,
+EditSalesRoutingModule
 
       
        ],

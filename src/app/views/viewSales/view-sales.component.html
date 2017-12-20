@@ -1,4 +1,4 @@
-<div class="container" *ngIf="salesData && !editFields">
+<div class="container" *ngIf="salesData">
 <div class="row">
   <div class="col-md-6">
     <h2 style="margin-top:0px">Sales Details</h2>
@@ -148,15 +148,8 @@
 
 
 </div>
-<div *ngIf="editFields">
-<edit-sales [salesField]="editFields"
-              (callP)="receiveCall($event)"
-      
-      >
 
-</edit-sales>
-</div>
-<confirm-box [flag]="flag"></confirm-box>
+<!--<confirm-box [flag]="flag"></confirm-box>
 <modal-box [modalType]="type"
             (fireBack)="responseFromModal($event)">
-            </modal-box>
+            </modal-box>-->

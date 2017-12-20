@@ -1,7 +1,7 @@
 import 'rxjs/add/operator/switchMap';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnChanges, Input, OnInit } from '@angular/core';
-import { Response,  AllSalesFieldsView} from '../../data-model';
+import { Response, AllSalesFieldsView } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { GetRecordService } from '../../services/getRecord.service';
 import { DeleteRecordService } from '../../services/delete-record.service';
@@ -25,7 +25,7 @@ export class ViewSalesComponent implements OnInit {
     Ids: any;
     salesData: AllSalesFieldsView;
     editFields: AllSalesFieldsView;
-    type:string; 
+    type: string;
     isLoading: boolean;
     emptyField: string = null;
     serverDown: boolean;
@@ -46,18 +46,18 @@ export class ViewSalesComponent implements OnInit {
 
 
     ngOnInit(): void {
-        
-         this.salesData=null;
-         this.editFields = null;
-  let id = this.route.snapshot.paramMap.get('id');
-                this.getRecordService.getSalesRecords(id).subscribe(
+
+        this.salesData = null;
+        this.editFields = null;
+        let id = this.route.snapshot.paramMap.get('id');
+        this.getRecordService.getSalesRecords(id).subscribe(
             response => {
                 console.log(response);
 
                 this.salesData = response[0].data.dataList[0];
 
 
-                });
+            });
         // this.route.paramMap
         //     .switchMap((param: ParamMap) =>
 
@@ -78,31 +78,31 @@ export class ViewSalesComponent implements OnInit {
 
 
     }
-        receiveCall(event: number){
+    receiveCall(event: number) {
 
-            this.editFields = null;
-            this.flag = event;
-            this.ngOnInit();
+        this.editFields = null;
+        this.flag = event;
+        this.ngOnInit();
     }
 
     callEdit() {
-     this.editFields = this.salesData;
-        this.flag = null;
+        this.router.navigate(['/edit-sales', this.route.snapshot.paramMap.get('id')])
+        this.flag = null; this.flag = null;
     }
-    callDelete(){
+    callDelete() {
         this.type = 'delete';
     }
-    responseFromModal(value: boolean){
-        if(value){
-           this.type = null;
-           this.deleteSales(this.route.snapshot.paramMap.get('id'));
-           this.type = null;
+    responseFromModal(value: boolean) {
+        if (value) {
+            this.type = null;
+            this.deleteSales(this.route.snapshot.paramMap.get('id'));
+            this.type = null;
 
-        }else{
+        } else {
 
         }
     }
-    deleteSales(id: number | string){
+    deleteSales(id: number | string) {
         this.submitted = true;
         this.deleteRecordService.deleteSalesRecord(id).finally(() => this.isLoading = false).subscribe(response => {
 
@@ -116,8 +116,8 @@ export class ViewSalesComponent implements OnInit {
             } else if (status === 204) {
                 this.flag = 2;
             } else if (status === 200) {
-                      this.flag = 1;
-                
+                this.flag = 1;
+
                 setTimeout(() => {
 
                     this.router.navigate(['/viewproduct', this.salesData.product_id]);

@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/switchMap';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Component, OnChanges, Input, OnInit } from '@angular/core';
+import { Component, OnChanges, Input, OnInit, AfterContentChecked } from '@angular/core';
 import { Response,  labelViewFields, NftAsSold, componentView, NftAsPrepared} from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { GetRecordService } from '../../services/getRecord.service';
@@ -10,7 +10,7 @@ import { ColumnSetting } from '../../shared/layout.model'
 import { Observable } from 'rxjs/Observable';
 import { AbstractControl } from '@angular/forms';
 
-
+declare var $: any;
 @Component({
     selector: 'view-package',
     templateUrl: './view-package.component.html',
@@ -18,6 +18,7 @@ import { AbstractControl } from '@angular/forms';
     providers: [DeleteRecordService]
 
 })
+
 
 
 export class ViewPackageComponent implements OnInit {
@@ -162,6 +163,10 @@ export class ViewPackageComponent implements OnInit {
 
     // }
 
+openImage(){
+    $('.image').viewer();
+				//$('.images').viewer();
+}
 
 
 }

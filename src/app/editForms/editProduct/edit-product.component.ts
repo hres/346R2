@@ -7,12 +7,13 @@ import { GetRecordService } from '../../services/getRecord.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { DialogService }  from './dialog.service';
 
 @Component({
     selector: 'edit-product',
     templateUrl: './edit-product.component.html',
     styleUrls: ['./edit-product.component.css'],
-    providers: [EditRecordService]
+    providers: [EditRecordService,DialogService]
 
 })
 export class EditProductComponent implements OnChanges {
@@ -40,7 +41,8 @@ export class EditProductComponent implements OnChanges {
         private getRecordService: GetRecordService,
         private editRecordService: EditRecordService,
         private router: Router,
-        private route: ActivatedRoute)  {
+        private route: ActivatedRoute,
+           public dialogService: DialogService)  {
 
         this.createForm();
 
@@ -55,6 +57,7 @@ export class EditProductComponent implements OnChanges {
                            response =>
                 {  
                  this.product = response[0].data.dataList[0];
+                 this.productDeepCopy = response[0].data.dataList[0];
                  console.log("humm", this.product );
                  const {data, message, status} = response[1];   
                 this.listOfClass = data.dataList;
@@ -255,6 +258,24 @@ if(this.productForm.controls['classification_name'].value != this.listOfClass[in
 }
 
     }
+areFormsSaved(): Observable<boolean> | boolean{
 
+     let flag: boolean = true;
+
+     for(const prop in this.productForm.controls){
+         if(this.productForm.controls[prop].value != this.product[prop]){
+             flag = false;
+         }
+     }
+
+     if(flag){
+         return true;
+     }else{
+           return this.dialogService.confirm('Discard changes?');
+     }
+
+
+  
+}
 
 }

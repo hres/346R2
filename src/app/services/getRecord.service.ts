@@ -95,6 +95,17 @@ export class GetRecordService {
                 .get(`http://localhost:8080/fcdr-rest-service/rest/SalesService/sales/${id}`, this.options)
                 .map(response => response.json()));
     }
+
+    getSalesRecordsAndClassification(id: number | string) {
+        console.log("call to sales", id);
+        return Observable.forkJoin(
+            this.http
+                .get(`http://localhost:8080/fcdr-rest-service/rest/SalesService/sales/${id}`, this.options)
+                .map(response => response.json()),
+                this.http
+            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+          .map(response => response.json()));
+    }
     //getPackageRecords
     getPackageRecords(id: number | string) {
         let body = JSON.stringify({ "package_id": id, "flag": "true" });
@@ -112,7 +123,17 @@ export class GetRecordService {
                 .map(response => response.json()));
     }
 
+    getPackageAndClassification(id: number | string){
+        
+ return Observable.forkJoin(
+            this.http
+                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/package/${id}`, this.options)
+                .map(response => response.json()),
+                this.http
+            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+                .map(response => response.json()));
 
+    }
     getComponentNames() {
 
         return Observable.forkJoin(

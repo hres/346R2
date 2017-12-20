@@ -15,9 +15,8 @@ const viewProductRoutes: Routes = [
 
 @NgModule({
   imports: [
-            RouterModule.forRoot(
-            viewProductRoutes,
-            { enableTracing: true } // <-- debugging purposes only
+            RouterModule.forChild(
+            viewProductRoutes
         )
   ],
   declarations: []
