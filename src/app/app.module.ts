@@ -28,6 +28,8 @@ import { SalesFormModule }  from './forms/salesForm/sales-form.module';
 import {ViewSalesModule} from './views/viewSales/view-sales.module';
 import {CreateSalesModule} from './createRecords/createSales/create-sales.module'
 import { EditSalesModule}  from './editForms/editSales/edit-sales.module'; 
+import { EditLabelModule}  from './editForms/editPackage/edit-label.module'; 
+
 
 
 
@@ -47,7 +49,7 @@ import { CreateProductModule }  from './createRecords/createProduct/create-produ
 import {FormsCenterModule} from './forms-center/forms-center.module'
 
 
-
+import {EditNftModule} from './editForms/editNft/edit-nft.module'
 
 import {PaginationModelModule} from './pagination/pagination.model'
 import {CustumTableModule} from './table/table.module'
@@ -82,9 +84,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       MatRadioModule,
       SearchAllModule,
       CreateLabelModule,
-
       RadioButtonModule,
-
       CustumTableModule,
       PaginationModelModule,
       SharedModule,
@@ -94,7 +94,9 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       ModalBoxModule,
       AddClassificationModule,
       CreateProductModule,
-      CreateNftModule
+      CreateNftModule,
+      EditLabelModule,
+      EditNftModule
       
        ],
   declarations: [ 

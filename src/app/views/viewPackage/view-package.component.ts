@@ -105,6 +105,18 @@ export class ViewPackageComponent implements OnInit {
                  return  `/add-nft/${+this.route.snapshot.paramMap.get('id')}`;
 
     }
+    editNft(flag: boolean){
+        //edit-nft-sold
+
+        
+        // if(flag){
+        // this.router.navigate(['/edit-nft-sold', this.route.snapshot.paramMap.get('id'),  true]);
+        // }else{
+
+                    this.router.navigate(['/edit-nft', this.route.snapshot.paramMap.get('id'),  flag]);
+
+        
+    }
     //     receiveCall(event: number){
 
     //         this.editFields = null;
@@ -168,5 +180,8 @@ openImage(){
 				//$('.images').viewer();
 }
 
-
+callEdit(){
+            this.router.navigate(['/edit-label', this.packageData.package_id])
+        this.flag = null;
+}
 }

@@ -7,7 +7,7 @@ import { EditLabelComponent }  from './edit-label.component';
 const editLabeltRoutes: Routes = [
 
     {
-        path: 'add-label/:id', component: EditLabelComponent
+        path: 'edit-label/:id', component: EditLabelComponent
     },
 
 

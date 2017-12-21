@@ -1,7 +1,7 @@
 <div *ngIf="flag" class="confirmBox" [ngClass]="{'success': flag ===1 , 'failure':flag ===2} ">
 <div class="mainContaint">
     <ng-container *ngIf="flag === 1">
-        Transaction successfully executed.
+        Transaction successfully executed. One moment...
     </ng-container>
         <ng-container *ngIf="flag === 2">
         Failed transaction.

@@ -5,6 +5,11 @@
 </div>
 <div class="col-md-6" style="text-align: right" >
 
+<button class="btn btn-default">Delete Package</button>
+<!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
+
+<button class="btn btn-default" (click)="callEdit()">Edit Package</button>
+
 
 
 </div>
@@ -337,6 +342,7 @@
 
 
                 <div *ngIf="componentViewSold">
+                    <button class="btn btn-default" (click)="editNft(true)" style="float:right">Edit Nutrition Fact Table</button>
                     <table>
                         <tr>
                             <th *ngFor="let map of nftSettings ; let i=index">
@@ -362,6 +368,8 @@
                     </table>
                 </div>
                 <div *ngIf="!componentViewSold">
+                    
+
                     <a [routerLink]='getPathAsSold()' class="btn btn-default">Add NFT as sold</a>
 
                 </div>
@@ -427,6 +435,9 @@
 
 
                 <div *ngIf="componentViewPrepared">
+                                        <button class="btn btn-default" (click)="editNft(false)" style="float:right">Edit Nutrition Fact Table</button>
+
+
                     <table>
                         <tr>
                             <th *ngFor="let map of nftSettings ; let i=index">

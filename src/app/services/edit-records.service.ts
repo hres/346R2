@@ -39,6 +39,14 @@ console.log('here', queryString);
             // .timeoutWith(2000,Observable.throw(new Error('time out')))
             .map(response => response.json() as UpdateResponse)
     }
+    UpdateLabel(queryString: string): Observable<UpdateResponse> {
+
+console.log('here', queryString);
+        return this.http
+            .post('http://localhost:8080/fcdr-rest-service/rest/PackageService/update', queryString, this.options)
+            // .timeoutWith(2000,Observable.throw(new Error('time out')))
+            .map(response => response.json() as UpdateResponse)
+    }
 
 
 }

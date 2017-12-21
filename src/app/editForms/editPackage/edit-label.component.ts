@@ -1,11 +1,12 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
-import { labelCreateFields, classificationList, Classification_name, Classification_number, Response,labelViewFields } from '../../data-model';
+import { labelCreateFields, classificationList, Classification_name, Classification_number, Response, labelViewFields } from '../../data-model';
 import { CreateRecordService } from '../../services/create-records.service';
 import { GetRecordService } from '../../services/getRecord.service'
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 import { EditRecordService } from '../../services/edit-records.service';
 
@@ -26,7 +27,7 @@ export class EditLabelComponent implements OnChanges {
     submitted: boolean = false;
     offset: number = 0;
     message: string = null;
-     packageData: labelViewFields;
+    packageData: labelViewFields;
 
     id: number;
     flag: number = null;
@@ -48,23 +49,25 @@ export class EditLabelComponent implements OnChanges {
 
     }
 
-    ngOnInit(): void {  
+    ngOnInit(): void {
         this.route.paramMap
             .switchMap((param: ParamMap) =>
- this.getRecordService.getPackageAndClassification(param.get('id'))).subscribe(response => {
+                this.getRecordService.getPackageAndClassification(param.get('id'))).subscribe(response => {
 
-             this.packageData = response[0].data.dataList[0];
-
-            const {data, message, status} = response[1];
-            this.listOfClass = data.dataList;
-
-
-
-             this.ngOnChanges();
+                    this.packageData = response[0].data.dataList[0];
+                    console.log(this.packageData);
+                    const {data, message, status} = response[1];
+                    this.listOfClass = data.dataList;
+                    const {dataList} = response[2];
+                    this.listOfUnitOfMeasure = dataList;
 
 
-        }
-        );
+
+                    this.ngOnChanges();
+
+
+                }
+            );
 
 
     }
@@ -194,59 +197,60 @@ export class EditLabelComponent implements OnChanges {
         }
 
     }
+     revert() {
+
+        this.ngOnChanges();
+    }
     onSubmit() {
 
         this.flag = null;
         this.setValues();
-
+        console.log(this.packageData);
         this.isLoading = true;
 
-        // this.createRecordService.createLabel(JSON.stringify(this.packageData)).finally(() => this.isLoading = false).subscribe(response => {
+        this.editRecordService.UpdateLabel(JSON.stringify(this.packageData)).finally(() => this.isLoading = false).subscribe(response => {
 
-        //     const { message, status} = response;
+            const { message, status} = response;
 
-        //     if (status === 202) {
-        //         this.flag = 2;
+            if (status === 202) {
+                this.flag = 2;
 
-        //         this.submitted = false;
-        //     } else if (status === 203) {
-        //         this.flag = 2;
-        //         this.submitted = false;
+                this.submitted = false;
+            } else if (status === 203) {
+                this.flag = 2;
+                this.submitted = false;
 
-        //     } else if (status === 204) {
-        //         this.flag = 2;
+            } else if (status === 204) {
+                this.flag = 2;
 
-        //         this.submitted = false;
-        //     } else if (status === 200) {
-        //         this.flag = 1;
-        //         setTimeout(() => {
-        //             this.router.navigate(['/viewproduct', this.id]);
+                this.submitted = false;
+            } else if (status === 200) {
+                this.flag = 1;
+                setTimeout(() => {
+                    this.router.navigate(['/view-package', this.id]);
 
-        //         },
-        //             4000);
-        //     } else if (status === 604) {
-        //         this.flag = 2;
-        //         this.message = "UPC code belong to a diffent product";
-        //         this.submitted = false;
-        //     } else if (status === 803) {
-        //         this.flag = 2;
-        //         this.message = "Missing mandatory field(s)";
-        //         this.submitted = false;
-        //     }
-        //     else {
-        //         this.flag = 2;
-        //         this.message = "Something went wrong, try again...";
-        //         this.submitted = false;
+                },
+                    4000);
+      
+            } else if (status === 803) {
+                this.flag = 2;
+                this.message = "Missing mandatory field(s)";
+                this.submitted = false;
+            }
+            else {
+                this.flag = 2;
+                this.message = "Something went wrong, try again...";
+                this.submitted = false;
 
-        //     }
+            }
 
-        // }, (error) => {
+        }, (error) => {
 
-        //     this.serverDown = true;
-        //     this.flag = 2;
-        //     this.submitted = false;
+            this.serverDown = true;
+            this.flag = 2;
+            this.submitted = false;
 
-        // });
+        });
 
     }
 
@@ -314,15 +318,15 @@ export class EditLabelComponent implements OnChanges {
     }
     setValues(): void {
         this.submitted = true;
-      //  var date = new DatePipe('en-US');
+          var date = new DatePipe('en-US');
 
         this.packageData = this.prepareSaveProduct();
-        // this.packageData.package_collection_date = this.packageData.package_collection_date ? date.transform(this.packageData.package_collection_date, 'yyyy-MM-dd') : this.packageData.package_collection_date;
-        // this.packageData.nft_last_update_date = this.packageData.nft_last_update_date ? date.transform(this.packageData.nft_last_update_date, 'yyyy-MM-dd') : this.packageData.nft_last_update_date;
+        this.packageData.package_collection_date = this.packageData.package_collection_date ? date.transform(this.packageData.package_collection_date, 'yyyy-MM-dd') : this.packageData.package_collection_date;
+        this.packageData.nft_last_update_date = this.packageData.nft_last_update_date ? date.transform(this.packageData.nft_last_update_date, 'yyyy-MM-dd') : this.packageData.nft_last_update_date;
 
         this.route.params.subscribe(params => {
-            this.packageData.product_id = +params['id'];
-            this.id = this.packageData.product_id;
+            this.packageData.package_id = +params['id'];
+            this.id = this.packageData.package_id;
         });
 
         this.packageData.multi_part_flag = this.packageData.multi_part_flag == "" ? null : this.packageData.multi_part_flag;
@@ -338,6 +342,7 @@ export class EditLabelComponent implements OnChanges {
         this.packageData.nielsen_item_rank = this.packageData.nielsen_item_rank == "" ? null : this.packageData.nielsen_item_rank;
         this.packageData.package_size = this.packageData.package_size == "" ? null : this.packageData.package_size;
 
+        this.packageData.classification_number = this.packageData.classification_number == "" ? null : this.packageData.classification_number;
 
 
 
@@ -368,23 +373,6 @@ export class EditLabelComponent implements OnChanges {
 
     }
 
-    getDate() {
 
-        this.date_input = $('input[formControlName="package_collection_date"]');
-        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-        this.date_input.datepicker({
-            format: 'yyyy/mm/dd',
-            container: container,
-            todayHighlight: true,
-            autoclose: true,
-        })
-        $('.input-group').find('.fa-calendar').parent().siblings('.date2').trigger('focus');
-
-    }
-
-    ngOnDestroy() {
-        $('input[formControlName="package_collection_date"]').datepicker('remove');
-
-    }
 
 }

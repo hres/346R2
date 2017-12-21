@@ -75,15 +75,15 @@ export class GetRecordService {
 
     }
 
-    getProductAndClassificationList(id: number | string){
-       return Observable.forkJoin(
+    getProductAndClassificationList(id: number | string) {
+        return Observable.forkJoin(
             this.http
                 .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
                 .map(response => response.json()),
-          this.http
-            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
-          .map(response => response.json())
-         
+            this.http
+                .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+                .map(response => response.json())
+
         );
 
 
@@ -102,9 +102,9 @@ export class GetRecordService {
             this.http
                 .get(`http://localhost:8080/fcdr-rest-service/rest/SalesService/sales/${id}`, this.options)
                 .map(response => response.json()),
-                this.http
-            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
-          .map(response => response.json()));
+            this.http
+                .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+                .map(response => response.json()));
     }
     //getPackageRecords
     getPackageRecords(id: number | string) {
@@ -123,15 +123,19 @@ export class GetRecordService {
                 .map(response => response.json()));
     }
 
-    getPackageAndClassification(id: number | string){
-        
- return Observable.forkJoin(
+    getPackageAndClassification(id: number | string) {
+
+        return Observable.forkJoin(
             this.http
                 .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/package/${id}`, this.options)
                 .map(response => response.json()),
-                this.http
-            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
-                .map(response => response.json()));
+            this.http
+                .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+                .map(response => response.json()),
+            this.http
+                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/unitOfMeasure`, this.options)
+                .map(response => response.json())
+        );
 
     }
     getComponentNames() {
@@ -142,10 +146,26 @@ export class GetRecordService {
                 .map(response => response.json() as ResponseComponentName),
             this.http
                 .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/unitOfMeasure`, this.options)
-        .map(response => response.json()));
+                .map(response => response.json()));
 
 
     }
+
+    getNftSoldRecordsEdit(id: number | string, flag: boolean | string) {
+        let body = JSON.stringify({ "package_id": id, "flag": flag });
+
+        return Observable.forkJoin(
+             this.http
+                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/listofcomponents`, this.options)
+                .map(response => response.json() as ResponseComponentName),
+            this.http
+                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/unitOfMeasure`, this.options)
+                .map(response => response.json()),
+            this.http
+                .post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getNft`, body, this.options)
+                .map(response => response.json()));
+    }
+
 
     //         getUnitofMeasure(){
     //     return Observable.forkJoin(

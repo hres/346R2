@@ -51,7 +51,7 @@ export class CreateLabelComponent implements OnChanges {
 
             const {data, message, status} = response[0];
             const {dataList} = response[1];
-            //const cl = response;
+         
             this.listOfClass = data.dataList;
             this.listOfUnitOfMeasure  = dataList;
 
@@ -360,23 +360,5 @@ export class CreateLabelComponent implements OnChanges {
 
     }
 
-    getDate() {
-
-        this.date_input = $('input[formControlName="package_collection_date"]');
-        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-        this.date_input.datepicker({
-            format: 'yyyy/mm/dd',
-            container: container,
-            todayHighlight: true,
-            autoclose: true,
-        })
-        $('.input-group').find('.fa-calendar').parent().siblings('.date2').trigger('focus');
-
-    }
-
-    ngOnDestroy() {
-        $('input[formControlName="package_collection_date"]').datepicker('remove');
-
-    }
 
 }
