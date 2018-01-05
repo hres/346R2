@@ -2,7 +2,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Component, Input, OnChanges } from '@angular/core';
 import { nftFields, UofM, nftFieldsList, nftList, ResponseComponentName, Components, NftAsSold } from '../../data-model';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { CreateRecordService } from '../../services/create-records.service';
+import { EditRecordService } from '../../services/edit-records.service';
 import { GetRecordService } from '../../services/getRecord.service';
 
 
@@ -10,7 +10,8 @@ import { GetRecordService } from '../../services/getRecord.service';
 @Component({
     selector: 'edit-nft',
     templateUrl: './edit-nft.component.html',
-    styleUrls: ['./edit-nft.component.css']
+    styleUrls: ['./edit-nft.component.css'],
+    providers:[EditRecordService]
 })
 export class EditNftComponent implements OnChanges {
 
@@ -40,13 +41,13 @@ export class EditNftComponent implements OnChanges {
     formValid: boolean = true;
     invalidInputDailyValue: string = null;
     nftAsSold:  nftFields[];
-    flagNft: boolean | string = null;
+    flagNft: any = null;
 
 
     constructor(
         private fb: FormBuilder, private router: Router,
         private route: ActivatedRoute,
-        private createRecordService: CreateRecordService,
+        private editRecordService: EditRecordService,
         private getRecordService: GetRecordService) {
 
         this.createForm();
@@ -63,10 +64,11 @@ export class EditNftComponent implements OnChanges {
                 this.getRecordService.getNftSoldRecordsEdit(param.get('id'), param.get('flag'))).subscribe(
             response => {
                console.log("flag",this.route.snapshot.paramMap.get('flag'));
-               this.flagNft = this.route.snapshot.paramMap.get('flag');
+               this.flagNft = this.route.snapshot.paramMap.get('flag') == 'true' ? 'true': (this.route.snapshot.paramMap.get('flag') =='false'? 'false':null );
                 const {dataList} = response[0];
                 //const cl = response;
                 this.responseComponentName = dataList;
+                console.log(dataList)
                 this.listOfUnitOfMeasure = response[1].dataList;
                 this.nftAsSold = response[2].nft;
                 console.log(this.nftAsSold);
@@ -121,7 +123,7 @@ export class EditNftComponent implements OnChanges {
         this.isLoading = true;
         console.log("listtooo", this.nftListArray);
         this.flag = null
-        this.createRecordService.createNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
+        this.editRecordService.updateNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
             const {id, message, status} = response;
 
             if (status === 803) {
@@ -170,16 +172,17 @@ export class EditNftComponent implements OnChanges {
 
         console.log("on save", formModel);
         // deep copy of form model lairs
+                        var reg = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
 
         const componentsDeepCopy: nftFields[] = formModel.secretComponents.map(
             (component: nftFields) => Object.assign({}, component)
         );
 
         componentsDeepCopy.forEach((element: any) => {
-            if (element.amount == "") {
+            if (!reg.test(element.amount)) {
                 element.amount = null;
             }
-            if (element.daily_value == "") {
+            if (!reg.test(element.daily_value))  {
                 element.daily_value = null;
             }
 
@@ -194,7 +197,7 @@ export class EditNftComponent implements OnChanges {
 
             nft: componentsDeepCopy,
             package_id: this.id,
-            flag: true
+            flag: this.flagNft
         };
         return saveNft;
     }
@@ -250,13 +253,14 @@ export class EditNftComponent implements OnChanges {
                     this.duplicateEntries = "One or more components have been selected more than once";
                     this.formValid = false;
                 }
+                        var ree = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
 
                 value.forEach((element: any) => {
 
                     if (element.name != null && element.name != "") {
 
-                        if (((element.amount != "" && element.amount != null && element.amount.length) && element.unit_of_measure == "") || (element.amount == "" && element.unit_of_measure != "")) {
-
+                        if (((ree.test(element.amount)) && element.unit_of_measure == "") || ((!ree.test(element.amount)) && element.unit_of_measure != "")) {
+                            console.log("amount: ", element.amount);
                             this.nameChangeLog.push(element.name);
                             this.formValid = false;
                             this.errorMessage = "not null";

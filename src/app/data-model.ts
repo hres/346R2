@@ -472,7 +472,7 @@ export const UofM = ['mg', 'g', 'kj', 'kcal'];
 
 export class nftList {
     nft: nftFields[];
-    flag: boolean;
+    flag: boolean ;
     package_id: number;
 }
 

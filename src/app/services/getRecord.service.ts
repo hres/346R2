@@ -153,7 +153,7 @@ export class GetRecordService {
 
     getNftSoldRecordsEdit(id: number | string, flag: boolean | string) {
         let body = JSON.stringify({ "package_id": id, "flag": flag });
-
+        console.log("the flag ", flag);
         return Observable.forkJoin(
              this.http
                 .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/listofcomponents`, this.options)

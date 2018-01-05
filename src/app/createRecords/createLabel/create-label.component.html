@@ -30,8 +30,10 @@
             <div class="form-group col-lg-4">
 
                 <label for="nftLastUpdate">NFT Last Update </label>
-                <input type="text" class="form-control" id="nftLastUpdate" placeholder="NFT Last Update" formControlName="nft_last_update_date">
-
+                <input class="form-control" [matDatepicker]="myDatepickernft" id="nft_last_update_date" formControlName="nft_last_update_date">
+               
+                <mat-datepicker-toggle class="dateIcon" [for]="myDatepickernft"></mat-datepicker-toggle>
+                <mat-datepicker  #myDatepickernft></mat-datepicker>
 
             </div>
 

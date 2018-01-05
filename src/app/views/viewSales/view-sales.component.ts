@@ -99,7 +99,7 @@ export class ViewSalesComponent implements OnInit {
             this.type = null;
 
         } else {
-
+              this.type = null;
         }
     }
     deleteSales(id: number | string) {

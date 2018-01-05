@@ -70,17 +70,7 @@ export class CreateSalesComponent implements OnChanges {
 
 
     }
-    ngAfterViewInit() {
 
-
-
-    }
-
-    ngOnDestroy() {
-        $('input[formControlName="sales_collection_date"]').datepicker('remove');
-
-
-    }
     ngOnChanges() {
 
 
@@ -429,20 +419,5 @@ export class CreateSalesComponent implements OnChanges {
 
     }
 
-    getDate() {
-        //$(this).parent().siblings('.date2').trigger('focus');
-        this.date_input = $('input[formControlName="sales_collection_date"]'); //our date input has the name "date"  sales_collection_date
-        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-        this.date_input.datepicker({
-            format: 'yyyy/mm/dd',
-            container: container,
-            todayHighlight: true,
-            autoclose: true,
-        })
-        $('.input-group').find('.fa-calendar').parent().siblings('.date2').trigger('focus');
-
-        //$('.input-group').find('.fa-calendar').on('click', function(){
-        // });
-    }
 
 }

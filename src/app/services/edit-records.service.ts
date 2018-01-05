@@ -47,6 +47,12 @@ console.log('here', queryString);
             // .timeoutWith(2000,Observable.throw(new Error('time out')))
             .map(response => response.json() as UpdateResponse)
     }
+     updateNft(queryString: string) {
 
+console.log('here', queryString);
+        return this.http
+            .post('http://localhost:8080/fcdr-rest-service/rest/PackageService/updateNft', queryString, this.options)
+            .map(response => response.json() )
+    }
 
 }
