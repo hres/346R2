@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, Output, EventEmitter} from '@angular/core';
-import { Params,classificationList, Classification_name, Classification_number, Response, productAllFields} from '../../data-model';
+import { Params,classificationList, Classification_name, Classification_number, Response, productAllFields, GenericList} from '../../data-model';
 import { EditRecordService } from '../../services/edit-records.service';
 import { SearchService } from '../../services/search.service';
 import { GetRecordService } from '../../services/getRecord.service';
@@ -31,7 +31,8 @@ export class EditProductComponent implements OnChanges {
     productDeepCopy: productAllFields;
     listOfClass: classificationList[];
     serverDown: boolean = false;
-
+    restaurantTypes: GenericList;
+    types: GenericList;
     flag: number = null;
     productForm: FormGroup;
 
@@ -61,6 +62,9 @@ export class EditProductComponent implements OnChanges {
                  console.log("humm", this.product );
                  const {data, message, status} = response[1];   
                 this.listOfClass = data.dataList;
+
+                this.restaurantTypes = response[2].dataList;
+                this.types = response[3].dataList;
                 
             
                 this.ngOnChanges();
@@ -178,8 +182,10 @@ export class EditProductComponent implements OnChanges {
             }
             else {
                  this.flag = 2;
+                 this.submitted = false;
+                 console.log(status);
                 setTimeout(() => {
-                    this.router.navigate(['/viewproduct', this.id]);
+                  //  this.router.navigate(['/viewproduct', this.id]);
 
                 },
                 4000);    

@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input } from '@angular/core';
-import { createProductFields, classificationList, Classification_name, Classification_number, Response, productCreateResponse } from '../../data-model';
+import { createProductFields, classificationList, Classification_name, Classification_number, Response, productCreateResponse,GenericList } from '../../data-model';
 import { CreateRecordService } from '../../services/create-records.service';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
@@ -25,7 +25,8 @@ export class CreateProductComponent implements OnChanges {
     errorMessage: string;
     listOfClass: classificationList[];
     flag: number; 
-
+    restaurantTypes: GenericList;
+    types: GenericList;
 
 
     serverDown: boolean = false;
@@ -44,10 +45,12 @@ export class CreateProductComponent implements OnChanges {
 
     }
     ngOnInit(): void {
-        this.searchService.getClassificationLatest().subscribe(response => {
-            const {data, message, status} = response;
+        this.searchService.getClassificationRestaurant().subscribe(response => {
+            const {data, message, status} = response[0];
             //const cl = response;
             this.listOfClass = data.dataList;
+            this.restaurantTypes = response[1].dataList;
+            this.types = response[2].dataList;
             console.log(this.listOfClass[0]['classification_name'], "is the class number")
 
 

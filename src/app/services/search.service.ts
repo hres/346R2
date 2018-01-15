@@ -161,5 +161,23 @@ export class SearchService {
 
     }
 
+    getClassificationRestaurant() {
+        return  Observable.forkJoin(
+            this.http
+            .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+            .map(response => response.json() as Response<ClassificationList>),
+            this.http
+            .get('http://localhost:8080/fcdr-rest-service/rest/ProductService/restaurantTypes', this.options)
+            .map(response => response.json()),
+            this.http
+            .get('http://localhost:8080/fcdr-rest-service/rest/ProductService/types', this.options)
+            .map(response => response.json()
+        
+        ));
+
+
+
+    }
+
 
 }

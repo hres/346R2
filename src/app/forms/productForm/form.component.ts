@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, ViewChild } from '@angular/core';
-import { Params,classificationList, Classification_name, Classification_number, Response } from '../../data-model';
+import { Params,classificationList, Classification_name, Classification_number, Response,GenericList } from '../../data-model';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -53,6 +53,8 @@ export class FormComponent implements OnChanges {
     emptyField: string;
     noData: string;
     serverDown: boolean = false;
+    restaurantTypes: GenericList;
+    types: GenericList;
 
     productForm: FormGroup;
 
@@ -70,12 +72,15 @@ export class FormComponent implements OnChanges {
     }
 
     ngOnInit(): void {
-                       this.searchService.getClassificationLatest().subscribe(response =>
+                       this.searchService.getClassificationRestaurant().subscribe(response =>
                 {  
-                 const {data, message, status} = response;   
+                 const {data, message, status} = response[0];   
                  //const cl = response;
                  this.listOfClass = data.dataList;
-                 console.log( this.listOfClass[0]['classification_name'], "is the class number")
+                 this.restaurantTypes = response[1].dataList;
+                 this.types = response[2].dataList;
+                 console.log( response[2], "is the resp 2 ")
+                 console.log(this.restaurantTypes);
 
                 
 

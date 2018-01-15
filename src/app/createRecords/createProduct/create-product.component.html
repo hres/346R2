@@ -92,29 +92,23 @@
             </div>
         </div>
         <div class=" row">
-            <div class="form-group col-lg-4">
+            <div class="form-group col-lg-4" *ngIf="restaurantTypes">
                 <label for="restaurant_type">Restaurant Type</label>
                 <select class="form-control" id="restaurant_type" placeholder="Select a Restaurant Type" formControlName="restaurant_type">
 
-			<option value="" selected>Select a Restaurant Type</option>
-			<option value="Caterer" >Caterer</option>
-			<option value="Family" >Family</option>
-			<option value="Fine Dining" >Fine Dining</option>
-			<option value="Food Service Distributor" >Food Service Distributor</option>
-			<option value="Food Service Manufacturer" >Food Service Manufacturer</option>
-			<option value="Home Meal Replacement" >Home Meal Replacement</option>
-			<option value="Institutional Food Service" >Institutional Service</option>
-			<option value="Quick Service" >Quick Service</option>
-			 </select>
+                    <option value="" selected>Select a Restaurant Type</option>
+                    <option *ngFor="let restaurantTypes of restaurantTypes;let i = index" [value]="restaurantTypes">{{restaurantTypes}}</option>
+
+                </select>
             </div>
-            <div class="form-group col-lg-4">
+            <div class="form-group col-lg-4" *ngIf="types">
                 <label for="type">Type</label>
                 <select class="form-control" id="Type" formControlName="type">
 
-			<option value="" selected>Select a Type</option>
-			  <option value="Retail" >Retail</option>
-			<option value="Food Service">Food Service</option>
-			 </select>
+                    <option value="" selected>Select a Type</option>
+                    <option *ngFor="let type of types;let i = index" [value]="type">{{type}}</option>
+
+                </select>
             </div>
             <div class="form-group col-lg-4">
                 <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!productForm.valid || submitted">Save</button>

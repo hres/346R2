@@ -534,3 +534,7 @@ export type NftAsPrepared = {
     nft:  componentView[],
     status: number;
 }
+
+export type GenericList = {
+    name: string;
+}

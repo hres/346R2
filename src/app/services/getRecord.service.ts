@@ -82,9 +82,17 @@ export class GetRecordService {
                 .map(response => response.json()),
             this.http
                 .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
-                .map(response => response.json())
+                .map(response => response.json()),
+                this.http
+                .get('http://localhost:8080/fcdr-rest-service/rest/ProductService/restaurantTypes', this.options)
+                .map(response => response.json()),
+                this.http
+                .get('http://localhost:8080/fcdr-rest-service/rest/ProductService/types', this.options)
+                .map(response => response.json()
+            
+            ));
 
-        );
+   
 
 
     }
