@@ -396,7 +396,6 @@ export class CreateSalesComponent implements OnChanges {
             this.salesField.product_grouping = this.salesField.product_grouping == "" ? null : this.salesField.product_grouping;
             this.salesField.average_retail_price = this.salesField.average_retail_price == "" ? null : this.salesField.average_retail_price;
             this.salesField.sales_year = this.salesField.sales_year == "" ? null : this.salesField.sales_year;
-            this.salesField.classification_number = this.salesField.classification_number == "" ? null : this.salesField.classification_number;
 
             this.salesField.dollar_rank = this.salesField.dollar_rank == "" ? null : this.salesField.dollar_rank;
             this.salesField.dollar_volume = this.salesField.dollar_volume == "" ? null : this.salesField.dollar_volume;

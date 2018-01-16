@@ -141,7 +141,6 @@ export class EditProductComponent implements OnChanges {
     }
     onSubmit() {
 
-  
 
         this.setValues();
 
@@ -194,6 +193,7 @@ export class EditProductComponent implements OnChanges {
         }, (error) =>{
             this.serverDown=true;
              this.flag = 2;
+             this.submitted = false;
                 setTimeout(() => {
                     this.router.navigate(['/viewproduct', this.id]);
 

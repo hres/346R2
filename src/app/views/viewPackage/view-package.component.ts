@@ -184,4 +184,51 @@ callEdit(){
             this.router.navigate(['/edit-label', this.packageData.package_id])
         this.flag = null;
 }
+callDelete(){
+    this.type = 'delete';
+}
+
+responseFromModal(value: boolean) {
+    if (value) {
+        this.type = null;
+        this.deleteLabel(this.packageData.package_id);
+        this.type = null;
+
+    } else {
+          this.type = null;
+    }
+}
+deleteLabel(id: number | string) {
+    this.submitted = true;
+    this.deleteRecordService.deleteLabelRecord(id).finally(() => this.isLoading = false).subscribe(response => {
+
+        const {message, status} = response;
+
+        if (status === 202) {
+            this.flag = 2;
+        } else if (status === 203) {
+            this.flag = 2;
+
+        } else if (status === 204) {
+            this.flag = 2;
+        } else if (status === 200) {
+            this.flag = 1;
+
+            setTimeout(() => {
+
+                this.router.navigate(['/viewproduct', this.packageData.product_id]);
+            },
+                4000);
+        }
+        else {
+            this.flag = 2;
+        }
+
+    }, (error) => {
+        this.serverDown = true;
+        this.flag = 2;
+
+    });
+
+}
 }

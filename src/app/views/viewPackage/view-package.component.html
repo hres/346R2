@@ -5,9 +5,8 @@
 </div>
 <div class="col-md-6" style="text-align: right" >
 
-<button class="btn btn-default">Delete Package</button>
 <!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
-
+<button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Package</button>
 <button class="btn btn-default" (click)="callEdit()">Edit Package</button>
 
 
@@ -593,3 +592,7 @@
 </table>
 
 </div>
+<confirm-box [flag]="flag"></confirm-box>
+<modal-box [modalType]="type"
+            (fireBack)="responseFromModal($event)">
+            </modal-box>

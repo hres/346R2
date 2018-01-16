@@ -270,7 +270,7 @@ export type salesFieldsCreate = {
     cluster_number: number | string,
     product_grouping: number | string,
     sales_product_description: string,
-    classification_number: number | string,
+    classification_number:  string,
     classification_type: string | string,
     sales_comment: string,
     sales_collection_date: string,
@@ -307,7 +307,7 @@ export type AllSalesFieldsView = {
     cluster_number: number | string,
     product_grouping: number | string,
     sales_product_description: string,
-    classification_number: number | string,
+    classification_number:  string,
     classification_type: string,
     sales_comment: string,
     sales_collection_date: string,
@@ -396,7 +396,7 @@ export type labelCreateFields = {
     nft_last_update_date: string;
     product_grouping: number | string;
     child_item: boolean | string;
-    classification_number: number | string;
+    classification_number:  string;
     classification_name: string;
     nielsen_item_rank: string;
     nutrient_claims: string,
@@ -448,7 +448,7 @@ export type labelViewFields = {
     nft_last_update_date: string;
     product_grouping: number | string;
     child_item: boolean | string;
-    classification_number: number | string;
+    classification_number: string;
     classification_name: string;
     nielsen_item_rank: string;
     nutrient_claims: string,

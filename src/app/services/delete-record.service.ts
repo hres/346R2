@@ -30,5 +30,12 @@ export class DeleteRecordService {
             .map(response => response.json() as DeleteResponse)
     }
 
+    deleteLabelRecord(id: string | number): Observable<DeleteResponse> {
+
+        return this.http
+            .delete(`http://localhost:8080/fcdr-rest-service/rest/PackageService/delete/${id}`,  this.options)
+            // .timeoutWith(2000,Observable.throw(new Error('time out')))
+            .map(response => response.json() as DeleteResponse)
+    }
 
 }

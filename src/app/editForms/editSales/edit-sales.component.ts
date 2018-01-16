@@ -157,7 +157,7 @@ export class EditSalesComponent implements OnChanges {
             classification_number: null,
             classification_type: '',
             sales_comment: '',
-            sales_collection_date: '',
+            sales_collection_date: ['', [Validators.pattern('/^\d{1,2}\/\d{1,2}\/\d{4}$')]],
             number_of_units: [null, [Validators.pattern('\\d+')]],
             kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
         });
@@ -266,7 +266,8 @@ export class EditSalesComponent implements OnChanges {
         'cluster_number': '',
         'product_grouping': '',
         'number_of_units': '',
-        'kilo_rank': ''
+        'kilo_rank': '',
+        'sales_collection_date':''
     }
 
     validationMessages = {
@@ -346,6 +347,9 @@ export class EditSalesComponent implements OnChanges {
         },
         'kilo_rank': {
             'pattern': 'Must be a number'
+        },
+        'sales_collection_date': {
+            'pattern': 'Wrong format'
         }
     }
     setValues(): void {
