@@ -131,6 +131,7 @@ export class ViewSalesComponent implements OnInit {
         }, (error) => {
             this.serverDown = true;
             this.flag = 2;
+            this.submitted = false;
 
         });
 

@@ -5,10 +5,10 @@
 </div>
 <div class="col-md-6" style="text-align: right" >
 
-<button class="btn btn-default">Delete Product</button>
-<!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
+  <button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Product</button>
+  <!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
 
-<button class="btn btn-default" (click)="callEdit()">Edit Product</button>
+<button class="btn btn-default" (click)="callEdit()" [disabled]="submitted">Edit Product</button>
 
 
 </div>
@@ -120,3 +120,9 @@
   </custom-table>
 
   </div>
+
+
+  <confirm-box [flag]="flag"></confirm-box>
+<modal-box [modalType]="type"
+            (fireBack)="responseFromModal($event)">
+            </modal-box>

@@ -7,7 +7,7 @@
 
 <!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
 <button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Package</button>
-<button class="btn btn-default" (click)="callEdit()">Edit Package</button>
+<button class="btn btn-default" (click)="callEdit()" [disabled]="submitted">Edit Package</button>
 
 
 
@@ -320,7 +320,7 @@
                     <div class="col-sm-4">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                Per Serving Unit of Measure
+                                Per Serving Amount in Grams
                             </div>
 
                             <div class="panel-body">
@@ -406,7 +406,7 @@
                     <div class="col-sm-6">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                Per Serving Unit of Measure
+                                Per Serving Amount in Grams
                             </div>
 
                             <div class="panel-body">

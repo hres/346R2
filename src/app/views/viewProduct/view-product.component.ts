@@ -9,11 +9,13 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, FormArray, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ColumnSetting } from '../../shared/layout.model'
 import {CommunicationServiceService } from '../../services/communication-service.service'
+import { DeleteRecordService } from '../../services/delete-record.service';
 
 @Component({
     selector: 'view-product',
     templateUrl: './view-product.component.html',
-    styleUrls: ['./view-product.component.css']
+    styleUrls: ['./view-product.component.css'],
+    providers: [DeleteRecordService]
 })
 
 
@@ -27,6 +29,12 @@ export class ViewProductComponent implements OnInit {
     editFields: productAllFields = null;
     productForm: FormGroup;
     emptyField: string = null;
+    type: string;
+    submitted: boolean = false;
+    isLoading: boolean;
+    serverDown: boolean;
+
+
 
     settingsSales: ColumnSetting[] = [
         { primaryKey: 'sales_upc', header: 'Sales UPC' },
@@ -52,6 +60,7 @@ export class ViewProductComponent implements OnInit {
     constructor(private fb: FormBuilder,
         private searchService: SearchService,
         private getRecordService: GetRecordService,
+        private deleteRecordService: DeleteRecordService,
         private router: Router,
         private route: ActivatedRoute) {
 
@@ -128,6 +137,55 @@ export class ViewProductComponent implements OnInit {
         }else if(value===2){
             this.router.navigate(['/add-label', this.params.product_id])
         }
+    }
+
+
+    callDelete() {
+        this.type = 'delete';
+    }
+    responseFromModal(value: boolean) {
+        if (value) {
+            this.type = null;
+            this.deleteProduct(this.params.product_id);
+            this.type = null;
+
+        } else {
+              this.type = null;
+        }
+    }
+    deleteProduct(id: number | string) {
+        this.submitted = true;
+        this.deleteRecordService.deleteProductRecord(id).finally(() => this.isLoading = false).subscribe(response => {
+
+            const {message, status} = response;
+
+            if (status === 202) {
+                this.flag = 2;
+            } else if (status === 203) {
+                this.flag = 2;
+
+            } else if (status === 204) {
+                this.flag = 2;
+            } else if (status === 200) {
+                this.flag = 1;
+
+                setTimeout(() => {
+
+                    this.router.navigate(['/searchengine/search']);
+                },
+                    4000);
+            }
+            else {
+                this.flag = 2;
+            }
+
+        }, (error) => {
+            this.serverDown = true;
+            this.flag = 2;
+            this.submitted = false;
+
+        });
+
     }
 
 

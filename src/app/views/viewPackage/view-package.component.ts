@@ -227,6 +227,7 @@ deleteLabel(id: number | string) {
     }, (error) => {
         this.serverDown = true;
         this.flag = 2;
+        this.submitted = false;
 
     });
 

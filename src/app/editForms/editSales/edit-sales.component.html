@@ -99,12 +99,14 @@
 
             <div class="form-group col-sm-4">
                 <label for="SalesCollectionDate">Collection Date</label>
-                <input class="form-control" [matDatepicker]="myDatepicker" id="SalesCollectionDate" formControlName="sales_collection_date">
-               
+                <input class="form-control" [matDatepicker]="myDatepicker"  id="SalesCollectionDate" [min]="minDate" [max]="maxDate"  formControlName="sales_collection_date">
+ 
                 <mat-datepicker-toggle class="dateIcon" [for]="myDatepicker"></mat-datepicker-toggle>
                 <mat-datepicker  #myDatepicker></mat-datepicker>
-
-
+<!--           
+                <div *ngIf="value < minDate" class="errorMessages">
+                    <span class="textPosition"> Invalid Date</span>
+                </div> -->
             </div>
         </div>
 
