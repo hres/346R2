@@ -523,6 +523,7 @@ export type componentView = {
     amount: number;
     unit_of_measure: string;
     daily_value: string; 
+    amount_per100g: number;
 } 
 export type NftAsSold = {
 

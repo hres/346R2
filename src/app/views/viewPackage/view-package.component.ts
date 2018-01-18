@@ -40,7 +40,8 @@ export class ViewPackageComponent implements OnInit {
         { primaryKey: 'name', header: 'Component' },
         { primaryKey: 'amount', header: 'Amount' },
         { primaryKey: 'unit_of_measure', header: 'Unit of Measure' },
-        { primaryKey: 'daily_value', header: '% DV' }
+        { primaryKey: 'daily_value', header: '% DV' },
+        { primaryKey: 'amount_per100g', header: 'Amount Per 100g' }
 
     ];
 
