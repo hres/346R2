@@ -110,11 +110,13 @@ export class ViewSalesComponent implements OnInit {
 
             if (status === 202) {
                 this.flag = 2;
+                this.submitted = false;
             } else if (status === 203) {
                 this.flag = 2;
-
+                this.submitted = false;
             } else if (status === 204) {
                 this.flag = 2;
+                this.submitted = false;
             } else if (status === 200) {
                 this.flag = 1;
 
@@ -126,6 +128,7 @@ export class ViewSalesComponent implements OnInit {
             }
             else {
                 this.flag = 2;
+                this.submitted = false;
             }
 
         }, (error) => {
@@ -137,6 +140,9 @@ export class ViewSalesComponent implements OnInit {
 
     }
 
+    callRelink(){
+        this.router.navigate(['/product-relink', this.route.snapshot.paramMap.get('id'), 'sales']);
 
+    }
 
 }

@@ -8,6 +8,7 @@
 <!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
 <button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Package</button>
 <button class="btn btn-default" (click)="callEdit()" [disabled]="submitted">Edit Package</button>
+<button class="btn btn-default" (click)="callRelink()" [disabled]="submitted">Relink Package</button>
 
 
 
@@ -596,3 +597,4 @@
 <modal-box [modalType]="type"
             (fireBack)="responseFromModal($event)">
             </modal-box>
+

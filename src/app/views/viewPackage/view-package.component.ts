@@ -35,6 +35,7 @@ export class ViewPackageComponent implements OnInit {
     nftAsPrepared: NftAsPrepared;
     componentViewPrepared: componentView[];
     componentViewSold: componentView[];
+    idToRelink: number = null;
 
     nftSettings: ColumnSetting[] = [
         { primaryKey: 'name', header: 'Component' },
@@ -198,6 +199,9 @@ responseFromModal(value: boolean) {
     } else {
           this.type = null;
     }
+}
+callRelink(){
+    this.router.navigate(['/product-relink', this.packageData.package_id, 'package']);
 }
 deleteLabel(id: number | string) {
     this.submitted = true;

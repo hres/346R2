@@ -23,6 +23,8 @@ import {CommunicationServiceService} from './services/communication-service.serv
 
 
 import {FormModule} from './forms/productForm/form.module';
+import {FormRelinkModule} from './forms/productFormRelink/form-relink.module';
+
 
 import { SalesFormModule }  from './forms/salesForm/sales-form.module'; 
 import {ViewSalesModule} from './views/viewSales/view-sales.module';
@@ -96,7 +98,8 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       CreateProductModule,
       CreateNftModule,
       EditLabelModule,
-      EditNftModule
+      EditNftModule,
+      FormRelinkModule
       
        ],
   declarations: [ 

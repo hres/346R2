@@ -5,13 +5,15 @@ import { FormatCellPipe } from './format-cell.pipe';
 import {StyleCellDirective} from './style-cell.directive'
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule} from '@angular/router'
+import {ConfirmBoxModule} from '../confirmbox/confirm-box.module'
 
 
 @NgModule({
     imports: [ 
         CommonModule,
         BrowserModule,
-        RouterModule ],
+        RouterModule,
+        ConfirmBoxModule ],
     declarations: [ 
     TableLayoutComponent,
     FormatCellPipe,

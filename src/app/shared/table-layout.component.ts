@@ -3,11 +3,16 @@ import {ColumnSetting} from './layout.model'
 import {Params, Response} from '../data-model';
 import 'rxjs/add/operator/switchMap';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+import { DeleteRecordService } from '../services/delete-record.service';
+ 
 @Component({
     selector: 'ct-table',
     templateUrl: './table-layout.component.html',
-    styleUrls: ['./table-layout.component.css']
+    styleUrls: ['./table-layout.component.css'],
+    providers: [DeleteRecordService]
  })
+
+
 
 export class TableLayoutComponent implements OnChanges { 
 
@@ -17,15 +22,22 @@ export class TableLayoutComponent implements OnChanges {
     @Input() records: Params;
     @Input() caption: string;
     @Input() settings: ColumnSetting[];
-
+    @Input() isRelink: boolean = false;
+    @Input() typeToRelink: string; 
+    @Input() recordId: number;
+    @Input() type: string;
+    serverDown: boolean = false;
+    flagLink: number = null;
     @Input() index: number;
-
     @Input() flag: boolean;
+    modalType: string;
+
+    isLoading: boolean;
     @Output() trigger: EventEmitter<number> = new EventEmitter<number>();
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,    private deleteRecordService: DeleteRecordService
     ){}
     
     columnMaps: ColumnSetting[]; 
@@ -72,6 +84,62 @@ this.router.navigate(['/viewproduct', pid]);
         return `/viewproduct/${record.product_id || record.productId}`;
     }
 
+    relink(record: any){
+        if(confirm("Are you sure you want to link it to this product?")){
+           let obj = {
+
+                    "product_id": record.product_id,
+                    "package_id": 2,
+                    "type": this.type
+
+            }
+
+            this.relinkRecord(obj); 
+        }
+        
+    }
+
+    relinkRecord(obj: any){
+        console.log(obj);
+
+
+        this.flagLink = null;
+
+        this.isLoading = true;
+
+        this.deleteRecordService.reLinkRecord(JSON.stringify(obj)).finally(() => this.isLoading = false).subscribe(response => {
+
+            const {message, status} = response;
+
+            if (status === 202) {
+                this.flagLink = 2;
+               
+            } else if (status === 203) {
+                this.flagLink = 2;
+
+            } else if (status === 204) {
+                this.flagLink = 2;
+            } else if (status === 200) {
+
+                //this.callP.emit(1);
+                this.flagLink = 1;
+                setTimeout(() => {
+
+                    this.router.navigate(['/view-product',obj.product_id]);
+                },
+                    4000);
+            }
+            else {
+                this.flagLink = 2;
+            }
+
+        }, (error) => {
+            this.serverDown = true;
+            this.flagLink = 2;
+          
+
+        });
+    }
 
 
 }

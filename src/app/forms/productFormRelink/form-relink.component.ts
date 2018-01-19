@@ -4,6 +4,7 @@ import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 //import { classification, FormValues } from '../../form-model';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 // import { ProjectService } from './project-center/project.service';
 // import { Project, Person } from './project-center/model';
@@ -11,22 +12,20 @@ import { ColumnSetting } from '../../shared/layout.model'
 // import { PaginationComponent } from '../../pagination/pagination.component'
 // import { TableLayoutComponent } from '../../shared/table-layout.component'
 @Component({
-    selector: 'form-comp',
-    templateUrl: './form.component.html',
-    styleUrls: ['./form.component.css'],
+    selector: 'form-relink',
+    templateUrl: './form-relink.component.html',
+    styleUrls: ['./form-relink.component.css'],
     providers: [SearchService]
 
 })
-export class FormComponent implements OnChanges {
+export class FormRelinkComponent implements OnChanges {
 
-
+    id:number | string = null;
     tableData: Params[];
     isLoading: boolean = false;
     submitted = false;
     offset: number = 0;
     product: Params;
-    
-
     settings: ColumnSetting[] = [
         { primaryKey: 'product_description', header: 'Description' },
         { primaryKey: 'product_brand', header: 'Brand' },
@@ -43,7 +42,7 @@ export class FormComponent implements OnChanges {
     Classification_number = Classification_number;
 
 
-  listOfClass: classificationList[];
+    listOfClass: classificationList[];
     count = 0;
     pageSizes = 10;
     //value: any;
@@ -57,11 +56,14 @@ export class FormComponent implements OnChanges {
     serverDown: boolean = false;
     restaurantTypes: GenericList;
     types: GenericList;
+    typeOfRelink: string = null;
 
     productForm: FormGroup;
 
     constructor(private fb: FormBuilder,
-        private searchService: SearchService) {
+        private searchService: SearchService,
+        private router: Router,
+        private route: ActivatedRoute) {
 
         this.createForm();
 
@@ -91,7 +93,7 @@ export class FormComponent implements OnChanges {
     }
 
     ngOnChanges() {
-
+        
         this.productForm.reset({
             classification_name: this.product.classification_name,
             Classification_number: this.product.classification_number,
@@ -153,7 +155,8 @@ export class FormComponent implements OnChanges {
 
     }
     onSubmit() {
-
+        this.id = this.route.snapshot.paramMap.get('id')
+        this.typeOfRelink =this.route.snapshot.paramMap.get('type')
 
         this.setValues();
         // this.queryString = '?';

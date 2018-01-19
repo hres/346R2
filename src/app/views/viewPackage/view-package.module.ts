@@ -7,9 +7,9 @@ import {ModalBoxModule} from '../../modal-box/modal-box.module'
 import { BrowserModule } from '@angular/platform-browser';
 import {ConfirmBoxModule} from '../../confirmbox/confirm-box.module'
 import {RouterModule} from '@angular/router';
-import {CreateNftAsPreparedModule} from '../../createRecords/createNftPrepared/create-nft-as-prepared.module'
-import {CreateNftModule} from '../../createRecords/createNft/create-nft.module'
-import {ViewPackageRoutingModule} from './view-package-routing.module'
+import {CreateNftAsPreparedModule} from '../../createRecords/createNftPrepared/create-nft-as-prepared.module';
+import {CreateNftModule} from '../../createRecords/createNft/create-nft.module';
+import {ViewPackageRoutingModule} from './view-package-routing.module';
 
 @NgModule({
     imports:[
@@ -18,10 +18,10 @@ import {ViewPackageRoutingModule} from './view-package-routing.module'
         ModalBoxModule,
         RouterModule,
         CreateNftAsPreparedModule,
-       
-        ViewPackageRoutingModule,
-         // CreateNftModule
         
+        ViewPackageRoutingModule
+         // CreateNftModule
+      
        
     ],
     declarations:[

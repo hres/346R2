@@ -47,4 +47,14 @@ export class DeleteRecordService {
         .map(response => response.json() as DeleteResponse)
 }
 
+reLinkRecord(queryString: string) {
+
+    console.log('here', queryString);
+            return this.http
+                .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/relink', queryString, this.options)
+                .map(response => response.json() )
+        }
+
+
+
 }

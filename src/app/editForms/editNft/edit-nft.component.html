@@ -125,7 +125,7 @@
 
   
             <div class="form-group ">
-              <button (click)="addComponent()" type="button" style="float:right">Add a Component</button>
+              <button (click)="addComponent()" type="button" style="float:right" [disabled]="submitted">Add a Component</button>
                 <button style="float:right;  width:140px" type="submit" class="btn btn-default"  [disabled]="nftForm.pristine || !formValid || !nftForm.valid || submitted">Save</button>
 
 </div>
