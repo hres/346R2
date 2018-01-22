@@ -183,11 +183,7 @@ export class EditProductComponent implements OnChanges {
                  this.flag = 2;
                  this.submitted = false;
                  console.log(status);
-                setTimeout(() => {
-                  //  this.router.navigate(['/viewproduct', this.id]);
-
-                },
-                4000);    
+         
             }
 
         }, (error) =>{

@@ -97,16 +97,21 @@
 
             </div>
 
+            <!-- <div class="form-group col-sm-4">
+                <input class="form-control" type="date" (ngModelChange)="valDate($event)" formControlName="sales_collection_date">
+
+            </div> -->
+
             <div class="form-group col-sm-4">
                 <label for="SalesCollectionDate">Collection Date</label>
-                <input class="form-control" [matDatepicker]="myDatepicker"  id="SalesCollectionDate" [min]="minDate" [max]="maxDate"  formControlName="sales_collection_date">
+                <input class="form-control" [matDatepicker]="myDatepicker" (ngModelChange)="valDate($event)" #salesCollectionDate [min]="minDate" [max]="maxDate" id="SalesCollectionDate"  formControlName="sales_collection_date">
  
                 <mat-datepicker-toggle class="dateIcon" [for]="myDatepicker"></mat-datepicker-toggle>
                 <mat-datepicker  #myDatepicker></mat-datepicker>
-<!--           
-                <div *ngIf="value < minDate" class="errorMessages">
-                    <span class="textPosition"> Invalid Date</span>
-                </div> -->
+          
+                <div *ngIf="salesCollectionDate.invalid" class="errorMessages">
+                    <span class="textPosition"> Invalid date</span>
+                </div>
             </div>
         </div>
 

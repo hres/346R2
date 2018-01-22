@@ -51,7 +51,7 @@ reLinkRecord(queryString: string) {
 
     console.log('here', queryString);
             return this.http
-                .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/relink', queryString, this.options)
+                .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/relinkRecord', queryString, this.options)
                 .map(response => response.json() )
         }
 

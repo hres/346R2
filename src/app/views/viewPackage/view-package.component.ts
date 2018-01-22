@@ -187,18 +187,23 @@ callEdit(){
         this.flag = null;
 }
 callDelete(){
-    this.type = 'delete';
+    this.type = 'package';
 }
 
-responseFromModal(value: boolean) {
-    if (value) {
+responseFromModal(value: number) {
+
+    if (value == 2) {
         this.type = null;
         this.deleteLabel(this.packageData.package_id);
         this.type = null;
 
-    } else {
+    } else if(value==1){
+        this.type = null;
+        this.callRelink();
+    }else {
           this.type = null;
     }
+
 }
 callRelink(){
     this.router.navigate(['/product-relink', this.packageData.package_id, 'package']);

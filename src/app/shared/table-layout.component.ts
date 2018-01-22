@@ -89,7 +89,7 @@ this.router.navigate(['/viewproduct', pid]);
            let obj = {
 
                     "product_id": record.product_id,
-                    "package_id": 2,
+                    "record_id": this.recordId,
                     "type": this.type
 
             }
@@ -109,7 +109,7 @@ this.router.navigate(['/viewproduct', pid]);
 
         this.deleteRecordService.reLinkRecord(JSON.stringify(obj)).finally(() => this.isLoading = false).subscribe(response => {
 
-            const {message, status} = response;
+            const {message, status, record_id} = response;
 
             if (status === 202) {
                 this.flagLink = 2;
@@ -124,8 +124,8 @@ this.router.navigate(['/viewproduct', pid]);
                 //this.callP.emit(1);
                 this.flagLink = 1;
                 setTimeout(() => {
-
-                    this.router.navigate(['/view-product',obj.product_id]);
+                   console.log("the record id is", record_id);
+                    this.router.navigate(['/viewproduct',record_id]);
                 },
                     4000);
             }

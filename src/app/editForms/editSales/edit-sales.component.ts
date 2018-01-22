@@ -34,7 +34,7 @@ export class EditSalesComponent implements OnChanges {
 
     flag: number = null;
     salesForm: FormGroup;
-
+    sales_collection_date_validation: string = null;
     constructor(private fb: FormBuilder,
         private searchService: SearchService,
         private getRecordService: GetRecordService,
@@ -43,7 +43,7 @@ export class EditSalesComponent implements OnChanges {
         private route: ActivatedRoute) {
 
         this.createForm();
-
+        
 
     }
     ngOnInit(): void {
@@ -54,7 +54,7 @@ export class EditSalesComponent implements OnChanges {
             this.listOfClass = data.dataList;
              this.salesField = response[0].data.dataList[0];
              this.ngOnChanges();
-
+            
 
         }
         );
@@ -158,7 +158,7 @@ export class EditSalesComponent implements OnChanges {
             classification_number: null,
             classification_type: '',
             sales_comment: '',
-            sales_collection_date: '',
+            sales_collection_date:  '',
             number_of_units: [null, [Validators.pattern('\\d+')]],
             kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
         });
@@ -178,7 +178,7 @@ export class EditSalesComponent implements OnChanges {
         for (const field in this.formErrors) {
             this.formErrors[field] = '';
             const control = form.get(field);
-
+            
             if (control && control.dirty && !control.valid) {
                 const messages = this.validationMessages[field];
                 for (const key in control.errors) {
@@ -267,7 +267,8 @@ export class EditSalesComponent implements OnChanges {
         'cluster_number': '',
         'product_grouping': '',
         'number_of_units': '',
-        'kilo_rank': ''
+        'kilo_rank': '',
+        'sales_collection_date':''
     }
 
     validationMessages = {
@@ -347,6 +348,9 @@ export class EditSalesComponent implements OnChanges {
         },
         'kilo_rank': {
             'pattern': 'Must be a number'
+        },
+        'sales_collection_date':{
+            'pattern':'Invalid date'
         }
     }
     setValues(): void {
@@ -382,6 +386,15 @@ export class EditSalesComponent implements OnChanges {
 
 
 
+
+    }
+    valDate(val: any){
+
+
+        var date = new DatePipe('en-US');
+        
+    
+return console.log("invalid", val);
 
     }
 

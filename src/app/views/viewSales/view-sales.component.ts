@@ -90,15 +90,18 @@ export class ViewSalesComponent implements OnInit {
         this.flag = null; this.flag = null;
     }
     callDelete() {
-        this.type = 'delete';
+        this.type = 'sales';
     }
-    responseFromModal(value: boolean) {
-        if (value) {
+    responseFromModal(value: number) {
+        if (value ==2 ) {
             this.type = null;
             this.deleteSales(this.route.snapshot.paramMap.get('id'));
             this.type = null;
 
-        } else {
+        } else if(value ==1){
+            this.callRelink();
+
+        }else {
               this.type = null;
         }
     }
@@ -116,7 +119,7 @@ export class ViewSalesComponent implements OnInit {
                 this.submitted = false;
             } else if (status === 204) {
                 this.flag = 2;
-                this.submitted = false;
+                 this.submitted = false;
             } else if (status === 200) {
                 this.flag = 1;
 
@@ -127,8 +130,8 @@ export class ViewSalesComponent implements OnInit {
                     4000);
             }
             else {
-                this.flag = 2;
                 this.submitted = false;
+                this.flag = 2;
             }
 
         }, (error) => {

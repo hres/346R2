@@ -141,10 +141,10 @@ export class ViewProductComponent implements OnInit {
 
 
     callDelete() {
-        this.type = 'delete';
+        this.type = 'product';
     }
-    responseFromModal(value: boolean) {
-        if (value) {
+    responseFromModal(value: number) {
+        if (value ==2) {
             this.type = null;
             this.deleteProduct(this.params.product_id);
             this.type = null;

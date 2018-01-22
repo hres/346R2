@@ -19,13 +19,13 @@ export class ModalBoxComponent {
     @Input() from: string;
 
     @Input() modalType: string;
-    @Output() fireBack = new EventEmitter<boolean>();
+    @Output() fireBack = new EventEmitter<number>();
 
-    update() {
-        this.fireBack.emit(true);
-    }
+    // update() {
+    //     this.fireBack.emit(true);
+    // }
 
-    responseToCall(value : boolean){
+    responseToCall(value : number){
         
         this.fireBack.emit(value);
 
