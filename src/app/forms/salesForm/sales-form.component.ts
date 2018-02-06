@@ -215,6 +215,7 @@ this.isLoading = true;
 
 
     offSetVal(n: number) {
+        console.log(n, "is the offset");
         this.offset = n;
         this.sales.offset = n;
         this.isLoading = true;
