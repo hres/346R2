@@ -54,6 +54,14 @@ console.log('here', queryString);
             .post('http://localhost:8080/fcdr-rest-service/rest/PackageService/insertNft', queryString, this.options)
             .map(response => response.json() )
     }
+
+
+    importMarketShare(){
+
+        // return this.http
+        // .get('http://localhost:8080/fcdr-rest-service/rest/ImportService/getFile', this.options)
+        // .map(Response );
+    }
 }
 
 

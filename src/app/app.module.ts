@@ -60,7 +60,7 @@ import {SharedModule} from './shared/shared.module';
 import {ModalBoxModule} from './modal-box/modal-box.module'
 import { AddClassificationModule }  from './classification-center/add-classification/add-classification.module'; 
  
-
+import {ImportCsvModule} from './imports/importCSV/import-csv.module'
 import {CreateNftModule} from './createRecords/createNft/create-nft.module'
 
 import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
@@ -99,7 +99,8 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       CreateNftModule,
       EditLabelModule,
       EditNftModule,
-      FormRelinkModule
+      FormRelinkModule,
+      ImportCsvModule
       
        ],
   declarations: [ 
