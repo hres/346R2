@@ -14,6 +14,7 @@ export class SearchService {
 
     private Url = "http://localhost:8080/fcdr/webapi/myresource";
     headers = new Headers({ 'Content-Type': 'application/json' });
+    //'Content-Type', 'multipart/form-data'  headers = new Headers({ 'Content-Type', 'multipart/form-data' });
     options = new RequestOptions({ headers: this.headers });
 
     constructor(private http: Http) { }

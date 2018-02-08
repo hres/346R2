@@ -6,25 +6,26 @@
 
             <form (ngSubmit)="onSubmit()" [formGroup]="importCsvFileForm" enctype="multipart/form-data" class="form-horizontal" style="margin-top:13%">
 
-                <div class="form-group">
-                    <label class="control-label col-sm-3" for="file">Select a file:</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="file" formControlName="csv_file" (change)="validateFile($event)" style="width:100%">
-                    </div>
-                </div>
+
 
                 <div class="form-group">
                         
                         <label class="control-label col-sm-3 required"  for="Type">Type: </label>
                         <div class="col-sm-9">
-                        <select class="form-control" id="Type" formControlName="type" style="width:100%" required>
+                        <select class="form-control" id="Type" formControlName="type" style="width:100%" required (change)="updateSelectedValue($event.target.value)">
         
-                            <option value="1" selected>Market Share</option>
-                            <option value="2">Label</option>
+                            <option [value]="1">Market Share</option>
+                            <option [value]="2">Label</option>
                            
         
                         </select>
                 </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="file">Select a file:</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control" name="csv_file" id="file" formControlName="csv_file" (change)="validateFile($event)" style="width:100%">
+                        </div>
                     </div>
                     <div class="row">
                             <button style="float:right; margin-right:20px; width:80px" type="submit" class="btn btn-default" [disabled]="!importCsvFileForm.valid || submitted || !validFile || !validSize">Import</button>
@@ -46,8 +47,8 @@
 
             <table>
                 <tr>
-                    <td>Max File Size</td>
-                    <td>TBD</td>
+                    <td >Max File Size</td>
+                    <td [ngClass]="{'selected': currentlySelectedValue == 2,'selectedSales': currentlySelectedValue == 1}"><span *ngIf="sizeOfFile" >{{sizeOfFile}}</span></td>
                 </tr>
                 <tr>
                     <td>Supported File Type:</td>

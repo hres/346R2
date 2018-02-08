@@ -33,3 +33,12 @@ tr:nth-child(1){
 td:nth-child(1){
     font-weight: bolder;
 }
+
+.selected{
+    font-weight: bold;
+    color: crimson;
+}
+.selectedSales{
+    font-weight: bold;
+    color: darkblue;
+}

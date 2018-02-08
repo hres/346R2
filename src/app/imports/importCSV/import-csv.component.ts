@@ -12,13 +12,17 @@ export const saveFile = (blobContent: Blob, fileName: string) => {
     const blob = new Blob([blobContent], { type: 'application/octet-stream' });
     saveAs(blob, fileName);
 };
+const maxFileSizeSales = 204697600000;
+const maxFileSizeLabel = 204;
 
 export const getFileNameFromResponseContentDisposition = (res: Response) => {
     const contentDisposition = res.headers.get('content-disposition') || '';
     const matches = /filename=([^;]+)/ig.exec(contentDisposition);
     const fileName = (matches[1] || 'untitled').trim();
+   
     return fileName;
 };
+
 @Component({
     selector: 'import-csv',
     templateUrl: './import-csv.component.html',
@@ -38,17 +42,21 @@ export class ImportCsvComponent {
     file: File;
     validFile: boolean;
     validSize: boolean;
+    sizeOfFile: string = "2 Mb";
+    currentlySelectedValue: number = 1;
+    currentMaxSize:  number = maxFileSizeSales;
 
 
     constructor(private fb: FormBuilder, private createRecordService: CreateRecordService,  private http: Http) {
         this.createForm();
+        this.importCsvFileForm.controls['type'].setValue(1);
     }
 
 
 
     createForm() {
         this.importCsvFileForm = this.fb.group({
-            csv_file: '',
+            csv_file: null,
             type: ''
         });
 
@@ -56,14 +64,26 @@ export class ImportCsvComponent {
 
     onSubmit() {
         
-        const options = new RequestOptions({responseType: ResponseContentType.Blob });
+       const options = new RequestOptions({responseType: ResponseContentType.Blob });
+       // const header =  new Headers({ 'Content-Type: 'multipart/form-data' });
+      
+
+       let headers = new Headers();
+      //headers.append('Content-Type', 'multipart/form-data');
+       headers.append('Accept', 'text/plain');
+      // let options = new RequestOptions({ headers: headers });
+       let formData:FormData = new FormData();
+       formData.append('csv_file', this.file, this.file.name);
         this.submitted = true;
         this.isLoading = true
-        this.http.get(`http://localhost:8080/fcdr-rest-service/rest/ImportService/getFile`, {responseType: ResponseContentType.Blob })
+        console.log(formData, "is the efile");
+        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/getFile`, formData, options)
                 .map( r => r.blob())
-                .finally(() => this.isLoading = false)
+                .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {
-           // this.downloadFile(response);
+                    this.importCsvFileForm.controls['csv_file'].setValue(null);
+
+           //this.downloadFile(response);
             // const fileName = getFileNameFromResponseContentDisposition(res );
              saveFile(response, "something");
         }
@@ -72,17 +92,6 @@ export class ImportCsvComponent {
                 this.serverDown = true;
     
             });
-
-        // this.isLoading = true;
-        // this.createRecordService.importMarketShare().finally(() => this.isLoading = false).subscribe(response => {
-
-
-
-        // }, (error) => {
-        //     this.errorMessage = "Can't access the server at this time";
-        //     this.serverDown = true;
-
-        // });
 
     }
 
@@ -99,22 +108,53 @@ export class ImportCsvComponent {
         let target: HTMLInputElement = <HTMLInputElement> eventObj.target;
         let files: FileList = target.files;
         this.file = files[0];
-       // console.log("you are being called size: ", this.file.size, this.file.name.split('.').pop(), "is the extension");
+        //console.log("you are being called size: ", this.file.size,  this.currentMaxSize, "is the current size");
         this.errorMessage = null;
         if(this.file == undefined) return;
         if(this.file.type != "text/csv" || this.file.name.split('.').pop().toLowerCase() != 'csv'){
             this.validFile = false;
             this.errorMessage = "Must be a CSV file";
+            return;
 
         }else{
-        if (this.file.size > 2046976){
+        if (this.file.size > this.currentMaxSize){
             this.validSize= false;
             this.errorMessage = "File is too big";
+        }else if (this.file.size < 1){
+            this.validSize= false;
+            this.errorMessage = "File is too small";
         }
     }
 }
-validateSize(){
-
+updateSelectedValue(n: number){
+    console.log(n, "is the selected value");
+    this.currentlySelectedValue = n;
+    if(n == 2){
+        this.sizeOfFile = "585 kb";
+        this.currentMaxSize = maxFileSizeLabel;
+    }else if(n == 1){
+        this.sizeOfFile = "2 Mb";
+        this.currentMaxSize = maxFileSizeSales;
+    }
+    console.log(this.currentMaxSize,"is the current max");
+    this.validateSize();
 }
 
+private prepareSave(): any {
+    let input = new FormData();
+    input.append('csv_file', this.importCsvFileForm.get('csv_file').value);
+    input.append('type', this.importCsvFileForm.get('type').value);
+    return input;
+  }
+
+  validateSize(){
+      if(this.file){
+        this.errorMessage = null;
+        this.validSize= true;
+        if (this.file.size > this.currentMaxSize){
+            this.validSize= false;
+            this.errorMessage = "File is too big";
+        }
+      }
+  }
 }
