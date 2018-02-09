@@ -1,8 +1,11 @@
+
 <div style="background-color:white; padding:20px; border:1px solid lightgray; background-color:transparent">
     <span style="margin-left:10px; font-size:1.5em">Import File</span>
 
-    <div class="row" style="display: flex; min-height:300px">
-        <div style="background-color:white; width:48%; margin-left: 25px;margin-right:10px; border:1.5px solid lightgray;">
+    <div class="row" style="display: flex; min-height:300px;flex-wrap: wrap">
+        
+        
+        <div style="flex: 1 0 300px; background-color:white; border:1.5px solid lightgray;margin:10px;">
 
             <form (ngSubmit)="onSubmit()" [formGroup]="importCsvFileForm" enctype="multipart/form-data" class="form-horizontal" style="margin-top:13%">
 
@@ -24,7 +27,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="file">Select a file:</label>
                         <div class="col-sm-9">
-                            <input type="file" class="form-control" name="csv_file" id="file" formControlName="csv_file" (change)="validateFile($event)" style="width:100%">
+                            <input type="file" class="form-control" name="csv_file" id="file" formControlName="csv_file"  (change)="validateFile($event)" style="width:100%">
                         </div>
                     </div>
                     <div class="row">
@@ -39,10 +42,12 @@
                     <strong>Error!</strong> {{errorMessage}}
                   </div>
                   <div *ngIf="isLoading">
-                        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                        
+                        <progress-spinner></progress-spinner>
                       </div>
+                      
         </div>
-        <div style="background-color:white; width:48%;margin-left: 10;margin-right:25px; border:1.5px solid lightgray; ">
+        <div style="flex: 1 0 300px; background-color:white;  border:1.5px solid lightgray; margin:10px; ">
             <div style="margin-left:10px; font-size:1.5em; font-weight:bolder; margin-top: 12px;">Required Format</div>
 
             <table>
@@ -71,3 +76,4 @@
         </div>
     </div>
 </div>
+

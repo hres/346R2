@@ -49,6 +49,7 @@ import {ViewProductModule} from './views/viewProduct/view-product.module';
 import { EditProductModule}  from './editForms/editProduct/edit-product.module'; 
 import { CreateProductModule }  from './createRecords/createProduct/create-product.module'; 
 import {FormsCenterModule} from './forms-center/forms-center.module'
+import {ProgressSpinnerModule} from './progressSpinner/progress-spinner.module'
 
 
 import {EditNftModule} from './editForms/editNft/edit-nft.module'
@@ -100,7 +101,8 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       EditLabelModule,
       EditNftModule,
       FormRelinkModule,
-      ImportCsvModule
+      ImportCsvModule,
+      ProgressSpinnerModule
       
        ],
   declarations: [ 

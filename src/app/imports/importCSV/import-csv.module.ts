@@ -8,7 +8,7 @@ import {ImportCsvRoutingModule} from './import-csv-routing.module'
  import {PaginationModelModule} from '../../pagination/pagination.model'
 
 import {RouterModule} from '@angular/router';
-
+import {ProgressSpinnerModule} from '../../progressSpinner/progress-spinner.module'
 
 
 
@@ -18,7 +18,7 @@ ReactiveFormsModule,
 FormsModule,
 MatProgressBarModule,
 ImportCsvRoutingModule,
-
+ProgressSpinnerModule,
 BrowserModule,
 PaginationModelModule
       

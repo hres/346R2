@@ -84,15 +84,16 @@ export class ImportCsvComponent {
                     this.importCsvFileForm.controls['csv_file'].setValue(null);
 
            //this.downloadFile(response);
-            // const fileName = getFileNameFromResponseContentDisposition(res );
-             saveFile(response, "something");
+            //const fileName = getFileNameFromResponseContentDisposition(res );
+             saveFile(response, "importSalesReport.txt");
         }
         , (error) => {
                 this.errorMessage = "Can't access the server at this time";
                 this.serverDown = true;
     
             });
-
+           
+            this.file = null;
     }
 
     downloadFile(data: Response){
@@ -104,11 +105,14 @@ export class ImportCsvComponent {
         
         this.validFile = true;
         this.validSize = true;
+
+
         let eventObj: MSInputMethodContext = <MSInputMethodContext> input;
         let target: HTMLInputElement = <HTMLInputElement> eventObj.target;
         let files: FileList = target.files;
         this.file = files[0];
         //console.log("you are being called size: ", this.file.size,  this.currentMaxSize, "is the current size");
+        
         this.errorMessage = null;
         if(this.file == undefined) return;
         if(this.file.type != "text/csv" || this.file.name.split('.').pop().toLowerCase() != 'csv'){
@@ -140,7 +144,7 @@ updateSelectedValue(n: number){
     this.validateSize();
 }
 
-private prepareSave(): any {
+private prepareSave(): FormData {
     let input = new FormData();
     input.append('csv_file', this.importCsvFileForm.get('csv_file').value);
     input.append('type', this.importCsvFileForm.get('type').value);
