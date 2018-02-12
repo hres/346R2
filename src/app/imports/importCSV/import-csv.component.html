@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="file">Select a file:</label>
                         <div class="col-sm-9">
-                            <input type="file" class="form-control" name="csv_file" id="file" formControlName="csv_file"  (change)="validateFile($event)" style="width:100%">
+                            <input type="file" class="form-control" #fileInput name="csv_file" id="file" formControlName="csv_file"  (change)="validateFile($event)" style="width:100%">
                         </div>
                     </div>
                     <div class="row">

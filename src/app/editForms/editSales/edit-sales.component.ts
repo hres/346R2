@@ -96,8 +96,8 @@ export class EditSalesComponent implements OnChanges {
             classification_type: this.salesField.classification_type,
             sales_comment: this.salesField.sales_comment,
             sales_collection_date: this.salesField.sales_collection_date,
-            number_of_units: this.salesField.number_of_units,
-            kilo_rank: this.salesField.kilo_rank
+            number_of_units: this.salesField.number_of_units
+            // kilo_rank: this.salesField.kilo_rank
 
         }
         );
@@ -160,7 +160,7 @@ export class EditSalesComponent implements OnChanges {
             sales_comment: '',
             sales_collection_date:  '',
             number_of_units: [null, [Validators.pattern('\\d+')]],
-            kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
+            // kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
         });
         this.salesForm.valueChanges
             .subscribe(data => this.onValueChanged(data));
@@ -267,7 +267,7 @@ export class EditSalesComponent implements OnChanges {
         'cluster_number': '',
         'product_grouping': '',
         'number_of_units': '',
-        'kilo_rank': '',
+        // 'kilo_rank': '',
         'sales_collection_date':''
     }
 
@@ -346,9 +346,9 @@ export class EditSalesComponent implements OnChanges {
         'number_of_units': {
             'pattern': 'Must be a digit'
         },
-        'kilo_rank': {
-            'pattern': 'Must be a number'
-        },
+        // 'kilo_rank': {
+        //     'pattern': 'Must be a number'
+        // },
         'sales_collection_date':{
             'pattern':'Invalid date'
         }

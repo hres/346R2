@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, Output } from '@angular/core';
+import { Component, OnChanges, Input, Output, ViewChild} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -45,7 +45,7 @@ export class ImportCsvComponent {
     sizeOfFile: string = "2 Mb";
     currentlySelectedValue: number = 1;
     currentMaxSize:  number = maxFileSizeSales;
-
+    @ViewChild('fileInput') fileInput;
 
     constructor(private fb: FormBuilder, private createRecordService: CreateRecordService,  private http: Http) {
         this.createForm();
@@ -72,28 +72,31 @@ export class ImportCsvComponent {
       //headers.append('Content-Type', 'multipart/form-data');
        headers.append('Accept', 'text/plain');
       // let options = new RequestOptions({ headers: headers });
+      let fileBrowser = this.fileInput.nativeElement;
        let formData:FormData = new FormData();
-       formData.append('csv_file', this.file, this.file.name);
+       formData.append('csv_file', fileBrowser.files[0], fileBrowser.files[0].name);
         this.submitted = true;
         this.isLoading = true
-        console.log(formData, "is the efile");
-        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/getFile`, formData, options)
+
+        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/importMarketShare`, formData, options)
                 .map( r => r.blob())
                 .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {
-                    this.importCsvFileForm.controls['csv_file'].setValue(null);
 
            //this.downloadFile(response);
             //const fileName = getFileNameFromResponseContentDisposition(res );
              saveFile(response, "importSalesReport.txt");
+             this.importCsvFileForm.controls['csv_file'].setValue(null);
+             this.validateSize();
         }
         , (error) => {
                 this.errorMessage = "Can't access the server at this time";
                 this.serverDown = true;
-    
+                this.importCsvFileForm.controls['csv_file'].setValue(null);
+                this.validateSize();
             });
            
-            this.file = null;
+
     }
 
     downloadFile(data: Response){
@@ -111,7 +114,6 @@ export class ImportCsvComponent {
         let target: HTMLInputElement = <HTMLInputElement> eventObj.target;
         let files: FileList = target.files;
         this.file = files[0];
-        //console.log("you are being called size: ", this.file.size,  this.currentMaxSize, "is the current size");
         
         this.errorMessage = null;
         if(this.file == undefined) return;
@@ -125,8 +127,8 @@ export class ImportCsvComponent {
             this.validSize= false;
             this.errorMessage = "File is too big";
         }else if (this.file.size < 1){
-            this.validSize= false;
-            this.errorMessage = "File is too small";
+            //this.validSize= false;
+           // this.errorMessage = "File is too small";
         }
     }
 }
@@ -144,21 +146,28 @@ updateSelectedValue(n: number){
     this.validateSize();
 }
 
-private prepareSave(): FormData {
-    let input = new FormData();
-    input.append('csv_file', this.importCsvFileForm.get('csv_file').value);
-    input.append('type', this.importCsvFileForm.get('type').value);
-    return input;
-  }
+// private prepareSave(): FormData {
+//     let input = new FormData();
+//     input.append('csv_file', this.importCsvFileForm.get('csv_file').value);
+//     input.append('type', this.importCsvFileForm.get('type').value);
+//     return input;
+//   }
 
   validateSize(){
-      if(this.file){
+      
+    let fileBrowser = this.fileInput.nativeElement;
+  
+      if(fileBrowser.files[0]){
         this.errorMessage = null;
         this.validSize= true;
-        if (this.file.size > this.currentMaxSize){
+        if (fileBrowser.files[0].size > this.currentMaxSize || fileBrowser.files[0].size < 1){
             this.validSize= false;
             this.errorMessage = "File is too big";
         }
+      }else{
+        this.validSize= false;
+        this.validFile = false;
+          
       }
   }
 }

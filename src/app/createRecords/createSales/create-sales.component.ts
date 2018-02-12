@@ -106,8 +106,8 @@ export class CreateSalesComponent implements OnChanges {
             classification_type: this.salesField.classification_type,
             sales_comment: this.salesField.sales_comment,
             sales_collection_date: this.salesField.sales_collection_date,
-            number_of_units: this.salesField.number_of_units,
-            kilo_rank: this.salesField.kilo_rank
+            number_of_units: this.salesField.number_of_units
+            // kilo_rank: this.salesField.kilo_rank
 
         }
         );
@@ -168,8 +168,8 @@ export class CreateSalesComponent implements OnChanges {
             classification_type: '',
             sales_comment: '',
             sales_collection_date: '',
-            number_of_units: [null, [Validators.pattern('\\d+')]],
-            kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
+            number_of_units: [null, [Validators.pattern('\\d+')]]
+            // kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
         });
         this.salesForm.valueChanges
             .subscribe(data => this.onValueChanged(data));
@@ -296,8 +296,8 @@ export class CreateSalesComponent implements OnChanges {
         'dollar_volume_total': '',
         'cluster_number': '',
         'product_grouping': '',
-        'number_of_units': '',
-        'kilo_rank': ''
+        'number_of_units': ''
+        // 'kilo_rank': ''
     }
 
     validationMessages = {
@@ -373,10 +373,10 @@ export class CreateSalesComponent implements OnChanges {
         },
         'number_of_units': {
             'pattern': 'Must be a digit'
-        },
-        'kilo_rank': {
-            'pattern': 'Must be a number'
-        }
+        }//,
+        // 'kilo_rank': {
+        //     'pattern': 'Must be a number'
+        // }
     }
     setValues(): void {
         this.submitted = true;
