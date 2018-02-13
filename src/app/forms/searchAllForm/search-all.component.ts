@@ -258,12 +258,22 @@ export class SearchAllComponent implements OnChanges {
                         this.direction[num] = false;
                     }
                 }
-            } else {
+            } else if (status === 205){
+
+                this.emptyField = "No query values entered";
+                this.tableData = null; 
+            } else if (status === 602){
+
+                this.emptyField = "Invalid date(s) range";
+                this.tableData = null; 
+            }else {
                 this.noData = "Something happened";
+                this.tableData = null;
             }
 
         }, (error) => {
             this.serverDown = true;
+            this.tableData = null;
 
         });
 
@@ -422,6 +432,17 @@ export class SearchAllComponent implements OnChanges {
         this.flag = true;
 
         this.label = this.prepareSaveProduct();
+
+        this.label.label_collection_date_from = this.label.label_collection_date_from && this.label.label_collection_date_from != ""? this.label.label_collection_date_from: null;
+        this.label.label_collection_date_to = this.label.label_collection_date_to && this.label.label_collection_date_to != ""? this.label.label_collection_date_to: null;
+
+        this.label.sales_collection_date_from = this.label.sales_collection_date_from && this.label.sales_collection_date_from != ""? this.label.sales_collection_date_from: null;
+        this.label.sales_collection_date_to = this.label.sales_collection_date_to && this.label.sales_collection_date_to != ""? this.label.sales_collection_date_to: null;
+
+
+
+
+
         this.label.orderby = "product_description";
         this.label.flag = this.flag;
         this.label.offset = this.offset;

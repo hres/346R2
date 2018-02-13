@@ -175,8 +175,6 @@ this.isLoading = true;
 
                 this.tableData = null;
 
-            } else if(status === 205){
-                this.noData = message;
             }
             else if(status === 200) {
                 this.emptyField = null;
@@ -194,6 +192,14 @@ this.isLoading = true;
                         this.direction[num] = false;
                     }
                 }
+            }else if (status === 205){
+
+                this.emptyField = "No query values entered";
+                this.tableData = null; 
+            } else if (status === 602){
+
+                this.emptyField = "Invalid date(s) range";
+                this.tableData = null; 
             }else{
                 this.noData = "Something happened try again";
             }
@@ -328,8 +334,11 @@ this.isLoading = true;
 
         this.sales = this.prepareSavesales();
         var date = new DatePipe('en-US');
-        this.sales.collectionDateFrom = this.sales.collectionDateFrom ? date.transform(this.sales.collectionDateFrom, 'yyyy-MM-dd') : this.sales.collectionDateFrom;
-        this.sales.collectionDateTo = this.sales.collectionDateTo ? date.transform(this.sales.collectionDateTo, 'yyyy-MM-dd') : this.sales.collectionDateTo;
+
+        this.sales.collectionDateFrom = this.sales.collectionDateFrom && this.sales.collectionDateFrom != ""? this.sales.collectionDateFrom: null;
+        this.sales.collectionDateTo = this.sales.collectionDateTo && this.sales.collectionDateTo != ""? this.sales.collectionDateTo: null;
+
+
         this.sales.orderBy = this.Order[0];
         this.sales.flag = this.flag;
         this.sales.offset = this.offset;

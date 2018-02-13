@@ -138,7 +138,7 @@
         <input type="text" class="form-control" id="salesSource" placeholder="Sales Source" formControlName="sales_source">
     </div>
 
-    <div class="form-group col-lg-4">
+    <!-- <div class="form-group col-lg-4">
 
         <label for="sales_collection_date_from">Collection Date To</label>
         <input class="form-control" [matDatepicker]="myDatepickerSalesFrom" id="sales_collection_date_from" formControlName="sales_collection_date_from">
@@ -146,8 +146,13 @@
         <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerSalesFrom"></mat-datepicker-toggle>
         <mat-datepicker #myDatepickerSalesFrom></mat-datepicker>
 
-    </div>
-
+    </div> -->
+    <div class="form-group col-lg-4">
+        <label for="sales_collection_date_from">Collection Date From</label>
+     
+    <input class="form-control" type="date" id="sales_collection_date_from"  formControlName="sales_collection_date_from">
+  
+  </div>
 
 
 
@@ -158,7 +163,7 @@
 
 
 
-    <div class="form-group col-lg-4">
+    <!-- <div class="form-group col-lg-4">
 
         <label for="sales_collection_date_to">Collection Date To</label>
         <input class="form-control" [matDatepicker]="myDatepickerSalesTo" id="sales_collection_date_to" formControlName="sales_collection_date_to">
@@ -166,8 +171,14 @@
         <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerSalesTo"></mat-datepicker-toggle>
         <mat-datepicker #myDatepickerSalesTo></mat-datepicker>
 
-    </div>
+    </div> -->
 
+    <div class="form-group col-lg-4">
+        <label for="sales_collection_date_to">Collection Date To</label>
+     
+    <input class="form-control" type="date" id="sales_collection_date_to"  formControlName="sales_collection_date_to">
+  
+  </div>
     <div class="form-group col-lg-4">
         <label for="dollarRankFrom">Dollar Rank From</label>
         <input type="text" class="form-control" id="dollarRankFrom" placeholder="Dollar Rank From" formControlName="dollar_rank_from">
@@ -237,7 +248,7 @@
         <label for="labelIngredients">Ingredients</label>
         <input type="text" class="form-control" id="labelIngredients" placeholder="Ingredients" formControlName="label_ingredients">
     </div>
-    <div class="form-group col-lg-4">
+    <!-- <div class="form-group col-lg-4">
 
 
         <label for="label_collection_date_from">Collection Date From</label>
@@ -257,9 +268,21 @@
         <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerLabelTo"></mat-datepicker-toggle>
         <mat-datepicker #myDatepickerLabelTo></mat-datepicker>
 
-    </div>
+    </div> -->
 
+    <div class="form-group col-lg-4">
+        <label for="label_collection_date_from">Collection Date From</label>
+     
+    <input class="form-control" type="date" id="label_collection_date_from"  formControlName="label_collection_date_from">
+  
+  </div>
 
+  <div class="form-group col-lg-4">
+    <label for="label_collection_date_to">Collection Date To</label>
+ 
+<input class="form-control" type="date" id="label_collection_date_to"  formControlName="label_collection_date_to">
+
+</div>
 </div>
 <div class=" row">
     <div class="form-group col-lg-4">

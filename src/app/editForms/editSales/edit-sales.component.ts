@@ -359,7 +359,7 @@ export class EditSalesComponent implements OnChanges {
         var date = new DatePipe('en-US');
 
         this.salesField = this.prepareSaveSales();
-         this.salesField.sales_collection_date = this.salesField.sales_collection_date ? date.transform(this.salesField.sales_collection_date, 'yyyy-MM-dd') : this.salesField.sales_collection_date;
+         this.salesField.sales_collection_date = this.salesField.sales_collection_date && this.salesField.sales_collection_date != "" ? this.salesField.sales_collection_date: null;
 
         this.salesField.sales_id = this.id;
         this.salesField.number_of_units = this.salesField.number_of_units == ""  && !this.salesField.number_of_units.toString.length? null : this.salesField.number_of_units;

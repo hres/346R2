@@ -151,8 +151,6 @@ export class LabelFormComponent implements OnChanges {
 
                 this.tableData = null;
 
-            }else if (status === 205){
-                this.noData = message;
             }
              else if (status === 200) {
                 this.emptyField = null;
@@ -171,6 +169,14 @@ export class LabelFormComponent implements OnChanges {
                         this.direction[num] = false;
                     }
                 }
+            }else if (status === 205){
+
+                this.emptyField = "No query values entered";
+                this.tableData = null; 
+            } else if (status === 602){
+
+                this.emptyField = "Invalid date(s) range";
+                this.tableData = null; 
             }else{
                 this.noData = "Something happened";
                 this.tableData = null;
@@ -263,7 +269,7 @@ export class LabelFormComponent implements OnChanges {
 
                 this.tableData = null;
 
-            } else {
+            } else  {
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData= data.dataList; 
@@ -306,8 +312,9 @@ export class LabelFormComponent implements OnChanges {
 
         this.label = this.prepareSavelabel();
         var date = new DatePipe('en-US');
-        this.label.collectionDateFrom= this.label.collectionDateFrom ? date.transform(this.label.collectionDateFrom, 'yyyy-MM-dd') : this.label.collectionDateFrom;
-        this.label.collectionDateTo = this.label.collectionDateTo ? date.transform(this.label.collectionDateTo, 'yyyy-MM-dd') : this.label.collectionDateTo;
+
+        this.label.collectionDateFrom = this.label.collectionDateFrom && this.label.collectionDateFrom != ""? this.label.collectionDateFrom: null;
+        this.label.collectionDateTo = this.label.collectionDateTo && this.label.collectionDateTo != ""? this.label.collectionDateTo: null;
 
         // console.log(this.label.collection_date_from);
         this.label.orderBy = this.Order[0];

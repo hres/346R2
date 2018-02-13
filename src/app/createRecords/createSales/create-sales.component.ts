@@ -383,7 +383,8 @@ export class CreateSalesComponent implements OnChanges {
         var date = new DatePipe('en-US');
 
         this.salesField = this.prepareSaveProduct();
-        this.salesField.sales_collection_date = this.salesField.sales_collection_date ? date.transform(this.salesField.sales_collection_date, 'yyyy-MM-dd') : this.salesField.sales_collection_date;
+        // this.salesField.sales_collection_date = this.salesField.sales_collection_date ? date.transform(this.salesField.sales_collection_date, 'yyyy-MM-dd') : this.salesField.sales_collection_date;
+        this.salesField.sales_collection_date = this.salesField.sales_collection_date && this.salesField.sales_collection_date != "" ? this.salesField.sales_collection_date: null;
 
         this.route.params.subscribe(params => {
 
