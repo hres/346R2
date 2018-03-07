@@ -73,8 +73,9 @@
       <div class="form-group col-sm-3" *ngIf="listOfUnitOfMeasure">
 
         <select class="form-control" formControlName="unit_of_measure">
-              <option value="" selected>Select a unit of measure</option>
+          <option [value]="null" >Select a unit of measure</option>
                 <option *ngFor="let unitOfMeasure of listOfUnitOfMeasure;let i = index" [value]="unitOfMeasure">{{unitOfMeasure}}</option>
+               
             </select>
 
       </div>
@@ -109,7 +110,7 @@
         <div class="form-group col-sm-3" *ngIf="listOfUnitOfMeasure">
 
           <select class="form-control" formControlName="unit_of_measure">
-              <option value="" selected>Select a unit of measure</option>
+              <option [value]="null" >Select a unit of measure</option>
                 <option *ngFor="let unitOfMeasure of listOfUnitOfMeasure;let i = index" [value]="unitOfMeasure">{{unitOfMeasure}}</option>
             </select>
 

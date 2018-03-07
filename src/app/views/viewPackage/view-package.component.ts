@@ -242,4 +242,7 @@ deleteLabel(id: number | string) {
     });
 
 }
+callViewProduct(){
+    this.router.navigate(['/viewproduct', this.packageData.product_id]);
+}
 }

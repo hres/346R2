@@ -93,7 +93,7 @@ export class LabelFormComponent implements OnChanges {
 
     createForm() {
         this.labelForm = this.fb.group({
-            labelUpc: ['', [Validators.pattern('\\d+')]],
+            labelUpc: [''],
             labelDescription:'',
             labelSource: '',
             labelIngredients: [''],

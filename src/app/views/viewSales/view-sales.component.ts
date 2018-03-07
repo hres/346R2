@@ -49,8 +49,8 @@ export class ViewSalesComponent implements OnInit {
 
         this.salesData = null;
         this.editFields = null;
-        let id = this.route.snapshot.paramMap.get('id');
-        this.getRecordService.getSalesRecords(id).subscribe(
+        let id = this.route.snapshot.paramMap.get(decodeURI('id'));
+        this.getRecordService.getSalesRecords(encodeURI(id)).subscribe(
             response => {
                 console.log(response);
 
@@ -146,6 +146,16 @@ export class ViewSalesComponent implements OnInit {
     callRelink(){
         this.router.navigate(['/product-relink', this.route.snapshot.paramMap.get('id'), 'sales']);
 
+    }
+    callViewProduct(){
+        this.router.navigate(['/viewproduct', this.salesData.product_id]);
+    }
+    resize(event){
+
+        let eventObj: MSInputMethodContext = <MSInputMethodContext> event;
+        let target: HTMLInputElement = <HTMLInputElement> eventObj.target;
+       let height= target.clientHeight;
+       console.log("the height", event.target.innerHeight);
     }
 
 }

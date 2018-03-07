@@ -462,8 +462,8 @@ export type labelViewFields = {
 
 export class nftFields {
     name = '';
-    amount = '';
-    unit_of_measure = '';
+    amount = "";
+    unit_of_measure = null;
     daily_value = '';
 
 }
@@ -494,7 +494,7 @@ export const nftFieldsList : nftFields[] = [
     {name: 'Protein', amount: '', unit_of_measure: '', daily_value:''},
     {name: 'Cholesterol', amount: '', unit_of_measure: '', daily_value:''},
     {name: 'Sodium', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Saturated + Trans Fat', amount: '', unit_of_measure: '', daily_value:''}
+    {name: 'Saturated + Trans Fat', amount: '', unit_of_measure: null, daily_value:''}
    
    
 ]

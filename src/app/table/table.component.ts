@@ -60,7 +60,7 @@ this.addRecord.emit(this.flager);
 viewData(value: any): string{
 console.log("something", value);
 if(this.flager ===1) {
-       
+       //encodeURI
    return  `/view-sales/${value.sales_id}`;
 
    }else if(this.flager ===2){

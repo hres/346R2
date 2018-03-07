@@ -25,7 +25,7 @@ export class EditRecordService {
 
 console.log('here', queryString);
         return this.http
-            .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/update', queryString, this.options)
+            .put('http://localhost:8080/fcdr-rest-service/rest/ProductService/update', queryString, this.options)
             // .timeoutWith(2000,Observable.throw(new Error('time out')))
             .map(response => response.json() as UpdateResponse)
     }

@@ -1,8 +1,34 @@
+<div class="row" style="display: flex; min-height:80px;flex-wrap: wrap">
+        <div style="flex: 1 0 300px; background-color:white; border:1.5px solid lightgray;margin:10px;" class="box">
+                <h2 class="resize">Div Title</h2>
+                <p>Div content.</p>
+        </div>
+       <div style="flex: 1 0 300px; background-color:black; border:1.5px solid lightgray;margin:10px;" class="box">
+            <h2 (window:resize)="resize($event)">Div Title</h2>
+            <p>est l'exemple parfait. Cinq joueurs dont certains avec leurs coaches ont participé à cette édition : Da
+                niil Medvedev, Hugo Grenier, Constant Lestienne, Kimmer Coppejans, Tiago Pires (n°1 Français U12),
+                 Andrea Meduri (N°1 Italie U12), autant dire un team plutôt riche où c'est aussi la bonne humeur qui a 
+                 primé durant ces cinq jours d'entraînement comme l'explique Guillaume Ducruet, sport marketing manager : "Ce mélange m
+                 ultigénérationnel a été source de très bons moments. Les gars ont pris du plaisir et nous avons été témoins de belles 
+                 rencontres. Les coaches des jeunes présents pourront capitaliser sur cette semaine
+                ." Capitaliser après avoir souffert, il faut dire que le programme mitonné par Patrick Chama.</p>
+        </div>
+</div>
+
+
+
 <div class="container" *ngIf="salesData">
+        <div style="margin-bottom:10px">
+                
+                <h2 >Sales Details</h2>
+        </div>
 <div class="row">
   <div class="col-md-6">
-    <h2 style="margin-top:0px">Sales Details</h2>
+    
+
+    <button class="btn btn-default" (click)="callViewProduct()" style="margin-top:0px">View Product</button>
 </div>
+
 <div class="col-md-6" style="text-align: right" >
 
 <button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Sales</button>

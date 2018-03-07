@@ -68,10 +68,10 @@ export class EditNftComponent implements OnChanges {
                 const {dataList} = response[0];
                 //const cl = response;
                 this.responseComponentName = dataList;
-                console.log(dataList)
+                console.log("response",dataList)
                 this.listOfUnitOfMeasure = response[1].dataList;
                 this.nftAsSold = response[2].nft;
-                console.log(this.nftAsSold);
+                console.log("response",this.nftAsSold);
 
                 this.ngOnChanges();
         this.logNameChange();
@@ -258,9 +258,9 @@ export class EditNftComponent implements OnChanges {
                 value.forEach((element: any) => {
 
                     if (element.name != null && element.name != "") {
-
-                        if (((ree.test(element.amount)) && element.unit_of_measure == "") || ((!ree.test(element.amount)) && element.unit_of_measure != "")) {
-                            console.log("amount: ", element.amount);
+                        // console.log("name ",element.name,"amount: ", element.amount, "unit of measure",element.unit_of_measure);
+                        if (( (ree.test(element.amount)) && (element.unit_of_measure == "" || element.unit_of_measure ==undefined  || element.unit_of_measure==null)) || ((!ree.test(element.amount)) && (element.unit_of_measure != "" ||  element.unit_of_measure !=null || element.unit_of_measure !=undefined))) {
+                            console.log("amount: ", element.amount, "unit",element.unit_of_measure );
                             this.nameChangeLog.push(element.name);
                             this.formValid = false;
                             this.errorMessage = "not null";
