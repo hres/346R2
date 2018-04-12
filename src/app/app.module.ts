@@ -62,6 +62,9 @@ import {ModalBoxModule} from './modal-box/modal-box.module'
 import { AddClassificationModule }  from './classification-center/add-classification/add-classification.module'; 
  
 import {ImportCsvModule} from './imports/importCSV/import-csv.module'
+
+import {ImportImagesModule} from './imports/importImages/import-images.module'
+
 import {CreateNftModule} from './createRecords/createNft/create-nft.module'
 
 import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
@@ -81,7 +84,7 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       HttpModule,
       SalesFormModule,
       LabelFormModule,
-     EditProductModule,
+      EditProductModule,
       CreateSalesModule,
       ViewSalesModule,
       MatRadioModule,
@@ -102,7 +105,8 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       EditNftModule,
       FormRelinkModule,
       ImportCsvModule,
-      ProgressSpinnerModule
+      ProgressSpinnerModule,
+      ImportImagesModule
       
        ],
   declarations: [ 

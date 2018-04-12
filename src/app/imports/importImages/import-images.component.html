@@ -1,0 +1,67 @@
+
+<div style="background-color:white; padding:20px; border:1px solid lightgray; background-color:transparent">
+    <span style="margin-left:10px; font-size:1.5em">Import File</span>
+
+    <div class="row" style="display: flex; min-height:300px;flex-wrap: wrap">
+        
+        
+        <div style="flex: 1 0 300px; background-color:white; border:1.5px solid lightgray;margin:10px;">
+
+            <form (ngSubmit)="onSubmit()" [formGroup]="importCsvFileForm" enctype="multipart/form-data" class="form-horizontal" style="margin-top:13%">
+
+
+
+      
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="file">Select a file:</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control" #fileInput name="image" id="file" formControlName="image"  (change)="validateFile($event)" style="width:100%" multiple accept=".jpg, .jpeg, .png">
+                        </div>
+                    </div>
+                    <div class="row">
+                            <button style="float:right; margin-right:20px; width:80px" type="submit" class="btn btn-default" [disabled]="!importCsvFileForm.valid || submitted || !validFile || !validSize">Import</button>
+
+                    </div>
+
+            </form>
+
+
+            <div class="alert alert-danger" *ngIf="errorMessage" style="margin:6px">
+                    <strong>Error!</strong> {{errorMessage}}
+                  </div>
+                  <div *ngIf="isLoading">
+                        
+                        <progress-spinner></progress-spinner>
+                      </div>
+                      
+        </div>
+        <div style="flex: 1 0 300px; background-color:white;  border:1.5px solid lightgray; margin:10px; ">
+            <div style="margin-left:10px; font-size:1.5em; font-weight:bolder; margin-top: 12px;">Required Format</div>
+
+            <table>
+                <tr>
+                    <td >Max File Size</td>
+                    <td><span *ngIf="sizeOfFile" >{{sizeOfFile}}</span></td>
+                </tr>
+                <tr>
+                    <td>Supported File Type:</td>
+                    <td>.jpg, .jpeg, .png</td>
+                </tr>
+                <tr>
+                    <td>Character Encoding: </td>
+                    <td>UTF-8</td>
+                </tr>
+                <tr>
+                    <td>Delimiter</td>
+                    <td>Commat (,)</td>
+                </tr>
+                <tr>
+                    <td>Has Column Header?</td>
+                    <td>Yes</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
