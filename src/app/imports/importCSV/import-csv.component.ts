@@ -12,8 +12,8 @@ export const saveFile = (blobContent: Blob, fileName: string) => {
     const blob = new Blob([blobContent], { type: 'application/octet-stream' });
     saveAs(blob, fileName);
 };
-const maxFileSizeSales = 204697600000;
-const maxFileSizeLabel = 204;
+const maxFileSizeSales = 2046976;
+const maxFileSizeLabel = 599040;
 
 export const getFileNameFromResponseContentDisposition = (res: Response) => {
     const contentDisposition = res.headers.get('content-disposition') || '';
@@ -45,6 +45,10 @@ export class ImportCsvComponent {
     sizeOfFile: string = "2 Mb";
     currentlySelectedValue: number = 1;
     currentMaxSize:  number = maxFileSizeSales;
+    //this.importCsvFileForm.controls['type']
+
+
+
     @ViewChild('fileInput') fileInput;
 
     constructor(private fb: FormBuilder, private createRecordService: CreateRecordService,  private http: Http) {
@@ -77,15 +81,17 @@ export class ImportCsvComponent {
        formData.append('csv_file', fileBrowser.files[0], fileBrowser.files[0].name);
         this.submitted = true;
         this.isLoading = true
+        var importValue = this.importCsvFileForm.controls['type'].value == '1'? 'importMarketShare': (this.importCsvFileForm.controls['type'].value == '2'?'importLabel':null);
+        console.log("value: ",importValue);
 
-        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/importMarketShare`, formData, options)
+        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/${importValue}`, formData, options)
                 .map( r => r.blob())
                 .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {
 
            //this.downloadFile(response);
             //const fileName = getFileNameFromResponseContentDisposition(res );
-             saveFile(response, "importSalesReport.txt");
+             saveFile(response, "importReport.txt");
              this.importCsvFileForm.controls['csv_file'].setValue(null);
              this.validateSize();
         }

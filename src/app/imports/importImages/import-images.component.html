@@ -1,13 +1,13 @@
 
 <div style="background-color:white; padding:20px; border:1px solid lightgray; background-color:transparent">
-    <span style="margin-left:10px; font-size:1.5em">Import File</span>
+    <span style="margin-left:10px; font-size:1.5em">Import images</span>
 
     <div class="row" style="display: flex; min-height:300px;flex-wrap: wrap">
         
         
         <div style="flex: 1 0 300px; background-color:white; border:1.5px solid lightgray;margin:10px;">
 
-            <form (ngSubmit)="onSubmit()" [formGroup]="importCsvFileForm" enctype="multipart/form-data" class="form-horizontal" style="margin-top:13%">
+            <form (ngSubmit)="onSubmit()" [formGroup]="importImagesForm" enctype="multipart/form-data" class="form-horizontal" style="margin-top:13%">
 
 
 
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="row">
-                            <button style="float:right; margin-right:20px; width:80px" type="submit" class="btn btn-default" [disabled]="!importCsvFileForm.valid || submitted || !validFile || !validSize">Import</button>
+                            <button style="float:right; margin-right:20px; width:80px" type="submit" class="btn btn-default" [disabled]="!importImagesForm.valid || submitted || !validFile || !validSize">Import</button>
 
                     </div>
 
@@ -28,7 +28,7 @@
 
             <div class="alert alert-danger" *ngIf="errorMessage" style="margin:6px">
                     <strong>Error!</strong> {{errorMessage}}
-                  </div>
+            </div>
                   <div *ngIf="isLoading">
                         
                         <progress-spinner></progress-spinner>

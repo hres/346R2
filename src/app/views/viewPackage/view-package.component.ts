@@ -36,6 +36,7 @@ export class ViewPackageComponent implements OnInit {
     componentViewPrepared: componentView[];
     componentViewSold: componentView[];
     idToRelink: number = null;
+    listOfImages: string[];
 
     nftSettings: ColumnSetting[] = [
         { primaryKey: 'name', header: 'Component' },
@@ -74,6 +75,7 @@ export class ViewPackageComponent implements OnInit {
 
                 this.packageData = response[0].data.dataList[0];
                 this.nftAsPrepared = response[2];
+                this.listOfImages = response[3].dataList;
                 if(this.nftAsPrepared.nft.length < 1){
                     this.componentViewPrepared = null;
                 }else{
@@ -245,4 +247,8 @@ deleteLabel(id: number | string) {
 callViewProduct(){
     this.router.navigate(['/viewproduct', this.packageData.product_id]);
 }
+returnImage(imagePath : string){
+    return "http://localhost:8080/fcdr-rest-service/rest/PackageService/getLabelImages/"+imagePath;
+}
+
 }

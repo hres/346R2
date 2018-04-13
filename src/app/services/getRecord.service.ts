@@ -128,6 +128,9 @@ export class GetRecordService {
                 .map(response => response.json()),
             this.http
                 .post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getNft`, body_prepared, this.options)
+                .map(response => response.json()),
+                this.http
+                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getListOfImages/${id}`, this.options)
                 .map(response => response.json()));
     }
 

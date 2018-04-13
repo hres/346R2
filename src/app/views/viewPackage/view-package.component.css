@@ -33,6 +33,17 @@ tr:last-child, th{
 td:last-child{
     text-align: right;
 }
+.imageContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+.box{
+    /* width: 33.3333%; */
+    flex:1;
+    height: 180px;
+    margin:10px;
+}
 /*.panel-heading{
     padding: 1.5px;
 }

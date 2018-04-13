@@ -12,7 +12,8 @@ export const saveFile = (blobContent: Blob, fileName: string) => {
     const blob = new Blob([blobContent], { type: 'application/octet-stream' });
     saveAs(blob, fileName);
 };
-const maxFileSizeSales = 204697600000;
+ const maxSize = 20469760;
+//const maxSize = 1050000;
 const maxFileSizeLabel = 204;
 
 export const getFileNameFromResponseContentDisposition = (res: Response) => {
@@ -34,7 +35,7 @@ export const getFileNameFromResponseContentDisposition = (res: Response) => {
 export class ImportImagesComponent {
 
     @Input() flag: number;
-    importCsvFileForm: FormGroup;
+    importImagesForm: FormGroup;
     isLoading: boolean = false;
     submitted = false;
     serverDown: boolean = false;
@@ -44,7 +45,6 @@ export class ImportImagesComponent {
     validSize: boolean;
     sizeOfFile: string = "20 Mb";
     currentlySelectedValue: number = 1;
-    currentMaxSize:  number = maxFileSizeSales;
     @ViewChild('fileInput') fileInput;
 
     constructor(private fb: FormBuilder, private createRecordService: CreateRecordService,  private http: Http) {
@@ -54,7 +54,7 @@ export class ImportImagesComponent {
 
 
     createForm() {
-        this.importCsvFileForm = this.fb.group({
+        this.importImagesForm = this.fb.group({
             image: null
         });
 
@@ -63,30 +63,39 @@ export class ImportImagesComponent {
     onSubmit() {
         
        const options = new RequestOptions({responseType: ResponseContentType.Blob });
-       // const header =  new Headers({ 'Content-Type: 'multipart/form-data' });
       
 
        let headers = new Headers();
        headers.append('Accept', 'text/plain');
       let fileBrowser = this.fileInput.nativeElement;
        let formData:FormData = new FormData();
-       formData.append('image', fileBrowser.files[0], fileBrowser.files[0].name);
+
+
+       if(fileBrowser.files.size < 1){
+        this.validFile = false;
+        this.errorMessage = "Must select at least one file";
+       }
+
+       for(var index = 0; index<fileBrowser.files.length; ++index ){
+        formData.append('image', fileBrowser.files[index], fileBrowser.files[index].name);
+
+       }
         this.submitted = true;
         this.isLoading = true
 
-        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/importMarketShare`, formData, options)
+        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/importImage`, formData, options)
                 .map( r => r.blob())
                 .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {
 
-             saveFile(response, "importSalesReport.txt");
-             this.importCsvFileForm.controls['image'].setValue(null);
+             saveFile(response, "importImagesReport.txt");
+             this.importImagesForm.controls['image'].setValue(null);
              this.validateSize();
         }
         , (error) => {
                 this.errorMessage = "Can't access the server at this time";
                 this.serverDown = true;
-                this.importCsvFileForm.controls['image'].setValue(null);
+                this.importImagesForm.controls['image'].setValue(null);
                 this.validateSize();
             });
            
@@ -102,6 +111,7 @@ export class ImportImagesComponent {
         
         this.validFile = true;
         this.validSize = true;
+        this.errorMessage = null;
 
 
         let eventObj: MSInputMethodContext = <MSInputMethodContext> input;
@@ -110,23 +120,22 @@ export class ImportImagesComponent {
        
        
         this.file = files[0];
-        
-        this.errorMessage = null;
-        if(this.file == undefined) return;
-        //TODO adjust to validate images
-        if(this.file.type != "text/csv" || this.file.name.split('.').pop().toLowerCase() != 'csv'){
-            this.validFile = false;
-            this.errorMessage = "Must be a CSV file";
-            return;
+        let totalSize = 0;
+        for(var i = 0; i < files.length; i++){
 
-        }else{
-        if (this.file.size > this.currentMaxSize){
-            this.validSize= false;
-            this.errorMessage = "File is too big";
-        }else if (this.file.size < 1){
+            totalSize+=files[i].size;
 
         }
-    }
+
+        if(totalSize > maxSize){
+            this.validSize= false;
+            this.errorMessage = "Limit exceeded, select fewer files";
+        }else if(totalSize < 0){
+            this.validSize= false;
+            this.errorMessage = "Must select at least one file";
+        }
+        
+
 }
 
 
@@ -135,17 +144,17 @@ export class ImportImagesComponent {
       
     let fileBrowser = this.fileInput.nativeElement;
   
-      if(fileBrowser.files[0]){
-        this.errorMessage = null;
-        this.validSize= true;
-        if (fileBrowser.files[0].size > this.currentMaxSize || fileBrowser.files[0].size < 1){
-            this.validSize= false;
-            this.errorMessage = "File is too big";
-        }
-      }else{
-        this.validSize= false;
-        this.validFile = false;
+    //   if(fileBrowser.files[0]){
+    //     this.errorMessage = null;
+    //     this.validSize= true;
+    //     if (fileBrowser.files[0].size > this.currentMaxSize || fileBrowser.files[0].size < 1){
+    //         this.validSize= false;
+    //         this.errorMessage = "File is too big";
+    //     }
+    //   }else{
+    //     this.validSize= false;
+    //     this.validFile = false;
           
-      }
+    //   }
   }
 }
