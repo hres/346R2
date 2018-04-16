@@ -39,7 +39,7 @@ td:last-child{
     justify-content: space-between
 }
 .box{
-    /* width: 33.3333%; */
+    width: 33.3333%;
     flex:1;
     height: 180px;
     margin:10px;

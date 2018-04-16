@@ -36,7 +36,9 @@ export class ViewPackageComponent implements OnInit {
     componentViewPrepared: componentView[];
     componentViewSold: componentView[];
     idToRelink: number = null;
-    listOfImages: string[];
+    @Input() listOfImages: string[];
+    showForm: boolean = false; 
+    package_id: number;
 
     nftSettings: ColumnSetting[] = [
         { primaryKey: 'name', header: 'Component' },
@@ -74,6 +76,7 @@ export class ViewPackageComponent implements OnInit {
                 console.log(response);
 
                 this.packageData = response[0].data.dataList[0];
+                this.package_id = this.packageData.package_id;
                 this.nftAsPrepared = response[2];
                 this.listOfImages = response[3].dataList;
                 if(this.nftAsPrepared.nft.length < 1){
@@ -121,63 +124,11 @@ export class ViewPackageComponent implements OnInit {
 
         
     }
-    //     receiveCall(event: number){
 
-    //         this.editFields = null;
-    //         this.flag = event;
-    //         this.ngOnInit();
-    // }
+    addImage(){
+        this.showForm = true; 
+    }
 
-    // callEdit() {
-    //  this.editFields = this.salesData;
-    //     this.flag = null;
-    // }
-    // callDelete(){
-    //     this.type = 'delete';
-    // }
-    // responseFromModal(value: boolean){
-    //     if(value){
-    //        this.type = null;
-    //        this.deleteSales(this.route.snapshot.paramMap.get('id'));
-    //        this.type = null;
-
-    //     }else{
-
-    //     }
-    // }
-    // deleteSales(id: number | string){
-    //     this.submitted = true;
-    //     this.deleteRecordService.deleteSalesRecord(id).finally(() => this.isLoading = false).subscribe(response => {
-
-    //         const {message, status} = response;
-
-    //         if (status === 202) {
-    //             this.flag = 2;
-    //         } else if (status === 203) {
-    //             this.flag = 2;
-
-    //         } else if (status === 204) {
-    //             this.flag = 2;
-    //         } else if (status === 200) {
-    //                   this.flag = 1;
-                
-    //             setTimeout(() => {
-
-    //                 this.router.navigate(['/viewproduct', this.salesData.product_id]);
-    //             },
-    //                 4000);
-    //         }
-    //         else {
-    //             this.flag = 2;
-    //         }
-
-    //     }, (error) => {
-    //         this.serverDown = true;
-    //         this.flag = 2;
-
-    //     });
-
-    // }
 
 openImage(){
     $('.image').viewer();
@@ -249,6 +200,17 @@ callViewProduct(){
 }
 returnImage(imagePath : string){
     return "http://localhost:8080/fcdr-rest-service/rest/PackageService/getLabelImages/"+imagePath;
+}
+
+updateImageGalery(imageList: string []){
+    if(!imageList){
+        this.listOfImages = null;
+        return;
+    }
+    this.listOfImages = imageList;
+    this.showForm = false;
+    console.log("list of images", imageList);
+   
 }
 
 }

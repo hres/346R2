@@ -506,7 +506,12 @@
     </div>
 
     <!-- <img src="assets/039978303943.jpeg" alt="Smiley face" height="300" width="300" class="image" (click)="openImage()"> -->
-    <div *ngIf="listOfImages" class="imageContainer">
+    <!-- add-image -->
+    <button  *ngIf="!showForm" class="btn btn-default" (click)="addImage()" >Add image</button>
+
+    <add-image [id]='package_id' *ngIf="showForm && package_id" (imagesList)="updateImageGalery($event)"></add-image>
+
+    <div *ngIf="listOfImages && !showForm" class="imageContainer">
         
             <img *ngFor="let image of listOfImages " [src]="returnImage(image)" alt="Label image" class="image box" (click)="openImage()">
 

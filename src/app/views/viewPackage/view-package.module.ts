@@ -10,6 +10,7 @@ import {RouterModule} from '@angular/router';
 import {CreateNftAsPreparedModule} from '../../createRecords/createNftPrepared/create-nft-as-prepared.module';
 import {CreateNftModule} from '../../createRecords/createNft/create-nft.module';
 import {ViewPackageRoutingModule} from './view-package-routing.module';
+import {AddImageModule} from '../../addImage/add-image.module'
 
 @NgModule({
     imports:[
@@ -19,7 +20,8 @@ import {ViewPackageRoutingModule} from './view-package-routing.module';
         RouterModule,
         CreateNftAsPreparedModule,
         
-        ViewPackageRoutingModule
+        ViewPackageRoutingModule,
+        AddImageModule
          // CreateNftModule
       
        

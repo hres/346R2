@@ -68,6 +68,7 @@ import {ImportImagesModule} from './imports/importImages/import-images.module'
 import {CreateNftModule} from './createRecords/createNft/create-nft.module'
 
 import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
+import {AddImageModule} from './addImage/add-image.module'
 
 
 
@@ -106,7 +107,8 @@ import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
       FormRelinkModule,
       ImportCsvModule,
       ProgressSpinnerModule,
-      ImportImagesModule
+      ImportImagesModule,
+      AddImageModule
       
        ],
   declarations: [ 

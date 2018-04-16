@@ -1,0 +1,41 @@
+
+<div style="background-color:white; padding:20px; border:1px solid lightgray; background-color:transparent">
+    <!-- <span style="margin-left:10px; font-size:1.5em">Import images</span> -->
+
+    <div class="row" style="display: flex; min-height:150px;flex-wrap: wrap">
+        
+        
+        <div style="flex: 1 0 150px; background-color:white; border:1.5px solid lightgray;margin:10px;">
+
+            <form (ngSubmit)="onSubmit()" [formGroup]="addImageForm" enctype="multipart/form-data" class="form-horizontal" style="margin-top:13%">
+
+
+
+      
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="file">Select a file:</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control" #fileInput name="image" id="file" formControlName="image"  (change)="validateFile($event)" style="width:100%" accept=".jpg, .jpeg, .png">
+                        </div>
+                    </div>
+                    <div class="row">
+                            <button style="float:right; margin-right:20px; width:80px" type="submit" class="btn btn-default" >Import</button>
+
+                    </div>
+
+            </form>
+
+
+            <div class="alert alert-danger" *ngIf="errorMessage" style="margin:6px">
+                    <strong>Error!</strong> {{errorMessage}}
+            </div>
+                  <div *ngIf="isLoading">
+                        
+                        <progress-spinner></progress-spinner>
+                      </div>
+                      
+        </div>
+
+    </div>
+</div>
+
