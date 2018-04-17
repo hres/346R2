@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeoutWith';
 import 'rxjs/add/operator/delay';
-import { DeleteResponse} from '../data-model';
+import { DeleteResponse,ImageModel} from '../data-model';
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -53,6 +53,14 @@ reLinkRecord(queryString: string) {
             return this.http
                 .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/relinkRecord', queryString, this.options)
                 .map(response => response.json() )
+        }
+
+        deleteImage(id: string | number) {
+
+            return this.http
+                .delete(`http://localhost:8080/fcdr-rest-service/rest/PackageService/deleteImage/${id}`,  this.options)
+                // .timeoutWith(2000,Observable.throw(new Error('time out')))
+                .map(response => response.json())
         }
 
 

@@ -18,8 +18,10 @@
                             <input type="file" class="form-control" #fileInput name="image" id="file" formControlName="image"  (change)="validateFile($event)" style="width:100%" accept=".jpg, .jpeg, .png">
                         </div>
                     </div>
-                    <div class="row">
-                            <button style="float:right; margin-right:20px; width:80px" type="submit" class="btn btn-default" >Import</button>
+                    <div class="row" style="float:right;">
+
+                            <button style="margin-right:20px; width:80px" type="submit" class="btn btn-default" >Import</button>
+                            <button style=" margin-right:20px; width:80px" (click)="cancelAction()" class="btn btn-default" >Cancel</button>
 
                     </div>
 

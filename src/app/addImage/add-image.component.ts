@@ -23,6 +23,10 @@ export const getFileNameFromResponseContentDisposition = (res: Response) => {
     return fileName;
 };
 
+export type ImageModel = {
+    image_name: string,
+    image_id: number
+};
 @Component({
     selector: 'add-image',
     templateUrl: './add-image.component.html',
@@ -35,7 +39,7 @@ export class AddImageComponent {
 
     @Input() flag: number;
     @Input() id : number;
-    @Output() imagesList = new EventEmitter<string []>();
+    @Output() imagesList = new EventEmitter<ImageModel []>();
     listReturn : string[];
     addImageForm: FormGroup;
     isLoading: boolean = false;
@@ -93,7 +97,12 @@ export class AddImageComponent {
                 .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {
                     console.log("Here", response);
+                    if(response.status == 222){
+                        console.log("yes dup")
+                        this.imagesList.emit(null);
+                    }else{
                 this.imagesList.emit(response.dataList);
+                    }
 
             //  saveFile(response, "importImagesReport.txt");
              this.addImageForm.controls['image'].setValue(null);
@@ -134,6 +143,11 @@ export class AddImageComponent {
 
         }
 
+
+}
+cancelAction(){
+    this.imagesList.emit(null);
+    
 
 }
 

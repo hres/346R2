@@ -10,6 +10,11 @@ import { ColumnSetting } from '../../shared/layout.model'
 import { Observable } from 'rxjs/Observable';
 import { AbstractControl } from '@angular/forms';
 
+export type ImageModel = {
+    image_name: string,
+    image_id: number
+};
+
 declare var $: any;
 @Component({
     selector: 'view-package',
@@ -25,6 +30,7 @@ export class ViewPackageComponent implements OnInit {
 
     flag: number;
     Ids: any;
+    confirmDeleteImageTransation: number; 
     packageData: labelViewFields;
     type:string; 
     isLoading: boolean;
@@ -36,7 +42,8 @@ export class ViewPackageComponent implements OnInit {
     componentViewPrepared: componentView[];
     componentViewSold: componentView[];
     idToRelink: number = null;
-    @Input() listOfImages: string[];
+    @Input() listOfImages: ImageModel[];
+    imagesBackUp: ImageModel[];
     showForm: boolean = false; 
     package_id: number;
 
@@ -79,6 +86,7 @@ export class ViewPackageComponent implements OnInit {
                 this.package_id = this.packageData.package_id;
                 this.nftAsPrepared = response[2];
                 this.listOfImages = response[3].dataList;
+                this.imagesBackUp= response[3].dataList;
                 if(this.nftAsPrepared.nft.length < 1){
                     this.componentViewPrepared = null;
                 }else{
@@ -202,15 +210,54 @@ returnImage(imagePath : string){
     return "http://localhost:8080/fcdr-rest-service/rest/PackageService/getLabelImages/"+imagePath;
 }
 
-updateImageGalery(imageList: string []){
-    if(!imageList){
-        this.listOfImages = null;
-        return;
-    }
+updateImageGalery(imageList: ImageModel []){
+    if(imageList== null){
+     //this.listOfImages = null;
+     this.listOfImages = this.imagesBackUp;
+     this.showForm = false;
+       
+    }else{
     this.listOfImages = imageList;
+    this.imagesBackUp = imageList;
+
     this.showForm = false;
-    console.log("list of images", imageList);
-   
+    }
+}
+confirmAction(id: any){
+    this.confirmDeleteImageTransation = null;
+    if(!window.confirm("Are you sure you want to delete this image?")) return false;
+    console.log("perform action", id);
+
+    this.route.paramMap
+    .switchMap((param: ParamMap) =>
+
+        this.deleteRecordService.deleteImage(id)).subscribe(
+    response => {
+        console.log(response);
+        if(response.status == 200){
+            this.listOfImages = response.dataList;
+            this.confirmDeleteImageTransation = 1;
+
+            console.log("this is what I got", response.dataList);
+            
+
+        }else{
+            this.listOfImages = this.imagesBackUp;
+            this.confirmDeleteImageTransation = 2;
+
+        }
+
+    
+
+    }
+    , (error) => {
+        this.confirmDeleteImageTransation = 2;
+        this.listOfImages = this.imagesBackUp;
+        this.serverDown = true;
+        this.flag = 2;
+        this.submitted = false;
+
+    });
 }
 
 }

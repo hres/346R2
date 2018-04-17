@@ -488,7 +488,7 @@
 
     <div class="panel panel-info">
         <div class="panel-heading">
-            Ingregients
+            Ingredients
         </div>
 
         <div class="panel-body">
@@ -513,8 +513,13 @@
 
     <div *ngIf="listOfImages && !showForm" class="imageContainer">
         
-            <img *ngFor="let image of listOfImages " [src]="returnImage(image)" alt="Label image" class="image box" (click)="openImage()">
-
+            
+            <ng-container *ngFor="let image of listOfImages ">
+                   
+                    <img  [src]="returnImage(image.image_name)" alt="Label image" title="Click on the top right icon to delete this image" class="image box" (click)="openImage()">
+                    <span class="close" (click)="confirmAction(image.image_id)">&times;</span>
+            </ng-container>
+          
         
     </div>
 
@@ -616,3 +621,4 @@
             (fireBack)="responseFromModal($event)">
             </modal-box>
 
+<confirm-box [flag]="confirmDeleteImageTransation"></confirm-box>

@@ -44,9 +44,17 @@ td:last-child{
     height: 180px;
     margin:10px;
 }
+
 /*.panel-heading{
     padding: 1.5px;
 }
 .panel-body{
     padding: 2px;
 }*/
+.close{
+    position: relative;
+    top: 4px;
+    right: 27px;
+    z-index: 10;
+    font-size: 2em;
+}

@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddImageComponent }    from './add-image.component';
  
 const addSingleImage: Routes = [
-  { path: 'importImages',  component: AddImageComponent }
+  { path: 'addImage',  component: AddImageComponent }
 ];
  
 @NgModule({

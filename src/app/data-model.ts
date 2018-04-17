@@ -539,3 +539,8 @@ export type NftAsPrepared = {
 export type GenericList = {
     name: string;
 }
+
+export type ImageModel = {
+    image_name: string,
+    image_id: number
+};
