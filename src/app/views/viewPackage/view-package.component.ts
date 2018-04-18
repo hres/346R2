@@ -212,21 +212,18 @@ returnImage(imagePath : string){
 
 updateImageGalery(imageList: ImageModel []){
     if(imageList== null){
-     //this.listOfImages = null;
      this.listOfImages = this.imagesBackUp;
      this.showForm = false;
        
     }else{
     this.listOfImages = imageList;
     this.imagesBackUp = imageList;
-
     this.showForm = false;
     }
 }
 confirmAction(id: any){
     this.confirmDeleteImageTransation = null;
     if(!window.confirm("Are you sure you want to delete this image?")) return false;
-    console.log("perform action", id);
 
     this.route.paramMap
     .switchMap((param: ParamMap) =>
@@ -238,16 +235,11 @@ confirmAction(id: any){
             this.listOfImages = response.dataList;
             this.confirmDeleteImageTransation = 1;
 
-            console.log("this is what I got", response.dataList);
-            
-
         }else{
             this.listOfImages = this.imagesBackUp;
             this.confirmDeleteImageTransation = 2;
 
         }
-
-    
 
     }
     , (error) => {

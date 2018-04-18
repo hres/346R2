@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular-quickstart"
+    "name": "FCDR"
   },
   "apps": [
     {
@@ -15,7 +15,8 @@
         "fonts",
         "css",
         "distF",
-        "039978303943.jpeg"
+        "039978303943.jpeg",
+        "wet-boew"
 
       ],
       "index": "index.html",

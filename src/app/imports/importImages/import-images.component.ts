@@ -90,13 +90,11 @@ export class ImportImagesComponent {
 
              saveFile(response, "importImagesReport.txt");
              this.importImagesForm.controls['image'].setValue(null);
-             this.validateSize();
         }
         , (error) => {
                 this.errorMessage = "Can't access the server at this time";
                 this.serverDown = true;
                 this.importImagesForm.controls['image'].setValue(null);
-                this.validateSize();
             });
            
 
@@ -140,21 +138,4 @@ export class ImportImagesComponent {
 
 
 
-  validateSize(){
-      
-    let fileBrowser = this.fileInput.nativeElement;
-  
-    //   if(fileBrowser.files[0]){
-    //     this.errorMessage = null;
-    //     this.validSize= true;
-    //     if (fileBrowser.files[0].size > this.currentMaxSize || fileBrowser.files[0].size < 1){
-    //         this.validSize= false;
-    //         this.errorMessage = "File is too big";
-    //     }
-    //   }else{
-    //     this.validSize= false;
-    //     this.validFile = false;
-          
-    //   }
-  }
 }

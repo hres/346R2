@@ -117,8 +117,7 @@ import {AddImageModule} from './addImage/add-image.module'
     ],
   exports: [
 
-    // RadioButtonComponent,
-    // CreateSalesComponent
+   
   ],
    providers: [
         MatIconRegistry,
