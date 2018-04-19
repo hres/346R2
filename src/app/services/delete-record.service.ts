@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeoutWith';
 import 'rxjs/add/operator/delay';
-import { DeleteResponse,ImageModel} from '../data-model';
+import { DeleteResponse, ImageModel } from '../data-model';
+import { environment } from '../../environments/environment'
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -13,55 +14,49 @@ import 'rxjs/add/observable/forkJoin';
 
 export class DeleteRecordService {
 
-    private Url = "http://localhost:8080/fcdr/webapi/myresource";
     headers = new Headers({ 'Content-Type': 'application/json' });
     options = new RequestOptions({ headers: this.headers });
+    apiUrl = environment.apiUrl;
 
     constructor(private http: Http) { }
 
 
-
-
-   deleteSalesRecord(id: string | number): Observable<DeleteResponse> {
+    deleteSalesRecord(id: string | number): Observable<DeleteResponse> {
 
         return this.http
-            .delete(`http://localhost:8080/fcdr-rest-service/rest/SalesService/delete/${id}`,  this.options)
-            // .timeoutWith(2000,Observable.throw(new Error('time out')))
+            .delete(this.apiUrl + `SalesService/delete/${id}`, this.options)
+
             .map(response => response.json() as DeleteResponse)
     }
 
     deleteLabelRecord(id: string | number): Observable<DeleteResponse> {
 
         return this.http
-            .delete(`http://localhost:8080/fcdr-rest-service/rest/PackageService/delete/${id}`,  this.options)
-            // .timeoutWith(2000,Observable.throw(new Error('time out')))
+            .delete(this.apiUrl + `PackageService/delete/${id}`, this.options)
             .map(response => response.json() as DeleteResponse)
     }
 
 
-   deleteProductRecord(id: string | number): Observable<DeleteResponse> {
+    deleteProductRecord(id: string | number): Observable<DeleteResponse> {
 
-    return this.http
-        .delete(`http://localhost:8080/fcdr-rest-service/rest/ProductService/delete/${id}`,  this.options)
-        // .timeoutWith(2000,Observable.throw(new Error('time out')))
-        .map(response => response.json() as DeleteResponse)
-}
+        return this.http
+            .delete(this.apiUrl + `ProductService/delete/${id}`, this.options)
+            .map(response => response.json() as DeleteResponse)
+    }
 
-reLinkRecord(queryString: string) {
+    reLinkRecord(queryString: string) {
 
-    console.log('here', queryString);
-            return this.http
-                .post('http://localhost:8080/fcdr-rest-service/rest/ProductService/relinkRecord', queryString, this.options)
-                .map(response => response.json() )
-        }
+        return this.http
+            .post(this.apiUrl + 'ProductService/relinkRecord', queryString, this.options)
+            .map(response => response.json())
+    }
 
-        deleteImage(id: string | number) {
+    deleteImage(id: string | number) {
 
-            return this.http
-                .delete(`http://localhost:8080/fcdr-rest-service/rest/PackageService/deleteImage/${id}`,  this.options)
-                // .timeoutWith(2000,Observable.throw(new Error('time out')))
-                .map(response => response.json())
-        }
+        return this.http
+            .delete(this.apiUrl + `PackageService/deleteImage/${id}`, this.options)
+            .map(response => response.json())
+    }
 
 
 

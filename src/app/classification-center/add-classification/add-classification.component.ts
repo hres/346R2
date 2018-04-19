@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from
 import { SearchService } from '../../services/search.service';
 
 import { Classification_name, Classification_number, addClass,InsertDataMessage,ClassificationList } from '../../data-model';
-import { AddClassificationService } from '../../services/add-classification.service';
 
 @Component({
     selector: 'add-classification',
@@ -22,7 +21,6 @@ export class AddClassificationComponent implements OnChanges {
     Classification_number = Classification_number;
     dataSaved: boolean = true;
     constructor(private fb: FormBuilder,
-                private addClassificationService: AddClassificationService,
                 private service: SearchService) {
         this.createForm();
 

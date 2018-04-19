@@ -8,6 +8,10 @@ import { Params, Response, SalesData, LabelData, ClassificationList, addClass,pr
 
 import {environment} from '../../environments/environment'
 import 'rxjs/add/observable/forkJoin';
+
+
+
+
 @Injectable()
 
 export class SearchService {
@@ -23,7 +27,7 @@ export class SearchService {
 
 
         return this.http
-            .post(this.apiUrl+'productsfiltered', queryString, this.options)
+            .post(this.apiUrl+'ProductService/productsfiltered', queryString, this.options)
             .map(response => response.json() as Response<Params>);
 
     }
@@ -53,6 +57,8 @@ export class SearchService {
         return this.http
             .post(this.apiUrl+'SalesService/salesfiltered', queryString, this.options)
             .map(response => response.json() as Response<SalesData>);
+            
+ 
 
     }
 
@@ -71,10 +77,6 @@ export class SearchService {
 
 
     }
-
-
-
-
 
 
     getClassificationLatest(): Observable<Response<ClassificationList>> {

@@ -3,14 +3,8 @@ import { SearchAllInputFields, Response, salesYearList, classificationList, Sear
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
-//import { classification, FormValues } from '../../form-model';
-
-// import { ProjectService } from './project-center/project.service';
-// import { Project, Person } from './project-center/model';
 import { ColumnSetting } from '../../shared/layout.model'
-// import { PaginationComponent } from '../../pagination/pagination.component'
-// import { TableLayoutComponent } from '../../shared/table-layout.component'
-declare var $: any;
+
 
 @Component({
     selector: 'search-all-comp',
@@ -63,8 +57,6 @@ export class SearchAllComponent implements OnChanges {
     listSalesYear: salesYearList[];
     count = 0;
     pageSizes = 10;
-    //value: any;
-    // queryString = '';
     index: number = 0;
     flag: boolean = true;
     direction: boolean[];
@@ -91,7 +83,7 @@ export class SearchAllComponent implements OnChanges {
     ngOnInit(): void {
         this.searchService.getClassificationLatest().subscribe(response => {
 
-            const {data, message, status} = response;
+            const { data, message, status } = response;
             this.listOfClass = data.dataList;
 
 
@@ -99,7 +91,7 @@ export class SearchAllComponent implements OnChanges {
         );
         this.searchService.getSalesYearList().subscribe(response => {
 
-            const {data, message, status} = response;
+            const { data, message, status } = response;
             this.listSalesYear = data.dataList;
 
 
@@ -148,7 +140,7 @@ export class SearchAllComponent implements OnChanges {
 
     createForm() {
         this.labelForm = this.fb.group({
-            product_description: '', //['', [Validators.required]],
+            product_description: '',
             product_brand: '',
             product_manufacturer: '',
             classification_number: '',
@@ -213,39 +205,28 @@ export class SearchAllComponent implements OnChanges {
 
 
         this.setValues();
-        // this.queryString = '?';
-
-        // for (const prop in this.product) {
-        //     if (this.product.hasOwnProperty(prop)) {
-        //         this.queryString += encodeURIComponent(prop) + '=' + (this.product[prop] == null ? '' : encodeURIComponent(this.product[prop])) + '&';
-        //     }
-        // }
 
         this.isLoading = true;
         this.searchService.searchAll(JSON.stringify(this.label)).finally(() => this.isLoading = false).subscribe(response => {
-            const {data, message, status} = response;
+            const { data, message, status } = response;
 
             if (status === 202) {
                 this.emptyField = message;
-                //console.log(message);
                 this.tableData = null;
             } else if (status === 203) {
 
                 this.noData = message;
 
                 this.tableData = null;
-                // console.log("Here 203",data.dataList);
             } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
-                //console.log("Here 204",data.dataList);
             }
             else if (status === 200) {
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData = data.dataList;
-                console.log("Here", data.dataList);
 
 
 
@@ -258,15 +239,15 @@ export class SearchAllComponent implements OnChanges {
                         this.direction[num] = false;
                     }
                 }
-            } else if (status === 205){
+            } else if (status === 205) {
 
                 this.emptyField = "No query values entered";
-                this.tableData = null; 
-            } else if (status === 602){
+                this.tableData = null;
+            } else if (status === 602) {
 
                 this.emptyField = "Invalid date(s) range";
-                this.tableData = null; 
-            }else {
+                this.tableData = null;
+            } else {
                 this.noData = "Something happened";
                 this.tableData = null;
             }
@@ -279,7 +260,6 @@ export class SearchAllComponent implements OnChanges {
 
 
 
-        // this.ngOnChanges();
     }
 
     prepareSaveProduct(): SearchAllInputFields {
@@ -290,20 +270,13 @@ export class SearchAllComponent implements OnChanges {
     offSetVal(n: number) {
         this.offset = n;
         this.label.offset = n;
-        // this.queryString = this.queryString.replace(/(offset=)(\w+)/, "$1" + this.offset);
-        // console.log("in Parent");
-        // console.log(this.offset, this.queryString);
-
 
         this.isLoading = true;
         this.searchService.searchAll(JSON.stringify(this.label)).finally(() => {
-        this.isLoading = false;
-            // console.log("failling here")    
+            this.isLoading = false;
         }
-
-
         ).subscribe(response => {
-            const {data, message, status} = response;
+            const { data, message, status } = response;
             this.isLoading = false;
 
             if (status === 202) {
@@ -349,7 +322,7 @@ export class SearchAllComponent implements OnChanges {
         this.label.flag = this.direction[i];
         this.isLoading = false;
         this.searchService.searchAll(JSON.stringify(this.label)).finally(() => this.isLoading = false).subscribe(response => {
-            const {data, message, status} = response;
+            const { data, message, status } = response;
 
             if (status === 205) {
                 this.emptyField = message;
@@ -433,26 +406,19 @@ export class SearchAllComponent implements OnChanges {
 
         this.label = this.prepareSaveProduct();
 
-        this.label.label_collection_date_from = this.label.label_collection_date_from && this.label.label_collection_date_from != ""? this.label.label_collection_date_from: null;
-        this.label.label_collection_date_to = this.label.label_collection_date_to && this.label.label_collection_date_to != ""? this.label.label_collection_date_to: null;
+        this.label.label_collection_date_from = this.label.label_collection_date_from && this.label.label_collection_date_from != "" ? this.label.label_collection_date_from : null;
+        this.label.label_collection_date_to = this.label.label_collection_date_to && this.label.label_collection_date_to != "" ? this.label.label_collection_date_to : null;
 
-        this.label.sales_collection_date_from = this.label.sales_collection_date_from && this.label.sales_collection_date_from != ""? this.label.sales_collection_date_from: null;
-        this.label.sales_collection_date_to = this.label.sales_collection_date_to && this.label.sales_collection_date_to != ""? this.label.sales_collection_date_to: null;
-
-
-
-
+        this.label.sales_collection_date_from = this.label.sales_collection_date_from && this.label.sales_collection_date_from != "" ? this.label.sales_collection_date_from : null;
+        this.label.sales_collection_date_to = this.label.sales_collection_date_to && this.label.sales_collection_date_to != "" ? this.label.sales_collection_date_to : null;
 
         this.label.orderby = "product_description";
         this.label.flag = this.flag;
         this.label.offset = this.offset;
-
-
-        //console.log(this.product);
         this.submitted = true;
     }
- 
- 
- 
+
+
+
 
 }

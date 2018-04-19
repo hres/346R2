@@ -12,7 +12,7 @@ import 'rxjs/add/operator/catch';
 import { ColumnSetting } from '../../shared/layout.model'
 import { PaginationComponent } from '../../pagination/pagination.component'
 import { TableLayoutComponent } from '../../shared/table-layout.component'
-declare var $: any;
+import { retry } from 'rxjs/operator/retry';
 
 
 @Component({
@@ -155,7 +155,6 @@ export class SalesFormComponent implements OnChanges {
 
 this.isLoading = true;
         this.searchService.searchSales(JSON.stringify(this.sales))
-
         .finally(() => {
             this.isLoading=false;
         })
@@ -221,7 +220,7 @@ this.isLoading = true;
 
 
     offSetVal(n: number) {
-        console.log(n, "is the offset");
+
         this.offset = n;
         this.sales.offset = n;
         this.isLoading = true;
@@ -248,7 +247,6 @@ this.isLoading = true;
                 this.count = data.count;
                 this.tableData = data.dataList;
 
-
             }
 
 
@@ -260,7 +258,7 @@ this.isLoading = true;
     }
 
 
-    sortBy2(i: number) {
+    sortBy(i: number) {
         this.index = i;
         this.flag = this.direction[i];
         this.direction = this.direction.map((item, index) => i === index ? !this.direction[i] : false);

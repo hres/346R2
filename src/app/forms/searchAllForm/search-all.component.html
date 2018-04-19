@@ -4,306 +4,251 @@
     </div>
 
     <div class="bodycard">
-        <mat-card style="background-color: #f5f5f5">
+        <mat-card style="background-color: #f5f5f5; padding: 30px;">
 
 
-<form (ngSubmit)="onSubmit()" [formGroup]="labelForm">
-    <!--First Block with product fields-->
-    <div class="well">
+            <form (ngSubmit)="onSubmit()" [formGroup]="labelForm">
+                <div class="well">
 
 
-        <div class="row">
-            <div class="form-group col-lg-4">
-                <label for="productDescription">Product Description</label>
-                <input type="text" class="form-control" id="productDescription" placeholder="Product Description" formControlName="product_description">
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label for="productDescription">Product Description</label>
+                            <input type="text" class="form-control" id="productDescription" placeholder="Product Description" formControlName="product_description">
 
-            </div>
-            <div class="form-group col-lg-4">
-                <label for="productManufacturer">Product Manufactuer </label>
-                <input type="text" class="form-control" id="productManufacturer" placeholder="Product Manufactuer" formControlName="product_manufacturer">
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="productManufacturer">Product Manufactuer </label>
+                            <input type="text" class="form-control" id="productManufacturer" placeholder="Product Manufactuer" formControlName="product_manufacturer">
 
-            </div>
+                        </div>
 
-            <div class="form-group col-lg-4">
+                        <div class="form-group col-lg-4">
 
-                <label for="productBrand">Product Brand</label>
-                <input type="text" class="form-control" id="productBrand" placeholder="Product Brand" formControlName="product_brand">
+                            <label for="productBrand">Product Brand</label>
+                            <input type="text" class="form-control" id="productBrand" placeholder="Product Brand" formControlName="product_brand">
 
-            </div>
+                        </div>
 
-        </div>
+                    </div>
 
-        <div class="row">
-            <div class="form-group col-lg-4" *ngIf="listOfClass">
-                <label for="classificationName">Classification Name</label>
-                <input type="text" class="form-control" id="classification_name" placeholder="Classification Name" formControlName="classification_name">
+                    <div class="row">
+                        <div class="form-group col-lg-4" *ngIf="listOfClass">
+                            <label for="classificationName">Classification Name</label>
+                            <input type="text" class="form-control" id="classification_name" placeholder="Classification Name" formControlName="classification_name">
 
-            </div>
-            <div class="form-group col-lg-4" *ngIf="listOfClass">
-                <label for="classificationNumber">Classification Number</label>
-                <select class="form-control" id="classificationNumber" formControlName="classification_number">
-      <option value="" selected>Select a Classification Number</option>
-      <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
-     
+                        </div>
+                        <div class="form-group col-lg-4" *ngIf="listOfClass">
+                            <label for="classificationNumber">Classification Number</label>
+                            <select class="form-control" id="classificationNumber" formControlName="classification_number">
+                                <option value="" selected>Select a Classification Number</option>
+                                <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
 
-</select>
 
-            </div>
-            <div class="form-group col-lg-4">
-                <label for="classificationType">Classification Type  </label>
-                <input type="text" class="form-control" id="classificationType" placeholder="Enter the Classification Type" formControlName="classification_type">
+                            </select>
 
-            </div>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="classificationType">Classification Type </label>
+                            <input type="text" class="form-control" id="classificationType" placeholder="Enter the Classification Type" formControlName="classification_type">
 
-        </div>
+                        </div>
 
-        <div class="row">
+                    </div>
 
-            <div class="form-group col-lg-4">
+                    <div class="row">
 
-                <label for="cnfCode">CNF CODE    </label>
-                <input type="text" class="form-control" id="cnfCode" placeholder="CNF CODE" formControlName="cnf_code">
+                        <div class="form-group col-lg-4">
 
-                <div *ngIf="formErrors.cnf_code" class="errorMessages">
-                    <span class="textPosition">  {{formErrors.cnf_code}}</span>
+                            <label for="cnfCode">CNF CODE </label>
+                            <input type="text" class="form-control" id="cnfCode" placeholder="CNF CODE" formControlName="cnf_code">
+
+                            <div *ngIf="formErrors.cnf_code" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.cnf_code}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <label for="clusterNumber">Cluster Number</label>
+                            <input type="text" class="form-control" id="clusterNumber" placeholder="Cluster Number" formControlName="cluster_number">
+                            <div *ngIf="formErrors.cluster_number" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.cluster_number}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <label for="productComment">Product Comment</label>
+                            <input type="text" class="form-control" id="productComment" placeholder="Product Comment" formControlName="product_comment">
+
+                        </div>
+                    </div>
+
                 </div>
-            </div>
 
-            <div class="form-group col-lg-4">
-                <label for="clusterNumber">Cluster Number</label>
-                <input type="text" class="form-control" id="clusterNumber" placeholder="Cluster Number" formControlName="cluster_number">
-                <div *ngIf="formErrors.cluster_number" class="errorMessages">
-                    <span class="textPosition"> {{formErrors.cluster_number}}</span>
+                <div class="well" style="background-color:  #ebf0fa;">
+
+                    <div class="flex row">
+
+
+                        <div class="form-group col-lg-4">
+                            <label for="salesUpc">Sales UPC</label>
+                            <input type="text" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="sales_upc">
+                            <div *ngIf="formErrors.sales_upc" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.sales_upc}}</span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-lg-4">
+                            <label for="salesDescription">Sales Description</label>
+                            <input type="text" class="form-control" id="salesDescription" placeholder="Sales Description" formControlName="sales_description">
+                        </div>
+
+                        <div class="form-group col-lg-4" *ngIf="listSalesYear">
+                            <label for="salesYear">Sales Year</label>
+                            <select class="form-control" id="salesYear" formControlName="sales_year">
+                                <option value="" selected>Select a Sales Year</option>
+                                <option *ngFor="let class of listSalesYear;let i = index" [value]="class.salesYear">{{class.salesYear}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="flex row">
+                        <div class="form-group col-lg-4">
+                            <label for="nielsenCategory">Nielsen Category</label>
+                            <input type="text" class="form-control" id="nielsenCategory" placeholder="Sales Nielsen Category" formControlName="nielsen_category">
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="salesSource">Sales Source</label>
+                            <input type="text" class="form-control" id="salesSource" placeholder="Sales Source" formControlName="sales_source">
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <label for="sales_collection_date_from">Collection Date From</label>
+
+                            <input class="form-control" type="date" id="sales_collection_date_from" formControlName="sales_collection_date_from">
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="flex row">
+
+
+
+                        <div class="form-group col-lg-4">
+                            <label for="sales_collection_date_to">Collection Date To</label>
+
+                            <input class="form-control" type="date" id="sales_collection_date_to" formControlName="sales_collection_date_to">
+
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="dollarRankFrom">Dollar Rank From</label>
+                            <input type="text" class="form-control" id="dollarRankFrom" placeholder="Dollar Rank From" formControlName="dollar_rank_from">
+                            <div *ngIf="formErrors.dollar_rank_from" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.dollar_rank_from}}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <label for="dollarRankTo">Dollar Rank To</label>
+                            <input type="text" class="form-control" id="dollarRankTo" placeholder="Dollar Rank To" formControlName="dollar_rank_to">
+                            <div *ngIf="formErrors.dollar_rank_to" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.dollar_rank_to}}</span>
+                            </div>
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label for="salesComment">Sales Comment</label>
+                            <input type="text" class="form-control" id="salesComment" placeholder="Sales Comment" formControlName="sales_comment">
+                        </div>
+                    </div>
+
+
                 </div>
-            </div>
 
-            <div class="form-group col-lg-4">
-                <label for="productComment">Product Comment</label>
-                <input type="text" class="form-control" id="productComment" placeholder="Product Comment" formControlName="product_comment">
+                <!--End of the second block-->
+                <!--Start of the second block Label Inputs Fields-->
 
-            </div>
-        </div>
+                <div class="well" style="background-color: hsl(60, 100%, 98%)">
 
+                    <div class="flex row">
+
+                        <div class="form-group col-lg-4">
+                            <label for="labelUpc">Label UPC</label>
+                            <input type="text" class="form-control" id="labelUpc" placeholder="Label UPC" formControlName="label_upc">
+                            <div *ngIf="formErrors.label_upc" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.label_upc}}</span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-lg-4">
+                            <label for="labelDescription">Label Description</label>
+                            <input type="text" class="form-control" id="labelDescription" placeholder="Label Description" formControlName="label_description">
+                        </div>
+
+
+                        <div class="form-group col-lg-4">
+                            <label for="labelSource">Label Source</label>
+                            <input type="text" class="form-control" id="labelSource" placeholder="Source" formControlName="label_source">
+                        </div>
+                    </div>
+
+                    <div class=" row">
+
+
+                        <div class="form-group col-lg-4">
+                            <label for="labelIngredients">Ingredients</label>
+                            <input type="text" class="form-control" id="labelIngredients" placeholder="Ingredients" formControlName="label_ingredients">
+                        </div>
+
+
+                        <div class="form-group col-lg-4">
+                            <label for="label_collection_date_from">Collection Date From</label>
+
+                            <input class="form-control" type="date" id="label_collection_date_from" formControlName="label_collection_date_from">
+
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <label for="label_collection_date_to">Collection Date To</label>
+
+                            <input class="form-control" type="date" id="label_collection_date_to" formControlName="label_collection_date_to">
+
+                        </div>
+                    </div>
+                    <div class=" row">
+                        <div class="form-group col-lg-4">
+                            <label for="labelComment">Label Source</label>
+                            <input type="text" class="form-control" id="labelComment" placeholder="Label Comment" formControlName="label_comment">
+                        </div>
+
+                    </div>
+                    <div style="float:right;">
+                        <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!labelForm.valid">Search</button>
+                    </div>
+                </div>
+
+
+
+
+            </form>
+
+
+        </mat-card>
     </div>
-    <!--End of the first block-->
-
-    <!--Start of the second block with Market share input fields-->
-    <div class="well" style="background-color:  #ebf0fa;">
-
-<div class="flex row">
-
-
-    <div class="form-group col-lg-4">
-        <label for="salesUpc">Sales UPC</label>
-        <input type="text" class="form-control" id="salesUpc" placeholder="Sales UPC" formControlName="sales_upc">
-        <div *ngIf="formErrors.sales_upc" class="errorMessages">
-            <span class="textPosition">  {{formErrors.sales_upc}}</span>
-        </div>
-    </div>
-
-
-    <div class="form-group col-lg-4">
-        <label for="salesDescription">Sales Description</label>
-        <input type="text" class="form-control" id="salesDescription" placeholder="Sales Description" formControlName="sales_description">
-    </div>
-
-
-    <!--<div class="form-group col-lg-4">
-        <label for="salesYear">Sales Year</label>
-        <input type="text" class="form-control" id="salesYear" placeholder="Sales Year" formControlName="sales_year">
-        <div *ngIf="formErrors.sales_upc" class="errorMessages">
-            <span class="textPosition">  {{formErrors.sales_upc}}</span>
-        </div>
-    </div>-->
-
-
-
-    <div class="form-group col-lg-4" *ngIf="listSalesYear">
-        <label for="salesYear">Sales Year</label>
-        <select class="form-control" id="salesYear" formControlName="sales_year">
-<option value="" selected>Select a Sales Year</option>
-<option *ngFor="let class of listSalesYear;let i = index" [value]="class.salesYear">{{class.salesYear}}</option>
-</select>
-    </div>
-
-</div>
-
-<div class="flex row">
-    <div class="form-group col-lg-4">
-        <label for="nielsenCategory">Nielsen Category</label>
-        <input type="text" class="form-control" id="nielsenCategory" placeholder="Sales Nielsen Category" formControlName="nielsen_category">
-    </div>
-    <div class="form-group col-lg-4">
-        <label for="salesSource">Sales Source</label>
-        <input type="text" class="form-control" id="salesSource" placeholder="Sales Source" formControlName="sales_source">
-    </div>
-
-    <!-- <div class="form-group col-lg-4">
-
-        <label for="sales_collection_date_from">Collection Date To</label>
-        <input class="form-control" [matDatepicker]="myDatepickerSalesFrom" id="sales_collection_date_from" formControlName="sales_collection_date_from">
-
-        <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerSalesFrom"></mat-datepicker-toggle>
-        <mat-datepicker #myDatepickerSalesFrom></mat-datepicker>
-
-    </div> -->
-    <div class="form-group col-lg-4">
-        <label for="sales_collection_date_from">Collection Date From</label>
-     
-    <input class="form-control" type="date" id="sales_collection_date_from"  formControlName="sales_collection_date_from">
-  
-  </div>
-
-
-
-</div>
-<div class="flex row">
-
-
-
-
-
-    <!-- <div class="form-group col-lg-4">
-
-        <label for="sales_collection_date_to">Collection Date To</label>
-        <input class="form-control" [matDatepicker]="myDatepickerSalesTo" id="sales_collection_date_to" formControlName="sales_collection_date_to">
-
-        <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerSalesTo"></mat-datepicker-toggle>
-        <mat-datepicker #myDatepickerSalesTo></mat-datepicker>
-
-    </div> -->
-
-    <div class="form-group col-lg-4">
-        <label for="sales_collection_date_to">Collection Date To</label>
-     
-    <input class="form-control" type="date" id="sales_collection_date_to"  formControlName="sales_collection_date_to">
-  
-  </div>
-    <div class="form-group col-lg-4">
-        <label for="dollarRankFrom">Dollar Rank From</label>
-        <input type="text" class="form-control" id="dollarRankFrom" placeholder="Dollar Rank From" formControlName="dollar_rank_from">
-        <div *ngIf="formErrors.dollar_rank_from" class="errorMessages">
-            <span class="textPosition">  {{formErrors.dollar_rank_from}}</span>
-        </div>
-
-    </div>
-
-    <div class="form-group col-lg-4">
-        <label for="dollarRankTo">Dollar Rank To</label>
-        <input type="text" class="form-control" id="dollarRankTo" placeholder="Dollar Rank To" formControlName="dollar_rank_to">
-        <div *ngIf="formErrors.dollar_rank_to" class="errorMessages">
-            <span class="textPosition">  {{formErrors.dollar_rank_to}}</span>
-        </div>
-
-
-
-
-    </div>
-
-
-</div>
-
-<div class="row">
-    <div class="form-group col-lg-4">
-        <label for="salesComment">Sales Comment</label>
-        <input type="text" class="form-control" id="salesComment" placeholder="Sales Comment" formControlName="sales_comment">
-    </div>
-</div>
-
-
-</div>
-
-<!--End of the second block-->
-<!--Start of the second block Label Inputs Fields-->
-
-<div class="well" style="background-color: hsl(60, 100%, 98%)">
-
-<div class="flex row">
-
-    <div class="form-group col-lg-4">
-        <label for="labelUpc">Label UPC</label>
-        <input type="text" class="form-control" id="labelUpc" placeholder="Label UPC" formControlName="label_upc">
-        <div *ngIf="formErrors.label_upc" class="errorMessages">
-            <span class="textPosition">  {{formErrors.label_upc}}</span>
-        </div>
-    </div>
-
-
-    <div class="form-group col-lg-4">
-        <label for="labelDescription">Label Description</label>
-        <input type="text" class="form-control" id="labelDescription" placeholder="Label Description" formControlName="label_description">
-    </div>
-
-
-    <div class="form-group col-lg-4">
-        <label for="labelSource">Label Source</label>
-        <input type="text" class="form-control" id="labelSource" placeholder="Source" formControlName="label_source">
-    </div>
-</div>
-
-<div class=" row">
-
-
-    <div class="form-group col-lg-4">
-        <label for="labelIngredients">Ingredients</label>
-        <input type="text" class="form-control" id="labelIngredients" placeholder="Ingredients" formControlName="label_ingredients">
-    </div>
-    <!-- <div class="form-group col-lg-4">
-
-
-        <label for="label_collection_date_from">Collection Date From</label>
-        <input class="form-control" [matDatepicker]="myDatepicker" id="label_collection_date_from" formControlName="label_collection_date_from">
-
-        <mat-datepicker-toggle class="dateIcon" [for]="myDatepicker"></mat-datepicker-toggle>
-        <mat-datepicker #myDatepicker></mat-datepicker>
-    </div>
-
-    <div class="form-group col-lg-4">
-
-
-
-        <label for="label_collection_date_to">Collection Date To</label>
-        <input class="form-control" [matDatepicker]="myDatepickerLabelTo" id="label_collection_date_to" formControlName="label_collection_date_to">
-
-        <mat-datepicker-toggle class="dateIcon" [for]="myDatepickerLabelTo"></mat-datepicker-toggle>
-        <mat-datepicker #myDatepickerLabelTo></mat-datepicker>
-
-    </div> -->
-
-    <div class="form-group col-lg-4">
-        <label for="label_collection_date_from">Collection Date From</label>
-     
-    <input class="form-control" type="date" id="label_collection_date_from"  formControlName="label_collection_date_from">
-  
-  </div>
-
-  <div class="form-group col-lg-4">
-    <label for="label_collection_date_to">Collection Date To</label>
- 
-<input class="form-control" type="date" id="label_collection_date_to"  formControlName="label_collection_date_to">
-
-</div>
-</div>
-<div class=" row">
-    <div class="form-group col-lg-4">
-        <label for="labelComment">Label Source</label>
-        <input type="text" class="form-control" id="labelComment" placeholder="Label Comment" formControlName="label_comment">
-    </div>
-
-</div>
-<div style="float:right;">
-<button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!labelForm.valid">Search</button>
-</div>
-</div>
-
-
-
-
-</form>
-
-
-</mat-card>
-</div>
 </div>
 
 <h2 *ngIf="emptyField">

@@ -13,11 +13,9 @@ import {MatRadioModule} from '@angular/material/radio'
 
 
 import { SearchService } from './services/search.service';
-import { AddClassificationService } from './services/add-classification.service';
 import { CreateRecordService } from './services/create-records.service';
 import { EditRecordService } from './services/edit-records.service'
 import { DeleteRecordService } from './services/delete-record.service'
-import {CommunicationServiceService} from './services/communication-service.service'
 
 
 
@@ -122,9 +120,6 @@ import {AddImageModule} from './addImage/add-image.module'
    providers: [
         MatIconRegistry,
         SearchService,
-        //CommunicationServiceService,
-        
-       // AddClassificationService,
         CreateRecordService
     
 

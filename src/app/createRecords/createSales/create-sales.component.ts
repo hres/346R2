@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { CommunicationServiceService } from '../../services/communication-service.service'
 import { Subscription } from 'rxjs/Subscription';
 
 declare var $: any;

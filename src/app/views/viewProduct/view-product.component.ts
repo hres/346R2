@@ -8,7 +8,6 @@ import { GetRecordService } from '../../services/getRecord.service';
 import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, FormArray, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ColumnSetting } from '../../shared/layout.model'
-import {CommunicationServiceService } from '../../services/communication-service.service'
 import { DeleteRecordService } from '../../services/delete-record.service';
 
 @Component({

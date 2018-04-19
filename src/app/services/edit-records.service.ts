@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeoutWith';
 import 'rxjs/add/operator/delay';
-import { UpdateResponse} from '../data-model';
+import { UpdateResponse } from '../data-model';
+import { environment } from '../../environments/environment'
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -13,46 +14,41 @@ import 'rxjs/add/observable/forkJoin';
 
 export class EditRecordService {
 
-    private Url = "http://localhost:8080/fcdr/webapi/myresource";
-    headers = new Headers({ 'Content-Type': 'application/json' });
-    options = new RequestOptions({ headers: this.headers });
-
-    constructor(private http: Http) { }
+        headers = new Headers({ 'Content-Type': 'application/json' });
+        options = new RequestOptions({ headers: this.headers });
+        apiUrl = environment.apiUrl;
 
 
-
-   updateProduct(queryString: string): Observable<UpdateResponse> {
-
-console.log('here', queryString);
-        return this.http
-            .put('http://localhost:8080/fcdr-rest-service/rest/ProductService/update', queryString, this.options)
-            // .timeoutWith(2000,Observable.throw(new Error('time out')))
-            .map(response => response.json() as UpdateResponse)
-    }
+        constructor(private http: Http) { }
 
 
-   updateSales(queryString: string): Observable<UpdateResponse> {
 
-console.log('here', queryString);
-        return this.http
-            .post('http://localhost:8080/fcdr-rest-service/rest/SalesService/update', queryString, this.options)
-            // .timeoutWith(2000,Observable.throw(new Error('time out')))
-            .map(response => response.json() as UpdateResponse)
-    }
-    UpdateLabel(queryString: string): Observable<UpdateResponse> {
+        updateProduct(queryString: string): Observable<UpdateResponse> {
 
-console.log('here', queryString);
-        return this.http
-            .post('http://localhost:8080/fcdr-rest-service/rest/PackageService/update', queryString, this.options)
-            // .timeoutWith(2000,Observable.throw(new Error('time out')))
-            .map(response => response.json() as UpdateResponse)
-    }
-     updateNft(queryString: string) {
+                return this.http
+                        .put(this.apiUrl + 'ProductService/update', queryString, this.options)
+                        .map(response => response.json() as UpdateResponse)
+        }
 
-console.log('here', queryString);
-        return this.http
-            .post('http://localhost:8080/fcdr-rest-service/rest/PackageService/updateNft', queryString, this.options)
-            .map(response => response.json() )
-    }
+
+        updateSales(queryString: string): Observable<UpdateResponse> {
+
+                return this.http
+                        .put(this.apiUrl + 'SalesService/update', queryString, this.options)
+                        .map(response => response.json() as UpdateResponse)
+        }
+
+        UpdateLabel(queryString: string): Observable<UpdateResponse> {
+
+                return this.http
+                        .put(this.apiUrl + 'PackageService/update', queryString, this.options)
+                        .map(response => response.json() as UpdateResponse)
+        }
+        updateNft(queryString: string) {
+
+                return this.http
+                        .put(this.apiUrl + 'PackageService/updateNft', queryString, this.options)
+                        .map(response => response.json())
+        }
 
 }

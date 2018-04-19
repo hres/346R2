@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
 import { productParams, Response, productAllFields, ResponseComponentName } from '../data-model';
+import { environment } from '../../environments/environment'
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -12,9 +13,10 @@ import 'rxjs/add/observable/forkJoin';
 
 export class GetRecordService {
 
-    private Url = "http://localhost:8080/fcdr/webapi/myresource";
     headers = new Headers({ 'Content-Type': 'application/json' });
     options = new RequestOptions({ headers: this.headers });
+    apiUrl = environment.apiUrl;
+
 
     constructor(private http: Http) { }
 
@@ -22,54 +24,26 @@ export class GetRecordService {
 
     getProduct(id: number | string): Observable<Response<productAllFields>> {
 
-        console.log("Hey this is the product ID", id);
-        let body = JSON.stringify({ "product_id": id });
-        this.headers = new Headers({ 'Content-Type': 'application/json' });
-
-
         return this.http
-
-            .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
+            .get(this.apiUrl + `ProductService/productclassification/${id}`, this.options)
             .map(response => response.json() as Response<productAllFields>);
     }
 
 
 
-    getAll(id: number | string) {
-
-        let body = JSON.stringify({ "product_id": id });
-
-        console.log('here');
-
-        return Observable.forkJoin(
-            this.http
-                .get('http://10.148.179.244:8088/fcdr/webapi/myresource/getclassification', this.options)
-                .map(response => response.json())
-            ,
-            this.http
-                //http://10.148.179.244:8087/fcdr-rest-service/rest/ProductService/
-                //(response => {
-                .post('http://localhost:8080/fcdr/webapi/myresource/getproduct', body, this.options)
-                // .toPromise()
-                .map(response => response.json())
-        );
-
-    }
 
     getAllRecords(id: number | string) {
-        // let body = JSON.stringify({ "product_id": id });
 
-        // console.log('here');
 
         return Observable.forkJoin(
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
+                .get(this.apiUrl + `ProductService/productclassification/${id}`, this.options)
                 .map(response => response.json()),
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productlabels/${id}`, this.options)
+                .get(this.apiUrl + `ProductService/productlabels/${id}`, this.options)
                 .map(response => response.json()),
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productsales/${id}`, this.options)
+                .get(this.apiUrl + `ProductService/productsales/${id}`, this.options)
                 .map(response => response.json())
         );
 
@@ -78,59 +52,56 @@ export class GetRecordService {
     getProductAndClassificationList(id: number | string) {
         return Observable.forkJoin(
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/ProductService/productclassification/${id}`, this.options)
+                .get(this.apiUrl + `ProductService/productclassification/${id}`, this.options)
                 .map(response => response.json()),
             this.http
-                .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+                .get(this.apiUrl + 'ClassificationService/classification', this.options)
                 .map(response => response.json()),
-                this.http
-                .get('http://localhost:8080/fcdr-rest-service/rest/ProductService/restaurantTypes', this.options)
+            this.http
+                .get(this.apiUrl + 'ProductService/restaurantTypes', this.options)
                 .map(response => response.json()),
-                this.http
-                .get('http://localhost:8080/fcdr-rest-service/rest/ProductService/types', this.options)
+            this.http
+                .get(this.apiUrl + 'ProductService/types', this.options)
                 .map(response => response.json()
-            
-            ));
 
-   
-
+                ));
 
     }
+
     getSalesRecords(id: number | string) {
-        console.log("call to sales", id);
         return Observable.forkJoin(
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/SalesService/sales/${id}`, this.options)
+                .get(this.apiUrl + `SalesService/sales/${id}`, this.options)
                 .map(response => response.json()));
     }
+
 
     getSalesRecordsAndClassification(id: number | string) {
-        console.log("call to sales", id);
         return Observable.forkJoin(
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/SalesService/sales/${id}`, this.options)
+                .get(this.apiUrl + `SalesService/sales/${id}`, this.options)
                 .map(response => response.json()),
             this.http
-                .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+                .get(this.apiUrl + 'ClassificationService/classification', this.options)
                 .map(response => response.json()));
     }
-    //getPackageRecords
+
     getPackageRecords(id: number | string) {
         let body = JSON.stringify({ "package_id": id, "flag": "true" });
         let body_prepared = JSON.stringify({ "package_id": id, "flag": "false" });
 
         return Observable.forkJoin(
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/package/${id}`, this.options)
+                .get(this.apiUrl + `PackageService/package/${id}`, this.options)
                 .map(response => response.json()),
             this.http
-                .post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getNft`, body, this.options)
+                .post(this.apiUrl + `PackageService/getNft`, body, this.options)
                 .map(response => response.json()),
             this.http
-                .post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getNft`, body_prepared, this.options)
+                .post(this.apiUrl + `PackageService/getNft`, body_prepared, this.options)
                 .map(response => response.json()),
-                this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getListOfImages/${id}`, this.options)
+            this.http
+                .get(this.apiUrl + `PackageService/getListOfImages/${id}`, this.options)
                 .map(response => response.json()));
     }
 
@@ -138,13 +109,13 @@ export class GetRecordService {
 
         return Observable.forkJoin(
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/package/${id}`, this.options)
+                .get(this.apiUrl + `PackageService/package/${id}`, this.options)
                 .map(response => response.json()),
             this.http
-                .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
+                .get(this.apiUrl + 'ClassificationService/classification', this.options)
                 .map(response => response.json()),
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/unitOfMeasure`, this.options)
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
                 .map(response => response.json())
         );
 
@@ -153,10 +124,10 @@ export class GetRecordService {
 
         return Observable.forkJoin(
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/listofcomponents`, this.options)
+                .get(this.apiUrl + `PackageService/listofcomponents`, this.options)
                 .map(response => response.json() as ResponseComponentName),
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/unitOfMeasure`, this.options)
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
                 .map(response => response.json()));
 
 
@@ -164,29 +135,17 @@ export class GetRecordService {
 
     getNftSoldRecordsEdit(id: number | string, flag: boolean | string) {
         let body = JSON.stringify({ "package_id": id, "flag": flag });
-        console.log("the flag ", flag);
+
         return Observable.forkJoin(
-             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/listofcomponents`, this.options)
+            this.http
+                .get(this.apiUrl + `PackageService/listofcomponents`, this.options)
                 .map(response => response.json() as ResponseComponentName),
             this.http
-                .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/unitOfMeasure`, this.options)
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
                 .map(response => response.json()),
             this.http
-                .post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/getNft`, body, this.options)
+                .post(this.apiUrl + `PackageService/getNft`, body, this.options)
                 .map(response => response.json()));
     }
 
-
-    //         getUnitofMeasure(){
-    //     return Observable.forkJoin(
-    //     this.http
-    //         .get('http://localhost:8080/fcdr-rest-service/rest/ClassificationService/classification', this.options)
-    //         .map(response => response.json() as Response<ClassificationList>),
-    //         this.http
-    //              .get(`http://localhost:8080/fcdr-rest-service/rest/PackageService/unitOfMeasure`, this.options)
-    //              .map(response => response.json()),
-
-    //     );
-    // }
 }
