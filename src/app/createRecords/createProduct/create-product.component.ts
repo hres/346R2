@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input } from '@angular/core';
-import { createProductFields, classificationList, Classification_name, Classification_number, Response, productCreateResponse,GenericList } from '../../data-model';
+import { createProductFields, classificationList, Classification_name, Classification_number, Response, productCreateResponse, GenericList } from '../../data-model';
 import { CreateRecordService } from '../../services/create-records.service';
 import { SearchService } from '../../services/search.service';
 import { Observable } from 'rxjs/Observable';
@@ -24,9 +24,11 @@ export class CreateProductComponent implements OnChanges {
 
     errorMessage: string;
     listOfClass: classificationList[];
-    flag: number; 
+    flag: number;
     restaurantTypes: GenericList;
     types: GenericList;
+    previousClassificationNumberValue: string;
+    previousClassificationNameValue: string;
 
 
     serverDown: boolean = false;
@@ -36,8 +38,8 @@ export class CreateProductComponent implements OnChanges {
     constructor(private fb: FormBuilder,
         private createRecordService: CreateRecordService,
         private searchService: SearchService,
-                private router: Router,
-         private route: ActivatedRoute
+        private router: Router,
+        private route: ActivatedRoute
     ) {
 
         this.createForm();
@@ -46,7 +48,7 @@ export class CreateProductComponent implements OnChanges {
     }
     ngOnInit(): void {
         this.searchService.getClassificationRestaurant().subscribe(response => {
-            const {data, message, status} = response[0];
+            const { data, message, status } = response[0];
             //const cl = response;
             this.listOfClass = data.dataList;
             this.restaurantTypes = response[1].dataList;
@@ -83,7 +85,7 @@ export class CreateProductComponent implements OnChanges {
     createForm() {
         this.productForm = this.fb.group({
             classification_name: '',
-            classification_number: null,
+            classification_number: '',
             classification_type: '',
             product_manufacturer: '',
             product_brand: '',
@@ -129,7 +131,7 @@ export class CreateProductComponent implements OnChanges {
 
         this.isLoading = true;
         this.createRecordService.createProduct(JSON.stringify(this.product)).finally(() => this.isLoading = false).subscribe(response => {
-            const {id, message, status} = response;
+            const { id, message, status } = response;
 
             if (status === 803) {
                 //Mandatory fields missing
@@ -143,12 +145,12 @@ export class CreateProductComponent implements OnChanges {
                 this.errorMessage = "Can't create a record with no argument provided";
                 //console.log("Here 204",data.dataList);
             } else if (status === 200) {
-                 this.flag = 1;
+                this.flag = 1;
                 setTimeout(() => {
                     this.router.navigate(['/viewproduct', id.value]);
 
                 },
-                4000); 
+                    4000);
             }
             else {
                 this.errorMessage = "Something happened, try again";
@@ -201,28 +203,51 @@ export class CreateProductComponent implements OnChanges {
 
     }
 
-        setClassificationName(n: String) {
+    setClassificationName(n: string) {
 
-var index = this.listOfClass.findIndex(function(item, i){
-  return item.classification_name === n;
-});
 
-if(this.productForm.controls['classification_number'].value != this.listOfClass[index]['classification_number']){
- this.productForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']); 
-}
+        //this.previousClassificationNumberValue = n;
 
+        if (n != null && n != "") {
+
+            var index = this.listOfClass.findIndex(function (item, i) {
+                return item.classification_name === n;
+            });
+
+            if (this.productForm.controls['classification_number'].value != this.listOfClass[index]['classification_number']) {
+                this.productForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']);
+            }
+        } else {
+            if (this.productForm.controls['classification_name'].value != null && this.productForm.controls['classification_name'].value != "") {
+                this.productForm.controls['classification_number'].patchValue("");
+
+            }
+        }
     }
 
 
-        callAlex(n: String) {
+    setClassificationNumber(n: String) {
 
-var index = this.listOfClass.findIndex(function(item, i){
-  return item.classification_number === n;
-});
+        // if (n != null && n != "") {
 
-if(this.productForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']){
- this.productForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']); 
-}
+        // if(this.productForm.controls['classification_name'].value != null)
+
+        if (n != null && n != "") {
+            var index = this.listOfClass.findIndex(function (item, i) {
+                return item.classification_number === n;
+            });
+
+            if (this.productForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']) {
+                this.productForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']);
+            }
+        } else {
+
+            if (this.productForm.controls['classification_number'].value != null && this.productForm.controls['classification_number'].value!= "") {
+                this.productForm.controls['classification_name'].patchValue("");
+
+            }
+        }
+
 
     }
 

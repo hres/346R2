@@ -35,6 +35,10 @@ th{
 td {
     padding: 5px;
     border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
 }
 
 td:not(:first-child) {
