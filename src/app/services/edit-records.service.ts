@@ -32,7 +32,6 @@ export class EditRecordService {
 
 
         updateSales(queryString: string): Observable<UpdateResponse> {
-
                 return this.http
                         .put(this.apiUrl + 'SalesService/update', queryString, this.options)
                         .map(response => response.json() as UpdateResponse)

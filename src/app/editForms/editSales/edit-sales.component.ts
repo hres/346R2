@@ -9,6 +9,8 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
+const NUMBER_REGEX = '^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$';
+
 @Component({
     selector: 'edit-sales',
     templateUrl: './edit-sales.component.html',
@@ -16,6 +18,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
     providers: [EditRecordService]
 
 })
+
 export class EditSalesComponent implements OnChanges {
 
     minDate = new Date(2000, 0, 1);
@@ -67,7 +70,6 @@ export class EditSalesComponent implements OnChanges {
     ngOnChanges() {
         this.flag = null;
         this.submitted = false;
-        console.log(this.salesField);
         this.salesForm.reset({
             sales_description: this.salesField.sales_description,
             sales_upc: this.salesField.sales_upc,
@@ -85,19 +87,18 @@ export class EditSalesComponent implements OnChanges {
             sales_source: this.salesField.sales_source,
             nielsen_category: this.salesField.nielsen_category,
             sales_year: this.salesField.sales_year,
-            control_label_flag: (this.salesField.control_label_flag == null ? this.salesField.control_label_flag : (this.salesField.control_label_flag == false ? '0' : '1')),
+            control_label_flag: (this.salesField.control_label_flag == null ? "" : (this.salesField.control_label_flag == false ? '0' : '1')),
             kilo_volume_total: this.salesField.kilo_volume_total,
             kilo_volume_rank: this.salesField.kilo_volume_rank,
             dollar_volume_total: this.salesField.dollar_volume_total,
             cluster_number: this.salesField.cluster_number,
             product_grouping: this.salesField.product_grouping,
             sales_product_description: this.salesField.sales_product_description,
-            classification_number: this.salesField.classification_number,
+            classification_number: (this.salesField.classification_number == null?"":this.salesField.classification_number),
             classification_type: this.salesField.classification_type,
             sales_comment: this.salesField.sales_comment,
             sales_collection_date: this.salesField.sales_collection_date,
             number_of_units: this.salesField.number_of_units
-            // kilo_rank: this.salesField.kilo_rank
 
         }
         );
@@ -115,52 +116,50 @@ export class EditSalesComponent implements OnChanges {
             ]],
             sales_brand: '',
             sales_manufacturer: '',
-            dollar_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]],
+            dollar_rank: [null, [Validators.pattern(NUMBER_REGEX)]],
             dollar_volume: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
             dollar_share: [null, [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
             dollar_volume_percentage_change: [null, [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
             kilo_volume: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required
 
             ]],
             kilo_share: ['', [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
             kilo_volume_percentage_change: [null, [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
-            average_ac_dist: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            average_retail_price: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            average_ac_dist: [null, [Validators.pattern(NUMBER_REGEX)]],
+            average_retail_price: [null, [Validators.pattern(NUMBER_REGEX)]],
             sales_source: ['', [Validators.required]],
             nielsen_category: ['', [Validators.required]],
             sales_year: [null, [
-                Validators.pattern('\\d+'),
-                Validators.minLength(4),
-                Validators.maxLength(4)]],
-            control_label_flag: null,
+                Validators.pattern('\\d+')]],
+            control_label_flag: "",
             kilo_volume_total: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
-            kilo_volume_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]],
+            kilo_volume_rank: [null, [Validators.pattern(NUMBER_REGEX)]],
             dollar_volume_total: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
-            cluster_number: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            product_grouping: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            cluster_number: [null, [Validators.pattern(NUMBER_REGEX)]],
+            product_grouping: [null, [Validators.pattern(NUMBER_REGEX)]],
             sales_product_description: '',
-            classification_number: null,
+            classification_number: "",
             classification_type: '',
             sales_comment: '',
             sales_collection_date:  '',
-            number_of_units: [null, [Validators.pattern('\\d+')]],
-            // kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
+            number_of_units: [null, [Validators.pattern('\\d+')]]
+            // kilo_rank: [null, [Validators.pattern(NUMBER_REGEX)]]
         });
         this.salesForm.valueChanges
             .subscribe(data => this.onValueChanged(data));
@@ -384,7 +383,7 @@ export class EditSalesComponent implements OnChanges {
         this.salesField.dollar_volume_total = this.salesField.dollar_volume_total == "" && !this.salesField.dollar_volume_total.toString.length? null : this.salesField.dollar_volume_total;
         this.salesField.cluster_number = this.salesField.cluster_number == "" && !this.salesField.cluster_number.toString.length? null : this.salesField.cluster_number;
 
-
+        this.salesField.control_label_flag = this.salesField.control_label_flag == "" && !this.salesField.control_label_flag.toString.length? null : this.salesField.control_label_flag;
 
 
     }
@@ -397,6 +396,24 @@ export class EditSalesComponent implements OnChanges {
 return console.log("invalid", val);
 
     }
-
+     toFixed(x) {
+        console.log("the number is: ", this.salesField.kilo_share)
+        if (Math.abs(x) < 1.0) {
+          var e = parseInt(x.toString().split('e-')[1]);
+          if (e) {
+              x *= Math.pow(10,e-1);
+              x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
+          }
+        } else {
+          var e = parseInt(x.toString().split('+')[1]);
+          if (e > 20) {
+              e -= 20;
+              x /= Math.pow(10,e);
+              x += (new Array(e+1)).join('0');
+          }
+        }
+        console.log("the number is fixed: ", x)
+        return x;
+      }
 
 }

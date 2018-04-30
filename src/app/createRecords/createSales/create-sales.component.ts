@@ -8,6 +8,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
 
+const NUMBER_REGEX = '^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$';
+
+
 declare var $: any;
 @Component({
     selector: 'add-sales',
@@ -119,56 +122,52 @@ export class CreateSalesComponent implements OnChanges {
             sales_upc: ['', [
                 Validators.pattern('\\d+'),
                 Validators.required
-
             ]],
             sales_brand: '',
             sales_manufacturer: '',
-            dollar_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]],
+            dollar_rank: [null, [Validators.pattern(NUMBER_REGEX)]],
             dollar_volume: [null, [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
             dollar_share: [null, [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
             dollar_volume_percentage_change: [null, [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
             kilo_volume: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required
 
             ]],
             kilo_share: [null, [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
             kilo_volume_percentage_change: [null, [
-                Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
-            average_ac_dist: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            average_retail_price: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            average_ac_dist: [null, [Validators.pattern(NUMBER_REGEX)]],
+            average_retail_price: [null, [Validators.pattern(NUMBER_REGEX)]],
             sales_source: ['', [Validators.required]],
             nielsen_category: ['', [Validators.required]],
             sales_year: [null, [
-                Validators.pattern('\\d+'),
-                Validators.minLength(4),
-                Validators.maxLength(4)]],
-            control_label_flag: null,
+                Validators.pattern('\\d+')]],
+            control_label_flag: "",
             kilo_volume_total: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
-            kilo_volume_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]],
+            kilo_volume_rank: [null, [Validators.pattern(NUMBER_REGEX)]],
             dollar_volume_total: [null, [
-                Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
+                Validators.pattern(NUMBER_REGEX),
                 Validators.required]],
-            cluster_number: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            product_grouping: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
+            cluster_number: [null, [Validators.pattern(NUMBER_REGEX)]],
+            product_grouping: [null, [Validators.pattern(NUMBER_REGEX)]],
             sales_product_description: '',
-            classification_number: null,
+            classification_number: "",
             classification_type: '',
             sales_comment: '',
             sales_collection_date: '',
             number_of_units: [null, [Validators.pattern('\\d+')]]
-            // kilo_rank: [null, [Validators.pattern('^[-+]?[0-9]+([,.][0-9]+)?$')]]
         });
         this.salesForm.valueChanges
             .subscribe(data => this.onValueChanged(data));
@@ -207,6 +206,7 @@ export class CreateSalesComponent implements OnChanges {
         this.createRecordService.createSales(JSON.stringify(this.salesField)).finally(() => this.isLoading = false).subscribe(response => {
 
             const { message, status} = response;
+            console.log("status",status);
 
             if (status === 202) {
                 this.flag = 2;
@@ -349,10 +349,7 @@ export class CreateSalesComponent implements OnChanges {
 
         },
         'sales_year': {
-            'pattern': 'Must be a digit',
-            'required': 'Sales Year is required',
-            'minLength': 'Minimum of 4 digis',
-            'maxLength': 'Maximum of 4 digits'
+            'pattern': 'Must be a digit'
         },
         'kilo_volume_total': {
             'pattern': 'Must be a number'

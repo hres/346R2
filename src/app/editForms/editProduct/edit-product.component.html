@@ -1,4 +1,4 @@
-<div class="DivHeader" *ngIf="product"> 
+<div class="DivHeader" *ngIf="product">
     <div class="DivLogo">
         Edit Product
     </div>
@@ -6,128 +6,129 @@
     <div class="bodycard">
         <mat-card style="background-color: #f5f5f5">
 
-<div class="well2">
+            <div class="well2">
 
-    <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
-
-
-        <div class="row">
-            <div class="form-group col-lg-4" *ngIf="listOfClass">
-                <label for="classification_name">Classification Name</label>
-                <select class="form-control" id="classification_name" formControlName="classification_name" (ngModelChange)="setClassificationName($event)">
-<!--<option [value]="classification_name" selected>{{classification_name}}</option>-->
-<option *ngFor="let class of listOfClass;let i = index" [value]="class.classification_name">{{class.classification_name}}</option>
-
-</select>
+                <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
 
 
+                    <div class="row">
+                        <div class="form-group col-lg-4" *ngIf="listOfClass">
+                            <label for="classification_name">Classification Name</label>
+                            <select class="form-control" id="classification_name" formControlName="classification_name" (ngModelChange)="setClassificationNumber($event)">
+                                <option value="">Select a Classification Name</option>
+                                <option *ngFor="let class of listOfClass;let i = index" [value]="class.classification_name">{{class.classification_name}}</option>
+
+                            </select>
+
+
+                        </div>
+                        <div class="form-group col-lg-4" *ngIf="listOfClass">
+                            <label for="classification_number">Classification Number</label>
+                            <select class="form-control" id="classification_number" formControlName="classification_number" (ngModelChange)="setClassificationName($event)">
+                                <option value="">Select a Classification Name</option>
+                                <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
+
+
+                            </select>
+
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="classification_type">Classification Type </label>
+                            <input type="text" class="form-control" id="classification_type" placeholder="Enter the Classification Type" formControlName="classification_type" readOnly>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="form-group col-lg-4">
+                            <label for="product_manufacturer">Product Manufactuer </label>
+                            <input type="text" class="form-control" id="product_manufacturer" placeholder="Product Manufactuer" formControlName="product_manufacturer">
+
+                        </div>
+
+                        <div class="form-group col-lg-4">
+
+                            <label for="product_brand">Product Brand</label>
+                            <input type="text" class="form-control" id="product_brand" placeholder="Product Brand" formControlName="product_brand">
+
+                        </div>
+
+
+                        <div class="form-group col-lg-4">
+
+                            <label for="cnf_code">CNF CODE </label>
+                            <input type="text" class="form-control" id="cnf_code" placeholder="CNF CODE" formControlName="cnf_code">
+
+                            <div *ngIf="formErrors.cnf_code" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.cnf_code}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class=" row">
+                        <div class="form-group col-lg-4">
+                            <label for="cluster_number">Cluster Number</label>
+                            <input type="text" class="form-control" id="cluster_number" placeholder="Cluster Number" formControlName="cluster_number">
+                            <div *ngIf="formErrors.cluster_number" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.cluster_number}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="product_description" class="required">Product Description
+                                <strong class="required">(required)</strong>
+                            </label>
+                            <input type="text" class="form-control" id="product_description" placeholder="Product Description" formControlName="product_description">
+
+                            <div *ngIf="formErrors.product_description" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.product_description}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="product_comment">Product Comment</label>
+                            <input type="text" class="form-control" id="product_comment" placeholder="Product Comment" formControlName="product_comment">
+
+                        </div>
+                    </div>
+                    <div class=" row">
+                        <div class="form-group col-lg-4" *ngIf="restaurantTypes">
+                            <label for="restaurant_type">Restaurant Type</label>
+                            <select class="form-control" id="restaurant_type" placeholder="Select a Restaurant Type" formControlName="restaurant_type">
+
+                                <option value="" >Select a Restaurant Type</option>
+                                <option *ngFor="let restaurantTypes of restaurantTypes;let i = index" [value]="restaurantTypes">{{restaurantTypes}}</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4" *ngIf="types">
+                            <label for="type">Type</label>
+                            <select class="form-control" id="Type" placeholder="Select a Type"   formControlName="type">
+
+                                <option value="" >Select a Type</option>
+                                <option *ngFor="let type of types;let i = index" [value]="type">{{type}}</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!productForm.valid || productForm.pristine || isLoading || submitted">Save</button>
+                            <button style="float:right; margin-top: 28px; width:140px" type="reset" (click)="revert()" class="btn btn-danger" [disabled]="productForm.pristine || isLoading || submitted">Revert</button>
+
+                        </div>
+
+
+                    </div>
+
+                </form>
             </div>
-            <div class="form-group col-lg-4" *ngIf="listOfClass">
-                <label for="classification_number">Classification Number</label>
-                <select class="form-control" id="classification_number" formControlName="classification_number" (ngModelChange)="callAlex($event)">
-      <!--<option [value]="classification_number" >{{classification_number}}</option>-->
-      <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
-     
 
-        </select>
-
-            </div>
-            <div class="form-group col-lg-4">
-                <label for="classification_type">Classification Type  </label>
-                <input type="text" class="form-control" id="classification_type" placeholder="Enter the Classification Type" formControlName="classification_type">
-
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-lg-4">
-                <label for="product_manufacturer">Product Manufactuer </label>
-                <input type="text" class="form-control" id="product_manufacturer" placeholder="Product Manufactuer"  formControlName="product_manufacturer">
-
-            </div>
-
-            <div class="form-group col-lg-4">
-
-                <label for="product_brand">Product Brand</label>
-                <input type="text" class="form-control" id="product_brand" placeholder="Product Brand"  formControlName="product_brand">
-
-            </div>
-
-
-            <div class="form-group col-lg-4">
-
-                <label for="cnf_code">CNF CODE    </label>
-                <input type="text" class="form-control" id="cnf_code" placeholder="CNF CODE"  formControlName="cnf_code">
-
-                <div *ngIf="formErrors.cnf_code" class="errorMessages">
-                    <span class="textPosition">  {{formErrors.cnf_code}}</span>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class=" row">
-            <div class="form-group col-lg-4">
-                <label for="cluster_number">Cluster Number</label>
-                <input type="text" class="form-control" id="cluster_number" placeholder="Cluster Number"  formControlName="cluster_number">
-                <div *ngIf="formErrors.cluster_number" class="errorMessages">
-                    <span class="textPosition"> {{formErrors.cluster_number}}</span>
-                </div>
-            </div>
-            <div class="form-group col-lg-4">
-                <label for="product_description" class="required">Product Description <strong class="required">(required)</strong></label>
-                <input type="text" class="form-control" id="product_description"  placeholder="Product Description" formControlName="product_description">
-
-                <div *ngIf="formErrors.product_description" class="errorMessages">
-                    <span class="textPosition">   {{formErrors.product_description}}</span>
-                </div>
-            </div>
-            <div class="form-group col-lg-4">
-                <label for="product_comment">Product Comment</label>
-                <input type="text" class="form-control" id="product_comment" placeholder="Product Comment"  formControlName="product_comment">
-
-            </div>
-        </div>
-        <div class=" row">
-            <div class="form-group col-lg-4" *ngIf="restaurantTypes">
-                <label for="restaurant_type">Restaurant Type</label>
-                <select class="form-control" id="restaurant_type" placeholder="Select a Restaurant Type" formControlName="restaurant_type">
-            
-                    <option value="" selected>Select a Restaurant Type</option>
-                    <option *ngFor="let restaurantTypes of restaurantTypes;let i = index" [value]="restaurantTypes">{{restaurantTypes}}</option>
-            
-                </select>
-            </div>
-            <div class="form-group col-lg-4" *ngIf="types">
-                <label for="type">Type</label>
-                <select class="form-control" id="Type" formControlName="type">
-            
-                    <option value="" selected>Select a Type</option>
-                    <option *ngFor="let type of types;let i = index" [value]="type">{{type}}</option>
-            
-                </select>
-            </div>
-            <div class="form-group col-lg-4">
-                <button style="float:right; margin-top: 28px; width:140px" type="submit" class="btn btn-default" [disabled]="!productForm.valid || productForm.pristine || isLoading || submitted">Save</button>
-                <button style="float:right; margin-top: 28px; width:140px" type="reset" (click)="revert()"  class="btn btn-danger" [disabled]="productForm.pristine || isLoading || submitted">Revert</button>
-
+        </mat-card>
+    </div>
 </div>
 
-
-</div>
-
-</form>
-</div>
-
-</mat-card>
-</div>
-</div>
-
-<confirm-box [flag]="flag"  *ngIf="flag"></confirm-box>
+<confirm-box [flag]="flag" *ngIf="flag"></confirm-box>
 <div *ngIf="isLoading">
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
-

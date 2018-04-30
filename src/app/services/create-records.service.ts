@@ -31,7 +31,7 @@ export class CreateRecordService {
 
 
     createSales(queryString: string): Observable<UpdateResponse> {
-
+        console.log(queryString);
         return this.http
             .post(this.apiUrl + 'SalesService/insert', queryString, this.options)
             .map(response => response.json() as UpdateResponse)

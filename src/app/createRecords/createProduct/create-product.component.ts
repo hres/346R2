@@ -86,7 +86,7 @@ export class CreateProductComponent implements OnChanges {
         this.productForm = this.fb.group({
             classification_name: '',
             classification_number: '',
-            classification_type: '',
+            classification_type: "Sodium GBL",
             product_manufacturer: '',
             product_brand: '',
             cnf_code: ['', [Validators.pattern('\\d+')]],
