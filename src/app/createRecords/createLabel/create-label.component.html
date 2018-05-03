@@ -20,7 +20,7 @@
                             <label for="informedDiningProgram">Informed Dining Program</label>
                             <select class="form-control" id="informedDiningProgram" formControlName="informed_dining_program">
 
-                                <option value="" selected></option>
+                                <option value="" selected>Informed Dining Program?</option>
                                 <option value="1">Yes</option>
                                 <option value="0">No</option>
                             </select>
@@ -39,7 +39,7 @@
                             <label for="childItem">Child Item</label>
                             <select class="form-control" id="childItem" formControlName="child_item">
 
-                                <option value="" selected></option>
+                                <option value="" selected>Child Item?</option>
                                 <option value="1">Yes</option>
                                 <option value="0">No</option>
                             </select>
@@ -75,7 +75,7 @@
                             <label for="packageDescription" class="required">Label Description
                                 <strong class="required">(required)</strong>
                             </label>
-                            <input type="text" class="form-control" id="packageDescription" placeholder="Sales Source" formControlName="package_description">
+                            <input type="text" class="form-control" id="packageDescription" placeholder="Label Description" formControlName="package_description">
 
                             <div *ngIf="formErrors.package_description" class="errorMessages">
                                 <span class="textPosition"> {{formErrors.package_description}}</span>
@@ -144,14 +144,14 @@
 
                         <div class="form-group col-lg-4">
                             <label for="packageCountry">Country</label>
-                            <input type="text" class="form-control" id="packageCountry" placeholder="Manufacturer" formControlName="package_country">
+                            <input type="text" class="form-control" id="packageCountry" placeholder="Country" formControlName="package_country">
 
                         </div>
 
                         <div class="form-group col-lg-4">
 
                             <label for="packageSize">Net Quantity</label>
-                            <input type="text" class="form-control" id="packageSize" placeholder="Net Quantity" formControlName="package_size">
+                            <input type="text" class="form-control" id="packageSize" [required]="requiredField" (ngModelChange)="validateNetQuantiyOther($event)"  placeholder="Net Quantity" formControlName="package_size">
                             <div *ngIf="formErrors.package_size" class="errorMessages">
                                 <span class="textPosition"> {{formErrors.package_size}}</span>
                             </div>
@@ -162,13 +162,16 @@
 
                         <div class="form-group col-lg-4" *ngIf="listOfUnitOfMeasure">
                             <label for="packageSizeUnitOfMeasure">Net Quantity unit of measure</label>
-                            <select class="form-control" id="packageSizeUnitOfMeasure" formControlName="package_size_unit_of_measure">
+                            <select class="form-control" id="packageSizeUnitOfMeasure"  (ngModelChange)="validateNetQuantiy($event)" [required]="requiredFieldOther" formControlName="package_size_unit_of_measure">
 
                                 <option value="" selected>Net Quantity unit of measure</option>
 
                                 <option *ngFor="let unitOfMeasure of listOfUnitOfMeasure;let i = index" [value]="unitOfMeasure">{{unitOfMeasure}}</option>
 
                             </select>
+                            <div *ngIf="formErrors.package_size_unit_of_measure" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.package_size_unit_of_measure}}</span>
+                            </div>
                         </div>
                     </div>
 
@@ -247,7 +250,6 @@
                             <label for="nutrientClaims">Nutrient Claims </label>
                             <input type="text" class="form-control" id="nutrientClaims" placeholder="Nutrient Claims" formControlName="nutrient_claims">
 
-
                         </div>
 
                     </div>
@@ -268,7 +270,6 @@
 
                             <label for="healthClaims">Health Claims </label>
                             <input type="text" class="form-control" id="healthClaims" placeholder="Health Claims" formControlName="health_claims">
-
 
                         </div>
 
@@ -299,6 +300,9 @@
                                 <strong class="required">(required)</strong>
                             </label>
                             <input class="form-control" type="date" id="package_collection_date" formControlName="package_collection_date">
+                            <div *ngIf="formErrors.package_collection_date" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.package_collection_date}}</span>
+                            </div>
                         </div>
 
                         <div class="form-group col-lg-4">
@@ -348,7 +352,7 @@
                     <div class="row">
                         <div class="form-group col-lg-6">
                             <label for="asSoldPerServingAmount">Per Serving Amount(As sold)</label>
-                            <input type="text" class="form-control" id="asSoldPerServingAmount" style="width:540px" placeholder="Per Serving Amount(As sold)"
+                            <input type="text" class="form-control" id="asSoldPerServingAmount" style="width:540px" [required]="requiredFieldAmountAsSold" (ngModelChange)="validatePerServingAmountAsSold($event)" placeholder="Per Serving Amount(As sold)"
                                 formControlName="as_sold_per_serving_amount">
                             <div *ngIf="formErrors.as_sold_per_serving_amount" class="errorMessages">
                                 <span class="textPosition"> {{formErrors.as_sold_per_serving_amount}}</span>
@@ -356,26 +360,29 @@
                         </div>
                         <div class="form-group col-lg-6" *ngIf="listOfUnitOfMeasure">
                             <label for="asSoldUnitOfMeasure">Per Serving Unit of Measure (As sold)</label>
-                            <select class="form-control" id="asSoldUnitOfMeasure" formControlName="as_sold_unit_of_measure" style="width:540px">
+                            <select class="form-control" id="asSoldUnitOfMeasure" formControlName="as_sold_unit_of_measure" [required]="requiredFieldUnitOfMeasure" (ngModelChange)="validateUnitOfMeasureAsSold($event)" style="width:540px">
 
                                 <option value="" selected>Per Serving Unit of Measure (As sold)</option>
                                 <option *ngFor="let unitOfMeasure of listOfUnitOfMeasure;let i = index" [value]="unitOfMeasure">{{unitOfMeasure}}</option>
 
                             </select>
+                            <div *ngIf="formErrors.as_sold_unit_of_measure" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.as_sold_unit_of_measure}}</span>
+                            </div>
                         </div>
 
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-4">
                             <label for="asPreparedPerServingAmount">Per Serving Amount(As prepared)</label>
-                            <input type="text" class="form-control" id="asPreparedPerServingAmount" placeholder="Per Serving Amount(As prepared)" formControlName="as_prepared_per_serving_amount">
+                            <input type="text" class="form-control"  [required]="requiredFieldAmountAsPrepared" (ngModelChange)="validatePerServingAmountAsPrepared($event)" id="asPreparedPerServingAmount" placeholder="Per Serving Amount(As prepared)" formControlName="as_prepared_per_serving_amount">
                             <div *ngIf="formErrors.as_prepared_per_serving_amount" class="errorMessages">
                                 <span class="textPosition"> {{formErrors.as_prepared_per_serving_amount}}</span>
                             </div>
                         </div>
                         <div class="form-group col-lg-4" *ngIf="listOfUnitOfMeasure">
                             <label for="asSoldUnitOfMeasure">Per Serving Unit of Measure (As prepared)</label>
-                            <select class="form-control" id="asSoldUnitOfMeasure" formControlName="as_prepared_unit_of_measure">
+                            <select class="form-control" id="asSoldUnitOfMeasure"  [required]="requiredFieldUnitOfMeasureAsPrepared" (ngModelChange)="validateUnitOfMeasureAsPrepared($event)" formControlName="as_prepared_unit_of_measure">
 
                                 <option value="" selected>Per Serving Unit of Measure (As prepared)</option>
 
@@ -383,6 +390,10 @@
                                 <option *ngFor="let unitOfMeasure of listOfUnitOfMeasure;let i = index" [value]="unitOfMeasure">{{unitOfMeasure}}</option>
 
                             </select>
+                            <div *ngIf="formErrors.as_prepared_unit_of_measure" class="errorMessages">
+                                <span class="textPosition"> {{formErrors.as_prepared_unit_of_measure}}</span>
+                            </div>
+                            
                         </div>
                         <div class="form-group col-lg-4">
                             <label for="calculated">calculated?</label>

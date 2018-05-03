@@ -91,7 +91,7 @@ export class EditLabelComponent implements OnChanges {
             other_package_statements: this.packageData.other_package_statements,
             suggested_directions: this.packageData.suggested_directions,
             ingredients: this.packageData.ingredients,
-            multi_part_flag: this.packageData.multi_part_flag,
+            multi_part_flag: (this.packageData.multi_part_flag == null?"":this.packageData.multi_part_flag),
             nutrition_fact_table: this.packageData.nutrition_fact_table,
             as_prepared_per_serving_amount: this.packageData.as_prepared_per_serving_amount,
             as_prepared_unit_of_measure: this.packageData.as_prepared_unit_of_measure,
@@ -104,17 +104,17 @@ export class EditLabelComponent implements OnChanges {
             package_product_description: this.packageData.package_product_description,
             package_collection_date: this.packageData.package_collection_date,
             number_of_units: this.packageData.number_of_units,
-            informed_dining_program: this.packageData.informed_dining_program,
+            informed_dining_program: (this.packageData.informed_dining_program == null?"":this.packageData.informed_dining_program),
             nft_last_update_date: this.packageData.nft_last_update_date,
             product_grouping: this.packageData.product_grouping,
-            child_item: this.packageData.child_item,
+            child_item: (this.packageData.child_item == null?"":this.packageData.child_item),
             classification_number: this.packageData.classification_number,
             classification_name: this.packageData.classification_name,
             nielsen_item_rank: this.packageData.nielsen_item_rank,
             nutrient_claims: this.packageData.nutrient_claims,
             package_nielsen_category: this.packageData.package_nielsen_category,
             common_household_measure: this.packageData.common_household_measure,
-            calculated: this.packageData.calculated
+            calculated: (this.packageData.calculated == null?"":this.packageData.calculated)
 
 
 
@@ -142,7 +142,7 @@ export class EditLabelComponent implements OnChanges {
             other_package_statements: '',
             suggested_directions: '',
             ingredients: '',
-            multi_part_flag: null,
+            multi_part_flag: "",
             nutrition_fact_table: '',
             as_prepared_per_serving_amount: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             as_prepared_unit_of_measure: '',
@@ -155,19 +155,19 @@ export class EditLabelComponent implements OnChanges {
             package_product_description: '',
             package_collection_date: ['', [Validators.required]],
             number_of_units: [null, [Validators.pattern('\\d+')]],
-            informed_dining_program: null,
+            informed_dining_program: "",
             nft_last_update_date: '',
             product_grouping: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            child_item: null,
-            classification_number: null,
-            classification_name: '',
+            child_item: "",
+            classification_number: "",
+            classification_name: "",
             nielsen_item_rank: ['', [
                 Validators.pattern('\\d+')
             ]],
             nutrient_claims: '',
             package_nielsen_category: '',
             common_household_measure: '',
-            calculated: null
+            calculated: ""
 
         });
 
@@ -350,12 +350,20 @@ export class EditLabelComponent implements OnChanges {
 
     setClassificationName(n: String) {
 
-        var index = this.listOfClass.findIndex(function (item, i) {
-            return item.classification_name === n;
-        });
+        if (n != null && n != "") {
 
-        if (this.labelForm.controls['classification_number'].value != this.listOfClass[index]['classification_number']) {
-            this.labelForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']);
+            var index = this.listOfClass.findIndex(function (item, i) {
+                return item.classification_name === n;
+            });
+
+            if (this.labelForm.controls['classification_number'].value != this.listOfClass[index]['classification_number']) {
+                this.labelForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']);
+            }
+        } else {
+            if (this.labelForm.controls['classification_name'].value != null && this.labelForm.controls['classification_name'].value != "") {
+                this.labelForm.controls['classification_number'].patchValue("");
+
+            }
         }
 
     }
@@ -363,12 +371,20 @@ export class EditLabelComponent implements OnChanges {
 
     callAlex(n: String) {
 
-        var index = this.listOfClass.findIndex(function (item, i) {
-            return item.classification_number === n;
-        });
+        if (n != null && n != "") {
+            var index = this.listOfClass.findIndex(function (item, i) {
+                return item.classification_number === n;
+            });
 
-        if (this.labelForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']) {
-            this.labelForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']);
+            if (this.labelForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']) {
+                this.labelForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']);
+            }
+        } else {
+
+            if (this.labelForm.controls['classification_number'].value != null && this.labelForm.controls['classification_number'].value!= "") {
+                this.labelForm.controls['classification_name'].patchValue("");
+
+            }
         }
 
     }

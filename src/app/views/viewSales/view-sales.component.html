@@ -1,167 +1,174 @@
-
-
-
 <div class="container" *ngIf="salesData">
-        <div style="margin-bottom:10px">
-                
-                <h2 >Sales Details</h2>
+    <div style="margin-bottom:10px">
+
+        <h2>Sales Details</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+
+
+            <button class="btn btn-default" (click)="callViewProduct()" style="margin-top:0px">View Product</button>
         </div>
-<div class="row">
-  <div class="col-md-6">
-    
 
-    <button class="btn btn-default" (click)="callViewProduct()" style="margin-top:0px">View Product</button>
-</div>
+        <div class="col-md-6" style="text-align: right">
 
-<div class="col-md-6" style="text-align: right" >
-
-<button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Sales</button>
-<button class="btn btn-default" (click)="callEdit()" [disabled]="submitted">Edit Sales</button>
-<button class="btn btn-default" (click)="callRelink()" [disabled]="submitted">Relink Sales</button>
+            <button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Sales</button>
+            <button class="btn btn-default" (click)="callEdit()" [disabled]="submitted">Edit Sales</button>
+            <button class="btn btn-default" (click)="callRelink()" [disabled]="submitted">Relink Sales</button>
 
 
-</div>
-</div>
+        </div>
+    </div>
+    <dl class="dl-horizontal">
+        <dt>Sales UPC</dt>
+        <dd>{{salesData.sales_upc}}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>Sales Description</dt>
+        <dd>{{salesData.sales_description}}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>Sales Brand</dt>
+        <dd>{{salesData.sales_brand}}</dd>
+    </dl>
 
 
-
-<table style="width:100%; margin-top:10px;">
-    <tr>
-        <th>Sales UPC</th>
-        <td>{{salesData.sales_upc}}</td>
-    </tr>
-    <tr>
-        <th>Sales Description</th>
-        <td>{{salesData.sales_description}}</td>
-    </tr>
+    <table style="width:100%; margin-top:10px;">
         <tr>
-        <th>Sales Brand</th>
-        <td>{{salesData.sales_brand}}</td>
-    </tr>
+            <th>Sales UPC</th>
+            <td>{{salesData.sales_upc}}</td>
+        </tr>
         <tr>
-        <th>Sales Manufacturer</th>
-        <td>{{salesData.sales_manufacturer}}</td>
-    </tr>
+            <th>Sales Description</th>
+            <td>{{salesData.sales_description}}</td>
+        </tr>
         <tr>
-        <th>Sales Year</th>
-        <td>{{salesData.sales_year}}</td>
-    </tr>
+            <th>Sales Brand</th>
+            <td>{{salesData.sales_brand}}</td>
+        </tr>
         <tr>
-        <th>Sales Comment</th>
-        <td>{{salesData.sales_comment}}</td>
-    </tr>
-
+            <th>Sales Manufacturer</th>
+            <td>{{salesData.sales_manufacturer}}</td>
+        </tr>
         <tr>
-        <th>Nielsen Category</th>
-        <td>{{salesData.nielsen_category}}</td>
-    </tr>
+            <th>Sales Year</th>
+            <td>{{salesData.sales_year}}</td>
+        </tr>
         <tr>
-        <th>Classification Number</th>
-        <td>{{salesData.classification_number}}</td>
-    </tr>
+            <th>Sales Comment</th>
+            <td>{{salesData.sales_comment}}</td>
+        </tr>
 
         <tr>
-        <th>Classification Type</th>
-        <td>{{salesData.classification_type}}</td>
-    </tr>
-    <tr>
-        <th>Kilo volume</th>
-        <td>{{salesData.kilo_volume}}</td>
-    </tr>
-    <tr>
-        <th>Dollar volume</th>
-        <td>${{salesData.dollar_volume}}</td>
-    </tr>
+            <th>Nielsen Category</th>
+            <td>{{salesData.nielsen_category}}</td>
+        </tr>
         <tr>
-        <th>Dollar Share</th>
-        <td>{{salesData.dollar_share}}</td>
-    </tr>
-        <tr>
-        <th>Dollar rank</th>
-        <td>{{salesData.dollar_rank}}</td>
-    </tr>
-        <tr>
-        <th>Dollar volume % change</th>
-        <td>{{salesData.dollar_volume_percentage_change}}</td>
-    </tr>
-        <tr>
-        <th>Kilo volume % change</th>
-        <td>{{salesData.kilo_volume_percentage_change}}</td>
-    </tr>
-        <tr>
-        <th>Dollar volume total</th>
-        <td>${{salesData.dollar_volume_total}}</td>
-    </tr>
+            <th>Classification Number</th>
+            <td>{{salesData.classification_number}}</td>
+        </tr>
 
         <tr>
-        <th>Kilo volume total</th>
-        <td>{{salesData.kilo_volume_total}}</td>
-    </tr>
+            <th>Classification Type</th>
+            <td>{{salesData.classification_type}}</td>
+        </tr>
         <tr>
-        <th>Kilo share </th>
-        <td>{{salesData.kilo_share}}</td>
-    </tr>
+            <th>Kilo volume</th>
+            <td>{{salesData.kilo_volume}}</td>
+        </tr>
+        <tr>
+            <th>Dollar volume</th>
+            <td>${{salesData.dollar_volume}}</td>
+        </tr>
+        <tr>
+            <th>Dollar Share</th>
+            <td>{{salesData.dollar_share}}</td>
+        </tr>
+        <tr>
+            <th>Dollar rank</th>
+            <td>{{salesData.dollar_rank}}</td>
+        </tr>
+        <tr>
+            <th>Dollar volume % change</th>
+            <td>{{salesData.dollar_volume_percentage_change}}</td>
+        </tr>
+        <tr>
+            <th>Kilo volume % change</th>
+            <td>{{salesData.kilo_volume_percentage_change}}</td>
+        </tr>
+        <tr>
+            <th>Dollar volume total</th>
+            <td>${{salesData.dollar_volume_total}}</td>
+        </tr>
 
-
-            <tr>
-        <th>Kilo rank</th>
-        <td>{{salesData.kilo_volume_rank}}</td>
-    </tr>
-     <tr>
-        <th>Average retail price</th>
-        <td>${{salesData.average_retail_price}}</td>
-    </tr>
-    <tr>
-        <th>Average ac dist</th>
-        <td>{{salesData.average_ac_dist}}</td>
-    </tr>
-    <tr>
-        <th>Source</th>
-        <td>{{salesData.sales_source}}</td>
-    </tr>
         <tr>
-        <th>Product grouping</th>
-        <td>{{salesData.product_grouping}}</td>
-    </tr>
+            <th>Kilo volume total</th>
+            <td>{{salesData.kilo_volume_total}}</td>
+        </tr>
         <tr>
-        <th>Cluster number</th>
-        <td>{{salesData.cluster_number}}</td>
-    </tr>
-        <tr>
-        <th>Number of units</th>
-        <td>{{salesData.number_of_units}}</td>
-    </tr>
-        <tr>
-        <th>Control label flag?</th>
-        <td>{{salesData.control_label_flag}}</td>
-    </tr>
+            <th>Kilo share </th>
+            <td>{{salesData.kilo_share}}</td>
+        </tr>
 
 
         <tr>
-        <th>Collection date</th>
-        <td>{{salesData.sales_collection_date}}</td>
-    </tr>
-    <tr>
-        <th>Creation date</th>
-        <td>{{salesData.creation_date}}</td>
-    </tr>
+            <th>Kilo rank</th>
+            <td>{{salesData.kilo_volume_rank}}</td>
+        </tr>
         <tr>
-        <th>Last edit date</th>
-        <td>{{salesData.last_edit_date}}</td>
-    </tr>
+            <th>Average retail price</th>
+            <td>${{salesData.average_retail_price}}</td>
+        </tr>
         <tr>
-        <th>Edited by</th>
-        <td>{{salesData.edited_by}}</td>
-    </tr>
-  </table>
+            <th>Average ac dist</th>
+            <td>{{salesData.average_ac_dist}}</td>
+        </tr>
+        <tr>
+            <th>Source</th>
+            <td>{{salesData.sales_source}}</td>
+        </tr>
+        <tr>
+            <th>Product grouping</th>
+            <td>{{salesData.product_grouping}}</td>
+        </tr>
+        <tr>
+            <th>Cluster number</th>
+            <td>{{salesData.cluster_number}}</td>
+        </tr>
+        <tr>
+            <th>Number of units</th>
+            <td>{{salesData.number_of_units}}</td>
+        </tr>
+        <tr>
+            <th>Control label flag?</th>
+            <td>{{salesData.control_label_flag}}</td>
+        </tr>
 
 
-  
+        <tr>
+            <th>Collection date</th>
+            <td>{{salesData.sales_collection_date}}</td>
+        </tr>
+        <tr>
+            <th>Creation date</th>
+            <td>{{salesData.creation_date}}</td>
+        </tr>
+        <tr>
+            <th>Last edit date</th>
+            <td>{{salesData.last_edit_date}}</td>
+        </tr>
+        <tr>
+            <th>Edited by</th>
+            <td>{{salesData.edited_by}}</td>
+        </tr>
+    </table>
+
+
+
 
 
 </div>
 
 <confirm-box [flag]="flag"></confirm-box>
-<modal-box [modalType]="type"
-            (fireBack)="responseFromModal($event)">
-            </modal-box>
+<modal-box [modalType]="type" (fireBack)="responseFromModal($event)">
+</modal-box>

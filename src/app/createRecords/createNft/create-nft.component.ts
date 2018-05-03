@@ -108,7 +108,6 @@ export class CreateNftComponent implements OnChanges {
     this.nftListArray = this.preparenftFieldsInput();
     this.submitted = true;
     this.isLoading = true;
-    console.log("listtooo", this.nftListArray);
     this.flag = null
     this.createRecordService.createNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
       const {id, message, status} = response;

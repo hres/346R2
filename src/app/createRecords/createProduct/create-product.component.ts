@@ -53,7 +53,6 @@ export class CreateProductComponent implements OnChanges {
             this.listOfClass = data.dataList;
             this.restaurantTypes = response[1].dataList;
             this.types = response[2].dataList;
-            console.log(this.listOfClass[0]['classification_name'], "is the class number")
 
 
 
