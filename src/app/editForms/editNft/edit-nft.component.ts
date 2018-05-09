@@ -41,6 +41,7 @@ export class EditNftComponent implements OnChanges {
     formValid: boolean = true;
     invalidInputDailyValue: string = null;
     nftAsSold:  nftFields[];
+    nftValues:  nftFields[];
     flagNft: any = null;
 
 
@@ -66,11 +67,15 @@ export class EditNftComponent implements OnChanges {
                console.log("flag",this.route.snapshot.paramMap.get('flag'));
                this.flagNft = this.route.snapshot.paramMap.get('flag') == 'true' ? 'true': (this.route.snapshot.paramMap.get('flag') =='false'? 'false':null );
                 const {dataList} = response[0];
-                //const cl = response;
                 this.responseComponentName = dataList;
                 console.log("response",dataList)
                 this.listOfUnitOfMeasure = response[1].dataList;
-                this.nftAsSold = response[2].nft;
+                this.nftValues = response[2].nft;
+                this.nftValues.forEach(function(element){
+                    element.unit_of_measure = element.unit_of_measure==null?"":element.unit_of_measure;
+                });
+                // this.nftAsSold = response[2].nft;
+                this.nftAsSold = this.nftValues;
                 console.log("response",this.nftAsSold);
 
                 this.ngOnChanges();
@@ -91,7 +96,6 @@ export class EditNftComponent implements OnChanges {
             secretComponents: this.fb.array([])
 
         });
-       // this.setComponents(this.nftAsSold?this.nftAsSold: null );
     }
 
     ngOnChanges() {
@@ -118,33 +122,37 @@ export class EditNftComponent implements OnChanges {
     }
 
     onSubmit() {
+
         this.nftListArray = this.preparenftFieldsInput();
+        console.log(this.nameChangeLog, "is the length of the array");
+
+        // if(!this.validate(this.nftListArray.nft)){ 
+        //     console.log("failed", this.nftListArray);
+        //     return;
+
+        // }
         this.submitted = true;
         this.isLoading = true;
-        console.log("listtooo", this.nftListArray);
         this.flag = null
         this.editRecordService.updateNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
-            const {id, message, status} = response;
 
+            const {id, message, status} = response;
+            console.log("here is the response", response);
             if (status === 803) {
                 this.flag = 2;
                 this.errorMessage = "Missing mandatory fields";
                 this.submitted = false;
             } else if (status === 804) {
-                //Invalid input fields
                 this.errorMessage = "Invalid input fields";
                 this.flag = 2;
                 this.submitted = false;
-
-                // console.log("Here 203",data.dataList);
             } else if (status === 205) {
+
                 this.flag = 2;
                 this.errorMessage = "Can't create a record with no argument provided";
                 this.submitted = false;
 
-                //console.log("Here 204",data.dataList);
             } else if (status === 200) {
-                // this.flag = 1;
                 this.flag = 1;
                 setTimeout(() => {
                     this.router.navigate(['/view-package', this.nftListArray.package_id]);
@@ -166,12 +174,96 @@ export class EditNftComponent implements OnChanges {
 
         });;
     }
+    validate(nft: nftFields[]): boolean{
+        const nameControl = this.nftForm.get('secretComponents');
+        console.log("MMM",  nameControl.value);
+        this.nameChangeLog = [];
+        let valid: boolean = true;
+        nft.forEach(
+        
+            (element: any) => {
+
+                this.errorMessage = null;
+               
+                this.missingName = null;
+                this.duplicateEntries = null;
+                this.invalidInput = null;
+                this.formValid = true;
+                this.invalidInputDailyValue = null;
+
+                //return all components' name 
+                var valueArr =  nameControl.value.map((item: any) => item.name);
+
+                //return all of the components that are not undefined     
+                //the filter method creates a new array with elments that pass the test implemented by 
+                //the provided function
+                valueArr = valueArr.filter(function (n: any) { return n != undefined });
+
+                //the some method tests whether at least one element in the array passes the test 
+                //implemented by the provided function
+                var isDuplicate = valueArr.some(function (item: any, idx: number) {
+
+                    return valueArr.indexOf(item) != idx
+                });
+
+                if (isDuplicate) {
+                    this.duplicateEntries = "One or more components have been selected more than once";
+                    this.formValid = false;
+                }
+                        var ree = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
+
+
+
+               
+                    // console.log("top",element.name, element.amount, element.unit_of_measure);
+
+                    if (element.name != null && element.name != "") {
+
+                        if ((ree.test(element.amount)) 
+                            && (element.unit_of_measure == ""   || element.unit_of_measure==null  || element.unit_of_measure==undefined)) 
+                          {
+                            this.nameChangeLog.push(element.name);
+                            this.formValid = false;
+                            this.errorMessage = "not null";
+                             console.log("faild on: ",element.name, element.amount, element.unit_of_measure);
+
+                             valid = false;
+                            //element.amount == null || element.amount == "" ||element.amount == undefined
+                        }else if(((!ree.test(element.amount)) && element.amount != 0)
+                          
+                        && (element.unit_of_measure != "" &&  element.unit_of_measure != null && element.unit_of_measure != undefined)){
+
+                                 console.log("failed on: ",element.name, element.amount, element.unit_of_measure);
+                                this.nameChangeLog.push(element.name);
+                            this.formValid = false;
+                            this.errorMessage = "not null";
+                            valid =  false;
+    
+                        }
+                        else {
+                            // console.log("bottom",element.name, element.amount, element.unit_of_measure);
+                            
+                        }
+
+
+                    } else {
+                        this.missingName = "Missing component's name in one or more fields";
+                        this.formValid = false;
+                    }
+
+
+             
+
+
+            }
+        );
+        console.log("valid?", valid);
+        return valid;
+    }
 
     preparenftFieldsInput(): nftList {
         const formModel = this.nftForm.value;
 
-        console.log("on save", formModel);
-        // deep copy of form model lairs
                         var reg = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
 
         const componentsDeepCopy: nftFields[] = formModel.secretComponents.map(
@@ -209,120 +301,93 @@ export class EditNftComponent implements OnChanges {
         this.secretComponents.removeAt(i)
 
     }
-
     logNameChange() {
         const nameControl = this.nftForm.get('secretComponents');
-
+    
         // nameControl.value.forEach(function (element : any)  {
         //   if((element.amount!= "" && element.unit_of_measure == "") ||(element.amount== "" && element.unit_of_measure != "")){
         //     this.errorMessage = element.name;
         //   }
         //   console.log("oyesooo", element.name, element.amount)
         // });
-
+    
         nameControl.valueChanges.forEach(
-            
-
-            (value: any) => {
-                console.log("its changing");
-                this.fat = 0;
-                this.sumOfAllFat = 0;
-                this.errorMessage = null;
-                this.nameChangeLog = [];
-                this.missingName = null;
-                this.duplicateEntries = null;
-                this.invalidInput = null;
-                this.fatExeeced = null;
-                this.fibre = 0;
-                this.totalFibre = 0;
-                this.formValid = true;
-                this.fibreExeeced = null;
-                this.invalidInputDailyValue = null;
-
-
-                //Will return an array containing all of the names
-                var valueArr = value.map((item: any) => item.name);
-
-                valueArr = valueArr.filter(function (n: any) { return n != undefined });
-
-                var isDuplicate = valueArr.some(function (item: any, idx: number) {
-
-                    return valueArr.indexOf(item) != idx
-                });
-                if (isDuplicate) {
-                    this.duplicateEntries = "One or more components have been selected more than once";
-                    this.formValid = false;
-                }
-                        var ree = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
-
-                value.forEach((element: any) => {
-
-                    if (element.name != null && element.name != "") {
-                        // console.log("name ",element.name,"amount: ", element.amount, "unit of measure",element.unit_of_measure);
-                        if (( (ree.test(element.amount)) && (element.unit_of_measure == "" || element.unit_of_measure ==undefined  || element.unit_of_measure==null)) || ((!ree.test(element.amount)) && (element.unit_of_measure != "" ||  element.unit_of_measure !=null || element.unit_of_measure !=undefined))) {
-                            console.log("amount: ", element.amount, "unit",element.unit_of_measure );
-                            this.nameChangeLog.push(element.name);
-                            this.formValid = false;
-                            this.errorMessage = "not null";
-                        }
-                        ///^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/.test(this.value);
-                        var re = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
-                        if (element.amount != null && element.amount.length && !re.test(element.amount)) {
-                            this.invalidInput = element.name;
-                            this.formValid = false;
-                        }
-                        if (element.daily_value != null && element.daily_value.length && !re.test(element.daily_value)) {
-                            this.invalidInputDailyValue = element.name;
-                            this.formValid = false;
-                        }
-                        //Sum all fats
-                        //               sumOfAllFat: number = 0;
-                        // duplicateEntries: string = null; 
-
-
-                    } else {
-                        this.missingName = "Missing component's name in one or more fields";
-                        this.formValid = false;
-                    }
-
-
-                    // if (element.name === 'Fat') {
-                    //     this.fat = (element.amount.length && re.test(element.amount) ? parseFloat(element.amount) : 0);
-                    // }
-                    // if (element.name === 'Saturated + Trans Fat' || element.name === 'Saturated Fat' || element.name === 'Trans Fat' || element.name === 'Polyunsaturated Fat'
-                    //     || element.name === 'Omega-6 Polyunsaturated Fat' || element.name === 'Omega-3 Polyunsaturated Fat' || element.name === 'Monounsaturated Fat') {
-
-                    //     this.sumOfAllFat += (element.amount.length && re.test(element.amount) ? parseFloat(element.amount) : 0);
-
-
-                    // }
-
-                    // if (element.name === 'Fibre') {
-                    //     this.fibre = (element.amount.length && re.test(element.amount) ? parseFloat(element.amount) : 0);
-                    // }
-
-                    // if (element.name === 'Soluble Fibre' || element.name === 'Insoluble Fibre') {
-
-                    //     this.totalFibre += (element.amount.length && re.test(element.amount) ? parseFloat(element.amount) : 0);
-
-
-                    // }
-                });
-
-                // if (this.sumOfAllFat > this.fat) {
-
-                //     this.fatExeeced = "Sum of all fats should not exceed total fat";
-                //     this.formValid = false;
-                // }
-
-                // if (this.totalFibre > this.fibre) {
-
-                //     this.fibreExeeced = "Sum of all fibres should not exceed total fibre";
-                //     this.formValid = false;
-                // }
+    
+          (value: any) => {
+            this.fat = 0;
+            this.sumOfAllFat = 0;
+            this.errorMessage = null;
+            this.nameChangeLog = [];
+            this.missingName = null;
+            this.duplicateEntries = null;
+            this.invalidInput = null;
+            this.fatExeeced = null;
+            this.fibre = 0;
+            this.totalFibre = 0;
+            this.formValid = true;
+            this.fibreExeeced = null;
+            this.invalidInputDailyValue = null;
+    
+    
+            //Will return an array containing all of the names
+            var valueArr = value.map((item: any) => item.name);
+    
+            valueArr = valueArr.filter(function (n: any) { return n != undefined });
+    
+            var isDuplicate = valueArr.some(function (item: any, idx: number) {
+    
+              return valueArr.indexOf(item) != idx
+            });
+            if (isDuplicate) {
+              this.duplicateEntries = "One or more components have been selected more than once";
+              this.formValid = false;
             }
+    
+            value.forEach((element: any) => {
+    
+              if (element.name != null && element.name != "") {
+    
+                if ((
+                    (
+                    (element.amount !== "" && element.amount !== null) || element.amount===0) 
+                    && (element.unit_of_measure === "" ||  element.unit_of_measure === null ||  element.unit_of_measure === undefined)) 
+                    || 
+                    ( (element.amount === "" || element.amount === null || element.amount === undefined) && element.amount!==0  
+                     && (element.unit_of_measure !== "" || element.unit_of_measure ===null || element.unit_of_measure ===undefined )) ) {
+    
+                  this.nameChangeLog.push(element.name);
+                  this.formValid = false;
+                  this.errorMessage = "not null";
+                }
+                ///^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/.test(this.value);
+                var re = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
+                if (!re.test(element.amount) && element.amount != 0 && element.amount !== "" && element.amount !== null) {
+                  this.invalidInput = element.name;
+                  this.formValid = false;
+                }
+                if (!re.test(element.daily_value) && element.daily_value!= 0 && element.daily_value !== "" && element.daily_value !== null) {
+                  this.invalidInputDailyValue = element.name;
+                  this.formValid = false;
+                }
+                //Sum all fats
+                //               sumOfAllFat: number = 0;
+                // duplicateEntries: string = null; 
+    
+    
+              } else {
+                this.missingName = "Missing component's name in one or more fields";
+                this.formValid = false;
+              }
+    
+    
+
+    
+            });
+    
+
+          }
         );
-    }
+      }
 
 
 }

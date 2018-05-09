@@ -20,6 +20,14 @@ import { EditRecordService } from '../../services/edit-records.service';
 })
 export class EditLabelComponent implements OnChanges {
 
+    requiredField: boolean = false;
+    requiredFieldOther: boolean = false;
+
+    requiredFieldAmountAsSold: boolean = false;
+    requiredFieldUnitOfMeasure: boolean = false;
+
+    requiredFieldAmountAsPrepared: boolean = false;
+    requiredFieldUnitOfMeasureAsPrepared: boolean = false;
 
 
     date_input: any;
@@ -134,7 +142,7 @@ export class EditLabelComponent implements OnChanges {
             package_brand: '',
             package_manufacturer: '',
             package_country: '',
-            package_size: '',
+            package_size: ['',Validators.pattern('^[0-9]+([,.][0-9]+)?$')],
             package_size_unit_of_measure: '',
             storage_type: '',
             storage_statements: '',
@@ -274,7 +282,10 @@ export class EditLabelComponent implements OnChanges {
         'nielsen_item_rank': '',
         'package_source': '',
         'package_collection_date': '',
-        'package_size': ''
+        'package_size': '',
+        'package_size_unit_of_measure':'',
+        'as_sold_unit_of_measure':'',
+        'as_prepared_unit_of_measure':''
 
     }
 
@@ -309,10 +320,24 @@ export class EditLabelComponent implements OnChanges {
             'required': 'Source is required'
         },
         'package_collection_date': {
-            'required': 'Source is required'
+            'required': 'Collection date is required'
         },
         'package_size': {
-            'required': 'Source is required'
+            'pattern': 'Must be a number',
+            'required': 'Net quantity is required'
+        },
+        'as_prepared_per_serving_amount':{
+            'pattern': 'Must be a number',
+            'required':'Per Serving Amount (As prepared) is required' 
+        },
+        'package_size_unit_of_measure':{ 
+            'required':'Net quantity unit of measure is required'
+        },
+        'as_sold_unit_of_measure':{
+            'required':'Per Serving Unit of Measure (As sold) is required' 
+        },
+        'as_prepared_unit_of_measure':{
+            'required':'Per Serving Unit of Measure (As prepared) is required' 
         }
 
     }
@@ -387,6 +412,133 @@ export class EditLabelComponent implements OnChanges {
             }
         }
 
+    }
+
+    validateNetQuantiy(value : any){
+
+
+
+        if((value != null && value!= "") && (this.labelForm.get('package_size').value == "" || this.labelForm.get('package_size').value ==null)){
+            this.requiredField = true;
+            this.requiredFieldOther = false;
+        }else if((value == null || value == "") && (this.labelForm.get('package_size').value != "" && this.labelForm.get('package_size').value !=null)){
+            
+           
+            this.requiredField = false;
+            this.requiredFieldOther = true;
+        }else if((value == null ||  value== "")&& (this.labelForm.get('package_size').value == "" || this.labelForm.get('package_size').value ==null)){
+
+            this.requiredField = false;
+            this.requiredFieldOther = false;
+        }
+        
+        else{
+            this.requiredField = true;
+            this.requiredFieldOther = false;
+        }
+    }
+
+    validateNetQuantiyOther(value : any){
+
+        if((value != null && value!= "") && (this.labelForm.get('package_size_unit_of_measure').value == "" || this.labelForm.get('package_size_unit_of_measure').value ==null)){
+            this.requiredField = false;
+            this.requiredFieldOther = true;
+        }else if((value == null || value == "") && (this.labelForm.get('package_size_unit_of_measure').value != "" && this.labelForm.get('package_size_unit_of_measure').value !=null)){
+                    
+            this.requiredField = true;
+            this.requiredFieldOther = false;
+        }else if((value == null ||  value== "")&& (this.labelForm.get('package_size_unit_of_measure').value == "" || this.labelForm.get('package_size_unit_of_measure').value ==null)){
+
+            this.requiredField = false;
+            this.requiredFieldOther = false;
+        }
+        else{
+            this.requiredField = false;
+            this.requiredFieldOther = true;
+        }
+
+    }
+
+    validatePerServingAmountAsSold(value: any){
+
+        if((value != null && value!= "") && (this.labelForm.get('as_sold_unit_of_measure').value == "" || this.labelForm.get('as_sold_unit_of_measure').value ==null)){
+            this.requiredFieldAmountAsSold = false;
+            this.requiredFieldUnitOfMeasure = true;
+        }else if((value == null || value == "") && (this.labelForm.get('as_sold_unit_of_measure').value != "" && this.labelForm.get('as_sold_unit_of_measure').value !=null)){
+                    
+            this.requiredFieldAmountAsSold = true;
+            this.requiredFieldUnitOfMeasure = false;
+        }else if((value == null ||  value== "")&& (this.labelForm.get('as_sold_unit_of_measure').value == "" || this.labelForm.get('as_sold_unit_of_measure').value ==null)){
+
+            this.requiredFieldAmountAsSold = false;
+            this.requiredFieldUnitOfMeasure = false;
+        }
+        else{
+            this.requiredFieldAmountAsSold = false;
+            this.requiredFieldUnitOfMeasure = true;
+        }
+
+    }
+
+    validateUnitOfMeasureAsSold(value: any){
+       
+        if((value != null && value!= "") && (this.labelForm.get('as_sold_per_serving_amount').value == "" || this.labelForm.get('as_sold_per_serving_amount').value ==null)){
+           
+            this.requiredFieldAmountAsSold = true;
+            this.requiredFieldUnitOfMeasure = false;
+        }else if((value == null || value == "") && (this.labelForm.get('as_sold_per_serving_amount').value != "" && this.labelForm.get('as_sold_per_serving_amount').value !=null)){
+                    
+            this.requiredFieldAmountAsSold = false;
+            this.requiredFieldUnitOfMeasure = true;
+
+        }else if((value == null ||  value== "")&& (this.labelForm.get('as_sold_per_serving_amount').value == "" || this.labelForm.get('as_sold_per_serving_amount').value ==null)){
+
+            this.requiredFieldAmountAsSold = false;
+            this.requiredFieldUnitOfMeasure = false;
+        }
+        else{
+            this.requiredFieldAmountAsSold = true;
+            this.requiredFieldUnitOfMeasure = false;
+        }
+    }
+
+    validatePerServingAmountAsPrepared(value: any){
+
+        if((value != null && value!= "") && (this.labelForm.get('as_prepared_unit_of_measure').value == "" || this.labelForm.get('as_prepared_unit_of_measure').value ==null)){
+            this.requiredFieldAmountAsPrepared = false;
+            this.requiredFieldUnitOfMeasureAsPrepared = true;
+        }else if((value == null || value == "") && (this.labelForm.get('as_prepared_unit_of_measure').value != "" && this.labelForm.get('as_prepared_unit_of_measure').value !=null)){
+                    
+            this.requiredFieldAmountAsPrepared = true;
+            this.requiredFieldUnitOfMeasureAsPrepared = false;
+        }else if((value == null ||  value== "")&& (this.labelForm.get('as_prepared_unit_of_measure').value == "" || this.labelForm.get('as_prepared_unit_of_measure').value ==null)){
+
+            this.requiredFieldAmountAsPrepared = false;
+            this.requiredFieldUnitOfMeasureAsPrepared = false;
+        }
+        else{
+            this.requiredFieldAmountAsPrepared = false;
+            this.requiredFieldUnitOfMeasureAsPrepared = true;
+        }
+    }
+
+    validateUnitOfMeasureAsPrepared(value: any){
+        if((value != null && value!= "") && (this.labelForm.get('as_prepared_per_serving_amount').value == "" || this.labelForm.get('as_prepared_per_serving_amount').value ==null)){
+            this.requiredFieldAmountAsPrepared = true;
+            this.requiredFieldUnitOfMeasureAsPrepared = false;
+        }else if((value == null || value == "") && (this.labelForm.get('as_prepared_per_serving_amount').value != "" && this.labelForm.get('as_prepared_per_serving_amount').value !=null)){
+                    
+            this.requiredFieldAmountAsPrepared = false;
+            this.requiredFieldUnitOfMeasureAsPrepared = true;
+        }else if((value == null ||  value== "")&& (this.labelForm.get('as_prepared_per_serving_amount').value == "" || this.labelForm.get('as_prepared_per_serving_amount').value ==null)){
+
+            this.requiredFieldAmountAsPrepared = false;
+            this.requiredFieldUnitOfMeasureAsPrepared = false;
+        }
+        else{
+            this.requiredFieldAmountAsPrepared = true;
+            this.requiredFieldUnitOfMeasureAsPrepared = false;
+        }
     }
 
 

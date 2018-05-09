@@ -261,40 +261,12 @@ export class CreateNftComponent implements OnChanges {
           }
 
 
-          if (element.name === 'Fat') {
-            this.fat = (element.amount.length && re.test(element.amount) ? parseFloat(element.amount) : 0);
-          }
-          if (element.name === 'Saturated + Trans Fat' || element.name === 'Saturated Fat' || element.name === 'Trans Fat' || element.name === 'Polyunsaturated Fat'
-            || element.name === 'Omega-6 Polyunsaturated Fat' || element.name === 'Omega-3 Polyunsaturated Fat' || element.name === 'Monounsaturated Fat') {
-
-            this.sumOfAllFat += (element.amount.length && re.test(element.amount) ? parseFloat(element.amount) : 0);
 
 
-          }
 
-          if (element.name === 'Fibre') {
-            this.fibre = (element.amount.length && re.test(element.amount) ? parseFloat(element.amount) : 0);
-          }
-
-          if (element.name === 'Soluble Fibre' || element.name === 'Insoluble Fibre') {
-
-            this.totalFibre += (element.amount.length && re.test(element.amount) ? parseFloat(element.amount) : 0);
-
-
-          }
         });
 
-        if (this.sumOfAllFat > this.fat) {
 
-          this.fatExeeced = "Sum of all fats should not exceed total fat";
-          this.formValid = false;
-        }
-
-        if (this.totalFibre > this.fibre) {
-
-          this.fibreExeeced = "Sum of all fibres should not exceed total fibre";
-          this.formValid = false;
-        }
       }
     );
   }

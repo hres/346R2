@@ -461,10 +461,10 @@ export type labelViewFields = {
 }
 
 export class nftFields {
-    name = '';
+    name = "";
     amount = "";
-    unit_of_measure = null;
-    daily_value = '';
+    unit_of_measure = "";
+    daily_value = "";
 
 }
 
@@ -477,29 +477,29 @@ export class nftList {
 }
 
 export const nftFieldsList : nftFields[] = [
-    {name: 'Energy', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Energy KJ', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Fat', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Saturated Fat', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Trans Fat', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Omega-6 Polyunsaturated Fat', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Omega-3 Polyunsaturated Fat', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Carbohydrates', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Fibre', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Soluble Fibre', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Insoluble Fibre', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Sugar', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Sugar Alcohols', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Starch', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Protein', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Cholesterol', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Sodium', amount: '', unit_of_measure: '', daily_value:''},
-    {name: 'Saturated + Trans Fat', amount: '', unit_of_measure: null, daily_value:''}
+    {name: 'Energy', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Energy KJ', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Fat', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Saturated Fat', amount: "", unit_of_measure:"", daily_value:''},
+    {name: 'Trans Fat', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Omega-6 Polyunsaturated Fat', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Omega-3 Polyunsaturated Fat', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Carbohydrates', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Fibre', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Soluble Fibre', amount: "", unit_of_measure:"", daily_value:''},
+    {name: 'Insoluble Fibre', amount: "", unit_of_measure:"", daily_value:''},
+    {name: 'Sugar', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Sugar Alcohols', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Starch', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Protein', amount: "", unit_of_measure: "", daily_value:''},
+    {name: 'Cholesterol', amount: "", unit_of_measure:"", daily_value:''},
+    {name: 'Sodium', amount: "", unit_of_measure: '', daily_value:''},
+    {name: 'Saturated + Trans Fat', amount: "", unit_of_measure:"", daily_value:''}
    
    
 ]
 export const nftFieldsListAsPrepared : nftFields[] = [
-    {name: 'Energy', amount: '', unit_of_measure: '', daily_value:''}
+    {name: 'Energy', amount: "", unit_of_measure: "", daily_value:''}
 
    
    
@@ -508,9 +508,6 @@ export const nftFieldsListAsPrepared : nftFields[] = [
 
 export type ResponseComponentName = {
 
-        // dataList: {
-        //     component_name: string
-        // }[],
         dataList: Components[]
 };
 export type Components = {
