@@ -218,7 +218,6 @@ export class CreateNftComponent implements OnChanges {
 
         //Will return an array containing all of the names
         var valueArr = value.map((item: any) => item.name);
-
         valueArr = valueArr.filter(function (n: any) { return n != undefined });
 
         var isDuplicate = valueArr.some(function (item: any, idx: number) {

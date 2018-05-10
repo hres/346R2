@@ -92,7 +92,7 @@ export class EditLabelComponent implements OnChanges {
             package_manufacturer: this.packageData.package_manufacturer,
             package_country: this.packageData.package_country,
             package_size: this.packageData.package_size,
-            package_size_unit_of_measure: this.packageData.package_size_unit_of_measure,
+            package_size_unit_of_measure: (this.packageData.package_size_unit_of_measure==null?"":this.packageData.package_size_unit_of_measure),
             storage_type: this.packageData.storage_type,
             storage_statements: this.packageData.storage_statements,
             health_claims: this.packageData.health_claims,
@@ -102,9 +102,9 @@ export class EditLabelComponent implements OnChanges {
             multi_part_flag: (this.packageData.multi_part_flag == null?"":this.packageData.multi_part_flag),
             nutrition_fact_table: this.packageData.nutrition_fact_table,
             as_prepared_per_serving_amount: this.packageData.as_prepared_per_serving_amount,
-            as_prepared_unit_of_measure: this.packageData.as_prepared_unit_of_measure,
+            as_prepared_unit_of_measure: (this.packageData.as_prepared_unit_of_measure==null?"":this.packageData.as_prepared_unit_of_measure),
             as_sold_per_serving_amount: this.packageData.as_sold_per_serving_amount,
-            as_sold_unit_of_measure: this.packageData.as_sold_unit_of_measure,
+            as_sold_unit_of_measure: (this.packageData.as_sold_unit_of_measure==null?"":this.packageData.as_sold_unit_of_measure),
             as_prepared_per_serving_amount_in_grams: this.packageData.as_prepared_per_serving_amount_in_grams,
             as_sold_per_serving_amount_in_grams: this.packageData.as_sold_per_serving_amount_in_grams,
             package_comment: this.packageData.package_comment,
@@ -116,8 +116,8 @@ export class EditLabelComponent implements OnChanges {
             nft_last_update_date: this.packageData.nft_last_update_date,
             product_grouping: this.packageData.product_grouping,
             child_item: (this.packageData.child_item == null?"":this.packageData.child_item),
-            classification_number: this.packageData.classification_number,
-            classification_name: this.packageData.classification_name,
+            classification_number: (this.packageData.classification_number==null?"":this.packageData.classification_number),
+            classification_name: (this.packageData.classification_name==null?"":this.packageData.classification_name),
             nielsen_item_rank: this.packageData.nielsen_item_rank,
             nutrient_claims: this.packageData.nutrient_claims,
             package_nielsen_category: this.packageData.package_nielsen_category,
@@ -302,7 +302,8 @@ export class EditLabelComponent implements OnChanges {
             'pattern': 'Must be a number'
         },
         'as_sold_per_serving_amount': {
-            'pattern': 'Must be a number'
+            'pattern': 'Must be a number',
+            'required':'Per Serving Amount (as sold) is required'
         },
         'as_sold_per_serving_amount_in_grams': {
             'pattern': 'Must be a number'

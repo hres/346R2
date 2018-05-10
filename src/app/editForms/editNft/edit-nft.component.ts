@@ -64,19 +64,15 @@ export class EditNftComponent implements OnChanges {
 
                 this.getRecordService.getNftSoldRecordsEdit(param.get('id'), param.get('flag'))).subscribe(
             response => {
-               console.log("flag",this.route.snapshot.paramMap.get('flag'));
                this.flagNft = this.route.snapshot.paramMap.get('flag') == 'true' ? 'true': (this.route.snapshot.paramMap.get('flag') =='false'? 'false':null );
                 const {dataList} = response[0];
                 this.responseComponentName = dataList;
-                console.log("response",dataList)
                 this.listOfUnitOfMeasure = response[1].dataList;
                 this.nftValues = response[2].nft;
                 this.nftValues.forEach(function(element){
                     element.unit_of_measure = element.unit_of_measure==null?"":element.unit_of_measure;
                 });
-                // this.nftAsSold = response[2].nft;
                 this.nftAsSold = this.nftValues;
-                console.log("response",this.nftAsSold);
 
                 this.ngOnChanges();
         this.logNameChange();
@@ -87,9 +83,7 @@ export class EditNftComponent implements OnChanges {
 
 
     }
-    check() {
-        console.log("yes")
-    }
+
     createForm() {
         this.nftForm = this.fb.group({
 
@@ -124,20 +118,13 @@ export class EditNftComponent implements OnChanges {
     onSubmit() {
 
         this.nftListArray = this.preparenftFieldsInput();
-        console.log(this.nameChangeLog, "is the length of the array");
-
-        // if(!this.validate(this.nftListArray.nft)){ 
-        //     console.log("failed", this.nftListArray);
-        //     return;
-
-        // }
+    
         this.submitted = true;
         this.isLoading = true;
         this.flag = null
         this.editRecordService.updateNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
 
             const {id, message, status} = response;
-            console.log("here is the response", response);
             if (status === 803) {
                 this.flag = 2;
                 this.errorMessage = "Missing mandatory fields";
@@ -174,92 +161,7 @@ export class EditNftComponent implements OnChanges {
 
         });;
     }
-    validate(nft: nftFields[]): boolean{
-        const nameControl = this.nftForm.get('secretComponents');
-        console.log("MMM",  nameControl.value);
-        this.nameChangeLog = [];
-        let valid: boolean = true;
-        nft.forEach(
-        
-            (element: any) => {
 
-                this.errorMessage = null;
-               
-                this.missingName = null;
-                this.duplicateEntries = null;
-                this.invalidInput = null;
-                this.formValid = true;
-                this.invalidInputDailyValue = null;
-
-                //return all components' name 
-                var valueArr =  nameControl.value.map((item: any) => item.name);
-
-                //return all of the components that are not undefined     
-                //the filter method creates a new array with elments that pass the test implemented by 
-                //the provided function
-                valueArr = valueArr.filter(function (n: any) { return n != undefined });
-
-                //the some method tests whether at least one element in the array passes the test 
-                //implemented by the provided function
-                var isDuplicate = valueArr.some(function (item: any, idx: number) {
-
-                    return valueArr.indexOf(item) != idx
-                });
-
-                if (isDuplicate) {
-                    this.duplicateEntries = "One or more components have been selected more than once";
-                    this.formValid = false;
-                }
-                        var ree = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
-
-
-
-               
-                    // console.log("top",element.name, element.amount, element.unit_of_measure);
-
-                    if (element.name != null && element.name != "") {
-
-                        if ((ree.test(element.amount)) 
-                            && (element.unit_of_measure == ""   || element.unit_of_measure==null  || element.unit_of_measure==undefined)) 
-                          {
-                            this.nameChangeLog.push(element.name);
-                            this.formValid = false;
-                            this.errorMessage = "not null";
-                             console.log("faild on: ",element.name, element.amount, element.unit_of_measure);
-
-                             valid = false;
-                            //element.amount == null || element.amount == "" ||element.amount == undefined
-                        }else if(((!ree.test(element.amount)) && element.amount != 0)
-                          
-                        && (element.unit_of_measure != "" &&  element.unit_of_measure != null && element.unit_of_measure != undefined)){
-
-                                 console.log("failed on: ",element.name, element.amount, element.unit_of_measure);
-                                this.nameChangeLog.push(element.name);
-                            this.formValid = false;
-                            this.errorMessage = "not null";
-                            valid =  false;
-    
-                        }
-                        else {
-                            // console.log("bottom",element.name, element.amount, element.unit_of_measure);
-                            
-                        }
-
-
-                    } else {
-                        this.missingName = "Missing component's name in one or more fields";
-                        this.formValid = false;
-                    }
-
-
-             
-
-
-            }
-        );
-        console.log("valid?", valid);
-        return valid;
-    }
 
     preparenftFieldsInput(): nftList {
         const formModel = this.nftForm.value;
@@ -304,12 +206,6 @@ export class EditNftComponent implements OnChanges {
     logNameChange() {
         const nameControl = this.nftForm.get('secretComponents');
     
-        // nameControl.value.forEach(function (element : any)  {
-        //   if((element.amount!= "" && element.unit_of_measure == "") ||(element.amount== "" && element.unit_of_measure != "")){
-        //     this.errorMessage = element.name;
-        //   }
-        //   console.log("oyesooo", element.name, element.amount)
-        // });
     
         nameControl.valueChanges.forEach(
     
@@ -328,12 +224,10 @@ export class EditNftComponent implements OnChanges {
             this.fibreExeeced = null;
             this.invalidInputDailyValue = null;
     
-    
-            //Will return an array containing all of the names
-            var valueArr = value.map((item: any) => item.name);
+                var valueArr = value.map((item: any) => item.name);
     
             valueArr = valueArr.filter(function (n: any) { return n != undefined });
-    
+
             var isDuplicate = valueArr.some(function (item: any, idx: number) {
     
               return valueArr.indexOf(item) != idx
@@ -359,7 +253,6 @@ export class EditNftComponent implements OnChanges {
                   this.formValid = false;
                   this.errorMessage = "not null";
                 }
-                ///^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/.test(this.value);
                 var re = new RegExp("^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$");
                 if (!re.test(element.amount) && element.amount != 0 && element.amount !== "" && element.amount !== null) {
                   this.invalidInput = element.name;
@@ -369,9 +262,7 @@ export class EditNftComponent implements OnChanges {
                   this.invalidInputDailyValue = element.name;
                   this.formValid = false;
                 }
-                //Sum all fats
-                //               sumOfAllFat: number = 0;
-                // duplicateEntries: string = null; 
+
     
     
               } else {

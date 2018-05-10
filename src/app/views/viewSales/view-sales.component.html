@@ -19,151 +19,153 @@
 
         </div>
     </div>
-    <dl class="dl-horizontal">
-        <dt>Sales UPC</dt>
-        <dd>{{salesData.sales_upc}}</dd>
-    </dl>
-    <dl class="dl-horizontal">
-        <dt>Sales Description</dt>
-        <dd>{{salesData.sales_description}}</dd>
-    </dl>
-    <dl class="dl-horizontal">
-        <dt>Sales Brand</dt>
-        <dd>{{salesData.sales_brand}}</dd>
-    </dl>
 
 
-    <table style="width:100%; margin-top:10px;">
-        <tr>
-            <th>Sales UPC</th>
-            <td>{{salesData.sales_upc}}</td>
-        </tr>
-        <tr>
-            <th>Sales Description</th>
-            <td>{{salesData.sales_description}}</td>
-        </tr>
-        <tr>
-            <th>Sales Brand</th>
-            <td>{{salesData.sales_brand}}</td>
-        </tr>
-        <tr>
-            <th>Sales Manufacturer</th>
-            <td>{{salesData.sales_manufacturer}}</td>
-        </tr>
-        <tr>
-            <th>Sales Year</th>
-            <td>{{salesData.sales_year}}</td>
-        </tr>
-        <tr>
-            <th>Sales Comment</th>
-            <td>{{salesData.sales_comment}}</td>
-        </tr>
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a data-toggle="tab" href="#home">Tab 1</a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#menu1">Tab 2</a>
+        </li>
+   
+    </ul>
 
-        <tr>
-            <th>Nielsen Category</th>
-            <td>{{salesData.nielsen_category}}</td>
-        </tr>
-        <tr>
-            <th>Classification Number</th>
-            <td>{{salesData.classification_number}}</td>
-        </tr>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <!--Start of the first tab-->
+            <dl class="dl-horizontal">
+                <dt>Sales UPC</dt>
+                <dd>{{salesData.sales_upc}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Sales Description</dt>
+                <dd>{{salesData.sales_description}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Control Label Flag?</dt>
+                <dd>{{salesData.control_label_flag}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Dollar Volume</dt>
+                <dd>{{salesData.dollar_volume}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Dollar Share</dt>
+                <dd>{{salesData.dollar_share}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Dollar Rank</dt>
+                <dd>{{salesData.dollar_rank}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Dollar Volume % Change</dt>
+                <dd>{{salesData.dollar_volume_percentage_change}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Kilo Volume</dt>
+                <dd>{{salesData.kilo_volume}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Kilo Share</dt>
+                <dd>{{salesData.kilo_share}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Kilo Rank</dt>
+                <dd>{{salesData.kilo_volume_rank}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Kilo Volume % Change</dt>
+                <dd>{{salesData.kilo_volume_percentage_change}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Average AC Dist</dt>
+                <dd>{{salesData.average_ac_dist}}</dd>
+            </dl>
 
-        <tr>
-            <th>Classification Type</th>
-            <td>{{salesData.classification_type}}</td>
-        </tr>
-        <tr>
-            <th>Kilo volume</th>
-            <td>{{salesData.kilo_volume}}</td>
-        </tr>
-        <tr>
-            <th>Dollar volume</th>
-            <td>${{salesData.dollar_volume}}</td>
-        </tr>
-        <tr>
-            <th>Dollar Share</th>
-            <td>{{salesData.dollar_share}}</td>
-        </tr>
-        <tr>
-            <th>Dollar rank</th>
-            <td>{{salesData.dollar_rank}}</td>
-        </tr>
-        <tr>
-            <th>Dollar volume % change</th>
-            <td>{{salesData.dollar_volume_percentage_change}}</td>
-        </tr>
-        <tr>
-            <th>Kilo volume % change</th>
-            <td>{{salesData.kilo_volume_percentage_change}}</td>
-        </tr>
-        <tr>
-            <th>Dollar volume total</th>
-            <td>${{salesData.dollar_volume_total}}</td>
-        </tr>
+            <dl class="dl-horizontal">
+                <dt>Average Retail Price</dt>
+                <dd>{{salesData.average_retail_price}}</dd>
+            </dl>
 
-        <tr>
-            <th>Kilo volume total</th>
-            <td>{{salesData.kilo_volume_total}}</td>
-        </tr>
-        <tr>
-            <th>Kilo share </th>
-            <td>{{salesData.kilo_share}}</td>
-        </tr>
+            <dl class="dl-horizontal">
+                <dt>Dollar Volume Total</dt>
+                <dd>{{salesData.dollar_volume_total}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Kilo Volume Total</dt>
+                <dd>{{salesData.kilo_volume_total}}</dd>
+            </dl>
+            <!--End of the first tab-->
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <!--Start of the second tab-->
+            <dl class="dl-horizontal">
+                    <dt>Nielsen Category</dt>
+                    <dd>{{salesData.nielsen_category}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Collection Date</dt>
+                <dd>{{salesData.sales_collection_date}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Sales Year</dt>
+                <dd>{{salesData.sales_year}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Source</dt>
+                <dd>{{salesData.sales_source}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Classification Number</dt>
+                <dd>{{salesData.classification_number}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Classification Type</dt>
+                <dd>{{salesData.classification_type}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Brand</dt>
+                <dd>{{salesData.sales_brand}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Manufacturer</dt>
+                <dd>{{salesData.sales_manufacturer}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Product Grouping</dt>
+                <dd>{{salesData.product_grouping}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Cluster Number</dt>
+                <dd>{{salesData.cluster_number}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Number of Units</dt>
+                <dd>{{salesData.number_of_units}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Comment</dt>
+                <dd>{{salesData.sales_comment}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                    <dt>Creation Date</dt>
+                    <dd>{{salesData.creation_date}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                    <dt>Last Edit Date</dt>
+                    <dd>{{salesData.last_edit_date}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                    <dt>Edited By</dt>
+                    <dd>{{salesData.edited_by}}</dd>
+            </dl>
+    
+            <!--End of the second tab-->
 
+        </div>
 
-        <tr>
-            <th>Kilo rank</th>
-            <td>{{salesData.kilo_volume_rank}}</td>
-        </tr>
-        <tr>
-            <th>Average retail price</th>
-            <td>${{salesData.average_retail_price}}</td>
-        </tr>
-        <tr>
-            <th>Average ac dist</th>
-            <td>{{salesData.average_ac_dist}}</td>
-        </tr>
-        <tr>
-            <th>Source</th>
-            <td>{{salesData.sales_source}}</td>
-        </tr>
-        <tr>
-            <th>Product grouping</th>
-            <td>{{salesData.product_grouping}}</td>
-        </tr>
-        <tr>
-            <th>Cluster number</th>
-            <td>{{salesData.cluster_number}}</td>
-        </tr>
-        <tr>
-            <th>Number of units</th>
-            <td>{{salesData.number_of_units}}</td>
-        </tr>
-        <tr>
-            <th>Control label flag?</th>
-            <td>{{salesData.control_label_flag}}</td>
-        </tr>
-
-
-        <tr>
-            <th>Collection date</th>
-            <td>{{salesData.sales_collection_date}}</td>
-        </tr>
-        <tr>
-            <th>Creation date</th>
-            <td>{{salesData.creation_date}}</td>
-        </tr>
-        <tr>
-            <th>Last edit date</th>
-            <td>{{salesData.last_edit_date}}</td>
-        </tr>
-        <tr>
-            <th>Edited by</th>
-            <td>{{salesData.edited_by}}</td>
-        </tr>
-    </table>
-
-
+    </div>
 
 
 
