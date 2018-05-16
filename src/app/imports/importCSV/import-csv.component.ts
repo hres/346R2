@@ -6,6 +6,14 @@ import { CreateRecordService } from '../../services/create-records.service';
 import { saveAs } from 'file-saver/FileSaver';
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, ResponseContentType } from '@angular/http';
+import 'rxjs/add/operator/retry';
+import 'rxjs/add/operator/retryWhen';
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/scan';
+import 'rxjs/add/operator/timeout';
+
+
+
 
 
 export const saveFile = (blobContent: Blob, fileName: string) => {
@@ -82,9 +90,23 @@ export class ImportCsvComponent {
         this.submitted = true;
         this.isLoading = true
         var importValue = this.importCsvFileForm.controls['type'].value == '1'? 'importMarketShare': (this.importCsvFileForm.controls['type'].value == '2'?'importLabel':null);
-        console.log("value: ",importValue);
-
+        
+  console.log("en effet");
+  console.log(formData ,options);
         this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/${importValue}`, formData, options)
+            .timeout(5000)
+                .retryWhen(errors => {
+                    return errors.scan(Attemptcount =>{
+                            Attemptcount++;
+                        if(Attemptcount < 4){
+                            console.log('Attemp ',Attemptcount);
+                            return Attemptcount;
+
+                        }else{
+                            throw errors;
+                        }
+                    },0).delay(5000)
+                })
                 .map( r => r.blob())
                 .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {
