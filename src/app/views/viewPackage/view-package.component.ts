@@ -211,9 +211,11 @@ returnImage(imagePath : string){
 }
 
 updateImageGalery(imageList: ImageModel []){
+    this.flag = null;
     if(imageList== null){
      this.listOfImages = this.imagesBackUp;
      this.showForm = false;
+     this.flag = 2;
        
     }else{
     this.listOfImages = imageList;

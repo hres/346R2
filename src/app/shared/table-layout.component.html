@@ -3,11 +3,11 @@
 <div *ngIf="records && !isRelink" style="overflow-x: auto;">
 <table class="table">
     <thead>
-      <tr>
+      <tr role="row">
         
-            <th  class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" 
-            (click)="sortCol(i)" 
-            [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}">{{ map.header }}                       
+            <th rowspan="1" colspan="1" tabindex="0" class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" 
+             (keypress)="sortCol(i)" (click)="sortCol(i)"
+            [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}"> {{ map.header }}                       
                        <span class="iconGroup" *ngIf="(i === selectedRow && i===index) || (i===index && index===0)" [ngClass]="{'toggle': flag && i === selectedRow , 'toggle2':!flag  && i === selectedRow} ">⇑</span>                  
             </th>
           
@@ -46,10 +46,10 @@
 <div *ngIf="isRelink" style="overflow-x: auto;">
     <table class="table">
         <thead>
-          <tr>
+          <tr role="row">
             
-                <th  class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" 
-                (click)="sortCol(i)" 
+                <th rowspan="1" colspan="1" class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" 
+                (keypress)="sortCol(i)" (click)="sortCol(i)"
                 [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}">{{ map.header }}                       
                            <span class="iconGroup" *ngIf="(i === selectedRow && i===index) || (i===index && index===0)" [ngClass]="{'toggle': flag && i === selectedRow , 'toggle2':!flag  && i === selectedRow} ">⇑</span>                  
                 </th>

@@ -7,7 +7,8 @@ import { MatIconModule} from '@angular/material/icon';
 
 //  import {MdCardModule,MdProgressBarModule, MdInputModule, MdButtonModule,MdSidenavModule, MdSelectModule, MdSliderModule,MdNativeDateModule, MdRadioModule, MdDatepickerModule} from '@angular/material'
 import { BrowserModule } from '@angular/platform-browser';
-import { AddClassificationModule }  from '../classification-center/add-classification/add-classification.module'; 
+import { AddClassificationModule }  from '../classification-center/add-classification/add-classification.module';
+import { AutofocusDirective } from './autofocus.directive'; 
 
 @NgModule({
     imports:[
@@ -28,7 +29,8 @@ MatIconModule,
          BrowserAnimationsModule
     ],
     declarations:[
-    ModalBoxComponent
+    ModalBoxComponent,
+    AutofocusDirective
     ],
     exports: [
         ModalBoxComponent

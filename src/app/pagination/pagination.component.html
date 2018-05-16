@@ -1,14 +1,14 @@
 <div class="alignPagination" *ngIf="numberOfRecords >0">
     <div *ngIf="page">
 
-        <div class="custom custom2" *ngIf="pageOffset>0" (click)="DecreaseOffset()">
-            <span> ⇚ Previous</span>
+        <div class="custom custom2" *ngIf="pageOffset>0"   tabindex="0" (click)="DecreaseOffset()" (keypress)="DecreaseOffset()">
+            <span > ⇚ Previous</span>
         </div>
 
         <ng-container *ngFor="let pg of page; let i = index">
 
-            <div class="custom" (click)="updateOffset(pg)" [ngClass]="{'selected': pg === pageOffset}">
-                <span>{{pg}} </span>
+            <div class="custom"  tabindex="0"   (click)="updateOffset(pg)" (keypress)="updateOffset(pg)" [ngClass]="{'selected': pg === pageOffset}">
+                <span  >{{pg}} </span>
             </div>
         </ng-container>
 
@@ -16,8 +16,8 @@
 
 
         <ng-container *ngIf="pageOffset < numberOfPage -1">
-            <div class="custom custom2" (click)="Increaseffset()">
-                <span>Next ⇛</span>
+            <div class="custom custom2"  (click)="Increaseffset()" (keypress)="Increaseffset()"  tabindex="0">
+                <span  >Next ⇛</span>
             </div>
         </ng-container>
 

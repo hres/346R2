@@ -54,3 +54,10 @@ th{
     -webkit-border-top-right-radius:5px;
     -webkit-border-top-left-radius:5px;
 }
+.dl-horizontal{
+    margin: 0;
+}
+.dl-horizontal td{
+    width: 260px;
+}
+

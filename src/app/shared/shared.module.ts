@@ -5,7 +5,7 @@ import { FormatCellPipe } from './format-cell.pipe';
 import {StyleCellDirective} from './style-cell.directive'
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule} from '@angular/router'
-import {ConfirmBoxModule} from '../confirmbox/confirm-box.module'
+import {ConfirmBoxModule} from '../confirmbox/confirm-box.module';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import {ConfirmBoxModule} from '../confirmbox/confirm-box.module'
     declarations: [ 
     TableLayoutComponent,
     FormatCellPipe,
-    StyleCellDirective ],
+    StyleCellDirective
+     ],
     exports: [
         CommonModule, 
         TableLayoutComponent 

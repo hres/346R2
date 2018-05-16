@@ -43,8 +43,8 @@
   <div class="form-group col-lg-4" *ngIf="listOfClass">
     <label for="classification_number">Classification Number</label>
     <select class="form-control" id="classification_number" formControlName="classification_number">
-      <option value="" selected>Select a Classification Number</option>
-      <option *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
+      <option value="" selected tabindex="0">Select a Classification Number</option>
+      <option tabindex="0" *ngFor="let classifi of listOfClass;let i = index" [value]="classifi.classification_number">{{classifi.classification_number}}</option>
      
 
 <!--<option *ngFor="let class_number of Classification_number" [value] = "class_number">{{class_number}}</option>-->
