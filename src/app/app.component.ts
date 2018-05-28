@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import {SearchService} from './services/search.service';
-import {MatIconRegistry} from '@angular/material';
+// import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
@@ -10,7 +10,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class AppComponent  {
   list  = ["radiobutton"]
-  constructor(mdIconRegistry: MatIconRegistry) {
+  constructor() {
 
   }
 }

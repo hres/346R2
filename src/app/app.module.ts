@@ -113,13 +113,9 @@ import {AddImageModule} from './addImage/add-image.module'
     AppComponent
     
     ],
-  exports: [
-
-   
-  ],
    providers: [
         MatIconRegistry,
-        SearchService,
+     //   SearchService,
         CreateRecordService
     
 

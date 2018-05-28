@@ -4,6 +4,8 @@ import { nftFields, UofM, nftFieldsList, nftList,ResponseComponentName, Componen
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CreateRecordService } from '../../services/create-records.service';
 import { GetRecordService } from '../../services/getRecord.service';
+import 'rxjs/add/operator/finally';
+
 
 
 @Component({

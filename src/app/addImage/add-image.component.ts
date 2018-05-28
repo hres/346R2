@@ -46,7 +46,6 @@ export class AddImageComponent {
     submitted = false;
     serverDown: boolean = false;
     errorMessage: string = null;
-
     file: File;
     validFile: boolean;
     validSize: boolean;
@@ -98,7 +97,8 @@ export class AddImageComponent {
                 .subscribe (response => {
                     console.log("Here", response);
                     if(response.status == 222){
-                        console.log("yes dup")
+                        console.log("yes dup");
+
                         this.imagesList.emit(null);
                     }else{
                 this.imagesList.emit(response.dataList);

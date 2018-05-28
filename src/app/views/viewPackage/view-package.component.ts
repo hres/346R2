@@ -29,6 +29,7 @@ declare var $: any;
 export class ViewPackageComponent implements OnInit {
 
     flag: number;
+    flag_add_image: number;
     Ids: any;
     confirmDeleteImageTransation: number; 
     packageData: labelViewFields;
@@ -211,16 +212,20 @@ returnImage(imagePath : string){
 }
 
 updateImageGalery(imageList: ImageModel []){
-    this.flag = null;
+    console.log(imageList, "is the image list");
+    this.confirmDeleteImageTransation = null;
     if(imageList== null){
+        this.confirmDeleteImageTransation = 2;
      this.listOfImages = this.imagesBackUp;
      this.showForm = false;
-     this.flag = 2;
+   
        
     }else{
+        this.confirmDeleteImageTransation = 1;
     this.listOfImages = imageList;
     this.imagesBackUp = imageList;
     this.showForm = false;
+   
     }
 }
 confirmAction(id: any){
