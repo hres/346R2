@@ -9,7 +9,7 @@ import {AddImageRoutingModule} from './add-image-routing.module'
 
 import {RouterModule} from '@angular/router';
 import {ProgressSpinnerModule} from '../progressSpinner/progress-spinner.module'
-
+import {ConfirmBoxModule} from '../confirmbox/confirm-box.module'
 
 
 @NgModule({
@@ -20,7 +20,8 @@ MatProgressBarModule,
 AddImageRoutingModule,
 ProgressSpinnerModule,
 BrowserModule,
-PaginationModelModule
+PaginationModelModule,
+ConfirmBoxModule
       
        ],
   declarations: [ 

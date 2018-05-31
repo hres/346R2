@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, Output,EventEmitter, ViewChild} from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
@@ -19,7 +19,7 @@ export const getFileNameFromResponseContentDisposition = (res: Response) => {
     const contentDisposition = res.headers.get('content-disposition') || '';
     const matches = /filename=([^;]+)/ig.exec(contentDisposition);
     const fileName = (matches[1] || 'untitled').trim();
-   
+
     return fileName;
 };
 
@@ -37,10 +37,10 @@ export type ImageModel = {
 @Injectable()
 export class AddImageComponent {
 
-    @Input() flag: number;
-    @Input() id : number;
-    @Output() imagesList = new EventEmitter<ImageModel []>();
-    listReturn : string[];
+    flag: number;
+    @Input() id: number;
+    @Output() imagesList = new EventEmitter<ImageModel[]>();
+    listReturn: string[];
     addImageForm: FormGroup;
     isLoading: boolean = false;
     submitted = false;
@@ -55,7 +55,7 @@ export class AddImageComponent {
     @ViewChild('fileInput') fileInput;
 
 
-    constructor(private fb: FormBuilder, private createRecordService: CreateRecordService,  private http: Http) {
+    constructor(private fb: FormBuilder, private createRecordService: CreateRecordService, private http: Http) {
         this.createForm();
     }
 
@@ -69,87 +69,91 @@ export class AddImageComponent {
     }
 
     onSubmit() {
-        
-       const options = new RequestOptions({responseType: ResponseContentType.Blob });
-      
-
-       let headers = new Headers();
-       headers.append('Accept', 'text/plain');
-      let fileBrowser = this.fileInput.nativeElement;
-       let formData:FormData = new FormData();
+        this.flag = null;
+        const options = new RequestOptions({ responseType: ResponseContentType.Blob });
 
 
-       if(fileBrowser.files.size < 1){
-        this.validFile = false;
-        this.errorMessage = "Must select at least one file";
-       }
+        let headers = new Headers();
+        headers.append('Accept', 'text/plain');
+        let fileBrowser = this.fileInput.nativeElement;
+        let formData: FormData = new FormData();
 
-       
+
+        if (fileBrowser.files.size < 1) {
+            this.validFile = false;
+            this.errorMessage = "Must select at least one file";
+        }
+
+
         formData.append('image', fileBrowser.files[0], fileBrowser.files[0].name);
 
-       
+
         this.submitted = true;
         this.isLoading = true
 
-        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/addImage/${this.id}`, formData )
-                .map( r =>r.json())
-                .finally(() => {this.isLoading = false; this.submitted = false;})
-                .subscribe (response => {
-                    console.log("Here", response);
-                    if(response.status == 222){
-                        console.log("yes dup");
+        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/addImage/${this.id}`, formData)
+            .map(r => r.json())
+            .finally(() => { this.isLoading = false; this.submitted = false; })
+            .subscribe(response => {
+                console.log("Here", response);
+        if (response.status == 200) {
+                    this.flag = 1;
+                    //setTimeout(()=>{this.flag = 1;},3000)
 
-                        this.imagesList.emit(null);
-                    }else{
-                this.imagesList.emit(response.dataList);
-                    }
+                    setTimeout(() => { this.imagesList.emit(response.dataList) }, 3000)
 
-            //  saveFile(response, "importImagesReport.txt");
-             this.addImageForm.controls['image'].setValue(null);
-        }
-        , (error) => {
-                this.errorMessage = "Can't access the server at this time";
-                this.serverDown = true;
+
+                } else {
+                    this.flag = 2;
+                    setTimeout(() => { this.imagesList.emit(null) }, 3000)
+                }
+
+                //  saveFile(response, "importImagesReport.txt");
                 this.addImageForm.controls['image'].setValue(null);
-                this.imagesList.emit(null);
-               
-            });
-           
+            }
+                , (error) => {
+                    this.errorMessage = "Can't access the server at this time";
+                    this.serverDown = true;
+                    this.addImageForm.controls['image'].setValue(null);
+                    this.imagesList.emit(null);
+
+                });
+
 
     }
 
-    downloadFile(data: Response){
+    downloadFile(data: Response) {
         var blob = new Blob([data], { type: 'text/plain' });
-        var url= window.URL.createObjectURL(blob);
+        var url = window.URL.createObjectURL(blob);
         window.open(url);
-      }
+    }
     validateFile(input: EventTarget) {
-        
+
         this.validFile = true;
         this.validSize = true;
         this.errorMessage = null;
 
 
-        let eventObj: MSInputMethodContext = <MSInputMethodContext> input;
-        let target: HTMLInputElement = <HTMLInputElement> eventObj.target;
+        let eventObj: MSInputMethodContext = <MSInputMethodContext>input;
+        let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
         let files: FileList = target.files;
-       
-       
+
+
         this.file = files[0];
         let totalSize = 0;
-        for(var i = 0; i < files.length; i++){
+        for (var i = 0; i < files.length; i++) {
 
-            totalSize+=files[i].size;
+            totalSize += files[i].size;
 
         }
 
 
-}
-cancelAction(){
-    this.imagesList.emit(null);
-    
+    }
+    cancelAction() {
+        this.imagesList.emit(null);
 
-}
+
+    }
 
 
 
