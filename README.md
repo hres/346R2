@@ -77,4 +77,4 @@ npm install
 
 ## Build Sodium Monitoring Webapp
 
-Run `npm run-script build` to build the project. The build artifacts will be stored in the dist/ directory. Move the `contents` of this folder into your Apache server so that it is available at `/var/www/html/`
+Run `npm run-script build` to build the project. The build artifacts will be stored in the dist/ directory. Move the `contents` of this folder into your Apache server (`/var/www/html/`)
