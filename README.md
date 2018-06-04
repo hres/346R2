@@ -1,5 +1,9 @@
 # Sodium Monitoring Webapp
 This project is the user interface for the Sodium Monitoring IP346b initiative. It is an angular front end that interfaces with Java Rest services. 
+---
+Choose the appropriate branch for each environment being built. <br/>
+* `dev` for the development environment
+* `qa` for the QA environment (not available yet)
 
 ## This project requires the following. 
 
