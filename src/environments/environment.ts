@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl:'http://localhost:8080/fcdr-rest-service/rest/'
+  apiUrl:'http://192.168.187.128:8080/fcdr-rest-service/rest/'
   // apiUrl:process.env.NODE_API_ENV
 };
