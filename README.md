@@ -13,7 +13,9 @@ Choose the appropriate branch for each environment being built. <br/>
 ```
 
 ## Deploying this project requires
-```* Apache2```
+```
+* Apache2
+```
 ## Installing Apache2
 To apache2, run the following commands
 ```
