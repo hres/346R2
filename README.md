@@ -3,11 +3,11 @@ This project is the user interface for the Sodium Monitoring IP346b initiative. 
 
 ## This project requires the following. 
 
-`
-* Git
-* NodeJS
-* NPM (which is included in the nodejs package)
-* 
-`
-# Deploying this project requires
+```* Git
+   * NodeJS
+   * NPM (which is included in the nodejs package)
+```
+
+## Deploying this project requires
 * `Apache2`
+## Installing NodeJS 
