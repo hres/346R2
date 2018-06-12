@@ -8,7 +8,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "git-commit": "git add dist && git commit -m 'deployed'",
+    "git-push":"git push",
+    "commit-build":"git add dist && git commit -m \"added\" && git push",
+    "build-dist": "rm -rf dist & npm run build & npm run commit-build",
+    "deploy":"rm -rf dist && npm run build  && npm run git-commit && npm run git-push"
   },
   "private": true,
   "dependencies": {
