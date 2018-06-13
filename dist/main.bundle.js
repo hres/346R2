@@ -84,6 +84,7 @@ module.exports = "\n<div style=\"background-color:white; padding:20px; border:1p
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_file_saver_FileSaver__ = __webpack_require__("./node_modules/file-saver/FileSaver.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_file_saver_FileSaver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_file_saver_FileSaver__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -93,6 +94,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -115,6 +117,7 @@ var AddImageComponent = (function () {
         this.fb = fb;
         this.createRecordService = createRecordService;
         this.http = http;
+        this.apiUrl = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].apiUrl;
         this.imagesList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
         this.isLoading = false;
         this.submitted = false;
@@ -144,7 +147,7 @@ var AddImageComponent = (function () {
         formData.append('image', fileBrowser.files[0], fileBrowser.files[0].name);
         this.submitted = true;
         this.isLoading = true;
-        this.http.post("http://localhost:8080/fcdr-rest-service/rest/PackageService/addImage/" + this.id, formData)
+        this.http.post(this.apiUrl + ("PackageService/addImage/" + this.id), formData)
             .map(function (r) { return r.json(); })
             .finally(function () { _this.isLoading = false; _this.submitted = false; })
             .subscribe(function (response) {
@@ -7031,6 +7034,7 @@ module.exports = "\n<div style=\"background-color:white; padding:20px; border:1p
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_delay__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/delay.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_scan__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/scan.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_timeout__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/timeout.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7040,6 +7044,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -7068,6 +7073,7 @@ var ImportCsvComponent = (function () {
         this.fb = fb;
         this.createRecordService = createRecordService;
         this.http = http;
+        this.apiUrl = __WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].apiUrl;
         this.isLoading = false;
         this.submitted = false;
         this.serverDown = false;
@@ -7100,7 +7106,7 @@ var ImportCsvComponent = (function () {
         var importValue = this.importCsvFileForm.controls['type'].value == '1' ? 'importMarketShare' : (this.importCsvFileForm.controls['type'].value == '2' ? 'importLabel' : null);
         console.log("en effet");
         console.log(formData, options);
-        this.http.post("http://localhost:8080/fcdr-rest-service/rest/ImportService/" + importValue, formData, options)
+        this.http.post(this.apiUrl + ("ImportService/" + importValue), formData, options)
             .timeout(5000)
             .retryWhen(function (errors) {
             return errors.scan(function (Attemptcount) {
@@ -7344,6 +7350,7 @@ module.exports = "\n<div style=\"background-color:white; padding:20px; border:1p
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_file_saver_FileSaver__ = __webpack_require__("./node_modules/file-saver/FileSaver.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_file_saver_FileSaver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_file_saver_FileSaver__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7353,6 +7360,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -7377,6 +7385,7 @@ var ImportImagesComponent = (function () {
         this.fb = fb;
         this.createRecordService = createRecordService;
         this.http = http;
+        this.apiUrl = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].apiUrl;
         this.isLoading = false;
         this.submitted = false;
         this.serverDown = false;
@@ -7406,7 +7415,7 @@ var ImportImagesComponent = (function () {
         }
         this.submitted = true;
         this.isLoading = true;
-        this.http.post("http://localhost:8080/fcdr-rest-service/rest/ImportService/importImage", formData, options)
+        this.http.post(this.apiUrl + "ImportService/importImage", formData, options)
             .map(function (r) { return r.blob(); })
             .finally(function () { _this.isLoading = false; _this.submitted = false; })
             .subscribe(function (response) {
@@ -9202,6 +9211,7 @@ module.exports = "<div class=\"container\" *ngIf=\"packageData\">\n\n        <di
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_getRecord_service__ = __webpack_require__("./src/app/services/getRecord.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_delete_record_service__ = __webpack_require__("./src/app/services/delete-record.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9216,12 +9226,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ViewPackageComponent = (function () {
     function ViewPackageComponent(getRecordService, deleteRecordService, router, route) {
         this.getRecordService = getRecordService;
         this.deleteRecordService = deleteRecordService;
         this.router = router;
         this.route = route;
+        this.apiUrl = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].apiUrl;
         this.emptyField = null;
         this.submitted = false;
         this.idToRelink = null;
@@ -9343,7 +9355,8 @@ var ViewPackageComponent = (function () {
         this.router.navigate(['/viewproduct', this.packageData.product_id]);
     };
     ViewPackageComponent.prototype.returnImage = function (imagePath) {
-        return "http://localhost:8080/fcdr-rest-service/rest/PackageService/getLabelImages/" + imagePath;
+        //this.apiUrl +
+        return this.apiUrl + "PackageService/getLabelImages/" + imagePath;
     };
     ViewPackageComponent.prototype.updateImageGalery = function (imageList) {
         console.log(imageList, "is the image list");
@@ -10031,13 +10044,10 @@ var ViewSalesModule = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
+//change the url to match the qa url
 var environment = {
     production: false,
-    apiUrl: 'http://192.168.187.128:8080/fcdr-rest-service/rest/'
+    apiUrl: 'https://java-dev.hres.ca/fcdr-rest-service/rest/'
     // apiUrl:process.env.NODE_API_ENV
 };
 
