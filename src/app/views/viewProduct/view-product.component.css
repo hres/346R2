@@ -4,6 +4,7 @@ td, th {
 }
 th{
     text-align: left;
+    width: 200px;
 
 }
 tr:nth-child(odd){

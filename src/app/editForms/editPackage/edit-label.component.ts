@@ -134,7 +134,7 @@ export class EditLabelComponent implements OnChanges {
     createForm() {
 
         this.labelForm = this.fb.group({
-            package_description: ['', [Validators.required]],
+            package_description: ['', [Validators.required, Validators.pattern("\\s*\\S.*")]],
             package_upc: ['', [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                 Validators.required
@@ -159,7 +159,7 @@ export class EditLabelComponent implements OnChanges {
             as_prepared_per_serving_amount_in_grams: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             as_sold_per_serving_amount_in_grams: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             package_comment: '',
-            package_source: ['', [Validators.required]],
+            package_source: ['', [Validators.required, Validators.pattern("\\s*\\S.*")]],
             package_product_description: '',
             package_collection_date: ['', [Validators.required]],
             number_of_units: [null, [Validators.pattern('\\d+')]],
@@ -292,7 +292,8 @@ export class EditLabelComponent implements OnChanges {
     validationMessages = {
 
         'package_description': {
-            'required': 'Package description is required'
+            'required': 'Package description is required',
+            pattern: "Package description is required"
         },
         'package_upc': {
             'required': 'Label is required',
@@ -318,7 +319,8 @@ export class EditLabelComponent implements OnChanges {
             'pattern': 'Must be a number'
         },
         'package_source': {
-            'required': 'Source is required'
+            'required': 'Source is required',
+            pattern: 'Source is required'
         },
         'package_collection_date': {
             'required': 'Collection date is required'
@@ -363,7 +365,7 @@ export class EditLabelComponent implements OnChanges {
         this.packageData.number_of_units = this.packageData.number_of_units == "" ? null : this.packageData.number_of_units;
         this.packageData.informed_dining_program = this.packageData.informed_dining_program == "" ? null : this.packageData.informed_dining_program;
         this.packageData.product_grouping = this.packageData.product_grouping == "" ? null : this.packageData.product_grouping;
-        this.packageData.child_item = this.packageData.number_of_units == "" ? null : this.packageData.child_item;
+        this.packageData.child_item = this.packageData.child_item == "" ? null : this.packageData.child_item;
         this.packageData.calculated = this.packageData.calculated == "" ? null : this.packageData.calculated;
         this.packageData.nielsen_item_rank = this.packageData.nielsen_item_rank == "" ? null : this.packageData.nielsen_item_rank;
         this.packageData.package_size = this.packageData.package_size == "" ? null : this.packageData.package_size;

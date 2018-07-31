@@ -1,0 +1,7 @@
+{
+    "realm": "sodium-monitoring",
+    "auth-server-url": "http://192.168.187.128:8080/auth",
+    "ssl-required": "external",
+    "resource": "sodium-monitoring-webapp",
+    "public-client": true
+  }

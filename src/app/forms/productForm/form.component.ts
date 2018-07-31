@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from
 import { ColumnSetting } from '../../shared/layout.model'
 // import { PaginationComponent } from '../../pagination/pagination.component'
 // import { TableLayoutComponent } from '../../shared/table-layout.component'
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
 @Component({
     selector: 'form-comp',
     templateUrl: './form.component.html',
@@ -154,7 +155,7 @@ export class FormComponent implements OnChanges {
     }
     onSubmit() {
 
-
+        console.log("the full name is",KeycloakService.getUsername());
         this.setValues();
         // this.queryString = '?';
 
@@ -170,19 +171,16 @@ this.isLoading = true;
    
             if (status === 202) {
                 this.emptyField = message;
-                //console.log(message);
                 this.tableData = null;
             } else if (status === 203) {
 
                 this.noData = message;
 
                 this.tableData = null;
-                // console.log("Here 203",data.dataList);
             } else if (status === 204) {
                 this.noData = message;
 
                 this.tableData = null;
-            //console.log("Here 204",data.dataList);
             }else if (status === 205){
                 this.noData = message;
             }
@@ -191,7 +189,6 @@ this.isLoading = true;
                 this.emptyField = null;
                 this.count = data.count;
                 this.tableData = data.dataList;
-                console.log("Number of data",this.count);
 
 
                 for (var num = 0; num < this.settings.length; num++) {

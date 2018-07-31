@@ -90,7 +90,7 @@ export class CreateProductComponent implements OnChanges {
             product_brand: '',
             cnf_code: ['', [Validators.pattern('\\d+')]],
             cluster_number: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
-            product_description: ['', [Validators.required]],
+            product_description: ['', [Validators.required,  Validators.pattern("\\s*\\S.*")]],
             product_comment: '',
             restaurant_type: "",
             type: ""
@@ -131,9 +131,11 @@ export class CreateProductComponent implements OnChanges {
         this.isLoading = true;
         this.createRecordService.createProduct(JSON.stringify(this.product)).finally(() => this.isLoading = false).subscribe(response => {
             const { id, message, status } = response;
+            console.log(response);
 
             if (status === 803) {
                 //Mandatory fields missing
+                this.submitted = false;
                 this.errorMessage = "Missing mandatory fields";
             } else if (status === 804) {
                 //Invalid input fields
@@ -181,7 +183,8 @@ export class CreateProductComponent implements OnChanges {
     }
     validationMessages = {
         'product_description': {
-            'required': 'Description is required'
+            'required': 'Description is required',
+             pattern:"Description is required"
         },
         'cnf_code': {
             'pattern': 'Must be a digit'

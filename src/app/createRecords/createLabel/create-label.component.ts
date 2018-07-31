@@ -123,7 +123,7 @@ export class CreateLabelComponent implements OnChanges {
     createForm() {
 
         this.labelForm = this.fb.group({
-            package_description: ['', [Validators.required]],
+            package_description: ['', [Validators.required,  Validators.pattern("\\s*\\S.*")]],
             package_upc: ['', [
                 Validators.pattern('^[0-9]+([,.][0-9]+)?$'),
                 Validators.required
@@ -139,7 +139,7 @@ export class CreateLabelComponent implements OnChanges {
             other_package_statements: '',
             suggested_directions: '',
             ingredients: '',
-            multi_part_flag: "",
+            multi_part_flag: "false",
             nutrition_fact_table: '',
             as_prepared_per_serving_amount: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             as_prepared_unit_of_measure: '',
@@ -148,7 +148,7 @@ export class CreateLabelComponent implements OnChanges {
             as_prepared_per_serving_amount_in_grams: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             as_sold_per_serving_amount_in_grams: [null, [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             package_comment: '',
-            package_source: ['', [Validators.required]],
+            package_source: ['', [Validators.required,  Validators.pattern("\\s*\\S.*")]],
             package_product_description: '',
             package_collection_date: ['', [Validators.required]],
             number_of_units: [null, [Validators.pattern('\\d+')]],
@@ -280,7 +280,8 @@ export class CreateLabelComponent implements OnChanges {
     validationMessages = {
 
         'package_description': {
-            'required': 'Package description is required'
+            'required': 'Package description is required',
+            pattern:"Description is required"
         },
         'package_upc': {
             'required': 'Label is required',
@@ -306,7 +307,8 @@ export class CreateLabelComponent implements OnChanges {
             'pattern': 'Must be a number'
         },
         'package_source': {
-            'required': 'Source is required'
+            'required': 'Source is required',
+            pattern:"Source is required"
         },
         'package_collection_date': {
             'required': 'Collection date is required'
@@ -351,7 +353,7 @@ export class CreateLabelComponent implements OnChanges {
         this.labelField.number_of_units = this.labelField.number_of_units == "" ? null : this.labelField.number_of_units;
         this.labelField.informed_dining_program = this.labelField.informed_dining_program == "" ? null : this.labelField.informed_dining_program;
         this.labelField.product_grouping = this.labelField.product_grouping == "" ? null : this.labelField.product_grouping;
-        this.labelField.child_item = this.labelField.number_of_units == "" ? null : this.labelField.child_item;
+        this.labelField.child_item = this.labelField.child_item == "" ? null : this.labelField.child_item;
         this.labelField.calculated = this.labelField.calculated == "" ? null : this.labelField.calculated;
         this.labelField.nielsen_item_rank = this.labelField.nielsen_item_rank == "" ? null : this.labelField.nielsen_item_rank;
         this.labelField.package_size = this.labelField.package_size == "" ? null : this.labelField.package_size;

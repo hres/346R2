@@ -11,8 +11,7 @@ import 'rxjs/add/operator/retryWhen';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/scan';
 import 'rxjs/add/operator/timeout';
-
-
+import { environment } from '../../../environments/environment'
 
 
 
@@ -40,6 +39,7 @@ export const getFileNameFromResponseContentDisposition = (res: Response) => {
 })
 @Injectable()
 export class ImportCsvComponent {
+    apiUrl = environment.apiUrl;
 
     @Input() flag: number;
     importCsvFileForm: FormGroup;
@@ -77,6 +77,7 @@ export class ImportCsvComponent {
     onSubmit() {
         
        const options = new RequestOptions({responseType: ResponseContentType.Blob });
+   // const options = {};
        // const header =  new Headers({ 'Content-Type: 'multipart/form-data' });
       
 
@@ -90,39 +91,50 @@ export class ImportCsvComponent {
         this.submitted = true;
         this.isLoading = true
         var importValue = this.importCsvFileForm.controls['type'].value == '1'? 'importMarketShare': (this.importCsvFileForm.controls['type'].value == '2'?'importLabel':null);
-        
-  console.log("en effet");
-  console.log(formData ,options);
-        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/${importValue}`, formData, options)
-            .timeout(5000)
-                .retryWhen(errors => {
-                    return errors.scan(Attemptcount =>{
-                            Attemptcount++;
-                        if(Attemptcount < 4){
-                            console.log('Attemp ',Attemptcount);
-                            return Attemptcount;
+        const reader: FileReader = new FileReader();
 
-                        }else{
-                            throw errors;
-                        }
-                    },0).delay(5000)
-                })
-                .map( r => r.blob())
+
+        this.http.post(this.apiUrl+`ImportService/${importValue}`, formData, options)
+            // .timeout(5000)
+            //     .retryWhen(errors => {
+            //         return errors.scan(Attemptcount =>{
+            //                 Attemptcount++;
+            //             if(Attemptcount < 4){
+            //                 return Attemptcount;
+
+            //             }else{
+            //                 throw errors;
+            //             }
+            //         },0).delay(5000)
+            //     })
+                .map( r => {  return  r.blob();  })
                 .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {
-
-           //this.downloadFile(response);
-            //const fileName = getFileNameFromResponseContentDisposition(res );
-             saveFile(response, "importReport.txt");
+                  
+            saveFile(response, "importReport.txt");
              this.importCsvFileForm.controls['csv_file'].setValue(null);
              this.validateSize();
         }
-        , (error) => {
-                this.errorMessage = "Can't access the server at this time";
-                this.serverDown = true;
+        , (error: Response) => {
+            console.log("status: ",error.status);
+            if(error.status == 400){
+                this.errorMessage = "Failed uploading the file";
+            }else if(error.status == 406){
+
+                this.errorMessage = "Wrong file format";
+            }else{
+                this.errorMessage = "Unexpected error";
+            }
+               
+            //     console.log(error)
+            //    let body = JSON.parse(error["_body"]);
+            //    console.log("here 2", body.errorList[0].errorCode);             
+
+               // this.serverDown = true;
                 this.importCsvFileForm.controls['csv_file'].setValue(null);
                 this.validateSize();
-            });
+            }
+        );
            
 
     }
@@ -145,7 +157,7 @@ export class ImportCsvComponent {
         
         this.errorMessage = null;
         if(this.file == undefined) return;
-        if(this.file.type != "text/csv" || this.file.name.split('.').pop().toLowerCase() != 'csv'){
+        if(this.file.name.split('.').pop().toLowerCase() != 'csv'){
             this.validFile = false;
             this.errorMessage = "Must be a CSV file";
             return;

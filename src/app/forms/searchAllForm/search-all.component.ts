@@ -164,7 +164,7 @@ export class SearchAllComponent implements OnChanges {
             dollar_rank_from: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             dollar_rank_to: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             sales_comment: '',
-            label_upc: ['', [Validators.pattern('\\d+')]],
+            label_upc: ['', [Validators.pattern('^[0-9]+([,.][0-9]+)?$')]],
             label_description: '',
             label_source: '',
             label_ingredients: '',

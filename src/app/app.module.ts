@@ -68,8 +68,10 @@ import {CreateNftModule} from './createRecords/createNft/create-nft.module'
 import {ConfirmBoxModule} from './confirmbox/confirm-box.module';
 import {AddImageModule} from './addImage/add-image.module'
 
+import {KeycloakHttp, keycloakHttpFactory} from "./keycloak/keycloak.http";
+import {KeycloakService} from "./keycloak/keycloak.service";
 
-
+import {RequestOptions, XHRBackend} from "@angular/http";
 
 @NgModule({
   imports:      [ 
@@ -116,7 +118,13 @@ import {AddImageModule} from './addImage/add-image.module'
    providers: [
         MatIconRegistry,
      //   SearchService,
-        CreateRecordService
+        CreateRecordService,
+        {
+          provide: KeycloakHttp,
+          useFactory: keycloakHttpFactory,
+          deps: [XHRBackend, RequestOptions, KeycloakService]
+        },
+        KeycloakService
     
 
     ],

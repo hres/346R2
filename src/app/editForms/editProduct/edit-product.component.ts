@@ -42,7 +42,7 @@ export class EditProductComponent implements OnChanges {
   offset: number = 0;
   product: productAllFields;
   id: number;
-
+  errorMessage: string;
   productDeepCopy: productAllFields;
   listOfClass: classificationList[];
   serverDown: boolean = false;
@@ -76,7 +76,7 @@ export class EditProductComponent implements OnChanges {
 
         this.restaurantTypes = response[2].dataList;
         this.types = response[3].dataList;
-
+        console.log(response);
         this.ngOnChanges();
       });
   }
@@ -109,7 +109,7 @@ export class EditProductComponent implements OnChanges {
       product_brand: "",
       cnf_code: ["", [Validators.pattern("\\d+")]],
       cluster_number: ["", [Validators.pattern("^[0-9]+([,.][0-9]+)?$")]],
-      product_description: ["", [Validators.required]],
+      product_description: ["", [Validators.required, Validators.pattern("\\s*\\S.*")]],
       product_comment: "",
       restaurant_type: "",
       type: ""
@@ -147,8 +147,12 @@ export class EditProductComponent implements OnChanges {
       .subscribe(
         response => {
           const { message, status } = response;
+          console.log(response);
+          if (status === 701) {
+            // this.submitted = false;
+            this.errorMessage = "Missing mandatory fields";
 
-          if (status === 202) {
+          } else if (status === 202) {
             setTimeout(() => {
               this.router.navigate(["/viewproduct", this.id]);
             }, 4000);
@@ -199,7 +203,8 @@ export class EditProductComponent implements OnChanges {
   };
   validationMessages = {
     product_description: {
-      required: "Description is required"
+      required: "Description is required",
+      pattern:"Description is required"
     },
     cnf_code: {
       pattern: "Must be a digit"
@@ -218,36 +223,36 @@ export class EditProductComponent implements OnChanges {
   setClassificationNumber(n: String) {
     if (n != null && n != "") {
 
-        var index = this.listOfClass.findIndex(function (item, i) {
-            return item.classification_name === n;
-        });
+      var index = this.listOfClass.findIndex(function (item, i) {
+        return item.classification_name === n;
+      });
 
-        if (this.productForm.controls['classification_number'].value != this.listOfClass[index]['classification_number']) {
-            this.productForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']);
-        }
+      if (this.productForm.controls['classification_number'].value != this.listOfClass[index]['classification_number']) {
+        this.productForm.controls['classification_number'].patchValue(this.listOfClass[index]['classification_number']);
+      }
     } else {
-        if (this.productForm.controls['classification_name'].value != null && this.productForm.controls['classification_name'].value != "") {
-            this.productForm.controls['classification_number'].patchValue("");
+      if (this.productForm.controls['classification_name'].value != null && this.productForm.controls['classification_name'].value != "") {
+        this.productForm.controls['classification_number'].patchValue("");
 
-        }
+      }
     }
   }
 
   setClassificationName(n: String) {
     if (n != null && n != "") {
-        var index = this.listOfClass.findIndex(function (item, i) {
-            return item.classification_number === n;
-        });
+      var index = this.listOfClass.findIndex(function (item, i) {
+        return item.classification_number === n;
+      });
 
-        if (this.productForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']) {
-            this.productForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']);
-        }
+      if (this.productForm.controls['classification_name'].value != this.listOfClass[index]['classification_name']) {
+        this.productForm.controls['classification_name'].patchValue(this.listOfClass[index]['classification_name']);
+      }
     } else {
 
-        if (this.productForm.controls['classification_number'].value != null && this.productForm.controls['classification_number'].value!= "") {
-            this.productForm.controls['classification_name'].patchValue("");
+      if (this.productForm.controls['classification_number'].value != null && this.productForm.controls['classification_number'].value != "") {
+        this.productForm.controls['classification_name'].patchValue("");
 
-        }
+      }
     }
   }
   areFormsSaved(): Observable<boolean> | boolean {

@@ -5,6 +5,10 @@
 
 export const environment = {
   production: false,
+  // apiUrl:'http://sodium-monitoring-java-dev.canadacentral.cloudapp.azure.com/fcdr-rest-service/rest/',
+  keycloakRootUrl: 'http://192.168.187.128:8090/auth',
+
+
   apiUrl:'http://192.168.187.128:8080/fcdr-rest-service/rest/'
   // apiUrl:process.env.NODE_API_ENV
 };

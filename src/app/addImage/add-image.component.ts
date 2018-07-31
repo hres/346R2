@@ -6,6 +6,8 @@ import { CreateRecordService } from '../services/create-records.service';
 import { saveAs } from 'file-saver/FileSaver';
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, ResponseContentType } from '@angular/http';
+import { environment } from '../../environments/environment'
+
 // import { EventEmitter } from 'events';
 
 
@@ -36,6 +38,7 @@ export type ImageModel = {
 })
 @Injectable()
 export class AddImageComponent {
+    apiUrl = environment.apiUrl;
 
     flag: number;
     @Input() id: number;
@@ -91,7 +94,7 @@ export class AddImageComponent {
         this.submitted = true;
         this.isLoading = true
 
-        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/PackageService/addImage/${this.id}`, formData)
+        this.http.post(this.apiUrl+`PackageService/addImage/${this.id}`, formData)
             .map(r => r.json())
             .finally(() => { this.isLoading = false; this.submitted = false; })
             .subscribe(response => {

@@ -5,15 +5,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "build": "ng build",
+    "build": "ng build --env=hre-dev --base-href /sodium-monitoring-webapp/",
+    "build-local": "ng build --env=hre-dev --base-href /sodium-monitoring-webapp/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "git-commit": "git add dist && git commit -m 'deployed'",
-    "git-push":"git push",
-    "commit-build":"git add dist && git commit -m \"added\" && git push",
-    "build-dist": "rm -rf dist & npm run build & npm run commit-build",
-    "deploy":"rm -rf dist && npm run build  && npm run git-commit && npm run git-push"
+    "git-push": "git push",
+    "deploy": "rm -rf dist && npm run build  && npm run git-commit && npm run git-push",
+    "deploy-local": "rm -rf dist && ng build --env=hre-dev"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +31,7 @@
     "angular-io-datepicker": "^1.3.1",
     "core-js": "^2.4.1",
     "file-saver": "^1.3.3",
+    "keycloak-js": "^4.1.0",
     "rxjs": "5.5.2",
     "zone.js": "^0.8.14"
   },
@@ -51,7 +52,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.1.2",
+    "protractor": "^5.4.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"

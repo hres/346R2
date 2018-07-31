@@ -6,6 +6,7 @@ import { CreateRecordService } from '../../services/create-records.service';
 import { saveAs } from 'file-saver/FileSaver';
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, ResponseContentType } from '@angular/http';
+import { environment } from '../../../environments/environment'
 
 
 export const saveFile = (blobContent: Blob, fileName: string) => {
@@ -33,6 +34,7 @@ export const getFileNameFromResponseContentDisposition = (res: Response) => {
 })
 @Injectable()
 export class ImportImagesComponent {
+    apiUrl = environment.apiUrl;
 
     @Input() flag: number;
     importImagesForm: FormGroup;
@@ -83,7 +85,7 @@ export class ImportImagesComponent {
         this.submitted = true;
         this.isLoading = true
 
-        this.http.post(`http://localhost:8080/fcdr-rest-service/rest/ImportService/importImage`, formData, options)
+        this.http.post(this.apiUrl+`ImportService/importImage`, formData, options)
                 .map( r => r.blob())
                 .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {

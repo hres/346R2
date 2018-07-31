@@ -6,6 +6,7 @@ import { SearchService } from '../../services/search.service';
 import { GetRecordService } from '../../services/getRecord.service';
 import { DeleteRecordService } from '../../services/delete-record.service';
 import { ColumnSetting } from '../../shared/layout.model'
+import { environment } from '../../../environments/environment'
 
 import { Observable } from 'rxjs/Observable';
 import { AbstractControl } from '@angular/forms';
@@ -27,6 +28,7 @@ declare var $: any;
 
 
 export class ViewPackageComponent implements OnInit {
+    apiUrl = environment.apiUrl;
 
     flag: number;
     flag_add_image: number;
@@ -208,7 +210,8 @@ callViewProduct(){
     this.router.navigate(['/viewproduct', this.packageData.product_id]);
 }
 returnImage(imagePath : string){
-    return "http://localhost:8080/fcdr-rest-service/rest/PackageService/getLabelImages/"+imagePath;
+    //this.apiUrl +
+    return this.apiUrl+"PackageService/getLabelImages/"+imagePath;
 }
 
 updateImageGalery(imageList: ImageModel []){
@@ -240,6 +243,7 @@ confirmAction(id: any){
         console.log(response);
         if(response.status == 200){
             this.listOfImages = response.dataList;
+            this.imagesBackUp = response.dataList;
             this.confirmDeleteImageTransation = 1;
 
         }else{

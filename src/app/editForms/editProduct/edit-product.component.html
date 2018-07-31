@@ -1,3 +1,6 @@
+<div class="alert alert-danger" *ngIf="errorMessage">
+    <strong>Error!</strong> Missing mandatory field(s).
+  </div>
 <div class="DivHeader" *ngIf="product">
     <div class="DivLogo">
         Edit Product
@@ -81,7 +84,7 @@
                             <label for="product_description" class="required">Product Description
                                 <strong class="required">(required)</strong>
                             </label>
-                            <input type="text" class="form-control" id="product_description" placeholder="Product Description" formControlName="product_description">
+                            <input type="text" class="form-control" id="product_description" title="This field is required" placeholder="Product Description" formControlName="product_description">
 
                             <div *ngIf="formErrors.product_description" class="errorMessages">
                                 <span class="textPosition"> {{formErrors.product_description}}</span>
