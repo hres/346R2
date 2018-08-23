@@ -7,6 +7,8 @@ import { GetRecordService } from '../../services/getRecord.service';
 import { DeleteRecordService } from '../../services/delete-record.service';
 import { ColumnSetting } from '../../shared/layout.model'
 import { environment } from '../../../environments/environment'
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
+import { Headers, Http, RequestOptions, ResponseContentType } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { AbstractControl } from '@angular/forms';
@@ -29,7 +31,7 @@ declare var $: any;
 
 export class ViewPackageComponent implements OnInit {
     apiUrl = environment.apiUrl;
-
+    imageToShow: any;
     flag: number;
     flag_add_image: number;
     Ids: any;
@@ -49,6 +51,8 @@ export class ViewPackageComponent implements OnInit {
     imagesBackUp: ImageModel[];
     showForm: boolean = false; 
     package_id: number;
+    authToken: string;
+    authPromise: Promise<string>;
 
     nftSettings: ColumnSetting[] = [
         { primaryKey: 'name', header: 'Component' },
@@ -66,22 +70,25 @@ export class ViewPackageComponent implements OnInit {
         private getRecordService: GetRecordService,
         private deleteRecordService: DeleteRecordService,
         private router: Router,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private keycloakService: KeycloakService,
+        private http: Http) {
 
 
-
+            this.authPromise = this.keycloakService.getToken();
     }
 
 
-    ngOnInit(): void {
+    async ngOnInit() {
         
          this.packageData=null;
          this.componentViewPrepared = null;
-
-        this.route.paramMap
+         try{
+            this.authToken = await this.authPromise;
+            this.route.paramMap
             .switchMap((param: ParamMap) =>
 
-                this.getRecordService.getPackageRecords(param.get('id'))).subscribe(
+                this.getRecordService.getPackageRecords(param.get('id'),this.authToken)).subscribe(
             response => {
                 console.log(response);
 
@@ -104,10 +111,15 @@ export class ViewPackageComponent implements OnInit {
                 this.componentViewSold = this.nftAsSold.nft;
 
                 }
-                this.ngOnChanges();
+                // this.ngOnChanges();
 
             }
             );
+         }catch(error){
+             throw error;
+         }
+
+
 
 
 
@@ -174,7 +186,7 @@ callRelink(){
 }
 deleteLabel(id: number | string) {
     this.submitted = true;
-    this.deleteRecordService.deleteLabelRecord(id).finally(() => this.isLoading = false).subscribe(response => {
+    this.deleteRecordService.deleteLabelRecord(id, this.authToken).finally(() => this.isLoading = false).subscribe(response => {
 
         const {message, status} = response;
 
@@ -210,12 +222,35 @@ callViewProduct(){
     this.router.navigate(['/viewproduct', this.packageData.product_id]);
 }
 returnImage(imagePath : string){
-    //this.apiUrl +
+//     //this.apiUrl +
+//     const options = new RequestOptions({ headers: new Headers({  'Authorization':'Bearer ' +this.authToken}),responseType: ResponseContentType.Blob});
+// //http://localhost:4200/view-package/17327
+//      this.http.get(this.apiUrl+"PackageService/getLabelImages/"+imagePath, options)
+//     .map( r => {  return  r.blob();  })
+//     .subscribe (response => {
+//         var fileURL = URL.createObjectURL(response);
+
+//         // this.createImageFromBlob(response);
+
+//     }  , (error) => {
+//        // this.isImageLoading = false;
+//         console.log(error);
+//     }
+// );
     return this.apiUrl+"PackageService/getLabelImages/"+imagePath;
 }
-
+createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.addEventListener("load", () => {
+       this.imageToShow = reader.result;
+    }, false);
+ 
+    if (image) {
+       reader.readAsDataURL(image);
+    }
+ }
 updateImageGalery(imageList: ImageModel []){
-    console.log(imageList, "is the image list");
+
     this.confirmDeleteImageTransation = null;
     if(imageList== null){
         this.confirmDeleteImageTransation = 2;
@@ -238,7 +273,7 @@ confirmAction(id: any){
     this.route.paramMap
     .switchMap((param: ParamMap) =>
 
-        this.deleteRecordService.deleteImage(id)).subscribe(
+        this.deleteRecordService.deleteImage(id, this.authToken)).subscribe(
     response => {
         console.log(response);
         if(response.status == 200){
@@ -249,7 +284,6 @@ confirmAction(id: any){
         }else{
             this.listOfImages = this.imagesBackUp;
             this.confirmDeleteImageTransation = 2;
-
         }
 
     }

@@ -6,6 +6,8 @@ import { FormGroup, FormBuilder,Validators, ValidatorFn, AbstractControl } from 
 import 'rxjs/add/operator/finally';
 import 'rxjs/add/operator/takeWhile';
 import { DatePipe } from '@angular/common';
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
+
 //import { classification, FormValues } from '../../form-model';
 
 // import { ProjectService } from './project-center/project.service';
@@ -58,20 +60,24 @@ export class LabelFormComponent implements OnChanges {
     isLoading: boolean = false;
     serverDown: boolean = false;
     labelForm: FormGroup;
+    authToken: string;
+    authPromise: Promise<string>;
 
     constructor(private fb: FormBuilder,
-        private searchService: SearchService) {
+        private searchService: SearchService,
+        private keycloakService: KeycloakService) {
             
        this.createForm();   
        this.direction = [];
        this.direction[this.index] = false;
        this.index = 0;
        this.flag = true;
+       this.authPromise = this.keycloakService.getToken();
 
 
     }
 
-    ngOnInit():void {
+    ngOnInit() {
             // this.createForm();          
     }
 
@@ -128,65 +134,72 @@ export class LabelFormComponent implements OnChanges {
         }
 
     }
-    onSubmit() {
+    async onSubmit() {
+        try{
+            this.authToken = await this.authPromise;
+            this.setValues();
 
-
-        this.setValues();
-
-        this.isLoading= true;
-        this.searchService.searchLabel(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
-            const {data, message, status} = response;
-
-            if (status === 202) {
-                this.emptyField = message;
-                console.log(message);
-                this.tableData = null;
-            } else if (status === 203) {
-
-                this.noData = message;
-
-                this.tableData = null;
-            }else if (status === 204) {
-                this.noData = message;
-
-                this.tableData = null;
-
-            }
-             else if (status === 200) {
-                this.emptyField = null;
-                this.count = data.count;
-                this.tableData= data.dataList; 
-                console.log(data.dataList);
-
-                
-
-
-
-                for (var num = 0; num < this.settings.length; num++) {
-                    if (num === 0) {
-                        this.direction[num] = true;
-                    } else {
-                        this.direction[num] = false;
-                    }
+            this.isLoading= true;
+    
+            this.searchService.searchLabel(JSON.stringify(this.label), this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
+                const {data, message, status} = response;
+    
+                if (status === 202) {
+                    this.emptyField = message;
+                    console.log(message);
+                    this.tableData = null;
+                } else if (status === 203) {
+    
+                    this.noData = message;
+    
+                    this.tableData = null;
+                }else if (status === 204) {
+                    this.noData = message;
+    
+                    this.tableData = null;
+    
                 }
-            }else if (status === 205){
-
-                this.emptyField = "No query values entered";
-                this.tableData = null; 
-            } else if (status === 602){
-
-                this.emptyField = "Invalid date(s) range";
-                this.tableData = null; 
-            }else{
-                this.noData = "Something happened";
+                 else if (status === 200) {
+                    this.emptyField = null;
+                    this.count = data.count;
+                    this.tableData= data.dataList; 
+                    console.log(data.dataList);
+    
+                    
+    
+    
+    
+                    for (var num = 0; num < this.settings.length; num++) {
+                        if (num === 0) {
+                            this.direction[num] = true;
+                        } else {
+                            this.direction[num] = false;
+                        }
+                    }
+                }else if (status === 205){
+    
+                    this.emptyField = "No query values entered";
+                    this.tableData = null; 
+                } else if (status === 602){
+    
+                    this.emptyField = "Invalid date(s) range";
+                    this.tableData = null; 
+                }else{
+                    this.noData = "Something happened";
+                    this.tableData = null;
+                }
+    
+            }, (error) =>{
+                this.serverDown=true;
                 this.tableData = null;
-            }
+              
+            });
 
-        }, (error) =>{
-            this.serverDown=true;
-            this.tableData = null;
-          
-        });
+        }catch(error){
+            throw error;
+        }
+
+
 
 
 
@@ -205,7 +218,7 @@ export class LabelFormComponent implements OnChanges {
 
 
         this.isLoading= true;
-        this.searchService.searchLabel(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.searchLabel(JSON.stringify(this.label), this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
 
             this.tableData = data.dataList;
@@ -250,7 +263,7 @@ export class LabelFormComponent implements OnChanges {
         this.label.orderBy = this.Order[i];
         this.label.flag = this.direction[i];
         this.isLoading = true;
-        this.searchService.searchLabel(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.searchLabel(JSON.stringify(this.label), this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
 
 

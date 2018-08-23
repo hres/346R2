@@ -4,6 +4,7 @@ import { nftFields, UofM, nftFieldsList, nftList, ResponseComponentName, Compone
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CreateRecordService } from '../../services/create-records.service';
 import { GetRecordService } from '../../services/getRecord.service';
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
 
 
 
@@ -39,32 +40,39 @@ export class CreateNftComponent implements OnChanges {
   totalFibre: number = 0;
   formValid: boolean = true;
   invalidInputDailyValue: string = null;
+  authToken: string;
+  authPromise: Promise<string>;
 
 
   constructor(
     private fb: FormBuilder, private router: Router,
     private route: ActivatedRoute,
     private createRecordService: CreateRecordService,
-    private getRecordService: GetRecordService) {
+    private getRecordService: GetRecordService,
+    private keycloakService: KeycloakService) {
 
     this.createForm();
     this.logNameChange();
+    this.authPromise = this.keycloakService.getToken();
   }
 
-  ngOnInit(): void {
+  async ngOnInit(){
+    try{
+      this.authToken = await this.authPromise;
+      this.responseComponentName = null;
 
-    this.responseComponentName = null;
+      this.getRecordService.getComponentNames(this.authToken).subscribe(response => {
+        const {dataList} = response[0];
+        //const cl = response;
+        this.responseComponentName = dataList;
+        this.listOfUnitOfMeasure  = response[1].dataList;
+      });
 
-    this.getRecordService.getComponentNames().subscribe(response => {
-      const {dataList} = response[0];
-      //const cl = response;
-      this.responseComponentName = dataList;
-      this.listOfUnitOfMeasure  = response[1].dataList;
+    }catch(error){
+      throw error;
+    }
 
 
-
-
-    });
 
 
 
@@ -109,7 +117,7 @@ export class CreateNftComponent implements OnChanges {
     this.submitted = true;
     this.isLoading = true;
     this.flag = null
-    this.createRecordService.createNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
+    this.createRecordService.createNft(JSON.stringify(this.nftListArray), this.authToken).finally(() => this.isLoading = false).subscribe(response => {
       const {id, message, status} = response;
 
       if (status === 803) {

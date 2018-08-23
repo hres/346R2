@@ -4,8 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
-    "build": "ng build --env=hre-dev --base-href /sodium-monitoring-webapp/",
+    "start": "ng serve --host 0.0.0.0 --open",
     "build-local": "ng build --env=hre-dev --base-href /sodium-monitoring-webapp/",
     "test": "ng test",
     "lint": "ng lint",
@@ -13,7 +12,7 @@
     "git-commit": "git add dist && git commit -m 'deployed'",
     "git-push": "git push",
     "deploy": "rm -rf dist && npm run build  && npm run git-commit && npm run git-push",
-    "deploy-local": "rm -rf dist && ng build --env=hre-dev"
+    "deploy-local": "rm -rf dist && ng build --env=azure-dev"
   },
   "private": true,
   "dependencies": {

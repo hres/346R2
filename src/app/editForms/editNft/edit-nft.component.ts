@@ -4,6 +4,7 @@ import { nftFields, UofM, nftFieldsList, nftList, ResponseComponentName, Compone
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { EditRecordService } from '../../services/edit-records.service';
 import { GetRecordService } from '../../services/getRecord.service';
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
 
 
 
@@ -43,42 +44,56 @@ export class EditNftComponent implements OnChanges {
     nftAsSold:  nftFields[];
     nftValues:  nftFields[];
     flagNft: any = null;
+    authToken: string;
+    authPromise: Promise<string>;
+
 
 
     constructor(
         private fb: FormBuilder, private router: Router,
         private route: ActivatedRoute,
         private editRecordService: EditRecordService,
-        private getRecordService: GetRecordService) {
+        private getRecordService: GetRecordService,
+        private keycloakService: KeycloakService) {
 
         this.createForm();
          this.logNameChange();
+         this.authPromise = this.keycloakService.getToken();
     }
 
-    ngOnInit(): void {
+    async ngOnInit() {
+        try{
+            this.authToken = await this.authPromise;
+            this.responseComponentName = null;
 
-        this.responseComponentName = null;
-
-        this.route.paramMap
-            .switchMap((param: ParamMap) =>
-
-                this.getRecordService.getNftSoldRecordsEdit(param.get('id'), param.get('flag'))).subscribe(
-            response => {
-               this.flagNft = this.route.snapshot.paramMap.get('flag') == 'true' ? 'true': (this.route.snapshot.paramMap.get('flag') =='false'? 'false':null );
-                const {dataList} = response[0];
-                this.responseComponentName = dataList;
-                this.listOfUnitOfMeasure = response[1].dataList;
-                this.nftValues = response[2].nft;
-                this.nftValues.forEach(function(element){
-                    element.unit_of_measure = element.unit_of_measure==null?"":element.unit_of_measure;
+            this.route.paramMap
+                .switchMap((param: ParamMap) =>
+    
+                    this.getRecordService.getNftSoldRecordsEdit(param.get('id'), param.get('flag'), this.authToken)).subscribe(
+                response => {
+                   this.flagNft = this.route.snapshot.paramMap.get('flag') == 'true' ? 'true': (this.route.snapshot.paramMap.get('flag') =='false'? 'false':null );
+                    const {dataList} = response[0];
+                    this.responseComponentName = dataList;
+                    this.listOfUnitOfMeasure = response[1].dataList;
+                    this.nftValues = response[2].nft;
+                    this.nftValues.forEach(function(element){
+                        element.unit_of_measure = element.unit_of_measure==null?"":element.unit_of_measure;
+                    });
+                    this.nftAsSold = this.nftValues;
+    
+                    this.ngOnChanges();
+            this.logNameChange();
+    
+    
                 });
-                this.nftAsSold = this.nftValues;
 
-                this.ngOnChanges();
-        this.logNameChange();
+        }catch(error){
+            throw error;
+        }
 
 
-            });
+
+
 
 
 
@@ -122,7 +137,7 @@ export class EditNftComponent implements OnChanges {
         this.submitted = true;
         this.isLoading = true;
         this.flag = null
-        this.editRecordService.updateNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
+        this.editRecordService.updateNft(JSON.stringify(this.nftListArray), this.authToken).finally(() => this.isLoading = false).subscribe(response => {
 
             const {id, message, status} = response;
             if (status === 803) {

@@ -43,12 +43,11 @@ export class FormComponent implements OnChanges {
     Classification_name = Classification_name;
     Classification_number = Classification_number;
 
+     
 
   listOfClass: classificationList[];
     count = 0;
     pageSizes = 10;
-    //value: any;
-    // queryString = '';
     index: number = 0;
     flag: boolean = true;
     direction: boolean[];
@@ -58,11 +57,12 @@ export class FormComponent implements OnChanges {
     serverDown: boolean = false;
     restaurantTypes: GenericList;
     types: GenericList;
-
+    authPromise: Promise<string>;
+    authToken:string;
     productForm: FormGroup;
 
     constructor(private fb: FormBuilder,
-        private searchService: SearchService) {
+        private searchService: SearchService, private keycloakService : KeycloakService) {
 
         this.createForm();
 
@@ -70,12 +70,15 @@ export class FormComponent implements OnChanges {
         this.direction[this.index] = false;
         this.index = 0;
         this.flag = true;
+        this.authPromise = this.keycloakService.getToken();
 
 
     }
 
-    ngOnInit(): void {
-                       this.searchService.getClassificationRestaurant().subscribe(response =>
+    async ngOnInit() {
+        try {
+            this.authToken = await this.authPromise;
+            this.searchService.getClassificationRestaurant(this.authToken).subscribe(response =>
                 {  
                  const {data, message, status} = response[0];   
                  //const cl = response;
@@ -88,7 +91,14 @@ export class FormComponent implements OnChanges {
                 
 
                  }
-            );        
+            );  
+        }
+        catch (error) {
+            throw error;
+        }
+
+
+      
     }
 
     ngOnChanges() {
@@ -155,7 +165,6 @@ export class FormComponent implements OnChanges {
     }
     onSubmit() {
 
-        console.log("the full name is",KeycloakService.getUsername());
         this.setValues();
         // this.queryString = '?';
 
@@ -166,7 +175,7 @@ export class FormComponent implements OnChanges {
         // }
 
 this.isLoading = true;
-        this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.search(JSON.stringify(this.product),this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
    
             if (status === 202) {
@@ -226,7 +235,7 @@ this.isLoading = true;
 
 
 this.isLoading = true;
-        this.searchService.search(JSON.stringify(this.product)).finally(()=> 
+        this.searchService.search(JSON.stringify(this.product), this.authToken).finally(()=> 
         {this.isLoading = false;
        // console.log("failling here")    
         }
@@ -278,7 +287,7 @@ this.isLoading = true;
         this.product.orderby = this.settings[i].primaryKey;
         this.product.flag = this.direction[i];
         this.isLoading = false;
-        this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.search(JSON.stringify(this.product),this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
 
             if (status === 205) {

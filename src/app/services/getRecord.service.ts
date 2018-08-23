@@ -32,36 +32,40 @@ export class GetRecordService {
 
 
 
-    getAllRecords(id: number | string) {
+    getAllRecords(id: number | string, authToken: string) {
 
+        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
         return Observable.forkJoin(
             this.http
-                .get(this.apiUrl + `ProductService/productclassification/${id}`, this.options)
+                .get(this.apiUrl + `ProductService/productclassification/${id}`, options)
                 .map(response => response.json()),
             this.http
-                .get(this.apiUrl + `ProductService/productlabels/${id}`, this.options)
+                .get(this.apiUrl + `ProductService/productlabels/${id}`, options)
                 .map(response => response.json()),
             this.http
-                .get(this.apiUrl + `ProductService/productsales/${id}`, this.options)
+                .get(this.apiUrl + `ProductService/productsales/${id}`, options)
                 .map(response => response.json())
         );
 
     }
 
-    getProductAndClassificationList(id: number | string) {
+    getProductAndClassificationList(id: number | string, authToken: string) {
+
+        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
+
         return Observable.forkJoin(
             this.http
-                .get(this.apiUrl + `ProductService/productclassification/${id}`, this.options)
+                .get(this.apiUrl + `ProductService/productclassification/${id}`, options)
                 .map(response => response.json()),
             this.http
-                .get(this.apiUrl + 'ClassificationService/classification', this.options)
+                .get(this.apiUrl + 'ClassificationService/classification', options)
                 .map(response => response.json()),
             this.http
-                .get(this.apiUrl + 'ProductService/restaurantTypes', this.options)
+                .get(this.apiUrl + 'ProductService/restaurantTypes', options)
                 .map(response => response.json()),
             this.http
-                .get(this.apiUrl + 'ProductService/types', this.options)
+                .get(this.apiUrl + 'ProductService/types', options)
                 .map(response => response.json()
 
                 ));
@@ -86,65 +90,70 @@ export class GetRecordService {
                 .map(response => response.json()));
     }
 
-    getPackageRecords(id: number | string) {
+    getPackageRecords(id: number | string, authToken : string) {
         let body = JSON.stringify({ "package_id": id, "flag": "true" });
         let body_prepared = JSON.stringify({ "package_id": id, "flag": "false" });
+        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
         return Observable.forkJoin(
             this.http
-                .get(this.apiUrl + `PackageService/package/${id}`, this.options)
+                .get(this.apiUrl + `PackageService/package/${id}`, options)
                 .map(response => response.json()),
             this.http
-                .post(this.apiUrl + `PackageService/getNft`, body, this.options)
+                .post(this.apiUrl + `PackageService/getNft`, body, options)
                 .map(response => response.json()),
             this.http
-                .post(this.apiUrl + `PackageService/getNft`, body_prepared, this.options)
+                .post(this.apiUrl + `PackageService/getNft`, body_prepared, options)
                 .map(response => response.json()),
             this.http
-                .get(this.apiUrl + `PackageService/getListOfImages/${id}`, this.options)
+                .get(this.apiUrl + `PackageService/getListOfImages/${id}`, options)
                 .map(response => response.json()));
     }
 
-    getPackageAndClassification(id: number | string) {
+    getPackageAndClassification(id: number | string, authToken: string) {
+        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
         return Observable.forkJoin(
             this.http
-                .get(this.apiUrl + `PackageService/package/${id}`, this.options)
+                .get(this.apiUrl + `PackageService/package/${id}`, options)
                 .map(response => response.json()),
             this.http
-                .get(this.apiUrl + 'ClassificationService/classification', this.options)
+                .get(this.apiUrl + 'ClassificationService/classification', options)
                 .map(response => response.json()),
             this.http
-                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, options)
                 .map(response => response.json())
         );
 
     }
-    getComponentNames() {
+    getComponentNames(authToken: string) {
+        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
         return Observable.forkJoin(
             this.http
-                .get(this.apiUrl + `PackageService/listofcomponents`, this.options)
+                .get(this.apiUrl + `PackageService/listofcomponents`, options)
                 .map(response => response.json() as ResponseComponentName),
             this.http
-                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, options)
                 .map(response => response.json()));
 
 
     }
 
-    getNftSoldRecordsEdit(id: number | string, flag: boolean | string) {
+    getNftSoldRecordsEdit(id: number | string, flag: boolean | string, authToken: string) {
+        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
+
         let body = JSON.stringify({ "package_id": id, "flag": flag });
 
         return Observable.forkJoin(
             this.http
-                .get(this.apiUrl + `PackageService/listofcomponents`, this.options)
+                .get(this.apiUrl + `PackageService/listofcomponents`, options)
                 .map(response => response.json() as ResponseComponentName),
             this.http
-                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, options)
                 .map(response => response.json()),
             this.http
-                .post(this.apiUrl + `PackageService/getNft`, body, this.options)
+                .post(this.apiUrl + `PackageService/getNft`, body, options)
                 .map(response => response.json()));
     }
 

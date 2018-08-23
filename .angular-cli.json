@@ -38,7 +38,8 @@
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts",
         "local": "environments/environment.local.ts",
-		    "hre-dev": "environments/environment.hre-dev.ts"
+        "hre-dev": "environments/environment.hre-dev.ts",
+        "azure-dev": "environments/environment.azure-dev.ts"
       }
     }
   ],

@@ -22,7 +22,9 @@ export class CreateRecordService {
 
 
 
-    createProduct(queryString: string): Observable<productCreateResponse> {
+    createProduct(queryString: string, authToken: string): Observable<productCreateResponse> {
+        let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
+
         return this.http
             .post(this.apiUrl + 'ProductService/create', queryString, this.options)
             .map(response => response.json() as productCreateResponse);
@@ -37,17 +39,19 @@ export class CreateRecordService {
             .map(response => response.json() as UpdateResponse)
     }
 
-    createLabel(queryString: string): Observable<UpdateResponse> {
+    createLabel(queryString: string, authToken: string): Observable<UpdateResponse> {
+        let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
 
         return this.http
-            .post(this.apiUrl + 'PackageService/insert', queryString, this.options)
+            .post(this.apiUrl + 'PackageService/insert', queryString, options)
             .map(response => response.json() as UpdateResponse)
     }
 
-    createNft(queryString: string) {
+    createNft(queryString: string, authToken: string) {
+        let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
 
         return this.http
-            .post(this.apiUrl + 'PackageService/insertNft', queryString, this.options)
+            .post(this.apiUrl + 'PackageService/insertNft', queryString, options)
             .map(response => response.json())
     }
 

@@ -21,7 +21,10 @@ export class AppComponent  {
 	getUserInfoFromToken(): void {
 		this.username = KeycloakService.getUsername();
 		this.fullName = KeycloakService.getFullName();
+
+		// console.log("the token is",this.keycloakService.getToken())
  console.log("Username", this.username, "Full name",this.fullName);
+
  if(KeycloakService.hasRealmRole("sodium-user")){
 	 console.log("oui");
  }else{

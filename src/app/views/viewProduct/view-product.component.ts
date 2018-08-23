@@ -9,6 +9,8 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, FormArray, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ColumnSetting } from '../../shared/layout.model'
 import { DeleteRecordService } from '../../services/delete-record.service';
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
+
 
 @Component({
     selector: 'view-product',
@@ -32,6 +34,9 @@ export class ViewProductComponent implements OnInit {
     submitted: boolean = false;
     isLoading: boolean;
     serverDown: boolean;
+    authToken:string;
+    authPromise: Promise<string>;
+
 
 
 
@@ -61,23 +66,29 @@ export class ViewProductComponent implements OnInit {
         private getRecordService: GetRecordService,
         private deleteRecordService: DeleteRecordService,
         private router: Router,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private keycloakService : KeycloakService) {
 
-
+            this.authPromise = this.keycloakService.getToken();
 
     }
 
 
-    ngOnInit(): void {
+   async ngOnInit()  {
      
     this.params=null;
     this.salesData=null;
     this.labelData=null;
     this.editFields = null;
-        this.route.paramMap
+
+    // this.keycloakService.getToken().then( (token)=>{
+
+        try{
+            this.authToken = await this.authPromise;
+            this.route.paramMap
             .switchMap((param: ParamMap) =>
 
-                this.getRecordService.getAllRecords(param.get('id'))).subscribe(
+                this.getRecordService.getAllRecords(param.get('id'),this.authToken )).subscribe(
             response => {
                 console.log(response);
                 //this.listOfClass = response[0];
@@ -89,6 +100,11 @@ export class ViewProductComponent implements OnInit {
             }
             );
 
+        }catch(error){
+            throw error; 
+        }
+      
+        // })
     }
     ngOnChanges() {
         
@@ -150,11 +166,12 @@ export class ViewProductComponent implements OnInit {
 
         } else {
               this.type = null;
+              this.submitted=false;
         }
     }
     deleteProduct(id: number | string) {
         this.submitted = true;
-        this.deleteRecordService.deleteProductRecord(id).finally(() => this.isLoading = false).subscribe(response => {
+        this.deleteRecordService.deleteProductRecord(id, this.authToken).finally(() => this.isLoading = false).subscribe(response => {
 
             const {message, status} = response;
 

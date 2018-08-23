@@ -17,6 +17,7 @@ import {
 import { EditRecordService } from "../../services/edit-records.service";
 import { SearchService } from "../../services/search.service";
 import { GetRecordService } from "../../services/getRecord.service";
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
 
 import { Observable } from "rxjs/Observable";
 import {
@@ -50,6 +51,8 @@ export class EditProductComponent implements OnChanges {
   types: GenericList;
   flag: number = null;
   productForm: FormGroup;
+  authToken: string;
+  authPromise: Promise<string>;
 
   constructor(
     private fb: FormBuilder,
@@ -58,27 +61,37 @@ export class EditProductComponent implements OnChanges {
     private editRecordService: EditRecordService,
     private router: Router,
     private route: ActivatedRoute,
-    public dialogService: DialogService
+    public dialogService: DialogService,
+    private keycloakService: KeycloakService
   ) {
     this.createForm();
-  }
-  ngOnInit(): void {
+    this.authPromise = this.keycloakService.getToken();
+    }
+    
+  async ngOnInit()  {
     this.product = null;
-    this.route.paramMap
-      .switchMap((param: ParamMap) =>
-        this.getRecordService.getProductAndClassificationList(param.get("id"))
-      )
-      .subscribe(response => {
-        this.product = response[0].data.dataList[0];
-        this.productDeepCopy = response[0].data.dataList[0];
-        const { data, message, status } = response[1];
-        this.listOfClass = data.dataList;
+    try{
+      this.authToken = await this.authPromise;
+      this.route.paramMap
+        .switchMap((param: ParamMap) =>
+          this.getRecordService.getProductAndClassificationList(param.get("id"),this.authToken)
+        )
+        .subscribe(response => {
+  
+          this.product = response[0].data.dataList[0];
+          this.productDeepCopy = response[0].data.dataList[0];
+          const { data, message, status } = response[1];
+          this.listOfClass = data.dataList;
+  
+          this.restaurantTypes = response[2].dataList;
+          this.types = response[3].dataList;
+  
+          this.ngOnChanges();
+        });
 
-        this.restaurantTypes = response[2].dataList;
-        this.types = response[3].dataList;
-        console.log(response);
-        this.ngOnChanges();
-      });
+    }catch(error){
+      throw error;
+    }
   }
 
   ngOnChanges() {
@@ -142,7 +155,7 @@ export class EditProductComponent implements OnChanges {
 
     this.isLoading = true;
     this.editRecordService
-      .updateProduct(JSON.stringify(this.product))
+      .updateProduct(JSON.stringify(this.product),this.authToken)
       .finally(() => (this.isLoading = false))
       .subscribe(
         response => {

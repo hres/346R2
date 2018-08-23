@@ -7,6 +7,8 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
+
 declare var $: any;
 @Component({
     selector: 'add-label',
@@ -27,7 +29,8 @@ export class CreateLabelComponent implements OnChanges {
     labelField: labelCreateFields;
     id: number;
     flag: number = null;
-
+    authToken: string;
+    authPromise: Promise<string>;
     requiredField: boolean = false;
     requiredFieldOther: boolean = false;
 
@@ -48,25 +51,30 @@ export class CreateLabelComponent implements OnChanges {
         private searchService: SearchService,
         private getRecordService: GetRecordService,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private keycloakService : KeycloakService
     ) {
 
         this.createForm();
+        this.authPromise = this.keycloakService.getToken();
     }
-    ngOnInit(): void {
-        this.searchService.getClassificationAndUnitofMeasure().subscribe(response => {
-            console.log(response);
-
-            const {data, message, status} = response[0];
-            const {dataList} = response[1];
-         
-            this.listOfClass = data.dataList;
-            this.listOfUnitOfMeasure  = dataList;
-
-
-
+    async ngOnInit() {
+        try{
+            this.authToken = await this.authPromise;
+            this.searchService.getClassificationAndUnitofMeasure(this.authToken).subscribe(response => {
+                const {data, message, status} = response[0];
+                const {dataList} = response[1];
+             
+                this.listOfClass = data.dataList;
+    
+                this.listOfUnitOfMeasure  = dataList;
+    
+            }
+            );
+        }catch(error){
+            throw error;
         }
-        );
+
     }
 
     ngOnChanges() {
@@ -201,7 +209,7 @@ export class CreateLabelComponent implements OnChanges {
 
         this.isLoading = true;
 
-        this.createRecordService.createLabel(JSON.stringify(this.labelField)).finally(() => this.isLoading = false).subscribe(response => {
+        this.createRecordService.createLabel(JSON.stringify(this.labelField), this.authToken).finally(() => this.isLoading = false).subscribe(response => {
 
             const { message, status} = response;
 

@@ -23,10 +23,11 @@ export class EditRecordService {
 
 
 
-        updateProduct(queryString: string): Observable<UpdateResponse> {
+        updateProduct(queryString: string, authToken: string): Observable<UpdateResponse> {
+                const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
                 return this.http
-                        .put(this.apiUrl + 'ProductService/update', queryString, this.options)
+                        .put(this.apiUrl + 'ProductService/update', queryString, options)
                         .map(response => response.json() as UpdateResponse)
         }
 
@@ -37,16 +38,18 @@ export class EditRecordService {
                         .map(response => response.json() as UpdateResponse)
         }
 
-        UpdateLabel(queryString: string): Observable<UpdateResponse> {
+        UpdateLabel(queryString: string, authToken: string): Observable<UpdateResponse> {
+                const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
                 return this.http
-                        .put(this.apiUrl + 'PackageService/update', queryString, this.options)
+                        .put(this.apiUrl + 'PackageService/update', queryString, options)
                         .map(response => response.json() as UpdateResponse)
         }
-        updateNft(queryString: string) {
+        updateNft(queryString: string, authToken) {
+                const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
                 return this.http
-                        .put(this.apiUrl + 'PackageService/updateNft', queryString, this.options)
+                        .put(this.apiUrl + 'PackageService/updateNft', queryString, options)
                         .map(response => response.json())
         }
 

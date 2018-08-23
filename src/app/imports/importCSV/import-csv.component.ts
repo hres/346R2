@@ -95,18 +95,7 @@ export class ImportCsvComponent {
 
 
         this.http.post(this.apiUrl+`ImportService/${importValue}`, formData, options)
-            // .timeout(5000)
-            //     .retryWhen(errors => {
-            //         return errors.scan(Attemptcount =>{
-            //                 Attemptcount++;
-            //             if(Attemptcount < 4){
-            //                 return Attemptcount;
 
-            //             }else{
-            //                 throw errors;
-            //             }
-            //         },0).delay(5000)
-            //     })
                 .map( r => {  return  r.blob();  })
                 .finally(() => {this.isLoading = false; this.submitted = false;})
                 .subscribe (response => {
@@ -125,12 +114,7 @@ export class ImportCsvComponent {
             }else{
                 this.errorMessage = "Unexpected error";
             }
-               
-            //     console.log(error)
-            //    let body = JSON.parse(error["_body"]);
-            //    console.log("here 2", body.errorList[0].errorCode);             
 
-               // this.serverDown = true;
                 this.importCsvFileForm.controls['csv_file'].setValue(null);
                 this.validateSize();
             }
@@ -163,13 +147,7 @@ export class ImportCsvComponent {
             return;
 
         }else{
-        if (this.file.size > this.currentMaxSize){
-            this.validSize= false;
-            this.errorMessage = "File is too big";
-        }else if (this.file.size < 1){
-            //this.validSize= false;
-           // this.errorMessage = "File is too small";
-        }
+
     }
 }
 updateSelectedValue(n: number){
@@ -186,12 +164,6 @@ updateSelectedValue(n: number){
     this.validateSize();
 }
 
-// private prepareSave(): FormData {
-//     let input = new FormData();
-//     input.append('csv_file', this.importCsvFileForm.get('csv_file').value);
-//     input.append('type', this.importCsvFileForm.get('type').value);
-//     return input;
-//   }
 
   validateSize(){
       

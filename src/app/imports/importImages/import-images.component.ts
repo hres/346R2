@@ -127,10 +127,12 @@ export class ImportImagesComponent {
 
         }
 
-        if(totalSize > maxSize){
-            this.validSize= false;
-            this.errorMessage = "Limit exceeded, select fewer files";
-        }else if(totalSize < 0){
+        // if(totalSize > maxSize){
+        //     this.validSize= false;
+        //     this.errorMessage = "Limit exceeded, select fewer files";
+        // }else
+        
+        if(totalSize < 0){
             this.validSize= false;
             this.errorMessage = "Must select at least one file";
         }

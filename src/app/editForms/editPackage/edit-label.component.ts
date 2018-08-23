@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { KeycloakService } 	from '../../keycloak/keycloak.service';
 
 import { EditRecordService } from '../../services/edit-records.service';
 
@@ -44,38 +45,51 @@ export class EditLabelComponent implements OnChanges {
     serverDown: boolean = false;
     labelForm: FormGroup;
     @Output() updateView = new EventEmitter<number>();
+    authToken: string; 
+    authPromise: Promise<string>;
+
 
     constructor(private fb: FormBuilder,
         private editRecordService: EditRecordService,
         private getRecordService: GetRecordService,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private keycloakService: KeycloakService
     ) {
 
         this.createForm();
 
-
+        this.authPromise = this.keycloakService.getToken();
     }
 
-    ngOnInit(): void {
+   async ngOnInit() {
+
+    try{
+        this.authToken = await this.authPromise;
         this.route.paramMap
-            .switchMap((param: ParamMap) =>
-                this.getRecordService.getPackageAndClassification(param.get('id'))).subscribe(response => {
+        .switchMap((param: ParamMap) =>
+            this.getRecordService.getPackageAndClassification(param.get('id'),this.authToken)).subscribe(response => {
 
-                    this.packageData = response[0].data.dataList[0];
-                    console.log(this.packageData);
-                    const {data, message, status} = response[1];
-                    this.listOfClass = data.dataList;
-                    const {dataList} = response[2];
-                    this.listOfUnitOfMeasure = dataList;
-
-
-
-                    this.ngOnChanges();
+                this.packageData = response[0].data.dataList[0];
+                console.log(this.packageData);
+                const {data, message, status} = response[1];
+                this.listOfClass = data.dataList;
+                const {dataList} = response[2];
+                this.listOfUnitOfMeasure = dataList;
 
 
-                }
-            );
+
+                this.ngOnChanges();
+
+
+            }
+        );
+    }catch(error){
+        throw error;
+    }
+
+
+
 
 
     }
@@ -216,7 +230,7 @@ export class EditLabelComponent implements OnChanges {
         console.log(this.packageData);
         this.isLoading = true;
 
-        this.editRecordService.UpdateLabel(JSON.stringify(this.packageData)).finally(() => this.isLoading = false).subscribe(response => {
+        this.editRecordService.UpdateLabel(JSON.stringify(this.packageData),this.authToken).finally(() => this.isLoading = false).subscribe(response => {
 
             const { message, status} = response;
 

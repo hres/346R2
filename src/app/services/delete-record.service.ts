@@ -29,18 +29,20 @@ export class DeleteRecordService {
             .map(response => response.json() as DeleteResponse)
     }
 
-    deleteLabelRecord(id: string | number): Observable<DeleteResponse> {
+    deleteLabelRecord(id: string | number, authToken : string): Observable<DeleteResponse> {
+        let options = new RequestOptions({ headers: new Headers({ 'Authorization': 'Bearer ' + authToken }) });
 
         return this.http
-            .delete(this.apiUrl + `PackageService/delete/${id}`, this.options)
+            .delete(this.apiUrl + `PackageService/delete/${id}`, options)
             .map(response => response.json() as DeleteResponse)
     }
 
 
-    deleteProductRecord(id: string | number): Observable<DeleteResponse> {
+    deleteProductRecord(id: string | number, authToken: string): Observable<DeleteResponse> {
+        let options = new RequestOptions({ headers: new Headers({ 'Authorization': 'Bearer ' + authToken }) });
 
         return this.http
-            .delete(this.apiUrl + `ProductService/delete/${id}`, this.options)
+            .delete(this.apiUrl + `ProductService/delete/${id}`, options)
             .map(response => response.json() as DeleteResponse)
     }
 
@@ -51,10 +53,11 @@ export class DeleteRecordService {
             .map(response => response.json())
     }
 
-    deleteImage(id: string | number) {
+    deleteImage(id: string | number, authToken : string) {
+        let options = new RequestOptions({ headers: new Headers({ 'Authorization': 'Bearer ' + authToken }) });
 
         return this.http
-            .delete(this.apiUrl + `PackageService/deleteImage/${id}`, this.options)
+            .delete(this.apiUrl + `PackageService/deleteImage/${id}`, options)
             .map(response => response.json())
     }
 
