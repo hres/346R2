@@ -12,6 +12,7 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/scan';
 import 'rxjs/add/operator/timeout';
 import { environment } from '../../../environments/environment'
+import { KeycloakHttp } from '../../keycloak/keycloak.http';
 
 
 
@@ -59,7 +60,9 @@ export class ImportCsvComponent {
 
     @ViewChild('fileInput') fileInput;
 
-    constructor(private fb: FormBuilder, private createRecordService: CreateRecordService,  private http: Http) {
+    constructor(private fb: FormBuilder, 
+                private createRecordService: CreateRecordService,  
+                private keycloakHttp: KeycloakHttp) {
         this.createForm();
         this.importCsvFileForm.controls['type'].setValue(1);
     }
@@ -94,7 +97,7 @@ export class ImportCsvComponent {
         const reader: FileReader = new FileReader();
 
 
-        this.http.post(this.apiUrl+`ImportService/${importValue}`, formData, options)
+        this.keycloakHttp.post(this.apiUrl+`ImportService/${importValue}`, formData, options)
 
                 .map( r => {  return  r.blob();  })
                 .finally(() => {this.isLoading = false; this.submitted = false;})

@@ -1,28 +1,10 @@
-<!--<section class="section-margin">
-  <span style="font-size: 1.2em;"> <label><strong>Search by:</strong></label></span>
-<mat-radio-group [(ngModel)]="searchBy">
-  <mat-radio-button class="example-margin" value="product">
-    Product
-  </mat-radio-button>
-  <mat-radio-button class="example-margin" value="sales">
-    Market Share
-  </mat-radio-button>
-  <mat-radio-button class="example-margin" value="label">
-    Label
-  </mat-radio-button>
-  <mat-radio-button class="example-margin" value="searchall">
-    Search All
-  </mat-radio-button>
-</mat-radio-group>
-</section>-->
-<!--<forms-center [searchBy]="searchBy">
-</forms-center>-->
+
 
 <nav class="innerNav">
-      <a routerLink="./search" routerLinkActive="active">Product</a>
-      <a routerLink="#" routerLinkActive="active">Sales</a>
-      <a routerLink="./labelSearch" routerLinkActive="active">Label</a>
-      <a routerLink="#" routerLinkActive="active">Search All</a>
- 
+  <a routerLink="./search" routerLinkActive="active">Product</a>
+  <a routerLink="./salesSearch" routerLinkActive="active">Sales</a>
+  <a routerLink="./labelSearch" routerLinkActive="active">Label</a>
+  <a routerLink="./searchAll" routerLinkActive="active">Search All</a>
+
 </nav>
       <router-outlet></router-outlet>

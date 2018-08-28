@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
 import { productParams, UpdateResponse, Response, productCreateResponse } from '../data-model';
 import { environment } from '../../environments/environment'
+import { KeycloakHttp } from '../keycloak/keycloak.http';
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -18,40 +19,37 @@ export class CreateRecordService {
     apiUrl = environment.apiUrl;
 
 
-    constructor(private http: Http) { }
+    constructor(private http: Http,
+                private keycloakHttp : KeycloakHttp) { }
 
 
 
-    createProduct(queryString: string, authToken: string): Observable<productCreateResponse> {
-        let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
+    createProduct(queryString: string): Observable<productCreateResponse> {
 
-        return this.http
-            .post(this.apiUrl + 'ProductService/create', queryString, this.options)
+        return this.keycloakHttp
+            .post(this.apiUrl + 'ProductService/create', queryString,this.options)
             .map(response => response.json() as productCreateResponse);
     }
 
 
 
     createSales(queryString: string): Observable<UpdateResponse> {
-        console.log(queryString);
-        return this.http
+        return this.keycloakHttp
             .post(this.apiUrl + 'SalesService/insert', queryString, this.options)
             .map(response => response.json() as UpdateResponse)
     }
 
-    createLabel(queryString: string, authToken: string): Observable<UpdateResponse> {
-        let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
+    createLabel(queryString: string): Observable<UpdateResponse> {
 
-        return this.http
-            .post(this.apiUrl + 'PackageService/insert', queryString, options)
+        return this.keycloakHttp
+            .post(this.apiUrl + 'PackageService/insert', queryString, this.options)
             .map(response => response.json() as UpdateResponse)
     }
 
-    createNft(queryString: string, authToken: string) {
-        let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
+    createNft(queryString: string) {
 
-        return this.http
-            .post(this.apiUrl + 'PackageService/insertNft', queryString, options)
+        return this.keycloakHttp
+            .post(this.apiUrl + 'PackageService/insertNft', queryString, this.options)
             .map(response => response.json())
     }
 

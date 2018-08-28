@@ -7,6 +7,7 @@ import 'rxjs/add/operator/timeoutWith';
 import 'rxjs/add/operator/delay';
 import { DeleteResponse, ImageModel } from '../data-model';
 import { environment } from '../../environments/environment'
+import { KeycloakHttp } from '../keycloak/keycloak.http';
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -18,46 +19,43 @@ export class DeleteRecordService {
     options = new RequestOptions({ headers: this.headers });
     apiUrl = environment.apiUrl;
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private keycloakHttp : KeycloakHttp) { }
 
 
     deleteSalesRecord(id: string | number): Observable<DeleteResponse> {
 
-        return this.http
+        return this.keycloakHttp
             .delete(this.apiUrl + `SalesService/delete/${id}`, this.options)
 
             .map(response => response.json() as DeleteResponse)
     }
 
-    deleteLabelRecord(id: string | number, authToken : string): Observable<DeleteResponse> {
-        let options = new RequestOptions({ headers: new Headers({ 'Authorization': 'Bearer ' + authToken }) });
+    deleteLabelRecord(id: string | number): Observable<DeleteResponse> {
 
-        return this.http
-            .delete(this.apiUrl + `PackageService/delete/${id}`, options)
+        return this.keycloakHttp
+            .delete(this.apiUrl + `PackageService/delete/${id}`, this.options)
             .map(response => response.json() as DeleteResponse)
     }
 
 
-    deleteProductRecord(id: string | number, authToken: string): Observable<DeleteResponse> {
-        let options = new RequestOptions({ headers: new Headers({ 'Authorization': 'Bearer ' + authToken }) });
+    deleteProductRecord(id: string | number): Observable<DeleteResponse> {
 
-        return this.http
-            .delete(this.apiUrl + `ProductService/delete/${id}`, options)
+        return this.keycloakHttp
+            .delete(this.apiUrl + `ProductService/delete/${id}`, this.options)
             .map(response => response.json() as DeleteResponse)
     }
 
     reLinkRecord(queryString: string) {
 
-        return this.http
+        return this.keycloakHttp
             .post(this.apiUrl + 'ProductService/relinkRecord', queryString, this.options)
             .map(response => response.json())
     }
 
-    deleteImage(id: string | number, authToken : string) {
-        let options = new RequestOptions({ headers: new Headers({ 'Authorization': 'Bearer ' + authToken }) });
+    deleteImage(id: string | number) {
 
-        return this.http
-            .delete(this.apiUrl + `PackageService/deleteImage/${id}`, options)
+        return this.keycloakHttp
+            .delete(this.apiUrl + `PackageService/deleteImage/${id}`, this.options)
             .map(response => response.json())
     }
 

@@ -60,8 +60,7 @@ export class LabelFormComponent implements OnChanges {
     isLoading: boolean = false;
     serverDown: boolean = false;
     labelForm: FormGroup;
-    authToken: string;
-    authPromise: Promise<string>;
+
 
     constructor(private fb: FormBuilder,
         private searchService: SearchService,
@@ -72,7 +71,6 @@ export class LabelFormComponent implements OnChanges {
        this.direction[this.index] = false;
        this.index = 0;
        this.flag = true;
-       this.authPromise = this.keycloakService.getToken();
 
 
     }
@@ -134,14 +132,13 @@ export class LabelFormComponent implements OnChanges {
         }
 
     }
-    async onSubmit() {
-        try{
-            this.authToken = await this.authPromise;
+     onSubmit() {
+        
             this.setValues();
 
             this.isLoading= true;
     
-            this.searchService.searchLabel(JSON.stringify(this.label), this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
+            this.searchService.searchLabel(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
                 const {data, message, status} = response;
     
                 if (status === 202) {
@@ -195,9 +192,7 @@ export class LabelFormComponent implements OnChanges {
               
             });
 
-        }catch(error){
-            throw error;
-        }
+     
 
 
 
@@ -218,7 +213,7 @@ export class LabelFormComponent implements OnChanges {
 
 
         this.isLoading= true;
-        this.searchService.searchLabel(JSON.stringify(this.label), this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.searchLabel(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
 
             this.tableData = data.dataList;
@@ -263,7 +258,7 @@ export class LabelFormComponent implements OnChanges {
         this.label.orderBy = this.Order[i];
         this.label.flag = this.direction[i];
         this.isLoading = true;
-        this.searchService.searchLabel(JSON.stringify(this.label), this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.searchLabel(JSON.stringify(this.label)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
 
 

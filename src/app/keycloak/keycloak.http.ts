@@ -20,6 +20,7 @@ export class KeycloakHttp extends Http {
 			}).concatMap(opts => super.request(url, opts));
 		} else if (url instanceof Request) {
 			return tokenObservable.map(token => {
+				console.log("*****************", token);
 				url.headers.set('Authorization', 'Bearer ' + token);
 				return url;
 			}).concatMap(request => super.request(request));

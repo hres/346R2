@@ -8,6 +8,8 @@ import { DeleteRecordService } from '../../services/delete-record.service';
 import { ColumnSetting } from '../../shared/layout.model'
 import { environment } from '../../../environments/environment'
 import { KeycloakService } 	from '../../keycloak/keycloak.service';
+import { KeycloakHttp } 	from '../../keycloak/keycloak.http';
+
 import { Headers, Http, RequestOptions, ResponseContentType } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -30,8 +32,9 @@ declare var $: any;
 
 
 export class ViewPackageComponent implements OnInit {
-    apiUrl = environment.apiUrl;
     imageToShow: any;
+    apiUrl = environment.apiUrl;
+    isImageLoading: boolean;
     flag: number;
     flag_add_image: number;
     Ids: any;
@@ -47,12 +50,11 @@ export class ViewPackageComponent implements OnInit {
     componentViewPrepared: componentView[];
     componentViewSold: componentView[];
     idToRelink: number = null;
-    @Input() listOfImages: ImageModel[];
+    listOfImages: ImageModel[];
     imagesBackUp: ImageModel[];
     showForm: boolean = false; 
     package_id: number;
-    authToken: string;
-    authPromise: Promise<string>;
+
 
     nftSettings: ColumnSetting[] = [
         { primaryKey: 'name', header: 'Component' },
@@ -72,23 +74,20 @@ export class ViewPackageComponent implements OnInit {
         private router: Router,
         private route: ActivatedRoute,
         private keycloakService: KeycloakService,
-        private http: Http) {
-
-
-            this.authPromise = this.keycloakService.getToken();
+        private http: Http,
+        private keycloakHttp: KeycloakHttp) {
     }
 
 
-    async ngOnInit() {
+     ngOnInit() {
         
          this.packageData=null;
          this.componentViewPrepared = null;
-         try{
-            this.authToken = await this.authPromise;
+
             this.route.paramMap
             .switchMap((param: ParamMap) =>
 
-                this.getRecordService.getPackageRecords(param.get('id'),this.authToken)).subscribe(
+                this.getRecordService.getPackageRecords(param.get('id'))).subscribe(
             response => {
                 console.log(response);
 
@@ -96,6 +95,8 @@ export class ViewPackageComponent implements OnInit {
                 this.package_id = this.packageData.package_id;
                 this.nftAsPrepared = response[2];
                 this.listOfImages = response[3].dataList;
+
+
                 this.imagesBackUp= response[3].dataList;
                 if(this.nftAsPrepared.nft.length < 1){
                     this.componentViewPrepared = null;
@@ -115,9 +116,7 @@ export class ViewPackageComponent implements OnInit {
 
             }
             );
-         }catch(error){
-             throw error;
-         }
+       
 
 
 
@@ -136,12 +135,6 @@ export class ViewPackageComponent implements OnInit {
 
     }
     editNft(flag: boolean){
-        //edit-nft-sold
-
-        
-        // if(flag){
-        // this.router.navigate(['/edit-nft-sold', this.route.snapshot.paramMap.get('id'),  true]);
-        // }else{
 
                     this.router.navigate(['/edit-nft', this.route.snapshot.paramMap.get('id'),  flag]);
 
@@ -151,7 +144,6 @@ export class ViewPackageComponent implements OnInit {
     addImage(){
         this.showForm = true; 
     }
-
 
 openImage(){
     $('.image').viewer();
@@ -186,7 +178,7 @@ callRelink(){
 }
 deleteLabel(id: number | string) {
     this.submitted = true;
-    this.deleteRecordService.deleteLabelRecord(id, this.authToken).finally(() => this.isLoading = false).subscribe(response => {
+    this.deleteRecordService.deleteLabelRecord(id).finally(() => this.isLoading = false).subscribe(response => {
 
         const {message, status} = response;
 
@@ -222,24 +214,10 @@ callViewProduct(){
     this.router.navigate(['/viewproduct', this.packageData.product_id]);
 }
 returnImage(imagePath : string){
-//     //this.apiUrl +
-//     const options = new RequestOptions({ headers: new Headers({  'Authorization':'Bearer ' +this.authToken}),responseType: ResponseContentType.Blob});
-// //http://localhost:4200/view-package/17327
-//      this.http.get(this.apiUrl+"PackageService/getLabelImages/"+imagePath, options)
-//     .map( r => {  return  r.blob();  })
-//     .subscribe (response => {
-//         var fileURL = URL.createObjectURL(response);
 
-//         // this.createImageFromBlob(response);
-
-//     }  , (error) => {
-//        // this.isImageLoading = false;
-//         console.log(error);
-//     }
-// );
-    return this.apiUrl+"PackageService/getLabelImages/"+imagePath;
+ return this.apiUrl+"GetImageService/getLabelImages/"+imagePath;
 }
-createImageFromBlob(image: Blob) {
+createImageFromBlob(image: Blob): any {
     let reader = new FileReader();
     reader.addEventListener("load", () => {
        this.imageToShow = reader.result;
@@ -248,6 +226,7 @@ createImageFromBlob(image: Blob) {
     if (image) {
        reader.readAsDataURL(image);
     }
+    return this.imageToShow;
  }
 updateImageGalery(imageList: ImageModel []){
 
@@ -273,7 +252,7 @@ confirmAction(id: any){
     this.route.paramMap
     .switchMap((param: ParamMap) =>
 
-        this.deleteRecordService.deleteImage(id, this.authToken)).subscribe(
+        this.deleteRecordService.deleteImage(id)).subscribe(
     response => {
         console.log(response);
         if(response.status == 200){

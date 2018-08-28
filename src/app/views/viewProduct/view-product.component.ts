@@ -34,8 +34,7 @@ export class ViewProductComponent implements OnInit {
     submitted: boolean = false;
     isLoading: boolean;
     serverDown: boolean;
-    authToken:string;
-    authPromise: Promise<string>;
+
 
 
 
@@ -69,7 +68,6 @@ export class ViewProductComponent implements OnInit {
         private route: ActivatedRoute,
         private keycloakService : KeycloakService) {
 
-            this.authPromise = this.keycloakService.getToken();
 
     }
 
@@ -81,18 +79,12 @@ export class ViewProductComponent implements OnInit {
     this.labelData=null;
     this.editFields = null;
 
-    // this.keycloakService.getToken().then( (token)=>{
 
-        try{
-            this.authToken = await this.authPromise;
             this.route.paramMap
             .switchMap((param: ParamMap) =>
 
-                this.getRecordService.getAllRecords(param.get('id'),this.authToken )).subscribe(
+                this.getRecordService.getAllRecords(param.get('id'))).subscribe(
             response => {
-                console.log(response);
-                //this.listOfClass = response[0];
-                //this.params = response[0].data.values[0];
                 this.params = response[0].data.dataList[0];
                 this.salesData = response[2].data.dataList;
                 this.labelData = response[1].data.dataList;
@@ -100,23 +92,12 @@ export class ViewProductComponent implements OnInit {
             }
             );
 
-        }catch(error){
-            throw error; 
-        }
-      
-        // })
+
     }
     ngOnChanges() {
         
 
     }
-
-    // updateView(value: number){
-
-    //     this.ngOnInit();
-    //     this.flag = value;
-
-    // }
 
 
     addSales(event: boolean){
@@ -171,7 +152,7 @@ export class ViewProductComponent implements OnInit {
     }
     deleteProduct(id: number | string) {
         this.submitted = true;
-        this.deleteRecordService.deleteProductRecord(id, this.authToken).finally(() => this.isLoading = false).subscribe(response => {
+        this.deleteRecordService.deleteProductRecord(id).finally(() => this.isLoading = false).subscribe(response => {
 
             const {message, status} = response;
 

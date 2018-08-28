@@ -29,8 +29,6 @@ export class CreateLabelComponent implements OnChanges {
     labelField: labelCreateFields;
     id: number;
     flag: number = null;
-    authToken: string;
-    authPromise: Promise<string>;
     requiredField: boolean = false;
     requiredFieldOther: boolean = false;
 
@@ -56,12 +54,10 @@ export class CreateLabelComponent implements OnChanges {
     ) {
 
         this.createForm();
-        this.authPromise = this.keycloakService.getToken();
     }
-    async ngOnInit() {
-        try{
-            this.authToken = await this.authPromise;
-            this.searchService.getClassificationAndUnitofMeasure(this.authToken).subscribe(response => {
+     ngOnInit() {
+     
+            this.searchService.getClassificationAndUnitofMeasure().subscribe(response => {
                 const {data, message, status} = response[0];
                 const {dataList} = response[1];
              
@@ -72,8 +68,7 @@ export class CreateLabelComponent implements OnChanges {
             }
             );
         }catch(error){
-            throw error;
-        }
+   
 
     }
 
@@ -209,7 +204,7 @@ export class CreateLabelComponent implements OnChanges {
 
         this.isLoading = true;
 
-        this.createRecordService.createLabel(JSON.stringify(this.labelField), this.authToken).finally(() => this.isLoading = false).subscribe(response => {
+        this.createRecordService.createLabel(JSON.stringify(this.labelField)).finally(() => this.isLoading = false).subscribe(response => {
 
             const { message, status} = response;
 

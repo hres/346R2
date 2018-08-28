@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
 import { Params, Response, SalesData, LabelData, ClassificationList, addClass, productParams, SearchAllResponse, classificationList, salesYearList } from '../data-model';
 import { KeycloakService } from '../keycloak/keycloak.service';
+import { KeycloakHttp } from '../keycloak/keycloak.http';
 
 import { environment } from '../../environments/environment'
 import 'rxjs/add/observable/forkJoin';
@@ -21,19 +22,17 @@ export class SearchService {
 
     headers = new Headers({ 'Content-Type': 'application/json' });
     options = new RequestOptions({ headers: this.headers });
-    // private authToken:string = "";
 
-    constructor(private http: Http, private keycloakService: KeycloakService) {
+    constructor(private http: Http, private keycloakService: KeycloakService, private keycloakHttp: KeycloakHttp) {
 
 
     }
 
-    search(queryString: string, authToken: string): Observable<Response<Params>> {
-        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
+    search(queryString: string): Observable<Response<Params>> {
 
 
-        return this.http
-            .post(this.apiUrl + 'ProductService/productsfiltered', queryString, options)
+        return this.keycloakHttp
+            .post(this.apiUrl + 'ProductService/productsfiltered', queryString,this.options)
             .map(response => response.json() as Response<Params>);
 
     }
@@ -41,7 +40,7 @@ export class SearchService {
 
     searchAll(queryString: string): Observable<Response<SearchAllResponse>> {
 
-        return this.http
+        return this.keycloakHttp
             .post(this.apiUrl + 'ProductService/productsaleslabel', queryString, this.options)
             .map(response => response.json() as Response<SearchAllResponse>);
 
@@ -51,7 +50,7 @@ export class SearchService {
 
 
         let body = JSON.stringify({ "product_id": id });
-        return this.http
+        return this.keycloakHttp
 
             .post(this.apiUrl + 'ProductService/productsfiltered', body, this.options)
             .map(response => response.json() as Response<productParams>);
@@ -60,7 +59,7 @@ export class SearchService {
 
     searchSales(queryString: string): Observable<Response<SalesData>> {
 
-        return this.http
+        return this.keycloakHttp
             .post(this.apiUrl + 'SalesService/salesfiltered', queryString, this.options)
             .map(response => response.json() as Response<SalesData>);
 
@@ -68,17 +67,16 @@ export class SearchService {
 
     }
 
-    searchLabel(queryString: string, authToken: string): Observable<Response<LabelData>> {
-        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
+    searchLabel(queryString: string): Observable<Response<LabelData>> {
 
-        return this.http
-            .post(this.apiUrl + 'PackageService/packagefiltered', queryString, options)
+        return this.keycloakHttp
+            .post(this.apiUrl + 'PackageService/packagefiltered', queryString, this.options)
             .map(response => response.json() as Response<LabelData>);
 
     }
 
     getClassification(): Observable<Response<addClass>> {
-        return this.http
+        return this.keycloakHttp
             .get(this.apiUrl + 'ClassificationService/classification', this.options)
             .map(response => response.json() as Response<addClass>);
 
@@ -87,50 +85,47 @@ export class SearchService {
 
 
     getClassificationLatest(): Observable<Response<ClassificationList>> {
-        return this.http
+        return this.keycloakHttp
             .get(this.apiUrl + 'ClassificationService/classification', this.options)
             .map(response => response.json() as Response<ClassificationList>);
 
 
     }
 
-    getClassificationAndUnitofMeasure(authToken : string) {
-        let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
+    getClassificationAndUnitofMeasure() {
 
         return Observable.forkJoin(
-            this.http
-                .get(this.apiUrl + 'ClassificationService/classification', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'ClassificationService/classification', this.options)
                 .map(response => response.json() as Response<ClassificationList>),
-            this.http
-                .get(this.apiUrl + 'PackageService/unitOfMeasure', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'PackageService/unitOfMeasure', this.options)
                 .map(response => response.json()),
 
         );
     }
 
     getSalesYearList(): Observable<Response<salesYearList>> {
-        return this.http
-            .get(this.apiUrl + 'SalesService/salesyears', this.options)
+
+        return this.keycloakHttp
+            .get(this.apiUrl + 'SalesService/salesyears',this.options)
             .map(response => response.json() as Response<salesYearList>);
     }
 
 
 
 
-    getClassificationRestaurant(authToken: string) {
-
-        //   let  headers = new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken});
-        let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken }) });
+    getClassificationRestaurant() {
 
         return Observable.forkJoin(
-            this.http
-                .get(this.apiUrl + 'ClassificationService/classification', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'ClassificationService/classification')
                 .map(response => response.json() as Response<ClassificationList>),
-            this.http
-                .get(this.apiUrl + 'ProductService/restaurantTypes', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'ProductService/restaurantTypes')
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + 'ProductService/types', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'ProductService/types')
                 .map(response => response.json()
 
                 ));

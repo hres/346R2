@@ -7,6 +7,7 @@ import { saveAs } from 'file-saver/FileSaver';
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, ResponseContentType } from '@angular/http';
 import { environment } from '../../environments/environment'
+import { KeycloakHttp } 	from '../keycloak/keycloak.http';
 
 // import { EventEmitter } from 'events';
 
@@ -58,7 +59,10 @@ export class AddImageComponent {
     @ViewChild('fileInput') fileInput;
 
 
-    constructor(private fb: FormBuilder, private createRecordService: CreateRecordService, private http: Http) {
+    constructor(private fb: FormBuilder, 
+                private createRecordService: CreateRecordService, 
+                private http: Http,
+                private keycloakHttp: KeycloakHttp) {
         this.createForm();
     }
 
@@ -94,7 +98,7 @@ export class AddImageComponent {
         this.submitted = true;
         this.isLoading = true
 
-        this.http.post(this.apiUrl+`PackageService/addImage/${this.id}`, formData)
+        this.keycloakHttp.post(this.apiUrl+`PackageService/addImage/${this.id}`, formData)
             .map(r => r.json())
             .finally(() => { this.isLoading = false; this.submitted = false; })
             .subscribe(response => {

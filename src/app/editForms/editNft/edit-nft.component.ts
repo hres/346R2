@@ -44,8 +44,7 @@ export class EditNftComponent implements OnChanges {
     nftAsSold:  nftFields[];
     nftValues:  nftFields[];
     flagNft: any = null;
-    authToken: string;
-    authPromise: Promise<string>;
+
 
 
 
@@ -58,18 +57,17 @@ export class EditNftComponent implements OnChanges {
 
         this.createForm();
          this.logNameChange();
-         this.authPromise = this.keycloakService.getToken();
+
     }
 
-    async ngOnInit() {
-        try{
-            this.authToken = await this.authPromise;
+     ngOnInit() {
+
             this.responseComponentName = null;
 
             this.route.paramMap
                 .switchMap((param: ParamMap) =>
     
-                    this.getRecordService.getNftSoldRecordsEdit(param.get('id'), param.get('flag'), this.authToken)).subscribe(
+                    this.getRecordService.getNftSoldRecordsEdit(param.get('id'), param.get('flag'))).subscribe(
                 response => {
                    this.flagNft = this.route.snapshot.paramMap.get('flag') == 'true' ? 'true': (this.route.snapshot.paramMap.get('flag') =='false'? 'false':null );
                     const {dataList} = response[0];
@@ -87,9 +85,7 @@ export class EditNftComponent implements OnChanges {
     
                 });
 
-        }catch(error){
-            throw error;
-        }
+
 
 
 
@@ -137,7 +133,7 @@ export class EditNftComponent implements OnChanges {
         this.submitted = true;
         this.isLoading = true;
         this.flag = null
-        this.editRecordService.updateNft(JSON.stringify(this.nftListArray), this.authToken).finally(() => this.isLoading = false).subscribe(response => {
+        this.editRecordService.updateNft(JSON.stringify(this.nftListArray)).finally(() => this.isLoading = false).subscribe(response => {
 
             const {id, message, status} = response;
             if (status === 803) {

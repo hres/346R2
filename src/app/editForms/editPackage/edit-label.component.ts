@@ -45,8 +45,6 @@ export class EditLabelComponent implements OnChanges {
     serverDown: boolean = false;
     labelForm: FormGroup;
     @Output() updateView = new EventEmitter<number>();
-    authToken: string; 
-    authPromise: Promise<string>;
 
 
     constructor(private fb: FormBuilder,
@@ -59,16 +57,14 @@ export class EditLabelComponent implements OnChanges {
 
         this.createForm();
 
-        this.authPromise = this.keycloakService.getToken();
     }
 
-   async ngOnInit() {
+    ngOnInit() {
 
-    try{
-        this.authToken = await this.authPromise;
+
         this.route.paramMap
         .switchMap((param: ParamMap) =>
-            this.getRecordService.getPackageAndClassification(param.get('id'),this.authToken)).subscribe(response => {
+            this.getRecordService.getPackageAndClassification(param.get('id'))).subscribe(response => {
 
                 this.packageData = response[0].data.dataList[0];
                 console.log(this.packageData);
@@ -84,9 +80,7 @@ export class EditLabelComponent implements OnChanges {
 
             }
         );
-    }catch(error){
-        throw error;
-    }
+
 
 
 
@@ -230,7 +224,7 @@ export class EditLabelComponent implements OnChanges {
         console.log(this.packageData);
         this.isLoading = true;
 
-        this.editRecordService.UpdateLabel(JSON.stringify(this.packageData),this.authToken).finally(() => this.isLoading = false).subscribe(response => {
+        this.editRecordService.UpdateLabel(JSON.stringify(this.packageData)).finally(() => this.isLoading = false).subscribe(response => {
 
             const { message, status} = response;
 

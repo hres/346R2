@@ -57,8 +57,6 @@ export class FormComponent implements OnChanges {
     serverDown: boolean = false;
     restaurantTypes: GenericList;
     types: GenericList;
-    authPromise: Promise<string>;
-    authToken:string;
     productForm: FormGroup;
 
     constructor(private fb: FormBuilder,
@@ -70,15 +68,13 @@ export class FormComponent implements OnChanges {
         this.direction[this.index] = false;
         this.index = 0;
         this.flag = true;
-        this.authPromise = this.keycloakService.getToken();
 
 
     }
 
-    async ngOnInit() {
-        try {
-            this.authToken = await this.authPromise;
-            this.searchService.getClassificationRestaurant(this.authToken).subscribe(response =>
+     ngOnInit() {
+        
+            this.searchService.getClassificationRestaurant().subscribe(response =>
                 {  
                  const {data, message, status} = response[0];   
                  //const cl = response;
@@ -92,10 +88,7 @@ export class FormComponent implements OnChanges {
 
                  }
             );  
-        }
-        catch (error) {
-            throw error;
-        }
+      
 
 
       
@@ -175,7 +168,7 @@ export class FormComponent implements OnChanges {
         // }
 
 this.isLoading = true;
-        this.searchService.search(JSON.stringify(this.product),this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
    
             if (status === 202) {
@@ -235,7 +228,7 @@ this.isLoading = true;
 
 
 this.isLoading = true;
-        this.searchService.search(JSON.stringify(this.product), this.authToken).finally(()=> 
+        this.searchService.search(JSON.stringify(this.product)).finally(()=> 
         {this.isLoading = false;
        // console.log("failling here")    
         }
@@ -287,7 +280,7 @@ this.isLoading = true;
         this.product.orderby = this.settings[i].primaryKey;
         this.product.flag = this.direction[i];
         this.isLoading = false;
-        this.searchService.search(JSON.stringify(this.product),this.authToken).finally(()=> this.isLoading = false).subscribe(response => {
+        this.searchService.search(JSON.stringify(this.product)).finally(()=> this.isLoading = false).subscribe(response => {
             const {data, message, status} = response;
 
             if (status === 205) {

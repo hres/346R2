@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/timeout';
 import { productParams, Response, productAllFields, ResponseComponentName } from '../data-model';
 import { environment } from '../../environments/environment'
+import { KeycloakHttp } from '../keycloak/keycloak.http';
 
 
 import 'rxjs/add/observable/forkJoin';
@@ -18,7 +19,7 @@ export class GetRecordService {
     apiUrl = environment.apiUrl;
 
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private keycloakHttp : KeycloakHttp) { }
 
 
 
@@ -32,40 +33,37 @@ export class GetRecordService {
 
 
 
-    getAllRecords(id: number | string, authToken: string) {
+    getAllRecords(id: number | string) {
 
-        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
         return Observable.forkJoin(
-            this.http
-                .get(this.apiUrl + `ProductService/productclassification/${id}`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `ProductService/productclassification/${id}`, this.options)
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + `ProductService/productlabels/${id}`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `ProductService/productlabels/${id}`, this.options)
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + `ProductService/productsales/${id}`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `ProductService/productsales/${id}`, this.options)
                 .map(response => response.json())
         );
 
     }
 
-    getProductAndClassificationList(id: number | string, authToken: string) {
-
-        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
+    getProductAndClassificationList(id: number | string) {
 
         return Observable.forkJoin(
-            this.http
-                .get(this.apiUrl + `ProductService/productclassification/${id}`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `ProductService/productclassification/${id}`, this.options)
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + 'ClassificationService/classification', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'ClassificationService/classification', this.options)
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + 'ProductService/restaurantTypes', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'ProductService/restaurantTypes', this.options)
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + 'ProductService/types', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'ProductService/types', this.options)
                 .map(response => response.json()
 
                 ));
@@ -74,7 +72,7 @@ export class GetRecordService {
 
     getSalesRecords(id: number | string) {
         return Observable.forkJoin(
-            this.http
+            this.keycloakHttp
                 .get(this.apiUrl + `SalesService/sales/${id}`, this.options)
                 .map(response => response.json()));
     }
@@ -82,79 +80,83 @@ export class GetRecordService {
 
     getSalesRecordsAndClassification(id: number | string) {
         return Observable.forkJoin(
-            this.http
+            this.keycloakHttp
                 .get(this.apiUrl + `SalesService/sales/${id}`, this.options)
                 .map(response => response.json()),
-            this.http
+            this.keycloakHttp
                 .get(this.apiUrl + 'ClassificationService/classification', this.options)
                 .map(response => response.json()));
     }
 
-    getPackageRecords(id: number | string, authToken : string) {
+    getPackageRecords(id: number | string) {
         let body = JSON.stringify({ "package_id": id, "flag": "true" });
         let body_prepared = JSON.stringify({ "package_id": id, "flag": "false" });
-        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
 
         return Observable.forkJoin(
-            this.http
-                .get(this.apiUrl + `PackageService/package/${id}`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `PackageService/package/${id}`, this.options)
                 .map(response => response.json()),
-            this.http
-                .post(this.apiUrl + `PackageService/getNft`, body, options)
+            this.keycloakHttp
+                .post(this.apiUrl + `PackageService/getNft`, body, this.options)
                 .map(response => response.json()),
-            this.http
-                .post(this.apiUrl + `PackageService/getNft`, body_prepared, options)
+            this.keycloakHttp
+                .post(this.apiUrl + `PackageService/getNft`, body_prepared, this.options)
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + `PackageService/getListOfImages/${id}`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `PackageService/getListOfImages/${id}`, this.options)
                 .map(response => response.json()));
     }
 
-    getPackageAndClassification(id: number | string, authToken: string) {
-        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
+    getPackageAndClassification(id: number | string) {
 
         return Observable.forkJoin(
-            this.http
-                .get(this.apiUrl + `PackageService/package/${id}`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `PackageService/package/${id}`, this.options)
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + 'ClassificationService/classification', options)
+            this.keycloakHttp
+                .get(this.apiUrl + 'ClassificationService/classification', this.options)
                 .map(response => response.json()),
-            this.http
-                .get(this.apiUrl + `PackageService/unitOfMeasure`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
                 .map(response => response.json())
         );
 
     }
-    getComponentNames(authToken: string) {
-        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
+    getComponentNames() {
 
         return Observable.forkJoin(
-            this.http
-                .get(this.apiUrl + `PackageService/listofcomponents`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `PackageService/listofcomponents`, this.options)
                 .map(response => response.json() as ResponseComponentName),
-            this.http
-                .get(this.apiUrl + `PackageService/unitOfMeasure`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
                 .map(response => response.json()));
 
 
     }
 
-    getNftSoldRecordsEdit(id: number | string, flag: boolean | string, authToken: string) {
-        const options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':'Bearer ' +authToken })});
+    getNftSoldRecordsEdit(id: number | string, flag: boolean | string) {
 
         let body = JSON.stringify({ "package_id": id, "flag": flag });
 
         return Observable.forkJoin(
-            this.http
-                .get(this.apiUrl + `PackageService/listofcomponents`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `PackageService/listofcomponents`, this.options)
                 .map(response => response.json() as ResponseComponentName),
-            this.http
-                .get(this.apiUrl + `PackageService/unitOfMeasure`, options)
+            this.keycloakHttp
+                .get(this.apiUrl + `PackageService/unitOfMeasure`, this.options)
                 .map(response => response.json()),
-            this.http
-                .post(this.apiUrl + `PackageService/getNft`, body, options)
+            this.keycloakHttp
+                .post(this.apiUrl + `PackageService/getNft`, body, this.options)
                 .map(response => response.json()));
+    }
+    getImage(imagePath: string): Observable<Blob>{
+
+        const options = new RequestOptions({ headers: new Headers({  'Accept':'image/*', responseType: 'blob'})});
+        return this.keycloakHttp
+        .get(this.apiUrl+"PackageService/getLabelImages/"+imagePath, options)
+        .map(res => res.blob());
+
     }
 
 }

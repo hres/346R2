@@ -30,8 +30,7 @@ export class CreateProductComponent implements OnChanges {
     types: GenericList;
     previousClassificationNumberValue: string;
     previousClassificationNameValue: string;
-    authToken:string;
-    authPromise : Promise<string>;
+
     serverDown: boolean = false;
 
     productForm: FormGroup;
@@ -45,19 +44,17 @@ export class CreateProductComponent implements OnChanges {
     ) {
 
         this.createForm();
-        this.authPromise = this.keycloakService.getToken();
 
 
     }
-   async ngOnInit() {
+    ngOnInit() {
         // this.keycloakService.getToken().then( (token)=>{
         //     this.authToken=token;
 
     // })
 
-    try{
-        this.authToken = await this.authPromise; 
-        this.searchService.getClassificationRestaurant(this.authToken).subscribe(response => {
+   
+        this.searchService.getClassificationRestaurant().subscribe(response => {
             const { data, message, status } = response[0];
             //const cl = response;
             this.listOfClass = data.dataList;
@@ -68,9 +65,7 @@ export class CreateProductComponent implements OnChanges {
 
         }
         );
-    }     catch (error) {
-        throw error;
-    }
+    
     }
 
     ngOnChanges() {
@@ -142,7 +137,7 @@ export class CreateProductComponent implements OnChanges {
         this.setValues();
 
         this.isLoading = true;
-        this.createRecordService.createProduct(JSON.stringify(this.product), this.authToken).finally(() => this.isLoading = false).subscribe(response => {
+        this.createRecordService.createProduct(JSON.stringify(this.product)).finally(() => this.isLoading = false).subscribe(response => {
             const { id, message, status } = response;
             console.log(response);
 

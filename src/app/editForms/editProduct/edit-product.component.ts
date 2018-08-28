@@ -51,8 +51,7 @@ export class EditProductComponent implements OnChanges {
   types: GenericList;
   flag: number = null;
   productForm: FormGroup;
-  authToken: string;
-  authPromise: Promise<string>;
+
 
   constructor(
     private fb: FormBuilder,
@@ -65,16 +64,14 @@ export class EditProductComponent implements OnChanges {
     private keycloakService: KeycloakService
   ) {
     this.createForm();
-    this.authPromise = this.keycloakService.getToken();
     }
     
-  async ngOnInit()  {
+   ngOnInit()  {
     this.product = null;
-    try{
-      this.authToken = await this.authPromise;
+
       this.route.paramMap
         .switchMap((param: ParamMap) =>
-          this.getRecordService.getProductAndClassificationList(param.get("id"),this.authToken)
+          this.getRecordService.getProductAndClassificationList(param.get("id"))
         )
         .subscribe(response => {
   
@@ -89,9 +86,7 @@ export class EditProductComponent implements OnChanges {
           this.ngOnChanges();
         });
 
-    }catch(error){
-      throw error;
-    }
+ 
   }
 
   ngOnChanges() {
@@ -155,7 +150,7 @@ export class EditProductComponent implements OnChanges {
 
     this.isLoading = true;
     this.editRecordService
-      .updateProduct(JSON.stringify(this.product),this.authToken)
+      .updateProduct(JSON.stringify(this.product))
       .finally(() => (this.isLoading = false))
       .subscribe(
         response => {
