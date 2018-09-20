@@ -30,6 +30,7 @@ export class CreateProductComponent implements OnChanges {
     types: GenericList;
     previousClassificationNumberValue: string;
     previousClassificationNameValue: string;
+    username: string;
 
     serverDown: boolean = false;
 
@@ -44,6 +45,7 @@ export class CreateProductComponent implements OnChanges {
     ) {
 
         this.createForm();
+        this.username = KeycloakService.getUsername();
 
 
     }
@@ -205,6 +207,7 @@ export class CreateProductComponent implements OnChanges {
     setValues(): void {
 
         this.product = this.prepareSaveProduct();
+        this.product.edited_by = this.username;
         this.submitted = true;
         this.product.classification_number = this.product.classification_number == "" ? null : this.product.classification_number;
         this.product.cnf_code = this.product.cnf_code == "" ? null : this.product.cnf_code;

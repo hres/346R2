@@ -40,6 +40,7 @@ export type createProductFields = {
     product_comment: string;
     restaurant_type: string;
     type: string;
+    edited_by: string; 
 
 
 };

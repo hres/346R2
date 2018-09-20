@@ -12,7 +12,7 @@ export class KeycloakService {
 			url: environment.keycloakRootUrl,						
 			realm: 'sodium-monitoring',
 			clientId: 'sodium-monitoring-webapp', 
-			'ssl-required': 'none',
+			'ssl-required': 'external',
 			'public-client': true
 		});
 

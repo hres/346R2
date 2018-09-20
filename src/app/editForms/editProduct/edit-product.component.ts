@@ -51,6 +51,7 @@ export class EditProductComponent implements OnChanges {
   types: GenericList;
   flag: number = null;
   productForm: FormGroup;
+  username: string;
 
 
   constructor(
@@ -64,6 +65,8 @@ export class EditProductComponent implements OnChanges {
     private keycloakService: KeycloakService
   ) {
     this.createForm();
+    this.username = KeycloakService.getUsername();
+
     }
     
    ngOnInit()  {
@@ -226,6 +229,7 @@ export class EditProductComponent implements OnChanges {
     this.id = this.product.product_id;
     this.product = this.prepareSaveProduct();
     this.product.product_id = this.id;
+    this.product.edited_by = this.username;
   }
 
   setClassificationNumber(n: String) {

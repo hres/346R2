@@ -126,11 +126,11 @@ export class ImportCsvComponent {
 
     }
 
-    downloadFile(data: Response){
-        var blob = new Blob([data], { type: 'text/plain' });
-        var url= window.URL.createObjectURL(blob);
-        window.open(url);
-      }
+    // downloadFile(data: Response){
+    //     var blob = new Blob([data], { type: 'text/plain' });
+    //     var url= window.URL.createObjectURL(blob);
+    //     window.open(url);
+    //   }
     validateFile(input: EventTarget) {
         
         this.validFile = true;

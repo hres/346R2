@@ -1,38 +1,45 @@
+<header role="banner">
+        <div id="wb-bnr" class="container">
 
+                <div class="row">
+                        <div class="brand col-xs-8 col-sm-9 col-md-6">
+                                <a href="https://www.canada.ca/en.html">
+                                        <img src='GCWeb/assets/sig-blk-en.svg' alt="Symbol of the Government of Canada">
 
-	  <header role="banner">
-<div id="wb-bnr" class="container">
-
-<div class="row">
-<div class="brand col-xs-8 col-sm-9 col-md-6">
-<a href="https://www.canada.ca/en.html">
-<img src='GCWeb/assets/sig-blk-en.svg' alt="Symbol of the Government of Canada">
-
-<!--<object type="image/svg+xml" tabindex="-1" data="GCWeb/assets/sig-blk-en.svg"></object>-->
-<span class="wb-inv"> Government of Canada / <span lang="fr">Gouvernement du Canada</span></span></a>
-</div>
-<section class="wb-mb-links col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
-<h2>Search and menus</h2>
-<ul class="list-inline text-right chvrn">
-<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
-</ul>
-<div id="mb-pnl"></div>
-</section>
-</div>
-</div>
-<nav role="navigation" id="wb-sm" data-ajax-replace="ajax/sitemenu-en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
-<div class="container nvbar">
-<h2>Food Component Data Repository</h2>
-<div class="row">
-<ul class="list-inline menu">
-<li><a routerLink="/searchengine" routerLinkActive="active fluffy">Search</a></li>
-<li><a routerLink="/createproduct" routerLinkActive="active fluffy">Create product</a></li>
-<li><a routerLink="/importFile" routerLinkActive="active fluffy">Import CSV files</a></li>
-<li><a routerLink="/importImages" routerLinkActive="active fluffy">Import images</a></li>
-</ul>
-</div>
-</div>
-</nav>
+                                        <!--<object type="image/svg+xml" tabindex="-1" data="GCWeb/assets/sig-blk-en.svg"></object>-->
+                                        <span class="wb-inv"> Government of Canada / <span lang="fr">Gouvernement du
+                                                        Canada</span></span></a>
+                        </div>
+                        <section class="wb-mb-links col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
+                                <h2>Search and menus</h2>
+                                <ul class="list-inline text-right chvrn">
+                                        <li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk"
+                                                        role="button"><span class="glyphicon glyphicon-search"><span
+                                                                        class="glyphicon glyphicon-th-list"><span class="wb-inv">Search
+                                                                                and menus</span></span></span></a></li>
+                                </ul>
+                                <div id="mb-pnl"></div>
+                        </section>
+                </div>
+        </div>
+        <nav role="navigation" id="wb-sm" data-ajax-replace="ajax/sitemenu-en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg"
+                typeof="SiteNavigationElement">
+                <div class="container nvbar">
+                        <h2>Food Component Data Repository</h2>
+                        <div class="row">
+                                <ul class="list-inline menu">
+                                        <li><a class="navBarItems" routerLink="/searchengine" routerLinkActive="active fluffy">Search</a></li>
+                                        <li><a class="navBarItems" routerLink="/createproduct" routerLinkActive="active fluffy">Create
+                                                        product</a></li>
+                                        <li><a class="navBarItems" routerLink="/importFile" routerLinkActive="active fluffy">Import
+                                                        CSV
+                                                        files</a></li>
+                                        <li><a class="navBarItems" routerLink="/importImages" routerLinkActive="active fluffy">Import
+                                                        images</a></li>
+                                </ul>
+                        </div>
+                </div>
+        </nav>
 
 </header>
 
@@ -40,15 +47,16 @@
 <main class="container">
         <div class="navbar-nav mt-2 mt-md-0">
                 <button (click)="logout()" class="btn btn-outline-info my-2 my-sm-0" type="button">Logout</button>
+                <button (click)="getUserInfoFromToken()" class="btn btn-outline-info my-2 my-sm-0" type="button">Print</button>
 
-             </div>
-<h2 id="wb-cont">Food Component Data Repository</h2>
-<div style="min-height: 550px">
+        </div>
+        <h1 id="wb-cont">Food Component Data Repository</h1>
+        <div style="min-height: 550px">
 
-     <router-outlet></router-outlet>
-     <!-- <router-outlet name="popup"></router-outlet> -->
+                <router-outlet></router-outlet>
+                <!-- <router-outlet name="popup"></router-outlet> -->
 
-</div>
+        </div>
 </main>
 <!--</div>-->
 <!--<radio-button></radio-button>-->
