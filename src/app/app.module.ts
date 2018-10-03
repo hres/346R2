@@ -58,6 +58,7 @@ import { AddImageModule } from "./addImage/add-image.module";
 
 import { KeycloakHttp, keycloakHttpFactory } from "./keycloak/keycloak.http";
 import { KeycloakService } from "./keycloak/keycloak.service";
+// import { DataTablesModule } from "angular-datatables";
 
 import { RequestOptions, XHRBackend } from "@angular/http";
 

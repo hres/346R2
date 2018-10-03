@@ -1,88 +1,82 @@
-
-
 <div *ngIf="records && !isRelink" style="overflow-x: auto;">
-<table class="table">
-    <thead>
-      <tr role="row">
-        
-            <th rowspan="1" colspan="1" tabindex="0" class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" 
-             (keypress)="sortCol(i)" (click)="sortCol(i)"
-            [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}"> {{ map.header }}                       
-                       <span class="iconGroup" *ngIf="(i === selectedRow && i===index) || (i===index && index===0)" [ngClass]="{'toggle': flag && i === selectedRow , 'toggle2':!flag  && i === selectedRow} ">⇑</span>                  
-            </th>
-          
-        </tr>
-    </thead>
-    <tbody>
-<tr *ngFor="let record of records">
+    <table class="table">
+        <thead>
+            <tr role="row">
 
-    <ng-container *ngFor="let map of columnMaps; let i=index">
-        
-        <td *ngIf="i === 0" 
-        [ctStyleCell]="record[map.primaryKey]"
-         style="text-decoration: underline; cursor: pointer;">
-         
-         <a [routerLink]='returnUrl(record)'> {{ record[map.primaryKey] | formatCell:map.format }} </a>
-     <!--<td *ngFor="let map of columnMaps"
+                <th rowspan="1" colspan="1" tabindex="0" class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index"
+                    (keypress)="sortCol(i)" (click)="sortCol(i)" [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}">
+                    {{ map.header }}
+                    <span class="iconGroup" *ngIf="(i === selectedRow && i===index) || (i===index && index===0)"
+                        [ngClass]="{'toggle': flag && i === selectedRow , 'toggle2':!flag  && i === selectedRow} ">⇑</span>
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records">
+
+                <ng-container *ngFor="let map of columnMaps; let i=index">
+
+                    <td *ngIf="i === 0" [ctStyleCell]="record[map.primaryKey]" style="text-decoration: underline; cursor: pointer;">
+
+                        <a [routerLink]='returnUrl(record)' target=”_blank”> {{ record[map.primaryKey] |
+                            formatCell:map.format }} </a>
+                        <!--<td *ngFor="let map of columnMaps"
      [ctStyleCell]="record[map.primaryKey]" 
                  (click)="passIt(record.product_id)">
            {{ record[map.primaryKey] | formatCell:map.format }}-->
-     </td>
-             <td *ngIf="i > 0" 
-        [ctStyleCell]="record[map.primaryKey]"
-        >
-         {{ record[map.primaryKey] | formatCell:map.format }} 
-     <!--<td *ngFor="let map of columnMaps"
+                    </td>
+                    <td *ngIf="i > 0" [ctStyleCell]="record[map.primaryKey]">
+                        {{ record[map.primaryKey] | formatCell:map.format }}
+                        <!--<td *ngFor="let map of columnMaps"
      [ctStyleCell]="record[map.primaryKey]" 
                  (click)="passIt(record.product_id)">
            {{ record[map.primaryKey] | formatCell:map.format }}-->
-     </td>
-     </ng-container>
-</tr>
-    </tbody>
-</table>
+                    </td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <div *ngIf="isRelink" style="overflow-x: auto;">
     <table class="table">
         <thead>
-          <tr role="row">
-            
-                <th rowspan="1" colspan="1" class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index" 
-                (keypress)="sortCol(i)" (click)="sortCol(i)"
-                [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}">{{ map.header }}                       
-                           <span class="iconGroup" *ngIf="(i === selectedRow && i===index) || (i===index && index===0)" [ngClass]="{'toggle': flag && i === selectedRow , 'toggle2':!flag  && i === selectedRow} ">⇑</span>                  
+            <tr role="row">
+
+                <th rowspan="1" colspan="1" class="addHand tableheader" *ngFor="let map of columnMaps ; let i=index"
+                    (keypress)="sortCol(i)" (click)="sortCol(i)" [ngClass]="{'my-class': (i === selectedRow && i===index) || (i===index && index===0)}">{{
+                    map.header }}
+                    <span class="iconGroup" *ngIf="(i === selectedRow && i===index) || (i===index && index===0)"
+                        [ngClass]="{'toggle': flag && i === selectedRow , 'toggle2':!flag  && i === selectedRow} ">⇑</span>
                 </th>
-              
+
             </tr>
         </thead>
         <tbody>
-    <tr *ngFor="let record of records">
-    
-        <ng-container *ngFor="let map of columnMaps; let i=index">
-            
-            <td *ngIf="i === 0" 
-            [ctStyleCell]="record[map.primaryKey]"
-             style="text-decoration: underline; cursor: pointer;" (click)="relink(record)">
-             
-              {{ record[map.primaryKey] | formatCell:map.format }} 
-         <!--<td *ngFor="let map of columnMaps"
+            <tr *ngFor="let record of records">
+
+                <ng-container *ngFor="let map of columnMaps; let i=index">
+
+                    <td *ngIf="i === 0" [ctStyleCell]="record[map.primaryKey]" style="text-decoration: underline; cursor: pointer;"
+                        (click)="relink(record)">
+
+                        {{ record[map.primaryKey] | formatCell:map.format }}
+                        <!--<td *ngFor="let map of columnMaps"
          [ctStyleCell]="record[map.primaryKey]" 
                      (click)="passIt(record.product_id)">
                {{ record[map.primaryKey] | formatCell:map.format }}-->
-         </td>
-                 <td *ngIf="i > 0" 
-            [ctStyleCell]="record[map.primaryKey]"
-            >
-             {{ record[map.primaryKey] | formatCell:map.format }} 
-         <!--<td *ngFor="let map of columnMaps"
+                    </td>
+                    <td *ngIf="i > 0" [ctStyleCell]="record[map.primaryKey]">
+                        {{ record[map.primaryKey] | formatCell:map.format }}
+                        <!--<td *ngFor="let map of columnMaps"
          [ctStyleCell]="record[map.primaryKey]" 
                      (click)="passIt(record.product_id)">
                {{ record[map.primaryKey] | formatCell:map.format }}-->
-         </td>
-         </ng-container>
-    </tr>
+                    </td>
+                </ng-container>
+            </tr>
         </tbody>
     </table>
-    </div>
-    <confirm-box [flag]="flagLink" *ngIf="flagLink"></confirm-box>
+</div>
+<confirm-box [flag]="flagLink" *ngIf="flagLink"></confirm-box>

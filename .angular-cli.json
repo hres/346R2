@@ -17,7 +17,6 @@
         "distF",
         "039978303943.jpeg",
         "wet-boew"
-
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -27,11 +26,18 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "assets/css/jquery.dataTables.min.css",
+        "assets/css/colReorder.dataTables.min.css",
+        "assets/css/buttons.dataTables.min.css"
       ],
       "scripts": [
-
-        "assets/scripts/keycloak.js"
+        "assets/scripts/keycloak.js",
+        "assets/js/jquery.min.js",
+        "assets/js/jquery.dataTables.min.js",
+        "assets/js/dataTables.colReorder.min.js",
+        "assets/js/dataTables.buttons.min.js",
+        "assets/js/buttons.colVis.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

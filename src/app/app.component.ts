@@ -1,16 +1,22 @@
-import { Component, Input, ViewEncapsulation, OnInit } from "@angular/core";
+import {
+  Component,
+  Input,
+  ViewEncapsulation,
+  OnInit,
+  AfterViewInit
+} from "@angular/core";
 import { SearchService } from "./services/search.service";
 // import {MatIconRegistry} from '@angular/material';
 import { DomSanitizer } from "@angular/platform-browser";
 import { KeycloakService } from "./keycloak/keycloak.service";
 import { KeycloakHttp } from "./keycloak/keycloak.http";
-
+declare const $;
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   list = ["radiobutton"];
   username: string;
   fullName: string;
@@ -29,6 +35,17 @@ export class AppComponent {
     } else {
       console.log("Nope");
     }
+  }
+  ngOnInit(): void {
+    $(function() {
+      let table = $("#table_id").DataTable({
+        dom: "Bfrtip",
+        colReorder: true,
+        stateSave: true,
+        buttons: ["colvis"],
+        bDestroy: true
+      });
+    });
   }
 
   logout(): void {
