@@ -59,7 +59,7 @@
                 <ng-container *ngFor="let map of columnMaps; let i=index">
 
                     <td *ngIf="i === 0" [ctStyleCell]="record[map.primaryKey]" style="text-decoration: underline; cursor: pointer;"
-                        (click)="relink(record)">
+                        (click)="confirmAction(record)">
 
                         {{ record[map.primaryKey] | formatCell:map.format }}
                         <!--<td *ngFor="let map of columnMaps"
@@ -80,3 +80,7 @@
     </table>
 </div>
 <confirm-box [flag]="flagLink" *ngIf="flagLink"></confirm-box>
+<confirm-modal-box [conformBoxModalMessage]="confirmModalBoxMessage" (displayModal)="responseFromConfirmModalBox($event)"
+    *ngIf="showConfimModalBox">
+
+</confirm-modal-box>

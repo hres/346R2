@@ -41,10 +41,13 @@ export class TableLayoutComponent implements OnChanges {
   @Input()
   flag: boolean;
   modalType: string;
-
+  showConfimModalBox: boolean;
+  relinkDataObj: any;
   isLoading: boolean;
   @Output()
   trigger: EventEmitter<number> = new EventEmitter<number>();
+  confirmModalBoxMessage: string =
+    "Are you sure you want to link it to this product?";
 
   constructor(
     private route: ActivatedRoute,
@@ -79,6 +82,66 @@ export class TableLayoutComponent implements OnChanges {
 
     this.trigger.emit(this.index);
   }
+
+  confirmAction(record: any) {
+    //     let obj = {
+    //   product_id: record.product_id,
+    //   record_id: this.recordId,
+    //   type: this.type
+    // };
+    this.relinkDataObj = {
+      product_id: record.product_id,
+      record_id: this.recordId,
+      type: this.type
+    };
+    this.showConfimModalBox = true;
+  }
+  responseFromConfirmModalBox(value: boolean) {
+    this.showConfimModalBox = false;
+    console.log("clicked to delete image");
+    if (value) {
+      this.relinkSalesOrLabel(this.relinkDataObj);
+    } else {
+      console.log("Dont delete", this.relinkDataObj);
+      return;
+    }
+  }
+
+  relinkSalesOrLabel(obj: any) {
+    this.flagLink = null;
+
+    this.isLoading = true;
+
+    this.deleteRecordService
+      .reLinkRecord(JSON.stringify(obj))
+      .finally(() => (this.isLoading = false))
+      .subscribe(
+        response => {
+          const { message, status, record_id } = response;
+
+          if (status === 202) {
+            this.flagLink = 2;
+          } else if (status === 203) {
+            this.flagLink = 2;
+          } else if (status === 204) {
+            this.flagLink = 2;
+          } else if (status === 200) {
+            //this.callP.emit(1);
+            this.flagLink = 1;
+            setTimeout(() => {
+              console.log("the record id is", record_id);
+              this.router.navigate(["/viewproduct", record_id]);
+            }, 4000);
+          } else {
+            this.flagLink = 2;
+          }
+        },
+        error => {
+          this.serverDown = true;
+          this.flagLink = 2;
+        }
+      );
+  }
   passIt(pid: number): void {
     this.router.navigate(["/viewproduct", pid]);
     console.log(pid, "NOOOO");
@@ -88,17 +151,17 @@ export class TableLayoutComponent implements OnChanges {
     return `/viewproduct/${record.product_id || record.productId}`;
   }
 
-  relink(record: any) {
-    if (confirm("Are you sure you want to link it to this product?")) {
-      let obj = {
-        product_id: record.product_id,
-        record_id: this.recordId,
-        type: this.type
-      };
+  // relink(record: any) {
+  //   if (confirm("Are you sure you want to link it to this product?")) {
+  //     let obj = {
+  //       product_id: record.product_id,
+  //       record_id: this.recordId,
+  //       type: this.type
+  //     };
 
-      this.relinkRecord(obj);
-    }
-  }
+  //     this.relinkRecord(obj);
+  //   }
+  // }
 
   relinkRecord(obj: any) {
     console.log(obj);
