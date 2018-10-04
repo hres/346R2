@@ -1,0 +1,21 @@
+<div class="modalContent">
+    <div class="modalMain">
+        <div class="modalHeader"></div>
+        <div class="modalBody" style="margin-left: 10px;">
+
+            <div *ngIf="conformBoxModalMessage">
+                <h2>{{conformBoxModalMessage}}</h2>
+            </div>
+
+        </div>
+        <div class="modalFooter">
+        </div>
+        <div style="width: 100%; height: 50px; position: fixed; background-color:white; padding-right:50px; ">
+            <span style=" float: right;">
+                <button class="btn btn-default actions" (click)="fireEvent(true)" style="width:160px">Confirm</button>
+                <button class="btn btn-default actions" (click)="fireEvent(false)" style="width:160px">Cancel</button>
+            </span>
+        </div>
+
+    </div>
+</div>

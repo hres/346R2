@@ -19,7 +19,7 @@
 
                     <td *ngIf="i === 0" [ctStyleCell]="record[map.primaryKey]" style="text-decoration: underline; cursor: pointer;">
 
-                        <a [routerLink]='returnUrl(record)' target=”_blank”> {{ record[map.primaryKey] |
+                        <a [routerLink]='returnUrl(record)'> {{ record[map.primaryKey] |
                             formatCell:map.format }} </a>
                         <!--<td *ngFor="let map of columnMaps"
      [ctStyleCell]="record[map.primaryKey]" 

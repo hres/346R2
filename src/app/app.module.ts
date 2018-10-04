@@ -52,7 +52,7 @@ import { ImportCsvModule } from "./imports/importCSV/import-csv.module";
 import { ImportImagesModule } from "./imports/importImages/import-images.module";
 
 import { CreateNftModule } from "./createRecords/createNft/create-nft.module";
-
+import { ConfirmModalBoxModule } from "./confirmModalBox/confirm-modal-box.module";
 import { ConfirmBoxModule } from "./confirmbox/confirm-box.module";
 import { AddImageModule } from "./addImage/add-image.module";
 
@@ -68,6 +68,7 @@ import { RequestOptions, XHRBackend } from "@angular/http";
     BrowserModule,
     FormsCenterModule,
     FormModule,
+    ConfirmModalBoxModule,
     ConfirmBoxModule,
     EditSalesModule,
     AppRoutingModule,

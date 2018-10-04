@@ -1,77 +1,77 @@
 <div class="container" *ngIf="packageData">
 
-        <div style="margin-bottom:10px">
-                <h2 >Package Details</h2>
-            
-        </div>
+    <div style="margin-bottom:10px">
+        <h2>Package Details</h2>
+
+    </div>
     <div class="row">
         <div class="col-md-6">
-                <button class="btn btn-default" (click)="callViewProduct()" style="margin-top:0px">View Product</button>
-            
-</div>
-<div class="col-md-6" style="text-align: right" >
+            <button class="btn btn-default" (click)="callViewProduct()" style="margin-top:0px">View Product</button>
 
-<!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
-<button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Package</button>
-<button class="btn btn-default" (click)="callEdit()" [disabled]="submitted">Edit Package</button>
-<button class="btn btn-default" (click)="callRelink()" [disabled]="submitted">Relink Package</button>
+        </div>
+        <div class="col-md-6" style="text-align: right">
 
-
-
-</div>
-</div>
+            <!--<a class="btn btn-default" routerLink="./editProduct" routerLinkActive="active">Edit Product</a>-->
+            <button class="btn btn-default" (click)="callDelete()" [disabled]="submitted">Delete Package</button>
+            <button class="btn btn-default" (click)="callEdit()" [disabled]="submitted">Edit Package</button>
+            <button class="btn btn-default" (click)="callRelink()" [disabled]="submitted">Relink Package</button>
 
 
 
-<div class="container2">
+        </div>
+    </div>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#home">1</a></li>
-        <li><a data-toggle="tab" href="#menu1">2</a></li>
 
-    </ul>
 
-    <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
-            <!--Start of the first tab-->
+    <div class="container2">
 
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Informed Dining Program
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">1</a></li>
+            <li><a data-toggle="tab" href="#menu1">2</a></li>
+
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <!--Start of the first tab-->
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Informed Dining Program
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.informed_dining_program}}
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Nft Last Update Date
+                            </div>
 
-                        <div class="panel-body">
-                            {{packageData.informed_dining_program}}
+                            <div class="panel-body">
+                                {{packageData.nft_last_update_date}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Child Item
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.child_item}}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Nft Last Update Date
-                        </div>
-
-                        <div class="panel-body">
-                            {{packageData.nft_last_update_date}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Child Item
-                        </div>
-
-                        <div class="panel-body">
-                            {{packageData.child_item}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--<table style="width:100%; margin-top:10px;">-->
-            <!--<tr>
+                <!--<table style="width:100%; margin-top:10px;">-->
+                <!--<tr>
         <th>Informed  Dining Program</th>
         <td>{{packageData.informed_dining_program}}</td>
     </tr>
@@ -89,539 +89,545 @@
         <td>{{packageData.product_grouping}}</td>
     </tr>-->
 
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Label UPC
-                        </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Label UPC
+                            </div>
 
-                        <div class="panel-body">
-                            {{packageData.package_upc}}
+                            <div class="panel-body">
+                                {{packageData.package_upc}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Label Description
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.package_description}}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Label Description
-                        </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Classification Number
+                            </div>
 
-                        <div class="panel-body">
-                            {{packageData.package_description}}
+                            <div class="panel-body">
+                                {{packageData.classification_number}}
+                            </div>
                         </div>
                     </div>
+                    <div class="col-sm-8">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Classification Name
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.classification_name}}
+                            </div>
+                        </div>
+                        <!--end of the first tab-->
+                    </div>
                 </div>
+
+
+
             </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Classification Number
-                        </div>
+            <div id="menu1" class="tab-pane fade">
+                <!--Start of the second tab-->
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Nielsen Item Rank
+                            </div>
 
-                        <div class="panel-body">
-                            {{packageData.classification_number}}
+                            <div class="panel-body">
+                                {{packageData.nielsen_item_rank}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Nielsen Category
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.package_nielsen_category}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Package Brand
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.package_brand}}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Classification Name
-                        </div>
 
-                        <div class="panel-body">
-                            {{packageData.classification_name}}
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Package Manufacturer
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.package_manufacturer}}
+                            </div>
                         </div>
                     </div>
-                    <!--end of the first tab-->
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Package Country
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.package_country}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Net Quantity
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.package_size}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Net Quantity Unit of MEasure
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.package_size_unit_of_measure}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Number of Units
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.number_of_units}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Multi Part Flag
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.multi_part_flag}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Storage Type
+                            </div>
+
+                            <div class="panel-body">
+                                {{packageData.storage_type}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--end of the second tab-->
+
             </div>
 
+
+            <!--end of fourth tab-->
 
 
         </div>
-        <div id="menu1" class="tab-pane fade">
-            <!--Start of the second tab-->
-           <div class="row">
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Nielsen Item Rank
-                        </div>
+    </div>
 
-                        <div class="panel-body">
-                            {{packageData.nielsen_item_rank}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Nielsen Category 
-                        </div>
+    <div class="row">
 
-                        <div class="panel-body">
-                            {{packageData.package_nielsen_category}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Package Brand
-                        </div>
+        <!--start of the left panel-->
+        <div class="col-sm-6" style="min-height: 500px">
 
-                        <div class="panel-body">
-                            {{packageData.package_brand}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-                       <div class="row">
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Package Manufacturer
-                        </div>
-
-                        <div class="panel-body">
-                            {{packageData.package_manufacturer}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Package Country 
-                        </div>
-
-                        <div class="panel-body">
-                            {{packageData.package_country}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Net Quantity
-                        </div>
-
-                        <div class="panel-body">
-                            {{packageData.package_size}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                                   <div class="row">
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Net Quantity Unit of MEasure
-                        </div>
-
-                        <div class="panel-body">
-                            {{packageData.package_size_unit_of_measure}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Number of Units 
-                        </div>
-
-                        <div class="panel-body">
-                            {{packageData.number_of_units}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                           Multi Part Flag
-                        </div>
-
-                        <div class="panel-body">
-                            {{packageData.multi_part_flag}}
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row">
-            <div class="col-lg-12">
+                <div>
+
+
+                    <div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
+                        <a href="#sold" class="btn btn-default active" data-toggle="tab">
+                            <input type="radio" />As sold
+                        </a>
+                        <a href="#prepared" class="btn btn-default" data-toggle="tab">
+                            <input type="radio" />As Prepared
+                        </a>
+
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="sold">
+
+
+
+                            <div class="row">
+                                <div class="col-sm-4">
                                     <div class="panel panel-info">
-                        <div class="panel-heading">
-                           Storage Type
+                                        <div class="panel-heading">
+                                            Per Serving <br> Size
+                                        </div>
+
+                                        <div class="panel-body">
+                                            {{packageData.as_sold_per_serving_amount}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            Per Serving Unit of Measure
+                                        </div>
+
+                                        <div class="panel-body">
+                                            {{packageData.as_sold_unit_of_measure}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            Per Serving Amount in Grams
+                                        </div>
+
+                                        <div class="panel-body">
+                                            {{packageData.as_sold_per_serving_amount_in_grams}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    Common Household Measure
+                                </div>
+
+                                <div class="panel-body">
+                                    {{packageData.common_household_measure}}
+                                </div>
+                            </div>
+
+
+                            <div *ngIf="componentViewSold">
+                                <button class="btn btn-default" (click)="editNft(true)" style="float:right">Edit
+                                    Nutrition Fact Table</button>
+                                <table>
+                                    <tr>
+                                        <th *ngFor="let map of nftSettings ; let i=index">
+
+                                            {{map.header}}
+                                        </th>
+
+                                    </tr>
+                                    <tr *ngFor="let record of componentViewSold">
+
+                                        <ng-container *ngFor="let map of nftSettings; let i=index">
+
+                                            <td> {{ record[map.primaryKey]}}
+
+                                            </td>
+
+                                        </ng-container>
+                                    </tr>
+
+
+
+
+                                </table>
+                            </div>
+                            <div *ngIf="!componentViewSold">
+
+
+                                <a [routerLink]='getPathAsSold()' class="btn btn-default">Add NFT as sold</a>
+
+                            </div>
+
+                            <!--End of as sold content-->
                         </div>
+                        <div class="tab-pane" id="prepared">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            Per Serving Size
+                                        </div>
 
-                        <div class="panel-body">
-                            {{packageData.storage_type}}
-                        </div>
-                    </div>
-            </div>
-            </div>
+                                        <div class="panel-body">
+                                            {{packageData.as_prepared_per_serving_amount}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            Per Serving Unit of Measure
+                                        </div>
 
-<!--end of the second tab-->
+                                        <div class="panel-body">
+                                            {{packageData.as_prepared_unit_of_measure}}
+                                        </div>
+                                    </div>
+                                </div>
 
-</div>
+                            </div>
+                            <div class="row">
 
+                                <div class="col-sm-6">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            Per Serving Amount in Grams
+                                        </div>
 
-<!--end of fourth tab-->
-
-
-</div>
-</div>
-
-<div class="row">
-
-    <!--start of the left panel-->
-    <div class="col-sm-6" style="min-height: 500px">
-
-<div class="row">
-    <div >
-
-
-        <div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
-            <a href="#sold" class="btn btn-default active" data-toggle="tab">
-                <input type="radio" />As sold
-            </a>
-            <a href="#prepared" class="btn btn-default" data-toggle="tab">
-                <input type="radio" />As Prepared
-            </a>
-
-        </div>
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="sold">
+                                        <div class="panel-body">
+                                            {{packageData.as_prepared_per_serving_amount_in_grams}}
+                                        </div>
+                                    </div>
 
 
 
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Per Serving <br> Size
+                                </div>
+
+
+                                <div class="col-sm-6">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            Calculated?
+                                        </div>
+
+                                        <div class="panel-body">
+                                            {{packageData.calculated}}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="panel-body">
-                                {{packageData.as_sold_per_serving_amount}}
+
+                            <div *ngIf="componentViewPrepared">
+                                <button class="btn btn-default" (click)="editNft(false)" style="float:right">Edit
+                                    Nutrition Fact Table</button>
+
+
+                                <table>
+                                    <tr>
+                                        <th *ngFor="let map of nftSettings ; let i=index">
+
+                                            {{map.header}}
+                                        </th>
+
+                                    </tr>
+                                    <tr *ngFor="let record of componentViewPrepared">
+
+                                        <ng-container *ngFor="let map of nftSettings; let i=index">
+
+                                            <td> {{ record[map.primaryKey]}}
+
+                                            </td>
+
+                                        </ng-container>
+                                    </tr>
+
+
+
+
+                                </table>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Per Serving Unit of Measure
-                            </div>
-
-                            <div class="panel-body">
-                                {{packageData.as_sold_unit_of_measure}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Per Serving Amount in Grams
-                            </div>
-
-                            <div class="panel-body">
-                                {{packageData.as_sold_per_serving_amount_in_grams}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        Common Household Measure
-                    </div>
-
-                    <div class="panel-body">
-                        {{packageData.common_household_measure}}
-                    </div>
-                </div>
-
-
-                <div *ngIf="componentViewSold">
-                    <button class="btn btn-default" (click)="editNft(true)" style="float:right">Edit Nutrition Fact Table</button>
-                    <table>
-                        <tr>
-                            <th *ngFor="let map of nftSettings ; let i=index">
-
-                                {{map.header}}
-                            </th>
-
-                        </tr>
-                        <tr *ngFor="let record of componentViewSold">
-
-                            <ng-container *ngFor="let map of nftSettings; let i=index">
-
-                                <td> {{ record[map.primaryKey]}}
-
-                                </td>
-
-                            </ng-container>
-                        </tr>
-
-
-
-
-                    </table>
-                </div>
-                <div *ngIf="!componentViewSold">
-                    
-
-                    <a [routerLink]='getPathAsSold()' class="btn btn-default">Add NFT as sold</a>
-
-                </div>
-
-                <!--End of as sold content-->
-            </div>
-            <div class="tab-pane" id="prepared">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Per Serving Size
+                            <div *ngIf="!componentViewPrepared">
+                                <a [routerLink]='getPath()' class="btn btn-default">Add NFT as prepared</a>
                             </div>
 
-                            <div class="panel-body">
-                                {{packageData.as_prepared_per_serving_amount}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Per Serving Unit of Measure
-                            </div>
-
-                            <div class="panel-body">
-                                {{packageData.as_prepared_unit_of_measure}}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row">
-
-                    <div class="col-sm-6">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Per Serving Amount in Grams
-                            </div>
-
-                            <div class="panel-body">
-                                {{packageData.as_prepared_per_serving_amount_in_grams}}
-                            </div>
-                        </div>
-
-
-
-                    </div>
-
-
-                    <div class="col-sm-6">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Calculated?
-                            </div>
-
-                            <div class="panel-body">
-                                {{packageData.calculated}}
-                            </div>
                         </div>
                     </div>
                 </div>
 
 
-                <div *ngIf="componentViewPrepared">
-                                        <button class="btn btn-default" (click)="editNft(false)" style="float:right">Edit Nutrition Fact Table</button>
-
-
-                    <table>
-                        <tr>
-                            <th *ngFor="let map of nftSettings ; let i=index">
-
-                                {{map.header}}
-                            </th>
-
-                        </tr>
-                        <tr *ngFor="let record of componentViewPrepared">
-
-                            <ng-container *ngFor="let map of nftSettings; let i=index">
-
-                                <td> {{ record[map.primaryKey]}}
-
-                                </td>
-
-                            </ng-container>
-                        </tr>
-
-
-
-
-                    </table>
-                </div>
-                <div *ngIf="!componentViewPrepared">
-                    <a [routerLink]='getPath()' class="btn btn-default">Add NFT as prepared</a>
-                </div>
 
             </div>
         </div>
-    </div>
+        <!--end of the left panel-->
+        <!--start of the right panel-->
+        <div class="col-sm-6">
 
 
 
-</div>
-</div>
-<!--end of the left panel-->
-<!--start of the right panel-->
-<div class="col-sm-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Ingredients
+                </div>
+
+                <div class="panel-body">
+                    {{packageData.ingredients}}
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Nutrition Fact Table
+                </div>
+
+                <div class="panel-body">
+                    {{packageData.nutrition_fact_table}}
+                </div>
+            </div>
+
+            <!-- <img src="assets/039978303943.jpeg" alt="Smiley face" height="300" width="300" class="image" (click)="openImage()"> -->
+            <!-- add-image -->
+            <button *ngIf="!showForm" class="btn btn-default" (click)="addImage()">Add image</button>
+
+            <add-image [id]='package_id' *ngIf="showForm && package_id" (imagesList)="updateImageGalery($event)"></add-image>
+
+            <div *ngIf="listOfImages && !showForm" class="imageContainer">
 
 
+                <ng-container *ngFor="let image of listOfImages ">
 
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            Ingredients
-        </div>
-
-        <div class="panel-body">
-            {{packageData.ingredients}}
-        </div>
-    </div>
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            Nutrition Fact Table
-        </div>
-
-        <div class="panel-body">
-            {{packageData.nutrition_fact_table}}
-        </div>
-    </div>
-
-    <!-- <img src="assets/039978303943.jpeg" alt="Smiley face" height="300" width="300" class="image" (click)="openImage()"> -->
-    <!-- add-image -->
-    <button  *ngIf="!showForm" class="btn btn-default" (click)="addImage()" >Add image</button>
-
-    <add-image [id]='package_id' *ngIf="showForm && package_id" (imagesList)="updateImageGalery($event)"></add-image>
-
-    <div *ngIf="listOfImages && !showForm" class="imageContainer">
-        
-            
-            <ng-container *ngFor="let image of listOfImages ">
-                   
-                    <img  [src]="returnImage(image.image_name)" alt="Label image" title="Click on the top right icon to delete this image" class="image box" (click)="openImage()">
+                    <img [src]="returnImage(image.image_name)" alt="Label image" title="Click on the top right icon to delete this image"
+                        class="image box" (click)="openImage()">
                     <span class="close" (click)="confirmAction(image.image_id)">&times;</span>
-            </ng-container>
-          
-        
+                </ng-container>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <!--end of the right panel-->
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Storage Statements
+        </div>
+
+        <div class="panel-body">
+            {{packageData.storage_statements}}
+        </div>
     </div>
 
-    
 
-</div>
-</div>
-<!--end of the right panel-->
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Health Claims
+        </div>
 
-<div class="panel panel-info">
-    <div class="panel-heading">
-        Storage Statements
+        <div class="panel-body">
+            {{packageData.health_claims}}
+        </div>
     </div>
 
-    <div class="panel-body">
-        {{packageData.storage_statements}}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Other Package Statements
+        </div>
+
+        <div class="panel-body">
+            {{packageData.other_package_statements}}
+        </div>
     </div>
-</div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Suggested Direction
+        </div>
 
-
-<div class="panel panel-info">
-    <div class="panel-heading">
-        Health Claims
-    </div>
-
-    <div class="panel-body">
-        {{packageData.health_claims}}
-    </div>
-</div>
-
-<div class="panel panel-info">
-    <div class="panel-heading">
-        Other Package Statements
+        <div class="panel-body">
+            {{packageData.suggested_directions}}
+        </div>
     </div>
 
-    <div class="panel-body">
-        {{packageData.other_package_statements}}
-    </div>
-</div>
-<div class="panel panel-info">
-    <div class="panel-heading">
-        Suggested Direction
-    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Nutrient Claims
+        </div>
 
-    <div class="panel-body">
-        {{packageData.suggested_directions}}
-    </div>
-</div>
-
-<div class="panel panel-info">
-    <div class="panel-heading">
-        Nutrient Claims
+        <div class="panel-body">
+            {{packageData.nutrient_claims}}
+        </div>
     </div>
 
-    <div class="panel-body">
-        {{packageData.nutrient_claims}}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Package Comment
+        </div>
+
+        <div class="panel-body">
+            {{packageData.package_comment}}
+        </div>
     </div>
-</div>
+    <table style="width:100%;" class="table table-striped">
+        <tr>
+            <th>Package Source</th>
+            <th>Collection Date</th>
+            <th>Edited By</th>
+            <th>Creation Date</th>
+            <th>Last Edit Date</th>
+        </tr>
 
-<div class="panel panel-info">
-    <div class="panel-heading">
-        Package Comment
-    </div>
+        <tr>
 
-    <div class="panel-body">
-        {{packageData.package_comment}}
-    </div>
-</div>
-<table style="width:100%;" class="table table-striped">
-<tr>
-    <th>Package Source</th>
-    <th>Collection Date</th>
-    <th>Edited By</th>
-    <th>Creation Date</th>
-    <th>Last Edit Date</th>
-</tr>
-
-<tr>
-
-    <td>{{packageData.package_source}}</td>
+            <td>{{packageData.package_source}}</td>
 
 
-    <td>{{packageData.package_collection_date}}</td>
+            <td>{{packageData.package_collection_date}}</td>
 
 
-    <td>{{packageData.edited_by}}</td>
+            <td>{{packageData.edited_by}}</td>
 
-    <td>{{packageData.creation_date}}</td>
+            <td>{{packageData.creation_date}}</td>
 
 
-    <td>{{packageData.last_edit_date}}</td>
-</tr>
+            <td>{{packageData.last_edit_date}}</td>
+        </tr>
 
-</table>
+    </table>
 
 </div>
 <confirm-box [flag]="flag"></confirm-box>
 
-<modal-box [modalType]="type"
-            (fireBack)="responseFromModal($event)">
-            </modal-box>
+<modal-box [modalType]="type" (fireBack)="responseFromModal($event)">
+</modal-box>
 
 <confirm-box [flag]="confirmDeleteImageTransation"></confirm-box>
-<!-- <confirm-box [flag]="flag_add_image"></confirm-box> -->
 
+<confirm-modal-box [conformBoxModalMessage]="confirmModalBoxMessage" (displayModal)="responseFromConfirmModalBox($event)"
+    *ngIf="showConfimModalBox">
+
+</confirm-modal-box>
+<!-- <confirm-box [flag]="flag_add_image"></confirm-box> -->
